@@ -1,0 +1,26 @@
+{
+  "$schema": "https://agent-skills.org/schema/v0.2.0/index.json",
+  "skills": [
+    {
+      "name": "Knox-Keene Analysis",
+      "type": "skill-md",
+      "description": "Identifies violations of the Knox-Keene Health Care Service Plan Act of 1975.",
+      "url": "https://calaudit.org/.well-known/agent-skills/analyze-violations.md",
+      "sha256": "7c72e8fc92f9a63f2b182110f3b1873e3a14f6459db48056fb6d2b5643ee68be"
+    },
+    {
+      "name": "Evidence Search",
+      "type": "skill-md",
+      "description": "Finds specific forensic evidence files within the calaudit-vault.",
+      "url": "https://calaudit.org/.well-known/agent-skills/search-evidence.md",
+      "sha256": "4d429d53ddb8c6c9e9ed6cd77d1dbe4180ee69c883ef6de9fa36720015b62fc7"
+    },
+    {
+      "name": "Verify Service of Process",
+      "type": "skill-md",
+      "description": "Cross-references SC-104 filings with physical address data.",
+      "url": "https://calaudit.org/.well-known/agent-skills/verify-service.md",
+      "sha256": "304ae6b08df6532fa651797f87678f6f1546370cabb5a336425dcea057f4bd5d"
+    }
+  ]
+}

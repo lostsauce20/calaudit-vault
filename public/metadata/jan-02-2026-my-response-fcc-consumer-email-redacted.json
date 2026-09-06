@@ -1,0 +1,11 @@
+{
+  "alt": "On January 02, 2026, a sender informed the FCC that a TracFone device remained restricted by manufacturer-configured secure-boot partitions (abl/xbl) despite a permanent network release, requesting Motorola Mobility provide a software patch or unbranded replacement and asking the FCC to keep the ticket open.",
+  "summary": "On January 02, 2026, a sender informed the FCC that a TracFone device remained restricted by manufacturer-configured secure-boot partitions (abl/xbl) despite a permanent network release, requesting Motorola Mobility provide a software patch or unbranded replacement and asking the FCC to keep the ticket open.",
+  "keywords": [
+    "FCC complaint",
+    "TracFone device",
+    "Device unlocking",
+    "Motorola Mobility"
+  ],
+  "full_text": "The sender informs the FCC that although TracFone confirmed a permanent network release, the device remains restricted by manufacturer‑configured secure‑boot partitions (abl/xbl). The email explains that TracFone lacks the source code or technical means to rewrite these partitions. The sender argues that the device is not fully unlocked under federal standards and requests that Motorola Mobility provide a software patch or unbranded replacement. The message asks the FCC to keep the ticket open."
+}

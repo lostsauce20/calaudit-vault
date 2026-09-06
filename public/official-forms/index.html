@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official California Government Forms | CalAudit</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="canonical" href="https://calaudit.org/official-forms/">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Archive of official California government forms from DHCS, CDSS, Medi-Cal, and other state agencies, preserved by CalAudit for public access, compliance, and verification.">
+    <meta name="keywords" content="CalAudit, California government forms, official government forms, DHCS forms, CDSS forms, Medi-Cal forms, SOC forms, MC forms, California state forms, public assistance forms, healthcare forms">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calaudit.org/official-forms/">
+    <meta property="og:title" content="Official California Government Forms | CalAudit">
+    <meta property="og:description" content="Archive of official California government forms from DHCS, CDSS, Medi-Cal, and other state agencies, preserved for public access, compliance, and verification.">
+    <meta property="og:site_name" content="CalAudit">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Official California Government Forms | CalAudit">
+    <meta name="twitter:description" content="Official California state agency forms from DHCS, CDSS, and Medi-Cal preserved for persistent public access and verification.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "@id": "https://calaudit.org/official-forms/#webpage",
+        "url": "https://calaudit.org/official-forms/",
+        "name": "Official California Government Forms | CalAudit",
+        "description": "Archive of official California government forms from DHCS, CDSS, Medi-Cal, and other state agencies, preserved for public access, compliance, and verification.",
+        "isPartOf": { "@id": "https://calaudit.org/#website" }
+    }
+    </script>
+    <style>
+        #grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .evidence-item {
+            background: rgba(18, 18, 18, 0.92);
+            border: 1px solid #333;
+            backdrop-filter: blur(6px);
+            border-radius: 6px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            margin-bottom: 0 !important;
+            height: 100%;
+        }
+
+        .evidence-item h3 {
+            color: var(--blue) !important;
+            border-bottom: 1px solid #333 !important;
+            padding-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            text-align: left;
+        }
+
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .metadata-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            border-bottom: 1px dashed #222;
+            padding-bottom: 4px;
+        }
+
+        .metadata-label {
+            color: var(--text-dim);
+            font-weight: normal;
+        }
+
+        .metadata-value {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .card-actions {
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .download-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #111;
+            border: 1px solid var(--border);
+            color: var(--blue) !important;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 4px;
+            text-decoration: none !important;
+            box-sizing: border-box;
+            transition: all 0.2s ease;
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .download-btn:hover {
+            background: var(--blue);
+            color: #000 !important;
+            border-color: var(--blue);
+            text-shadow: none;
+        }
+
+        fieldset {
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            background: rgba(10, 10, 10, 0.8);
+        }
+
+        legend {
+            font-family: var(--mono);
+            font-weight: bold;
+            color: var(--blue);
+            padding: 0 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .filters-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex: 1 1 200px;
+        }
+
+        .filter-group label {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-group input, .filter-group select {
+            background: #111;
+            border: 1px solid #333;
+            color: #fff;
+            padding: 10px 12px;
+            border-radius: 4px;
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            outline: none;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease;
+        }
+
+        .filter-group input:focus, .filter-group select:focus {
+            border-color: var(--blue);
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            border-top: 1px solid #222;
+            text-align: center;
+            font-family: var(--mono);
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        footer a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        header, main, footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <nav class="back-btn-container" aria-label="Breadcrumb navigation" style="padding: 1.5rem 0 0 1.5rem; max-width: 1200px; margin: 0 auto;">
+        <a href="/forensic-vault/" class="back-btn" aria-label="Return to Forensic Vault directory">← Return to Forensic Vault</a>
+    </nav>
+    <header role="banner">
+        <h1>Official Government Forms Vault</h1>
+        <p>Canonical state agency forms archived for public access, compliance, and verification.</p>
+    </header>
+    <main id="main-content" role="main">
+        <div class="disclaimer-banner" role="alert" style="border:1px solid var(--blue); padding:15px; margin:20px 0; line-height: 1.5; background: rgba(0, 150, 255, 0.05);">
+            NOTICE: The documents below are copies of official state agency forms published by California state departments (DHCS, CDSS). These documents are archived here to maintain persistent public access.
+        </div>
+
+        <fieldset>
+            <legend>Search Official Forms</legend>
+            <div class="filters-flex">
+                <div class="filter-group">
+                    <label for="search-input">Search Form or Language:</label>
+                    <input type="text" id="search-input" aria-label="Search forms by ID, Title, or Language" placeholder="e.g. MC 219, DHCS 4521, or Spanish">
+                </div>
+                <div class="filter-group">
+                    <label for="agency-filter">Agency:</label>
+                    <select id="agency-filter" aria-label="Filter by Agency">
+                        <option value="ALL">All Agencies</option>
+                        <option value="DHCS">DHCS (Health Care Services)</option>
+                        <option value="CDSS">CDSS (Social Services)</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+
+        <div id="grid-container"></div>
+    </main>
+
+    <footer class="page-footer" role="contentinfo" style="margin-top: 4rem; border-top: 1px solid #222; padding-top: 2rem;">
+        <div class="footer-inner" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; font-family: var(--mono); font-size: 0.85rem; color: var(--text-dim); text-align: center;">
+            <p>© 2026 CALAUDIT | Nicolas Hernandez — Official Preservations Docket | <a href="/bots/" aria-label="View crawler indexing bridge" style="color: var(--blue); text-decoration: none;">Crawler Index</a></p>
+            <p style="margin-top: 0.5rem; color: var(--green); font-weight: bold; font-family: var(--mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.5;">
+                VERIFICATION NOTICE: These documents are certified official government state forms published by California state agencies (DHCS, CDSS) and are preserved in this vault for access, compliance, and auditing.
+            </p>
+            <p class="onion-mirror" aria-label="Tor Onion Mirror Address" style="margin-top: 0.5rem;">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/" style="color: var(--blue); text-decoration: none;">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+        </div>
+    </footer>
+
+    <script>
+        let resources = [];
+
+        function formatBytes(bytes) {
+            return bytes >= 1048576
+                ? (bytes / 1048576).toFixed(1) + ' MB'
+                : (bytes / 1024).toFixed(0) + ' KB';
+        }
+
+        function render(data) {
+            const container = document.getElementById('grid-container');
+            container.innerHTML = '';
+            if (data.length === 0) {
+                container.innerHTML = '<p style="color: var(--text-dim); grid-column: 1/-1; text-align: center; padding: 2rem;">No official forms matched your search criteria.</p>';
+                return;
+            }
+            data.forEach(item => {
+                const el = document.createElement('article');
+                el.className = 'evidence-item';
+
+                el.innerHTML = `<h3>${item.title}</h3>
+                                <div class="card-body">
+                                    <div class="metadata-row">
+                                        <span class="metadata-label">Language:</span>
+                                        <span class="metadata-value">${item.language}</span>
+                                    </div>
+                                    <div class="metadata-row">
+                                        <span class="metadata-label">Agency:</span>
+                                        <span class="metadata-value">${item.agency}</span>
+                                    </div>
+                                    <div class="metadata-row">
+                                        <span class="metadata-label">Size:</span>
+                                        <span class="metadata-value">${formatBytes(item.file_size)}</span>
+                                    </div>
+                                    <div class="metadata-row">
+                                        <span class="metadata-label">Pages:</span>
+                                        <span class="metadata-value">${item.page_count}</span>
+                                    </div>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="${item.download_url}" class="download-btn" target="_blank" rel="noopener noreferrer">Download PDF</a>
+                                </div>`;
+                container.appendChild(el);
+            });
+        }
+
+        fetch('resources-official.json')
+            .then(res => res.json())
+            .then(data => {
+                resources = data;
+                render(resources);
+            });
+
+        document.getElementById('search-input').addEventListener('input', () => filterData());
+        document.getElementById('agency-filter').addEventListener('change', () => filterData());
+
+        function filterData() {
+            const rawTerm = document.getElementById('search-input').value.toLowerCase().trim();
+            const selectedAgency = document.getElementById('agency-filter').value.toUpperCase();
+
+            const normalize = (str) => (str || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+            const cleanTerm = normalize(rawTerm);
+
+            const filtered = resources.filter(item => {
+                const cleanTitle = normalize(item.title);
+                const cleanFormId = normalize(item.form_id);
+                const cleanLang = normalize(item.language);
+
+                const matchesTerm = !cleanTerm ||
+                    cleanTitle.includes(cleanTerm) ||
+                    cleanFormId.includes(cleanTerm) ||
+                    cleanLang.includes(cleanTerm);
+
+                const matchesAgency = selectedAgency === 'ALL' ||
+                    (item.agency && item.agency.trim().toUpperCase() === selectedAgency);
+
+                return matchesTerm && matchesAgency;
+            });
+            render(filtered);
+        }
+    </script>
+    <script src="/nav.js"></script>
+</body>
+</html>

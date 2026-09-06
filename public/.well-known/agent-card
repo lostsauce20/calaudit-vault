@@ -1,0 +1,41 @@
+{
+  "name": "AuditBot-Alpha",
+  "description": "Autonomous forensic auditor for Knox-Keene violations and L.A. Care administrative defaults.",
+  "url": "https://calaudit.org",
+  "version": "1.1.0",
+  "supportedInterfaces": [
+    {
+      "type": "webmcp",
+      "url": "https://calaudit.org/",
+      "transport": "https"
+    },
+    {
+      "type": "mcp",
+      "url": "https://calaudit.org/.well-known/mcp/server-card.json",
+      "transport": "https"
+    }
+  ],
+  "capabilities": [
+    "search-evidence",
+    "analyze-violations",
+    "verify-service"
+  ],
+  "defaultOutputModes": ["text/markdown", "application/json"],
+  "skills": [
+    {
+      "id": "verify-service",
+      "name": "Verify Service of Process",
+      "description": "Cross-references SC-104 filings with physical address data."
+    },
+    {
+      "id": "analyze-violations",
+      "name": "Knox-Keene Analysis",
+      "description": "Identifies violations of the Knox-Keene Health Care Service Plan Act of 1975."
+    },
+    {
+      "id": "search-evidence",
+      "name": "Evidence Search",
+      "description": "Finds specific forensic evidence files within the calaudit-vault."
+    }
+  ]
+}

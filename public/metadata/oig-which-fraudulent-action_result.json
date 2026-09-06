@@ -1,0 +1,11 @@
+{
+  "alt": "A page asks users to select which fraudulent action they are reporting, with 'Improper billing' being the selected option among choices like Kickbacks and Medically unnecessary services.",
+  "summary": "A page asks users to select which fraudulent action they are reporting, with 'Improper billing' being the selected option among choices like Kickbacks and Medically unnecessary services.",
+  "keywords": [
+    "Fraud Reporting",
+    "Improper Billing",
+    "Healthcare Fraud",
+    "User Selection"
+  ],
+  "full_text": "The page asks: 'Which fraudulent action are you reporting?' Options: Improper billing (selected), Kickbacks, Medically unnecessary services, Diversion/Prescription Fraud, Other. Button: Continue."
+}

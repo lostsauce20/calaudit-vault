@@ -1,0 +1,25 @@
+{
+  "alt": "A screenshot of the Federal Trade Commission's ReportFraud.ftc.gov website, displaying a form to select the type of fraud being reported, with 'Something else' currently selected.",
+  "summary": "The image displays a webpage from ReportFraud.ftc.gov, an official website of the United States government, specifically the Federal Trade Commission (FTC). The page prompts users to categorize their fraud report by selecting from a list of common problems. Options include \"An impersonator,\" \"Job, investment, money-making opportunity, franchise,\" \"Phone, internet, TV service,\" \"Health,\" \"Just an annoying call,\" \"Online shopping,\" \"Sweepstakes, prize, lottery,\" \"Auto sale, repair,\" \"Credit, debt, loan,\" and \"Something else.\" The \"Something else\" option is currently selected, with a \"Continue\" button at the bottom. The header also features links to TakeltDown.ftc.gov, IdentityTheft.gov, and DoNotCall.gov.\n\nThis webpage serves as a critical portal for consumers to report various types of fraud and scams to the Federal Trade Commission. The FTC is a U.S. government agency responsible for consumer protection and eliminating and preventing anticompetitive business practices. By providing a structured reporting mechanism, the FTC collects data that is vital for identifying trends, issuing consumer alerts, and pursuing enforcement actions against fraudulent entities. The use of a \".gov\" domain reinforces the authenticity and official nature of the platform, assuring users that their reports are submitted to a legitimate government body for legal and regulatory purposes.\n\nThe OCR transcription is largely accurate, capturing most of the text and options presented on the webpage. A minor discrepancy is observed in the OCR where \"COMMISSION\" is transcribed as \"COMM SSION\" twice in the header section (for IdentityTheft.gov and DoNotCall.gov logos). Visually, the word is correctly spelled \"COMMISSION\" in the logos. Additionally, the OCR includes \"Start\" and \"Submit\" which appear to be labels for a progress bar, but are not interactive buttons in the same way \"Continue\" is. The layout of the options is preserved, and the selection of \"Something else\" is correctly identified.",
+  "keywords": [
+    "FTC",
+    "Federal Trade Commission",
+    "ReportFraud.ftc.gov",
+    "fraud report",
+    "consumer protection",
+    "scam",
+    "impersonator",
+    "identity theft",
+    "online shopping fraud",
+    "investment fraud",
+    "sweepstakes scam",
+    "credit fraud",
+    "debt collection",
+    "government website",
+    "consumer complaint",
+    "Do Not Call",
+    "TakeltDown",
+    "IdentityTheft.gov"
+  ],
+  "full_text": "An official website of the United States government Here's how you know\nFEDERAL TRADE COMMISSION\nTakeltDown.ftc.gov\nFEDERAL TRADE COMM SSION\nFEDERAL TRADE COMMISSION\nIdentityTheft.gov\nDo Not Call.gov\nFEDERAL TRADE COMMISSION\nReportFraud.ftc.gov\nStart\nSubmit\nIs your report about any of these common problems?\nChoose the best fit. If you don't see your problem, choose \"Something else.\"\nAn impersonator\n(ex. fake government, business, love interest, grandchild)\nJob, investment, money-making opportunity, franchise\nPhone, internet, TV service\nHealth\n(ex. weight loss, eye care, treatment)\nJust an annoying call\nOnline shopping\nSweepstakes, prize, lottery\nAuto sale, repair\nCredit, debt, loan\n(ex. debt collection, credit report, student loan debt relief)\nSomething else\n(we'll get it to the right place)\nContinue"
+}

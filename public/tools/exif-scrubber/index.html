@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#050505"/>
+    <title>Free EXIF &amp; Photo Metadata Remover | CalAudit</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="canonical" href="https://calaudit.org/tools/exif-scrubber/"/>
+    <meta name="description" content="Free photo metadata remover that re-encodes JPEG and PNG images locally to reduce EXIF, GPS, camera, and timestamp metadata. No upload required."/>
+    <meta name="author" content="Nicolas Hernandez"/>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="CalAudit"/>
+    <meta property="og:url" content="https://calaudit.org/tools/exif-scrubber/"/>
+    <meta property="og:title" content="Free EXIF &amp; Photo Metadata Remover | CalAudit"/>
+    <meta property="og:description" content="Remove EXIF, GPS, camera, and timestamp metadata from JPEG and PNG photos with a free local browser tool."/>
+    <meta property="og:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="CalAudit Official Logo"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@CalAudit"/>
+    <meta name="twitter:creator" content="@CalAudit"/>
+    <meta name="twitter:url" content="https://calaudit.org/tools/exif-scrubber/"/>
+    <meta name="twitter:title" content="Free EXIF &amp; Photo Metadata Remover | CalAudit"/>
+    <meta name="twitter:description" content="Remove EXIF, GPS, camera, and timestamp metadata from JPEG and PNG photos with a free local browser tool."/>
+    <meta name="twitter:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta name="twitter:image:alt" content="CalAudit Official Logo"/>
+    <meta name="geo.region" content="US-CA"/>
+    <meta name="geo.placename" content="California"/>
+    <meta name="geo.position" content="38.5816;-121.4944"/>
+    <meta name="ICBM" content="38.5816, -121.4944"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://calaudit.org/#nicolas-hernandez",
+      "name": "Nicolas Hernandez",
+      "url": "https://calaudit.org",
+      "jobTitle": "Operator",
+      "image": "https://calaudit.org/calauditlogo.webp"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://calaudit.org/#website",
+      "url": "https://calaudit.org/",
+      "name": "CalAudit",
+      "description": "Browser-based audit, privacy, and utility tools",
+      "publisher": { "@id": "https://calaudit.org/#nicolas-hernandez" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://calaudit.org/tools/exif-scrubber/#webpage",
+      "url": "https://calaudit.org/tools/exif-scrubber/",
+      "name": "Free EXIF & Photo Metadata Remover | CalAudit",
+      "description": "Free browser-based photo metadata remover that re-encodes JPEG and PNG images locally to reduce EXIF, GPS, camera, and timestamp metadata exposure and compare SHA-256 file hashes.",
+      "isPartOf": { "@id": "https://calaudit.org/#website" },
+      "about": { "@id": "https://calaudit.org/tools/exif-scrubber/#app" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://calaudit.org/calauditlogo.webp"
+      },
+      "datePublished": "2026-01-01T00:00:00Z",
+      "dateModified": "2026-08-23",
+      "author": { "@id": "https://calaudit.org/#nicolas-hernandez" },
+      "breadcrumb": { "@id": "https://calaudit.org/tools/exif-scrubber/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://calaudit.org/tools/exif-scrubber/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Hub", "item": "https://calaudit.org" },
+        { "@type": "ListItem", "position": 2, "name": "Forensic Vault", "item": "https://calaudit.org/forensic-vault/" },
+        { "@type": "ListItem", "position": 3, "name": "Tool Room", "item": "https://calaudit.org/tools/" },
+        { "@type": "ListItem", "position": 4, "name": "Photo Metadata Remover", "item": "https://calaudit.org/tools/exif-scrubber/" }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://calaudit.org/tools/exif-scrubber/#app",
+      "mainEntityOfPage": { "@id": "https://calaudit.org/tools/exif-scrubber/#webpage" },
+      "name": "CalAudit Free Photo Metadata Remover",
+      "url": "https://calaudit.org/tools/exif-scrubber/",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires HTML5 Canvas and WebCrypto API",
+      "isAccessibleForFree": true,
+      "featureList": [
+        "Local processing with the Canvas API",
+        "JPEG and PNG image re-encoding",
+        "Reduces standard embedded metadata exposure",
+        "Calculates before-and-after SHA-256 file hashes",
+        "Downloads a plain-text file hash report"
+      ],
+      "description": "A free browser utility that locally re-encodes JPEG and PNG photos to reduce standard EXIF, GPS, camera, and timestamp metadata exposure and calculates SHA-256 hashes for the input and output files.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      },
+      "author": { "@id": "https://calaudit.org/#nicolas-hernandez" }
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://calaudit.org/tools/exif-scrubber/#howto",
+      "mainEntityOfPage": { "@id": "https://calaudit.org/tools/exif-scrubber/#webpage" },
+      "name": "How to Remove EXIF and GPS Metadata from a Photo",
+      "description": "Remove common EXIF, GPS, camera, and timestamp metadata from a JPEG or PNG photo by re-encoding it locally in your browser.",
+      "totalTime": "PT1M",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "CalAudit Photo Metadata Remover"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Upload your image",
+          "text": "Drag and drop a JPEG, JPG, or PNG file onto the dropzone, or click to browse your local files."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Re-encode the image",
+          "text": "The tool redraws the image to a canvas and creates a new JPEG or PNG file. This commonly omits standard embedded metadata, but output verification is required."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Compare file hashes",
+          "text": "Review the SHA-256 hashes that identify the input and output files and confirm whether their bytes differ. The hashes do not prove what changed."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Download and verify the output",
+          "text": "Download the re-encoded image and optional file hash report, then inspect the output before sensitive use."
+        }
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "@id": "https://calaudit.org/tools/exif-scrubber/#faq",
+      "mainEntityOfPage": { "@id": "https://calaudit.org/tools/exif-scrubber/#webpage" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "@id": "https://calaudit.org/tools/exif-scrubber/#faq-1",
+          "name": "Is this tool completely free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The tool requires no payment or account and performs the image-processing operation in the browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "@id": "https://calaudit.org/tools/exif-scrubber/#faq-2",
+          "name": "Does this tool upload my photos to any server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The application code reads and re-encodes the selected image locally; it does not submit the file to a CalAudit upload endpoint. Device, browser-extension, and surrounding workflow risks still apply."
+          }
+        },
+        {
+          "@type": "Question",
+          "@id": "https://calaudit.org/tools/exif-scrubber/#faq-3",
+          "name": "What EXIF data gets removed from my image?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Canvas re-encoding commonly omits standard EXIF, GPS, camera, and timestamp fields. Browser encoders and image formats vary, so inspect the downloaded file with a metadata viewer before sensitive use."
+          }
+        },
+        {
+          "@type": "Question",
+          "@id": "https://calaudit.org/tools/exif-scrubber/#faq-4",
+          "name": "What is the SHA-256 hashing report?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The hashing report is a downloadable text document containing the SHA-256 file hashes of both your original and cleansed image files. The before-and-after hashes identify each file and confirm that their byte contents differ; they do not prove authenticity, integrity, or the nature of the changes. This report can be downloaded as a record of your file hashes."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    <style>
+        /* A11y Focus Styles */
+        :focus-visible {
+            outline: 2px solid var(--green, #0f0) !important;
+            outline-offset: 3px !important;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        /* Scrubber Dropzone Styling */
+        .scrub-dropzone {
+            border: 2px dashed #222;
+            background: #080808;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .scrub-dropzone:hover, .scrub-dropzone.dragover {
+            border-color: var(--green, #0f0);
+            background: rgba(0, 255, 0, 0.05);
+        }
+        .scrub-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #444;
+            transition: color 0.2s ease;
+        }
+        .scrub-dropzone:hover .scrub-icon {
+            color: var(--green, #0f0);
+        }
+
+        .bracket-tl { top: 20px; left: 30px; border-right: none; border-bottom: none; border-color: var(--green, #0f0); opacity: 0.3; }
+        .bracket-tr { top: 20px; right: 30px; border-left: none; border-bottom: none; border-color: var(--green, #0f0); opacity: 0.3; }
+        .bracket-bl { bottom: 20px; left: 30px; border-right: none; border-top: none; border-color: var(--green, #0f0); opacity: 0.3; }
+        .bracket-br { bottom: 20px; right: 30px; border-left: none; border-top: none; border-color: var(--green, #0f0); opacity: 0.3; }
+
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="vault-container">
+    <main role="main" id="main-content">
+        <div class="back-btn-container">
+            <a href="/tools/" class="back-btn" aria-label="Return to previous page, the Utility Hub">← Return to Utility Hub</a>
+        </div>
+
+        <div class="manifesto-container">
+            <div class="page-label" aria-hidden="true">// SERVICE NODE: FORENSIC_EXIF_SCRUBBER</div>
+            <h1 class="page-title">Free Photo Metadata &amp; EXIF Remover</h1>
+            <p class="page-subtitle">"Remove EXIF, GPS &amp; Photo Metadata Locally // SHA-256 Hash Comparison"</p>
+            <div class="requisition">
+                <p><strong>SPECIFICATION:</strong> The page redraws a JPEG or PNG to an HTML canvas, exports a newly encoded file, and calculates SHA-256 hashes for the input and output. Re-encoding commonly omits standard embedded metadata; verify the downloaded file before sensitive use.</p>
+            </div>
+        </div>
+
+        <section aria-labelledby="section-forensic-auditor">
+            <div class="section-label" aria-hidden="true">FORENSIC SECURITY MODULE</div>
+            <h2 id="section-forensic-auditor" class="section-title">Forensic File Auditor &amp; Metadata Scrubber</h2>
+            <p class="section-quote">"Calculates before-and-after SHA-256 file hashes and re-encodes images to remove standard embedded metadata."</p>
+            <p>
+                When preparing legal dockets or submitting sensitive records, you must reduce <strong>embedded metadata exposure</strong> (preventing GPS/EXIF coordinate leaks).
+            </p>
+            <p>
+                This utility handles this client-side. When you drop an image, it extracts its basic filesystem metadata and calculates its <strong>SHA-256 file hash</strong> using the browser's native SubtleCrypto API. The tool redraws and re-encodes the image onto an HTML5 canvas to remove standard embedded metadata, while pixels, dimensions, color values, and file hashes may change during the process. The before-and-after hashes identify each file and confirm that their byte contents differ; they do not prove authenticity, integrity, or the nature of the changes.
+            </p>
+
+            <div class="scrub-dropzone" id="dropzone" role="button" tabindex="0" aria-label="Dropzone: Drag and Drop Image Here or Click to Browse" aria-controls="file-input" onclick="document.getElementById('file-input').click()" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); document.getElementById('file-input').click(); }">
+                <label for="file-input" class="sr-only">Upload Image File</label>
+                <input type="file" id="file-input" accept="image/jpeg, image/jpg, image/png" class="sr-only" tabindex="-1" aria-hidden="true" onchange="handleFileSelect(event)">
+                <div class="scrub-icon" id="dropzone-icon" aria-hidden="true">📷</div>
+                <p class="u-style-41dbd68b" id="dropzone-text" aria-hidden="true">Drag & Drop Image Here or Click to Browse</p>
+                <p class="u-style-fefc3077" aria-hidden="true">Supports JPEG, JPG, and PNG files. Runs entirely offline.</p>
+            </div>
+
+            <div id="scrub-status" class="audit-box blue display-none" role="status" aria-live="polite" aria-atomic="true">
+                <div class="status-badge" id="status-badge-text">PROCESSING</div>
+                <div class="u-style-3e21ea26" id="status-text">
+                    Analysing file buffers...
+                </div>
+            </div>
+
+            <div class="u-style-d45e5780" id="download-container">
+                <a id="download-link" href="#" download class="legal-btn u-style-face2abf" aria-label="Download the privacy-cleansed image">💾 DOWNLOAD PRIVACY-CLEANSED IMAGE</a>
+                <button type="button" id="download-report-btn" onclick="downloadForensicReport()" class="legal-btn u-style-123fb059" aria-label="Download the accompanying SHA-256 file hashing report in plain text">📋 DOWNLOAD FILE HASHING REPORT (.TXT)</button>
+            </div>
+        </section>
+
+        <section class="u-style-25da4e20" aria-labelledby="section-editorial-study">
+            <div class="section-label" aria-hidden="true">EDITORIAL STUDY</div>
+            <h2 id="section-editorial-study" class="section-title">Understanding Image Metadata Risk</h2>
+
+            <h3 class="u-style-f5ae840f">Why should you remove GPS coordinates and metadata from images?</h3>
+            <p>
+                Many photographs from smartphones and digital cameras can contain EXIF (Exchangeable Image File Format) fields such as geographic coordinates, camera information, orientation, and timestamps, depending on device and settings.
+            </p>
+            <p>
+                Those fields can reveal sensitive context when a file is shared. Reducing embedded metadata and checking the output is a useful privacy step, but it does not remove information visible in the image itself.
+            </p>
+
+            <h3 class="u-style-f5ae840f">How standard camera applications leak your geographical coordinates</h3>
+            <p>
+                If location tagging is enabled, a camera app may store coordinates in the image metadata. Renaming a file does not remove those fields, and ordinary file transfer may preserve them.
+            </p>
+
+            <h3 class="u-style-f5ae840f">Client-side pixel redrawing vs. traditional online converters</h3>
+            <p>
+                Some metadata-removal services process uploads remotely. A local canvas workflow avoids sending the selected image to a separate conversion endpoint operated by this page.
+            </p>
+            <p>
+                This tool draws the decoded image onto an off-screen canvas and exports a new file. That workflow normally omits standard source metadata, but it can also resize the image and change pixel values, color handling, dimensions, and compression. Inspect the result rather than treating re-encoding as a guarantee.
+            </p>
+        </section>
+
+        <section class="u-style-db7ca171" aria-labelledby="section-premium-comparison">
+            <h2 class="u-style-2e525dc2" id="section-premium-comparison">[ LOCAL PROCESSING AND OUTPUT REVIEW ]</h2>
+            <p class="u-style-048cd5bf">Remote converters receive the file they process, while this page performs its re-encoding operation in your browser. Local processing does not secure the rest of the device or prove that every possible metadata field has been removed.</p>
+            <p class="u-style-170fbda5">CalAudit’s EXIF Scrubber processes the selected image locally in your browser. The tool does not upload the selected file, but it redraws and re-encodes the image, so pixels, dimensions, color values, and file hashes may change.</p>
+            </section>
+
+            <section class="u-style-25da4e20" aria-labelledby="section-faq">
+            <div class="section-label" aria-hidden="true">FORENSIC FAQ</div>
+            <h2 id="section-faq" class="section-title">Common Questions</h2>
+
+            <details id="faq-1" class="faq-item u-style-5d1b2562">
+                <summary class="u-style-4caf3fe2">
+                    <span class="faq-icon u-style-6ccacde8" aria-hidden="true">▶</span> <strong>Is this tool completely free?</strong>
+                </summary>
+                <div class="u-style-53b9271d">
+                    Yes. The tool requires no payment or account and performs the image-processing operation in the browser.
+                </div>
+            </details>
+
+            <details id="faq-2" class="faq-item u-style-5d1b2562">
+                <summary class="u-style-4caf3fe2">
+                    <span class="faq-icon u-style-6ccacde8" aria-hidden="true">▶</span> <strong>Does this tool upload my photos to any server?</strong>
+                </summary>
+                <div class="u-style-53b9271d">
+                    The application code reads and re-encodes the selected image locally; it does not submit the file to a CalAudit upload endpoint. Device, browser-extension, and surrounding workflow risks still apply.
+                </div>
+            </details>
+
+            <details id="faq-3" class="faq-item u-style-5d1b2562">
+                <summary class="u-style-4caf3fe2">
+                    <span class="faq-icon u-style-6ccacde8" aria-hidden="true">▶</span> <strong>What EXIF data gets removed from my image?</strong>
+                </summary>
+                <div class="u-style-53b9271d">
+                    Canvas re-encoding commonly omits standard EXIF, GPS, camera, and timestamp fields. Browser encoders and image formats vary, so inspect the downloaded file with a metadata viewer before sensitive use.
+                </div>
+            </details>
+
+            <details id="faq-4" class="faq-item u-style-db016c1c">
+                <summary class="u-style-4caf3fe2">
+                    <span class="faq-icon u-style-6ccacde8" aria-hidden="true">▶</span> <strong>What is the SHA-256 hashing report?</strong>
+                </summary>
+                <div class="u-style-53b9271d">
+                    The hashing report is a downloadable text document containing the SHA-256 file hashes of both your original and cleansed image files. The before-and-after hashes identify each file and confirm that their byte contents differ; they do not prove authenticity, integrity, or the nature of the changes. This report can be downloaded as a record of your file hashes.
+                </div>
+            </details>
+            </section>
+
+            <section class="related-tools" aria-label="Related Tools">
+            <h3>// RELATED PRIVACY UTILITIES</h3>
+            <ul>
+                <li><a href="/tools/webp-converter/">JPG &amp; PNG to WebP Converter</a></li>
+                <li><a href="/tools/privacy-scrubber/">PDF Redaction Tool</a></li>
+            </ul>
+            </section>
+
+            </main>
+
+    <footer class="page-footer" role="contentinfo">
+    <div class="footer-inner">
+        <p>© 2026 CALAUDIT | Nicolas Hernandez — Public Interest Initiative | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+        <p><strong>OPEN SOURCE LICENSE NOTICE:</strong> All original utility code, tools, and web application logic on this platform are distributed under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">GNU AGPLv3</a>. All public health form archives, translated materials, and investigative guides are licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>. Commercial exploitation, proprietary re-licensing, or paywalling without strict attribution is strictly prohibited.</p>
+        <p class="onion-mirror" aria-label="Tor Onion Mirror Address">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+    </div>
+</footer>
+
+    <script src="/nav.js"></script>
+
+    <script>
+      const dropzone = document.getElementById('dropzone');
+      let currentFile = null;
+      let originalHash = null;
+      let cleansedBlob = null;
+      let cleansedHash = null;
+      let cleansedUrl = null;
+
+      ['dragenter', 'dragover'].forEach(eventName => {
+        dropzone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          dropzone.classList.add('dragover');
+        }, false);
+      });
+
+      ['dragleave', 'drop'].forEach(eventName => {
+        dropzone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          dropzone.classList.remove('dragover');
+        }, false);
+      });
+
+      dropzone.addEventListener('drop', (e) => {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        if (files.length > 0) {
+          processImageFile(files[0]);
+        }
+      });
+
+      function handleFileSelect(event) {
+        const files = event.target.files;
+        if (files.length > 0) {
+          processImageFile(files[0]);
+        }
+        event.target.value = ''; // Reset input to allow re-upload of the same file
+      }
+
+      async function processImageFile(file) {
+        const statusBox = document.getElementById('scrub-status');
+        const statusBadge = document.getElementById('status-badge-text');
+        const statusText = document.getElementById('status-text');
+        const dlContainer = document.getElementById('download-container');
+        const dlLink = document.getElementById('download-link');
+
+        currentFile = file;
+        originalHash = null;
+        cleansedBlob = null;
+        cleansedHash = null;
+
+        statusBox.className = "audit-box blue";
+        statusBadge.textContent = "AUDITING";
+        statusText.textContent = "Computing the original SHA-256 file hash and preparing the image...";
+        statusBox.style.display = "block";
+        dlContainer.style.display = "none";
+
+        if (!file.type.match('image/jpeg') && !file.type.match('image/jpg') && !file.type.match('image/png')) {
+          statusBox.className = "audit-box red";
+          statusBadge.textContent = "ERROR";
+          statusText.textContent = "File format rejected. Please submit a valid JPEG, JPG, or PNG image.";
+          return;
+        }
+
+        if (file.size > 25 * 1024 * 1024) {
+          statusBox.className = "audit-box red";
+          statusBadge.textContent = "ERROR";
+          statusText.textContent = "File too large. Select a JPEG or PNG no larger than 25 MB.";
+          return;
+        }
+
+        try {
+          originalHash = await sha256File(file);
+
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            const img = new Image();
+            img.onload = function() {
+              let width = img.width;
+              let height = img.height;
+              const MAX_DIM = 2048;
+
+              if (width > MAX_DIM || height > MAX_DIM) {
+                if (width > height) {
+                  height = Math.round(height * MAX_DIM / width);
+                  width = MAX_DIM;
+                } else {
+                  width = Math.round(width * MAX_DIM / height);
+                  height = MAX_DIM;
+                }
+              }
+
+              const canvas = document.createElement('canvas');
+              canvas.width = width;
+              canvas.height = height;
+              const ctx = canvas.getContext('2d');
+
+              ctx.drawImage(img, 0, 0, width, height);
+
+              canvas.toBlob(async function(blob) {
+                if (!blob) {
+                  statusBox.className = "audit-box red";
+                  statusBadge.textContent = "ERROR";
+                  statusText.textContent = "The browser could not re-encode this image. Try a different JPEG or PNG file.";
+                  return;
+                }
+                cleansedBlob = blob;
+                cleansedHash = await sha256File(blob);
+                if (cleansedUrl) URL.revokeObjectURL(cleansedUrl);
+                cleansedUrl = URL.createObjectURL(blob);
+
+                statusBox.className = "audit-box green";
+                statusBadge.textContent = "RE-ENCODE_COMPLETE";
+                statusText.style.whiteSpace = "pre-wrap";
+                statusText.textContent = [
+                  "Image re-encoded successfully.",
+                  "Embedded metadata exposure reduced by canvas re-encoding; verify the downloaded file before sensitive use.",
+                  "",
+                  "SYSTEM METADATA:",
+                  `• File name: ${file.name}`,
+                  `• File size: ${(file.size/1024).toFixed(1)} kB (${file.size} bytes)`,
+                  `• Last modified: ${new Date(file.lastModified).toISOString()}`,
+                  "",
+                  "SHA-256 FILE HASHES:",
+                  `• Original: ${originalHash}`,
+                  `• Re-encoded: ${cleansedHash}`
+                ].join("\n");
+
+                dlLink.href = cleansedUrl;
+                dlLink.download = "cleansed-" + file.name.replace(/\s+/g, '-');
+                dlLink.textContent = `💾 Download sanitized image: ${file.name}`;
+                dlContainer.style.display = "grid";
+
+                // Set focus to the download link for accessibility flow
+                dlLink.focus();
+              }, file.type);
+            };
+            img.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        } catch (err) {
+          statusBox.className = "audit-box red";
+          statusBadge.textContent = "ERROR";
+          statusText.textContent = "Auditing failed: " + err.message;
+        }
+      }
+
+      async function sha256File(file) {
+        const buffer = await file.arrayBuffer();
+        const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
+        return Array.from(new Uint8Array(hashBuffer))
+          .map(b => b.toString(16).padStart(2, '0'))
+          .join('');
+      }
+
+      function sanitize(name) {
+        return name.replace(/[^a-zA-Z0-9._-]/g, '_');
+      }
+
+      function downloadForensicReport() {
+        if (!currentFile || !originalHash || !cleansedHash || !cleansedBlob) return;
+
+        const now = new Date().toISOString();
+        const report = [
+          '============================================================',
+          '           CALAUDIT IMAGE FILE HASH REPORT           ',
+          '============================================================',
+          `Generated at:  ${now}`,
+          `Operator ID:   LOCAL_SANDBOX_USER (calaudit.org)`,
+          '------------------------------------------------------------',
+          '',
+          'FILE SYSTEM ATTRIBUTES:',
+          `• Target Name:  ${currentFile.name}`,
+          `• Input Size:   ${currentFile.size} bytes`,
+          `• Input Type:   ${currentFile.type || '(unknown)'}`,
+          `• Last Modified: ${new Date(currentFile.lastModified).toISOString()}`,
+          '',
+          'RE-ENCODING OUTCOME:',
+          `• Output Size:  ${cleansedBlob.size} bytes`,
+          '• Standard embedded metadata: reduced by canvas re-encoding',
+          '• Verification: inspect the downloaded file before sensitive use',
+          '',
+          'SHA-256 FILE IDENTIFIERS:',
+          `• Original SHA-256: ${originalHash}`,
+          `• Cleansed SHA-256: ${cleansedHash}`,
+          '------------------------------------------------------------',
+          'The hashes identify the two byte sequences and show whether',
+          'they differ. They do not prove authenticity or what changed.',
+          '============================================================'
+        ].join('\r\n');
+
+        const blob = new Blob([report], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `file-hash-report-${sanitize(currentFile.name)}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+    </script>
+
+    <script>/* Onion Link Patch */ (function(){if(window.location.hostname.endsWith('.onion')){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(h&&!h.startsWith('http')&&!h.startsWith('mailto:')&&!h.startsWith('tel:')&&!h.startsWith('#')){var p=h.split('/');var l=p[p.length-1];if(l!==''&&!l.includes('.')){a.setAttribute('href',h+'.html')}else if(h.endsWith('/')){a.setAttribute('href',h+'index.html')}}})}})();</script>
+
+</div>
+</body>
+</html>

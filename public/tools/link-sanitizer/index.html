@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#050505"/>
+    <title>Free URL Cleaner &amp; Tracking Parameter Remover | CalAudit</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="canonical" href="https://calaudit.org/tools/link-sanitizer/"/>
+    <meta name="description" content="Free URL cleaner that removes listed UTM, fbclid, gclid and other common tracking query parameters from HTTP and HTTPS links directly in your browser."/>
+    <meta name="author" content="Nicolas Hernandez"/>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="CalAudit"/>
+    <meta property="og:url" content="https://calaudit.org/tools/link-sanitizer/"/>
+    <meta property="og:title" content="Free URL Cleaner &amp; Tracking Parameter Remover | CalAudit"/>
+    <meta property="og:description" content="Remove UTM, fbclid, gclid and other listed tracking parameters from links directly in your browser while preserving the rest of the URL."/>
+    <meta property="og:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="CalAudit Telemetry and Tracking URL Sanitizer Logo"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@CalAudit"/>
+    <meta name="twitter:creator" content="@CalAudit"/>
+    <meta name="twitter:url" content="https://calaudit.org/tools/link-sanitizer/"/>
+    <meta name="twitter:title" content="Free URL Cleaner &amp; Tracking Parameter Remover | CalAudit"/>
+    <meta name="twitter:description" content="Remove UTM, fbclid, gclid and other listed tracking parameters from links directly in your browser while preserving the rest of the URL."/>
+    <meta name="twitter:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta name="twitter:image:alt" content="CalAudit Telemetry and Tracking URL Sanitizer Logo"/>
+    <meta name="geo.region" content="US-CA"/>
+    <meta name="geo.placename" content="California"/>
+    <meta name="geo.position" content="38.5816;-121.4944"/>
+    <meta name="ICBM" content="38.5816, -121.4944"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://calaudit.org/#organization",
+      "name": "CalAudit",
+      "url": "https://calaudit.org",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://calaudit.org/#logo",
+        "url": "https://calaudit.org/calauditlogo.webp",
+        "contentUrl": "https://calaudit.org/calauditlogo.webp",
+        "caption": "CalAudit Logo",
+        "inLanguage": "en-US"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://calaudit.org/#website",
+      "url": "https://calaudit.org",
+      "name": "CalAudit",
+      "publisher": {
+        "@id": "https://calaudit.org/#organization"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://calaudit.org/tools/link-sanitizer/#webpage",
+      "url": "https://calaudit.org/tools/link-sanitizer/",
+      "name": "Free URL Cleaner & Tracking Parameter Remover | CalAudit",
+      "description": "Remove listed UTM and click-tracking query parameters such as fbclid and gclid from HTTP and HTTPS URLs directly in the browser.",
+      "isPartOf": {
+        "@id": "https://calaudit.org/#website"
+      },
+      "about": {
+        "@id": "https://calaudit.org/tools/link-sanitizer/#app"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://calaudit.org/#logo"
+      },
+      "datePublished": "2026-01-01T00:00:00+00:00",
+      "dateModified": "2026-08-26",
+      "breadcrumb": {
+        "@id": "https://calaudit.org/tools/link-sanitizer/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://calaudit.org/tools/link-sanitizer/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Hub",
+          "item": "https://calaudit.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Forensic Vault",
+          "item": "https://calaudit.org/forensic-vault/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Tool Room",
+          "item": "https://calaudit.org/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "URL Cleaner",
+          "item": "https://calaudit.org/tools/link-sanitizer/"
+        }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://calaudit.org/tools/link-sanitizer/#app",
+      "name": "CalAudit URL Cleaner & Tracking Parameter Remover",
+      "url": "https://calaudit.org/tools/link-sanitizer/",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "HTML5 URL API",
+      "isAccessibleForFree": true,
+      "mainEntityOfPage": {
+        "@id": "https://calaudit.org/tools/link-sanitizer/#webpage"
+      },
+      "provider": {
+        "@id": "https://calaudit.org/#organization"
+      },
+      "featureList": [
+        "Client-side HTTP and HTTPS URL parsing",
+        "Strips UTM telemetry variables (utm_source, utm_medium, etc.)",
+        "Removes Facebook Pixel IDs (fbclid) and Google Click IDs (gclid)",
+        "Preserves unlisted query parameters and URL fragments",
+        "Produces a copyable sanitized URL"
+      ],
+      "description": "A free browser utility that removes a curated list of common UTM and click-tracking query parameters while preserving the rest of an HTTP or HTTPS URL.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://calaudit.org/#nicolas",
+        "name": "Nicolas Hernandez",
+        "url": "https://calaudit.org"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://calaudit.org/tools/link-sanitizer/#howto",
+      "name": "How to Remove UTM and Tracking Parameters from a URL",
+      "description": "Paste an HTTP or HTTPS URL, remove listed UTM and click-tracking parameters in the browser, and copy the cleaned link.",
+      "totalTime": "PT1M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "CalAudit URL Cleaner & Tracking Parameter Remover"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Paste your dirty URL",
+          "text": "Copy a link containing tracking parameters such as utm_source, fbclid, or gclid and paste it into the Input URL field.",
+          "url": "https://calaudit.org/tools/link-sanitizer/#dirty-url-input"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Strip telemetry trackers",
+          "text": "Click the Strip Telemetry Trackers button. The tool parses the URL using the browser's native URL API and removes parameters on its curated list."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Copy the clean link",
+          "text": "The sanitized canonical URL appears in the output field. Click Copy Clean URL or click the field to select and copy it manually.",
+          "url": "https://calaudit.org/tools/link-sanitizer/#clean-url-output"
+        }
+      ],
+      "mainEntityOfPage": {
+        "@id": "https://calaudit.org/tools/link-sanitizer/#webpage"
+      }
+    },
+    {
+      "@type": "WebPageElement",
+      "@id": "https://calaudit.org/tools/link-sanitizer/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I remove tracking parameters from a URL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Paste an HTTP or HTTPS link into the cleaner and run it. The tool removes parameter names on its curated list, including common UTM and click identifiers, while preserving the rest of the URL."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I remove UTM parameters from a link?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The cleaner removes listed UTM parameters such as utm_source, utm_medium, utm_campaign, utm_term, utm_content, and utm_id when they appear in the query string."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can this remove fbclid and gclid from URLs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The curated list includes fbclid, gclid, and several other common click identifiers. Removing them does not disable cookies, fingerprinting, redirects, or every other tracking method."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will cleaning a URL break the link?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tool preserves the base URL and unlisted query parameters, but some sites may use query parameters for functionality. Review and test the cleaned link before relying on it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this URL cleaner upload my link?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The cleaning operation uses the browser URL API on the page. The tool does not submit the pasted URL to a CalAudit cleaning endpoint."
+          }
+        }
+      ],
+      "mainEntityOfPage": {
+        "@id": "https://calaudit.org/tools/link-sanitizer/#webpage"
+      }
+    }
+  ]
+}
+</script>
+
+    <style>
+        /* Address Bar CSS Illustration */
+        .url-visual {
+            width: 100%;
+            height: 140px;
+            border: 1px solid #1a1a1a;
+            border-radius: 6px;
+            background: #050505;
+            margin-bottom: 25px;
+            padding: 15px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .url-bar-container {
+            width: 90%;
+            background: #080808;
+            border: 1px solid #222;
+            border-radius: 4px;
+            padding: 10px 15px;
+            font-family: monospace;
+            font-size: 11px;
+            color: #cccccc;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .url-lock-icon {
+            color: var(--green);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        .url-base {
+            color: #ffffff;
+        }
+        .url-param-dirty {
+            color: var(--red);
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* FAQ Styles matching webp-converter and adb-cache-builder */
+        .faq-section {
+            margin-top: 40px;
+            border-top: 1px solid #222;
+            padding-top: 30px;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+            background: rgba(0, 255, 0, 0.01); /* Green tint */
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--green, #0f0);
+            font-size: 15px;
+            font-weight: bold;
+            outline: none;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item .faq-icon {
+            color: var(--green, #0f0);
+            transition: transform 0.2s ease;
+        }
+        .faq-item[open] .faq-icon {
+            transform: rotate(90deg);
+        }
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-muted, #cccccc);
+            line-height: 1.6;
+            margin-top: 12px;
+            padding-left: 20px;
+            border-left: 2px solid var(--green, #0f0);
+        }
+        </style>
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div id="a11y-announcer" aria-live="assertive" class="sr-only"></div>
+
+<div class="vault-container">
+    <main role="main" id="main-content">
+        <nav class="back-btn-container" aria-label="Breadcrumb">
+            <a href="/tools/" class="back-btn" aria-label="Return to Utility Hub">← Return to Utility Hub</a>
+        </nav>
+
+        <header class="manifesto-container">
+            <div class="page-label" aria-hidden="true">// SERVICE NODE: FORENSIC_PRIVACY_DETRACK</div>
+            <h1 class="page-title">Free URL Cleaner &amp; Tracking Parameter Remover</h1>
+            <p class="page-subtitle">"Remove UTM, fbclid, gclid and other listed tracking parameters"</p>
+            <div class="requisition">
+                <p><strong>SPECIFICATION:</strong> Parse an HTTP or HTTPS URL and remove query-parameter names on a curated list, including common UTM and click identifiers.</p>
+                <p style="margin-top: 10px; font-size: 13px; color: var(--text-dim, #777777); line-height: 1.4;">
+                    <strong>Disclaimer:</strong> This tool utilizes a curated list of common telemetry variables to clean links. Because telemetry parameters are continuously changing, this list is not exhaustive and cannot guarantee detection or removal of every possible tracking parameter or method.
+                </p>
+            </div>
+        </header>
+
+        <!-- Stylized CSS Illustration -->
+        <figure class="url-visual" role="img" aria-label="Stylized browser URL address bar showing telemetry variables being crossed out and scrubbed.">
+            <div class="url-bar-container" aria-hidden="true">
+                <span class="url-lock-icon">🔒 https://</span>
+                <span class="url-base">calaudit.org/item</span>
+                <span class="url-param-dirty">?utm_source=facebook&amp;fbclid=IwAR0X...</span>
+            </div>
+            <figcaption class="u-style-28a9de47" aria-hidden="true">// SANITIZING TELEMETRY OFFSET BLOCKS //</figcaption>
+        </figure>
+
+        <section aria-labelledby="privacy-module-heading">
+            <div class="section-label text-green" aria-hidden="true">PRIVACY MODULE</div>
+            <h2 id="privacy-module-heading" class="section-title">Remove Tracking Parameters from a URL</h2>
+            <p class="section-quote">"Removes listed UTM and click-tracking parameters while preserving the rest of the URL."</p>
+            <p><strong>Quick answer:</strong> Paste an HTTP or HTTPS link to remove listed query parameters such as <code>utm_source</code>, <code>fbclid</code>, <code>gclid</code>, <code>msclkid</code>, and <code>ttclid</code>. The cleaner preserves unlisted parameters and does not claim to remove cookies, redirects, fingerprinting, or every form of tracking.</p>
+            <p>
+                Modern platforms generate massive web tracking footprints. Every time you share a link, it typically includes tracking identifiers (like <code>fbclid</code> or <code>utm_source</code>) that cross-reference your personal browser fingerprint and expose you and your recipient to analytics telemetry.
+            </p>
+            <p>
+                This tool produces a sanitized copy of the pasted URL. It does not detect every tracking technique and does not determine a site's canonical URL.
+            </p>
+
+            <div class="audit-box warfare u-style-aff9f58a">
+                <div class="mb-20">
+                    <label class="u-style-addaa1c0" for="dirty-url-input">[ INPUT URL ]: PASTE DIRTY LINK</label>
+                    <input class="u-style-de4ca0ef" type="url" id="dirty-url-input" aria-required="true" placeholder="https://example.com/item?utm_source=facebook&amp;fbclid=IwAR0X...">
+                </div>
+
+                <div class="mb-20">
+                    <label class="u-style-addaa1c0" for="clean-url-output">[ SANITIZED URL ]: DE-TRACKED CLEAN LINK</label>
+                    <input class="u-style-f965d3e0" type="url" id="clean-url-output" readonly aria-readonly="true" onclick="this.select();">
+                </div>
+
+                <div class="u-style-cdd39656">
+                    <button type="button" onclick="executeUrlSanitize()" class="legal-btn u-style-1a312eaa" aria-label="Strip Telemetry Trackers from Link">🧼 STRIP TELEMETRY TRACKERS</button>
+                    <button type="button" onclick="copyCleanLink()" class="legal-btn u-style-de769b5f" aria-label="Copy Clean URL to Clipboard">📋 COPY CLEAN URL</button>
+                </div>
+
+                <div id="sanitizer-status" class="audit-box blue display-none" style="margin-top: 15px;" role="status">
+                    <div class="status-badge" id="sanitizer-badge">STATUS</div>
+                    <p id="sanitizer-status-text" class="u-style-0d3a7f5a" style="margin: 0;"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content-Heavy Editorial Explainer Sections -->
+        <section class="u-style-25da4e20" aria-labelledby="editorial-heading">
+            <div class="section-label" aria-hidden="true">EDITORIAL STUDY</div>
+            <h2 id="editorial-heading" class="section-title">URL Tracking Parameters, UTM Links &amp; Click IDs Explained</h2>
+
+            <h3 class="u-style-35f49d2e">What are UTM, fbclid, gclid and other tracking parameters?</h3>
+            <p>
+                When you browse social networks or e-commerce portals, they append heavy query structures to outbound URLs. Parameter coordinates like <code>fbclid</code> (Facebook Click Identifier) or <code>gclid</code> (Google Click Identifier) are not innocent labels. They represent unique, single-use database keys generated in real-time.
+            </p>
+            <p>
+                When a destination site integrates the relevant analytics platform, these identifiers may support attribution and campaign measurement. Their exact use depends on the destination, platform, and current configuration.
+            </p>
+
+            <h3 class="u-style-35f49d2e">How does a URL cleaner remove tracking parameters?</h3>
+            <p>
+                Removing listed query parameters can reduce one source of attribution data, but it does not block cookies, browser fingerprinting, redirects, path-based identifiers, or other tracking methods.
+            </p>
+            <p>
+                CalAudit's Link Sanitizer uses the browser's native URL API, compares query-parameter names with its curated list, removes matches, and returns the resulting URL for you to copy.
+            </p>
+        </section>
+
+       <!-- BRAND TELEMETRY EXPOSÉ BLOCK -->
+        <section class="u-style-930c932f" aria-labelledby="comparison-heading">
+            <h2 class="u-style-dc08102b" id="comparison-heading">
+                [ SCOPE AND LIMITATIONS ]
+            </h2>
+            <p class="u-style-7782e117">
+                Marketing and social platforms commonly add parameters such as <code class="u-style-23ca03c6">fbclid</code>, <code class="u-style-23ca03c6">gclid</code>, and <code class="u-style-23ca03c6">ttclid</code> to support attribution or measurement. This tool removes those names when they appear in a query string.
+            </p>
+            <p class="u-style-7782e117">
+                A parameter cleaner cannot assess the destination's privacy practices or remove identifiers stored in the path, fragment, cookies, redirects, request headers, or browser state. Review browser-extension permissions independently before installing any extension.
+            </p>
+            <p class="u-style-22b1cae9">
+                The <strong>CalAudit Link Sanitizer</strong> is a page-based utility and requires no browser-extension permissions. Its list is intentionally finite, so a URL reported as unchanged may still participate in tracking through methods the tool does not inspect.
+            </p>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="faq-section" aria-labelledby="faq-title">
+            <h2 class="u-style-8862059a" id="faq-title">[ SYSTEM_FAQ: URL DE-TRACKING PRINCIPLES ]</h2>
+
+                        <details class="faq-item"><summary><span class="faq-icon" aria-hidden="true">▶</span> How do I remove tracking parameters from a URL?</summary><div class="faq-answer">Paste an HTTP or HTTPS link into the cleaner and run it. The tool removes parameter names on its curated list, including common UTM and click identifiers, while preserving the rest of the URL.</div></details>
+            <details class="faq-item"><summary><span class="faq-icon" aria-hidden="true">▶</span> How do I remove UTM parameters from a link?</summary><div class="faq-answer">The cleaner removes listed UTM parameters such as <code>utm_source</code>, <code>utm_medium</code>, <code>utm_campaign</code>, <code>utm_term</code>, <code>utm_content</code>, and <code>utm_id</code> when they appear in the query string.</div></details>
+            <details class="faq-item"><summary><span class="faq-icon" aria-hidden="true">▶</span> Can this remove <code>fbclid</code> and <code>gclid</code> from URLs?</summary><div class="faq-answer">Yes. The curated list includes <code>fbclid</code>, <code>gclid</code>, and several other common click identifiers. Removing them does not disable cookies, fingerprinting, redirects, or every other tracking method.</div></details>
+            <details class="faq-item"><summary><span class="faq-icon" aria-hidden="true">▶</span> Will cleaning a URL break the link?</summary><div class="faq-answer">The tool preserves the base URL and unlisted query parameters, but some sites may use query parameters for functionality. Review and test the cleaned link before relying on it.</div></details>
+            <details class="faq-item"><summary><span class="faq-icon" aria-hidden="true">▶</span> Does this URL cleaner upload my link?</summary><div class="faq-answer">The cleaning operation uses the browser URL API on the page. The tool does not submit the pasted URL to a CalAudit cleaning endpoint.</div></details>
+        </section>
+
+        <section class="related-tools" aria-label="Related Tools">
+            <h3>// RELATED NETWORK & SECURITY UTILITIES</h3>
+            <ul>
+                <li><a href="/tools/text-encryptor/">AES-256 Text Encryptor &amp; Decryptor</a></li>
+                <li><a href="/tools/token-forge/">Secure Token &amp; Random String Generator</a></li>
+                <li><a href="/tools/text-cloaker/">Zero-Width Text Generator &amp; Extractor</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="/nav.js"></script>
+
+    <!-- Interactive JS Functionality -->
+    <script>
+      function showStatus(message, type = 'blue') {
+          const statusBox = document.getElementById('sanitizer-status');
+          const statusBadge = document.getElementById('sanitizer-badge');
+          const statusText = document.getElementById('sanitizer-status-text');
+          const announcer = document.getElementById('a11y-announcer');
+
+          statusBox.className = `audit-box ${type}`;
+          statusBadge.textContent = type === 'green' ? 'SUCCESS' : (type === 'red' ? 'ERROR' : 'STATUS');
+          statusText.textContent = message;
+          statusBox.style.display = 'block';
+
+          announcer.textContent = message;
+      }
+
+      function sanitizeUrlString(urlString) {
+          const url = new URL(urlString.trim());
+          if (url.protocol !== 'http:' && url.protocol !== 'https:') {
+              throw new TypeError('Only HTTP and HTTPS URLs are supported.');
+          }
+          const blacklist = [
+            'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_id',
+            'fbclid', 'gclid', 'gclsrc', 'dclid', 'msclkid', 'twclid', 'ttclid', 'yclid', 'mc_eid'
+          ];
+
+          const paramsToDelete = [];
+          for (const key of url.searchParams.keys()) {
+              if (blacklist.includes(key.toLowerCase())) {
+                  paramsToDelete.push(key);
+              }
+          }
+
+          paramsToDelete.forEach(param => {
+              url.searchParams.delete(param);
+          });
+
+          return {
+              sanitizedUrl: url.toString(),
+              removedCount: paramsToDelete.length
+          };
+      }
+
+      function executeUrlSanitize() {
+        const dirtyInput = document.getElementById('dirty-url-input').value.trim();
+        const cleanOutput = document.getElementById('clean-url-output');
+
+        if (!dirtyInput) {
+          showStatus("Please paste a valid URL to analyze.", "red");
+          return;
+        }
+
+        try {
+          const result = sanitizeUrlString(dirtyInput);
+          cleanOutput.value = result.sanitizedUrl;
+
+          if (result.removedCount > 0) {
+            showStatus(`Removed ${result.removedCount} listed tracking parameter(s).`, "green");
+          } else {
+            showStatus("No listed tracking parameters were found; other tracking methods may still be present.", "blue");
+          }
+        } catch (e) {
+          showStatus("Enter a valid HTTP or HTTPS URL", "red");
+        }
+      }
+
+      function copyCleanLink() {
+        const cleanOutput = document.getElementById('clean-url-output');
+
+        if (!cleanOutput.value) {
+          showStatus("No sanitized output link exists to copy yet.", "red");
+          return;
+        }
+        navigator.clipboard.writeText(cleanOutput.value).then(function() {
+          showStatus("✓ Clean link copied to clipboard!", "green");
+        }).catch(function() {
+          showStatus("Clipboard access denied. Please click the output field to select and copy manually.", "red");
+        });
+      }
+    </script>
+
+  <footer class="page-footer" role="contentinfo">
+    <div class="footer-inner">
+        <p>© 2026 CALAUDIT | Nicolas Hernandez — Public Interest Initiative | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+        <p><strong>OPEN SOURCE LICENSE NOTICE:</strong> All original utility code, tools, and web application logic on this platform are distributed under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">GNU AGPLv3</a>. All public health form archives, translated materials, and investigative guides are licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>. Commercial exploitation, proprietary re-licensing, or paywalling without strict attribution is strictly prohibited.</p>
+        <p class="onion-mirror" aria-label="Tor Onion Mirror Address">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+    </div>
+</footer>
+
+<script>/* Onion Link Patch */ (function(){if(window.location.hostname.endsWith('.onion')){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(h&&!h.startsWith('http')&&!h.startsWith('mailto:')&&!h.startsWith('tel:')&&!h.startsWith('#')){var p=h.split('/');var l=p[p.length-1];if(l!==''&&!l.includes('.')){a.setAttribute('href',h+'.html')}else if(h.endsWith('/')){a.setAttribute('href',h+'index.html')}}})}})();</script>
+</div>
+</body>
+</html>

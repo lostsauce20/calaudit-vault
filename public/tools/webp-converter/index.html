@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#050505"/>
+    <title>Free JPG &amp; PNG to WebP Converter | CalAudit</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="canonical" href="https://calaudit.org/tools/webp-converter/"/>
+    <meta name="description" content="Free JPG, JPEG and PNG to WebP converter. Adjust WebP quality, compare file sizes, and download the converted image. Processing runs locally in your browser with no image upload to CalAudit."/>
+    <meta name="author" content="Nicolas Hernandez"/>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="CalAudit"/>
+    <meta property="og:url" content="https://calaudit.org/tools/webp-converter/"/>
+    <meta property="og:title" content="Free JPG &amp; PNG to WebP Converter | CalAudit"/>
+    <meta property="og:description" content="Convert JPG, JPEG or PNG images to WebP locally in your browser with adjustable quality and before-and-after file-size comparison."/>
+    <meta property="og:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="CalAudit Logo"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@CalAudit"/>
+    <meta name="twitter:creator" content="@CalAudit"/>
+    <meta name="twitter:url" content="https://calaudit.org/tools/webp-converter/"/>
+    <meta name="twitter:title" content="Free JPG &amp; PNG to WebP Converter | CalAudit"/>
+    <meta name="twitter:description" content="Convert JPG, JPEG or PNG images to WebP locally in your browser with adjustable quality and file-size comparison."/>
+    <meta name="twitter:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta name="twitter:image:alt" content="CalAudit Logo"/>
+    <meta name="geo.region" content="US-CA"/>
+    <meta name="geo.placename" content="California"/>
+    <meta name="geo.position" content="38.5816;-121.4944"/>
+    <meta name="ICBM" content="38.5816, -121.4944"/>
+
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://calaudit.org/#organization",
+      "name": "CalAudit",
+      "url": "https://calaudit.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://calaudit.org/calauditlogo.webp",
+        "caption": "CalAudit Official Logo"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://calaudit.org/#website",
+      "url": "https://calaudit.org/",
+      "name": "CalAudit",
+      "publisher": {
+        "@id": "https://calaudit.org/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://calaudit.org/tools/webp-converter/#webpage",
+      "url": "https://calaudit.org/tools/webp-converter/",
+      "name": "Free JPG & PNG to WebP Converter | CalAudit",
+      "description": "Convert JPG, JPEG and PNG images to the WebP image format locally in your browser with adjustable quality and before-and-after file-size comparison.",
+      "isPartOf": {
+        "@id": "https://calaudit.org/#website"
+      },
+      "about": {
+        "@id": "https://calaudit.org/tools/webp-converter/#app"
+      },
+      "breadcrumb": {
+        "@id": "https://calaudit.org/tools/webp-converter/#breadcrumb"
+      },
+      "datePublished": "2026-01-01T08:00:00+00:00",
+      "dateModified": "2026-08-23",
+      "inLanguage": "en-US",
+      "author": {
+        "@type": "Person",
+        "name": "Nicolas Hernandez",
+        "url": "https://calaudit.org"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://calaudit.org/tools/webp-converter/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "https://calaudit.org/",
+            "name": "Hub"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "https://calaudit.org/forensic-vault/",
+            "name": "Forensic Vault"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@id": "https://calaudit.org/tools/",
+            "name": "Tool Room"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@id": "https://calaudit.org/tools/webp-converter/",
+            "name": "JPG & PNG to WebP Converter"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://calaudit.org/tools/webp-converter/#app",
+      "name": "CalAudit Free WebP Converter",
+      "url": "https://calaudit.org/tools/webp-converter/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires HTML5 Canvas",
+      "isAccessibleForFree": true,
+      "featureList": [
+        "Client-side PNG and JPG to WebP conversion",
+        "Adjustable compression quality slider for optimal clarity",
+        "Displays the before-and-after file size",
+        "Uses browser-native Canvas WebP export",
+        "Single-image conversion up to the tool's file and pixel limits"
+      ],
+      "description": "A free browser utility that converts JPG, JPEG or PNG images to WebP with an adjustable quality setting and reports the measured input and output file sizes.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Nicolas Hernandez"
+      },
+      "provider": {
+        "@id": "https://calaudit.org/#organization"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://calaudit.org/tools/webp-converter/#howto",
+      "name": "How to Convert JPG or PNG to WebP for Free",
+      "description": "Convert one JPEG or PNG image to WebP locally with the browser's Canvas API.",
+      "totalTime": "PT1M",
+      "isPartOf": {
+        "@id": "https://calaudit.org/tools/webp-converter/#webpage"
+      },
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "CalAudit JPG & PNG to WebP Converter"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Upload your image",
+          "text": "Drag and drop a PNG, JPG, or JPEG file onto the dropzone, or click to browse your local files."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Set quality level",
+          "text": "Adjust the quality slider and compare output quality and file size. Results vary by image and browser encoder."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Automatic conversion",
+          "text": "The tool decodes the selected image and requests a WebP export from the browser's Canvas API."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Download optimized WebP",
+          "text": "Download your converted WebP file and review the file size savings percentage shown in the output panel."
+        }
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "@id": "https://calaudit.org/tools/webp-converter/#faq",
+      "isPartOf": {
+        "@id": "https://calaudit.org/tools/webp-converter/#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I convert JPG to WebP for free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Choose a JPG or JPEG image, select a WebP quality level, and download the converted file. The conversion runs locally in the browser and does not send the selected image to a CalAudit conversion endpoint."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert PNG to WebP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Choose a PNG image, set the WebP quality level, and let the browser generate the WebP output. The tool then shows the measured before-and-after file size and provides the converted image for download."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert an image to WebP without uploading it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. This tool reads and converts the selected JPG, JPEG, or PNG image locally with the browser Canvas API and does not submit the image to a CalAudit conversion endpoint."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does converting JPG or PNG to WebP reduce file size?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can, but not every image becomes smaller. The result depends on the source image, browser encoder, and selected quality level, so the tool reports the actual before-and-after file sizes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What WebP quality should I use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tool starts at 80 as a practical comparison point. Inspect the converted image and adjust the setting based on your own visual-quality and file-size requirements; the number is an encoder setting, not a percentage of retained visual fidelity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this WebP converter free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The converter requires no payment or account and performs the conversion in the browser."
+          }
+        }
+      ]
+    }
+  ]
+}
+    </script>
+
+    <style>
+        /* A11y specific utility classes */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        .sr-only-focusable:active,
+        .sr-only-focusable:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            margin: 0;
+            overflow: visible;
+            clip: auto;
+            white-space: normal;
+            background-color: var(--green, #0f0);
+            color: #000;
+            padding: 10px;
+            z-index: 9999;
+        }
+
+        /* Scrubber Dropzone Styling */
+        .scrub-dropzone {
+            display: block;
+            border: 2px dashed #222;
+            background: #080808;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .scrub-dropzone:hover, .scrub-dropzone.dragover {
+            border-color: var(--green, #0f0);
+            background: rgba(0, 255, 0, 0.05);
+        }
+
+        /* Keyboard Focus Indicator for Custom File Input Dropzone */
+        #webp-file-input:focus-visible + #webp-dropzone {
+            outline: 3px solid var(--green, #0f0);
+            outline-offset: 2px;
+            background: rgba(0, 255, 0, 0.05);
+            border-color: var(--green, #0f0);
+        }
+
+        .scrub-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #b3b3b3;
+            transition: color 0.2s ease;
+        }
+        .scrub-dropzone:hover .scrub-icon {
+            color: var(--green, #0f0);
+        }
+
+        /* Image Compression CSS Illustration */
+        .compress-visual {
+            width: 100%;
+            height: 140px;
+            border: 1px solid #1a1a1a;
+            border-radius: 6px;
+            background: #050505;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .compress-box {
+            width: 90px;
+            height: 90px;
+            border: 1.5px solid var(--green, #0f0);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: rgba(0, 255, 0, 0.05);
+        }
+        .compress-box::after {
+            content: "PNG / JPG";
+            font-family: monospace;
+            font-size: 10px;
+            color: var(--green, #0f0);
+            opacity: 0.8;
+        }
+        .compress-arrow {
+            font-size: 1.5rem;
+            color: var(--green, #0f0);
+            margin: 0 20px;
+            animation: pulse-arrow 1.5s infinite;
+        }
+        .compress-box-small {
+            width: 50px;
+            height: 50px;
+            border: 1.5px dashed var(--green, #0f0);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 255, 0, 0.08);
+            box-shadow: 0 0 10px rgba(0,255,0,0.15);
+        }
+        .compress-box-small::after {
+            content: "WEBP";
+            font-family: monospace;
+            font-size: 9px;
+            font-weight: bold;
+            color: var(--green, #0f0);
+        }
+        @keyframes pulse-arrow {
+            0%, 100% { opacity: 0.4; transform: translateX(0); }
+            50% { opacity: 1; transform: translateX(5px); }
+        }
+    </style>
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="vault-container">
+    <nav aria-label="Breadcrumb" class="back-btn-container">
+        <a href="/tools/" class="back-btn" aria-label="Return to Utility Hub">← Return to Utility Hub</a>
+    </nav>
+
+    <main id="main-content" role="main">
+        <header class="manifesto-container">
+            <div class="page-label" aria-hidden="true">// SERVICE NODE: FORENSIC_SPEED_WEBP</div>
+            <h1 class="page-title">Free JPG &amp; PNG to WebP Converter</h1>
+            <p class="page-subtitle">"Convert images to WebP locally with adjustable quality"</p>
+            <div class="requisition">
+                <p><strong>SPECIFICATION:</strong> Decode one JPEG or PNG, export it through the browser's Canvas WebP encoder, and compare the input and output file sizes. Results vary by image, quality setting, browser, and encoder.</p>
+            </div>
+        </header>
+
+        <!-- Stylized CSS Illustration -->
+        <div class="compress-visual" role="img" aria-label="Visual graphic demonstrating the process of image file compression from bloated PNG and JPG to optimized WebP.">
+            <div class="compress-box" aria-hidden="true"></div>
+            <div class="compress-arrow" aria-hidden="true">➔</div>
+            <div class="compress-box-small" aria-hidden="true"></div>
+        </div>
+
+        <section aria-labelledby="converter-heading">
+            <div class="section-label" aria-hidden="true">PERFORMANCE MODULE</div>
+            <h2 id="converter-heading" class="section-title">Convert JPG or PNG to WebP</h2>
+            <p class="section-quote">"Free browser-based JPG, JPEG and PNG to WebP conversion with no image upload to CalAudit."</p>
+            <p><strong>Quick answer:</strong> To convert JPG, JPEG, or PNG to WebP, choose an image below, set the quality level, and download the browser-generated WebP file. The page also shows whether the converted file is smaller or larger than the source.</p>
+            <p>
+                Image file size can affect page-loading performance, especially for prominent above-the-fold images and slower connections.
+            </p>
+            <p>
+                This tool accepts JPEG and PNG inputs and asks the browser to encode a <strong>WebP</strong> output. It reports the measured size difference; an output can be smaller or larger than the source.
+            </p>
+
+            <!-- Interactive Form Panel -->
+            <div class="audit-box warfare u-style-0a6888c2">
+                <div class="mb-25">
+                    <label class="u-style-7e45b9a0" for="webp-quality">01 // ADJUST COMPRESSION QUALITY</label>
+                    <div class="u-style-168e224b">
+                        <input class="u-style-4e8171d4" type="range" id="webp-quality" min="50" max="95" value="80"
+                               aria-valuemin="50" aria-valuemax="95" aria-valuenow="80"
+                               oninput="document.getElementById('quality-value').textContent = this.value + '%'; this.setAttribute('aria-valuenow', this.value);"
+                              >
+                        <span class="u-style-083044fd" id="quality-value" aria-hidden="true">80%</span>
+                    </div>
+                    <p class="u-style-ef530a9a">
+                        Start at 80%, inspect the image, and adjust for your own quality and size requirements.<br>
+                        <span class="text-green">// NOTE:</span> The slider controls the browser encoder; it is not a percentage of retained visual fidelity, and results vary by source image.
+                    </p>
+                </div>
+
+                <!-- Accessible Input & Dropzone -->
+                <input type="file" id="webp-file-input" class="sr-only" accept="image/jpeg, image/jpg, image/png" onchange="handleWebPSelect(event)">
+                <label for="webp-file-input" class="scrub-dropzone u-style-ce576dac" id="webp-dropzone">
+                    <div class="scrub-icon text-green" id="webp-dropzone-icon" aria-hidden="true">🖼️</div>
+                    <p class="u-style-fd4eabb9" id="webp-dropzone-text">Drag & Drop PNG/JPG Here or Click to Browse</p>
+                    <p class="u-style-bf976e7a">Supports JPEG, JPG, and PNG inputs. Converts strictly client-side.</p>
+                </label>
+
+                <!-- Aria-Live Region for Screen Readers -->
+                <div aria-live="polite" aria-atomic="true">
+                    <div id="webp-status" class="audit-box blue display-none">
+                        <div class="status-badge" id="webp-badge-text">CONVERTING</div>
+                        <p class="u-style-ff59805c" id="webp-status-text">Processing pixel arrays...</p>
+                    </div>
+                </div>
+
+                <div class="u-style-fd99850c" id="webp-download-container">
+                    <a id="webp-download-link" href="#" download class="legal-btn u-style-ce495232">
+                        💾 DOWNLOAD OPTIMIZED WEBP IMAGE
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content-Heavy Editorial Explainer Sections -->
+        <section class="u-style-a00caa39" aria-labelledby="editorial-heading">
+            <div class="section-label" aria-hidden="true">EDITORIAL STUDY</div>
+            <h2 id="editorial-heading" class="section-title">JPG, PNG and WebP Image Compression Explained</h2>
+
+            <h3 class="u-style-f5ae840f">Why convert JPG or PNG to WebP?</h3>
+            <p>
+                WebP supports both lossy and lossless image compression and is widely supported in current browsers.
+            </p>
+            <p>
+                Depending on the image and quality setting, WebP can reduce file size. Always compare the actual output visually and numerically; no fixed savings ratio is guaranteed.
+            </p>
+
+            <h3 class="u-style-f5ae840f">Can WebP reduce image file size and improve page speed?</h3>
+            <p>
+                Optimized image delivery can improve loading performance and Largest Contentful Paint when an image is the largest visible element. Image dimensions and reserved layout space also matter.
+            </p>
+            <p>
+                Converting an image does not directly guarantee ranking gains or improve server time to first byte. Use responsive dimensions, appropriate compression, caching, and measured Core Web Vitals together.
+            </p>
+        </section>
+
+                <!-- FREE ALTERNATIVE COMPARISON BLOCK -->
+        <section class="u-style-db7ca171" aria-labelledby="comparison-heading">
+            <h2 class="u-style-c23890e6" id="comparison-heading">[ LOCAL CONVERSION AND LIMITS ]</h2>
+            <p class="u-style-8e3f3809">Remote converters receive uploaded files, while this page performs its conversion in the browser. The tool handles one image at a time and is limited by browser WebP support, device memory, a 25 MB input cap, and a 40-megapixel decoded-image cap.</p>
+            <p class="u-style-b68adc91">CalAudit's WebP Converter is a free utility that runs entirely inside your browser. It provides visual compression for single image uploads using the browser's native canvas export, operating instantly without remote server uploads.</p>
+        </section>
+
+        <section id="webp-faq" aria-labelledby="faq-heading" class="page-section u-style-43eb1c6a">
+            <div class="section-tag u-style-ed429857" aria-hidden="true">// WEBP-PROTOCOL // FAQ</div>
+            <div class="audit-box warfare u-style-26a31afe">
+                <div class="status-badge" aria-hidden="true">INTEL_RESPONSE</div>
+                <h2 class="u-style-580f23b9" id="faq-heading">Frequently Asked Questions</h2>
+                <details class="faq-item u-style-d858dade">
+                    <summary class="u-style-3b5089e7">
+                        <span class="faq-icon u-style-6ccacde8" aria-hidden="true">▶</span>
+                        How do I convert JPG to WebP for free?
+                    </summary>
+                    <div class="u-style-9dceb076">
+                        Choose a JPG or JPEG image, select a WebP quality level, and download the converted file. Conversion runs locally in your browser and does not send the selected image to a CalAudit conversion endpoint.
+                    </div>
+                </details>
+
+                <details class="faq-item u-style-d858dade">
+                    <summary class="u-style-3b5089e7">
+                        <span class="faq-icon u-style-6ccacde8" aria-hidden="true">▶</span>
+                        How do I convert PNG to WebP?
+                    </summary>
+                    <div class="u-style-9dceb076">
+                        Choose a PNG image, set the WebP quality level, and let the browser generate the WebP output. The tool then shows the measured before-and-after file size and provides the converted image for download.
+                    </div>
+                </details>
+
+                <details class="faq-item u-style-d858dade">
+                    <summary class="u-style-3b5089e7">
+                        <span class="faq-icon u-style-6ccacde8" aria-hidden="true">▶</span>
+                        Can I convert an image to WebP without uploading it?
+                    </summary>
+                    <div class="u-style-9dceb076">
+                        Yes. The selected JPG, JPEG, or PNG is read and converted locally with the browser Canvas API and is not submitted to a CalAudit conversion endpoint.
+                    </div>
+                </details>
+
+                <details class="faq-item u-style-d858dade">
+                    <summary class="u-style-3b5089e7">
+                        <span class="faq-icon u-style-6ccacde8" aria-hidden="true">▶</span>
+                        Does converting JPG or PNG to WebP reduce file size?
+                    </summary>
+                    <div class="u-style-9dceb076">
+                        It can, but not every image becomes smaller. The result depends on the source image, browser encoder, and selected quality level, so this tool reports the actual before-and-after file sizes.
+                    </div>
+                </details>
+
+                <details class="faq-item u-style-d858dade">
+                    <summary class="u-style-3b5089e7">
+                        <span class="faq-icon u-style-6ccacde8" aria-hidden="true">▶</span>
+                        What WebP quality should I use?
+                    </summary>
+                    <div class="u-style-9dceb076">
+                        The tool starts at 80 as a practical comparison point. Inspect the converted image and adjust the setting for your own visual-quality and file-size requirements. The number is an encoder setting, not a percentage of retained visual fidelity.
+                    </div>
+                </details>
+
+                <details class="faq-item u-style-3cbede0f">
+                    <summary class="u-style-3b5089e7">
+                        <span class="faq-icon u-style-6ccacde8" aria-hidden="true">▶</span>
+                        Is this WebP converter free?
+                    </summary>
+                    <div class="u-style-9dceb076">
+                        Yes. The converter requires no payment or account and performs the conversion in your browser.
+                    </div>
+                </details>
+</div>
+        </section>
+
+        <section class="related-tools" aria-label="Related Tools">
+            <h3>// RELATED PRIVACY & COMPRESSION UTILITIES</h3>
+            <ul>
+                <li><a href="/tools/exif-scrubber/">Photo Metadata &amp; EXIF Remover</a></li>
+                <li><a href="/tools/privacy-scrubber/">PDF Redaction Tool</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="/nav.js" defer></script>
+
+    <!-- Interactive JS Functionality -->
+    <script>
+      const webpDropzone = document.getElementById('webp-dropzone');
+      let currentWebPUrl = null;
+
+      // Drag & Drop Listeners bound safely to the label acting as dropzone
+      ['dragenter', 'dragover'].forEach(eventName => {
+        webpDropzone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          webpDropzone.classList.add('dragover');
+        }, false);
+      });
+
+      ['dragleave', 'drop'].forEach(eventName => {
+        webpDropzone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          webpDropzone.classList.remove('dragover');
+        }, false);
+      });
+
+      webpDropzone.addEventListener('drop', (e) => {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        if (files.length > 0) {
+          processWebPFile(files[0]);
+        }
+      });
+
+      function handleWebPSelect(event) {
+        const files = event.target.files;
+        if (files.length > 0) {
+          processWebPFile(files[0]);
+        }
+      }
+
+      function processWebPFile(file) {
+        const qualitySlider = document.getElementById('webp-quality');
+        const quality = parseFloat(qualitySlider.value) / 100;
+
+        const statusBox = document.getElementById('webp-status');
+        const statusBadge = document.getElementById('webp-badge-text');
+        const statusText = document.getElementById('webp-status-text');
+        const dlContainer = document.getElementById('webp-download-container');
+        const dlLink = document.getElementById('webp-download-link');
+
+        statusBox.className = "audit-box blue";
+        statusBadge.textContent = "CONVERTING";
+        statusText.textContent = "Parsing image pixels and encoding to high-compression WebP matrix...";
+        statusBox.style.display = "block";
+        dlContainer.style.display = "none";
+
+        if (!file.type.match('image/jpeg') && !file.type.match('image/jpg') && !file.type.match('image/png')) {
+          statusBox.className = "audit-box red";
+          statusBadge.textContent = "ERROR";
+          statusText.textContent = "Format rejected. Please submit a valid JPEG, JPG, or PNG image.";
+          return;
+        }
+
+        if (file.size > 25 * 1024 * 1024) {
+          statusBox.className = "audit-box red";
+          statusBadge.textContent = "ERROR";
+          statusText.textContent = "File too large. Select a JPEG or PNG no larger than 25 MB.";
+          return;
+        }
+
+        const reader = new FileReader();
+        reader.onerror = function() {
+          statusBox.className = "audit-box red";
+          statusBadge.textContent = "READ_ERROR";
+          statusText.textContent = "The browser could not read this file. Select a different image and try again.";
+        };
+        reader.onload = function(e) {
+          const img = new Image();
+          img.onerror = function() {
+            statusBox.className = "audit-box red";
+            statusBadge.textContent = "DECODE_ERROR";
+            statusText.textContent = "The browser could not decode this image. Select a valid JPEG or PNG file.";
+          };
+          img.onload = function() {
+            if (img.width * img.height > 40000000) {
+              statusBox.className = "audit-box red";
+              statusBadge.textContent = "IMAGE_TOO_LARGE";
+              statusText.textContent = "Decoded image exceeds the 40-megapixel limit. Resize the image and try again.";
+              return;
+            }
+            const canvas = document.createElement('canvas');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0);
+
+            // Export Canvas directly to WebP format at target quality
+            canvas.toBlob(function(blob) {
+              if (blob === null) {
+                statusBox.className = "audit-box red";
+                statusBadge.textContent = "CONVERSION_FAILED";
+                statusText.textContent = "The browser could not export this image as WebP. Confirm that Canvas WebP export is supported.";
+                return;
+              }
+
+              const originalSize = file.size;
+              const newSize = blob.size;
+
+              // Sanity check: detect browser export failure (empty/corrupted blob)
+              if (newSize < 2000 && originalSize > 20000) {
+                statusBox.className = "audit-box red";
+                statusBadge.textContent = "CONVERSION_FAILED";
+                statusText.textContent = "The browser produced an unexpectedly small output. Try another image or quality setting and verify the result.";
+                return;
+              }
+
+              if (currentWebPUrl) URL.revokeObjectURL(currentWebPUrl);
+              currentWebPUrl = URL.createObjectURL(blob);
+              const sizeChange = Math.abs((newSize - originalSize) / originalSize * 100).toFixed(1);
+              const sizeSummary = newSize <= originalSize ? `${sizeChange}% smaller` : `${sizeChange}% larger`;
+
+              statusBox.className = "audit-box green";
+              statusBadge.textContent = "CONVERSION_SUCCESS";
+              statusText.style.whiteSpace = "pre-line";
+              statusText.textContent = `Conversion complete.\nOriginal: ${(originalSize/1024).toFixed(1)} kB\nWebP output: ${(newSize/1024).toFixed(1)} kB\nSize change: ${sizeSummary}`;
+
+              dlLink.href = currentWebPUrl;
+              const baseName = file.name.substring(0, file.name.lastIndexOf('.')) || file.name;
+              dlLink.download = baseName.replace(/\s+/g, '-') + ".webp";
+              dlLink.textContent = `💾 Download optimized WebP: ${baseName}.webp`;
+              dlContainer.style.display = "block";
+            }, 'image/webp', quality);
+          };
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    </script>
+</div>
+
+<footer class="page-footer" role="contentinfo">
+    <div class="footer-inner">
+        <p>© 2026 CALAUDIT | Nicolas Hernandez — Public Interest Initiative | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+        <p><strong>OPEN SOURCE LICENSE NOTICE:</strong> All original utility code, tools, and web application logic on this platform are distributed under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">GNU AGPLv3</a>. All public health form archives, translated materials, and investigative guides are licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>. Commercial exploitation, proprietary re-licensing, or paywalling without strict attribution is strictly prohibited.</p>
+        <p class="onion-mirror" aria-label="Tor Onion Mirror Address">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+    </div>
+</footer>
+
+<script>/* Onion Link Patch */ (function(){if(window.location.hostname.endsWith('.onion')){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(h&&!h.startsWith('http')&&!h.startsWith('mailto:')&&!h.startsWith('tel:')&&!h.startsWith('#')){var p=h.split('/');var l=p[p.length-1];if(l!==''&&!l.includes('.')){a.setAttribute('href',h+'.html')}else if(h.endsWith('/')){a.setAttribute('href',h+'index.html')}}})}})();</script>
+</body>
+</html>

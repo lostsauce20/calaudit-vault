@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+    <meta name="theme-color" content="#050505"/>
+    <title>How to Report Uber Fraud to the FTC | CalAudit Guide</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="preconnect" href="https://calaudit.org"/>
+    <link rel="dns-prefetch" href="https://calaudit.org"/>
+    <link rel="preload" href="/style.css" as="style" fetchpriority="high"/>
+    <link rel="stylesheet" href="/style.css" media="print" onload="this.media='all'"/>
+    <noscript><link rel="stylesheet" href="/style.css"/></noscript>
+    <link rel="canonical" href="https://calaudit.org/uber-fraud-reporting/"/>
+    <meta name="description" content="Uber ignored your fraud complaint and restricted your account? Step-by-step guide to filing an FTC report for Uber Connect/Direct courier theft, impossible trip data, and retaliatory billing."/>
+    <meta name="keywords" content="Uber fraud, Uber courier fraud, FTC report Uber, Uber account restricted chargeback, impossible trip data, Uber Connect fraud, Uber Direct scam, gig economy fraud"/>
+    <meta name="author" content="Nicolas Hernandez"/>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:site_name" content="CalAudit"/>
+    <meta property="og:url" content="https://calaudit.org/uber-fraud-reporting/"/>
+    <meta property="og:title" content="How to Report Uber Courier Fraud to the FTC | CalAudit"/>
+    <meta property="og:description" content="Field manual for reporting Uber Connect/Direct courier fraud and retaliatory account restrictions to the FTC. Forensic breakdown of impossible trip data and unauthorized billing."/>
+    <meta property="og:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="CalAudit Forensic Public Audits Logo"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@CalAudit"/>
+    <meta name="twitter:creator" content="@CalAudit"/>
+    <meta name="twitter:url" content="https://calaudit.org/uber-fraud-reporting/"/>
+    <meta name="twitter:title" content="How to Report Uber Courier Fraud to the FTC | CalAudit"/>
+    <meta name="twitter:description" content="Field manual for reporting Uber Connect/Direct courier fraud and retaliatory account restrictions to the FTC. Forensic breakdown of impossible trip data and unauthorized billing."/>
+    <meta name="twitter:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta name="twitter:image:alt" content="CalAudit Forensic Public Audits Logo"/>
+    <meta name="geo.region" content="US-CA"/>
+    <meta name="geo.placename" content="California"/>
+    <meta name="geo.position" content="38.5816;-121.4944"/>
+    <meta name="ICBM" content="38.5816, -121.4944"/>
+
+    <style>
+        /* Accessibility utilities for screen readers and keyboard navigation */
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #ff4444; color: #fff; padding: 12px; z-index: 1000; font-weight: bold; text-decoration: none; transition: top 0.2s ease-in-out; }
+        .skip-link:focus { top: 0; outline: 3px solid #fff; outline-offset: -3px; }
+        *:focus-visible { outline: 3px solid #ff4444 !important; outline-offset: 3px !important; }
+
+        /* Component Styles */
+        .forensic-label { color: #ff4444; font-family: var(--mono); font-weight: bold; margin-bottom: 5px; display: block; }
+        .impossible-data { background: rgba(255, 68, 68, 0.1); border-left: 3px solid #ff4444; padding: 15px; margin: 20px 0; }
+        .ftc-step { margin-bottom: 40px; border-bottom: 1px solid #222; padding-bottom: 20px; }
+        .ftc-step img { border: 1px solid #444; margin-top: 15px; height: auto; max-width: 100%; display: block; }
+        .grey-insight { border: 1px solid #888; padding: 20px; background: rgba(136, 136, 136, 0.05); margin: 30px 0; }
+        .grey-insight h2 { color: #888; margin-top: 0; }
+        .log-box {
+            background: #000;
+            border: 1px solid #1a1a1a;
+            padding: 1.5rem;
+            font-family: var(--mono);
+            font-size: 12px;
+            margin: 1.5rem 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.6;
+            max-height: 400px;
+            overflow-y: auto;
+            border-left: 2px solid var(--border);
+        }
+        .log-label {
+            color: var(--text-dim);
+            font-size: 10px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #111;
+            padding-bottom: 5px;
+            background: #000;
+        }
+        .breadcrumb-trail { font-family: var(--mono); font-size: 11px; margin-bottom: 20px; color: #666; }
+        .breadcrumb-trail ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 5px; }
+        .breadcrumb-trail a { color: #666; text-decoration: none; }
+        .breadcrumb-trail a:hover, .breadcrumb-trail a:focus { text-decoration: underline; color: #ff4444; }
+        .evidence-grid { display: grid; gap: 20px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="vault-container">
+    <main id="main-content" role="main">
+        <nav aria-label="Breadcrumb navigation" class="back-btn-container mb-10">
+            <a href="/forensic-vault/" class="back-btn" aria-label="Return to the Forensic Vault main page">← Return to Forensic Vault</a>
+        </nav>
+
+        <nav aria-label="Breadcrumb" class="breadcrumb-trail">
+            <ol>
+                <li><a href="/">[ HUB ]</a> <span aria-hidden="true">&gt;</span></li>
+                <li><a href="/forensic-vault/">[ VAULT ]</a> <span aria-hidden="true">&gt;</span></li>
+                <li><span class="u-style-23ca03c6" aria-current="page">[ UBER FRAUD REPORTING ]</span></li>
+            </ol>
+        </nav>
+
+        <header role="banner" class="header">
+            <span class="forensic-label" aria-hidden="true">// GREY MANUAL // FIELD GUIDE</span>
+            <h1 class="header-title u-style-13698c87">How to Report Uber Courier Fraud to the FTC</h1>
+            <p class="subtitle">Busting Gig-Economy Exploits, Retaliatory Restrictions, &amp; Stale Authorizations</p>
+        </header>
+
+        <article>
+            <section aria-labelledby="intel-summary" class="audit-box warfare">
+                <h2 id="intel-summary" class="sr-only">Intelligence Summary</h2>
+                <div class="status-badge" aria-hidden="true">INTEL_SUMMARY</div>
+                <p>The Uber Fraud Guide provides a comprehensive protocol for reporting gig-economy exploits and retaliatory account restrictions to the Federal Trade Commission (FTC). This manual documents the use of physically impossible trip data and unauthorized billing through stale payment authorizations to bypass Uber's automated support loops.</p>
+            </section>
+
+            <section aria-labelledby="forensic-summary" class="audit-box warfare">
+                <h2 id="forensic-summary" class="sr-only">Forensic Summary</h2>
+                <div class="status-badge u-style-663ecc2a" aria-hidden="true">FORENSIC SUMMARY</div>
+                <p>This manual documents a three-stage fraudulent exploit by Uber Technologies, Inc. and provides the procedural blueprint for bypassing unrecorded support channels via federal regulatory reporting.</p>
+
+                <div class="impossible-data">
+                    <strong>THE ANOMALY:</strong> Trip data showing <strong>50 miles traveled in 11 minutes</strong> (February 9, 2026). This is physically impossible for a ground-based courier, yet Uber support refused investigation, citing "expired review timeframes".
+                </div>
+            </section>
+
+            <h2 class="section-tag u-style-71764ef5" id="evidence-exhibits">// CASE EXHIBITS: THE EVIDENCE</h2>
+
+            <section aria-labelledby="evidence-exhibits" class="evidence-grid">
+                <article class="evidence-item">
+                    <h3 class="forensic-label">EXHIBIT A: IMPOSSIBLE DATA &amp; DISMISSAL</h3>
+                    <p>Receipt showing 50 miles in 11 minutes (physically impossible). Uber support's response: <em>"The time frame to review this trip has passed."</em> A tactical wall used to exhaust consumer persistence.</p>
+                    <div class="evidence-item-box">
+                        <a href="/calevidence/uber-fraud-redacted.webp" target="_blank" rel="noopener noreferrer" aria-label="View full sized image of Exhibit A: Fraudulent Uber Receipt">
+                            <img src="/calevidence/uber-fraud-redacted.webp" alt="Fraudulent Uber Receipt displaying a 50-mile trip completed in exactly 11 minutes alongside a support chat window showing automated dismissal." loading="lazy">
+                        </a>
+                    </div>
+                </article>
+
+                <article class="evidence-item">
+                    <h3 class="forensic-label">EXHIBIT B: UBER CASH TRAP</h3>
+                    <p>The total $110.79 charge consumed $77.88 in Uber Cash. Because bank chargebacks cannot reach internal 'store credit,' Uber utilized silence to permanently seize these funds.</p>
+                    <div class="evidence-item-box">
+                        <a href="/calevidence/uber-fraud-3-redacted.webp" target="_blank" rel="noopener noreferrer" aria-label="View full sized image of Exhibit B: Uber Wallet trap">
+                            <img src="/calevidence/uber-fraud-3-redacted.webp" alt="Screenshot of the Uber digital wallet interface revealing an unpaid trip balance specifically trapped in internal store credit to bypass standard bank fraud protection." loading="lazy">
+                        </a>
+                    </div>
+                </article>
+
+                <article class="evidence-item">
+                    <h3 class="forensic-label">EXHIBIT C: THE ATTRITION LOG</h3>
+                    <p>Forensic export of Uber's ticket history. The highlighted block proves <strong>9+ distinct reporting attempts</strong> for a single fraudulent event over 60 days—all closed without investigation.</p>
+                    <div class="evidence-item-box">
+                        <a href="/calevidence/uber-fraud-2-support-timestamps.webp" target="_blank" rel="noopener noreferrer" aria-label="View full sized image of Exhibit C: Support Attrition Log">
+                            <img src="/calevidence/uber-fraud-2-support-timestamps.webp" alt="Spreadsheet export of Uber support logs highlighting over 9 automated and immediately closed support tickets spanning a 60-day period." loading="lazy">
+                        </a>
+                    </div>
+                </article>
+
+                <article class="evidence-item">
+                    <h3 class="forensic-label">EXHIBIT D: FINAL DISPUTE RESOLUTION</h3>
+                    <p>Official confirmation from Wells Fargo documenting the final closure of the dispute for $32.91. The temporary credit has been finalized as permanent, signifying a definitive rejection of Uber's attempts to claw back disputed funds via retaliatory account restrictions and fraudulent misclassification of charges.</p>
+                    <div class="evidence-item-box">
+                        <a href="/calevidence/05-25-2026-uber-dispute-credit-finalized.webp" target="_blank" rel="noopener noreferrer" aria-label="View full sized image of Exhibit D: Final Dispute Resolution">
+                            <img src="/calevidence/05-25-2026-uber-dispute-credit-finalized.webp" alt="Wells Fargo online banking portal screenshot displaying the final and permanent dispute credit of $32.91." loading="lazy">
+                        </a>
+                    </div>
+                </article>
+
+                <article class="evidence-item">
+                    <h3 class="forensic-label">EXHIBIT E: COERCIVE ACCOUNT BLOCK</h3>
+                    <p>Screenshot of the active block applied to the user's account following the successful chargeback. Uber demands a retaliatory payment of $32.91 for the uncompleted courier delivery of February 9, 2026, holding account access hostage to coerce consumers into abandoning legitimate fraud claims.</p>
+                    <div class="evidence-item-box">
+                        <a href="/calevidence/Screenshot_20260418-213658_Uber_result.webp" target="_blank" rel="noopener noreferrer" aria-label="View full sized image of Exhibit E: Coercive Account Block Screen">
+                            <img src="/calevidence/Screenshot_20260418-213658_Uber_result.webp" alt="Uber app block screen demanding $32.91 payment for an unfulfilled courier delivery to lift account restrictions." loading="lazy">
+                        </a>
+                    </div>
+                </article>
+
+                <article class="evidence-item">
+                    <h3 class="forensic-label">EXHIBIT F: RETALIATORY SUBSCRIPTION CLAWBACK</h3>
+                    <p>Evidence of retaliatory debiting. Uber retaliated by deducting -$0.79 of earned 'Uber One cash back' credits, rendering previously completed cash-back balances unavailable, illustrating a systematic and petty effort to strip and claw back earned consumer assets.</p>
+                    <div class="evidence-item-box">
+                        <a href="/calevidence/Screenshot_20260515-022837_Uber.webp" target="_blank" rel="noopener noreferrer" aria-label="View full sized image of Exhibit F: Retaliatory Subscription Credit Debit">
+                            <img src="/calevidence/Screenshot_20260515-022837_Uber.webp" alt="Uber wallet details interface showing a completed debit of -$0.79 of Uber One cashback credits under an unavailable balances tag." loading="lazy">
+                        </a>
+                    </div>
+                </article>
+
+                <article class="evidence-item u-style-e86cdd0b">
+                    <h3 class="forensic-label">EXHIBIT G: THE SUPPORT TICKET "BLACK HOLE" (4-PART CHRONOLOGY)</h3>
+                    <p>Verbatim chat logs detailing driver abandonment and the resulting "support black hole." First, the courier took the package, turned back, and threw it back at the sender because he "wasn't getting paid enough," and left. Then, Support Agent Kat escalated the ticket to a "specialized team" and automatically terminated the chat session. Finally, specialized agents Jose and Gabriela systematically closed the escalated tickets weeks later with <strong>zero investigation or response</strong>, citing only that "more than 14/15 days ago" had elapsed. This represents systemic corporate evasion and bad-faith customer service.</p>
+                    <div class="u-style-bca850a4">
+                        <div class="evidence-item-box">
+                            <a href="/calevidence/Screenshot_20260515-020724_Uber.webp" target="_blank" rel="noopener noreferrer" aria-label="View support chat page 1: Initial courier complaint and chargeback warning">
+                                <img class="u-style-d9f486ca" src="/calevidence/Screenshot_20260515-020724_Uber.webp" alt="Uber chat screenshot showing initial courier complaint and chargeback notice." loading="lazy">
+                            </a>
+                        </div>
+                        <div class="evidence-item-box">
+                            <a href="/calevidence/Screenshot_20260515-020748_Uber.webp" target="_blank" rel="noopener noreferrer" aria-label="View support chat page 2: Report of driver throwing the package back and claiming low pay">
+                                <img class="u-style-d9f486ca" src="/calevidence/Screenshot_20260515-020748_Uber.webp" alt="Uber chat screenshot showing the user detailing the driver throwing the package." loading="lazy">
+                            </a>
+                        </div>
+                        <div class="evidence-item-box">
+                            <a href="/calevidence/Screenshot_20260515-020800_Uber.webp" target="_blank" rel="noopener noreferrer" aria-label="View support chat page 3: Support agent placing chat on hold and shifting scope">
+                                <img class="u-style-d9f486ca" src="/calevidence/Screenshot_20260515-020800_Uber.webp" alt="Uber chat screenshot showing Support agent Kat transferring the issue as out of scope." loading="lazy">
+                            </a>
+                        </div>
+                        <div class="evidence-item-box">
+                            <a href="/calevidence/Screenshot_20260515-020807_Uber.webp" target="_blank" rel="noopener noreferrer" aria-label="View support chat page 4: Ticket systematically closed by multiple agents with zero response">
+                                <img class="u-style-d9f486ca" src="/calevidence/Screenshot_20260515-020807_Uber.webp" alt="Uber chat screenshot showing specialized agents Jose and Gabriela auto-closing the ticket without responding." loading="lazy">
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <aside class="grey-insight" aria-labelledby="insight-uber-cash">
+                <h2 id="insight-uber-cash">Grey Area Insight: The "Uber Cash" Moat</h2>
+                <p>Uber encourages users to hold "Uber Cash" (store credit) because it exists outside the protection of the Fair Credit Billing Act. When Uber applies a fraudulent charge to your Uber Cash balance, your bank cannot help you. This manual uses the <strong>FTC Reporting Route</strong> to create a federal record of the theft that corporate support refuses to acknowledge.</p>
+            </aside>
+
+            <h2 class="section-tag u-style-71764ef5" id="ftc-complaint-text">// FORENSIC EXHIBIT: FULL FTC COMPLAINT TEXT</h2>
+
+            <div class="log-box" tabindex="0" role="region" aria-labelledby="verbatim-complaint">
+                <h3 id="verbatim-complaint" class="log-label sr-only">Verbatim Complaint Text</h3>
+                <div class="log-label" aria-hidden="true">VERBATIM COMPLAINT (SCROLLABLE)</div><pre class="u-style-108d8707">I am reporting three related instances of fraudulent and retaliatory conduct by Uber Technologies, Inc., resulting in an unrecovered loss of $77.88.
+
+1. FRAUDULENT TRIP CHARGE — On February 9, 2026 at 10:23 PM, I was charged $110.79 for an Uber Courier trip (driver: JOEL) with identical pickup and drop-off addresses (9801 Airport Blvd, Los Angeles, CA 90045). The trip data shows 50 miles traveled in 10 minutes, which is physically impossible. This trip was never requested by me. The charge was split across Uber Cash ($77.88) and my Visa card ($32.91). When I reported this to Uber as a serious incident, Uber responded that "the time frame to review this trip has passed" and refused to investigate further. Uber never restored the $77.88 in Uber Cash consumed by this fraudulent trip, and has remained completely silent on that portion of the loss — likely because Uber Cash cannot be recovered through a bank chargeback, leaving consumers with no recourse outside of Uber's own (unresponsive) support.
+
+2. RETALIATORY ACCOUNT RESTRICTION AND FRAUDULENT CLAWBACK ATTEMPT — After I successfully disputed the $32.91 card charge via chargeback, Uber restricted my account. Uber then attempted to recover the $32.91 by misrepresenting it as a $9.99 Uber One subscription charge — an amount that does not match the chargeback, and which Uber framed using a promotional rate ($5.99) I had previously been offered but never accepted. This repackaging of a disputed charge as an unrelated subscription fee is fraudulent misrepresentation. Uber offered no communication or explanation throughout this process. The account restriction was lifted only after both my credit card issuer (Wells Fargo) and PayPal ruled in my favor — confirmed by the PayPal dispute resolution date — demonstrating the restriction was used as leverage to coerce me into abandoning legitimate fraud claims.
+
+3. UNAUTHORIZED USE OF STALE PAYMENT AUTHORIZATION — Uber exploited a dormant PayPal billing agreement established in 2022 that had seen no activity for years. When I added a funded LendingClub (Radius Bank) card to my PayPal account for an unrelated purpose, Uber immediately charged that card a $9.99 "Uber One" subscription fee without my authorization. I had no active Uber One subscription and had not agreed to any new subscription terms. Uber's use of a years-old dormant authorization to charge a newly funded payment method constitutes unauthorized billing under the FTC's Negative Option Rule.
+
+PATTERN OF CONDUCT — Throughout this entire dispute, Uber never responded substantively to any of my complaints. They refused to investigate the fraudulent trip, never acknowledged the account restriction, never explained lifting it, and never restored the $77.88 in Uber Cash. This pattern of deliberate silence appears designed to exhaust consumers and avoid accountability for charges that cannot be disputed through traditional banking channels.
+
+I have screenshots of the trip receipts, Uber's dismissal email, LendingClub bank statement, PayPal dispute record with resolution date, the original 2022 PayPal billing agreement, and Uber trip data export as supporting documentation.</pre>
+            </div>
+
+            <h2 class="section-tag u-style-71764ef5" id="step-by-step-guide">// FIELD MANUAL: STEP-BY-STEP FTC REPORTING</h2>
+
+            <section aria-labelledby="step-by-step-guide">
+                <article class="ftc-step" id="step1">
+                    <h3 class="forensic-label">STEP 01: INITIAL CLASSIFICATION</h3>
+                    <p>Navigate to <strong><a class="u-style-23ca03c6" href="https://reportfraud.ftc.gov" target="_blank" rel="noopener noreferrer">ReportFraud.ftc.gov<span class="sr-only"> (opens in a new tab)</span><span class="sr-only"> (opens in a new window)</span></a></strong>. Select "Something Else". This prevents the report from being siloed into automated "annoying call" or "online shopping" categories that may not fit complex gig-economy fraud.</p>
+                    <a href="/calevidence/uber-ftc-page-2.webp" target="_blank" rel="noopener noreferrer" aria-label="View full sized image of FTC portal Step 1">
+                        <img src="/calevidence/uber-ftc-page-2.webp" alt="FTC ReportFraud.ftc.gov portal screen displaying the 'Something Else' classification option highlighted." loading="lazy">
+                    </a>
+                    <div class="u-style-17be93d8" aria-hidden="true">// RECORD METRIC: Select individual consumer violation categories instead of pre-grouped merchant segments.</div>
+                </article>
+
+                <article class="ftc-step" id="step2">
+                    <h3 class="forensic-label">STEP 02: THE FORENSIC NARRATIVE</h3>
+                    <p>Uber limits narrative space. Use a clinical, bulleted format. Focus on <strong>impossible data</strong> and <strong>quantifiable losses</strong>. Mention specific violations like the <strong>FTC Negative Option Rule</strong> for unauthorized subscription charges.</p>
+                    <a href="/calevidence/uber-ftc-page-3.webp" target="_blank" rel="noopener noreferrer" aria-label="View full sized image of FTC portal Step 2">
+                        <img src="/calevidence/uber-ftc-page-3.webp" alt="FTC complaint text box interface showing the structured bulleted narrative pasted into the form." loading="lazy">
+                    </a>
+                    <aside class="audit-note mt-15">
+                        <p><strong>PRO-TIP:</strong> Explicitly mention if the conduct was <strong>retaliatory</strong> (e.g., account restriction after a legitimate bank chargeback).</p>
+                    </aside>
+                </article>
+
+                <article class="ftc-step" id="step3">
+                    <h3 class="forensic-label">STEP 03: CORPORATE IDENTIFICATION</h3>
+                    <p>Ensure you use Uber's legal headquarters for the report to ensure it hits the correct regulatory jurisdiction.</p>
+                    <address class="u-style-70f5b31f">
+                        <strong>Name:</strong> Uber Technologies, Inc.<br>
+                        <strong>Address:</strong> 1515 3rd Street, San Francisco, CA 94158
+                    </address>
+                    <a href="/calevidence/uber-ftc-page-4-redacted.webp" target="_blank" rel="noopener noreferrer" aria-label="View full sized image of FTC portal Step 3">
+                        <img src="/calevidence/uber-ftc-page-4-redacted.webp" alt="FTC reporting portal business details page filled out with Uber Technologies Inc headquarters address in San Francisco." loading="lazy">
+                    </a>
+                </article>
+
+                <article class="ftc-step" id="step4">
+                    <h3 class="forensic-label">STEP 04: SUBMISSION &amp; CONFIRMATION</h3>
+                    <p>Verify your details and submit. Record your <strong>FTC Report Number</strong> immediately. This number is your "Audit Key" when contacting your state Attorney General or referencing the dispute in future legal actions.</p>
+                    <a href="/calevidence/uber-ftc-page-5-redacted.webp" target="_blank" rel="noopener noreferrer" aria-label="View full sized image of FTC portal Step 4">
+                        <img src="/calevidence/uber-ftc-page-5-redacted.webp" alt="Final FTC confirmation page displaying the redacted reference report number." loading="lazy">
+                    </a>
+                </article>
+            </section>
+
+            <section aria-labelledby="manual-complete" class="audit-box u-style-0da0b560">
+                <h2 id="manual-complete" class="sr-only">Manual Complete Conclusion</h2>
+                <div class="status-badge u-style-98b4bc91" aria-hidden="true">MANUAL COMPLETE</div>
+                <p>By filing this report, you are moving the dispute from a private chat window (where Uber has total control) to a federal database (where Uber's pattern of conduct is monitored by regulators).</p>
+                <p class="manifesto-highlight">The Audit is the only response to silence.</p>
+            </section>
+
+            <h2 class="section-tag u-style-71764ef5" id="faq-section">// UBER FRAUD FAQ</h2>
+
+            <section aria-labelledby="faq-section-title" class="audit-box blue">
+                <div class="status-badge" aria-hidden="true">INTEL_RESPONSE</div>
+                <h3 id="faq-section-title">Frequently Asked Questions</h3>
+                <dl class="m-0">
+                    <div class="checklist-item">
+                        <span aria-hidden="true">01</span>
+                        <dt class="u-style-84719788">What is "Uber Cash"?</dt>
+                        <dd class="u-style-1db4b58b"> It is store credit that exists outside the protections of the Fair Credit Billing Act. Banks cannot typically initiate chargebacks for Uber Cash balances, which is why Uber prioritizes its use for fraudulent charges.</dd>
+                    </div>
+                    <div class="checklist-item">
+                        <span aria-hidden="true">02</span>
+                        <dt class="u-style-84719788">Can Uber restrict my account for a chargeback?</dt>
+                        <dd class="u-style-1db4b58b"> Yes. Uber frequently uses account restrictions as a retaliatory tactic to coerce consumers into abandoning legitimate fraud claims. Documentation of this behavior is critical for your FTC report.</dd>
+                    </div>
+                    <div class="checklist-item">
+                        <span aria-hidden="true">03</span>
+                        <dt class="u-style-84719788">How does "Impossible Trip Data" occur?</dt>
+                        <dd class="u-style-1db4b58b"> It is often a result of courier-side exploits where trip progress is falsified or manipulated. Uber's refusal to investigate these clear data anomalies is a core component of our audit.</dd>
+                    </div>
+                </dl>
+            </section>
+
+        </article>
+    </main>
+
+    <script src="/nav.js" defer></script>
+    <footer class="page-footer" role="contentinfo">
+        <div class="footer-inner">
+            <p>© 2026 CALAUDIT | Nicolas Hernandez | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+            <p><strong>LEGAL DISCLAIMER:</strong> This site is provided for informational purposes based on publicly available California statutes and regulations. It does not constitute legal advice. For legal counsel, consult a licensed California attorney.</p>
+            <p><strong>MEDICAL DISCLAIMER:</strong> The forensic data and commentary provided here are for investigative and advocacy purposes only. This content is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any medical concerns.</p>
+            <p><strong>PROPRIETARY WORK PRODUCT NOTICE:</strong> All original content, analysis, and commentary on this site represents my proprietary work product. Unauthorized reproduction for legal, administrative, or commercial purposes is strictly prohibited without the express written permission of Nicolas Hernandez.</p>
+            <p class="onion-mirror">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+        </div>
+    </footer>
+</div>
+
+<script>
+/* Onion Link Patch */
+(function(){
+    if(window.location.hostname.endsWith('.onion')){
+        document.querySelectorAll('a[href]').forEach(function(a){
+            var h=a.getAttribute('href');
+            if(h&&!h.startsWith('http')&&!h.startsWith('mailto:')&&!h.startsWith('tel:')&&!h.startsWith('#')){
+                var p=h.split('/');
+                var l=p[p.length-1];
+                if(l!==''&&!l.includes('.')){
+                    a.setAttribute('href',h+'.html')
+                } else if(h.endsWith('/')){
+                    a.setAttribute('href',h+'index.html')
+                }
+            }
+        });
+    }
+})();
+</script>
+
+<!-- JSON-LD moved to end of body -->
+<!-- JSON-LD & Structured Data (Interconnected Nodes) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://calaudit.org/#organization",
+          "name": "CalAudit",
+          "url": "https://calaudit.org/",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://calaudit.org/#logo",
+            "inLanguage": "en-US",
+            "url": "https://calaudit.org/calauditlogo.webp",
+            "contentUrl": "https://calaudit.org/calauditlogo.webp",
+            "caption": "CalAudit Official Logo"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://calaudit.org/#website",
+          "url": "https://calaudit.org/",
+          "name": "CalAudit",
+          "description": "Forensic Public Audits & Regulatory Compliance Tracking",
+          "publisher": { "@id": "https://calaudit.org/#organization" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://calaudit.org/uber-fraud-reporting/#webpage",
+          "url": "https://calaudit.org/uber-fraud-reporting/",
+          "name": "How to Report Uber Courier Fraud to the FTC | CalAudit",
+          "isPartOf": { "@id": "https://calaudit.org/#website" },
+          "primaryImageOfPage": { "@id": "https://calaudit.org/#logo" },
+          "breadcrumb": { "@id": "https://calaudit.org/uber-fraud-reporting/#breadcrumb" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://calaudit.org/uber-fraud-reporting/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://calaudit.org/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Forensic Vault",
+              "item": "https://calaudit.org/forensic-vault/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Uber Courier Fraud Field Manual",
+              "item": "https://calaudit.org/uber-fraud-reporting/"
+            }
+          ]
+        },
+        {
+          "@type": "TechArticle",
+          "@id": "https://calaudit.org/uber-fraud-reporting/#article",
+          "isPartOf": { "@id": "https://calaudit.org/uber-fraud-reporting/#webpage" },
+          "mainEntityOfPage": { "@id": "https://calaudit.org/uber-fraud-reporting/#webpage" },
+          "headline": "How to Report Uber Courier Fraud to the FTC | CalAudit Field Manual",
+          "description": "Field manual for reporting Uber Connect/Direct courier theft, impossible trip data, and retaliatory account restrictions to the Federal Trade Commission.",
+          "inLanguage": "en-US",
+          "datePublished": "2026-06-25T04:30:00+00:00",
+          "dateModified": "2026-07-03",
+          "author": {
+            "@type": "Person",
+            "@id": "https://calaudit.org/#nicolashernandez",
+            "name": "Nicolas Hernandez",
+            "url": "https://calaudit.org/"
+          },
+          "publisher": { "@id": "https://calaudit.org/#organization" },
+          "keywords": [
+            "Uber fraud reporting",
+            "Uber courier theft",
+            "FTC Report Fraud",
+            "impossible trip data",
+            "Uber Connect scam",
+            "retaliatory account lock"
+          ],
+          "citation": [
+            "Federal Trade Commission Act Section 5 (15 U.S.C. § 45)",
+            "Fair Credit Billing Act (FCBA)"
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "@id": "https://calaudit.org/uber-fraud-reporting/#howto",
+          "name": "How to Document Impossible Uber Trip Data and File an FTC Consumer Complaint",
+          "description": "Tactical framework to extract unforgeable telemetry logs, survive automated chat bot support deflection, and leverage Section 5 FTC rules against retaliatory deactivations.",
+          "mainEntityOfPage": { "@id": "https://calaudit.org/uber-fraud-reporting/#webpage" },
+          "estimatedCost": {
+            "@type": "MonetaryAmount",
+            "currency": "USD",
+            "value": "0"
+          },
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "Isolate the Telemetry Contradictions",
+              "text": "Export or screenshot the route receipt matching the fraudulent delivery statement. Identify impossible speed anomalies, missing milestone GPS hits, and zero-second dropoff intervals.",
+              "url": "https://calaudit.org/uber-fraud-reporting/#step1"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Exhaust Tier-1 Chat Support Logs",
+              "text": "Submit a formal support query inside the app. Retain the text transcript when the system automatically copies generic macro-replies to establish corporate non-response.",
+              "url": "https://calaudit.org/uber-fraud-reporting/#step2"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "File with the FTC ReportFraud Portal",
+              "text": "Navigate to reportfraud.ftc.gov. Input Uber's corporate information, detail the precise delivery transaction numbers, and outline the subsequent bank chargeback retaliation.",
+              "url": "https://calaudit.org/uber-fraud-reporting/#step3"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://calaudit.org/uber-fraud-reporting/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is Uber Cash?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It is store credit that exists outside the protections of the Fair Credit Billing Act. Banks cannot typically initiate chargebacks for Uber Cash balances, which is why Uber prioritizes its use for fraudulent charges."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Uber restrict my account for a chargeback?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Uber frequently uses account restrictions as a retaliatory tactic to coerce consumers into abandoning legitimate fraud claims. Documentation of this behavior is critical for your FTC report."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does Impossible Trip Data occur?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It is often a result of courier-side exploits where trip progress is falsified or manipulated. Uber's refusal to investigate these clear data anomalies is a core component of our audit."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "Dataset",
+          "@id": "https://calaudit.org/uber-fraud-reporting/#dataset",
+          "name": "Uber Connect Courier Telemetry Contradiction Dataset",
+          "description": "Forensic dataset tracing courier trip durations, route telemetry discrepancies, billing audit footprints, and FTC referral tracking codes.",
+          "url": "https://calaudit.org/uber-fraud-reporting/",
+          "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+          "creator": { "@id": "https://calaudit.org/#nicolashernandez" },
+          "temporalCoverage": "2026-06-21/2026-06-25",
+          "variableMeasured": [
+            "Invoiced trip duration vs physics limits",
+            "Frequency of automated support ticket closure",
+            "Interval between card chargeback and account restriction"
+          ]
+        }
+      ]
+    }
+    </script>
+
+</body>
+</html>

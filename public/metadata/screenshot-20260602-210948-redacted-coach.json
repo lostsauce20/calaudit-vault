@@ -1,0 +1,16 @@
+{
+  "alt": "Evidence Asset: screenshot-20260602-210948-redacted-coach.webp",
+  "summary": "This annotated messaging screenshot, dated May 28, 2026, captures the official out-of-pocket cash provider visit summary for Nicolas Hernandez. It documents critical ongoing legal and reimbursement efforts, a failed transfer to an in-network provider due to administrative errors, and a severe HIPAA/privacy breach. By uploading this proof of care-interruption (due to personal fund exhaustion from the state withholding his Conlan reimbursement) into the state's ACMS portal, Nicolas Hernandez forced an immediate panic callback from the DHCS Conlan contractor, Gainwell Technologies, the very next day.",
+  "keywords": [
+    "Out-of-Pocket Provider",
+    "Conlan Reimbursement",
+    "Visit Summary",
+    "May 28, 2026",
+    "Gainwell Technologies",
+    "DHCS Contractor",
+    "Administrative Leverage",
+    "Fund Exhaustion",
+    "Annotation"
+  ],
+  "full_text": "Messages\n\nToday 3:03 PM\n\nVisit Summary: May 28, 2026\n\nOverall\n- Ongoing legal and reimbursement efforts related to coverage denial and treatment costs\n- Preparing to refile small claims case if current tort claim is not resolved within response period\n- Attempted transfer to in-network provider was unsuccessful due to admin errors\n- Filed OCR complaint after intake paperwork was sent to father despite no authorization or emergency contact designation\n- Difficulty obtaining transportation assistance for pharmacy visits continues\n\nMedical\n- Stable on current medication regimen\n- No current interdose withdrawal symptoms\n- Transition from previous dose was somewhat difficult initially but continuing to stabilize\n\n--------------------------------------------------\nUSER ANNOTATIONS ON EVIDENCE ASSET:\n--------------------------------------------------\n1. [RED BOX around overall summary section]\n   Annotation: Highlights ongoing legal disputes, failed in-network transfers, and the severe HIPAA violation (intake sent to father without consent) triggering OCR Complaint Ticket #72. This evidence was uploaded to the ACMS portal, triggering a next-day panic call from DHCS contractor Gainwell Technologies."
+}

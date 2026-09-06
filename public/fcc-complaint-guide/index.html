@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TracFone/Motorola Bootloader Lock: File an FCC Complaint | CalAudit</title>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link as="style" fetchpriority="high" href="/style.css" rel="preload"/>
+<link href="/style.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="/style.css" rel="stylesheet"/></noscript>
+<link href="https://calaudit.org/fcc-complaint-guide/" rel="canonical"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="CID 0x0033 is the carrier lock TracFone and Motorola use to permanently block bootloader unlocking. Here is how to document it and file an FCC complaint." name="description"/>
+<meta content="Motorola forensics, FCC compliance, P25 radio audit, telecom firmware, radio frequency spectrum, federal telecom mandate, CID 0x0033 bypass" name="keywords"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="#111111" name="theme-color"/>
+<meta content="US-DC" name="geo.region"/>
+<meta content="Washington, District of Columbia" name="geo.placename"/>
+<meta content="38.9056;-77.0054" name="geo.position"/>
+<meta content="38.9056, -77.0054" name="ICBM"/>
+<meta content="2026-02-12T00:00:00Z" property="article:published_time"/>
+<meta content="2026-06-06T12:00:00Z" property="article:modified_time"/>
+<meta content="Nicolas Hernandez" property="article:author"/>
+<meta content="article" property="og:type"/>
+<meta content="CalAudit" property="og:site_name"/>
+<meta content="TracFone/Motorola Bootloader Lock: File an FCC Complaint | CalAudit" property="og:title"/>
+<meta content="Operational guide to filing an FCC complaint against telecom carriers. Documenting CID 0x0033 lock-blocks, bypassing support runs, and forcing compliance." property="og:description"/>
+<meta content="https://calaudit.org/calauditlogo.webp" property="og:image"/>
+<meta content="CalAudit official logo" property="og:image:alt"/>
+<meta content="https://calaudit.org/fcc-complaint-guide/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://calaudit.org/fcc-complaint-guide/" name="twitter:url"/>
+<meta content="TracFone/Motorola Bootloader Lock: File an FCC Complaint | CalAudit" name="twitter:title"/>
+<meta content="Operational guide for regulatory escalation, hardware telemetry data, and active carrier intervention against CID 0x0033 locks." name="twitter:description"/>
+<meta content="https://calaudit.org/calauditlogo.webp" name="twitter:image"/>
+<meta content="CalAudit official logo" name="twitter:image:alt"/>
+<style>
+    /* Added .sr-only class for WCAG AAA accessibility compliance */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+    .operational-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 25px; }
+    .op-item { background: rgba(0,0,0,0.3); border: 1px solid #333; padding: 15px; }
+    .op-label { font-family: var(--mono); color: #00ff00; font-size: 0.7rem; margin-bottom: 10px; display: block; }
+    .op-img { width: 100%; height: auto; border: 1px solid #222; margin-top: 10px; transition: transform 0.2s; cursor: pointer; }
+    .op-img:hover { transform: scale(1.02); border-color: #00ff00; }
+    .op-status { display: inline-block; background: var(--blue-bg); color: var(--blue); padding: 2px 8px; font-family: var(--mono); font-size: 10px; font-weight: bold; margin-bottom: 10px; border: 1px solid var(--blue); }
+    .op-status.active { background: rgba(255,170,0,0.1); color: #ffaa00; border-color: #ffaa00; }
+    .op-status.archived { background: rgba(0, 255, 0, 0.1); color: #00ff00; border-color: #00ff00; }
+
+    .forensic-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-family: var(--mono); font-size: 0.85rem; }
+    .forensic-table th { background: #111; color: #00ff00; border: 1px solid #333; padding: 10px; text-align: left; }
+    .forensic-table td { border: 1px solid #222; padding: 10px; background: rgba(0,0,0,0.2); }
+
+    /* Tactical Font Contrast Configuration for FAQ Scannability */
+    .faq-question { font-family: var(--mono); color: #00ff00; font-weight: bold; margin-bottom: 8px; font-size: 0.95rem; letter-spacing: 0.5px; }
+    .faq-answer { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #ddd; line-height: 1.6; padding-left: 15px; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<a class="sr-only" href="#main-content">Skip to main content</a>
+<div class="vault-container">
+<nav aria-label="Global Directory Back Navigation" class="back-btn-container">
+<a class="back-btn" href="/forensic-vault/">← Return to Forensic Vault</a>
+</nav>
+<main id="main-content" role="main">
+<header class="header" role="banner">
+<h1 class="header-title telecom">CID 0x0033: TracFone's Bootloader Lock Agreement, Motorola</h1>
+<p class="subtitle">FCC Tactical Field Manual — Regulatory Evidence Vault &amp; Active Operational Rebuttals</p>
+</header>
+<aside aria-label="Regulatory Operations Dashboard" class="audit-box warfare">
+<div class="status-badge">RECORD_LOCKED</div>
+<p>This manual documents the active regulatory track against Motorola and TracFone. This repository houses the technical proof of hardware obfuscation (CID 0x0033) used to force carrier accountability. For the successful T-Mobile case closure, see the <a aria-label="View T-Mobile Success Dossier" class="u-style-fb6b7f8b" href="/telecom/">T-Mobile Success Dossier</a>.</p>
+</aside>
+<!-- REGULATORY LEAD FUNNEL: PIERCING THE 0x0033 LOCK -->
+<section aria-labelledby="federal-action-heading" class="audit-box warfare u-style-6fb5bf77">
+<div class="status-badge u-style-03dccba9">FEDERAL ACTION</div>
+<h2 class="u-style-da3115dd" id="federal-action-heading">Reporting a CID 0x0033 Hard Lock?</h2>
+<p class="u-style-b60a863d">If your device returns <code>CID 0x0033</code> and you are being ignored by carrier support, join the active regulatory track. Use our verified template below to file your own FCC report and force a federal response.</p>
+<div class="text-center">
+<a aria-label="Access the FCC Submission Draft Template for CID 0x0033 Hard Locks" class="legal-btn u-style-7dbbbadf" href="#motorola-active">[ ACCESS FCC TEMPLATE ]</a>
+</div>
+</section>
+<section aria-label="Technical Brief Summary" class="audit-note u-style-8fde9c23">
+<div class="op-status archived mb-15">TECHNICAL BRIEF: THE HARD FUSE CONTRADICTION</div>
+<p class="u-style-18f6e937">This forensic record confirms that Motorola Mobility LLC issues official cryptographic unlock keys for hardware (Moto G Play 2024, CID 0x0033) that is structurally blocked by parent-carrier software profiles (Verizon/TracFone).</p>
+<p class="u-style-266bc0e2">This physical documentation provides the foundation for ongoing <strong>Mandatory Arbitration</strong> tracks. The data logs below stand as uncontradicted evidence of intentional industry deception, forcing the transition from administrative loops to legal override demands.</p>
+</section>
+<!-- ACTIVE DISPUTE 01: MOTOROLA BOOTLOADER OBFUSCATION -->
+<section aria-labelledby="motorola-heading">
+<div class="section-tag" id="motorola-active">// Active Dispute 01: Motorola (CID 0x0033)</div>
+<article class="audit-box warfare telecom">
+<div class="op-status archived">STATUS: EVIDENCE RECORDED</div>
+<h2 id="motorola-heading">Hardware-Portal Contradiction &amp; Telemetry Matrix</h2>
+<p>The Motorola investigation maps a severe technical paradox: the manufacturer's automated server explicitly provisions an unlock token that the carrier-restricted firmware rejects on execution. Use the matrix below to identify device exposure limits established in the FCC report framework.</p>
+<table class="forensic-table">
+<caption class="sr-only">Motorola Bootloader Status, CID values, and corresponding FCC Regulatory Actions.</caption>
+<thead>
+<tr>
+<th scope="col">Motorola Bootloader Status</th>
+<th scope="col">Carrier ID (CID) Value</th>
+<th scope="col">FCC Regulatory Status &amp; Recourse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Permanently Locked / Ineligible</strong></td>
+<td><code>0x0033</code> (Verizon / TracFone / Straight Talk)</td>
+<td>Core subject of active reports tracking arbitrary carrier locks. Proceed to Section II Arbitration.</td>
+</tr>
+<tr>
+<td><strong>Eligible / OEM Unlockable</strong></td>
+<td><code>0x0032</code> / <code>0x0007</code> (Retail US / Global Unlocked)</td>
+<td>Compliant with standard developer unlock token generation rules. Secure execution verified.</td>
+</tr>
+</tbody>
+</table>
+<div class="operational-grid">
+<div class="op-item">
+<span class="op-label" id="label-fcc-01">TECHNICAL EXHIBIT FCC-01 // PORTAL PROOF</span>
+<p>Forensic proof of bootloader unlock authorization (Feb 12, 2026).</p>
+<a aria-description="Opens in new tab" aria-labelledby="label-fcc-01" href="/calevidence/gmail-unlocking-your-device-redacted.webp" rel="noopener noreferrer" target="_blank"><img alt="Screenshot of an email receipt proving Motorola Portal unlock token authorization" class="op-img" decoding="async" loading="lazy" src="/calevidence/gmail-unlocking-your-device-redacted.webp" srcset="/calevidence/mobile/gmail-unlocking-your-device-redacted-400w.webp 400w, /calevidence/mobile/gmail-unlocking-your-device-redacted-800w.webp 800w, /calevidence/gmail-unlocking-your-device-redacted.webp 1200w" sizes="(max-width: 900px) calc(100vw - 60px), 508px" width="1200" height="1553"/><span class="sr-only"> (opens in a new window)</span></a>
+</div>
+<div class="op-item">
+<span class="op-label" id="label-fcc-02">TECHNICAL EXHIBIT FCC-02 // HARDWARE STATUS</span>
+<p>Fastboot status confirming 'Ret_Cust' and 'CID 0x0033' parameters, establishing hardware-level capability.</p>
+<a aria-description="Opens in new tab" aria-labelledby="label-fcc-02" href="/calevidence/moto-g-play-2024-fastboot-obfuscated.webp" rel="noopener noreferrer" target="_blank"><img alt="Screenshot of the device fastboot screen showing CID 0x0033 and baseband status" class="op-img" decoding="async" loading="lazy" src="/calevidence/moto-g-play-2024-fastboot-obfuscated.webp" srcset="/calevidence/mobile/moto-g-play-2024-fastboot-obfuscated-400w.webp 400w, /calevidence/mobile/moto-g-play-2024-fastboot-obfuscated-800w.webp 800w, /calevidence/moto-g-play-2024-fastboot-obfuscated.webp 1200w" sizes="(max-width: 900px) calc(100vw - 60px), 508px" width="1200" height="1928"/><span class="sr-only"> (opens in a new window)</span></a>
+</div>
+<div class="op-item">
+<span class="op-label" id="label-fcc-03">TACTICAL EXHIBIT FCC-03 // PHONE COMPLAINT PAGE</span>
+<p>Official FCC page for submitting complaints regarding phones.</p>
+<a aria-description="Opens in new tab" aria-labelledby="label-fcc-03" href="/calevidence/fcc-complaint-1.webp" rel="noopener noreferrer" target="_blank"><img alt="Screenshot of the official FCC consumer complaint intake form webpage" class="op-img" decoding="async" loading="lazy" src="/calevidence/fcc-complaint-1.webp" srcset="/calevidence/mobile/fcc-complaint-1-400w.webp 400w, /calevidence/mobile/fcc-complaint-1-800w.webp 800w, /calevidence/fcc-complaint-1.webp 1200w" sizes="(max-width: 900px) calc(100vw - 60px), 508px" width="1200" height="1377"/><span class="sr-only"> (opens in a new window)</span></a>
+</div>
+<div class="op-item">
+<span class="op-label" id="label-fcc-04">EXHIBIT FCC-04 // COMPLAINT DETAILS</span>
+<p>Detailed breakdown of the FCC complaint submission form with carrier-specific friction notes.</p>
+<a aria-description="Opens in new tab" aria-labelledby="label-fcc-04" href="/calevidence/fcc-complaint-2-redacted.webp" rel="noopener noreferrer" target="_blank"><img alt="Screenshot detailing specific text fields and inputs for FCC consumer escalation tracking" class="op-img" decoding="async" loading="lazy" src="/calevidence/fcc-complaint-2-redacted.webp" srcset="/calevidence/mobile/fcc-complaint-2-redacted-400w.webp 400w, /calevidence/mobile/fcc-complaint-2-redacted-800w.webp 800w, /calevidence/fcc-complaint-2-redacted.webp 1200w" sizes="(max-width: 900px) calc(100vw - 60px), 508px" width="1200" height="2299"/><span class="sr-only"> (opens in a new window)</span></a>
+</div>
+</div>
+<div class="audit-note u-style-a23fd8b4">
+<div class="success-badge">TEMPLATE // FCC SUBMISSION DRAFT</div>
+<p><em>The following text was utilized in the formal FCC complaint submission (see Exhibit FCC-04 for reference):</em></p>
+<div aria-label="FCC Submission Draft Template Text" class="u-style-b2d33d92" role="region">
+<p>I am complaining about a carrier-level firmware restriction by TracFone/Straight Talk on a Moto G Play 2024 (XT2413V), and Motorola's refusal to provide support. (Note: Device was originally Straight Talk, officially rebranded to TracFone).</p>
+<p>Motorola’s Bootloader Unlock Portal verified my IMEI and issued a valid cryptographic unlock key. When entered via fastboot, the device validates the key and advances to the final unlock warning screen. However, upon selecting "Yes", it loops back to fastboot and fails. This proves Motorola authorized the unlock, but TracFone’s firmware or a hardware fuse is actively blocking execution.</p>
+<p>Seeking a resolution, I first engaged the Lenovo/Motorola community forums which produced a standard "carrier issue" and then messaged a Senior Engineer on there, who chose to give no response.</p>
+<p>Following that failure, I escalated the issue to Motorola with copies of my forum postings and device specifics. Motorola Executive Customer Relations (ECR) directed me back to the exact same community forums that had already stated it was a carrier issue (first line representatives) and ignored me (senior engineer).</p>
+<p>Motorola provisioned a key, but TracFone's firmware prevents execution. I am not seeking a refund. I require TracFone and Motorola to coordinate a technical "hard override" or backend whitelist to bypass this restriction so the provisioned key can execute. If a remote override is technically impossible due to hardware fusing, I require an unlocked, unrestricted replacement device.</p>
+</div>
+</div>
+</article>
+</section><section aria-labelledby="motorola-meltdown-heading" id="motorola-meltdown-full"><!-- MERGED VERBATIM FROM /fcc-complaint-guide/motorola-meltdown/ --><header class="header">
+<div aria-label="Page Category: Regulatory Enforcement" class="page-label">REGISTRY NODE: Consumer Protection Audit / BPC § 17200 / Hardware Sovereignty</div>
+<h2 class="header-title red" id="motorola-meltdown-heading">MOTOROLA MELTDOWN: THE AG COMPLAINT</h2>
+<p class="subtitle" role="doc-subtitle">Deceptive Bootloader Lockouts, Hardware Withholding, and Lenovo Statutory Liability</p>
+<nav aria-label="Breadcrumb Navigation" class="u-style-ca756b16">
+<a class="u-style-017a67e5" href="/">Home</a> &gt;
+                <a class="u-style-017a67e5" href="/fcc-complaint-guide/">FCC Complaint Guide</a> &gt;
+                <span class="u-style-23ca03c6">Motorola Meltdown</span>
+</nav>
+</header><section aria-labelledby="overview-title">
+<div aria-hidden="true" class="section-tag">// Case Overview &amp; Evidentiary Records | The Hardware Lockout &amp; Forensics</div>
+<div class="audit-box warfare">
+<div aria-hidden="true" class="status-badge">CASE STATUS: FILED WITH DOJ</div>
+<h2 class="u-style-6a939346" id="overview-title">The Infinite Loop of Deceptive Support &amp; Hardware Forensics</h2>
+<p class="u-style-f0ca87e2">
+                    When hardware is purchased outright, the consumer possesses full property rights over that physical asset. Hardware manufacturers like **Motorola Mobility LLC** (and parent conglomerate **Lenovo Group Ltd.**) routinely claim to support open-source development by offering bootloader unlocking services. In practice, however, they execute a deceptive business practice: **withholding the digital software keys (unlock tokens) for fully owned devices under the guise of carrier policy, while carriers claim the lock is purely manufacturer-side.**
+                </p>
+<p class="u-style-2036819c">
+                    This artificial bricking of functional, out-of-warranty hardware prevents self-repair, blocks the installation of privacy-centric operating systems, and operates as an anti-competitive market trap. Under **California Business and Professions Code Section 17200 (The Unfair Competition Law)**, this is an illegal, unfair, and fraudulent trade practice.
+                </p>
+<p class="u-style-2036819c">
+                    This complaint stems from the same underlying hardware fuse documented in our <a class="u-style-d5280e06" href="/fcc-complaint-guide/">CID 0x0033 bootloader lock case file</a>, which tracks the technical evidence and active FCC/AG regulatory escalation.
+                </p>
+<div class="bypass-card u-style-5c2be6d8">
+<div>
+<div class="u-style-2ec4f9ee">
+                          Completed Legal Resource
+                          <span aria-hidden="true" class="tag-blue u-style-09cc607d">REDACTED AG COMPLAINT</span>
+</div>
+<p class="u-style-f6243702">Official, fully detailed consumer protection complaint submitted to the California Attorney General (Rob Bonta) on July 3, 2026, documenting Lenovo/Motorola's deceptive trade practices.</p>
+</div>
+<div>
+<a aria-label="Download Redacted Motorola Attorney General Complaint PDF" class="u-style-9091dcd5" href="/calevidence/attorney-general-motorola-complaint-redacted.pdf" rel="noopener noreferrer" target="_blank">
+                        [ DOWNLOAD COMPLETED AG COMPLAINT ]
+                      </a>
+</div>
+</div>
+<div class="bypass-card u-style-461bf5de">
+<div>
+<div class="u-style-ccf8ccbe">
+                          Completed Legal Resource
+                          <span aria-hidden="true" class="tag-blue u-style-02b889a0">AG EVIDENCE ATTACHMENTS</span>
+</div>
+<p class="u-style-f6243702">The complete 10-page evidentiary attachments and exhibits pack submitted alongside the Attorney General complaint, detailing full forum chat logs, lock checks, and carrier loop correspondence.</p>
+</div>
+<div>
+<a aria-label="Download Redacted Motorola Attorney General Evidence Attachments Pack PDF" class="u-style-bc3c1bd6" href="/calevidence/motorola-attorney-general-evidence-attachments-pack-redacted.pdf" rel="noopener noreferrer" target="_blank">
+                        [ VIEW EVIDENCE PACK ]
+                      </a>
+</div>
+</div>
+<div class="u-style-e6c2cf7e">
+<h3 class="section-label u-style-ded77883">// KEY EXHIBITS: STATE &amp; FEDERAL SUBMISSIONS</h3>
+<div class="u-style-67e747b8">
+<figure class="m-0">
+<figcaption class="section-label u-style-8bd11b2b">EVIDENCE: AG COMPLAINT SUBMISSION</figcaption>
+<a aria-label="View high resolution scan of California AG Motorola Complaint in new tab" href="/calevidence/attorney-general-motorola-complaint-07-03-2026.webp" rel="noopener noreferrer" target="_blank">
+<img alt="Scanned copy of the formal consumer complaint filed against Motorola Mobility LLC with the California Attorney General on July 3, 2026." class="claim-img u-style-76f3de3a" src="/calevidence/attorney-general-motorola-complaint-07-03-2026.webp"/>
+</a>
+</figure>
+<figure class="m-0">
+<figcaption class="section-label u-style-8bd11b2b">EVIDENCE: FCC JURISDICTION REJECTION</figcaption>
+<a aria-label="View high resolution scan of the FCC Rejection Email in new tab" href="/calevidence/moto-gmail-reject-fcc-redacted.webp" rel="noopener noreferrer" target="_blank">
+<img alt="Screenshot of Gmail thread showing the FCC's official closure and formal referral of the lock dispute to the State Attorney General." class="claim-img u-style-76f3de3a" src="/calevidence/moto-gmail-reject-fcc-redacted.webp"/>
+</a>
+</figure>
+</div>
+</div>
+</div>
+</section><section aria-labelledby="legal-title">
+<div aria-hidden="true" class="section-tag">// Statutory Framework | BPC § 17200</div>
+<div class="audit-box warfare blue">
+<div aria-hidden="true" class="status-badge u-style-7d908ca1">CALIFORNIA CONSUMER LAW</div>
+<h2 class="u-style-6a939346" id="legal-title">The Unfair Competition Law (UCL)</h2>
+<div class="legal-quote">
+<strong>Business &amp; Professions Code § 17200:</strong><br/>
+                    "As used in this chapter, unfair competition shall mean and include any unlawful, unfair or fraudulent business act or practice and unfair, deceptive, untrue or misleading advertising..."
+                </div>
+<p class="u-style-4ad6a7ac">
+                    Motorola / Lenovo's refusal to deliver bootloader unlock codes for fully owned, out-of-warranty hardware constitutes three distinct UCL violations:
+                </p>
+<ul class="checklist-simple u-style-4be1e86a">
+<li><strong>The Unlawful Prong:</strong> Violates the implicit covenant of good faith and fair dealing by depriving the purchaser of the essential utility of their hardware asset.</li>
+<li><strong>The Unfair Prong:</strong> Artificially accelerates planned obsolescence, forces functional hardware into landfills, and restricts the consumer's right to self-repair and software sovereignty.</li>
+<li><strong>The Fraudulent Prong:</strong> Deceptively advertises devices as having "unlockable bootloaders" on developer portals, only to refuse service validation on the backend.</li>
+</ul>
+</div>
+</section><section aria-labelledby="blueprint-title">
+<div aria-hidden="true" class="section-tag">// Escalation Blueprint | How to File</div>
+<div class="audit-box warfare blue">
+<div aria-hidden="true" class="status-badge u-style-7d908ca1">ACTIONABLE INTAKE TEMPLATE</div>
+<h2 class="u-style-6a939346" id="blueprint-title">The Attorney General Complaint Template</h2>
+<p class="u-style-4ad6a7ac">
+                    If Motorola and Lenovo are withholding your bootloader unlock token and trapping you in support loops, use this exact, legally structured complaint template to file a formal complaint with the **California Department of Justice (Office of the Attorney General)**.
+                </p>
+<div class="action-block">
+<h3 class="u-style-dd01c235">📋 VERBATIM COMPLAINT COPY-BLOCK</h3>
+<div aria-label="Complaint Template Text" class="u-style-e54cf358" role="region" tabindex="0">
+                        SUBJECT: FORMAL COMPLAINT FOR UNFAIR BUSINESS PRACTICES (BPC § 17200)<br/>
+                        RESPONDENT: Motorola Mobility LLC (subsidiary of Lenovo Group Ltd.)<br/>
+<br/>
+                        COMPLAINT NARRATIVE:<br/>
+                        I purchased a Motorola hardware unit outright. Because the device is out-of-warranty and completely paid for, I possess absolute property rights over this physical asset. <br/>
+<br/>
+                        To maintain clinical and data continuity, as well as ensure the privacy and longevity of this device, I attempted to utilize Motorola's official 'Bootloader Unlock' service to flash a secure, open-source alternative operating system. <br/>
+<br/>
+                        Despite advertising this device as developer-compliant, Motorola's backend system deceptively refuses to deliver the digital software key (unlock token) required to unlock the bootloader, citing vague, unverified carrier restrictions. Conversely, the cellular carrier asserts that all bootloader locking parameters are controlled exclusively by the manufacturer. <br/>
+<br/>
+                        This corporate evasiveness traps consumers in an infinite administrative support loop, effectively bricking perfectly functional, paid-off hardware and forcing planned obsolescence. <br/>
+<br/>
+                        This practice constitutes:<br/>
+                        (1) An unfair business practice under CA Bus. &amp; Prof. Code § 17200 by artificially restricting self-repair and generating unnecessary electronic waste.<br/>
+                        (2) A fraudulent business practice by falsely advertising developer unlocking support on public-facing corporate portals while blocking it on the backend.<br/>
+<br/>
+                        I demand that Motorola Mobility LLC and Lenovo Group Ltd. immediately deliver the necessary bootloader unlock token for my fully owned hardware unit to cure this statutory default.
+                    </div>
+</div>
+<h3 class="u-style-c7c60766">Filing Instructions:</h3>
+<ol class="u-style-823d783a">
+<li>Copy the template text inside the green box above.</li>
+<li>Go to the official **California Attorney General Consumer Complaint Portal** (or submit physically to the DOJ in Sacramento).</li>
+<li>File the complaint naming **Motorola Mobility LLC** (Corporate HQ: Chicago, IL) and parent entity **Lenovo Group Ltd.** as the business entities.</li>
+<li>Submit the complaint. The CA Department of Justice will log the dispute and forward an official inquiry to Motorola's corporate legal counsel, forcing a formal response.</li>
+</ol>
+</div>
+</section></section>
+<!-- ACTIVE DISPUTE 02: TRACFONE ADMINISTRATIVE DEFAULT -->
+<section aria-labelledby="tracfone-heading">
+<div class="section-tag" id="tracfone-study">// Active Dispute 02: TracFone (Ticket #8711384)</div>
+<article class="audit-box warfare telecom">
+<div class="op-status active">STATUS: REGULATORY REBUTTAL</div>
+<h2 id="tracfone-heading">TracFone Administrative Loop &amp; Technical Admission</h2>
+<p>This study documents the methodology for piercing the administrative loop, leading to the carrier's final technical admission and the subsequent formal rebuttal naming the manufacturer as co-respondent.</p>
+<div class="operational-grid">
+<div class="op-item">
+<span class="op-label" id="label-fcc-05">EXHIBIT FCC-05: EXECUTIVE CONTACT</span>
+<p>Initial executive contact from TracFone (May 27, 2026) attempting to employ standard policy delays.</p>
+<a aria-description="Opens in new tab" aria-labelledby="label-fcc-05" href="/calevidence/may-27-2026-fcc-tracfone-initial-email-redacted.webp" rel="noopener noreferrer" target="_blank"><img alt="Screenshot of the initial email correspondence from TracFone executives" class="op-img" decoding="async" loading="lazy" src="/calevidence/may-27-2026-fcc-tracfone-initial-email-redacted.webp"/><span class="sr-only"> (opens in a new window)</span></a>
+</div>
+<div class="op-item">
+<span class="op-label" id="label-fcc-06">EXHIBIT FCC-06: TECHNICAL REBUTTAL</span>
+<p>First rebuttal (May 28, 2026) rejecting non-responsive boilerplate and demanding technical transparency.</p>
+<a aria-description="Opens in new tab" aria-labelledby="label-fcc-06" href="/calevidence/may-27-2026-my-response-tracfone-fcc-email-redacted.webp" rel="noopener noreferrer" target="_blank"><img alt="Screenshot of the first formal technical rebuttal email sent to TracFone" class="op-img" decoding="async" loading="lazy" src="/calevidence/may-27-2026-my-response-tracfone-fcc-email-redacted.webp"/><span class="sr-only"> (opens in a new window)</span></a>
+</div>
+<div class="op-item">
+<span class="op-label" id="label-fcc-07">EXHIBIT FCC-07: STATUS OF DEFAULT</span>
+<p>Correspondence confirming TracFone's position of administrative default as of May 30, 2026.</p>
+<a aria-description="Opens in new tab" aria-labelledby="label-fcc-07" href="/calevidence/may-30-2026-fcc-tracfone-email-redacted.webp" rel="noopener noreferrer" target="_blank"><img alt="Screenshot of email chain confirming TracFone's administrative default status" class="op-img" decoding="async" loading="lazy" src="/calevidence/may-30-2026-fcc-tracfone-email-redacted.webp"/><span class="sr-only"> (opens in a new window)</span></a>
+</div>
+<div class="op-item">
+<span class="op-label" id="label-fcc-08">EXHIBIT FCC-08: UNPROMPTED FOLLOW-UP</span>
+<p>Secondary follow-up (May 31, 2026 at 7:46AM PST) documenting carrier pressure prior to my reply.</p>
+<a aria-description="Opens in new tab" aria-labelledby="label-fcc-08" href="/calevidence/may-31-2026-fcc-tracfone-email-again-redacted.webp" rel="noopener noreferrer" target="_blank"><img alt="Screenshot of unprompted high-pressure follow-up email from carrier communications" class="op-img" decoding="async" loading="lazy" src="/calevidence/may-31-2026-fcc-tracfone-email-again-redacted.webp"/><span class="sr-only"> (opens in a new window)</span></a>
+</div>
+<div class="op-item">
+<span class="op-label" id="label-fcc-09">EXHIBIT FCC-09: FINAL ESCALATION</span>
+<p>Final strike rebuttal (May 31, 2026 at 7:16 PM) providing formal notice of Mandatory Arbitration escalation.</p>
+<a aria-description="Opens in new tab" aria-labelledby="label-fcc-09" href="/calevidence/may-31-2026-fcc-tracfone-email-response-redacted.webp" rel="noopener noreferrer" target="_blank"><img alt="Screenshot of the final email notice escalating the case to Mandatory Arbitration" class="op-img" decoding="async" loading="lazy" src="/calevidence/may-31-2026-fcc-tracfone-email-response-redacted.webp"/><span class="sr-only"> (opens in a new window)</span></a>
+</div>
+<div class="op-item">
+<span class="op-label" id="label-fcc-10">EXHIBIT FCC-10: CARRIER FINAL POSITION</span>
+<p>TracFone's executive resolution response (June 1, 2026) admitting to factory-level firmware restrictions while denying unlock remediation.</p>
+<a aria-description="Opens in new tab" aria-labelledby="label-fcc-10" href="/calevidence/jan-01-2026-response-tracfone-fcc-email-redacted.webp" rel="noopener noreferrer" target="_blank"><img alt="Screenshot of TracFone's final core position document admitting factory-level restrictions" class="op-img" decoding="async" loading="lazy" src="/calevidence/jan-01-2026-response-tracfone-fcc-email-redacted.webp"/><span class="sr-only"> (opens in a new window)</span></a>
+</div>
+<div class="op-item">
+<span class="op-label" id="label-fcc-11">EXHIBIT FCC-11: REJECTION OF FINAL POSITION</span>
+<p>Formal notice to TracFone (June 2, 2026) rejecting their final position and flagging the admitted hardware/firmware lock for the Commission.</p>
+<a aria-description="Opens in new tab" aria-labelledby="label-fcc-11" href="/calevidence/jan-02-2026-my-response-tracfone-fcc-email-redacted.webp" rel="noopener noreferrer" target="_blank"><img alt="Screenshot of formal email rejecting the carrier's resolution statement" class="op-img" decoding="async" loading="lazy" src="/calevidence/jan-02-2026-my-response-tracfone-fcc-email-redacted.webp"/><span class="sr-only"> (opens in a new window)</span></a>
+</div>
+<div class="op-item">
+<span class="op-label" id="label-fcc-12">EXHIBIT FCC-12: FORMAL REBUTTAL (FCC)</span>
+<p>Formal rebuttal submitted to the FCC (June 2, 2026) detailing the firmware defect and naming Motorola Mobility LLC as co-respondent.</p>
+<a aria-description="Opens in new tab" aria-labelledby="label-fcc-12" href="/calevidence/jan-02-2026-my-response-fcc-consumer-email-redacted.webp" rel="noopener noreferrer" target="_blank"><img alt="Screenshot of the formal rebuttal document transmitted to the FCC" class="op-img" decoding="async" loading="lazy" src="/calevidence/jan-02-2026-my-response-fcc-consumer-email-redacted.webp"/><span class="sr-only"> (opens in a new window)</span></a>
+</div>
+<div class="op-item">
+<span class="op-label" id="label-fcc-13">EXHIBIT FCC-13: REPETITIVE BOILERPLATE</span>
+<p>Secondary executive response from TracFone (June 6, 2026) resorting to duplicate operational positions.</p>
+<a aria-description="Opens in new tab" aria-labelledby="label-fcc-13" href="/calevidence/jan-06-2026-fcc-tracfone-email-response-redacted.webp" rel="noopener noreferrer" target="_blank"><img alt="Screenshot of duplicate boilerplate email statement from the carrier" class="op-img" decoding="async" loading="lazy" src="/calevidence/jan-06-2026-fcc-tracfone-email-response-redacted.webp"/><span class="sr-only"> (opens in a new window)</span></a>
+</div>
+<div class="op-item">
+<span class="op-label" id="label-fcc-14">EXHIBIT FCC-14: FORMAL DUPLICATE REJECTION</span>
+<p>Formal notice to TracFone (June 6, 2026) rejecting the repetitive boilerplate and demanding a technical resolution.</p>
+<a aria-description="Opens in new tab" aria-labelledby="label-fcc-14" href="/calevidence/jan-06-2026-my-response-tracfone-fcc-email-redacted.webp" rel="noopener noreferrer" target="_blank"><img alt="Screenshot of rejection matrix email transmitted back to carrier agents" class="op-img" decoding="async" loading="lazy" src="/calevidence/jan-06-2026-my-response-tracfone-fcc-email-redacted.webp"/><span class="sr-only"> (opens in a new window)</span></a>
+</div>
+<div class="op-item">
+<span class="op-label" id="label-fcc-15">EXHIBIT FCC-15: FINAL REBUTTAL UPDATE</span>
+<p>Final update to the FCC (June 6, 2026) urging the Commission to focus oversight on Motorola Mobility LLC.</p>
+<a aria-description="Opens in new tab" aria-labelledby="label-fcc-15" href="/calevidence/jan-06-2026-my-response-fcc-consumer-email-redacted.webp" rel="noopener noreferrer" target="_blank"><img alt="Screenshot of the final agency notification update dossier sent to the FCC" class="op-img" decoding="async" loading="lazy" src="/calevidence/jan-06-2026-my-response-fcc-consumer-email-redacted.webp"/><span class="sr-only"> (opens in a new window)</span></a>
+</div>
+</div>
+<p class="mt-20">The TracFone dispute has transitioned to a formal rebuttal against both Carrier and Manufacturer. Full email chain available in the <a aria-label="Download the Consolidated May 2026 PDF. Opens in a new tab." class="u-style-fb6b7f8b" href="/calevidence/may-2026-trafcone-fcc-emails-redacted.pdf" rel="noopener noreferrer" target="_blank">Consolidated May 2026 PDF</a>.</p>
+<hr class="u-style-51de63a7"/>
+<div class="dispute-update u-style-1aa80a51">
+<span aria-hidden="true" class="status-badge u-style-627dcef2">REGULATORY ESCALATION: THE NEXT LEVEL</span>
+<h3 class="forensic-label u-style-d4e443d3">The Motorola Meltdown: Attorney General Intervention</h3>
+<p class="u-style-4ad6a7ac">
+                        When standard federal tracks are met with corporate stonewalling, the investigation must escalate. On July 3, 2026, the FCC officially closed the TracFone inquiry, stating that manufacturer-level bootloader lockouts are outside of Commission jurisdiction and formally directing the dispute to the State Attorney General.
+                    </p>
+<p class="u-style-0d7cf607">
+                        We have launched a **dedicated, comprehensive evidence node** detailing the full corporate liability, the Unfair Competition Law (UCL BPC § 17200) statutory violations, the formal California AG submission receipts, the complete 10-page evidence attachments pack, and the actionable AG complaint templates you can use to force Motorola/Lenovo accountability.
+                    </p>
+<div class="mt-15">
+<a aria-label="Engage the Motorola Meltdown: Attorney General Complaint Page" class="u-style-9091dcd5" href="/fcc-complaint-guide/#motorola-meltdown-full">
+                            [ ENGAGE THE MOTOROLA MELTDOWN ]
+                        </a>
+</div>
+</div>
+</article>
+</section>
+<section aria-label="Resolution Tracker Notice" class="audit-note u-style-2f6c41e5">
+<strong>SUCCESS TEMPLATE:</strong> For a model of how these disputes conclude when forensic pressure is maintained, view the successful <a aria-label="View the T-Mobile EIP Resolution Dossier" class="u-style-bb011593" href="/telecom/">T-Mobile EIP Resolution Dossier</a>.
+        </section>
+<!-- PUBLIC LEDGER FAQ SECTION -->
+<section aria-labelledby="faq-section-title">
+<div class="section-tag" id="fcc-faq">// Section III: Public Ledger FAQ</div>
+<article class="audit-box warfare telecom" id="faq">
+<div class="op-status archived">RECORDS UNLOCKED // REGULATORY CROSS-EXAMINATION</div>
+<h2 class="mb-20" id="faq-section-title">Frequently Asked Questions</h2>
+<details class="faq-item u-style-4ac9dc78">
+<summary class="u-style-2120777c">
+<span aria-hidden="true" class="faq-icon u-style-1056e622">▶</span> <strong>What does Motorola bootloader CID 0x0033 mean?</strong>
+</summary>
+<div class="u-style-6ae5a50d">
+                        CID 0x0033 is a Motorola Carrier ID designating devices locked to specific value carriers like Verizon, TracFone, or Straight Talk. Motorola's official unlock portal flags CID 0x0033 devices as permanently ineligible for bootloader unlocking.
+                    </div>
+</details>
+<details class="faq-item u-style-4ac9dc78">
+<summary class="u-style-2120777c">
+<span aria-hidden="true" class="faq-icon u-style-1056e622">▶</span> <strong>Can you bypass the Motorola CID 0x0033 bootloader restriction?</strong>
+</summary>
+<div class="u-style-6ae5a50d">
+                        There is no official software bypass for CID 0x0033 tokens via the OEM portal. Activists and developers leverage formal FCC consumer reports to challenge these permanent carrier software locks under right-to-repair frameworks.
+                    </div>
+</details>
+<details class="faq-item u-style-2630c733">
+<summary class="u-style-2120777c">
+<span aria-hidden="true" class="faq-icon u-style-1056e622">▶</span> <strong>How do you contact and escalate to the TracFone Executive Resolution Department?</strong>
+</summary>
+<div class="u-style-6ae5a50d">
+                        To reach the **TracFone Executive Resolution Department** (the high-level corporate team that handles FCC, BBB, and Attorney General complaints), you can bypass standard customer service lines using these direct corporate channels:
+                        <br/><br/>
+                        • **Direct Executive Resolution Phone Number:** Call TracFone corporate headquarters in Miami, Florida at **1-800-876-5753** or **1-305-640-2000** and ask to be connected directly to the *Executive Resolution Team* regarding an active regulatory complaint.
+                        <br/>
+                        • **The FCC Complaint Track (Highly Recommended):** The most effective way to force a callback from a senior executive resolver is to file an informal FCC consumer complaint. Once submitted, TracFone's executive office is legally required to respond within 30 days. An executive agent from the department will contact you directly from an email ending in `@tracfone.com` (or `@tracfonewireless.com`) or from a `305` area code.
+                        <br/>
+                        • **Escalation Protocol:** Do not accept standard tier-1 customer service scripts. Reference your specific FCC Ticket Number, document the technical lock (e.g., factory-level firmware locks or CID 0x0033 carrier blocks), cite federal/state unlocking mandates, and reject any boilerplate attempts to deny remediation by demanding a manual backend override or an unlocked, unrestricted replacement hardware unit.
+                    </div>
+</details>
+</article>
+<script>
+                document.querySelectorAll('#faq details').forEach(detail => {
+                    detail.addEventListener('toggle', () => {
+                        const icon = detail.querySelector('.faq-icon');
+                        if (detail.open) {
+                            icon.textContent = '▼';
+                            icon.style.color = '#fff';
+                        } else {
+                            icon.textContent = '▶';
+                            icon.style.color = 'var(--blue, #00bcff)';
+                        }
+                    });
+                });
+            </script>
+</section>
+</main>
+<script defer="" src="/nav.js"></script>
+<footer class="page-footer" role="contentinfo">
+<div class="footer-inner">
+<p>© 2026 CALAUDIT | Nicolas Hernandez | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+<p><strong>LEGAL DISCLAIMER:</strong> This site is provided for informational purposes based on publicly available California statutes and regulations. It does not constitute legal advice. For legal counsel, consult a licensed California attorney.</p>
+<p><strong>MEDICAL DISCLAIMER:</strong> The forensic data and commentary provided here are for investigative and advocacy purposes only. This content is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any medical concerns.</p>
+<p><strong>PROPRIETARY WORK PRODUCT NOTICE:</strong> All original content, analysis, and commentary on this site represents my proprietary work product. Unauthorized reproduction for legal, administrative, or commercial purposes is strictly prohibited without the express written permission of Nicolas Hernandez.</p>
+<p class="onion-mirror">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+</div>
+</footer>
+</div>
+<script>/* Onion Link Patch */ (function(){if(window.location.hostname.endsWith('.onion')){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(h&&!h.startsWith('http')&&!h.startsWith('mailto:')&&!h.startsWith('tel:')&&!h.startsWith('#')){var p=h.split('/');var l=p[p.length-1];if(l!==''&&!l.includes('.')){a.setAttribute('href',h+'.html')}else if(h.endsWith('/')){a.setAttribute('href',h+'index.html')}}})}})();</script>
+<!-- JSON-LD moved to end of body -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://calaudit.org/fcc-complaint-guide/#webpage",
+      "url": "https://calaudit.org/fcc-complaint-guide/",
+      "name": "CID 0x0033: TracFone's Bootloader Lock Agreement, Motorola | CalAudit",
+      "description": "Technical and regulatory guide documenting a Motorola bootloader-lock investigation, carrier ID values, fastboot observations, and an FCC complaint workflow.",
+      "isPartOf": {
+        "@id": "https://calaudit.org/#website"
+      },
+      "author": {
+        "@id": "https://calaudit.org/#nicolas-hernandez"
+      },
+      "publisher": {
+        "@id": "https://calaudit.org/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://calaudit.org/fcc-complaint-guide/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://calaudit.org/fcc-complaint-guide/#article"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://calaudit.org/fcc-complaint-guide/#article",
+      "headline": "CID 0x0033: TracFone's Bootloader Lock Agreement, Motorola",
+      "name": "CID 0x0033: TracFone's Bootloader Lock Agreement, Motorola",
+      "description": "Technical and regulatory guide documenting a Moto G Play 2024 bootloader-lock investigation, CID values, fastboot observations, and an FCC complaint workflow.",
+      "url": "https://calaudit.org/fcc-complaint-guide/",
+      "inLanguage": "en-US",
+      "mainEntityOfPage": {
+        "@id": "https://calaudit.org/fcc-complaint-guide/#webpage"
+      },
+      "author": {
+        "@id": "https://calaudit.org/#nicolas-hernandez"
+      },
+      "publisher": {
+        "@id": "https://calaudit.org/#organization"
+      },
+      "about": {
+        "@id": "https://calaudit.org/fcc-complaint-guide/#device"
+      },
+      "mentions": [
+        {
+          "@type": "Organization",
+          "name": "Motorola"
+        },
+        {
+          "@type": "Organization",
+          "name": "TracFone Wireless"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "https://calaudit.org/fcc-complaint-guide/#howto"
+        },
+        {
+          "@id": "https://calaudit.org/fcc-complaint-guide/#faq"
+        }
+      ]
+    },
+    {
+      "@type": "IndividualProduct",
+      "@id": "https://calaudit.org/fcc-complaint-guide/#device",
+      "name": "Moto G Play 2024",
+      "model": "XT2413V",
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "Motorola"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Carrier ID",
+          "propertyID": "CID",
+          "value": "0x0033"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Observed bootloader state",
+          "value": "OEM locked"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Product codename",
+          "value": "fogona"
+        }
+      ],
+      "subjectOf": [
+        {
+          "@id": "https://calaudit.org/fcc-complaint-guide/#article"
+        },
+        {
+          "@id": "https://calaudit.org/metadata/moto-g-play-2024-fastboot-obfuscated.json"
+        }
+      ]
+    },
+    {
+      "@type": "DigitalDocument",
+      "@id": "https://calaudit.org/metadata/moto-g-play-2024-fastboot-obfuscated.json",
+      "url": "https://calaudit.org/metadata/moto-g-play-2024-fastboot-obfuscated.json",
+      "name": "Moto G Play 2024 fastboot metadata record",
+      "encodingFormat": "application/json",
+      "about": {
+        "@id": "https://calaudit.org/fcc-complaint-guide/#device"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://calaudit.org/fcc-complaint-guide/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://calaudit.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Telecom",
+          "item": "https://calaudit.org/telecom/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "FCC Complaint Guide",
+          "item": "https://calaudit.org/fcc-complaint-guide/"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://calaudit.org/fcc-complaint-guide/#howto",
+      "isPartOf": {
+        "@id": "https://calaudit.org/fcc-complaint-guide/#article"
+      },
+      "name": "How to File an FCC Complaint for Carrier Hardware Restrictions (CID 0x0033)",
+      "description": "A forensic workflow to bypass corporate support loops and trigger federal oversight regarding Motorola and TracFone hardware locks.",
+      "totalTime": "PT45M",
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "Device IMEI and Hardware ID (CID)"
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "Evidence of OEM Unlock Token Provisioning"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Verify Hardware Capability",
+          "text": "Access Motorola's Bootloader Unlock Portal to confirm that an unlock key can be provisioned for your IMEI, establishing hardware-level eligibility.",
+          "url": "https://calaudit.org/fcc-complaint-guide/#motorola-active"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Verify Hardware Identity",
+          "text": "Access fastboot mode to confirm the 'CID 0x0033' parameter and 'RET_CUST' baseband. This provides forensic proof of the hardware's restricted status.",
+          "image": "https://calaudit.org/calevidence/moto-g-play-2024-fastboot-obfuscated.webp"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Execute Federal Filing",
+          "text": "Submit an informal complaint to the FCC Consumer Complaint Center. Use the CalAudit 'Hard Fuse Contradiction' template.",
+          "url": "https://calaudit.org/fcc-complaint-guide/#motorola-active"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Issue Notice of Rebuttal",
+          "text": "Upon receipt of corporate boilerplate, issue a formal rebuttal naming specific technical admissions to force Mandatory Arbitration.",
+          "url": "https://calaudit.org/fcc-complaint-guide/#tracfone-study"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://calaudit.org/fcc-complaint-guide/#faq",
+      "isPartOf": {
+        "@id": "https://calaudit.org/fcc-complaint-guide/#article"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does Motorola bootloader CID 0x0033 mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CID 0x0033 is a Motorola Carrier ID designating devices locked to specific value carriers like Verizon, TracFone, or Straight Talk. Motorola's official unlock portal flags CID 0x0033 devices as permanently ineligible for bootloader unlocking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you bypass the Motorola CID 0x0033 bootloader restriction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no official software bypass for CID 0x0033 tokens via the OEM portal. Activists and developers leverage formal FCC consumer reports to challenge these permanent carrier software locks under right-to-repair frameworks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you contact and escalate to the TracFone Executive Resolution Department?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To reach the TracFone Executive Resolution Department, call TracFone corporate headquarters in Miami, Florida at 1-800-876-5753 or 1-305-640-2000 and ask to be connected directly to the Executive Resolution Team."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# calaudit.org - Forensic Audit Vault - Security Disclosure Policy
+# Sourced from RFC 9116 standard
+
+Contact: https://calaudit.org/advocate/
+Preferred-Languages: en
+Canonical: https://calaudit.org/.well-known/security.txt
+Expires: Sat, 17 Jul 2027 00:00:00 -0700
+Policy: https://calaudit.org/

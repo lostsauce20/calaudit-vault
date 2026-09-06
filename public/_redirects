@@ -1,0 +1,386 @@
+# ====================================================================
+# TRAILING SLASH NORMALIZATION (Prevents 308/301 loops)
+# ====================================================================
+/deadquarters                   /deadquarters/              301
+/litigation                     /litigation/                301
+/telecom                        /telecom/                   301
+/medical-vault                  /medical-vault/             301
+/ai-disorder                    /ai-disorder/               301
+/knox-keene                     /knox-keene/                301
+/medi-cal-reimbursement         /dhcs4521/                  301
+/medi-cal-reimbursement/        /dhcs4521/                  301
+/dhcs4521                       /dhcs4521/                  301
+/bots                           /bots/                      301
+/bots/manifest-2                /bots/                      301
+/bots/manifest-2/               /bots/                      301
+/bots/manifest-3                /bots/                      301
+/bots/manifest-3/               /bots/                      301
+/bots/manifest-4                /bots/                      301
+/bots/manifest-4/               /bots/                      301
+/adb-cache-guide                /tools/adb-cache-builder/   301
+/adb-cache-guide/               /tools/adb-cache-builder/   301
+/no-cache-guide                 /tools/adb-cache-builder/#cache-cleaner-guide  301
+/fame-records                   /fame-records/              301
+/fcc-complaint-guide            /fcc-complaint-guide/       301
+/forensic-vault                 /forensic-vault/            301
+/california-anhedonia           /                           301
+/dmhc-faqs                      /dmhc-faqs/                 301
+/escalation                     /escalation/                301
+/state-hearings                 /state-hearings/            301
+/uber-fraud-reporting           /uber-fraud-reporting/      301
+/uber-fraud                     /uber-fraud-reporting/      301
+/litigation/service             /litigation/#service-forensics 301
+/litigation/service/            /litigation/#service-forensics 301
+/litigation/timeline            /litigation/#timeline       301
+/litigation/timeline/           /litigation/#timeline       301
+/litigation/tort-road           /litigation/#tort-claim     301
+/litigation/tort-road/          /litigation/#tort-claim     301
+/lossless-ledger                /                           301
+/lossless-ledger/               /                           301
+
+# ====================================================================
+# LEGACY .HTML REDIRECTS (Prevents 404s from old index)
+# ====================================================================
+/deadquarters.html              /deadquarters/              301
+/litigation.html                /litigation/                301
+/telecom.html                   /telecom/                   301
+/medical-vault.html             /medical-vault/             301
+/ai-disorder.html               /ai-disorder/               301
+/knox-keene.html                /knox-keene/                301
+/medi-cal-reimbursement.html    /dhcs4521/                  301
+/dhcs4521.html                  /dhcs4521/                  301
+/bots.html                      /bots/                      301
+/adb-cache-guide.html           /tools/adb-cache-builder/   301
+/no-cache-guide.html            /tools/adb-cache-builder/#cache-cleaner-guide  301
+/fame-records.html              /fame-records/              301
+/fcc-complaint-guide.html       /fcc-complaint-guide/       301
+/forensic-vault.html            /forensic-vault/            301
+/california-anhedonia.html      /                           301
+/dmhc-faqs.html                 /dmhc-faqs/                 301
+/escalation.html                /escalation/                301
+/state-hearings.html            /state-hearings/            301
+/uber-fraud-reporting.html      /uber-fraud-reporting/      301
+/uber-fraud.html                /uber-fraud-reporting/      301
+/litigation/service.html        /litigation/#service-forensics 301
+/litigation/timeline.html       /litigation/#timeline       301
+/litigation/tort-road.html      /litigation/#tort-claim     301
+/exhibits/calfiles/medical-vault.html /medical-vault/       301
+/exhibits/medical/master-vault.html   /medical-vault/       301
+/no-cache-guide/  /tools/adb-cache-builder/#cache-cleaner-guide  301
+/fcc-complaint-guide/motorola-meltdown  /fcc-complaint-guide/#motorola-meltdown-full  301
+/fcc-complaint-guide/motorola-meltdown/  /fcc-complaint-guide/#motorola-meltdown-full  301
+/protected-amendment  /right-to-request/#avmc-dossier  301
+/protected-amendment/  /right-to-request/#avmc-dossier  301
+/protected-amendment-v2  /right-to-request/#palmdale-regional-dossier  301
+/protected-amendment-v2/  /right-to-request/#palmdale-regional-dossier  301
+/forms/clinical-resources  /forms/#clinical-resources  301
+/forms/clinical-resources/  /forms/#clinical-resources  301
+
+# ====================================================================
+# LEGACY PATH & BRANCH SAFETY NETS
+# ====================================================================
+/conlan                                              /dhcs4521/                                           301
+/conlan/                                             /dhcs4521/                                           301
+/deadquarters/directory-fraud                        /deadquarters/                                       301
+/deadquarters/directory-fraud/                       /deadquarters/                                       301
+/deadquarters/evasion-protocol                       /deadquarters/                                       301
+/deadquarters/evasion-protocol/                      /deadquarters/                                       301
+/deadquarters/institutional-proof                    /deadquarters/                                       301
+/deadquarters/institutional-proof/                   /deadquarters/                                       301
+/deadquarters/carelon-expedited-number               /deadquarters/carelon-expedited-number/              301
+/deadquarters/lacare-conflicting-addresses-google    /deadquarters/lacare-conflicting-addresses-google/   301
+/evidence-room/jwch-phone-system-collapse-proof      /evidence-room/jwch-phone-system-collapse-proof/     301
+/legal/bpc-17200/                                    /fcc-complaint-guide/#motorola-meltdown-full         301
+/calevidence/                                        /evidence-room/                                      301
+/calevidence                                         /evidence-room/                                      301
+/sitemap                                             /sitemap.xml                                         301
+/sitemap.mxl                                         /sitemap.xml                                         301
+
+# ====================================================================
+# ASSET FIXES (Crawler 404s, Underscore-to-Hyphen, Typo Resolutions)
+# ====================================================================
+/calevidence/lacare_covered_direct_1200.pdf                             /calevidence/lacare-covered-direct-1200.pdf                                     301
+/metadata/seldeen_email_04272026-obfuscated.json                        /metadata/05142026-seldeen-email-redacted-annotated.json                        301
+/calevidence/janney&janney_sc104_redacted_and_efile.webp                /calevidence/janney-janney-sc104-redacted-and-efile.webp                        301
+/metadata/janney&janney_sc104_redacted_and_efile.json                   /metadata/janney-janney-sc104-redacted-and-efile.json                           301
+/calevidence/acknowledgement_letter_garcia_redacted.pdf                 /calevidence/acknowledgement-letter-garcia-redacted.pdf                         301
+/calevidence/attorney_general_submission_redacted.pdf                   /calevidence/attorney-general-submission-redacted.pdf                           301
+/metadata/attorney_general_submission_redacted.json                     /metadata/attorney-general-submission-redacted.json                             301
+/metadata/fcc_complaint_acknowledgement_email.json                      /metadata/fcc-complaint-1.json                                                  301
+/metadata/fcc-complaint-acknowledgement-email.json                      /metadata/fcc-complaint-1.json                                                  301
+/metadata/abclegal_serve2_misspell_fail_page1.json                      /metadata/abclegal-serve2-misspell-fail-page1.json                              301
+/calevidence/10-2025rev2026-lacare-memberhandbook-12001.pdf             /calevidence/11-2025-01-2026review-newmemberguide.pdf                           301
+/metadata/04012026_lacare_letter_redacted.json                          /metadata/04012026-lacare-letter-redacted-annotated.json                        301
+/metadata/motorola-fcc-packet-annotated-redacted.json                   /metadata/motorola-attorney-general-evidence-attachments-pack-redacted.json     301
+/calevidence/1409055-Closing-Letter-Hernandez-1-redacted.pdf            /calevidence/xxxxx55-closing-letter-hernandez-1-redacted-annotated.webp         301
+/calevidence/Case-No-09-2010-211439-Syed.pdf                            /calevidence/case-no-09-2010-211439-syed.pdf                                    301
+/calevidence/C-xxxxxxxx-xxT2-Bene-Elig-MCP-compiled-redacted.pdf        /calevidence/c-xxxxxxxx-xxt2-bene-elig-mcp-compiled-redacted.pdf                301
+/metadata/04292026_lacare_letter_redacted.json                          /metadata/04292026-lacare-letter-redacted-annotated.json                        301
+/calevidence/04292026_lacare_letter.pdf                                 /calevidence/04292026-lacare-letter-redacted-annotated.webp                     301
+/metadata/exhibit_a-obfuscated.json                                     /metadata/exhibit-a-obfuscated.json                                             301
+/calevidence/SB1448-PROBATION-DISCLOSURE-TO-PATIENTS.pdf                /calevidence/sb1448-probation-disclosure-to-patients_result.webp                301
+/metadata/20250116_lacare_ghost_lobby_inspection.json                   /metadata/20250116-lacare-ghost-lobby-inspection.json                           301
+/calevidence/20250116_lacare_ghost_lobby_inspection.pdf                 /calevidence/20250116-lacare-ghost-lobby-inspection.pdf                         301
+/calevidence/Proposed-Dismissal-Letter-1-redacted.pdf                   /calevidence/05152026-proposed-dismissal-letter-1-redacted.pdf                  301
+/metadata/lacare_covered_direct_1200.json                               /metadata/lacare-covered-direct-1200.json                                       301
+/calevidence/avmc-redacted-12.pdf                                       /calevidence/avmc-redacted-12-annotated.pdf                                     301
+/calevidence/lacare_health_insurance_dental_coverage.webp               /calevidence/lacare-health-insurance-dental-coverage.webp                       301
+/exhibits/telecom/motorola_letter_redacted.pdf                          /calevidence/motorola-attorney-general-evidence-attachments-pack-redacted.pdf   301
+/calevidence/lacare-grievance-letter-redacted.pdf                       /calevidence/lacare-grievance-letter-redacted-annotated.webp                    301
+/public/calevidence/tmobile-fcc-response-redacted.webp                  /calevidence/jan-26-2026-tmobile-fcc-ticket-response-redacted.webp              301
+/calevidence/CA-ACMS-3.85.1-original-hearing-request-redacted-annotated.webp /calevidence/ca-acms-3.85.1-original-hearing-request-redacted-annotated.webp 301
+/calevidence/C-xxxxxxxx-xxT2-Bene-Elig-MCP-redacted.pdf                 /calevidence/c-xxxxxxxx-xxt2-bene-elig-mcp-redacted.pdf                         301
+/calevidence/XXXXX55-Closing-Letter-Hernandez-1-redacted-annotated.webp /calevidence/xxxxx55-closing-letter-hernandez-1-redacted-annotated.webp         301
+/calevidence/Nicolas-Hernandez-Medical-Letter-APR2026-redacted.pdf      /calevidence/nicolas-hernandez-medical-letter-apr2026-redacted.pdf              301
+/calevidence/jan-06-2026-my-response-FCC-consumer-email-redacted.webp   /calevidence/jan-06-2026-my-response-fcc-consumer-email-redacted.webp           301
+/metadata/Jikamo-billing-processing-obfuscated.json                     /metadata/jikamo-billing-processing-obfuscated.json                             301
+/calevidence/DHCS4521-Medi-Cal-Claim-Form-For-Beneficiary-Reimbursement.pdf /calevidence/dhcs4521-medi-cal-claim-form-for-beneficiary-reimbursement.pdf 301
+/calevidence/26AVSC00192-minute-order-05222026.pdf                      /calevidence/26avsc00192-minute-order-05222026.pdf                              301
+/calevidence/board_of_governors_meeting_march_10_2026.pdf               /calevidence/board-of-governors-meeting-march-10-2026.pdf                       301
+/calevidence/SHN-XXXXXXX55-Opposition-To-Dismissal-redacted.webp        /calevidence/shn-xxxxxxx55-opposition-to-dismissal-redacted.webp                301
+/calevidence/Case-No-800-2019-062318-Syed.pdf                           /calevidence/case-no-800-2019-062318-syed.pdf                                   301
+/calevidence/XXXXX55-Hernandez-Ack-Ltr-redacted.pdf                     /calevidence/xxxxx55-hernandez-ack-ltr-redacted.webp                            301
+/calevidence/xxxxx55-hernandez-ack-ltr-redacted.pdf                     /calevidence/xxxxx55-hernandez-ack-ltr-redacted.webp                            301
+/calevidence/cma_pineda_mychart_notes_redacted.pdf                      /calevidence/cma-pineda-mychart-notes-redacted.pdf                              301
+/calevidence/11-2025_01-2026review_newmemberguide.pdf                   /calevidence/11-2025-01-2026review-newmemberguide.pdf                           301
+/metadata/muckrock_1055.json                                            /metadata/muckrock-1055.json                                                    301
+/calevidence/Nicolas_Hernandez_Medical_Records_Mar2026_redacted.pdf     /calevidence/nicolas-hernandez-medical-records-mar2026-redacted.pdf             301
+/calevidence/Expedite_Denied_Letter_redacted.pdf                        /calevidence/05112026-expedited-hearing-appeal-denial.webp                      301
+/calevidence/std204-example.pdf                                         /calevidence/std-204-payee-data-record.pdf                                      301
+/metadata/04292026-lacare-letter-redacted.json%20class=                 /metadata/04292026-lacare-letter-redacted-annotated.json                        301
+/calevidence/CA-ACMS-3.85.1-06-02-2026-redacted.webp                    /calevidence/ca-acms-3.85.1-appeal-hearing-request-redacted-06-22-2026.webp     301
+/calevidence/jwch-phone-system-collapse-proof.webp                      /calevidence/jwch-phone-system-collapse-proof.png                               301
+/calevidence/may1stlacare.pdf                                           /calevidence/05012026-lacare-letter-redacted-annotated.webp                     301
+/calevidence/conlan-index-page-example.pdf                              /dhcs4521/                                                                      301
+/metadata/lenovo-reps-obfuscated.json                                   /telecom/                                                                       301
+/calevidence/lenovo-reps-obfuscated.webp                                /telecom/                                                                       301
+/calevidence/cloudflareblogs-a-b.webp                                   /ai-disorder/                                                                   301
+/litigation/tort-road/application/vnd.openxmlformats-officedocument.wordprocessingml.document /calevidence/tort-claim-template.docx                     301
+/metadata/adb-cache-builder.json                                        /tools/adb-cache-builder/                                                       301
+/metadata/magic-byte-auditor.json                                       /tools/magic-byte-auditor/                                                      301
+/metadata/text-encryptor.json                                           /tools/text-encryptor/                                                          301
+/calevidence/tmobile-fcc-full-timeline-redacted.pdf                     /telecom/                                                                       301
+/calevidence/Anthem-Member-Grievance-Form.pdf                           /calevidence/anthem-member-grievance-form.pdf                                   301
+/court-hearing-notes-scrap-paper.webp                                   /calevidence/court-hearing-notes-scrap-paper.webp                               301
+/calevidence/conlan1.pdf                                                /calevidence/conlan1.webp                                                       301
+/calevidence/conlan2.pdf                                                /calevidence/conlan2.webp                                                       301
+/calevidence/conlan3.pdf                                                /calevidence/conlan3.webp                                                       301
+/calevidence/efax-dmhc-expedited-imr-fax-success-08-03-2026.webp    /calevidence/efax-dmhc-expedited-imr-fax-success.webp    301
+
+# ====================================================================
+# EXHIBIT 26 PHARMACY TYPO REDIRECTS
+# ====================================================================
+/calevidence/the-hardcap-trap-la-care-illegally-capping-pharacy-rides-call-the-car.mp4   /calevidence/the-hardcap-trap-la-care-illegally-capping-pharmacy-rides-call-the-car.mp4  301
+/calevidence/the-hardcap-trap-la-care-illegally-capping-pharacy-rides-call-the-car.vtt   /calevidence/the-hardcap-trap-la-care-illegally-capping-pharmacy-rides-call-the-car.vtt  301
+/metadata/the-hardcap-trap-la-care-illegally-capping-pharacy-rides-call-the-car.json     /metadata/the-hardcap-trap-la-care-illegally-capping-pharmacy-rides-call-the-car.json    301
+/evidence-room/the-hardcap-trap-la-care-illegally-capping-pharacy-rides-call-the-car/    /evidence-room/the-hardcap-trap-la-care-illegally-capping-pharmacy-rides-call-the-car/   301
+
+# ====================================================================
+# GREY MANUALS LEGACY REDIRECTS (Search Console Impressions)
+# ====================================================================
+/grey-manuals/favicon.ico                         /favicon.ico              301
+/grey-manuals/                                    /                         301
+/grey-manuals                                     /                         301
+/grey-manuals/uber-fraud-reporting/               /uber-fraud-reporting/    301
+/grey-manuals/uber-fraud-reporting                /uber-fraud-reporting/    301
+/grey-manuals/guides/uber-fraud-reporting/        /uber-fraud-reporting/    301
+/grey-manuals/guides/uber-fraud-reporting         /uber-fraud-reporting/    301
+
+# ====================================================================
+# PDF RENAMES REDIRECTS
+# ====================================================================
+/calevidence/1566273587_insight-ciwa-bpdf.pdf                                                                   /calevidence/ciwa-b-benzodiazepine-withdrawal-assessment.pdf         301
+/calevidence/ciwa-ar.pdf                                                                                        /calevidence/ciwa-ar-alcohol-withdrawal-assessment.pdf               301
+/calevidence/CA-BRIDGE-TEMPLATE-COWS-September-2020-Clinical-Opioid-Withdrawal-Scale-COWS-worksheet.pdf         /calevidence/cows-clinical-opioid-withdrawal-scale.pdf               301
+/calevidence/PCL5_Standard_form.pdf                                                                             /calevidence/pcl5-ptsd-checklist-standard-form.pdf                   301
+/calevidence/DAST-10-drug-abuse-screening-test.pdf                                                              /calevidence/dast-10-drug-abuse-screening-test.pdf                   301
+/calevidence/PHQ-9%20and%20GAD-7%20Form_a.pdf                                                                   /calevidence/phq-9-gad-7-patient-health-anxiety-questionnaire.pdf    301
+/calevidence/USAUDIT.pdf                                                                                        /calevidence/usaudit-alcohol-use-disorders-identification-test.pdf   301
+/calevidence/BenzoWithdrawalCondensedEnglish.pdf                                                                /calevidence/benzo-withdrawal-management-at-home.pdf                 301
+/calevidence/benzo-withdrawal-management.pdf                                                                   /calevidence/benzo-withdrawal-management-at-home.pdf                 301
+/calevidence/StimulantWithdrawalCondensed.pdf                                                                   /calevidence/stimulant-withdrawal-management-at-home.pdf             301
+/calevidence/FentanylTestStrips_FAQs.pdf                                                                        /calevidence/fentanyl-test-strips-faqs.pdf                           301
+/calevidence/CA_BRIDGE_GUIDE_Acute-Care-Treatment-of-Alcohol-Use-Disorder_June_2025.pdf                         /calevidence/ca-bridge-acute-care-treatment-alcohol-use-disorder.pdf 301
+/calevidence/CA_BRIDGE_FAQ_SUN_June_2025.pdf                                                                    /calevidence/ca-bridge-substance-use-navigator-faq.pdf               301
+/calevidence/ca-bridge-sun-faq.pdf                                                                              /calevidence/ca-bridge-substance-use-navigator-faq.pdf               301
+/calevidence/CA_Bridge_TOOL_Treatment-Packet-2026.pdf                                                           /calevidence/ca-bridge-treatment-protocols-packet.pdf                301
+/calevidence/CA-BRIDGE-PROTOCOL-Methadone-Quick-Start-March-2023.pdf                                            /calevidence/ca-bridge-methadone-quick-start-protocol.pdf            301
+/calevidence/CA_BRIDGE_GUIDE_Guide-to-Harm-Reduction-in-the-Emergency-Department_June_2025.pdf                  /calevidence/ca-bridge-harm-reduction-emergency-department-guide.pdf 301
+/calevidence/Health-Net-Member-Appeal-or-Grievance%20-Form.pdf                                                  /calevidence/health-net-member-appeal-or-grievance--form.pdf         301
+
+# ====================================================================
+# SEMANTIC GOVERNMENT FORMS REDIRECTS (Weaponized SEO Room)
+# ====================================================================
+/forms/mc210                                                                         /official-forms/mc-210-en.pdf                        301
+/forms/medi-cal-rx                                                                   /dhcs4521/                                           301
+/forms/phi-release                                                                   /right-to-request/#palmdale-regional-dossier         301
+/forms/mc-210-medi-cal-mail-in-application.pdf                                       /official-forms/mc-210-en.pdf                        301
+/forms/dhcs-4521-medi-cal-out-of-pocket-reimbursement-claim.pdf                      /official-forms/dhcs-4521-en.pdf                     301
+/forms/dmhc-imr-form-20-224-consumer-complaint-application.pdf                       /official-forms/dmhc-20-224-en.pdf                   301
+/forms/dhcs-8250-california-state-fair-hearing-request.pdf                           /official-forms/dhcs-8250-en.pdf                     301
+/forms/std-204-payee-data-record-reimbursement-vendor-registration.pdf               /official-forms/std-204-en.pdf                       301
+/forms/mc-306-medi-cal-appointment-of-authorized-representative.pdf                  /official-forms/mc-306-en.pdf                        301
+/forms/ebt-2216-request-for-replacement-of-scammed-ebt-benefits.pdf                  /official-forms/ebt-2216-en.pdf                      301
+/forms/mc-219-medi-cal-rights-and-important-information.pdf                          /official-forms/mc-219-en.pdf                        301
+/forms/california-certified-lawyer-referral-services-directory.pdf                   /official-forms/state-bar-directory-en.pdf           301
+/forms/dmhc-authorized-assistant-form.pdf                                            /official-forms/dmhc-20-160-en.pdf                   301
+/forms/cdss-soc-321-request-for-medical-information.pdf                              /official-forms/soc-321-en.pdf                       301
+/forms/                                                                              /dope-forms/                                         301
+/forms/index.html                                                                    /dope-forms/                                         301
+
+/dope-forms/ca-bridge-sun-faq.pdf                                                    /calevidence/ca-bridge-substance-use-navigator-faq.pdf                               301
+/dope-forms/benzo-withdrawal-management.pdf                                          /calevidence/benzo-withdrawal-management-at-home.pdf                                 301
+/dope-forms/overamping-stimulant-overdose.pdf                                        /calevidence/overamping-stimulant-overdose.pdf                                       301
+/dope-forms/carfentanil-faq.pdf                                                      /calevidence/carfentanil-faq.pdf                                                     301
+/dope-forms/opioid-withdrawal-condensed.pdf                                          /calevidence/opioid-withdrawal-condensed.pdf                                         301
+/dope-forms/tianeptine-condensed.pdf                                                 /calevidence/tianeptine-condensed.pdf                                                301
+/dope-forms/safer-meth-smoking.pdf                                                   /calevidence/safer-meth-smoking.pdf                                                  301
+/forms/mc-382-appointment-of-authorized-representative.pdf                           /official-forms/mc-382-en.pdf                        301
+/forms/mc-220-authorization-for-release-of-information.pdf                           /official-forms/mc-220-en.pdf                        301
+/forms/dph-8565-medical-exemption-request.pdf                                        /official-forms/dph-8565-en.pdf                      301
+/forms/dhcs-lga-authorization-legislative-release-of-information.pdf                 /official-forms/dhcs-lga-en.pdf                      301
+/forms/dhcs-discrimination-complaint-form.pdf                                        /calevidence/dhcs-discrimination-complaint-form.pdf                                  301
+/forms/la-county-dpss-pa-607-complaint-of-discriminatory-treatment.pdf               /official-forms/pa-607-en.pdf                        301
+/forms/hhs-oig-hotline-facsimile-submission-form.pdf                                 /official-forms/hhs-oig-en.pdf                       301
+/forms/authorization-release-information-senator-valladares-district-23.pdf          /official-forms/senator-valladares-en.pdf            301
+/forms/casework-forms-lackey-district-34.pdf                                         /official-forms/assemblymember-lackey-en.pdf         301
+/forms/dhcs-6224-medi-cal-managed-care-member-complaint-form.pdf                     /official-forms/dhcs-6224-en.pdf                     301
+/forms/cdss-soc-825-ihss-protective-supervision-assessment.pdf                       /official-forms/soc-825-en.pdf                       301
+/forms/dhcs-6195-estate-recovery-hardship-waiver-application.pdf                     /official-forms/dhcs-6195-en.pdf                     301
+/forms/cdss-pub-13-your-rights-california-public-assistance.pdf                      /official-forms/pub-13-en.pdf                        301
+/forms/dca-1-84-medical-board-of-california-complaint.pdf                            /official-forms/dca-1-84-en.pdf                      301
+
+# DHCS UTILITIES FORMS
+/forms/dhcs-6236-authorization-for-release-of-protected-health-information.pdf       /official-forms/dhcs-6236-en.pdf                     301
+/forms/dhcs-6236                                                                     /official-forms/dhcs-6236-en.pdf                     301
+/forms/dhcs-phi-release                                                              /official-forms/dhcs-6236-en.pdf                     301
+/forms/dhcs-6251-medi-cal-estate-recovery-questionnaire.pdf                          /official-forms/dhcs-6251-en.pdf                     301
+/forms/dhcs-6251                                                                     /official-forms/dhcs-6251-en.pdf                     301
+/forms/estate-recovery-questionnaire                                                 /official-forms/dhcs-6251-en.pdf                     301
+/forms/medi-cal-estate-recovery-questionnaire                                        /official-forms/dhcs-6251-en.pdf                     301
+/forms/dhcs-6242-privacy-complaint-form.pdf                                          /official-forms/dhcs-6242-en.pdf                     301
+/forms/dhcs-6242                                                                     /official-forms/dhcs-6242-en.pdf                     301
+/forms/dhcs-privacy-complaint                                                        /official-forms/dhcs-6242-en.pdf                     301
+
+# SPANISH LANGUAGE FORMS
+/forms/mc-210a-retroactive-eligibility-statement-of-facts-spanish.pdf                /official-forms/mc-210-es.pdf                        301
+/forms/mc-210a-spanish                                                               /official-forms/mc-210-es.pdf                        301
+/forms/mc-220-authorization-for-release-of-information-spanish.pdf                   /official-forms/mc-220-es.pdf                        301
+/forms/mc-220-spanish                                                                /official-forms/mc-220-es.pdf                        301
+/forms/mc-219-medi-cal-rights-and-important-information-spanish.pdf                  /official-forms/mc-219-es.pdf                        301
+/forms/mc-219-spanish                                                                /official-forms/mc-219-es.pdf                        301
+/forms/dhcs-6195-estate-recovery-hardship-waiver-application-spanish.pdf             /official-forms/dhcs-6195-es.pdf                      301
+/forms/dhcs-6195-spanish                                                             /official-forms/dhcs-6195-es.pdf                      301
+/forms/cdss-soc-825-ihss-protective-supervision-assessment-spanish.pdf               /official-forms/soc-825-es.pdf                       301
+/forms/soc-825-spanish                                                               /official-forms/soc-825-es.pdf                       301
+/forms/mc-382-appointment-of-authorized-representative-spanish.pdf                   /official-forms/mc-382-es.pdf                        301
+/forms/mc-382-spanish                                                                /official-forms/mc-382-es.pdf                        301
+/forms/mc-306-medi-cal-appointment-of-authorized-representative-spanish.pdf          /official-forms/mc-306-es.pdf                        301
+/forms/mc-306-spanish                                                                /official-forms/mc-306-es.pdf                        301
+/forms/dmhc-authorized-assistant-form-spanish.pdf                                    /official-forms/dmhc-20-160-es.pdf                   301
+/forms/dmhc-asistente-autorizado-spanish                                             /official-forms/dmhc-20-160-es.pdf                   301
+/forms/mc-383-authorized-representative-agreement-spanish.pdf                        /official-forms/mc-383-es.pdf                        301
+/forms/mc-383-spanish                                                                /official-forms/mc-383-es.pdf                        301
+/forms/cdss-pub-13-your-rights-california-public-assistance-spanish.pdf              /official-forms/pub-13-es.pdf                        301
+/forms/pub-13-spanish                                                                /official-forms/pub-13-es.pdf                        301
+/forms/ebt-2216-request-for-replacement-of-scammed-ebt-benefits-spanish.pdf          /official-forms/ebt-2216-es.pdf                      301
+/forms/ebt-2216-spanish                                                              /official-forms/ebt-2216-es.pdf                      301
+/forms/cdss-soc-321-request-for-medical-information-spanish.pdf                      /official-forms/soc-321-es.pdf                       301
+/forms/soc-321-spanish                                                               /official-forms/soc-321-es.pdf                       301
+/forms/la-county-dpss-pa-607-complaint-of-discriminatory-treatment-spanish.pdf       /official-forms/pa-607-es.pdf                        301
+/forms/pa-607-spanish                                                                /official-forms/pa-607-es.pdf                        301
+/forms/dhcs-6236-authorization-for-release-of-protected-health-information-spanish.pdf /official-forms/dhcs-6236-es.pdf                     301
+/forms/dhcs-6236-spanish                                                             /official-forms/dhcs-6236-es.pdf                     301
+/forms/dhcs-6251-medi-cal-estate-recovery-questionnaire-spanish.pdf                  /official-forms/dhcs-6251-es.pdf                     301
+/forms/dhcs-6251-spanish                                                             /official-forms/dhcs-6251-es.pdf                     301
+/forms/dhcs-8250-how-to-file-state-hearing-10-25-revision-spanish.pdf                /official-forms/dhcs-8250-es.pdf                     301
+/forms/dhcs-8250-spanish                                                             /official-forms/dhcs-8250-es.pdf                     301
+/forms/dmhc-imr-form-20-224-consumer-complaint-application-spanish.pdf               /official-forms/dmhc-20-224-es.pdf                   301
+/forms/dmhc-20-224-spanish                                                           /official-forms/dmhc-20-224-es.pdf                   301
+
+# ====================================================================
+# SCHEMA CONCEPT MAPPING (Recovering Crawler Hits from JSON-LD @IDs)
+# ====================================================================
+/legal/knox-keene-act/                 /knox-keene/                         301
+/legal/hipaa-privacy-rule/             /ocr-hipaa-guide/                    301
+/legal/ca-government/                  /state-hearings/                     301
+/legal/ca-welfare-institutions/        /dhcs4521/                           301
+/legal/conlan-v-bonta/                 /dhcs4521/                           301
+/legal/hsc-1368-01/                    /knox-keene/                         301
+/legal/ca-ccr-title22/                 /dhcs4521/                           301
+/legal/ca-business-professions/        /litigation/                         301
+/legal/ca-ab-611/                      /litigation/                         301
+/legal/ca-hsc-clinical/                /forms/                              301
+/legal/ca-hsc-1368/                    /knox-keene/                         301
+
+# ====================================================================
+# PHANTOM CRAWLER 404 & WILDCARD ROUTING
+# ====================================================================
+/images/og-knox-keene-auditor.png      /calauditlogo.webp                  301
+/images/logo.png                       /calauditlogo.png                   301
+/calevidence/dmhc-expedited-imr-fax-08-03-2026-redacted.pdf     /calevidence/dmhc-fax-08-04-2026-full-final-redacted.pdf            301
+/metadata/dmhc-expedited-imr-fax-08-03-2026-redacted.json       /metadata/dmhc-fax-08-04-2026-full-final-redacted.json              301
+/metadata/avmc-redacted-03.json        /evidence-room/                      301
+/calevidence/sc100-lacare-small-claims-page-3-redacted.webp    /calevidence/sc100-lacare-avsc00542-small-claims-page-3-redacted.webp    301
+/metadata/sc100-lacare-small-claims-page-3-redacted.json    /metadata/sc100-lacare-avsc00542-small-claims-page-3-redacted.json    301
+
+# ====================================================================
+# FORMS OVERHAUL CONSOLIDATION (Old /calevidence/ to /official-forms/)
+# ====================================================================
+/calevidence/dhcs-8250-how-to-file-state-hearing-10-25-revision.pdf         /official-forms/dhcs-8250-en.pdf 301
+/calevidence/dhcs-8250-how-to-file-state-hearing-10-25-revision-spanish.pdf /official-forms/dhcs-8250-es.pdf 301
+/calevidence/dhcs-6195-estate-recovery-hardship-waiver-application.pdf      /official-forms/dhcs-6195-en.pdf 301
+/calevidence/dhcs-6195-estate-recovery-hardship-waiver-application-spanish.pdf /official-forms/dhcs-6195-es.pdf 301
+/calevidence/dhcs-6224-medi-cal-managed-care-member-complaint-form.pdf     /official-forms/dhcs-6224-en.pdf 301
+/calevidence/dhcs-6236-authorization-for-release-of-protected-health-information.pdf /official-forms/dhcs-6236-en.pdf 301
+/calevidence/dhcs-6236-authorization-for-release-of-protected-health-information-spanish.pdf /official-forms/dhcs-6236-es.pdf 301
+/calevidence/mc-219-medi-cal-rights-and-important-information.pdf         /official-forms/mc-219-en.pdf 301
+/calevidence/mc-219-medi-cal-rights-and-important-information-spanish.pdf /official-forms/mc-219-es.pdf 301
+/calevidence/mc-306-medi-cal-appointment-of-authorized-representative.pdf /official-forms/mc-306-en.pdf 301
+/calevidence/mc-306-medi-cal-appointment-of-authorized-representative-spanish.pdf /official-forms/mc-306-es.pdf 301
+/calevidence/mc-220-authorization-for-release-of-information-spanish.pdf   /official-forms/mc-220-es.pdf 301
+/calevidence/mc20220208pt.pdf                                              /official-forms/mc-220-en.pdf 301
+/calevidence/soc321.pdf                                                    /official-forms/soc-321-en.pdf 301
+/calevidence/cdss-soc-321-request-for-medical-information-spanish.pdf      /official-forms/soc-321-es.pdf 301
+/calevidence/cdss-soc-825-ihss-protective-supervision-assessment.pdf       /official-forms/soc-825-en.pdf 301
+/calevidence/cdss-soc-825-ihss-protective-supervision-assessment-spanish.pdf /official-forms/soc-825-es.pdf 301
+/calevidence/std-204-payee-data-record.pdf                                 /official-forms/std-204-en.pdf 301
+/calevidence/dhcs4521-medi-cal-claim-form-for-beneficiary-reimbursement.pdf /official-forms/dhcs-4521-en.pdf 301
+
+/calevidence/mc-210a-retroactive-eligibility-statement-of-facts.pdf        /official-forms/mc-210-en.pdf 301
+/calevidence/mc-210a-retroactive-eligibility-statement-of-facts-spanish.pdf /official-forms/mc-210-es.pdf 301
+/calevidence/mc382_0618.pdf                                                /official-forms/mc-382-en.pdf 301
+/calevidence/mc-382-appointment-of-authorized-representative-spanish.pdf   /official-forms/mc-382-es.pdf 301
+/calevidence/mu_0003383_eng_tempmedexemptionweb.pdf                        /official-forms/dph-8565-en.pdf 301
+/calevidence/dhcs-6242-privacy-complaint-form.pdf                          /official-forms/dhcs-6242-en.pdf 301
+/calevidence/dmhc-imr-application-20-224-english.pdf                      /official-forms/dmhc-20-224-en.pdf 301
+/calevidence/dmhc-imr-form-20-224-consumer-complaint-application-spanish.pdf /official-forms/dmhc-20-224-es.pdf 301
+/calevidence/dmhc-authorized-assistant-form.pdf                            /official-forms/dmhc-20-160-en.pdf 301
+/calevidence/dmhc-authorized-assistant-form-spanish.pdf                    /official-forms/dmhc-20-160-es.pdf 301
+/calevidence/medical-board-of-california-authorization-release-of-information.pdf /official-forms/dca-1-84-en.pdf 301
+/calevidence/cdss-pub-13-your-rights-california-public-assistance.pdf      /official-forms/pub-13-en.pdf 301
+/calevidence/cdss-pub-13-your-rights-california-public-assistance-spanish.pdf /official-forms/pub-13-es.pdf 301
+/calevidence/ebt-2216-request-for-replacement-of-scammed-ebt-benefits.pdf  /official-forms/ebt-2216-en.pdf 301
+/calevidence/ebt-2216-request-for-replacement-of-scammed-ebt-benefits-spanish.pdf /official-forms/ebt-2216-es.pdf 301
+/calevidence/california-certified-lawyer-referral-services-directory.pdf   /official-forms/state-bar-directory-en.pdf 301
+/calevidence/mc-383-authorized-representative-agreement.pdf                /official-forms/mc-383-en.pdf 301
+/calevidence/mc-383-authorized-representative-agreement-spanish.pdf        /official-forms/mc-383-es.pdf 301
+/calevidence/la-county-dpss-pa-607-complaint-of-discriminatory-treatment.pdf /official-forms/pa-607-en.pdf 301
+/calevidence/la-county-dpss-pa-607-complaint-of-discriminatory-treatment-spanish.pdf /official-forms/pa-607-es.pdf 301
+/calevidence/dhcs-6251-medi-cal-estate-recovery-questionnaire.pdf          /official-forms/dhcs-6251-en.pdf 301
+/calevidence/dhcs-6251-medi-cal-estate-recovery-questionnaire-spanish.pdf  /official-forms/dhcs-6251-es.pdf 301
+
+/forms/formularios-espanol/                                                 /official-forms/ 301
+/forms/formularios-espanol/index.html                                        /official-forms/ 301
+
+# Specific retired-branch wildcard fallbacks (keep ALL wildcard/placeholder rules at end)
+/forms/*                                                                    /dope-forms/:splat 301
+/no-cache-guide/*  /tools/adb-cache-builder/#cache-cleaner-guide  301
+/fcc-complaint-guide/motorola-meltdown/*  /fcc-complaint-guide/#motorola-meltdown-full  301
+/protected-amendment/*  /right-to-request/#avmc-dossier  301
+/protected-amendment-v2/*  /right-to-request/#palmdale-regional-dossier  301
+/dope-forms/clinical-resources/*  /dope-forms/#clinical-resources  301
+
+# General wildcard rule to map all legacy /public/ requests to their root counterpart
+/public                                /                                    301
+/public/*                              /:splat                              301

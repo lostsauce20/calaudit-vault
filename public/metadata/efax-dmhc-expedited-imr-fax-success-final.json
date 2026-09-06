@@ -1,0 +1,13 @@
+{
+  "alt": "eFax sent faxes dashboard showing three delivered faxes to the same number.",
+  "summary": "This eFax dashboard displays a list of sent faxes, with three faxes successfully delivered to the same number. Users can filter and sort their sent faxes by various statuses and criteria. The interface also provides navigation to compose new faxes, check other folders, and access reports or contacts.",
+  "keywords": [
+    "eFax",
+    "sent faxes",
+    "fax delivery",
+    "dashboard",
+    "communication",
+    "fax management"
+  ],
+  "full_text": "eFax\n\nNavigation\nCompose Fax\nSent\nInbox\nTrash\nReports\nContacts\nHelp\n\neFax Personal Plan\nNicolas Hernandez\n+\n\nSent\nView and manage your sent faxes\n\nFax Status Tabs\nAll (3)\nDelivered (3)\nIn-Progress\nFailed\nRead (3)\nUnread\n\nFilters\nAll Fax Numbers\nNewest First\nTags\n\nActions\nSelect All\n\nSent Faxes List\n+1 (916) 255-5241 Delivered\nCompleted on: 08/14/2026 at 7:36 AM GMT\nView\n\n+1 (916) 255-5241 Delivered\nCompleted on: 08/08/2026 at 12:41 AM GMT\nView\n\n+1 (916) 255-5241 Delivered\nCompleted on: 08/04/2026 at 2:43 AM GMT\nView\n\nPagination\n< Previous\n1\nNext >\nView 10 per page"
+}

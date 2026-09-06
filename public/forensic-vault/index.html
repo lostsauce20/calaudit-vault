@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#121212" name="theme-color"/>
+<title>Forensic Vault: Statutory Dossiers &amp; Evidence | CalAudit</title>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link as="style" href="/style.css" rel="preload"/>
+<link href="/style.css" rel="stylesheet"/>
+<link href="https://calaudit.org/forensic-vault/" rel="canonical"/>
+<meta content="Primary hub directory for the CalAudit forensic repository. Access case records, medical audits, Medi-Cal enforcement resources, technical investigations, and linked specialist records." name="description"/>
+<meta content="CalAudit forensic vault, statutory default dossiers, medical misconduct registry, legal evidence catalog, Nicolas Hernandez audit" name="keywords"/>
+<meta content="Nicolas Hernandez" name="author"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="website" property="og:type"/>
+<meta content="CalAudit" property="og:site_name"/>
+<meta content="https://calaudit.org/forensic-vault/" property="og:url"/>
+<meta content="CalAudit Forensic Repository | Vault Command" property="og:title"/>
+<meta content="A compact hub directory for CalAudit case records, medical audits, enforcement resources, technical investigations, and specialist records." property="og:description"/>
+<meta content="https://calaudit.org/calauditlogo.webp" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="CalAudit Official Insignia" property="og:image:alt"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@CalAudit" name="twitter:site"/>
+<meta content="@CalAudit" name="twitter:creator"/>
+<meta content="https://calaudit.org/forensic-vault/" name="twitter:url"/>
+<meta content="CalAudit Forensic Repository | Vault Command" name="twitter:title"/>
+<meta content="A compact hub directory for CalAudit case records, medical audits, enforcement resources, technical investigations, and specialist records." name="twitter:description"/>
+<meta content="https://calaudit.org/calauditlogo.webp" name="twitter:image"/>
+<meta content="CalAudit Official Insignia" name="twitter:image:alt"/>
+<meta content="US-CA" name="geo.region"/>
+<meta content="California" name="geo.placename"/>
+<meta content="38.5816;-121.4944" name="geo.position"/>
+<meta content="38.5816, -121.4944" name="ICBM"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://calaudit.org/#website",
+      "url": "https://calaudit.org/",
+      "name": "CalAudit"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://calaudit.org/#organization",
+      "name": "CalAudit",
+      "url": "https://calaudit.org/"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://calaudit.org/forensic-vault/#webpage",
+      "url": "https://calaudit.org/forensic-vault/",
+      "name": "CalAudit: Forensic Methodology Hub & Master Ledger",
+      "description": "CalAudit master ledger linking case records, evidence, clinical and regulatory audits, technology investigations, and forensic utilities.",
+      "dateModified": "2026-08-28",
+      "isPartOf": {
+        "@id": "https://calaudit.org/#website"
+      },
+      "publisher": {
+        "@id": "https://calaudit.org/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://calaudit.org/forensic-vault/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://calaudit.org/forensic-vault/#index"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://calaudit.org/forensic-vault/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "CalAudit",
+          "item": "https://calaudit.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Forensic Vault",
+          "item": "https://calaudit.org/forensic-vault/"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://calaudit.org/forensic-vault/#index",
+      "name": "CalAudit Forensic Vault primary hubs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Active Litigation",
+          "url": "https://calaudit.org/litigation/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Interactive Evidence Room",
+          "url": "https://calaudit.org/evidence-room/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Audit Deadquarters",
+          "url": "https://calaudit.org/deadquarters/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Medical Evidence Vault",
+          "url": "https://calaudit.org/medical-vault/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "CDSS State Hearings",
+          "url": "https://calaudit.org/state-hearings/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Medi-Cal Reimbursement & The Conlan Route",
+          "url": "https://calaudit.org/dhcs4521/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Managed Care Enforcement & Filing",
+          "url": "https://calaudit.org/dmhc-faqs/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "FCC, Device & Telecom Audits",
+          "url": "https://calaudit.org/fcc-complaint-guide/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "AI Disorder: Guardrail Guillotine",
+          "url": "https://calaudit.org/ai-disorder/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Offline Privacy & Forensic Tools",
+          "url": "https://calaudit.org/tools/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+        /* Base Colors & Background Softer Charcoal */
+        :root {
+            --vault-bg: #121212;
+            --zinc-800: rgba(24, 24, 27, 0.8);
+            --border-muted: rgba(255, 255, 255, 0.05);
+
+            /* Desaturated, soft pastel accent colors to reduce eye strain */
+            --pastel-red: #e06c75;
+            --pastel-green: #98c379;
+            --pastel-blue: #61afef;
+            --pastel-purple: #c678dd;
+            --pastel-gold: #e5c07b;
+            --pastel-text: #e1e1e6;
+            --pastel-text-muted: #a1a1aa;
+        }
+
+        body {
+            background-color: var(--vault-bg);
+            color: var(--pastel-text);
+        }
+
+        /* A11y Helper Classes */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .faq-summary:focus-visible {
+            outline: 2px solid var(--pastel-blue);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
+        /* Grouped Ledger System & Editorial Negative Space */
+        .vault-section {
+            margin-top: 80px;
+            margin-bottom: 40px;
+        }
+        .vault-section-header {
+            font-family: var(--mono, monospace);
+            font-size: 0.85rem;
+            color: var(--pastel-blue);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            padding: 12px 20px;
+            background: rgba(97, 175, 239, 0.04);
+            border-left: 3px solid var(--pastel-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 0;
+        }
+        .vault-section-header span {
+            color: var(--pastel-text-muted);
+            font-weight: normal;
+        }
+
+        /* Editorial Layout Variety (Single-Column lists, 2-Column with featured item, and 3-Column) */
+        .vault-grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 50px;
+        }
+
+        /* [01] Litigation: Single-Column detailed card list */
+        .vault-section:nth-of-type(1) .vault-grid {
+            grid-template-columns: 1fr;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* [02] Clinical: Alternating 2-column grid with featured card at top */
+        .vault-section:nth-of-type(2) .vault-grid {
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+        }
+        .vault-section:nth-of-type(2) .vault-grid .dossier-card:first-of-type {
+            grid-column: 1 / -1; /* Stretch first card across all columns */
+        }
+
+        /* [03] Regulatory: 2-Column layout */
+        .vault-section:nth-of-type(3) .vault-grid {
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+        }
+
+        /* [04] Technical: 3-Column dense dashboard grid */
+        .vault-section:nth-of-type(4) .vault-grid {
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+        }
+
+        /* Heavy Glassmorphic Dossier Cards & Premium Padding */
+        .dossier-card {
+            background: var(--zinc-800);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--border-muted);
+            border-top: 3px solid var(--pastel-text-muted);
+            border-radius: 6px;
+            padding: 32px; /* Increased internal padding for breathing room */
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+        }
+
+        /* Category-Specific Top Accents (Pastel Theme) */
+        .dossier-card[data-cat="litigation"] { border-top-color: var(--pastel-red); }
+        .dossier-card[data-cat="clinical"] { border-top-color: var(--pastel-green); }
+        .dossier-card[data-cat="regulatory"] { border-top-color: var(--pastel-blue); }
+        .dossier-card[data-cat="technical"] { border-top-color: var(--pastel-purple); }
+
+        /* Hover States */
+        .dossier-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(30, 30, 35, 0.9);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Horizontal Stacked Full-Width Box styling (for REF-GOV and REF-LANG) */
+        .card-column-group {
+            grid-column: 1 / -1; /* Stretch across all columns of the grid */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card-column-group .card {
+            background: var(--zinc-800);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--border-muted);
+            border-left: 3px solid var(--pastel-blue); /* Left accent bar like regulatory */
+            border-radius: 6px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+        }
+
+        .card-column-group .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(30, 30, 35, 0.9);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card-code {
+            font-family: var(--mono, monospace);
+            font-weight: bold;
+            color: var(--pastel-text-muted);
+            font-size: 0.85rem;
+        }
+
+        .card-tag {
+            font-family: var(--mono, monospace);
+            font-size: 0.72rem;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 2px;
+            display: inline-block;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--pastel-blue);
+            background: rgba(97, 175, 239, 0.08);
+            border: 1px solid rgba(97, 175, 239, 0.2);
+        }
+
+        .card-column-group .card-title {
+            font-size: 1.35rem !important;
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--pastel-blue) !important;
+            margin: 0;
+            line-height: 1.3;
+            text-align: left !important;
+            font-family: inherit;
+        }
+
+        .card-column-group .card-title:hover {
+            text-decoration: underline;
+        }
+
+        .card-summary {
+            color: var(--pastel-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.65;
+            margin: 0;
+            text-align: left !important;
+        }
+
+        .card-btn {
+            font-family: var(--mono, monospace);
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: var(--pastel-blue) !important;
+            text-decoration: none !important;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 4px;
+            width: fit-content;
+            text-shadow: none !important;
+        }
+
+        .card-btn:hover {
+            color: #fff !important;
+            text-decoration: underline !important;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .card-id {
+            font-family: var(--mono, monospace);
+            font-weight: bold;
+            color: var(--pastel-text-muted);
+            font-size: 0.85rem;
+        }
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 6px 0;
+            line-height: 1.4;
+        }
+        .card-title:hover {
+            text-decoration: underline;
+        }
+        .card-description {
+            color: var(--pastel-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.65; /* Increased spacing */
+            flex-grow: 1;
+            margin: 0;
+        }
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.05);
+        }
+        .target-entity {
+            color: var(--pastel-text-muted);
+            font-size: 0.82rem;
+            font-family: var(--mono, monospace);
+        }
+
+        /* Command Bar Terminal Style & Filter Navigation */
+        .command-bar {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border-muted);
+            border-radius: 6px;
+            padding: 12px 18px;
+            margin-bottom: 40px;
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+        }
+        .filter-btn {
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--pastel-text-muted);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 8px 18px;
+            font-family: var(--mono, monospace);
+            font-size: 0.8rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .filter-btn:hover {
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .filter-btn.active {
+            background: var(--pastel-blue);
+            color: #121212;
+            border-color: var(--pastel-blue);
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(97, 175, 239, 0.3);
+        }
+
+        /* Progressive Disclosure (Native Details Summaries inside cards) */
+        .card-details {
+            margin-top: 8px;
+            font-size: 0.92rem;
+            color: var(--pastel-text-muted);
+            line-height: 1.6;
+        }
+        .read-more-summary {
+            font-family: var(--mono, monospace);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            color: var(--pastel-blue);
+            cursor: pointer;
+            list-style: none;
+            user-select: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            letter-spacing: 0.5px;
+            outline: none;
+            padding: 4px 0;
+        }
+        .read-more-summary::-webkit-details-marker { display: none; }
+        .read-more-summary::after {
+            content: '▶';
+            font-size: 0.65rem;
+            transition: transform 0.2s ease;
+        }
+        .card-details[open] .read-more-summary::after {
+            transform: rotate(90deg);
+        }
+        .card-details-content {
+            padding: 12px 16px;
+            background: rgba(0, 0, 0, 0.2);
+            border-left: 2px solid var(--border-muted);
+            border-radius: 0 4px 4px 0;
+            margin-top: 8px;
+        }
+
+        /* Tactical Classification Badges (Softened Theme) */
+        .v-badge {
+            font-family: var(--mono, monospace);
+            font-size: 0.72rem;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 2px;
+            display: inline-block;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border: 1px solid transparent;
+        }
+        .v-red { color: var(--pastel-red); background: rgba(224, 108, 117, 0.08); border-color: rgba(224, 108, 117, 0.2); }
+        .v-green { color: var(--pastel-green); background: rgba(152, 195, 121, 0.08); border-color: rgba(152, 195, 121, 0.2); }
+        .v-amber { color: var(--pastel-gold); background: rgba(229, 192, 123, 0.08); border-color: rgba(229, 192, 123, 0.2); }
+        .v-blue { color: var(--pastel-blue); background: rgba(97, 175, 239, 0.08); border-color: rgba(97, 175, 239, 0.2); }
+        .v-purple { color: var(--pastel-purple); background: rgba(198, 120, 221, 0.08); border-color: rgba(198, 120, 221, 0.2); }
+        .v-gold { color: var(--pastel-gold); background: rgba(229, 192, 123, 0.08); border-color: rgba(229, 192, 123, 0.2); }
+
+        /* Hero Watermark opacity adjustment */
+        .hero-watermark {
+            opacity: 0.02 !important; /* Drastically reduced opacity for maximum contrast */
+        }
+
+
+        /* Phase 1: compact vault directory */
+        .directory-note {
+            margin: 0 0 24px;
+            padding: 14px 16px;
+            border: 1px solid var(--border-muted, #333);
+            border-left: 3px solid var(--pastel-gold, #e5c07b);
+            background: rgba(229, 192, 123, 0.04);
+            color: var(--pastel-text-muted, #bbb);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+        .directory-note strong { color: #fff; }
+        .related-records {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-muted, #333);
+        }
+        .related-records-label {
+            display: block;
+            margin-bottom: 8px;
+            font-family: var(--mono, monospace);
+            color: var(--pastel-text-muted, #aaa);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.7px;
+            text-transform: uppercase;
+        }
+        .related-records-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .related-records-list a {
+            display: inline-block;
+            padding: 5px 8px;
+            border: 1px solid var(--border-muted, #333);
+            border-radius: 2px;
+            color: var(--pastel-blue, #61afef);
+            background: rgba(97, 175, 239, 0.04);
+            font-family: var(--mono, monospace);
+            font-size: 0.72rem;
+            line-height: 1.35;
+            text-decoration: none;
+        }
+        .related-records-list a:hover,
+        .related-records-list a:focus {
+            color: #fff;
+            border-color: var(--pastel-blue, #61afef);
+            background: rgba(97, 175, 239, 0.1);
+        }
+</style>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="vault-container">
+<header class="header" role="banner">
+<h1 class="header-title gold u-style-0109bf91">CALAUDIT: FORENSIC METHODOLOGY HUB &amp; MASTER LEDGER</h1>
+<p class="subtitle subtitle-ticker"><span>"When Expense Reduction Costs Harm Reduction. All Smoke Welcome."</span></p>
+</header>
+<main id="main-content" role="main">
+<!-- Client-Side Directory Filter Command Bar -->
+<nav aria-label="Vault directory filters" class="command-bar">
+<button class="filter-btn active" data-filter="all">All Targets</button>
+<button class="filter-btn" data-filter="litigation">Litigation</button>
+<button class="filter-btn" data-filter="clinical">Clinical</button>
+<button class="filter-btn" data-filter="regulatory">Regulatory</button>
+<button class="filter-btn" data-filter="technical">Technical</button>
+</nav><div class="directory-note" role="note">
+<strong>Primary hubs only.</strong> Specialist guides and individual case records remain online at their existing URLs and are linked inside the relevant hub below. Nothing has been deleted or redirected in this phase.
+</div>
+<!-- SECTION 01: LITIGATION & REIMBURSEMENT -->
+<div class="vault-section">
+<h2 class="vault-section-header" id="sec-01"><span>[01]</span> Case Record &amp; Evidence</h2>
+<div class="vault-grid">
+<article class="dossier-card" data-cat="litigation">
+<header class="card-header">
+<span class="card-id">LIT-26AV</span>
+<span class="v-badge v-red">LITIGATION DOCKET</span>
+</header>
+<a aria-label="ACTIVE LITIGATION (CASE 26AVSC00542)" class="card-title text-red" href="/litigation/">ACTIVE LITIGATION (CASE 26AVSC00542)</a>
+<p class="card-description">Live docket and forensic summary of the L.A. Care dispute, with filings, timelines, service records, and preserved procedural history.</p>
+<details class="card-details">
+<summary class="read-more-summary">Read More</summary>
+<div class="card-details-content">The case page remains the primary litigation hub. Court-process material that does not need equal directory weight stays linked beneath it.</div>
+</details>
+<div class="related-records"><span class="related-records-label">Related specialist records</span><ul class="related-records-list"><li><a href="/litigation/medi-court/">Medi-Court small-claims guide</a></li></ul></div>
+<footer class="card-footer"><span class="target-entity">TARGET: L.A. Care Health Plan</span></footer>
+</article>
+<article class="dossier-card" data-cat="litigation">
+<header class="card-header">
+<span class="card-id">LIT-EVRM</span>
+<span class="v-badge v-red">EXHIBIT ROOM</span>
+</header>
+<a aria-label="INTERACTIVE EVIDENCE ROOM" class="card-title text-red" href="/evidence-room/">INTERACTIVE EVIDENCE ROOM</a>
+<p class="card-description">Chronological exhibit directory for agency correspondence, clinical records, screenshots, video captures, and administrative outcomes.</p>
+<details class="card-details">
+<summary class="read-more-summary">Read More</summary>
+<div class="card-details-content">The Evidence Room is the visual record. Individual video exhibits remain separately indexable but no longer occupy equal space in the master directory.</div>
+</details>
+<div class="related-records"><span class="related-records-label">Related specialist records</span><ul class="related-records-list"><li><a href="/evidence-room/jwch-phone-system-collapse-proof/">JWCH phone-system video</a></li><li><a href="/evidence-room/the-hardcap-trap-la-care-illegally-capping-pharmacy-rides-call-the-car/">Call the Car radius-lock video</a></li></ul></div>
+<footer class="card-footer"><span class="target-entity">TARGET: DOCUMENTED RECORD</span></footer>
+</article>
+<article class="dossier-card" data-cat="litigation">
+<header class="card-header">
+<span class="card-id">AUD-GHOO</span>
+<span class="v-badge v-green">INSTITUTIONAL AUDIT</span>
+</header>
+<a aria-label="AUDIT DEADQUARTERS" class="card-title text-green" href="/deadquarters/">AUDIT DEADQUARTERS</a>
+<p class="card-description">Central record of L.A. Care address conflicts, abandoned public-facing locations, call-routing anomalies, and related infrastructure evidence.</p>
+<details class="card-details">
+<summary class="read-more-summary">Read More</summary>
+<div class="card-details-content">The main dossier carries the narrative; the video traces remain linked as supporting records rather than separate top-level destinations.</div>
+</details>
+<div class="related-records"><span class="related-records-label">Related specialist records</span><ul class="related-records-list"><li><a href="/deadquarters/lacare-conflicting-addresses-google/">L.A. Care address-conflict video</a></li><li><a href="/deadquarters/carelon-expedited-number/">Carelon number-trace video</a></li></ul></div>
+<footer class="card-footer"><span class="target-entity">TARGET: L.A. Care / Carelon Infrastructure</span></footer>
+</article>
+</div>
+</div>
+<div class="vault-section">
+<h2 class="vault-section-header" id="sec-02"><span>[02]</span> Medical Records &amp; Clinical Audits</h2>
+<div class="vault-grid">
+<article class="dossier-card" data-cat="clinical">
+<header class="card-header">
+<span class="card-id">AUD-LACH</span>
+<span class="v-badge v-green">CLINICAL LEDGER</span>
+</header>
+<a aria-label="MEDICAL EVIDENCE VAULT" class="card-title text-green" href="/medical-vault/">MEDICAL EVIDENCE VAULT</a>
+<p class="card-description">Primary clinical-record hub connecting the treatment timeline, emergency visits, provider failures, and annotated medical evidence.</p>
+<details class="card-details">
+<summary class="read-more-summary">Read More</summary>
+<div class="card-details-content">Clinical narrative pages remain available as focused records, but the vault now carries the visible directory role.</div>
+</details>
+<div class="related-records"><span class="related-records-label">Related specialist records</span><ul class="related-records-list"><li><a href="/medical-abandonment/">Medical abandonment &amp; stigma</a></li><li><a href="/tribute/">The Tribute</a></li></ul></div>
+<footer class="card-footer"><span class="target-entity">TARGET: CLINICAL RECORD &amp; ACCESS FAILURES</span></footer>
+</article>
+<article class="dossier-card" data-cat="clinical">
+<header class="card-header">
+<span class="card-id">REF-HIPA</span>
+<span class="v-badge v-green">AMENDMENT HUB</span>
+</header>
+<a aria-label="HIPAA RECORD AMENDMENT PROTOCOL" class="card-title text-green" href="/right-to-request/">HIPAA RECORD AMENDMENT PROTOCOL</a>
+<p class="card-description">Central guide to medical-record correction rights under 45 CFR § 164.526, with the hospital-specific amendment records grouped beneath it.</p>
+<details class="card-details">
+<summary class="read-more-summary">Read More</summary>
+<div class="card-details-content">The protocol stays the reusable landing page. AVMC, Palmdale Regional, and OCR records remain independent URLs for their distinct evidence and search intent.</div>
+</details>
+<div class="related-records"><span class="related-records-label">Related specialist records</span><ul class="related-records-list"><li><a href="/right-to-request/#avmc-dossier">AVMC amendment record</a></li><li><a href="/right-to-request/#palmdale-regional-dossier">Palmdale Regional amendment record</a></li><li><a href="/ocr-hipaa-guide/">OCR HIPAA complaint guide</a></li></ul></div>
+<footer class="card-footer"><span class="target-entity">TARGET: 45 CFR § 164.526 ENFORCEMENT</span></footer>
+</article>
+</div>
+</div>
+<div class="vault-section">
+<h2 class="vault-section-header" id="sec-03"><span>[03]</span> Medi-Cal Appeals &amp; Enforcement</h2>
+<div class="vault-grid">
+<article class="dossier-card" data-cat="regulatory">
+<header class="card-header">
+<span class="card-id">AUD-CDSS</span>
+<span class="v-badge v-blue">HEARING HUB</span>
+</header>
+<a aria-label="CDSS STATE HEARINGS" class="card-title u-style-4677d6ba" href="/state-hearings/">CDSS STATE HEARINGS</a>
+<p class="card-description">Primary hub for hearing requests, expedited-denial records, notice timing, and CDSS administrative procedure.</p>
+<details class="card-details">
+<summary class="read-more-summary">Read More</summary>
+<div class="card-details-content">The ACMS page remains a specialist portal and system guide, linked here without competing with the broader hearing record.</div>
+</details>
+<div class="related-records"><span class="related-records-label">Related specialist records</span><ul class="related-records-list"><li><a href="/acms-cdss-hearing/">ACMS portal &amp; system ledger</a></li></ul></div>
+<footer class="card-footer"><span class="target-entity">TARGET: CDSS STATE HEARINGS DIVISION</span></footer>
+</article>
+<article class="dossier-card" data-cat="regulatory">
+<header class="card-header">
+<span class="card-id">REF-DHCS</span>
+<span class="v-badge v-blue">REIMBURSEMENT HUB</span>
+</header>
+<a aria-label="MEDI-CAL REIMBURSEMENT &amp; THE CONLAN ROUTE" class="card-title u-style-4677d6ba" href="/dhcs4521/">MEDI-CAL REIMBURSEMENT &amp; THE CONLAN ROUTE</a>
+<p class="card-description">Central reimbursement workflow for out-of-pocket covered care, with the DHCS 4521 filing guide and eligibility-system records grouped beneath it.</p>
+<details class="card-details">
+<summary class="read-more-summary">Read More</summary>
+<div class="card-details-content">The consolidated reimbursement page carries the full process; the FAME page remains a focused technical reference linked below.</div>
+</details>
+<div class="related-records"><span class="related-records-label">Related specialist records</span><ul class="related-records-list"><li><a href="/fame-records/">FAME eligibility records</a></li></ul></div>
+<footer class="card-footer"><span class="target-entity">TARGET: DHCS REIMBURSEMENT PIPELINE</span></footer>
+</article>
+<article class="dossier-card" data-cat="regulatory">
+<header class="card-header">
+<span class="card-id">REF-DMHC</span>
+<span class="v-badge v-blue">ENFORCEMENT HUB</span>
+</header>
+<a aria-label="MANAGED CARE ENFORCEMENT &amp; FILING" class="card-title u-style-4677d6ba" href="/dmhc-faqs/">MANAGED CARE ENFORCEMENT &amp; FILING</a>
+<p class="card-description">Primary directory for health-plan complaints, Knox-Keene timelines, pharmacy-board escalation, official forms, and agency contact routes.</p>
+<details class="card-details">
+<summary class="read-more-summary">Read More</summary>
+<div class="card-details-content">Each linked guide keeps its own search-focused URL. They are simply grouped under one visible enforcement doorway instead of presented as equal master-vault cards.</div>
+</details>
+<div class="related-records"><span class="related-records-label">Related specialist records</span><ul class="related-records-list"><li><a href="/dmhc-faqs/ghost-flow/">Ghost Flow: $55M Settlement Audit</a></li><li><a href="/knox-keene/">Knox-Keene Act guide</a></li><li><a href="/board-complaints/">Board of Pharmacy complaints</a></li><li><a href="/oig-filing-guide/">OIG pharmacy-fraud filing</a></li><li><a href="/escalation/">Medi-Cal escalation directory</a></li><li><a href="/dope-forms/">Clinical screening forms</a></li></ul></div>
+<footer class="card-footer"><span class="target-entity">TARGET: DMHC / DHCS / DCA / OIG</span></footer>
+</article>
+<div class="card-column-group" style="display: flex; flex-direction: column; gap: 20px;">
+<!-- OFFICIAL GOV FORMS VAULT CARD -->
+<article class="card" data-category="REGULATORY">
+    <div class="card-meta">
+        <span class="card-code">GOV-VAULT</span>
+        <span class="card-tag">STATE AGENCY DOCKET</span>
+    </div>
+    <a href="/official-forms/" class="card-title">OFFICIAL GOVERNMENT FORMS VAULT</a>
+    <p class="card-summary">
+        Canonical state agency forms (DHCS, CDSS) archived for public access, audit compliance, and legal verification across all standard state languages.
+    </p>
+    <a href="/official-forms/" class="card-btn">READ MORE &blacktriangleright;</a>
+</article>
+
+<!-- COMMUNITY TRANSLATIONS HUB CARD -->
+<article class="card" data-category="REGULATORY">
+    <div class="card-meta">
+        <span class="card-code">LANG-ACCESS</span>
+        <span class="card-tag">LANGUAGE ACCESS</span>
+    </div>
+    <a href="/community-translations/" class="card-title">COMMUNITY TRANSLATIONS HUB</a>
+    <p class="card-summary">
+        Reference directory for translated state healthcare and social services forms compiled to ensure compliance under Gov. Code §§ 7295.2 & 7295.4.
+    </p>
+    <a href="/community-translations/" class="card-btn">READ MORE &blacktriangleright;</a>
+</article>
+</div>
+</div>
+</div>
+<div class="vault-section">
+<h2 class="vault-section-header" id="sec-04"><span>[04]</span> Technology, Telecom &amp; Consumer Systems</h2>
+<div class="vault-grid">
+<article class="dossier-card" data-cat="technical">
+<header class="card-header">
+<span class="card-id">REF-FCC</span>
+<span class="v-badge v-purple">DEVICE &amp; TELECOM</span>
+</header>
+<a aria-label="FCC, DEVICE &amp; TELECOM AUDITS" class="card-title u-style-ff1268c1" href="/fcc-complaint-guide/">FCC, DEVICE &amp; TELECOM AUDITS</a>
+<p class="card-description">Primary consumer-technology route for bootloader restrictions, FCC complaints, carrier-account disputes, and related corporate escalation records.</p>
+<details class="card-details">
+<summary class="read-more-summary">Read More</summary>
+<div class="card-details-content">The Motorola, T-Mobile, and gig-platform records remain separate, but sit beneath one visible technology-and-consumer doorway.</div>
+</details>
+<div class="related-records"><span class="related-records-label">Related specialist records</span><ul class="related-records-list"><li><a href="/fcc-complaint-guide/#motorola-meltdown-full">Motorola AG complaint</a></li><li><a href="/telecom/">T-Mobile account audit</a></li><li><a href="/uber-fraud-reporting/">Uber / FTC reporting guide</a></li></ul></div>
+<footer class="card-footer"><span class="target-entity">TARGET: FCC / MOTOROLA / T-MOBILE / FTC</span></footer>
+</article>
+<article class="dossier-card" data-cat="technical">
+<header class="card-header">
+<span class="card-id">AUD-LLM1</span>
+<span class="v-badge v-gold">AI AUDIT</span>
+</header>
+<a aria-label="AI DISORDER: GUARDRAIL GUILLOTINE" class="card-title u-style-c0442c53" href="/ai-disorder/">AI DISORDER: GUARDRAIL GUILLOTINE</a>
+<p class="card-description">Independent audit of corporate AI guardrails, automated refusals, and the consequences of rigid safety systems in real disputes.</p>
+<details class="card-details">
+<summary class="read-more-summary">Read More</summary>
+<div class="card-details-content">This long-form audit remains a primary record. The Advocate page now serves as a first-person origin record documenting the chronology behind CalAudit.</div>
+</details>
+<div class="related-records"><span class="related-records-label">Related specialist records</span><ul class="related-records-list"><li><a href="/advocate/">Advocate Narrative</a></li></ul></div>
+<footer class="card-footer"><span class="target-entity">TARGET: CORPORATE AI SYSTEMS</span></footer>
+</article>
+<article class="dossier-card" data-cat="technical">
+<header class="card-header">
+<span class="card-id">SYS-UTLH</span>
+<span class="v-badge v-purple">UTILITY HUB</span>
+</header>
+<a aria-label="OFFLINE PRIVACY &amp; FORENSIC TOOLS" class="card-title u-style-ff1268c1" href="/tools/">OFFLINE PRIVACY &amp; FORENSIC TOOLS</a>
+<p class="card-description">The complete client-side tool room for file inspection, metadata removal, privacy workflows, Android maintenance, and evidence preparation.</p>
+<details class="card-details">
+<summary class="read-more-summary">Read More</summary>
+<div class="card-details-content">The twelve individual tools stay beneath the Tool Room. The older no-cache guide remains reachable as a related specialist page during consolidation.</div>
+</details>
+<div class="related-records"><span class="related-records-label">Related specialist records</span><ul class="related-records-list"><li><a href="/tools/adb-cache-builder/#cache-cleaner-guide">Cache cleaner audit / Android optimization</a></li></ul></div>
+<footer class="card-footer"><span class="target-entity">TARGET: LOCAL-FIRST PRIVACY &amp; SYSTEMS UTILITY</span></footer>
+</article>
+</div>
+</div>
+<section aria-labelledby="faq-heading" class="audit-box blue" id="faq">
+<div aria-hidden="true" class="section-tag">// AUDIT FAQ</div>
+<div aria-hidden="true" class="status-badge">RECOGNITION_KEY</div>
+<h2 class="u-style-819ebb7a" id="faq-heading">Frequently Asked Questions</h2>
+<details class="faq-item u-style-53716d48">
+<summary class="faq-summary u-style-c28cc3bb">
+<span aria-hidden="true" class="faq-icon u-style-9b16dc78">▶</span> <strong>What is a "Forensic Auditor"?</strong>
+</summary>
+<div class="u-style-b629657a">
+                    In this context, it refers to the application of investigative data analysis, systems auditing, and statutory research to institutions that rely on administrative complexity to evade accountability.
+                </div>
+</details>
+<details class="faq-item u-style-53716d48">
+<summary class="faq-summary u-style-c28cc3bb">
+<span aria-hidden="true" class="faq-icon u-style-9b16dc78">▶</span> <strong>Is this legal advice?</strong>
+</summary>
+<div class="u-style-b629657a">
+                    No. This is a proprietary forensic repository documenting physical audits. All steps are compiled from publicly available California statutes, federal regulations, and concrete administrative tracking.
+                </div>
+</details>
+<details class="faq-item u-style-73cfeef0">
+<summary class="faq-summary u-style-c28cc3bb">
+<span aria-hidden="true" class="faq-icon u-style-9b16dc78">▶</span> <strong>Why focus on L.A. Care?</strong>
+</summary>
+<div class="u-style-b629657a">
+                    They absorb billions in public funding while deploying systematically broken networks and ghost infrastructure to deny or defer the delivery of medical access to their membership.
+                </div>
+</details>
+</section>
+<script>
+            document.querySelectorAll('#faq details').forEach(detail => {
+                detail.addEventListener('toggle', () => {
+                    const icon = detail.querySelector('.faq-icon');
+                    if (detail.open) {
+                        icon.textContent = '▼';
+                        icon.style.color = '#fff';
+                    } else {
+                        icon.textContent = '▶';
+                        icon.style.color = 'var(--blue, #0096ff)';
+                    }
+                });
+            });
+        </script>
+<!-- Client-Side Vanilla JS Card Filtering System -->
+<script>
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const dossierCards = document.querySelectorAll('.dossier-card');
+            const vaultSections = document.querySelectorAll('.vault-section');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button classes
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    // Toggle card visibility based on data-cat
+                    dossierCards.forEach(card => {
+                        const cardCat = card.getAttribute('data-cat');
+                        if (filterValue === 'all' || cardCat === filterValue) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    // Dynamically hide/show sections based on whether they contain visible cards
+                    vaultSections.forEach(section => {
+                        const visibleCards = section.querySelectorAll('.dossier-card:not([style*="display: none"])');
+                        if (visibleCards.length === 0) {
+                            section.style.display = 'none';
+                        } else {
+                            section.style.display = 'block';
+                        }
+                    });
+                });
+            });
+        </script>
+</main>
+<script defer="" src="/nav.js"></script>
+<footer class="page-footer" role="contentinfo">
+<div class="footer-inner">
+<p>© 2026 CALAUDIT | Nicolas Hernandez | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+<p><strong>LEGAL DISCLAIMER:</strong> This site is provided for informational purposes based on publicly available California statutes and regulations. It does not constitute legal advice. For legal counsel, consult a licensed California attorney.</p>
+<p><strong>MEDICAL DISCLAIMER:</strong> The forensic data and commentary provided here are for investigative and advocacy purposes only. This content is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any medical concerns.</p>
+<p><strong>PROPRIETARY WORK PRODUCT NOTICE:</strong> All original content, analysis, and commentary on this site represents my proprietary work product. Unauthorized reproduction for legal, administrative, or commercial purposes is strictly prohibited without the express written permission of Nicolas Hernandez.</p>
+<p class="onion-mirror">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+</div>
+</footer>
+</div>
+<script>(function(){if(window.location.hostname.endsWith('.onion')){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(h&&!h.startsWith('http')&&!h.startsWith('mailto:')&&!h.startsWith('tel:')&&!h.startsWith('#')){var p=h.split('/');var l=p[p.length-1];if(l!==''&&!l.includes('.')){a.setAttribute('href',h+'.html')}else if(h.endsWith('/')){a.setAttribute('href',h+'index.html')}}})}})()</script>
+</body>
+</html>

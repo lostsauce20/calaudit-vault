@@ -1,0 +1,117 @@
+# ============================================================
+# calaudit.org - Forensic Healthcare Audits & Consumer Advocacy
+# Investigators welcome. Suckers stay out.
+# ============================================================
+
+# ---------------------------------------------------------
+# SECTION 1: THE VIP PASS (Search, Live Reference & Forensic Archiving)
+# ---------------------------------------------------------
+# No Trust, All Verification -- No Lunch is Free.
+User-agent: Perplexity-User
+User-agent: Googlebot
+User-agent: bingbot
+User-agent: Applebot
+User-agent: Amzn-SearchBot
+User-agent: Amzn-User
+User-agent: DuckDuckBot
+User-agent: DuckAssistBot
+User-agent: Bravebot
+User-agent: ia_archiver
+User-agent: OAI-SearchBot
+User-agent: Claude-SearchBot
+User-agent: xAI-SearchBot
+User-agent: Twitterbot
+User-agent: facebookexternalhit
+User-agent: LinkedInBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Claude-User
+User-agent: AgentReadinessScanner
+Disallow: /calevidence/03012026-lacaremedical-provider-directory-21mb.pdf
+Disallow: /calevidence/la0708-pasc-seiu-pd-202603.pdf
+Disallow: /calevidence/board-of-governors-meeting-march-10-2026.pdf
+Disallow: /calevidence/lacare-covered-direct-1200.pdf
+Disallow: /calevidence/20250116-lacare-ghost-lobby-inspection.pdf
+Disallow: /calevidence/11-2025-01-2026review-newmemberguide.pdf
+Disallow: /calevidence/los-angeles-county-dpss-public-assistance-resource-manual.pdf
+Disallow: /calevidence/ca-bridge-treatment-protocols-packet.pdf
+Disallow: /calevidence/medi-cal-rx-mischaracterization--full-redacted.pdf
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
+Disallow: /models/
+Allow: /
+
+# ---------------------------------------------------------
+# SECTION 2: THE BLOCKADE (Trainers, Scrapers & Thieves)
+# ---------------------------------------------------------
+# Learn to read, no free lunch.
+User-agent: GPTBot
+User-agent: anthropic-ai
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Google-CloudVertexBot
+User-agent: xAI-Bot
+User-agent: GrokBot
+User-agent: DeepSeekBot
+User-agent: MistralBot
+User-agent: CohereBot
+User-agent: Applebot-Extended
+User-agent: Bytespider
+User-agent: CCBot
+User-agent: Amazonbot
+User-agent: meta-externalagent
+User-agent: AhrefsBot
+User-agent: AhrefsSiteAudit
+User-agent: MJ12bot
+User-agent: DotBot
+User-agent: SemrushBot
+User-agent: Diffbot
+User-agent: DataForSeoBot
+User-agent: Baiduspider
+User-agent: YouBot
+User-agent: CensysInspect
+User-agent: MajesticBot
+User-agent: BLEXBot
+User-agent: SiteAuditBot
+Disallow: /
+
+# ---------------------------------------------------------
+# SECTION 3: THE SECURITY LAYER & MAPS (All Other Traffic)
+# ---------------------------------------------------------
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no, use=reference
+
+# Standard Protected Directories
+Disallow: /templates/
+Disallow: /venv/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
+Disallow: /config/
+Disallow: /.wrangler/
+Disallow: /_worker.js
+Disallow: /wrangler.toml
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /models/
+Disallow: /calevidence/03012026-lacaremedical-provider-directory-21mb.pdf
+Disallow: /calevidence/la0708-pasc-seiu-pd-202603.pdf
+Disallow: /calevidence/board-of-governors-meeting-march-10-2026.pdf
+Disallow: /calevidence/lacare-covered-direct-1200.pdf
+Disallow: /calevidence/20250116-lacare-ghost-lobby-inspection.pdf
+Disallow: /calevidence/11-2025-01-2026review-newmemberguide.pdf
+Disallow: /calevidence/los-angeles-county-dpss-public-assistance-resource-manual.pdf
+Disallow: /calevidence/ca-bridge-treatment-protocols-packet.pdf
+Disallow: /calevidence/medi-cal-rx-mischaracterization--full-redacted.pdf
+Allow: /
+
+# ---------------------------------------------------------
+# SECTION 4: SITEMAPS AND FRAMEWORK DECLARATIONS
+# ---------------------------------------------------------
+Sitemap: https://calaudit.org/sitemaps.xml
+Sitemap: https://calaudit.org/sitemap.xml
+Sitemap: https://calaudit.org/sitemap-evidence.xml
+Sitemap: https://calaudit.org/sitemap-metadata.xml
+Sitemap: https://calaudit.org/sitemap-video.xml
+Sitemap: https://calaudit.org/sitemap-official.xml
+Sitemap: https://calaudit.org/sitemap-translations.xml

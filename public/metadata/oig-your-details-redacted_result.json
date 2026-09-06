@@ -1,0 +1,11 @@
+{
+  "alt": "The page presents fields for personal details such as name, date of birth, Social Security Number, Medicare, Medicaid, multiple phone and email contacts, home address, and optional employer information, ending with a 'Continue' button.",
+  "summary": "The page presents fields for personal details such as name, date of birth, Social Security Number, Medicare, Medicaid, multiple phone and email contacts, home address, and optional employer information, ending with a 'Continue' button.",
+  "keywords": [
+    "Personal Information",
+    "Contact Details",
+    "Government IDs",
+    "Employer Data"
+  ],
+  "full_text": "The page includes fields for first name, middle name, last name, suffix, date of birth, Social Security Number, Medicare number, Medicaid number, home phone, cell phone, work phone, personal email, work email, home address, and optional employer information. Button: Continue."
+}

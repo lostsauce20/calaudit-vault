@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#050505"/>
+    <title>Free PDF Redaction Tool — Offline &amp; Private | CalAudit</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="canonical" href="https://calaudit.org/tools/privacy-scrubber/"/>
+    <meta name="description" content="Free PDF redaction tool for private, browser-based document redaction. Draw black redaction boxes, flatten PDF pages, and export locally with no server upload."/>
+    <meta name="author" content="Nicolas Hernandez"/>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="CalAudit"/>
+    <meta property="og:url" content="https://calaudit.org/tools/privacy-scrubber/"/>
+    <meta property="og:title" content="Free PDF Redaction Tool — Offline &amp; Private | CalAudit"/>
+    <meta property="og:description" content="Redact any PDF locally in your browser, flatten the pages, and export a private copy without uploading the document to a server."/>
+    <meta property="og:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="CalAudit Official Logo"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@CalAudit"/>
+    <meta name="twitter:creator" content="@CalAudit"/>
+    <meta name="twitter:url" content="https://calaudit.org/tools/privacy-scrubber/"/>
+    <meta name="twitter:title" content="Free PDF Redaction Tool — Offline &amp; Private | CalAudit"/>
+    <meta name="twitter:description" content="Redact any PDF locally in your browser, flatten the pages, and export a private copy without uploading the document to a server."/>
+    <meta name="twitter:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta name="twitter:image:alt" content="CalAudit Official Logo"/>
+    <meta name="geo.region" content="US-CA"/>
+    <meta name="geo.placename" content="California"/>
+    <meta name="geo.position" content="38.5816;-121.4944"/>
+    <meta name="ICBM" content="38.5816, -121.4944"/>
+
+  <script src="pdf.min.js" defer></script>
+  <script src="jspdf.umd.min.js" defer></script>
+
+  <style>
+      .scrubber-isolated-scope {
+          width: 100% !important;
+          max-width: 1000px !important;
+          margin: 0 auto 40px !important;
+          padding: 24px !important;
+          font-family: 'Courier New', 'Lucida Console', monospace !important;
+          box-sizing: border-box !important;
+          background: #000000 !important;
+          border: 1px solid #111111 !important;
+          border-radius: 8px !important;
+          display: block !important;
+      }
+
+      .scrubber-isolated-scope * {
+          box-sizing: border-box !important;
+      }
+
+      .scrubber-isolated-scope .scrubber-header {
+          border-bottom: 2px dashed #222222 !important;
+          padding-bottom: 20px !important;
+          margin-bottom: 25px !important;
+          display: block !important;
+      }
+
+      .scrubber-isolated-scope .scrubber-header h2 {
+          color: #00ff00 !important;
+          margin: 0 0 8px 0 !important;
+          font-size: 1.4rem !important;
+          letter-spacing: 1px !important;
+      }
+
+      .scrubber-isolated-scope .scrubber-header p {
+          color: #888888 !important;
+          margin: 0 !important;
+          font-size: 0.9rem !important;
+          line-height: 1.4 !important;
+      }
+
+      .scrubber-isolated-scope .scrub-dropzone {
+          border: 1px dashed #333333 !important;
+          background: #050505 !important;
+          border-radius: 6px !important;
+          padding: 40px 20px !important;
+          text-align: center !important;
+          cursor: pointer !important;
+          transition: all 0.2s ease !important;
+          margin-bottom: 25px !important;
+          position: relative !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          justify-content: center !important;
+          gap: 12px !important;
+          width: 100% !important;
+      }
+
+      .scrubber-isolated-scope .scrub-dropzone:hover,
+      .scrubber-isolated-scope .scrub-dropzone.dragover {
+          border-color: #00ff00 !important;
+          background: rgba(0, 255, 0, 0.03) !important;
+      }
+
+      .scrubber-isolated-scope .dropzone-text {
+          margin: 0 !important;
+          color: #cccccc !important;
+          font-size: 0.9rem !important;
+          letter-spacing: 1px !important;
+      }
+
+      .scrubber-isolated-scope .canvas-container {
+          position: relative !important;
+          display: inline-block !important;
+          max-width: 100% !important;
+          height: auto !important;
+          touch-action: none !important;
+      }
+
+      .scrubber-isolated-scope .scrub-icon {
+          font-size: 2rem !important;
+          margin: 0 !important;
+          line-height: 1 !important;
+      }
+
+      .scrubber-isolated-scope .bracket {
+          position: absolute !important;
+          width: 12px !important;
+          height: 12px !important;
+          border: 2px solid #00ff00 !important;
+      }
+      .scrubber-isolated-scope .bracket-tl { top: 12px !important; left: 12px !important; border-right: none !important; border-bottom: none !important; opacity: 0.4 !important; }
+      .scrubber-isolated-scope .bracket-tr { top: 12px !important; right: 12px !important; border-left: none !important; border-bottom: none !important; opacity: 0.4 !important; }
+      .scrubber-isolated-scope .bracket-bl { bottom: 12px !important; left: 12px !important; border-right: none !important; border-top: none !important; opacity: 0.4 !important; }
+      .scrubber-isolated-scope .bracket-br { bottom: 12px !important; right: 12px !important; border-left: none !important; border-top: none !important; opacity: 0.4 !important; }
+
+      .scrubber-isolated-scope .controls-bar {
+          background: #050505 !important;
+          border: 1px solid #1a1a1a !important;
+          padding: 15px 20px !important;
+          border-radius: 6px !important;
+          display: flex !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+          gap: 20px !important;
+          margin-bottom: 30px !important;
+      }
+
+      .scrubber-isolated-scope #status {
+          color: #666666 !important;
+          font-size: 0.85rem !important;
+      }
+
+      .scrubber-isolated-scope button {
+          background: transparent !important;
+          color: #00ff00 !important;
+          border: 1px solid #00ff00 !important;
+          padding: 10px 20px !important;
+          font-family: 'Courier New', monospace !important;
+          font-weight: bold !important;
+          cursor: pointer !important;
+          border-radius: 4px !important;
+          text-transform: uppercase !important;
+          transition: all 0.2s !important;
+      }
+
+      .scrubber-isolated-scope button:hover:not(:disabled) {
+          background: rgba(0, 255, 0, 0.1) !important;
+          box-shadow: 0 0 10px rgba(0, 255, 0, 0.2) !important;
+      }
+
+      .scrubber-isolated-scope button:disabled {
+          border-color: #222222 !important;
+          color: #444444 !important;
+          cursor: not-allowed !important;
+      }
+
+      .scrubber-isolated-scope #workspace {
+          display: block !important;
+          width: 100% !important;
+          margin: 0 auto !important;
+      }
+
+      .scrubber-isolated-scope .page-wrapper {
+          background: #050505 !important;
+          padding: 20px !important;
+          border-radius: 6px !important;
+          border: 1px solid #1a1a1a !important;
+          margin-bottom: 30px !important;
+          display: block !important;
+          width: 100% !important;
+          user-select: none !important;
+      }
+
+      .scrubber-isolated-scope .scrub-node-label {
+          color: #00ff00 !important;
+          font-family: 'Courier New', monospace !important;
+          font-size: 0.8rem !important;
+          letter-spacing: 1px !important;
+          margin-bottom: 12px !important;
+          width: 100% !important;
+          text-align: left !important;
+          display: block !important;
+      }
+      .scrubber-isolated-scope canvas {
+          cursor: crosshair !important;
+          display: block !important;
+          border: 1px solid #222222 !important;
+          background: #ffffff !important;
+          max-width: 100% !important;
+          height: auto !important;
+      }
+
+      .scrubber-isolated-scope .redaction-box {
+          position: absolute !important;
+          z-index: 10 !important;
+      }
+
+      .scrubber-isolated-scope .sr-only {
+          position: absolute !important;
+          width: 1px !important;
+          height: 1px !important;
+          padding: 0 !important;
+          margin: -1px !important;
+          overflow: hidden !important;
+          clip: rect(0, 0, 0, 0) !important;
+          border: 0 !important;
+      }
+
+      /* FAQ Styling — matches other tool subpages */
+      .faq-item {
+          margin-bottom: 15px;
+          background: rgba(0, 255, 0, 0.02);
+          border: 1px solid #222;
+          padding: 15px;
+          border-radius: 4px;
+      }
+      .faq-item summary {
+          cursor: pointer;
+          list-style: none;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: var(--green, #0f0);
+          font-size: 14px;
+          font-weight: bold;
+          outline: none;
+      }
+      .faq-item summary::-webkit-details-marker {
+          display: none;
+      }
+      .faq-item .faq-icon {
+          color: var(--green, #0f0);
+          transition: transform 0.2s ease;
+          display: inline-block;
+      }
+      .faq-item[open] .faq-icon {
+          transform: rotate(90deg);
+      }
+      .faq-answer {
+          font-size: 13px;
+          color: #ccc;
+          line-height: 1.6;
+          margin-top: 12px;
+          padding-left: 20px;
+          border-left: 2px solid var(--green, #0f0);
+      }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://calaudit.org/#organization",
+      "name": "CalAudit",
+      "url": "https://calaudit.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://calaudit.org/calauditlogo.webp",
+        "caption": "CalAudit Official Logo"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://calaudit.org/#website",
+      "url": "https://calaudit.org/",
+      "name": "CalAudit",
+      "publisher": { "@id": "https://calaudit.org/#organization" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://calaudit.org/#nicolas-hernandez",
+      "name": "Nicolas Hernandez",
+      "jobTitle": "Lead Forensic Auditor",
+      "url": "https://calaudit.org/",
+      "worksFor": { "@id": "https://calaudit.org/#organization" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://calaudit.org/tools/privacy-scrubber/#webpage",
+      "url": "https://calaudit.org/tools/privacy-scrubber/",
+      "name": "Free PDF Redaction Tool — Offline & Private | CalAudit",
+      "description": "Free PDF redaction tool for private, browser-based document redaction. Draw redaction boxes, flatten PDF pages to images, and export locally. Output review is required.",
+      "dateModified": "2026-08-23",
+      "isPartOf": { "@id": "https://calaudit.org/#website" },
+      "about": { "@id": "https://calaudit.org/tools/privacy-scrubber/#app" },
+      "breadcrumb": { "@id": "https://calaudit.org/tools/privacy-scrubber/#breadcrumb" },
+      "inLanguage": "en-US",
+      "author": { "@id": "https://calaudit.org/#nicolas-hernandez" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://calaudit.org/tools/privacy-scrubber/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "item": { "@id": "https://calaudit.org/", "name": "Hub" } },
+        { "@type": "ListItem", "position": 2, "item": { "@id": "https://calaudit.org/tools/", "name": "Tool Room" } },
+        { "@type": "ListItem", "position": 3, "item": { "@id": "https://calaudit.org/tools/privacy-scrubber/", "name": "PDF Redaction Tool" } }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://calaudit.org/tools/privacy-scrubber/#app",
+      "name": "CalAudit Free PDF Redaction Tool",
+      "url": "https://calaudit.org/tools/privacy-scrubber/",
+      "dateModified": "2026-08-23",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "All",
+      "isAccessibleForFree": true,
+      "description": "A free browser-based PDF redaction utility that draws black regions onto rendered page images and exports a flattened PDF locally for manual review.",
+      "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "USD" },
+      "author": { "@id": "https://calaudit.org/#nicolas-hernandez" },
+      "provider": { "@id": "https://calaudit.org/#organization" }
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://calaudit.org/tools/privacy-scrubber/#howto",
+      "name": "How to Redact a PDF Offline",
+      "description": "Redact a PDF locally in your browser by drawing redaction boxes over rendered pages and exporting a flattened image-based copy.",
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Load Document", "text": "Drag a PDF into the dashed zone, or click to browse and select a file." },
+        { "@type": "HowToStep", "position": 2, "name": "Local Rendering", "text": "Each page is rendered onto an in-browser canvas. No page data is transmitted anywhere." },
+        { "@type": "HowToStep", "position": 3, "name": "Draw Redaction Nodes", "text": "Click and drag over any page to mark a redaction box. Repeat across as many regions and pages as needed." },
+        { "@type": "HowToStep", "position": 4, "name": "Undo if Needed", "text": "Press Ctrl+Z (or Cmd+Z) to remove the most recently drawn redaction node." },
+        { "@type": "HowToStep", "position": 5, "name": "Compile & Export", "text": "Click Compile & Export PDF to hard-bake every redaction into the page image and download a sanitized copy." }
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "@id": "https://calaudit.org/tools/privacy-scrubber/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is my document uploaded anywhere?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The PDF is parsed and rendered entirely in your browser using pdf.js. Nothing is sent to a server at any point in the process, from upload through export." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the redacted text actually removed, or just covered up?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Actually removed. Each page is flattened to an image, and redaction boxes are drawn as solid black pixels directly into that image before export. There's no underlying text layer left to copy or extract from the final PDF." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I undo a redaction box by mistake?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Press Ctrl+Z (or Cmd+Z on Mac) at any time to remove the most recently drawn redaction box. This works across all pages in the current session." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this tool work offline?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Once the page and its libraries have loaded, you can disconnect from the internet entirely and continue redacting and exporting documents with full offline autonomy." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this suitable for HIPAA-sensitive medical records?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The tool is not a HIPAA certification or legal-compliance guarantee. Confirm that local browser processing, image-based export, output review, device controls, and records handling fit your organization's approved workflow before using it with protected health information." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="vault-container">
+    <nav aria-label="Breadcrumb" class="back-btn-container">
+        <a href="/tools/" class="back-btn" aria-label="Return to Utility Hub">← Return to Utility Hub</a>
+    </nav>
+
+    <main id="main-content" role="main">
+        <header class="manifesto-container">
+            <div class="page-label" aria-hidden="true">// SERVICE NODE: PDF_PRIVACY_SCRUBBER</div>
+            <h1 class="page-title">Free Offline PDF Redaction Tool</h1>
+            <p class="page-subtitle u-style-9451d382">Private, browser-based PDF redaction with flattened export.</p>
+            <div class="requisition">
+                <p><strong>SPECIFICATION:</strong> Draw redaction boxes over PDF pages and export a flattened, image-based copy. The selected document is processed by this page in your browser; always inspect the exported PDF before relying on it for a disclosure.</p>
+                <p style="margin-top: 10px; font-size: 13px; color: var(--text-dim, #777777); line-height: 1.4;">
+                    <strong>Notice:</strong> The exported copy flattens each page into an image-only canvas, so it omits the original text layer, hyperlinks, forms, annotations, and accessibility structure. This makes the export non-searchable and less accessible, but it is not a guarantee that all sensitive content or metadata has been removed. Verify the exported file before disclosure.
+                </p>
+            </div>
+        </header>
+
+        <section aria-labelledby="scrubber-tool">
+            <h2 id="scrubber-tool" class="sr-only">PDF Redaction Tool</h2>
+
+            <div class="scrubber-isolated-scope">
+                <div class="scrubber-header">
+                    <h2>[ System://Offline-PDF-Redactor ]</h2>
+                    <p>Visual redaction boxes are flattened into image-based PDF pages in your browser.</p>
+                </div>
+
+                <div class="scrub-dropzone" id="dropzone" role="button" aria-label="PDF drop zone. Drag and drop a PDF file here, or click or press Enter or Space to browse and select a file." tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); document.getElementById('pdfUpload').click(); }">
+                    <div class="bracket bracket-tl"></div>
+                    <div class="bracket bracket-tr"></div>
+                    <div class="bracket bracket-bl"></div>
+                    <div class="bracket bracket-br"></div>
+                    <div class="scrub-icon">📄</div>
+                    <p class="dropzone-text">DROP DOCUMENT HERE OR CLICK TO BROWSE</p>
+                    <input type="file" id="pdfUpload" accept="application/pdf" class="sr-only" aria-label="Choose a PDF to redact">
+                </div>
+
+                <div class="controls-bar">
+                    <span id="status">STATUS: Ready for deployment. Engine offline.</span>
+                    <button id="exportBtn" disabled>Compile &amp; Export PDF</button>
+                </div>
+
+                <div id="workspace"></div>
+            </div>
+        </section>
+
+        <section aria-labelledby="technical-specifications" class="manifesto-container u-style-9e285cd7">
+            <h2 class="u-style-97a898ab" id="technical-specifications">[ SECURITY PROTOCOLS &amp; SPECIFICATIONS ]</h2>
+            <div class="u-style-20ac4a58">
+                <div class="audit-box green-border u-style-5760f6de">
+                    <h3 class="u-style-583d11af">LOCAL, IMAGE-BASED PROCESSING</h3>
+                    <p class="u-style-7c1139c0">The page renders the selected PDF into canvases and paints redaction boxes into those page images before export. The resulting PDF no longer contains the source text layer, links, forms, annotations, or accessibility structure.</p>
+                </div>
+                <div class="audit-box amber-border u-style-8d6cd320">
+                    <h3 class="u-style-99849702">VERIFY BEFORE DISCLOSURE</h3>
+                    <p class="u-style-7c1139c0">This utility is not a compliance certification or a substitute for an approved redaction workflow. Review every exported page and confirm that the tool fits your organization's technical, legal, and records-retention requirements.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="u-style-bad75b13" aria-labelledby="how-to-scrub-guide">
+            <h2 class="u-style-97a898ab" id="how-to-scrub-guide">[ STEP-BY-STEP PRIVACY MANUAL ]</h2>
+            <ol class="u-style-017f6237">
+                <li><strong class="text-white">Stage 1 // Load Document:</strong> Drag a PDF into the dashed zone above, or click to browse and select a file.</li>
+                <li><strong class="text-white">Stage 2 // Local Rendering:</strong> Each page is rendered onto an in-browser canvas. No page data is transmitted anywhere.</li>
+                <li><strong class="text-white">Stage 3 // Draw Redaction Nodes:</strong> Click and drag over any page to mark a redaction box. Repeat across as many regions and pages as needed.</li>
+                <li><strong class="text-white">Stage 4 // Undo if Needed:</strong> Press Ctrl+Z (or Cmd+Z) to remove the most recently drawn redaction node.</li>
+                <li><strong class="text-white">Stage 5 // Compile &amp; Export:</strong> Click "Compile &amp; Export PDF" to hard-bake every redaction into the page image and download a sanitized copy.</li>
+            </ol>
+        </section>
+
+        <section aria-labelledby="cloud-redaction-expose" class="manifesto-container u-style-0b4c5a14">
+    <h2 class="u-style-88742319" id="cloud-redaction-expose">
+        [ WHY FLATTENED REDACTION NEEDS VERIFICATION ]
+    </h2>
+    <p class="u-style-2fa9754c">
+        A visual black rectangle is not always a redaction: some PDF editors leave the original text layer intact beneath an annotation. This utility instead exports image-based pages with the selected regions painted into the pixels, but that conversion also removes searchability, links, form fields, and document accessibility.
+    </p>
+    <p class="u-style-fa008e83">
+        The <strong>CalAudit PDF Redaction Tool</strong> performs its document manipulation in the current browser page and exports a new PDF. Inspect the complete output at high zoom, test text selection, and follow any required organizational review process before sharing a sensitive record.
+    </p>
+        </section>
+
+        <section class="u-style-0a085774" aria-labelledby="frequently-asked-questions">
+            <h2 class="u-style-97a898ab" id="frequently-asked-questions">[ FREQUENTLY ASKED QUESTIONS ]</h2>
+            <div class="u-style-785cda41" id="faq">
+                <details class="faq-item">
+                    <summary><span class="faq-icon" aria-hidden="true">▶</span> <strong>Is my document uploaded anywhere?</strong></summary>
+                    <div class="faq-answer">No. The PDF is parsed and rendered entirely in your browser using pdf.js. Nothing is sent to a server at any point in the process, from upload through export.</div>
+                </details>
+                <details class="faq-item">
+                    <summary><span class="faq-icon" aria-hidden="true">▶</span> <strong>Is the redacted text actually removed, or just covered up?</strong></summary>
+                    <div class="faq-answer">Actually removed. Each page is flattened to an image, and redaction boxes are drawn as solid black pixels directly into that image before export. There's no underlying text layer left to copy or extract from the final PDF.</div>
+                </details>
+                <details class="faq-item">
+                    <summary><span class="faq-icon" aria-hidden="true">▶</span> <strong>Can I undo a redaction box by mistake?</strong></summary>
+                    <div class="faq-answer">Yes. Press Ctrl+Z (or Cmd+Z on Mac) at any time to remove the most recently drawn redaction box. This works across all pages in the current session.</div>
+                </details>
+                <details class="faq-item">
+                    <summary><span class="faq-icon" aria-hidden="true">▶</span> <strong>Does this tool work offline?</strong></summary>
+                    <div class="faq-answer">Yes. Once the page and its libraries have loaded, you can disconnect from the internet entirely and continue redacting and exporting documents with full offline autonomy.</div>
+                </details>
+                <details class="faq-item mb-5">
+                    <summary><span class="faq-icon" aria-hidden="true">▶</span> <strong>Is this suitable for HIPAA-sensitive medical records?</strong></summary>
+                    <div class="faq-answer">The tool is not a HIPAA certification or legal-compliance guarantee. Confirm that local browser processing, image-based export, output review, device controls, and records handling fit your organization's approved workflow before using it with protected health information.</div>
+                </details>
+            </div>
+        </section>
+
+        <section class="related-tools" aria-label="Related Tools">
+            <h3>// RELATED FORENSIC & PRIVACY UTILITIES</h3>
+            <ul>
+                <li><a href="/tools/magic-byte-auditor/">File Signature &amp; Magic Bytes Checker</a></li>
+                <li><a href="/tools/exif-scrubber/">Photo Metadata &amp; EXIF Remover</a></li>
+                <li><a href="/tools/audio-transcriber/">Audio-to-Text Transcriber</a></li>
+                <li><a href="/tools/knox-keene-audit/">DMHC &amp; Knox-Keene Timeline Calculator</a></li>
+            </ul>
+        </section>
+        </main>
+
+<script src="/nav.js"></script>
+
+    <footer class="page-footer" role="contentinfo">
+    <div class="footer-inner">
+        <p>© 2026 CALAUDIT | Nicolas Hernandez — Public Interest Initiative | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+        <p><strong>OPEN SOURCE LICENSE NOTICE:</strong> All original utility code, tools, and web application logic on this platform are distributed under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">GNU AGPLv3</a>. All public health form archives, translated materials, and investigative guides are licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>. Commercial exploitation, proprietary re-licensing, or paywalling without strict attribution is strictly prohibited.</p>
+        <p class="onion-mirror" aria-label="Tor Onion Mirror Address">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+    </div>
+</footer>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    if (typeof pdfjsLib === 'undefined' || typeof jspdf === 'undefined') {
+        document.getElementById('status').textContent = "CRITICAL ERROR: Libraries failed to initialize. Refresh page.";
+        return;
+    }
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdf.worker.min.js';
+
+    const dropzone = document.getElementById('dropzone');
+    const fileInput = document.getElementById('pdfUpload');
+    const exportBtn = document.getElementById('exportBtn');
+    const workspace = document.getElementById('workspace');
+    const statusText = document.getElementById('status');
+
+    let canvasList = [];
+
+    dropzone.addEventListener('click', () => fileInput.click());
+
+    dropzone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropzone.classList.add('dragover');
+    });
+    dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
+    dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropzone.classList.remove('dragover');
+        if (e.dataTransfer.files.length) processFile(e.dataTransfer.files[0]);
+    });
+    fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length) processFile(e.target.files[0]);
+    });
+
+    function processFile(file) {
+        if (!file || file.type !== "application/pdf") {
+            statusText.textContent = "CRITICAL ERROR: File matrix must register as application/pdf.";
+            return;
+        }
+        if (file.size > 50 * 1024 * 1024) {
+            statusText.textContent = "CRITICAL ERROR: PDF exceeds the 50 MB local processing limit.";
+            return;
+        }
+        statusText.textContent = "STATUS: Parsing binary document layers...";
+        exportBtn.disabled = true;
+        workspace.innerHTML = '';
+        canvasList = [];
+
+        const reader = new FileReader();
+        reader.onload = async function() {
+            try {
+                const typedarray = new Uint8Array(this.result);
+                const pdf = await pdfjsLib.getDocument({data: typedarray}).promise;
+
+                for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                    await renderPDFPage(pdf, pageNum);
+                }
+                exportBtn.disabled = false;
+                statusText.textContent = "STATUS: Pipeline operational. Active Nodes: 0";
+            } catch (err) {
+                console.error(err);
+                statusText.textContent = "CRITICAL ERROR: Viewport rendering pipeline exception.";
+            }
+        };
+        reader.onerror = function() {
+            statusText.textContent = "CRITICAL ERROR: The selected PDF could not be read.";
+        };
+        reader.readAsArrayBuffer(file);
+    }
+
+    async function renderPDFPage(pdf, pageNum) {
+        const page = await pdf.getPage(pageNum);
+        const viewport = page.getViewport({ scale: 1.5 });
+
+        const pageWrapper = document.createElement('div');
+        pageWrapper.className = 'page-wrapper';
+
+        const label = document.createElement('div');
+        label.className = 'scrub-node-label';
+        label.textContent = `PAGE ${pageNum} / ${pdf.numPages}`;
+        pageWrapper.appendChild(label);
+
+        const canvasContainer = document.createElement('div');
+        canvasContainer.className = 'canvas-container';
+        canvasContainer.style.width = `${viewport.width}px`;
+        canvasContainer.style.height = `${viewport.height}px`;
+
+        const canvas = document.createElement('canvas');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        const ctx = canvas.getContext('2d');
+
+        await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+
+        canvasContainer.appendChild(canvas);
+        pageWrapper.appendChild(canvasContainer);
+        workspace.appendChild(pageWrapper);
+
+        initHTMLRedactionLayer(canvasContainer, canvas);
+        canvasList.push(canvas);
+    }
+
+    function initHTMLRedactionLayer(canvasContainer, canvas) {
+        let isDrawing = false;
+        let startX, startY;
+        let currentBox = null;
+        const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+        function reportBoxCount(message) {
+            const totalBoxes = document.querySelectorAll('.redaction-box').length;
+            statusText.textContent = `STATUS: ${message}. Active Nodes: ${totalBoxes}`;
+        }
+
+        function registerRedactionBox(box) {
+            box.style.backgroundColor = '#000000';
+            box.style.border = 'none';
+            box.style.pointerEvents = 'auto';
+            box.tabIndex = 0;
+            box.setAttribute('role', 'button');
+            box.setAttribute('aria-label', 'Redaction box. Arrow keys move it. Shift plus arrow keys resize it. Delete or Backspace removes it.');
+            box.addEventListener('keydown', (event) => {
+                if (event.key === 'Delete' || event.key === 'Backspace') {
+                    event.preventDefault();
+                    box.remove();
+                    reportBoxCount('Redaction box removed');
+                    canvasContainer.focus();
+                    return;
+                }
+
+                if (!event.key.startsWith('Arrow')) return;
+                event.preventDefault();
+                let left = parseFloat(box.style.left);
+                let top = parseFloat(box.style.top);
+                let width = parseFloat(box.style.width);
+                let height = parseFloat(box.style.height);
+                const deltaX = event.key === 'ArrowLeft' ? -1 : event.key === 'ArrowRight' ? 1 : 0;
+                const deltaY = event.key === 'ArrowUp' ? -1 : event.key === 'ArrowDown' ? 1 : 0;
+
+                if (event.shiftKey) {
+                    width = clamp(width + deltaX, 1, 100 - left);
+                    height = clamp(height + deltaY, 1, 100 - top);
+                } else {
+                    left = clamp(left + deltaX, 0, 100 - width);
+                    top = clamp(top + deltaY, 0, 100 - height);
+                }
+
+                box.style.left = `${left}%`;
+                box.style.top = `${top}%`;
+                box.style.width = `${width}%`;
+                box.style.height = `${height}%`;
+            });
+        }
+
+        canvasContainer.tabIndex = 0;
+        canvasContainer.setAttribute('role', 'region');
+        canvasContainer.setAttribute('aria-label', 'PDF page redaction canvas. Draw with a pointer, or press Enter to add a centered redaction box.');
+        canvasContainer.addEventListener('keydown', (event) => {
+            if (event.target !== canvasContainer || (event.key !== 'Enter' && event.key !== ' ')) return;
+            event.preventDefault();
+            const box = document.createElement('div');
+            box.className = 'redaction-box';
+            box.style.left = '40%';
+            box.style.top = '46%';
+            box.style.width = '20%';
+            box.style.height = '8%';
+            canvasContainer.appendChild(box);
+            registerRedactionBox(box);
+            reportBoxCount('Keyboard redaction box added');
+            box.focus();
+        });
+
+        canvasContainer.addEventListener('pointerdown', (event) => {
+            if (event.target !== canvas) return;
+            canvasContainer.setPointerCapture(event.pointerId);
+            isDrawing = true;
+            const rect = canvas.getBoundingClientRect();
+            startX = clamp(((event.clientX - rect.left) / rect.width) * 100, 0, 100);
+            startY = clamp(((event.clientY - rect.top) / rect.height) * 100, 0, 100);
+
+            currentBox = document.createElement('div');
+            currentBox.className = 'redaction-box';
+            currentBox.style.backgroundColor = 'rgba(255, 0, 255, 0.4)';
+            currentBox.style.border = '1px solid #ff00ff';
+            currentBox.style.pointerEvents = 'none';
+            currentBox.style.left = `${startX}%`;
+            currentBox.style.top = `${startY}%`;
+            currentBox.style.width = '0%';
+            currentBox.style.height = '0%';
+            canvasContainer.appendChild(currentBox);
+        });
+
+        canvasContainer.addEventListener('pointermove', (event) => {
+            if (!isDrawing || !currentBox) return;
+            const rect = canvas.getBoundingClientRect();
+            const currentX = clamp(((event.clientX - rect.left) / rect.width) * 100, 0, 100);
+            const currentY = clamp(((event.clientY - rect.top) / rect.height) * 100, 0, 100);
+            const width = currentX - startX;
+            const height = currentY - startY;
+            currentBox.style.width = `${Math.abs(width)}%`;
+            currentBox.style.height = `${Math.abs(height)}%`;
+            currentBox.style.left = `${width < 0 ? currentX : startX}%`;
+            currentBox.style.top = `${height < 0 ? currentY : startY}%`;
+        });
+
+        canvasContainer.addEventListener('pointerup', (event) => {
+            if (!isDrawing || !currentBox) return;
+            isDrawing = false;
+            try { canvasContainer.releasePointerCapture(event.pointerId); } catch (error) {}
+            const box = currentBox;
+            currentBox = null;
+            if (parseFloat(box.style.width) < 0.5 || parseFloat(box.style.height) < 0.5) {
+                box.remove();
+                reportBoxCount('Redaction box was too small and was discarded');
+                return;
+            }
+            registerRedactionBox(box);
+            reportBoxCount('Redaction box added');
+        });
+
+        canvasContainer.addEventListener('pointercancel', (event) => {
+            if (!isDrawing) return;
+            isDrawing = false;
+            try { canvasContainer.releasePointerCapture(event.pointerId); } catch (error) {}
+            if (currentBox) currentBox.remove();
+            currentBox = null;
+            reportBoxCount('Canceled redaction discarded');
+        });
+    }
+
+    exportBtn.addEventListener('click', async () => {
+        if (canvasList.length === 0) return;
+        statusText.textContent = "STATUS: Hard-baking redactions into clean export map...";
+        exportBtn.disabled = true;
+
+        try {
+            const { jsPDF } = window.jspdf;
+            let pdfOutput;
+
+            for (let i = 0; i < canvasList.length; i++) {
+                const canvas = canvasList[i];
+                const container = canvas.parentElement;
+                const exportCanvas = document.createElement('canvas');
+                exportCanvas.width = canvas.width;
+                exportCanvas.height = canvas.height;
+                const exportContext = exportCanvas.getContext('2d');
+                exportContext.drawImage(canvas, 0, 0);
+
+                const boxes = container.querySelectorAll('.redaction-box');
+
+                boxes.forEach(box => {
+                    // Translate responsive percentage coordinates to export pixels.
+                    const leftPercent = parseFloat(box.style.left);
+                    const topPercent = parseFloat(box.style.top);
+                    const widthPercent = parseFloat(box.style.width);
+                    const heightPercent = parseFloat(box.style.height);
+
+                    const left = (leftPercent / 100) * exportCanvas.width;
+                    const top = (topPercent / 100) * exportCanvas.height;
+                    const width = (widthPercent / 100) * exportCanvas.width;
+                    const height = (heightPercent / 100) * exportCanvas.height;
+
+                    exportContext.fillStyle = '#000000';
+                    exportContext.fillRect(left, top, width, height);
+                });
+
+                const imgData = exportCanvas.toDataURL('image/jpeg', 0.85);
+                const orientation = exportCanvas.width > exportCanvas.height ? 'l' : 'p';
+
+                if (i === 0) {
+                    pdfOutput = new jsPDF({
+                        orientation: orientation,
+                        unit: 'px',
+                        format: [exportCanvas.width, exportCanvas.height]
+                    });
+                } else {
+                    pdfOutput.addPage([exportCanvas.width, exportCanvas.height], orientation);
+                }
+                pdfOutput.addImage(imgData, 'JPEG', 0, 0, exportCanvas.width, exportCanvas.height);
+            }
+
+            pdfOutput.save('sanitized_document.pdf');
+            statusText.textContent = "STATUS: Flattened PDF exported. Verify every redaction before sharing.";
+        } catch (error) {
+            console.error(error);
+            statusText.textContent = "CRITICAL ERROR: The flattened PDF could not be exported.";
+        } finally {
+            exportBtn.disabled = false;
+        }
+    });
+
+    window.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') {
+            e.preventDefault();
+
+            const boxes = document.querySelectorAll('.redaction-box');
+            if (boxes.length > 0) {
+                const lastBox = boxes[boxes.length - 1];
+                lastBox.remove();
+                statusText.textContent = `STATUS: Last redaction node removed. Active Nodes: ${boxes.length - 1}`;
+            } else {
+                statusText.textContent = `STATUS: Pipeline clean. No active nodes to remove.`;
+            }
+        }
+    });
+});
+</script>
+
+</body>
+</html>

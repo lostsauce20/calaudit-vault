@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#050505"/>
+    <title>Zero-Width Text Generator &amp; Hidden Text Encoder | CalAudit</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="canonical" href="https://calaudit.org/tools/text-cloaker/"/>
+    <meta name="description" content="Generate and extract hidden zero-width Unicode text inside visible cover text. Encode UTF-8 payloads locally with invisible characters. Reversible obfuscation, not encryption."/>
+    <meta name="author" content="Nicolas Hernandez"/>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="CalAudit"/>
+    <meta property="og:url" content="https://calaudit.org/tools/text-cloaker/"/>
+    <meta property="og:title" content="Zero-Width Text Generator &amp; Hidden Text Encoder | CalAudit"/>
+    <meta property="og:description" content="Encode hidden UTF-8 payloads with zero-width Unicode characters inside visible text, then extract them later when the characters survive copying."/>
+    <meta property="og:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="CalAudit Official Logo"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@CalAudit"/>
+    <meta name="twitter:creator" content="@CalAudit"/>
+    <meta name="twitter:url" content="https://calaudit.org/tools/text-cloaker/"/>
+    <meta name="twitter:title" content="Zero-Width Text Generator &amp; Hidden Text Encoder | CalAudit"/>
+    <meta name="twitter:description" content="Encode hidden UTF-8 payloads with zero-width Unicode characters inside visible text, then extract them later when the characters survive copying."/>
+    <meta name="twitter:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta name="twitter:image:alt" content="CalAudit Official Logo"/>
+    <meta name="geo.region" content="US-CA"/>
+    <meta name="geo.placename" content="California"/>
+    <meta name="geo.position" content="38.5816;-121.4944"/>
+    <meta name="ICBM" content="38.5816, -121.4944"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://calaudit.org/#nicolas-hernandez",
+      "name": "Nicolas Hernandez",
+      "url": "https://calaudit.org",
+      "jobTitle": "Operator",
+      "image": "https://calaudit.org/calauditlogo.webp"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://calaudit.org/#website",
+      "url": "https://calaudit.org/",
+      "name": "CalAudit",
+      "description": "Browser-based audit, privacy, and utility tools",
+      "publisher": {
+        "@id": "https://calaudit.org/#nicolas-hernandez"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://calaudit.org/tools/text-cloaker/#webpage",
+      "url": "https://calaudit.org/tools/text-cloaker/",
+      "name": "Zero-Width Text Generator & Hidden Text Encoder | CalAudit",
+      "description": "Encode UTF-8 payloads as invisible zero-width Unicode characters inside visible cover text and extract them later when preserved.",
+      "isPartOf": {
+        "@id": "https://calaudit.org/#website"
+      },
+      "about": {
+        "@id": "https://calaudit.org/tools/text-cloaker/#app"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://calaudit.org/calauditlogo.webp"
+      },
+      "datePublished": "2026-01-01T00:00:00Z",
+      "dateModified": "2026-08-26",
+      "author": {
+        "@id": "https://calaudit.org/#nicolas-hernandez"
+      },
+      "breadcrumb": {
+        "@id": "https://calaudit.org/tools/text-cloaker/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://calaudit.org/tools/text-cloaker/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Hub",
+          "item": "https://calaudit.org"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Forensic Vault",
+          "item": "https://calaudit.org/forensic-vault/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Tool Room",
+          "item": "https://calaudit.org/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Zero-Width Text Generator",
+          "item": "https://calaudit.org/tools/text-cloaker/"
+        }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://calaudit.org/tools/text-cloaker/#app",
+      "mainEntityOfPage": {
+        "@id": "https://calaudit.org/tools/text-cloaker/#webpage"
+      },
+      "name": "CalAudit Zero-Width Text Encoder & Decoder",
+      "url": "https://calaudit.org/tools/text-cloaker/",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires standard JavaScript execution",
+      "isAccessibleForFree": true,
+      "featureList": [
+        "Local zero-width Unicode encoding",
+        "UTF-8 payload support",
+        "Zero-width boundary markers",
+        "Payload extraction and validation",
+        "Round-trip handling for multilingual text and emoji"
+      ],
+      "description": "A free browser utility that encodes hidden UTF-8 payloads as zero-width Unicode characters inside visible cover text and decodes compatible payloads locally.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@id": "https://calaudit.org/#nicolas-hernandez"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://calaudit.org/tools/text-cloaker/#howto",
+      "mainEntityOfPage": {
+        "@id": "https://calaudit.org/tools/text-cloaker/#webpage"
+      },
+      "name": "How to Hide Text with Zero-Width Unicode Characters",
+      "description": "Embed a reversible hidden payload inside visible cover text with zero-width Unicode characters, then test and extract it when preserved.",
+      "totalTime": "PT1M",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "CalAudit Zero-Width Text Generator & Extractor"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Paste your cover text",
+          "text": "Paste or type the visible prose that everyone will see normally."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Enter a secret payload",
+          "text": "Type the hidden identifier, tracker string, or watermark signature you want embedded."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Inject the invisible payload",
+          "text": "The tool converts your payload into invisible zero-width Unicode characters and tucks it inside the cover text."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Copy and distribute",
+          "text": "Copy the generated output and test it at the destination. Some editors and platforms remove or normalize zero-width characters."
+        }
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "@id": "https://calaudit.org/tools/text-cloaker/#faq",
+      "mainEntityOfPage": {
+        "@id": "https://calaudit.org/tools/text-cloaker/#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is zero-width text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zero-width text uses Unicode characters that normally occupy no visible horizontal space. This tool maps a UTF-8 payload into zero-width characters and embeds it inside visible cover text."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I hide text inside normal text with zero-width characters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter visible cover text and the payload you want to encode, then generate the output. The hidden payload is inserted as zero-width Unicode characters and can be extracted later if those characters are preserved."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I extract or decode zero-width hidden text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Paste text produced by this tool into the extractor. If the expected boundary markers and zero-width payload survived, the browser decodes the hidden UTF-8 text locally."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will invisible zero-width text survive copy and paste?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sometimes. Messaging apps, editors, content-management systems, normalization, and sanitization may strip or alter zero-width characters, so test the exact destination before relying on the payload."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is zero-width hidden text encryption?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The encoding is reversible obfuscation, not encryption. Anyone who knows the encoding scheme can inspect or remove the hidden characters, so do not use it to protect a secret."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    <style>
+        /* A11y Focus Styles */
+        :focus-visible {
+            outline: 2px solid var(--green, #0f0) !important;
+            outline-offset: 3px !important;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        /* Cloaker Panel Styling (mirrors .scrub-dropzone treatment) */
+        .cloak-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 800px) {
+            .cloak-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cloak-panel {
+            border: 1px solid #222;
+            background: #080808;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cloak-panel-label {
+            font-family: var(--mono, monospace);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px dashed #333;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        .cloak-panel.encoder .cloak-panel-label { color: var(--green, #0f0); }
+        .cloak-panel.decoder .cloak-panel-label { color: var(--amber, #f59e0b); }
+
+        .cloak-field {
+            margin-bottom: 15px;
+        }
+
+        .cloak-field label {
+            display: block;
+            font-size: 0.75rem;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            color: #888;
+            font-family: var(--mono, monospace);
+        }
+
+        .cloak-field textarea {
+            width: 100%;
+            min-height: 110px;
+            background: #050505;
+            border: 1px solid #333;
+            border-radius: 4px;
+            color: #fff;
+            padding: 10px;
+            font-family: var(--mono, monospace);
+            font-size: 0.85rem;
+            resize: vertical;
+            outline: none;
+        }
+
+        .cloak-field textarea:focus {
+            border-color: var(--green, #0f0);
+        }
+
+        .cloak-field.short textarea {
+            min-height: 60px;
+        }
+
+        .legal-btn.cloak-btn {
+            width: 100%;
+            text-align: center;
+            display: block;
+            cursor: pointer;
+            margin-top: auto;
+        }
+
+        .legal-btn.cloak-btn.encode-btn {
+            border-color: var(--green, #0f0);
+            background: rgba(0, 255, 0, 0.02);
+        }
+
+        .legal-btn.cloak-btn.decode-btn {
+            border-color: var(--amber, #f59e0b);
+            background: rgba(245, 158, 11, 0.03);
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="vault-container">
+    <main role="main" id="main-content">
+        <div class="back-btn-container">
+            <a href="/tools/" class="back-btn" aria-label="Return to previous page, the Utility Hub">← Return to Utility Hub</a>
+        </div>
+
+        <div class="manifesto-container">
+            <div class="page-label" aria-hidden="true">// SERVICE NODE: ZERO_WIDTH_TEXT_CLOAKER</div>
+            <h1 class="page-title">Zero-Width Text Generator &amp; Extractor</h1>
+            <p class="page-subtitle">"Hide and extract text with zero-width Unicode characters"</p>
+            <div class="requisition">
+                <p><strong>SPECIFICATION:</strong> Encodes UTF-8 bytes with zero-width space (<code>\u200B</code>) and zero-width non-joiner (<code>\u200C</code>) characters between zero-width joiner boundaries. This is reversible obfuscation, not encryption, and some platforms may strip the payload.</p>
+            </div>
+        </div>
+
+        <section aria-labelledby="section-cloaker-tool">
+            <div class="section-label" aria-hidden="true">FORENSIC WATERMARKING MODULE</div>
+            <h2 id="section-cloaker-tool" class="section-title">Zero-Width Hidden Text Encoder &amp; Extractor</h2>
+            <p class="section-quote">"Attach a machine-readable zero-width payload to ordinary cover text."</p>
+            <p><strong>Quick answer:</strong> Enter visible cover text and a hidden payload to generate a copy containing zero-width Unicode characters. Paste that output back into the extractor to recover the payload when those characters survive the copy path. This is reversible obfuscation, not encryption.</p>
+            <p>
+                The tool can attach an identifier to a copy of text and extract it later if the zero-width characters survive. The presence or absence of a payload does not prove authorship, ownership, or who copied the text.
+            </p>
+
+            <div class="cloak-grid">
+                <!-- Left: Inject / Encode Panel -->
+                <div class="cloak-panel encoder">
+                    <div class="cloak-panel-label">// Matrix Injector (Encode)</div>
+
+                    <div class="cloak-field">
+                        <label for="encode-cover">1. Public Cover Text (Visible Prose)</label>
+                        <textarea id="encode-cover" placeholder="Type or paste the text that everyone will see normally..."></textarea>
+                    </div>
+
+                    <div class="cloak-field short">
+                        <label for="encode-secret">2. Secret Payload (Hidden Identifier)</label>
+                        <textarea id="encode-secret" placeholder="e.g., Leaked by User_A / Copyright Signature..."></textarea>
+                    </div>
+
+                    <div class="cloak-field">
+                        <label for="encode-output">3. Generated Output (Contains Hidden Data)</label>
+                        <textarea id="encode-output" readonly placeholder="Output payload containing invisible watermarks will generate here..." onclick="this.select()"></textarea>
+                    </div>
+
+                    <button type="button" class="legal-btn cloak-btn encode-btn" onclick="encodeText()">Inject Invisible Payload</button>
+                    <div id="encode-status" class="audit-box green mt-15" role="status" aria-live="polite">Ready to inject structure.</div>
+                </div>
+
+                <!-- Right: Extract / Decode Panel -->
+                <div class="cloak-panel decoder">
+                    <div class="cloak-panel-label">// Matrix Extractor (Decode)</div>
+
+                    <div class="cloak-field">
+                        <label for="decode-input">1. Paste Target Text (Suspected Content)</label>
+                        <textarea id="decode-input" placeholder="Paste text here to inspect it for hidden zero-width signatures..."></textarea>
+                    </div>
+
+                    <div class="cloak-field">
+                        <label for="decode-output">2. Extracted Secret (Decoded Data)</label>
+                        <textarea class="u-style-4aa7a0c5" id="decode-output" readonly placeholder="Any hidden identifiers discovered within the string will be rendered here..."></textarea>
+                    </div>
+
+                    <button type="button" class="legal-btn cloak-btn decode-btn" onclick="decodeText()">Extract Hidden Matrix</button>
+                    <div id="decode-status" class="audit-box blue mt-15" role="status" aria-live="polite">Ready to inspect data stream.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="u-style-25da4e20" aria-labelledby="section-editorial-study">
+            <div class="section-label" aria-hidden="true">EDITORIAL STUDY</div>
+            <h2 id="section-editorial-study" class="section-title">Zero-Width Unicode Hidden Text Explained</h2>
+
+            <h3 class="u-style-f5ae840f">How do zero-width Unicode characters hide text?</h3>
+            <p>
+                The tool encodes the payload as UTF-8 bytes, converts those bytes to bits, then maps zero bits to a Zero-Width Space (<code>&amp;#8203;</code>) and one bits to a Zero-Width Non-Joiner (<code>&amp;#8204;</code>).
+            </p>
+            <p>
+                These symbols normally have zero horizontal width. Many copy-and-paste paths preserve them, but normalization, sanitization, messaging apps, editors, and content-management systems may remove or alter them.
+            </p>
+
+            <h3 class="u-style-f5ae840f">Will zero-width hidden text survive copy and paste?</h3>
+            <p>
+                The application code performs encoding and decoding locally and does not submit entered text to a CalAudit endpoint. The payload is not confidential: anyone who knows the encoding scheme can extract it, and device or browser risks still apply.
+            </p>
+        </section>
+
+        <!-- Limitations block -->
+        <section class="u-style-cd60389d" aria-labelledby="enterprise-watermark-expose">
+            <h2 class="u-style-4b22895e" id="enterprise-watermark-expose">
+                [ LIMITATIONS OF ZERO-WIDTH PAYLOADS ]
+            </h2>
+            <p class="u-style-3e85973a">
+                Zero-width characters are ordinary Unicode code points, not a durable rights-management system. A recipient can inspect, remove, replace, or accidentally normalize them, and different copies can carry the same identifier.
+            </p>
+            <p class="u-style-22b1cae9">
+                Use the feature for reversible labeling or experimentation, not to protect a secret or prove a legal claim. Test the exact destination path before relying on payload survival.
+            </p>
+        </section>
+
+        <section class="u-style-25da4e20" aria-labelledby="section-faq">
+            <div class="section-label" aria-hidden="true">FORENSIC FAQ</div>
+            <h2 id="section-faq" class="section-title">Common Questions</h2>
+
+                        <details id="faq-1" class="faq-item u-style-5d1b2562"><summary class="u-style-4caf3fe2"><span class="faq-icon" aria-hidden="true">▶</span> <strong>What is zero-width text?</strong></summary><div class="u-style-53b9271d">Zero-width text uses Unicode characters that normally occupy no visible horizontal space. This tool maps a UTF-8 payload into zero-width characters and embeds it inside visible cover text.</div></details>
+            <details id="faq-2" class="faq-item u-style-5d1b2562"><summary class="u-style-4caf3fe2"><span class="faq-icon" aria-hidden="true">▶</span> <strong>How do I hide text inside normal text with zero-width characters?</strong></summary><div class="u-style-53b9271d">Enter visible cover text and the payload you want to encode, then generate the output. The hidden payload is inserted as zero-width Unicode characters and can be extracted later if those characters are preserved.</div></details>
+            <details id="faq-3" class="faq-item u-style-5d1b2562"><summary class="u-style-4caf3fe2"><span class="faq-icon" aria-hidden="true">▶</span> <strong>Can I extract or decode zero-width hidden text?</strong></summary><div class="u-style-53b9271d">Yes. Paste text produced by this tool into the extractor. If the expected boundary markers and zero-width payload survived, the browser decodes the hidden UTF-8 text locally.</div></details>
+            <details id="faq-4" class="faq-item u-style-5d1b2562"><summary class="u-style-4caf3fe2"><span class="faq-icon" aria-hidden="true">▶</span> <strong>Will invisible zero-width text survive copy and paste?</strong></summary><div class="u-style-53b9271d">Sometimes. Messaging apps, editors, content-management systems, normalization, and sanitization may strip or alter zero-width characters, so test the exact destination before relying on the payload.</div></details>
+            <details id="faq-5" class="faq-item u-style-db016c1c"><summary class="u-style-4caf3fe2"><span class="faq-icon" aria-hidden="true">▶</span> <strong>Is zero-width hidden text encryption?</strong></summary><div class="u-style-53b9271d">No. The encoding is reversible obfuscation, not encryption. Anyone who knows the encoding scheme can inspect or remove the hidden characters, so do not use it to protect a secret.</div></details>
+        </section>
+
+        <section class="related-tools" aria-label="Related Tools">
+            <h3>// RELATED WATERMARK & SECURITY UTILITIES</h3>
+            <ul>
+                <li><a href="/tools/text-encryptor/">AES-256 Text Encryptor &amp; Decryptor</a></li>
+                <li><a href="/tools/token-forge/">Secure Token &amp; Random String Generator</a></li>
+                <li><a href="/tools/link-sanitizer/">URL Cleaner &amp; Tracking Parameter Remover</a></li>
+            </ul>
+        </section>
+        </main>
+
+    <footer class="page-footer" role="contentinfo">
+    <div class="footer-inner">
+        <p>© 2026 CALAUDIT | Nicolas Hernandez — Public Interest Initiative | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+        <p><strong>OPEN SOURCE LICENSE NOTICE:</strong> All original utility code, tools, and web application logic on this platform are distributed under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">GNU AGPLv3</a>. All public health form archives, translated materials, and investigative guides are licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>. Commercial exploitation, proprietary re-licensing, or paywalling without strict attribution is strictly prohibited.</p>
+        <p class="onion-mirror" aria-label="Tor Onion Mirror Address">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+    </div>
+</footer>
+
+    <script src="/nav.js"></script>
+
+    <script>
+        // Zero-Width Character Map
+        const ZERO_WIDTH_0 = '\u200B'; // Zero-Width Space
+        const ZERO_WIDTH_1 = '\u200C'; // Zero-Width Non-Joiner
+        const LEGACY_BREAK_CHAR = '\u200D';
+        const PAYLOAD_BOUNDARY = '\u2063\u200D\u2063'; // Versioned boundary; avoids ordinary emoji ZWJ collisions
+
+        function encodePayload(secretText) {
+            const encoder = new TextEncoder();
+            const bytes = encoder.encode(secretText);
+            let binarySecret = '';
+            for (let i = 0; i < bytes.length; i++) {
+                const bin = bytes[i].toString(2).padStart(8, '0');
+                for (let j = 0; j < bin.length; j++) {
+                    binarySecret += (bin[j] === '0') ? ZERO_WIDTH_0 : ZERO_WIDTH_1;
+                }
+            }
+            return PAYLOAD_BOUNDARY + binarySecret + PAYLOAD_BOUNDARY;
+        }
+
+        function decodePayload(extractedPayload) {
+            let binString = '';
+            for (let i = 0; i < extractedPayload.length; i++) {
+                if (extractedPayload[i] === ZERO_WIDTH_0) {
+                    binString += '0';
+                } else if (extractedPayload[i] === ZERO_WIDTH_1) {
+                    binString += '1';
+                }
+            }
+
+            if (binString.length % 8 !== 0) {
+                throw new Error("Corrupted, truncated, or incomplete zero-width string segment.");
+            }
+
+            const bytes = new Uint8Array(binString.length / 8);
+            for (let i = 0; i < binString.length; i += 8) {
+                const chunk = binString.slice(i, i + 8);
+                bytes[i / 8] = parseInt(chunk, 2);
+            }
+
+            const decoder = new TextDecoder("utf-8", { fatal: true });
+            return decoder.decode(bytes);
+        }
+
+        function encodeText() {
+            const coverText = document.getElementById('encode-cover').value;
+            const secretText = document.getElementById('encode-secret').value;
+            const status = document.getElementById('encode-status');
+            const output = document.getElementById('encode-output');
+
+            if (!coverText) {
+                status.className = "audit-box red";
+                status.innerText = "ERROR: Cover text array is completely empty.";
+                return;
+            }
+            if (!secretText) {
+                status.className = "audit-box red";
+                status.innerText = "ERROR: Missing secret payload identifier.";
+                return;
+            }
+
+            try {
+                const hiddenPackage = encodePayload(secretText);
+                const bytesCount = new TextEncoder().encode(secretText).length;
+
+                let finalOutput = '';
+                if (coverText.length > 5) {
+                    const splitIndex = coverText.indexOf(' ') + 1 || 3;
+                    finalOutput = coverText.slice(0, splitIndex) + hiddenPackage + coverText.slice(splitIndex);
+                } else {
+                    finalOutput = coverText + hiddenPackage;
+                }
+
+                output.value = finalOutput;
+                status.className = "audit-box green";
+                status.innerText = `Encoded payload (${secretText.length} characters / ${bytesCount * 8} bits). Test the output at its destination before relying on it.`;
+            } catch (err) {
+                status.className = "audit-box red";
+                status.innerText = `ERROR: Failed to pack payload. Error: ${err.message}`;
+            }
+        }
+
+        function decodeText() {
+            const input = document.getElementById('decode-input').value;
+            const output = document.getElementById('decode-output');
+            const status = document.getElementById('decode-status');
+
+            if (!input) {
+                status.className = "audit-box red";
+                status.innerText = "ERROR: Target string field is blank.";
+                output.value = '';
+                return;
+            }
+
+            let boundary = PAYLOAD_BOUNDARY;
+            let firstBreak = input.indexOf(boundary);
+            let lastBreak = firstBreak === -1 ? -1 : input.indexOf(boundary, firstBreak + boundary.length);
+
+            // Backward compatibility for output generated by the earlier single-ZWJ format.
+            if (firstBreak === -1 || lastBreak === -1) {
+                boundary = LEGACY_BREAK_CHAR;
+                firstBreak = input.indexOf(boundary);
+                lastBreak = input.lastIndexOf(boundary);
+            }
+
+            if (firstBreak === -1 || lastBreak === -1 || firstBreak === lastBreak) {
+                status.className = "audit-box red";
+                status.innerText = "SCAN COMPLETE: Zero hidden binary structural nodes found.";
+                output.value = '';
+                return;
+            }
+
+            const extractedPayload = input.slice(firstBreak + boundary.length, lastBreak);
+
+            try {
+                const secretDecoded = decodePayload(extractedPayload);
+
+                output.value = secretDecoded;
+                status.className = "audit-box blue";
+                status.innerText = `Payload extracted and decoded as UTF-8.`;
+            } catch (err) {
+                status.className = "audit-box red";
+                status.innerText = `SCAN ALERT: Failed to decode binary payload (possibly corrupted, truncated, or malformed UTF-8 data).`;
+                output.value = '';
+            }
+        }
+    </script>
+
+    <script>/* Onion Link Patch */ (function(){if(window.location.hostname.endsWith('.onion')){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(h&&!h.startsWith('http')&&!h.startsWith('mailto:')&&!h.startsWith('tel:')&&!h.startsWith('#')){var p=h.split('/');var l=p[p.length-1];if(l!==''&&!l.includes('.')){a.setAttribute('href',h+'.html')}else if(h.endsWith('/')){a.setAttribute('href',h+'index.html')}}})}})();</script>
+
+</div>
+</body>
+</html>

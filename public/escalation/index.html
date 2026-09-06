@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Medi-Cal Escalation Directory: Appeals &amp; Contacts | CalAudit</title>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/style.css" rel="stylesheet"/>
+<link href="https://calaudit.org/escalation/" rel="canonical"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="CalAudit’s verified Medi-Cal escalation directory lists phone numbers and contacts for appeals, grievances, transportation, clinical care, and regulators." name="description"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="#ffffff" name="theme-color"/>
+<meta content="CalAudit" property="og:site_name"/>
+<meta content="website" property="og:type"/>
+<meta content="Medi-Cal Escalation Directory: Appeals &amp; Contacts | CalAudit" property="og:title"/>
+<meta content="CalAudit’s verified Medi-Cal escalation directory lists phone numbers and contacts for appeals, grievances, transportation, clinical care, and regulators." property="og:description"/>
+<meta content="https://calaudit.org/calauditlogo.webp" property="og:image"/>
+<meta content="CalAudit official logo" property="og:image:alt"/>
+<meta content="https://calaudit.org/escalation/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Medi-Cal Escalation Directory: Appeals &amp; Contacts | CalAudit" name="twitter:title"/>
+<meta content="CalAudit’s verified Medi-Cal escalation directory lists phone numbers and contacts for appeals, grievances, transportation, clinical care, and regulators." name="twitter:description"/>
+<meta content="https://calaudit.org/calauditlogo.webp" name="twitter:image"/>
+<meta content="CalAudit official logo" name="twitter:image:alt"/>
+<style>
+    /* ── Core Layout Variables ── */
+    :root {
+        --vault-bg: #0a0a0a;
+        --vault-surface: #121214;
+        --vault-border: #1e1e21;
+        --vault-border-bright: #2c2c30;
+        --vault-text: #f2f2f0;
+        --vault-text-muted: #b4b5ba;
+        --vault-text-dim: #717179;
+        --accent-dept: #4db8e8;       /* Blueprint blue */
+        --accent-action: #e0a92e;     /* Warning amber */
+        --accent-alert: #e6483f;      /* Forensic red */
+        --accent-hover-bg: #16161a;   /* Row elevation on hover/open */
+        --radius: 3px;
+        --space-section: 3rem;
+    }
+
+    body {
+        background-color: var(--vault-bg);
+        color: var(--vault-text-muted);
+        font-family: var(--sans, system-ui, -apple-system, sans-serif);
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .vault-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .escalation-hub {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 40px 20px 64px;
+        width: 100%;
+    }
+
+    /* ── Section separators ── */
+    .page-section {
+        border-top: 1px solid #1e1e1e;
+        padding-top: 8px;
+        margin-top: 8px;
+        scroll-margin-top: 88px;
+    }
+    .section-header-label {
+        font-family: 'Courier New', monospace;
+        font-size: 0.6rem;
+        letter-spacing: 0.18em;
+        color: #444;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+
+    /* ── Typography & Header ── */
+    .header {
+        margin-bottom: 28px;
+        border-bottom: 1px solid var(--vault-border-bright);
+        padding-bottom: 18px;
+    }
+
+    .header-title {
+        font-family: var(--mono, monospace);
+        font-size: 1.65rem;
+        font-weight: 700;
+        color: var(--vault-text);
+        letter-spacing: -0.3px;
+        text-transform: uppercase;
+        margin: 0 0 6px 0;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        color: var(--vault-text-dim);
+        margin: 0;
+        font-family: var(--mono, monospace);
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+    }
+
+    .version-line {
+        font-size: 0.78rem;
+        color: var(--vault-text-dim);
+        margin: 8px 0 0;
+        font-family: var(--mono, monospace);
+    }
+
+    /* ── Definitions & Callouts ── */
+    .featured-definition {
+        border: 2px solid var(--vault-border-bright);
+        background: var(--vault-surface);
+        padding: 1.5rem;
+        margin-bottom: 22px;
+        border-radius: var(--radius);
+        border-left: 3px solid var(--accent-action);
+    }
+
+    .featured-definition > p:first-child {
+        color: var(--accent-action);
+        margin-top: 0;
+        font-weight: bold;
+        font-family: var(--mono, monospace);
+        letter-spacing: 1px;
+        font-size: 0.75rem;
+    }
+
+    .featured-definition > p:last-child {
+        margin-bottom: 0;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--vault-text-muted);
+    }
+
+    .audit-box {
+        background: var(--vault-surface);
+        border-left: 3px solid var(--accent-dept);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        padding: 14px 18px;
+        margin: 22px 0;
+    }
+
+    .status-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 6px;
+        font-family: var(--mono, monospace);
+        font-size: 0.75rem;
+        letter-spacing: 0.4px;
+    }
+
+    .status-badge {
+        color: var(--accent-dept);
+        font-weight: bold;
+    }
+
+    .verified-date {
+        color: var(--vault-text-dim);
+    }
+
+    .audit-box p {
+        margin: 0;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: var(--vault-text-muted);
+    }
+
+    .audit-box p + p {
+        margin-top: 8px;
+    }
+
+    .verification-methodology {
+        background: rgba(77, 184, 232, 0.04);
+        border: 1px solid var(--vault-border-bright);
+        border-radius: var(--radius);
+        padding: 18px;
+        margin: 22px 0;
+    }
+
+    .verification-methodology h2 {
+        color: var(--vault-text);
+        font-size: 1.05rem;
+        margin: 0 0 8px;
+    }
+
+    .verification-methodology p {
+        margin: 0;
+        font-size: 0.92rem;
+    }
+
+    .warning-callout-box {
+        background: rgba(230, 72, 63, 0.05);
+        border: 1px solid rgba(230, 72, 63, 0.2);
+        border-left: 4px solid var(--accent-alert);
+        padding: 14px 18px;
+        border-radius: var(--radius);
+        margin: 15px 0;
+    }
+
+    .warning-callout-title {
+        font-family: var(--mono, monospace);
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: var(--accent-alert);
+        margin: 0 0 6px 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .warning-callout-text {
+        margin: 0;
+        font-size: 0.88rem;
+        line-height: 1.5;
+        color: var(--vault-text-muted);
+    }
+
+    /* ── Directory Search & Navigation ── */
+    .search-container {
+        margin: 24px 0 12px;
+    }
+
+    #bypassSearch {
+        width: 100%;
+        background: var(--vault-surface);
+        border: 1px solid var(--vault-border-bright);
+        border-radius: var(--radius);
+        color: var(--vault-text);
+        font-family: var(--mono, monospace);
+        padding: 12px 16px;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        box-sizing: border-box;
+    }
+
+    #bypassSearch:focus {
+        border-color: var(--accent-action);
+        box-shadow: 0 0 0 3px rgba(224, 169, 46, 0.15);
+    }
+
+    #search-result-count {
+        display: block;
+        margin-top: 8px;
+        font-family: var(--mono, monospace);
+        font-size: 0.78rem;
+        color: var(--vault-text-dim);
+        min-height: 1.2em;
+    }
+
+    .quickjump-bar {
+        margin: 6px 0 var(--space-section);
+    }
+
+    .quickjump-label {
+        font-family: var(--mono, monospace);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: var(--vault-text-dim);
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .quickjump-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 14px;
+    }
+
+    .quickjump-chip {
+        font-family: var(--mono, monospace);
+        font-size: 0.78rem;
+        color: var(--vault-text-muted);
+        background: var(--vault-surface);
+        border: 1px solid var(--vault-border-bright);
+        border-radius: 999px;
+        padding: 5px 12px;
+        text-decoration: none;
+        cursor: pointer;
+        line-height: 1.4;
+    }
+
+    .quickjump-chip:hover {
+        color: var(--vault-text);
+        border-color: var(--accent-dept);
+    }
+
+    .quickjump-chip:focus-visible {
+        outline: 2px solid var(--accent-dept);
+        outline-offset: 2px;
+    }
+
+    .accordion-controls {
+        display: flex;
+        gap: 16px;
+    }
+
+    .accordion-toggle-btn {
+        font-family: var(--mono, monospace);
+        font-size: 0.78rem;
+        letter-spacing: 0.3px;
+        color: var(--vault-text-dim);
+        background: none;
+        border: none;
+        padding: 0;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        cursor: pointer;
+    }
+
+    .accordion-toggle-btn:hover {
+        color: var(--vault-text);
+    }
+
+    .accordion-toggle-btn:focus-visible {
+        outline: 2px solid var(--accent-dept);
+        outline-offset: 2px;
+    }
+
+    /* ── Plan Accordions ── */
+    .plan-section {
+        margin-bottom: 16px;
+        border: 1px solid var(--vault-border-bright);
+        border-radius: var(--radius);
+        background: var(--vault-surface);
+        overflow: hidden;
+    }
+
+    .plan-section[open] {
+        padding-bottom: 4px;
+    }
+
+    .plan-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 20px;
+        cursor: pointer;
+        list-style: none;
+        user-select: none;
+    }
+
+    .plan-header::-webkit-details-marker {
+        display: none;
+    }
+
+    .plan-header:hover {
+        background: var(--accent-hover-bg);
+    }
+
+    .plan-header:focus-visible {
+        outline: 2px solid var(--accent-dept);
+        outline-offset: -2px;
+    }
+
+    .plan-header h2 {
+        font-family: var(--mono, monospace);
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--vault-text);
+        text-transform: uppercase;
+        margin: 0;
+        letter-spacing: 0.3px;
+    }
+
+    .line-count {
+        font-family: var(--mono, monospace);
+        font-size: 0.75rem;
+        color: var(--vault-text-dim);
+        margin-left: auto;
+        white-space: nowrap;
+    }
+
+    .chevron {
+        width: 9px;
+        height: 9px;
+        border-right: 2px solid var(--vault-text-dim);
+        border-bottom: 2px solid var(--vault-text-dim);
+        transform: rotate(-45deg);
+        transition: transform 0.15s ease;
+        flex-shrink: 0;
+    }
+
+    .plan-section[open] .chevron {
+        transform: rotate(45deg);
+    }
+
+    /* ── Directory Listings ── */
+    .directory-list {
+        border-top: 1px solid var(--vault-border);
+    }
+
+    .directory-line {
+        display: grid;
+        grid-template-columns: 280px 190px 1fr;
+        gap: 20px;
+        padding: 14px 20px;
+        border-bottom: 1px solid var(--vault-border);
+        align-items: baseline;
+        border-left: 3px solid transparent;
+        transition: background 0.1s ease, border-left-color 0.1s ease;
+    }
+
+    .directory-list .directory-line:last-child {
+        border-bottom: none;
+    }
+
+    .directory-line:hover {
+        background: var(--accent-hover-bg);
+        border-left-color: var(--accent-action);
+    }
+
+    .line-dept {
+        font-family: var(--mono, monospace);
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--accent-dept);
+        letter-spacing: 0.2px;
+        margin: 0;
+    }
+
+    .line-contact {
+        font-family: var(--mono, monospace);
+        font-size: 0.88rem;
+        font-weight: bold;
+        color: var(--accent-action);
+    }
+
+    .line-contact a {
+        color: var(--accent-action);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+    }
+
+    .line-contact a:hover {
+        border-bottom-color: var(--accent-action);
+    }
+
+    .line-contact a:focus-visible {
+        outline: 2px solid var(--accent-action);
+        outline-offset: 2px;
+    }
+
+    .line-context {
+        font-size: 0.9rem;
+        color: var(--vault-text-muted);
+        line-height: 1.55;
+    }
+
+    .tag-status {
+        font-size: 0.65rem;
+        font-family: var(--mono, monospace);
+        padding: 2px 6px;
+        border-radius: 2px;
+        text-transform: uppercase;
+        margin-left: 6px;
+        vertical-align: middle;
+        font-weight: bold;
+        letter-spacing: 0.4px;
+    }
+
+    .tag-status:not(.tag-critical) {
+        color: var(--accent-dept);
+        background: rgba(77, 184, 232, 0.12);
+    }
+
+    .tag-critical, .tag-status.tag-critical {
+        color: #ffffff;
+        background: var(--accent-alert);
+    }
+
+    /* ── Ledger Tables ── */
+    .section-tag {
+        font-family: var(--mono, monospace);
+        font-size: 1.05rem;
+        color: var(--vault-text);
+        border-bottom: 1px solid var(--vault-border-bright);
+        padding-bottom: 10px;
+        letter-spacing: 0.6px;
+        margin-top: 0;
+        margin-bottom: 18px;
+        text-transform: uppercase;
+    }
+
+    #directory-results > section {
+        margin-top: var(--space-section);
+    }
+
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
+        margin-top: 4px;
+        border: 1px solid var(--vault-border-bright);
+        border-radius: var(--radius);
+    }
+
+    .ledger-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: var(--mono, monospace);
+        font-size: 0.87rem;
+        min-width: 700px;
+    }
+
+    .ledger-table td, .ledger-table th {
+        padding: 12px 15px;
+        border-bottom: 1px solid var(--vault-border);
+        vertical-align: top;
+        text-align: left;
+    }
+
+    .ledger-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .ledger-table td {
+        color: var(--vault-text-muted);
+    }
+
+    .ledger-table tr:nth-child(even) {
+        background: var(--vault-surface);
+    }
+
+    .ledger-table tr:hover td {
+        background: var(--accent-hover-bg);
+        color: var(--vault-text);
+    }
+
+    .contact-id {
+        color: var(--accent-dept);
+        font-weight: normal;
+    }
+
+    .ledger-contact {
+        color: var(--accent-action);
+        font-weight: bold;
+    }
+
+    .ledger-table a {
+        color: var(--accent-action);
+        text-decoration: none;
+    }
+
+    .ledger-table a:hover {
+        border-bottom: 1px solid var(--accent-action);
+    }
+
+    .ledger-table a:focus-visible {
+        outline: 2px solid var(--accent-action);
+        outline-offset: 2px;
+    }
+
+    /* ── Related Guides & Protocol ── */
+    .related-guides {
+        margin-top: 14px;
+        border-top: 1px solid var(--vault-border);
+        padding-top: 12px;
+    }
+
+    .related-guides-label {
+        color: var(--vault-text);
+        font-family: var(--mono, monospace);
+        font-size: 0.8rem;
+        font-weight: 700;
+        margin: 0 0 8px;
+        text-transform: uppercase;
+    }
+
+    .related-guides ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .related-guides a {
+        border: 1px solid var(--vault-border-bright);
+        border-radius: var(--radius);
+        color: var(--accent-dept);
+        display: inline-block;
+        font-size: 0.84rem;
+        padding: 6px 9px;
+        text-decoration: none;
+    }
+
+    .related-guides a:hover, .related-guides a:focus-visible {
+        border-color: var(--accent-dept);
+        color: var(--vault-text);
+    }
+
+    .guidelines-box {
+        border-top: 1px solid var(--vault-border-bright);
+        padding-top: 22px;
+        margin-top: var(--space-section);
+    }
+
+    .guidelines-box ul {
+        margin: 0;
+        padding-left: 20px;
+        color: var(--vault-text-muted);
+        font-size: 0.9rem;
+        line-height: 1.65;
+    }
+
+    .guidelines-box li {
+        margin-bottom: 12px;
+    }
+
+    .guidelines-box li:last-child {
+        margin-bottom: 0;
+    }
+
+    .guidelines-box strong {
+        color: var(--vault-text);
+        font-weight: bold;
+    }
+
+    /* ── Responsiveness ── */
+    @media (max-width: 768px) {
+        .directory-line {
+            grid-template-columns: 1fr;
+            gap: 5px;
+            padding: 14px 16px;
+        }
+
+        .line-contact {
+            margin-bottom: 2px;
+        }
+
+        .plan-header {
+            padding: 13px 16px;
+        }
+
+        .line-count {
+            display: none;
+        }
+
+        .quickjump-chips {
+            gap: 6px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .chevron, .directory-line, #bypassSearch {
+            transition: none;
+        }
+    }
+</style>
+<!-- Resource expansion merged from "U.S. Health Plan, State, and Federal Entity Resource Expansion.pdf" on 2026-08-07. -->
+<!-- Google BreadcrumbList & Entity Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://calaudit.org/#organization",
+      "name": "CalAudit",
+      "url": "https://calaudit.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://calaudit.org/#logo",
+        "url": "https://calaudit.org/calauditlogo.webp",
+        "contentUrl": "https://calaudit.org/calauditlogo.webp",
+        "caption": "CalAudit",
+        "inLanguage": "en-US"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://calaudit.org/#website",
+      "url": "https://calaudit.org/",
+      "name": "CalAudit",
+      "description": "Systemic ledger capturing clinical, executive, and regulatory contact pathways across California managed care entities.",
+      "publisher": {
+        "@id": "https://calaudit.org/#organization"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "CollectionPage",
+      "dateModified": "2026-08-23",
+      "@id": "https://calaudit.org/escalation/#webpage",
+      "url": "https://calaudit.org/escalation/",
+      "name": "Medi-Cal Escalation Directory: Appeals & Contacts",
+      "headline": "California Medi-Cal Escalation Directory",
+      "description": "CalAudit’s verified Medi-Cal escalation directory lists phone numbers and contacts for appeals, grievances, transportation, clinical care, and regulators.",
+      "isPartOf": {
+        "@id": "https://calaudit.org/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://calaudit.org/escalation/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://calaudit.org/escalation/#directory"
+      },
+      "publisher": {
+        "@id": "https://calaudit.org/#organization"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://calaudit.org/escalation/#directory",
+      "url": "https://calaudit.org/escalation/",
+      "name": "CalAudit Medi-Cal Escalation Directory",
+      "alternateName": "Statewide Medi-Cal Escalation Hub",
+      "description": "A CalAudit-maintained directory of California Medi-Cal appeal, grievance, transportation, clinical, executive, and regulatory escalation contacts organized by patient need.",
+      "creator": {
+        "@id": "https://calaudit.org/#organization"
+      },
+      "publisher": {
+        "@id": "https://calaudit.org/#organization"
+      },
+      "includedInDataCatalog": {
+        "@type": "DataCatalog",
+        "name": "CalAudit Forensic Vault",
+        "url": "https://calaudit.org/forensic-vault/"
+      },
+      "version": "2.5",
+      "dateModified": "2026-08-23",
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "keywords": [
+        "Medi-Cal escalation directory",
+        "Medi-Cal appeals",
+        "Medi-Cal grievances",
+        "California health plan contacts",
+        "medical transportation contacts"
+      ],
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "California, United States"
+      },
+      "measurementTechnique": "CalAudit review and categorization of health-plan documents and official state and federal sources.",
+      "variableMeasured": [
+        "Organization or agency",
+        "Escalation purpose",
+        "Contact channel",
+        "Phone number, fax number, email address, or portal",
+        "Administrative context",
+        "Verification date"
+      ],
+      "mainEntityOfPage": {
+        "@id": "https://calaudit.org/escalation/#webpage"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://calaudit.org/escalation/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "CalAudit",
+          "item": "https://calaudit.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Forensic Vault",
+          "item": "https://calaudit.org/forensic-vault/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Medi-Cal Escalation Directory",
+          "item": "https://calaudit.org/escalation/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="vault-container">
+    <main class="escalation-hub" id="main-content" role="main">
+        <nav aria-label="Breadcrumb navigation" class="back-btn-container">
+            <a href="/forensic-vault/" class="back-btn" aria-label="Return to the Forensic Vault main hub">← Return to Forensic Vault</a>
+        </nav>
+
+        <!-- ══════════════════════════════════════════
+             HUB / LANDING
+        ══════════════════════════════════════════ -->
+        <section id="hub" class="page-section" aria-labelledby="hub-heading">
+            <div class="section-header-label" aria-hidden="true">Escalation Directory — Main Hub</div>
+
+            <header role="banner" class="header">
+                <h1 id="hub-heading" class="header-title">California Medi-Cal Escalation Directory</h1>
+                <p class="subtitle">Verified Appeals, Grievance, Transportation &amp; Regulatory Contacts</p>
+                <p class="version-line">Directory version 2.5 · Last contact verification: <time datetime="2026-08-19">August 19, 2026</time></p>
+            </header>
+
+            <!-- Executive Bypass Definition Box -->
+            <div class="featured-definition">
+                <p>// CALAUDIT_MEDI-CAL_ESCALATION_FRAMEWORK: PATIENT_NEEDS_ROUTING</p>
+                <p><strong>CalAudit’s Medi-Cal Escalation Framework</strong> organizes California health-plan and regulator contacts by the patient’s immediate need: denied claims, transportation, clinical care, provider disputes, and external oversight. Use the directory to identify the appropriate appeal, grievance, clinical, or administrative route without repeating a general customer-service search.</p>
+            </div>
+
+            <!-- Context Information System Container -->
+            <aside aria-labelledby="audit-context-title" class="audit-box">
+                <div class="status-container">
+                    <span class="status-badge" id="audit-context-title">CALAUDIT_VERIFICATION_RECORD</span>
+                    <span class="verified-date">CONTACTS REVIEWED: AUGUST 19, 2026</span>
+                </div>
+                <p>CalAudit compiles and categorizes these pathways from health-plan materials, agency directories, and source documents retained in the Forensic Vault. The CalAudit classification describes the intended use of each route; the underlying organization remains the authority for its current contact details and filing requirements.</p>
+                <p><strong>Verification note:</strong> “Reviewed” means the contact matched a source record on the stated date. Confirm time-sensitive deadlines and routing instructions with the responsible plan or agency before filing.</p>
+            </aside>
+
+            <section aria-labelledby="verification-methodology-title" class="verification-methodology" id="verification-methodology">
+                <h2 id="verification-methodology-title">How CalAudit Verifies This Medi-Cal Escalation Directory</h2>
+                <p>CalAudit preserves the original source context, assigns each contact to a patient-need category, records the review date, and links directly to an official source when one is publicly available. The resulting cross-plan framework—rather than ownership of the underlying phone number, email, or agency rule—is CalAudit’s original contribution.</p>
+                <nav aria-label="Related CalAudit escalation guides" class="related-guides">
+                    <p class="related-guides-label">Related CalAudit escalation guides</p>
+                    <ul>
+                        <li><a href="/knox-keene/">Knox-Keene appeal rights</a></li>
+                        <li><a href="/dmhc-faqs/">DMHC complaint guide</a></li>
+                        <li><a href="/state-hearings/">Medi-Cal State Hearings</a></li>
+                        <li><a href="/board-complaints/">Healthcare board complaints</a></li>
+                        <li><a href="/oig-filing-guide/">HHS OIG filing guide</a></li>
+                        <li><a href="/ocr-hipaa-guide/">OCR HIPAA complaint guide</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </section>
+
+        <!-- Live Client Side Search Input Field -->
+        <div class="search-container" role="search">
+<label class="sr-only" for="bypassSearch">Search Directory Contacts by plan, need, department, or terminal identifier</label>
+<input aria-controls="directory-results" autocomplete="off" id="bypassSearch" placeholder="Filter by plan, need, department, or terminal identifier..." type="search"/>
+<div aria-atomic="true" aria-live="polite" class="sr-only" id="search-announcer"></div>
+<span id="search-result-count"></span>
+</div>
+<nav aria-label="Jump to Category" class="quickjump-bar">
+<span class="quickjump-label">Jump to Need</span>
+<div class="quickjump-chips" id="quickjumpChips">
+<a class="quickjump-chip" data-plan-target="appeals" href="#appeals-header">Escalate a Denied Claim</a>
+<a class="quickjump-chip" data-plan-target="transportation" href="#transportation-header">Medical Transportation</a>
+<a class="quickjump-chip" data-plan-target="clinical" href="#clinical-header">CalAIM &amp; Clinical Modules</a>
+<a class="quickjump-chip" data-plan-target="backdoors" href="#backdoors-header">Administrative &amp; Provider Backdoors</a>
+<a class="quickjump-chip" data-plan-target="federal-expansion" href="#federal-expansion-header">Federal (CA-Relevant)</a>
+<a class="quickjump-chip" data-plan-target="state-marketplace-expansion" href="#state-marketplace-expansion-header">California / Marketplace</a>
+<a class="quickjump-chip" data-plan-target="insurer-expansion" href="#insurer-expansion-header">California Health Plans</a>
+<a class="quickjump-chip" data-plan-target="support-expansion" href="#support-expansion-header">Quality / Consumer</a>
+</div>
+<div class="accordion-controls">
+<button class="accordion-toggle-btn" id="expandAllBtn" type="button">Expand all</button>
+<button class="accordion-toggle-btn" id="collapseAllBtn" type="button">Collapse all</button>
+</div>
+</nav>
+<div aria-live="polite" id="directory-results">
+<!-- CATEGORY 1: ESCALATE A DENIED CLAIM -->
+<details class="plan-section search-item" data-plan-id="appeals" data-verified-by="CalAudit" data-verified-date="2026-08-19" open="">
+<summary class="plan-header">
+<h2 id="appeals-header">Escalate a Denied Claim / Grievances &amp; Appeals</h2>
+<span class="line-count">19 contacts</span>
+<span aria-hidden="true" class="chevron"></span>
+</summary>
+<p class="section-provenance">CalAudit classification: grievance intake, standard appeals, expedited appeals, and plan-level escalation · Reviewed <time datetime="2026-08-19">August 19, 2026</time> · <a href="#verification-methodology">Verification methodology</a></p>
+<div class="directory-list">
+<div class="directory-line line-item">
+<h3 class="line-dept">L.A. Care — G&amp;A Fax <span class="tag-status tag-critical">CRITICAL</span></h3>
+<div class="line-contact"><a aria-label="Fax L.A. Care Grievance at 213-438-5748" href="tel:+12134385748">213-438-5748</a> (Fax)</div>
+<div class="line-context">Timestamps GC 905 Tort Claims. Direct bypass of standard verbal holding queues.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">L.A. Care — Grievance Hotline <span class="tag-status">HOTLINE</span></h3>
+<div class="line-contact"><a aria-label="Call L.A. Care Grievance Hotline at 1-888-839-9909" href="tel:+18888399909">1-888-839-9909</a></div>
+<div class="line-context">Primary member grievance verbal intake channel. Bypasses standard customer service holding structures.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Anthem — Medi-Cal Core <span class="tag-status">HOTLINE</span></h3>
+<div class="line-contact"><a aria-label="Call Anthem Medi-Cal Core Hotline at 1-800-407-4627" href="tel:+18004074627">1-800-407-4627</a></div>
+<div class="line-context">Direct routing to Anthem's California Medi-Cal department. Bypasses commercial automated trees.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Anthem — Expedited Appeals Fax</h3>
+<div class="line-contact"><a aria-label="Fax Expedited Appeals at 1-866-387-2968" href="tel:+18663872968">1-866-387-2968</a> (Fax)</div>
+<div class="line-context">Guarded secondary fax backdoor dedicated strictly to expedited/urgent Medi-Cal filings.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Anthem — Client Services G&amp;A</h3>
+<div class="line-contact"><a aria-label="Call Anthem Client Services G&amp;A at 1-800-282-4548" href="tel:+18002824548">1-800-282-4548</a></div>
+<div class="line-context">Alternate clinical and member grievance verbal escalation hotline.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Anthem — Expedited G&amp;A Fax</h3>
+<div class="line-contact"><a aria-label="Fax Expedited Appeals at 855-211-3699" href="tel:+18552113699">855-211-3699</a> (Fax)</div>
+<div class="line-context">Safeguards critical cases from falling into structural "One Day Grievance" processing blocks.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Anthem — 45-Day Escalation <span class="tag-status tag-critical">CRITICAL</span></h3>
+<div class="line-contact"><a aria-label="Call Anthem 45-Day Pending Escalation Line at 1-833-293-0659" href="tel:+18332930659">1-833-293-0659</a></div>
+<div class="line-context"><strong>Specialized bypass line for authorizations pending over 45 days. Bypasses all frontline IVR prompts.</strong></div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Kaiser — Member Services G&amp;A <span class="tag-status">HOTLINE</span></h3>
+<div class="line-contact"><a aria-label="Call Kaiser Member Services G&amp;A at 1-800-464-4000" href="tel:+18004644000">1-800-464-4000</a></div>
+<div class="line-context">Main verbal gateway channel for filing formal member grievances and coverage complaints.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Kaiser — G&amp;A Operations Fax</h3>
+<div class="line-contact"><a aria-label="Fax Northern California Grievance Operations at 1-855-414-2318" href="tel:+18554142318">1-855-414-2318</a> (Fax)</div>
+<div class="line-context">Direct fax backdoor for submitting formal, written member grievances and appeals.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Kaiser — Dedicated Medi-Cal</h3>
+<div class="line-contact"><a aria-label="Call Dedicated Medi-Cal at 1-855-839-7613" href="tel:+18558397613">1-855-839-7613</a></div>
+<div class="line-context">24/7 non-publicized operations terminal; completely splits from commercial systems.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">IEHP — CS Helpline <span class="tag-status">HOTLINE</span></h3>
+<div class="line-contact"><a aria-label="Call IEHP Customer Service at 1-888-860-1298" href="tel:+18888601298">1-888-860-1298</a></div>
+<div class="line-context">Alternate direct-dial verbal helpline for enrollees and caregivers.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">IEHP — DualChoice G&amp;A Fax</h3>
+<div class="line-contact"><a aria-label="Fax IEHP DualChoice Grievance at 909-890-5877" href="tel:+19098905877">909-890-5877</a> (Fax)</div>
+<div class="line-context">Direct fax backdoor for coordinating Dual-Eligible (Medi-Medi) enrollees and coverage.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Health Net — Medi-Cal G&amp;A <span class="tag-status">HOTLINE</span></h3>
+<div class="line-contact"><a aria-label="Call Health Net Medi-Cal Grievance at 1-800-675-6110" href="tel:+18006756110">1-800-675-6110</a></div>
+<div class="line-context">Direct member dispute verbal channel for Health Net Medi-Cal enrollees.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Health Net — Southern CA Fax</h3>
+<div class="line-contact"><a aria-label="Fax Southern California Grievance at 1-877-831-6019" href="tel:+18778316019">1-877-831-6019</a> (Fax)</div>
+<div class="line-context">Guarded direct fax bypass lane for Southern California enrollees to file appeals.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Molina — G&amp;A Helpline <span class="tag-status">HOTLINE</span></h3>
+<div class="line-contact"><a aria-label="Call Molina Medi-Cal Grievance at 1-888-665-4621" href="tel:+18886654621">1-888-665-4621</a></div>
+<div class="line-context">Direct member dispute verbal channel for Molina Medi-Cal enrollees.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Molina — G&amp;A Direct Fax</h3>
+<div class="line-contact"><a aria-label="Fax Molina Grievance at 562-499-0610" href="tel:+15624990610">562-499-0610</a> (Fax)</div>
+<div class="line-context">Direct backend fax line for submitting formal, written member grievances.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Blue Shield Promise — G&amp;A Fax</h3>
+<div class="line-contact"><a aria-label="Fax Blue Shield Promise Grievance at 1-844-806-9360" href="tel:+18448069360">1-844-806-9360</a> (Fax)</div>
+<div class="line-context">Dedicated backdoor fax to submit formal appeals; avoids frontline CSR friction.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Partnership — Appeals Direct</h3>
+<div class="line-contact"><a aria-label="Fax Partnership Appeals at 1-707-863-4363" href="tel:+17078634363">1-707-863-4363</a> (Fax)</div>
+<div class="line-context">Direct fax lane to the Appeals Department to document structural plan-level defaults.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">CalOptima — Grievance Fax</h3>
+<div class="line-contact"><a aria-label="Fax CalOptima Grievance at 1-714-481-6000" href="tel:+17144816000">1-714-481-6000</a> (Fax)</div>
+<div class="line-context">Direct fax endpoint bypassing Orange County's high-volume CSR phone loops.</div>
+</div>
+</div>
+</details>
+<!-- CATEGORY 2: MEDICAL TRANSPORTATION -->
+<details class="plan-section search-item" data-plan-id="transportation" data-verified-by="CalAudit" data-verified-date="2026-08-19">
+<summary class="plan-header">
+<h2 id="transportation-header">Medical Transportation ("Where's My Ride?")</h2>
+<span class="line-count">10 contacts</span>
+<span aria-hidden="true" class="chevron"></span>
+</summary>
+<p class="section-provenance">CalAudit classification: transportation booking, active-trip dispatch, broker routing, and recurring access barriers · Reviewed <time datetime="2026-08-19">August 19, 2026</time> · <a href="#verification-methodology">Verification methodology</a></p>
+<div class="directory-list">
+<div class="directory-line line-item">
+<h3 class="line-dept">L.A. Care — CTC Dispatch</h3>
+<div class="line-contact"><a aria-label="Call CTC Dispatch at 626-263-2062" href="tel:+16262632062">626-263-2062</a></div>
+<div class="line-context">Pasadena operational hub. Circumvents high-volume 855 hold structures.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Anthem — Modivcare Statewide</h3>
+<div class="line-contact"><a aria-label="Call Modivcare Statewide at 1-877-931-4755" href="tel:+18779314755">1-877-931-4755</a></div>
+<div class="line-context">Direct broker logistics lane. <strong>Requires scheduling 5 business days in advance.</strong></div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Kaiser — NEMT Booking</h3>
+<div class="line-contact"><a aria-label="Call NEMT Direct Booking at 1-833-226-6760" href="tel:+18332266760">1-833-226-6760</a></div>
+<div class="line-context">Direct line for specialized high-acuity transit. Requires formal physician PCS validation.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">IEHP — "Where's My Ride" Desk</h3>
+<div class="line-contact"><a aria-label="Call Where's My Ride Desk at 951-374-3441" href="tel:+19513743441">951-374-3441</a></div>
+<div class="line-context">Internal back-office transportation desk; targets immediate live dispatch.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">IEHP — Transit Liaison</h3>
+<div class="line-contact"><a aria-label="Call Transit Liaison at 1-833-453-2992" href="tel:+18334532992">1-833-453-2992</a></div>
+<div class="line-context">Direct-dial operational specialist for clearing structural scheduling blocks.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Health Net — ModivCare Dispatch <span class="tag-status tag-critical">CRITICAL</span></h3>
+<div class="line-contact"><a aria-label="Call Health Net Medi-Cal ModivCare Where's My Ride Dispatch at 1-855-253-6863" href="tel:+18552536863">1-855-253-6863</a></div>
+<div class="line-context"><strong>Direct backdoor "Where's My Ride?" dispatcher line for Health Net Medi-Cal members.</strong></div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Health Net — Access2Care <span class="tag-status">DISPATCH</span></h3>
+<div class="line-contact"><a aria-label="Call Health Net Medicare Access2Care Where's My Ride Dispatch at 1-844-515-6876" href="tel:+18445156876">1-844-515-6876</a></div>
+<div class="line-context"><strong>Direct backdoor "Where's My Ride?" dispatcher line for Health Net Medicare members.</strong></div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Molina — Transit Booking</h3>
+<div class="line-contact"><a aria-label="Call Molina Transportation Reservation desk at 1-844-292-2688" href="tel:+18442922688">1-844-292-2688</a></div>
+<div class="line-context">Prioritized reservation line for coordinating non-emergency medical transportation.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Blue Shield Promise — CTC Dispatch</h3>
+<div class="line-contact"><a aria-label="Call Blue Shield Promise Call the Car Dispatch at 1-877-214-4841" href="tel:+18772144841">1-877-214-4841</a></div>
+<div class="line-context">Direct-dial dispatcher terminal for managing Call the Car (CTC) active trips.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Partnership — MTM Broker</h3>
+<div class="line-contact"><a aria-label="Call Partnership MTM Transportation Broker at 1-866-707-7010" href="tel:+18667077010">1-866-707-7010</a></div>
+<div class="line-context">Direct routing to the MTM logistics center. <strong>Requires scheduling 5 business days in advance.</strong></div>
+</div>
+</div>
+<div class="warning-callout-box">
+<div class="warning-callout-title">⚠️ MANDATORY ADVANCE NOTICE RULES</div>
+<p class="warning-callout-text">
+                    * <strong>Health Net:</strong> Requires a strict <strong>48-hour advance notice</strong> for all standard non-emergency medical transportation (NEMT/NMT) trip bookings.
+                    <br/>
+                    * <strong>Partnership HealthPlan:</strong> Requires a strict <strong>5-day advance broker logistics notice</strong> for all standard non-emergency medical transportation (NEMT/NMT) trip bookings.
+                </p>
+</div>
+</details>
+<!-- CATEGORY 3: CALAIM & CLINICAL MODULES -->
+<details class="plan-section search-item" data-plan-id="clinical" data-verified-by="CalAudit" data-verified-date="2026-08-19">
+<summary class="plan-header">
+<h2 id="clinical-header">CalAIM, Clinical &amp; Transitional Care Modules</h2>
+<span class="line-count">14 contacts</span>
+<span aria-hidden="true" class="chevron"></span>
+</summary>
+<p class="section-provenance">CalAudit classification: care management, utilization review, specialty services, CalAIM, and transitional care · Reviewed <time datetime="2026-08-19">August 19, 2026</time> · <a href="#verification-methodology">Verification methodology</a></p>
+<div class="directory-list">
+<div class="directory-line line-item">
+<h3 class="line-dept">L.A. Care — Care Management</h3>
+<div class="line-contact"><a aria-label="Call Care Management at 1-844-200-0104" href="tel:+18442000104">1-844-200-0104</a></div>
+<div class="line-context">Direct clinical escalation pathway for disease management and active referrals.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">L.A. Care — UM Peer Review</h3>
+<div class="line-contact"><a aria-label="Call UM Peer Review at 877-431-2273" href="tel:+18774312273">877-431-2273</a></div>
+<div class="line-context">Physician-to-physician interface; completely circumvents script-reliant agents.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">L.A. Care — Urgent Telehealth</h3>
+<div class="line-contact"><a aria-label="Call Urgent Telehealth at 1-800-835-2362" href="tel:+18008352362">1-800-835-2362</a></div>
+<div class="line-context">24/7 physician terminal access executed via the Teladoc partnership framework.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">L.A. Care — 24/7 Nurse Advice</h3>
+<div class="line-contact"><a aria-label="Call 24/7 Nurse Advice at 1-800-249-3619" href="tel:+18002493619">1-800-249-3619</a></div>
+<div class="line-context">Direct clinical triage; bypasses tier-1 administrative loops for routing.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">L.A. Care — ECM Fax &amp; Email <span class="tag-status tag-critical">CRITICAL</span></h3>
+<div class="line-contact"><a aria-label="Email L.A. Care Enhanced Care Management at ECMMembership@lacare.org" href="mailto:ECMMembership@lacare.org">ECMMembership@lacare.org</a></div>
+<div class="line-context"><strong>Direct CalAIM Enhanced Care Management (ECM) intake. Direct fax: 1-213-438-5694. Bypasses general CSR queues.</strong></div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">L.A. Care — TCS Post-Discharge <span class="tag-status tag-critical">CRITICAL</span></h3>
+<div class="line-contact"><a aria-label="Call L.A. Care Transitional Care Services Post-Discharge Desk at 1-888-524-4832" href="tel:+18885244832">1-888-524-4832</a></div>
+<div class="line-context"><strong>Direct Transitional Care Services (TCS) post-discharge desk to manage hospital-to-home transitions and immediate clinical authorizations.</strong></div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Anthem — Specialty Pharmacy PA</h3>
+<div class="line-contact"><a aria-label="Call Specialty Pharmacy PA at 1-844-410-0746" href="tel:+18444100746">1-844-410-0746</a></div>
+<div class="line-context">Bypasses standard multi-tiered pharmacy lines for prioritized specialty access.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Anthem — Behavioral Health UM <span class="tag-status tag-critical">CRITICAL</span></h3>
+<div class="line-contact"><a aria-label="Email Anthem Behavioral Health UM at Medi-calBHUM@wellpoint.com" href="mailto:Medi-calBHUM@wellpoint.com">Medi-calBHUM@wellpoint.com</a></div>
+<div class="line-context"><strong>Direct Behavior Health Utilization Management (UM) desk for psychiatric and substance use disorder authorizations. Direct fax: 1-855-473-7902.</strong></div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Kaiser — CalAIM Southern Unit</h3>
+<div class="line-contact"><a aria-label="Call CalAIM Southern Unit at 1-866-551-9619" href="tel:+18665519619">1-866-551-9619</a></div>
+<div class="line-context">Direct enrollment processing interface for Enhanced Care Management (ECM).</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Kaiser — CalAIM Northern Unit</h3>
+<div class="line-contact"><a aria-label="Call CalAIM Northern Unit at 1-833-721-6012" href="tel:+18337216012">1-833-721-6012</a></div>
+<div class="line-context">Dedicated CalAIM structural intake desk assigned to Northern California.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Health Net — MHN Behavioral</h3>
+<div class="line-contact"><a aria-label="Call MHN Behavioral Health at 1-888-426-0030" href="tel:+18884260030">1-888-426-0030</a></div>
+<div class="line-context">Direct clinical pathway routing away from standard administrative medical centers.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">CenCal Health — Justice Liaison <span class="tag-status tag-critical">CRITICAL</span></h3>
+<div class="line-contact"><a aria-label="Call CenCal Health Justice Involved Liaison Heather Te at 1-805-685-9525" href="tel:+18056859525">805-685-9525</a></div>
+<div class="line-context"><strong>Direct contact for CenCal's Justice-Involved Liaison (Heather Te, ext. 5427) to coordinate re-entry care and transition plans.</strong></div>
+</div>
+</div>
+<div class="warning-callout-box">
+<div class="warning-callout-title">🚨 MANDATORY PHARMACY CARVE-OUT WARNINGS</div>
+<p class="warning-callout-text">
+                    * <strong>Blue Shield Promise:</strong> Explicitly flag <strong>Medi-Cal Rx (1-800-977-2273)</strong> as the primary contact for all pharmacy carve-outs, completely bypassing Blue Shield's internal drug benefit channels.
+                    <br/>
+                    * <strong>SF Health Plan (SFHP):</strong> Explicitly flag <strong>Medi-Cal Rx (1-800-977-2273)</strong> as the primary contact for all pharmacy carve-outs, completely bypassing SFHP's internal drug benefit channels.
+                </p>
+</div>
+</details>
+<!-- CATEGORY 4: ADMINISTRATIVE & PROVIDER BACKDOORS -->
+<details class="plan-section search-item" data-plan-id="backdoors" data-verified-by="CalAudit" data-verified-date="2026-08-19">
+<summary class="plan-header">
+<h2 id="backdoors-header">Administrative &amp; Provider "Backdoor" Addresses</h2>
+<span class="line-count">10 contacts</span>
+<span aria-hidden="true" class="chevron"></span>
+</summary>
+<p class="section-provenance">CalAudit classification: provider disputes, credentialing, compliance, language access, and administrative escalation · Reviewed <time datetime="2026-08-19">August 19, 2026</time> · <a href="#verification-methodology">Verification methodology</a></p>
+<div class="directory-list">
+<div class="directory-line line-item">
+<h3 class="line-dept">L.A. Care — MSO Astrana Health <span class="tag-status">MSO_BYPASS</span></h3>
+<div class="line-contact"><a aria-label="Call L.A. Care MSO Astrana Health at 1-844-975-2651" href="tel:+18449752651">1-844-975-2651</a></div>
+<div class="line-context"><strong>Direct delegated compliance, utilization review, and credentialing inquiries via Astrana Health Management Services Organization (MSO) for L.A. Care.</strong></div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">L.A. Care — Provider Dispute Fax</h3>
+<div class="line-contact"><a aria-label="Fax Provider Disputes at 213-438-5057" href="tel:+12134385057">213-438-5057</a> (Fax)</div>
+<div class="line-context">Bypasses standard tracking lanes for formal provider administrative and billing disputes.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">L.A. Care — Linguistic Services</h3>
+<div class="line-contact"><a aria-label="Call Linguistic Services at 1-877-287-6290" href="tel:+18772876290">1-877-287-6290</a></div>
+<div class="line-context">Direct oral interpretation routing; bypasses the default language selection trees.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Anthem — Provider Disputes</h3>
+<div class="line-contact"><a aria-label="Call Provider Disputes at 1-844-580-7272" href="tel:+18445807272">1-844-580-7272</a></div>
+<div class="line-context">Dedicated helpline resolving billing, administrative, and contractual provider disputes.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Anthem — Out-of-State Appeals <span class="tag-status tag-critical">CRITICAL</span></h3>
+<div class="line-contact">4361 Irwin Simpson Rd</div>
+<div class="line-context"><strong>Specialized Ohio address to bypass California-based claim processing backlogs. Ship to: Mason, OH 45040.</strong></div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Health Net — Out-of-State Appeals <span class="tag-status tag-critical">CRITICAL</span></h3>
+<div class="line-contact">P.O. Box 3060</div>
+<div class="line-context"><strong>Specialized Missouri address to bypass California-based claim processing backlogs. Ship to: Farmington, MO 63640-3822.</strong></div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Health Net — LTC Intake Line</h3>
+<div class="line-contact"><a aria-label="Call LTC Intake Line at 1-800-453-3033" href="tel:+18004533033">1-800-453-3033</a></div>
+<div class="line-context">Bypasses multi-tier automated interactive cues to handle skilled nursing placement.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Kaiser — Language Bypass <span class="tag-status">A11Y_BYPASS</span></h3>
+<div class="line-contact"><a aria-label="Call Kaiser Spanish Line at 1-800-788-0616" href="tel:+18007880616">1-800-788-0616</a> (ES)</div>
+<div class="line-context"><strong>Direct Spanish line. Dial Chinese line: 1-800-757-7585 (ZH). Bypasses all standard Kaiser automated IVR trees.</strong></div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Kaiser — Justice Involved JIL</h3>
+<div class="line-contact"><a aria-label="Call Justice Involved JIL at 626-405-5386" href="tel:+16264055386">626-405-5386</a></div>
+<div class="line-context">Direct re-entry pipeline and critical transitional care logic.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">BS Promise — Credentialing <span class="tag-status">CREDENTIALING</span></h3>
+<div class="line-contact"><a aria-label="Email Blue Shield Promise Credentialing at BSCInitialApp@blueshieldca.com" href="mailto:BSCInitialApp@blueshieldca.com">BSCInitialApp@blueshieldca.com</a></div>
+<div class="line-context"><strong>Direct credentialing and initial provider application inbox for Blue Shield Promise, bypassing standard regional contracting delays.</strong></div>
+</div>
+</div>
+</details>
+<!-- PDF RESOURCE EXPANSION: AUGUST 7, 2026 -->
+<details class="plan-section search-item" data-plan-id="federal-expansion" data-verified-by="CalAudit" data-verified-date="2026-08-19">
+<summary class="plan-header">
+<h2 id="federal-expansion-header">Federal Resources Applicable in California</h2>
+<span class="line-count">16 resources</span>
+<span aria-hidden="true" class="chevron"></span>
+</summary>
+<p class="section-provenance">CalAudit classification: federal coverage, appeals, safety-net, beneficiary-navigation, and program-oversight resources applicable in California · Reviewed <time datetime="2026-08-19">August 19, 2026</time> · <a href="#verification-methodology">Verification methodology</a></p>
+<div class="warning-callout-box">
+<div class="warning-callout-title">SOURCE SCOPE</div>
+<p class="warning-callout-text">Filtered from the U.S. Health Plan, State, and Federal Entity Resource Expansion PDF. This section retains federal programs and agencies with a direct health coverage, appeals, safety-net, beneficiary-navigation, or program-oversight role applicable in California; out-of-state-only and unrelated national resources were removed.</p>
+</div>
+<div class="directory-list">
+<div class="directory-line line-item">
+<h3 class="line-dept">U.S. Department of Health and Human Services (HHS) <span class="tag-status">FEDERAL</span></h3>
+<div class="line-contact"><a href="https://www.hhs.gov/about/organization/divisions/index.html" rel="noopener noreferrer" target="_blank">HHS Divisions Directory<span class="sr-only"> (opens in a new window)</span></a></div>
+<div class="line-context">Departmental governance; parent department for CMS and most federal civilian health agencies.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Centers for Medicare &amp; Medicaid Services (CMS) <span class="tag-status">FEDERAL</span></h3>
+<div class="line-contact"><a href="https://www.hhs.gov/about/organization/divisions/index.html" rel="noopener noreferrer" target="_blank">HHS Divisions Directory<span class="sr-only"> (opens in a new window)</span></a></div>
+<div class="line-context">Federal coverage and payer agency; administers Medicare and oversees Medicaid, CHIP, and the Health Insurance Marketplace.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">CMCS <span class="tag-status">FEDERAL</span></h3>
+<div class="line-contact"><a href="https://www.hhs.gov/about/organization/divisions/index.html" rel="noopener noreferrer" target="_blank">HHS Divisions Directory<span class="sr-only"> (opens in a new window)</span></a></div>
+<div class="line-context">CMS program center for federal Medicaid and CHIP policy and state oversight.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Center for Medicare <span class="tag-status">FEDERAL</span></h3>
+<div class="line-contact"><a href="https://www.hhs.gov/about/organization/divisions/index.html" rel="noopener noreferrer" target="_blank">HHS Divisions Directory<span class="sr-only"> (opens in a new window)</span></a></div>
+<div class="line-context">CMS program center for Original Medicare, Medicare Advantage, and Part D.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">CCIIO <span class="tag-status">FEDERAL</span></h3>
+<div class="line-contact"><a href="https://www.cms.gov/CCIIO/Resources/Fact-Sheets-and-FAQs/state-marketplaces" rel="noopener noreferrer" target="_blank">CMS Marketplace Source<span class="sr-only"> (opens in a new window)</span></a></div>
+<div class="line-context">Insurance-market oversight for ACA reforms, Exchanges, and qualified health plans.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Medicare.gov <span class="tag-status">PORTAL</span></h3>
+<div class="line-contact">BENEFICIARY PORTAL</div>
+<div class="line-context">Beneficiary program portal for Medicare enrollment and coverage navigation.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Medicaid.gov <span class="tag-status">PORTAL</span></h3>
+<div class="line-contact">FEDERAL-STATE PORTAL</div>
+<div class="line-context">Federal-state portal for state contacts, waivers, guidance, data, and technical assistance.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">InsureKidsNow <span class="tag-status">CHIP</span></h3>
+<div class="line-contact"><a href="https://www.insurekidsnow.gov/coverage" rel="noopener noreferrer" target="_blank">Coverage / State Contacts<span class="sr-only"> (opens in a new window)</span></a></div>
+<div class="line-context">CHIP consumer resource for state Medicaid and CHIP contacts.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Medicare-Medicaid Coordination Office <span class="tag-status">FEDERAL</span></h3>
+<div class="line-contact">FEDERAL ENTITY</div>
+<div class="line-context">Dual-eligible policy resource focused on integration for people enrolled in both Medicare and Medicaid.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">OMHA <span class="tag-status">APPEALS</span></h3>
+<div class="line-contact"><a href="https://www.hhs.gov/about/organization/divisions/index.html" rel="noopener noreferrer" target="_blank">HHS Divisions Directory<span class="sr-only"> (opens in a new window)</span></a></div>
+<div class="line-context">Administrative appeals resource for Medicare administrative-law-judge hearings.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">HRSA <span class="tag-status">FEDERAL</span></h3>
+<div class="line-contact"><a href="https://www.hhs.gov/about/organization/divisions/index.html" rel="noopener noreferrer" target="_blank">HHS Divisions Directory<span class="sr-only"> (opens in a new window)</span></a></div>
+<div class="line-context">Safety-net and workforce support tied to health centers and providers serving Medicaid and Medicare populations.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">IHS <span class="tag-status">FEDERAL</span></h3>
+<div class="line-contact"><a href="https://www.hhs.gov/about/organization/divisions/index.html" rel="noopener noreferrer" target="_blank">HHS Divisions Directory<span class="sr-only"> (opens in a new window)</span></a></div>
+<div class="line-context">Federal delivery system coordinating with Medicaid, Medicare, CHIP, and tribal programs.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">ACL <span class="tag-status">FEDERAL</span></h3>
+<div class="line-contact"><a href="https://www.hhs.gov/about/organization/divisions/index.html" rel="noopener noreferrer" target="_blank">HHS Divisions Directory<span class="sr-only"> (opens in a new window)</span></a></div>
+<div class="line-context">Community-support resource with strong linkage to Medicaid HCBS and Medicare counseling.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">SSA Medicare and Extra Help <span class="tag-status">FEDERAL</span></h3>
+<div class="line-contact">FEDERAL ENTITY</div>
+<div class="line-context">Eligibility and enrollment layer for Medicare enrollment and the Part D Low-Income Subsidy.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">SAMHSA <span class="tag-status">FEDERAL</span></h3>
+<div class="line-contact"><a href="https://www.hhs.gov/about/organization/divisions/index.html" rel="noopener noreferrer" target="_blank">HHS Divisions Directory<span class="sr-only"> (opens in a new window)</span></a></div>
+<div class="line-context">HHS behavioral-health operating division identified in the expansion resource layer.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">CMS Prescription Drug Coverage <span class="tag-status">MEDICARE</span></h3>
+<div class="line-contact"><a href="https://www.cms.gov/medicare/coverage/prescription-drug-coverage" rel="noopener noreferrer" target="_blank">CMS Coverage Resource<span class="sr-only"> (opens in a new window)</span></a></div>
+<div class="line-context">CMS resource for Medicare prescription-drug coverage information.</div>
+</div>
+</div>
+</details>
+<details class="plan-section search-item" data-plan-id="state-marketplace-expansion" data-verified-by="CalAudit" data-verified-date="2026-08-19">
+<summary class="plan-header">
+<h2 id="state-marketplace-expansion-header">California State &amp; Marketplace Resources</h2>
+<span class="line-count">1 resource</span>
+<span aria-hidden="true" class="chevron"></span>
+</summary>
+<p class="section-provenance">CalAudit classification: California marketplace and state coverage resources · Reviewed <time datetime="2026-08-19">August 19, 2026</time> · <a href="#verification-methodology">Verification methodology</a></p>
+<div class="directory-list">
+<div class="directory-line line-item">
+<h3 class="line-dept">Covered California <span class="tag-status">MARKETPLACE</span></h3>
+<div class="line-contact"><a href="https://www.cms.gov/CCIIO/Resources/Fact-Sheets-and-FAQs/state-marketplaces" rel="noopener noreferrer" target="_blank">CMS PY2026 Marketplace Listing<span class="sr-only"> (opens in a new window)</span></a></div>
+<div class="line-context">California state-based ACA Marketplace.</div>
+</div>
+</div>
+</details>
+<details class="plan-section search-item" data-plan-id="insurer-expansion" data-verified-by="CalAudit" data-verified-date="2026-08-19">
+<summary class="plan-header">
+<h2 id="insurer-expansion-header">California Health Plan Resources</h2>
+<span class="line-count">1 resource</span>
+<span aria-hidden="true" class="chevron"></span>
+</summary>
+<p class="section-provenance">CalAudit classification: California parent-plan and managed-care entity mapping · Reviewed <time datetime="2026-08-19">August 19, 2026</time> · <a href="#verification-methodology">Verification methodology</a></p>
+<div class="directory-list">
+<div class="directory-line line-item">
+<h3 class="line-dept">Blue Shield of California <span class="tag-status">PARENT</span></h3>
+<div class="line-contact">PARENT / PLAN</div>
+<div class="line-context">California plan parent mapped separately from Blue Shield of California Promise Health Plan.</div>
+</div>
+</div>
+</details>
+<details class="plan-section search-item" data-plan-id="support-expansion" data-verified-by="CalAudit" data-verified-date="2026-08-19">
+<summary class="plan-header">
+<h2 id="support-expansion-header">California &amp; Federal Quality / Consumer Resources</h2>
+<span class="line-count">5 resources</span>
+<span aria-hidden="true" class="chevron"></span>
+</summary>
+<p class="section-provenance">CalAudit classification: Medicare quality review, consumer assistance, and fast service-termination appeal resources · Reviewed <time datetime="2026-08-19">August 19, 2026</time> · <a href="#verification-methodology">Verification methodology</a></p>
+<div class="directory-list">
+<div class="directory-line line-item">
+<h3 class="line-dept">CMS QIN-QIO Program <span class="tag-status">QUALITY</span></h3>
+<div class="line-contact"><a href="https://www.cms.gov/medicare/quality/quality-improvement-programs/quality-innovation-network-quality-improvement-organizations-qin-qio-program" rel="noopener noreferrer" target="_blank">CMS QIN-QIO Directory<span class="sr-only"> (opens in a new window)</span></a></div>
+<div class="line-context">National Medicare quality-improvement program divided into seven regions for the 2025-2030 scope of work.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">CMS QIN-QIO Region 7 — HSAG <span class="tag-status">QUALITY</span></h3>
+<div class="line-contact"><a href="https://www.cms.gov/medicare/quality/quality-improvement-programs/quality-innovation-network-quality-improvement-organizations-qin-qio-program" rel="noopener noreferrer" target="_blank">CMS QIN-QIO Directory<span class="sr-only"> (opens in a new window)</span></a></div>
+<div class="line-context">CMS West QIN-QIO contractor serving California, Arizona, Hawaii, Nevada, and the Pacific Territories for the 2025–2030 scope of work.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">California Hospital Association <span class="tag-status">ASSOCIATION</span></h3>
+<div class="line-contact">PDF ENTITY RECORD</div>
+<div class="line-context">California state hospital association example in the expansion's supporting ecosystem.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Beneficiary and Family Centered Care (BFCC)-QIOs <span class="tag-status">MEDICARE</span></h3>
+<div class="line-contact"><a href="https://www.cms.gov/medicare/quality/quality-improvement-organizations/family-centered-care" rel="noopener noreferrer" target="_blank">CMS BFCC-QIO Resource<span class="sr-only"> (opens in a new window)</span></a></div>
+<div class="line-context">Medicare quality-of-care concern, immediate advocacy, and expedited appeal resource when covered services or institutional care are ending.</div>
+</div>
+<div class="directory-line line-item">
+<h3 class="line-dept">Commence Health <span class="tag-status">BFCC-QIO</span></h3>
+<div class="line-contact"><a href="https://www.cms.gov/medicare/quality/quality-improvement-organizations/family-centered-care" rel="noopener noreferrer" target="_blank">CMS BFCC-QIO Resource<span class="sr-only"> (opens in a new window)</span></a></div>
+<div class="line-context">CMS-designated BFCC-QIO serving California in Region 9 for Medicare quality-of-care concerns and fast discharge/service-termination appeals.</div>
+</div>
+</div>
+</details>
+</div>
+<!-- CORPORATE INTEGRITY LEDGER -->
+<section aria-labelledby="corporate-ledger" data-verified-by="CalAudit" data-verified-date="2026-08-19">
+<h2 class="section-tag" id="corporate-ledger">Corporate Integrity &amp; Executive Ledger</h2>
+<p class="section-provenance">CalAudit compilation: executive, compliance, privacy, clinical-leadership, and provider-support routes · Reviewed <time datetime="2026-08-19">August 19, 2026</time> · <a href="#verification-methodology">Verification methodology</a></p>
+<div class="table-container">
+<table class="ledger-table">
+<caption class="sr-only">Corporate Integrity and Executive Contact Ledger</caption>
+<thead>
+<tr>
+<th scope="col" width="180">Officer / Department</th>
+<th scope="col" width="180">Direct Escalation</th>
+<th scope="col">Administrative Context &amp; Bypass Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr class="table-row-item">
+<td class="contact-id">Martha Santana-Chin</td>
+<td class="ledger-contact">President / CEO Desk</td>
+<td>Active head of L.A. Care Health Plan. Primary organizational target for systemic administrative failures.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">DHCS Medical Exemption</td>
+<td class="ledger-contact"><a href="mailto:TMapp@lacare.org">TMapp@lacare.org</a></td>
+<td>L.A. Care's direct intake mailbox for medical exemption and prior authorization escalation.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">L.A. Care Privacy Officer</td>
+<td class="ledger-contact"><a href="mailto:privacyofficer@lacare.org">privacyofficer@lacare.org</a></td>
+<td>Direct reporting node for HIPAA violations, unauthorized disclosure, or clinical record tampering.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">Gene Magerr</td>
+<td class="ledger-contact"><a href="mailto:GMagerr@lacare.org">GMagerr@lacare.org</a></td>
+<td>Chief Information Security Officer (CISO) for L.A. Care. Primary escalation target for cybersecurity, HIPAA security incidents, and information risk.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">Dr. Jennifer Nuovo</td>
+<td class="ledger-contact"><a href="mailto:jennifer.nuovo@blueshieldca.com">jennifer.nuovo@blueshieldca.com</a></td>
+<td>Chief Medical Officer (CMO) of Blue Shield of California Promise Health Plan. Controls final clinical review paths.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">Denise Ciufo</td>
+<td class="ledger-contact"><a href="mailto:Denise.Ciufo@blueshieldca.com">Denise.Ciufo@blueshieldca.com</a></td>
+<td>Compliance Director at Blue Shield Promise. Direct oversight for federal civil rights and ADA compliance.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">Dr. Steve O'Brien</td>
+<td class="ledger-contact"><a href="mailto:sobrien@sfhp.org">sobrien@sfhp.org</a></td>
+<td>Chief Medical Officer of San Francisco Health Plan. Direct clinical and utilization management oversight.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">Dr. Maya Heinert</td>
+<td class="ledger-contact">
+<a aria-label="Call CenCal CMO Dr. Maya Heinert at 1-805-685-9525" href="tel:+18056859525">805-685-9525</a><br/>
+<a href="mailto:mheinert@cencalhealth.org">mheinert@cencalhealth.org</a>
+</td>
+<td>Chief Medical Officer of CenCal Health. Directly oversees Santa Barbara and San Luis Obispo clinical networks.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">Health Net Compliance</td>
+<td class="ledger-contact"><a aria-label="Call Health Net Ethics at 1-877-725-2702" href="tel:+18777252702">1-877-725-2702</a></td>
+<td>Direct internal compliance and ethical standards division; handles corporate fraud and civil rights complaints.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">L.A. Care Compliance Portal</td>
+<td class="ledger-contact"><a href="https://lacare.ethicspoint.com" rel="noopener noreferrer" target="_blank">lacare.ethicspoint.com<span class="sr-only"> (opens in a new window)</span></a></td>
+<td>External, independently hosted third-party compliance reporting portal (EthicsPoint).</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">Anthem Medical Director</td>
+<td class="ledger-contact"><a aria-label="Call Anthem Medical Director at 1-323-422-1054" href="tel:+13234221054">1-323-422-1054</a></td>
+<td>Direct contact for Anthem Blue Cross Medical Director's Office (California Medi-Cal division).</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">Kaiser Northern G&amp;A Mgr</td>
+<td class="ledger-contact">Extension: 122233</td>
+<td>Northern California regional manager for Kaiser's Grievance and Appeals department. Internal routing.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">Kaiser Southern G&amp;A Mgr</td>
+<td class="ledger-contact">Extension: 128007</td>
+<td>Southern California regional manager for Kaiser's Grievance and Appeals department. Internal routing.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">IEHP IT Help Desk</td>
+<td class="ledger-contact"><a aria-label="Call IEHP IT Help Desk at 909-890-2025" href="tel:+19098902025">909-890-2025</a></td>
+<td>Internal IT support desk. Bypasses standard IVR queue; useful for managing provider login blocks.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">IEHP EDI Specialist</td>
+<td class="ledger-contact"><a aria-label="Call IEHP EDI Specialist at 909-890-2054" href="tel:+19098902054">909-890-2054</a></td>
+<td>Direct support line for electronic data interchange (EDI) and medical claims clearinghouse errors.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">IEHP Compliance Desk</td>
+<td class="ledger-contact"><a href="mailto:compliance@iehp.org">compliance@iehp.org</a></td>
+<td>Direct intake address for corporate compliance and statutory violation tracking.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">Jarrod B. McNaughton</td>
+<td class="ledger-contact"><a href="mailto:Mcnaughton-J@iehp.org">Mcnaughton-J@iehp.org</a></td>
+<td>Chief Executive Officer (CEO) of Inland Empire Health Plan. Direct executive accountability for overall operations.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">Dr. Edward Juhn</td>
+<td class="ledger-contact"><a href="mailto:juhn-e@iehp.org">juhn-e@iehp.org</a></td>
+<td>Chief Medical Officer (CMO) of Inland Empire Health Plan. Direct clinical, population health, and CalAIM program oversight.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">Health Net CMO Mailbox</td>
+<td class="ledger-contact"><a href="mailto:medical.director@healthnet.com">medical.director@healthnet.com</a></td>
+<td>Direct escalation mailbox monitored by Health Net's Medical Director's Office.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- OVERSIGHT AGENCIES LEDGER -->
+<section aria-labelledby="oversight-ledger" data-verified-by="CalAudit" data-verified-date="2026-08-19">
+<h2 class="section-tag" id="oversight-ledger">Oversight Agencies &amp; Clinical Boards</h2>
+<p class="section-provenance">CalAudit classification: plan regulation, public-benefit hearings, fraud reporting, civil rights, and professional oversight · Reviewed <time datetime="2026-08-19">August 19, 2026</time> · <a href="#verification-methodology">Verification methodology</a></p>
+<div class="table-container">
+<table class="ledger-table">
+<caption class="sr-only">Oversight Agencies and Clinical Boards Contact Ledger</caption>
+<thead>
+<tr>
+<th scope="col" width="180">Agency Name</th>
+<th scope="col" width="180">Regulatory Contact</th>
+<th scope="col">Scope of Authority &amp; Statutory Mandate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="table-row-item">
+<td class="contact-id">DMHC Help Center</td>
+<td class="ledger-contact"><a aria-label="Call DMHC Help Center at 1-888-466-2219" href="tel:+18884662219">1-888-466-2219</a></td>
+<td>State regulator of Knox-Keene health plans. Handles Independent Medical Reviews (IMR) and standard complaints.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">DHCS Ombudsman</td>
+<td class="ledger-contact"><a aria-label="Call DHCS Ombudsman at 1-888-452-8609" href="tel:+18884528609">1-888-452-8609</a></td>
+<td>Oversight of Medi-Cal managed care plans. Resolves systemic enrollment, eligibility, and service delivery blocks.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">CDSS Fair Hearings</td>
+<td class="ledger-contact"><a aria-label="Call CDSS Fair Hearings at 1-800-952-5253" href="tel:+18009525253">1-800-952-5253</a></td>
+<td>State hearing division. Holds jurisdiction over county welfare programs (DPSS, IHSS, CalWORKs) and public aid appeals.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">HHS OIG Fraud Line</td>
+<td class="ledger-contact"><a aria-label="Call OIG Fraud Hotline at 1-800-447-8477" href="tel:+18004478477">1-800-447-8477</a></td>
+<td>Federal reporting portal for healthcare fraud, waste, abuse, or systematic beneficiary harm under Medicare/Medi-Cal.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">CA DOJ DMFEA</td>
+<td class="ledger-contact"><a aria-label="Call DOJ DMFEA at 1-800-722-0432" href="tel:+18007220432">1-800-722-0432</a></td>
+<td>California Department of Justice Division of Medi-Cal Fraud &amp; Elder Abuse. Subpoena power for corporate fraud dockets.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">HHS Office for Civil Rights</td>
+<td class="ledger-contact"><a aria-label="Call HHS Office for Civil Rights at 1-800-368-1019" href="tel:+18003681019">1-800-368-1019</a></td>
+<td>Federal civil rights agency. Investigates systemic health discrimination, ADA failures, and HIPAA privacy violations.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">Health Consumer Alliance</td>
+<td class="ledger-contact"><a aria-label="Call Health Consumer Alliance at 1-888-804-3536" href="tel:+18888043536">1-888-804-3536</a></td>
+<td>Independent consumer advocacy network providing free, state-funded legal assistance for managing plan appeals.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">CDPH Licensing &amp; Cert</td>
+<td class="ledger-contact"><a aria-label="Call CDPH Licensing and Cert at 1-800-236-9747" href="tel:+18002369747">1-800-236-9747</a></td>
+<td>Direct state licensing oversight for hospitals, physical clinics, skilled nursing facilities, and dialysis centers.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">Medical Board of CA</td>
+<td class="ledger-contact"><a aria-label="Call Medical Board of CA at 1-800-633-2322" href="tel:+18006332322">1-800-633-2322</a></td>
+<td>Direct professional licensing and standards enforcement board for California medical doctors (M.D.s).</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">Board of Registered Nursing</td>
+<td class="ledger-contact"><a aria-label="Call Board of Registered Nursing at 916-322-3350" href="tel:+19163223350">916-322-3350</a></td>
+<td>Registered Nurse professional code violations, dangerous care practices, and standard disciplinary actions.</td>
+</tr>
+<tr class="table-row-item">
+<td class="contact-id">DMHC Provider Complaint</td>
+<td class="ledger-contact"><a aria-label="Call DMHC Provider Complaint at 1-877-525-1295" href="tel:+18775251295">1-877-525-1295</a></td>
+<td>Insurer-provider reimbursement defaults, claims processing failures. Email: ProviderComplaintUnit@dmhc.ca.gov</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- STRATEGIC ADVOCACY PROTOCOLS -->
+<section aria-labelledby="advocacy-protocols" class="guidelines-box">
+<h2 class="section-tag u-style-a0ea2a24" id="advocacy-protocols">Strategic Advocacy Protocols</h2>
+<p>CalAudit’s escalation sequence preserves the record at the plan level, protects time-sensitive benefits, and then routes the dispute to the regulator with jurisdiction. Use the linked CalAudit guides for the complete filing requirements.</p>
+<ul>
+<li>
+<strong>Plan-Level Grievance Exhaustion:</strong> Commercial health disputes under DMHC jurisdiction require filing a formal grievance with the plan prior to state intervention, except where expedited criteria apply. Urgent requests route to the DMHC Help Center immediately. See CalAudit’s <a href="/knox-keene/">Knox-Keene appeal rights guide</a> and <a href="/dmhc-faqs/">DMHC complaint guide</a>.
+            </li>
+<li>
+<strong>Aid Paid Pending Preservation:</strong> For DHCS public Medi-Cal service reductions or adjustments, file for a CDSS State Hearing prior to the effective enforcement date and explicitly state requirements for <strong>Aid Paid Pending</strong> to maintain current care coverage. Follow CalAudit’s <a href="/state-hearings/">Medi-Cal State Hearing guide</a>.
+            </li>
+<li>
+<strong>Anonymity Restraints:</strong> Regulatory bodies accept anonymous filings, but cannot subpoena specific clinical records without an explicit, signed patient waiver format.
+            </li>
+<li>
+<strong>Dual-Channel Fraud Reporting:</strong> Systemic compliance or benefits fraud within federally subsidized Medi-Cal structures must be filed concurrently with the California <strong class="u-style-424cce00"><a class="u-style-b0fa578a" href="https://oag.ca.gov/dmfea" rel="noopener noreferrer" target="_blank">DOJ DMFEA<span class="sr-only"> (opens in a new window)</span></a></strong> and federal <strong class="u-style-424cce00"><a class="u-style-b0fa578a" href="https://oig.hhs.gov" rel="noopener noreferrer" target="_blank">HHS OIG<span class="sr-only"> (opens in a new window)</span></a></strong> systems to align jurisdictional tracking. Use CalAudit’s <a href="/oig-filing-guide/">HHS OIG filing guide</a> to prepare the federal submission.
+            </li>
+</ul>
+</section>
+</main>
+<script src="/nav.js"></script>
+<!-- Structural Footer Landmark -->
+<footer class="page-footer" role="contentinfo">
+<div class="footer-inner">
+<p>© 2026 CALAUDIT | Nicolas Hernandez — Public Resource Initiative | <a aria-label="View crawler indexing bridge" href="/bots/">Crawler Index</a></p>
+<p><strong>PUBLIC RESOURCE DISCLOSURE:</strong> The legal forms, direct contact lists, and administrative escalation resources hosted on this platform are compiled and maintained as a free public service to promote citizen-led compliance auditing and regulatory accountability. All information and forms are sourced directly from official state and federal agency records. You are encouraged to distribute, share, and utilize these resources to assert your statutory rights without restriction.</p>
+<p><strong>LIMITATION OF LIABILITY (DISCLAIMER):</strong> The content, directories, and statutory forms provided here are for investigative and informational purposes only. Nicolas Hernandez is not a licensed attorney or medical physician. Utilizing these materials or contacting these office directories does not establish an attorney-client relationship. Always seek the advice of a licensed California attorney for formal legal representation or your doctor for professional medical counsel. I assume zero liability for individual filing outcomes or plan adjudications.</p>
+<p aria-label="Tor Onion Mirror Address" class="onion-mirror">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+</div>
+</footer>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('bypassSearch');
+    const announcer = document.getElementById('search-announcer');
+    const resultCount = document.getElementById('search-result-count');
+    const planSections = document.querySelectorAll('.search-item'); // now <details> elements representing needs
+    const expandAllBtn = document.getElementById('expandAllBtn');
+    const collapseAllBtn = document.getElementById('collapseAllBtn');
+    const quickjumpChips = document.querySelectorAll('.quickjump-chip');
+
+    // Helper function to flatten text out for flexible typing styles
+    function normalizeString(str) {
+        if (!str) return '';
+        return str
+            .toLowerCase()
+            .replace(/[.\-/_\s]/g, ''); // Flattens out periods, hyphens, slashes, underscores, and spacing
+    }
+
+    searchInput.addEventListener('input', function(e) {
+        const query = normalizeString(e.target.value);
+        let matchCount = 0;
+
+        // 1. Filter directory lines within each need accordion
+        planSections.forEach(section => {
+            const lines = section.querySelectorAll('.line-item');
+            let sectionHasMatch = false;
+
+            lines.forEach(line => {
+                const lineText = normalizeString(line.textContent);
+
+                if (query === '' || lineText.includes(query)) {
+                    line.style.display = 'grid';
+                    if (query !== '') { sectionHasMatch = true; matchCount++; }
+                } else {
+                    line.style.display = 'none';
+                }
+            });
+
+            const headerElement = section.querySelector('.plan-header h2');
+            const sectionHeader = headerElement ? normalizeString(headerElement.textContent) : '';
+            const headerMatches = query !== '' && sectionHeader.includes(query);
+
+            if (headerMatches) {
+                lines.forEach(line => { line.style.display = 'grid'; });
+                sectionHasMatch = true;
+                matchCount += lines.length;
+            }
+
+            // Toggle parent section open/close or visibility
+            if (query === '') {
+                section.style.display = 'block';
+                section.open = false; // Collapse when search is cleared
+            } else if (sectionHasMatch) {
+                section.style.display = 'block';
+                section.open = true; // Auto-expand matching sections
+            } else {
+                section.style.display = 'none';
+                section.open = false;
+            }
+        });
+
+        // Update tables / other table row items
+        const tableRows = document.querySelectorAll('.table-row-item');
+        tableRows.forEach(row => {
+            const rowText = normalizeString(row.textContent);
+            if (query === '' || rowText.includes(query)) {
+                row.style.display = 'table-row';
+                if (query !== '') { matchCount++; }
+            } else {
+                row.style.display = 'none';
+            }
+        });
+
+        // Update announcements and counters
+        if (query === '') {
+            resultCount.textContent = '';
+            announcer.textContent = 'Search cleared. All categories collapsed.';
+        } else {
+            resultCount.textContent = `${matchCount} contact point(s) found matching "${e.target.value}"`;
+            announcer.textContent = `${matchCount} contact point(s) found matching "${e.target.value}"`;
+        }
+    });
+
+    // Expand All / Collapse All handlers
+    expandAllBtn.addEventListener('click', () => {
+        planSections.forEach(section => {
+            section.style.display = 'block';
+            section.open = true;
+        });
+        announcer.textContent = 'Expanded all categories.';
+    });
+
+    collapseAllBtn.addEventListener('click', () => {
+        planSections.forEach(section => {
+            section.style.display = 'block';
+            section.open = false;
+        });
+        announcer.textContent = 'Collapsed all categories.';
+    });
+
+    // Chip click smooth anchor handlers
+    quickjumpChips.forEach(chip => {
+        chip.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = chip.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            const section = chip.closest('.quickjump-bar').nextElementSibling;
+            
+            // Expand targeted need details card
+            const targetSection = document.querySelector(`[data-plan-id="${chip.getAttribute('data-plan-target')}"]`);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+                targetSection.open = true;
+            }
+
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Accessibility focus
+                targetElement.setAttribute('tabindex', '-1');
+                targetElement.focus({ preventScroll: true });
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>

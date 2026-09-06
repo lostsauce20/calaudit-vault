@@ -1,0 +1,24 @@
+{
+  "mcpVersion": "2026.1.0",
+  "serverInfo": {
+    "name": "Calaudit Investigative Agent",
+    "description": "Forensic interface for the L.A. Care investigative vault.",
+    "version": "1.0.0"
+  },
+  "capabilities": {
+    "resources": [
+      {
+        "uri": "https://calaudit.org/llms.txt",
+        "name": "Audit Summary",
+        "mimeType": "text/markdown",
+        "description": "High-level summary of Knox-Keene violations and litigation status."
+      },
+      {
+        "uri": "https://calaudit.org/llms-full.txt",
+        "name": "Full Litigation Ledger",
+        "mimeType": "text/markdown",
+        "description": "Comprehensive evidentiary record including all 107 archived forensic files."
+      }
+    ]
+  }
+}

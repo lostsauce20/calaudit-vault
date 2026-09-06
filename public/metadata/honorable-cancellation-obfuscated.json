@@ -1,0 +1,11 @@
+{
+  "alt": "An appointment was cancelled by the provider because the clinical scope did not match member needs, and proactive communication was confirmed.",
+  "summary": "An appointment was cancelled by the provider because the clinical scope did not match member needs, and proactive communication was confirmed.",
+  "keywords": [
+    "Cancellation",
+    "Appointment",
+    "Provider",
+    "Clinical Scope"
+  ],
+  "full_text": "Cancellation Notice: Appointment cancelled by provider. Reason: Provider determined clinical scope did not match member needs. Proactive communication confirmed."
+}

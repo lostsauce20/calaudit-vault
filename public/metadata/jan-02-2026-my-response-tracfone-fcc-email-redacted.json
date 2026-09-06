@@ -1,0 +1,11 @@
+{
+  "alt": "The sender rejected TracFone's final position, escalated the matter to the FCC under Ticket #8711384, and requested Motorola Mobility provide a patch, unlock token, or replacement device because the device remains locked despite network restrictions being lifted.",
+  "summary": "The sender rejected TracFone's final position, escalated the matter to the FCC under Ticket #8711384, and requested Motorola Mobility provide a patch, unlock token, or replacement device because the device remains locked despite network restrictions being lifted.",
+  "keywords": [
+    "TracFone",
+    "FCC Ticket #8711384",
+    "Device Unlock",
+    "Motorola Mobility"
+  ],
+  "full_text": "The sender rejects TracFone’s final position and states that the matter has been escalated to the FCC under Ticket #8711384. The email explains that although TracFone lifted network restrictions, the device remains locked due to secure‑boot partitions that TracFone cannot modify. The sender requests that Motorola Mobility provide a patch, unlock token, or replacement device and states that the FCC ticket will remain open."
+}

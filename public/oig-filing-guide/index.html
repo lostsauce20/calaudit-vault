@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#050505"/>
+    <title>OIG Pharmacy Fraud &amp; Billing Crimes Blueprint | CalAudit</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="canonical" href="https://calaudit.org/oig-filing-guide/"/>
+    <meta name="description" content="Technical forensic guide for documenting and reporting corporate pharmacy fraud, Medi-Cal Rx billing manipulation, and beneficiary harm to the OIG."/>
+    <meta name="keywords" content="OIG filing guide, pharmacy fraud, billing manipulation, Medi-Cal Rx, CVS pharmacy fraud, healthcare whistleblower, forensic audit, Nicolas Hernandez, government fraud reporting"/>
+    <meta name="author" content="Nicolas Hernandez"/>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:site_name" content="CalAudit"/>
+    <meta property="og:url" content="https://calaudit.org/oig-filing-guide/"/>
+    <meta property="og:title" content="OIG Filing Guide | Pharmacy Fraud &amp; Billing Manipulation"/>
+    <meta property="og:description" content="Technical forensic guide for documenting and reporting corporate pharmacy fraud and billing manipulation to the OIG."/>
+    <meta property="og:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="CalAudit Official Logo"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@CalAudit"/>
+    <meta name="twitter:creator" content="@CalAudit"/>
+    <meta name="twitter:url" content="https://calaudit.org/oig-filing-guide/"/>
+    <meta name="twitter:title" content="OIG Filing Guide | Pharmacy Fraud &amp; Billing Manipulation"/>
+    <meta name="twitter:description" content="Technical forensic guide for documenting and reporting corporate pharmacy fraud to the OIG."/>
+    <meta name="twitter:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta name="twitter:image:alt" content="CalAudit Official Logo"/>
+    <meta name="geo.region" content="US-CA"/>
+    <meta name="geo.placename" content="California"/>
+    <meta name="geo.position" content="38.5816;-121.4944"/>
+    <meta name="ICBM" content="38.5816, -121.4944"/>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://calaudit.org/#organization",
+          "name": "CalAudit",
+          "url": "https://calaudit.org/",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://calaudit.org/#logo",
+            "url": "https://calaudit.org/calauditlogo.webp",
+            "caption": "CalAudit Official Logo"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://calaudit.org/#website",
+          "url": "https://calaudit.org/",
+          "name": "CalAudit",
+          "description": "Forensic Public Audits & Regulatory Compliance Tracking",
+          "publisher": {
+            "@id": "https://calaudit.org/#organization"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://calaudit.org/oig-filing-guide/#webpage",
+          "url": "https://calaudit.org/oig-filing-guide/",
+          "name": "OIG Filing Guide | Pharmacy Fraud & Billing Manipulation",
+          "isPartOf": {
+            "@id": "https://calaudit.org/#website"
+          },
+          "primaryImageOfPage": {
+            "@id": "https://calaudit.org/#logo"
+          }
+        },
+        {
+          "@type": "TechArticle",
+          "@id": "https://calaudit.org/oig-filing-guide/#article",
+          "isPartOf": {
+            "@id": "https://calaudit.org/oig-filing-guide/#webpage"
+          },
+          "mainEntityOfPage": {
+            "@id": "https://calaudit.org/oig-filing-guide/#webpage"
+          },
+          "headline": "OIG Filing Guide | Pharmacy Fraud & Billing Manipulation",
+          "description": "Technical forensic guide for documenting and reporting corporate pharmacy fraud, Medi-Cal Rx billing manipulation, and beneficiary harm to the OIG.",
+          "inLanguage": "en-US",
+          "datePublished": "2026-04-21T08:00:00-08:00",
+          "dateModified": "2026-07-02",
+          "author": {
+            "@type": "Person",
+            "@id": "https://calaudit.org/#nicolashernandez",
+            "name": "Nicolas Hernandez",
+            "url": "https://calaudit.org/"
+          },
+          "publisher": {
+            "@id": "https://calaudit.org/#organization"
+          },
+          "keywords": [
+            "OIG filing guide",
+            "pharmacy fraud",
+            "billing manipulation",
+            "Medi-Cal Rx",
+            "CVS fraud",
+            "healthcare fraud reporting"
+          ],
+          "contentLocation": {
+            "@type": "Place",
+            "name": "U.S. Department of Health and Human Services Office of Inspector General Headquarters",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "330 Independence Ave SW",
+              "addressLocality": "Washington",
+              "addressRegion": "DC",
+              "postalCode": "20201",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "38.8872",
+              "longitude": "-77.0163"
+            }
+          },
+          "about": [
+            {
+              "@type": "GovernmentOrganization",
+              "name": "Office of Inspector General",
+              "alternateName": "OIG",
+              "parentOrganization": {
+                "@type": "GovernmentOrganization",
+                "name": "U.S. Department of Health and Human Services",
+                "alternateName": "DHHS"
+              },
+              "sameAs": "https://en.wikipedia.org/wiki/Office_of_Inspector_General_(United_States_Department_of_Health_and_Human_Services)"
+            }
+          ],
+          "mentions": [
+            {
+              "@type": "Pharmacy",
+              "name": "CVS Pharmacy #9785",
+              "legalName": "Garfield Beach CVS, LLC",
+              "description": "Subject entity cited in fraud complaint regarding the manual reversal of authorized Medi-Cal Rx claims."
+            },
+            {
+              "@type": "GovernmentService",
+              "name": "Medi-Cal Rx",
+              "serviceType": "Medicaid Pharmacy Benefits Division",
+              "provider": {
+                "@type": "GovernmentOrganization",
+                "name": "California Department of Health Care Services",
+                "alternateName": "DHCS"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://calaudit.org/oig-filing-guide/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://calaudit.org/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Forensic Vault",
+              "item": "https://calaudit.org/forensic-vault/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "OIG Filing Guide",
+              "item": "https://calaudit.org/oig-filing-guide/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://calaudit.org/oig-filing-guide/#faq-schema",
+          "isPartOf": {
+            "@id": "https://calaudit.org/oig-filing-guide/#webpage"
+          },
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What qualifies as pharmacy fraud in this audit context?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In this audit context, pharmacy fraud includes manual reversal of authorized government payments, falsifying electronic records to refuse dispensing, and system abuse to manufacture a 'cannot fill' state to bypass Medi-Cal Rx approvals."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is OIG reporting different from a Board of Pharmacy complaint?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. OIG investigates the misuse of government funds and beneficiary harm involving federal programs (Medi-Cal/Medicaid). The Board of Pharmacy focuses on professional licensing and clinical safety violations."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I remain anonymous when reporting to the OIG?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The OIG provides options for confidential or anonymous reporting, though providing your identity can significantly assist investigators in verifying and substantiating your claims."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What evidence should I gather before filing an OIG complaint?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Gather transaction logs showing authorized payments, electronic records of reversals, timestamps of the incident, names of responsible parties, and any prior reports made to internal or other regulatory channels such as DHCS or the Board of Pharmacy."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What happens after I submit a complaint to the OIG?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The OIG reviews the submission and issues a confirmation. Depending on the severity and documentation quality, it may open a formal investigation, refer the matter to another agency, or log it for pattern analysis across multiple complaints."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #b30000;
+            color: #ffffff;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.2s;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+        .oig-wizard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .oig-step {
+            background: #111;
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+        }
+        .oig-step h3 {
+            color: #ff7575; /* WCAG AAA compliant contrast on #111 */
+            margin-top: 0;
+            font-family: var(--mono, monospace);
+            font-size: 0.85rem;
+            border-bottom: 1px solid #222;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .oig-step p {
+            font-size: 0.8rem;
+            color: #e0e0e0; /* WCAG AAA compliant contrast on #111 */
+            line-height: 1.5;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        .evidence-item-box {
+            background: #000;
+            border: 1px solid #222;
+            padding: 10px;
+            position: relative;
+        }
+        .evidence-viewer {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #333;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .evidence-viewer:hover, .evidence-viewer:focus {
+            transform: scale(1.02);
+            border-color: #ff7575;
+            outline: 2px solid #ff7575;
+        }
+        .evidence-item-box a {
+            display: block;
+            text-decoration: none;
+            text-shadow: none;
+        }
+        .evidence-item-box a:hover, .evidence-item-box a:focus {
+            opacity: 1;
+            outline: none;
+        }
+        .narrative-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 3px solid #b30000;
+            padding: 20px;
+            font-family: var(--mono, monospace);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 20px 0;
+            color: #f0f0f0;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            font-weight: bold;
+            border-radius: 2px;
+            font-family: var(--mono, monospace);
+        }
+        .section-tag-heading {
+            text-align: center;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 30px 0 10px 0;
+            color: #ffffff;
+            font-family: var(--mono, monospace);
+        }
+    </style>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="vault-container">
+    <main id="main-content" role="main">
+        <nav class="back-btn-container" aria-label="Breadcrumb">
+            <a href="/forensic-vault/" class="back-btn" aria-label="Return to the Forensic Vault directory">← Return to Forensic Vault</a>
+        </nav>
+
+        <header role="banner" class="header">
+            <h1 class="header-title red u-style-a623a15d">OIG FILING GUIDE</h1>
+            <p class="subtitle">Reporting Corporate Pharmacy Fraud &amp; Billing Manipulation</p>
+        </header>
+
+        <section class="audit-box warfare" aria-labelledby="oig-report-heading">
+            <header role="banner">
+                <h2 id="oig-report-heading" class="sr-only">OIG Report Details</h2>
+                <div class="status-badge u-style-22f6ae80">OIG_REPORT</div>
+            </header>
+            <p>This guide documents the procedural steps for reporting corporate fraud, billing manipulation, and severe beneficiary harm involving government funds (Medi-Cal Rx) to the U.S. Department of Health and Human Services Office of Inspector General (OIG).</p>
+        </section>
+
+        <h2 class="section-tag-heading" id="case-study-heading">// CASE STUDY: CVS PHARMACY #9785 BILLING MANIPULATION</h2>
+
+        <section class="narrative-box" aria-labelledby="case-study-heading">
+            <p><strong>SUBJECT:</strong> CVS Pharmacy Store #9785 (Garfield Beach CVS, LLC)<br>
+            <strong>INCIDENT DATE:</strong> April 20–21, 2026<br>
+            <strong>VIOLATION TYPE:</strong> Manual Reversal of Authorized Medi-Cal Rx Claims</p>
+
+            <p>This case documents the systematic use of authorized billing access to deceptively reverse government-funded medical transactions. Electronic logs confirm that Medi-Cal Rx authorized and paid for the claim three times; however, pharmacy staff manually reversed these payments to manufacture a "cannot fill" state, causing a 16-hour treatment lapse and severe physical harm.</p>
+        </section>
+
+        <h2 class="section-tag-heading" id="oig-wizard-heading">// THE OIG COMPLAINT WIZARD</h2>
+        <p class="u-style-43e68521">Forensic documentation of the OIG Fraud Portal submission (April 2026).</p>
+
+        <section class="oig-wizard-grid" aria-labelledby="oig-wizard-heading">
+            <article class="oig-step">
+                <h3>STEP 1: SUBMIT COMPLAINT</h3>
+                <p>Initial entry point for reporting Fraud, Waste, and Abuse involving government healthcare funds.</p>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/oig-submit-complaint-page_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG Submit Complaint Page in a new tab">
+                        <img src="/calevidence/oig-submit-complaint-page_result.webp" class="evidence-viewer" alt="Screenshot of the OIG Submit Complaint webpage showing the initial entry form">
+                    </a>
+                </div>
+            </article>
+            <article class="oig-step">
+                <h3>STEP 2: COMPLAINT TOPIC</h3>
+                <p>Selecting the appropriate category for corporate pharmacy-related fraud and billing manipulation.</p>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/oig-what-is-your-complaint-regarding_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG Complaint Topic selection in a new tab">
+                        <img src="/calevidence/oig-what-is-your-complaint-regarding_result.webp" class="evidence-viewer" alt="Screenshot of OIG portal step selecting the specific topic regarding the complaint">
+                    </a>
+                </div>
+            </article>
+            <article class="oig-step">
+                <h3>STEP 3: FRAUDULENT ACTION</h3>
+                <p>Identifying the specific deceptive behavior, including billing for services not rendered or manual payment reversals.</p>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/oig-which-fraudulent-action_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG Fraudulent Action selection in a new tab">
+                        <img src="/calevidence/oig-which-fraudulent-action_result.webp" class="evidence-viewer" alt="Screenshot of OIG portal step identifying the exact fraudulent action">
+                    </a>
+                </div>
+            </article>
+            <article class="oig-step">
+                <h3>STEP 4: PROGRAM RELATION</h3>
+                <p>Linking the documented incident to a specific government-funded healthcare program.</p>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/oig-which-program-does-this-relate-to_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG Program Relation step in a new tab">
+                        <img src="/calevidence/oig-which-program-does-this-relate-to_result.webp" class="evidence-viewer" alt="Screenshot of OIG portal step linking the fraud to a specific government program">
+                    </a>
+                </div>
+            </article>
+            <article class="oig-step">
+                <h3>STEP 5: PROGRAM TYPE</h3>
+                <p>Classifying the program (Medi-Cal Rx) as a Medicaid-level government expenditure.</p>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/oig-which-type-of-program-does-this-relate-to_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG Program Type step in a new tab">
+                        <img src="/calevidence/oig-which-type-of-program-does-this-relate-to_result.webp" class="evidence-viewer" alt="Screenshot of OIG portal step classifying the program type as Medicaid">
+                    </a>
+                </div>
+            </article>
+            <article class="oig-step">
+                <h3>STEP 6: ACTIVITY DATE</h3>
+                <p>Timestamping the violation (April 20, 2026) to align with electronic transaction logs.</p>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/oig-when-did-this-activity-occur_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG Activity Date selection in a new tab">
+                        <img src="/calevidence/oig-when-did-this-activity-occur_result.webp" class="evidence-viewer" alt="Screenshot of OIG portal step inputting the precise date the fraudulent activity occurred">
+                    </a>
+                </div>
+            </article>
+            <article class="oig-step">
+                <h3>STEP 7: ONGOING STATUS</h3>
+                <p>Defining if the billing manipulation is an isolated event or part of a systemic corporate pattern.</p>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/oig-is-the-activity-still-occurring_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG Ongoing Status step in a new tab">
+                        <img src="/calevidence/oig-is-the-activity-still-occurring_result.webp" class="evidence-viewer" alt="Screenshot of OIG portal step indicating whether the fraudulent activity is ongoing">
+                    </a>
+                </div>
+            </article>
+            <article class="oig-step">
+                <h3>STEP 8: PREVIOUS REPORT</h3>
+                <p>Verifying that efforts were made to resolve the friction via internal corporate support channels.</p>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/oig-has-this-previously-been-reported-to-anyone_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG Previous Report declaration in a new tab">
+                        <img src="/calevidence/oig-has-this-previously-been-reported-to-anyone_result.webp" class="evidence-viewer" alt="Screenshot of OIG portal step verifying prior internal reports of the incident">
+                    </a>
+                </div>
+            </article>
+            <article class="oig-step">
+                <h3>STEP 9: REPORTED ENTITIES</h3>
+                <p>Listing other regulatory agencies (Board of Pharmacy, DHCS) currently investigating the entity.</p>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/oig-who-else-have-you-reported-this-to_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG Reported Entities step in a new tab">
+                        <img src="/calevidence/oig-who-else-have-you-reported-this-to_result.webp" class="evidence-viewer" alt="Screenshot of OIG portal step listing other agencies where the fraud was reported">
+                    </a>
+                </div>
+            </article>
+            <article class="oig-step">
+                <h3>STEP 10: RESPONSIBLE PARTY</h3>
+                <p>Explicitly identifying Garfield Beach CVS, LLC as the party responsible for the administrative default.</p>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/oig-identify-the-party-responsible-for-the-activity-you-are-reporting_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG Responsible Party identification in a new tab">
+                        <img src="/calevidence/oig-identify-the-party-responsible-for-the-activity-you-are-reporting_result.webp" class="evidence-viewer" alt="Screenshot of OIG portal step identifying the specific corporate entity responsible">
+                    </a>
+                </div>
+            </article>
+            <article class="oig-step">
+                <h3>STEP 11: CORROBORATION</h3>
+                <p>Providing identifiers for witnesses and corroborating electronic records.</p>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/oig-is-there-anyone-else-that-can-heko-corroborate-your-report_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG Corroboration step in a new tab">
+                        <img src="/calevidence/oig-is-there-anyone-else-that-can-heko-corroborate-your-report_result.webp" class="evidence-viewer" alt="Screenshot of OIG portal step offering corroborating witnesses and records">
+                    </a>
+                </div>
+            </article>
+            <article class="oig-step">
+                <h3>STEP 12: FRAUD DESCRIPTION</h3>
+                <p>Entering the forensic narrative of how CVS staff manually overrode government authorizations.</p>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/oig-please-describe-the-fraudulent-action-in-your-own-words_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG Fraud Description input in a new tab">
+                        <img src="/calevidence/oig-please-describe-the-fraudulent-action-in-your-own-words_result.webp" class="evidence-viewer" alt="Screenshot of OIG portal step containing the detailed narrative of the fraudulent action">
+                    </a>
+                </div>
+            </article>
+            <article class="oig-step">
+                <h3>STEP 13: CONSENT FORM</h3>
+                <p>Signing the identity waiver to allow OIG investigators to engage directly with the target pharmacy.</p>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/oig-consent-to-disclose-your-identity_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG Identity Consent form in a new tab">
+                        <img src="/calevidence/oig-consent-to-disclose-your-identity_result.webp" class="evidence-viewer" alt="Screenshot of OIG portal step consenting to disclose identity to investigators">
+                    </a>
+                </div>
+            </article>
+            <article class="oig-step">
+                <h3>STEP 14: COMPLAINANT DETAILS</h3>
+                <p>Finalizing the legal contact information for official federal correspondence.</p>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/oig-your-details-redacted_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG Complainant Info form in a new tab">
+                        <img src="/calevidence/oig-your-details-redacted_result.webp" class="evidence-viewer" alt="Screenshot of OIG portal step with redacted complainant contact details">
+                    </a>
+                </div>
+            </article>
+            <article class="oig-step">
+                <h3>STEP 15: HHS AFFILIATION</h3>
+                <p>Standard disclosure confirming the reporter is not an internal HHS employee or contractor.</p>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/oig-are-you-an-hhs-employee-contractor-or-grantee_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG HHS Affiliation disclosure in a new tab">
+                        <img src="/calevidence/oig-are-you-an-hhs-employee-contractor-or-grantee_result.webp" class="evidence-viewer" alt="Screenshot of OIG portal step confirming non-affiliation with HHS">
+                    </a>
+                </div>
+            </article>
+            <article class="oig-step">
+                <h3>STEP 16: INITIAL REPORT DATE</h3>
+                <p>Establishing the chronological timeline between the incident and the first reporting effort.</p>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/oig-when-did-you-first-report-the-fraudulent-activity_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG Initial Report Date in a new tab">
+                        <img src="/calevidence/oig-when-did-you-first-report-the-fraudulent-activity_result.webp" class="evidence-viewer" alt="Screenshot of OIG portal step establishing the timeline of the first report">
+                    </a>
+                </div>
+            </article>
+            <article class="oig-step">
+                <h3>STEP 17: HELPFUL DOCUMENTS</h3>
+                <p>Uploading the definitive transaction logs and treatment records substantiating the claim.</p>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/oig-helpful-documents_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG Helpful Documents upload section in a new tab">
+                        <img src="/calevidence/oig-helpful-documents_result.webp" class="evidence-viewer" alt="Screenshot of OIG portal step showing uploaded evidence and transaction logs">
+                    </a>
+                </div>
+            </article>
+            <article class="oig-step">
+                <h3>STEP 18: FINAL SUMMARY</h3>
+                <p>Full review of the submission data before transmission to the Department of Health and Human Services.</p>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/oig-your-complaint-summary-redacted_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG Final Master Summary in a new tab">
+                        <img src="/calevidence/oig-your-complaint-summary-redacted_result.webp" class="evidence-viewer" alt="Screenshot of OIG portal final review and complaint summary page">
+                    </a>
+                </div>
+            </article>
+        </section>
+
+        <section class="audit-box warfare u-style-2bb8d190" aria-labelledby="confirmation-heading">
+            <header role="banner">
+                <h2 id="confirmation-heading" class="sr-only">Filing Successful</h2>
+                <div class="status-badge u-style-c28fcc2c">CONFIRMATION</div>
+            </header>
+            <h2 class="u-style-3508a759">Filing Successful</h2>
+            <p>The official confirmation screen documenting the receipt of the complaint by the federal OIG.</p>
+            <div class="evidence-item-box u-style-90bd2859">
+                <a href="/calevidence/oig-complaint-confirmation_result.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of OIG Filing Confirmation in a new tab">
+                    <img src="/calevidence/oig-complaint-confirmation_result.webp" class="evidence-viewer" alt="Screenshot of the official OIG complaint submission confirmation page with tracking reference">
+                </a>
+            </div>
+        </section>
+
+        <section class="evidence-card-v2 mt-20" aria-labelledby="retained-record-heading">
+            <h2 id="retained-record-heading" class="section-tag-heading">RETAINED RECORD: HEALTHCARE FRAUD REPORT</h2>
+            <div class="evidence-item-box u-style-a389127f">
+                <a href="/calevidence/report-healthcare-fraud-page-1.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full resolution image of Healthcare Fraud Report Page 1 in a new tab">
+                    <img src="/calevidence/report-healthcare-fraud-page-1.webp" class="evidence-viewer" alt="First page of the generated Healthcare Fraud Report PDF document">
+                </a>
+            </div>
+            <p class="u-style-590f30b9">
+                <a class="u-style-402c884f" href="/calevidence/report-healthcare-fraud-redacted.pdf" target="_blank" rel="noopener noreferrer" aria-label="View the full redacted complaint PDF document in a new tab">VIEW FULL COMPLAINT PDF</a>
+            </p>
+        </section>
+
+        <section id="faq" class="page-section" aria-labelledby="faq-heading">
+            <header role="banner">
+                <h2 class="section-tag-heading">// OIG/PHARMACY FRAUD FAQ</h2>
+            </header>
+            <div class="audit-box warfare">
+                <div class="status-badge u-style-e30701da">INTEL_RESPONSE</div>
+                <h2 class="u-style-b4ba20e0" id="faq-heading">Frequently Asked Questions</h2>
+
+                <details id="faq-1">
+                    <summary class="u-style-ff4923a7">What qualifies as "Pharmacy Fraud"?</summary>
+                    <p class="mt-10">In this audit context, it includes manual reversal of authorized government payments, falsifying electronic records to refuse dispensing, and system abuse to manufacture a "cannot fill" state to bypass Medi-Cal Rx approvals.</p>
+                </details>
+
+                <details id="faq-2">
+                    <summary class="u-style-ff4923a7">Is OIG reporting different from a Board of Pharmacy complaint?</summary>
+                    <p class="mt-10">Yes. OIG investigates the misuse of government funds and beneficiary harm involving federal programs (Medi-Cal/Medicaid). The Board of Pharmacy focuses on professional licensing and clinical safety violations.</p>
+                </details>
+
+                <details id="faq-3">
+                    <summary class="u-style-ff4923a7">Can I remain anonymous when reporting to the OIG?</summary>
+                    <p class="mt-10">Yes. The OIG provides options for confidential or anonymous reporting, though providing your identity can significantly assist investigators in verifying and substantiating your claims.</p>
+                </details>
+
+                <details id="faq-4">
+                    <summary class="u-style-ff4923a7">What evidence should I gather before filing an OIG complaint?</summary>
+                    <p class="mt-10">Gather transaction logs showing authorized payments, electronic records of reversals, timestamps of the incident, names of responsible parties, and any prior reports made to internal or other regulatory channels such as DHCS or the Board of Pharmacy.</p>
+                </details>
+
+                <details id="faq-5">
+                    <summary class="u-style-ff4923a7">What happens after I submit a complaint to the OIG?</summary>
+                    <p class="mt-10">The OIG reviews the submission and issues a confirmation. Depending on the severity and documentation quality, it may open a formal investigation, refer the matter to another agency, or log it for pattern analysis across multiple complaints.</p>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="/nav.js"></script>
+    <script>
+        // .onion mirror patch
+        (function() {
+            var onion = 'calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion';
+            var el = document.querySelector('.onion-mirror');
+            if (el && window.location.hostname !== onion) {
+                var link = document.createElement('a');
+                link.href = 'http://' + onion + window.location.pathname;
+                link.textContent = onion;
+                link.style.color = 'inherit';
+                el.innerHTML = 'ONION_MIRROR: ';
+                el.appendChild(link);
+                el.innerHTML += ' | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"';
+            }
+        })();
+    </script>
+
+    <footer role="contentinfo" class="page-footer">
+        <div class="footer-inner">
+            <p>© 2026 CALAUDIT | Nicolas Hernandez | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+            <p><strong>LEGAL DISCLAIMER:</strong> This site is provided for informational purposes based on publicly available California statutes and regulations. It does not constitute legal advice. For legal counsel, consult a licensed California attorney.</p>
+            <p><strong>MEDICAL DISCLAIMER:</strong> The forensic data and commentary provided here are for investigative and advocacy purposes only. This content is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any medical concerns.</p>
+            <p><strong>PROPRIETARY WORK PRODUCT NOTICE:</strong> All original content, analysis, and commentary on this site represents my proprietary work product. Unauthorized reproduction for legal, administrative, or commercial purposes is strictly prohibited without the express written permission of Nicolas Hernandez.</p>
+            <p class="onion-mirror">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+        </div>
+    </footer>
+</div>
+
+<script>/* Onion Link Patch */ (function(){if(window.location.hostname.endsWith('.onion')){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(h&&!h.startsWith('http')&&!h.startsWith('mailto:')&&!h.startsWith('tel:')&&!h.startsWith('#')){var p=h.split('/');var l=p[p.length-1];if(l!==''&&!l.includes('.')){a.setAttribute('href',h+'.html')}else if(h.endsWith('/')){a.setAttribute('href',h+'index.html')}}})}})();</script>
+</body>
+</html>

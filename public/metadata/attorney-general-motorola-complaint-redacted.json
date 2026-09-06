@@ -1,0 +1,12 @@
+{
+  "alt": "Official California Attorney General Consumer Complaint — Motorola Mobility BPC § 17200 Default",
+  "summary": "The full redacted text of the consumer complaint submitted to the California Attorney General against Motorola Mobility LLC regarding the XT2413V bootloader lock paradox, CTIA carrier unlocking commitments, and BPC § 17200 violations.",
+  "keywords": [
+    "MOTOROLA_MELTDOWN",
+    "ATTORNEY_GENERAL_COMPLAINT",
+    "BPC_17200",
+    "forensic-evidence",
+    "pdf"
+  ],
+  "full_text": "I am filing a complaint against Motorola Mobility LLC regarding a manufacturer-level bootloader restriction on my Moto G Play 2024 (Model: XT2413V, IMEI [REDACTED]) that prevents me from using a legitimate, Motorola-issued unlock key on a fully paid-off, carrier-unlocked device. On January 24, 2026, I raised this issue on Motorola's official community forum, providing my device's CID and hardware details. Motorola support agents responded that my device was categorically ineligible for bootloader unlocking because it was Tracfone-branded, and that Tracfone-locked devices are excluded from Motorola's unlock program..."
+}

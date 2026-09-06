@@ -1,0 +1,13 @@
+{
+  "alt": "Exhibit TM-10: Moto G Power 2025 Carrier Network Unlock Notification",
+  "summary": "Android system notification confirmation dialog on the Moto G Power 2025 verifying that the T-Mobile carrier network lock has been successfully removed, displaying the message: 'Your device is already unlocked!'. Proves the EIP reversal and administrative resolution translated directly to physical hardware unlocking.",
+  "keywords": [
+    "MOTOROLA_UNLOCK",
+    "NETWORK_UNLOCK",
+    "MOTO_G_POWER_2025",
+    "T_MOBILE_UNLOCK",
+    "forensic-evidence",
+    "webp"
+  ],
+  "full_text": "Device Unlock Notification: Your device is already unlocked! You can use other carriers' SIM cards in this device. Moto G Power 2025 Carrier SIM network lock successfully lifted following executive intervention."
+}

@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#050505"/>
+    <title>Knox-Keene &amp; DMHC Timeline Calculator | CalAudit</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="canonical" href="https://calaudit.org/tools/knox-keene-audit/"/>
+    <meta name="description" content="Estimate California DMHC grievance deadlines and Knox-Keene timely-access dates, including 72-hour urgent grievances, 30-day standard grievances, and appointment-access timelines."/>
+    <meta name="author" content="Nicolas Hernandez"/>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="CalAudit"/>
+    <meta property="og:url" content="https://calaudit.org/tools/knox-keene-audit/"/>
+    <meta property="og:title" content="Knox-Keene &amp; DMHC Timeline Calculator | CalAudit"/>
+    <meta property="og:description" content="Estimate California DMHC grievance deadlines and Knox-Keene timely-access dates with transparent counting assumptions."/>
+    <meta property="og:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="CalAudit California health plan timeline calculator preview"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@CalAudit"/>
+    <meta name="twitter:creator" content="@CalAudit"/>
+    <meta name="twitter:url" content="https://calaudit.org/tools/knox-keene-audit/"/>
+    <meta name="twitter:title" content="Knox-Keene &amp; DMHC Timeline Calculator | CalAudit"/>
+    <meta name="twitter:description" content="Estimate DMHC grievance deadlines and Knox-Keene timely-access dates for California health plans."/>
+    <meta name="twitter:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta name="twitter:image:alt" content="CalAudit California health plan timeline calculator preview"/>
+    <meta name="geo.region" content="US-CA"/>
+    <meta name="geo.placename" content="California"/>
+    <meta name="geo.position" content="38.5816;-121.4944"/>
+    <meta name="ICBM" content="38.5816, -121.4944"/>
+
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "dateModified": "2026-08-23",
+      "@id": "https://calaudit.org/tools/knox-keene-audit/#app",
+      "name": "DMHC & Knox-Keene Timeline Calculator",
+      "url": "https://calaudit.org/tools/knox-keene-audit/",
+      "description": "Estimate selected California DMHC grievance deadlines and Knox-Keene timely-access dates from a user-entered timestamp. Results are informational estimates with disclosed counting assumptions, not legal advice or a compliance determination.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "isAccessibleForFree": true,
+      "provider": {
+        "@id": "https://calaudit.org/#organization"
+      },
+      "featureList": [
+        "Selected grievance timeline estimates",
+        "Selected appointment-access timeline estimates",
+        "Pacific Time display",
+        "Editable notice-draft generation"
+      ],
+      "relatedLink": [
+        "https://calaudit.org/knox-keene/"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://calaudit.org/#organization",
+      "name": "CalAudit",
+      "url": "https://calaudit.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://calaudit.org/calauditlogo.png"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://calaudit.org/tools/knox-keene-audit/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Tools",
+          "item": "https://calaudit.org/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "DMHC & Knox-Keene Timeline Calculator",
+          "item": "https://calaudit.org/tools/knox-keene-audit/"
+        }
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "@id": "https://calaudit.org/tools/knox-keene-audit/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does a California health plan have to respond to a grievance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For the DMHC grievance track implemented by this calculator, the standard selection uses 30 calendar days and the expedited or urgent selection uses 72 hours. Whether that track applies depends on the plan, urgency, receipt, exceptions, extensions, and case-specific facts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the DMHC 30-day grievance timeline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The calculator's standard grievance option applies a 30-calendar-day timeframe from the Pacific Time timestamp entered, under the tool's disclosed assumptions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does an urgent grievance take under Knox-Keene?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The expedited grievance option in this tool uses a 72-hour timeframe under the selected HSC § 1368.01 track. The calculator does not determine whether a grievance qualifies as urgent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are California timely-access standards for health-plan appointments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This calculator includes selected DMHC appointment-access categories measured in hours or business days for urgent care and several non-urgent appointment types. The applicable standard can depend on category, exceptions, and case-specific facts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long can I wait for a specialist appointment in California?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The non-urgent specialist option in this calculator uses a 15-business-day timeframe under the selected DMHC timely-access track. The tool counts Monday through Friday and does not model holidays or exceptional closures."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this calculator apply to PPO, ERISA, or fee-for-service Medi-Cal plans?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not automatically. The tool is built around selected DMHC-managed-care timelines and warns when CDI PPO, ERISA self-funded, or fee-for-service Medi-Cal categories are selected because different regulatory tracks may apply."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://calaudit.org/tools/knox-keene-audit/#howto",
+      "name": "How to Calculate a California DMHC Grievance or Timely-Access Timeline",
+      "description": "Estimate a California DMHC grievance or Knox-Keene appointment-access timeframe using user-entered facts and disclosed counting assumptions.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Select the plan category",
+          "text": "Select the category you believe applies and enter the plan name. The tool does not independently determine the regulator or plan type."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Select a timeline track",
+          "text": "For a DMHC-regulated plan, choose an appointment-access or grievance timeframe."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Choose the Specific Timeline Threshold",
+          "text": "Select the applicable statutory sub-category and enter the affected treatment, medication, or service."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Enter the Submission Date & Time",
+          "text": "Provide the exact Pacific Time submission or request timestamp."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Calculate the estimate",
+          "text": "Calculate the selected timeframe, review the disclosed counting convention, and verify the result against current official guidance before relying on it."
+        }
+      ]
+    }
+  ]
+}
+    </script>
+
+    <style>
+        /* Page-specific styles only. Shared layout, typography, and
+           components (vault-container, manifesto-container, page-label,
+           section-tag/title/quote, requisition, forensic-context, back-btn,
+           skip-link, unified-footer) come from /style.css. Everything below
+           is bespoke to the compliance-audit widget, which has no shared
+           equivalent yet. */
+
+        /* WCAG-tuned overrides for form-control chrome. The shared --border
+           and --text-dim tokens are too low-contrast for input borders and
+           body-size dim text (a past a11y pass tuned these specifically for
+           this widget), so this widget keeps its own values rather than
+           inheriting the global ones. */
+        :root {
+            --kk-border: #595959;
+            --kk-border-hover: #7a7a7a;
+            --kk-text-dim: #b3b3b3;
+            --kk-label: #c2c2c2;
+            --kk-input-bg: #000000;
+        }
+
+        *:focus-visible {
+            outline: 3px solid var(--green);
+            outline-offset: 2px;
+            box-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0 25px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .input-group label {
+            font-family: var(--mono);
+            font-size: 0.85rem;
+            color: var(--kk-label);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .input-group select, .input-group input {
+            background-color: var(--kk-input-bg);
+            border: 1px solid var(--kk-border);
+            border-radius: 3px;
+            color: #ffffff;
+            padding: 12px;
+            font-family: var(--sans);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .input-group select:focus, .input-group input:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 5px rgba(0, 255, 0, 0.15);
+        }
+
+        .btn-calc {
+            grid-column: span 2;
+            background-color: var(--green);
+            color: #000000;
+            border: 2px solid transparent;
+            border-radius: 3px;
+            font-family: var(--mono);
+            font-weight: bold;
+            font-size: 1.05rem;
+            padding: 15px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.2s;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .btn-calc {
+                grid-column: span 1;
+            }
+        }
+
+        .btn-calc:hover, .btn-calc:focus {
+            background-color: #00e600;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+            outline: none;
+        }
+
+        .btn-calc:active {
+            transform: scale(0.99);
+        }
+
+        /* Output viewport */
+        .output-viewport {
+            margin-top: 30px;
+            border-top: 1px solid var(--kk-border);
+            padding-top: 25px;
+            display: none;
+        }
+
+        .audit-metrics-panel {
+            background-color: #121212;
+            border: 1px solid var(--kk-border);
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .metrics-title {
+            font-family: var(--mono);
+            font-size: 1rem;
+            color: var(--amber);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 15px 0;
+            border-bottom: 1px solid var(--kk-border);
+            padding-bottom: 8px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 12px 20px;
+            font-family: var(--mono);
+            font-size: 0.9rem;
+        }
+
+        .metric-label {
+            color: var(--kk-text-dim);
+            text-transform: uppercase;
+        }
+
+        .metric-value {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .highlight-amber { color: var(--amber) !important; }
+        .highlight-green { color: var(--green) !important; }
+
+        /* Copyable demand notice */
+        .letter-generator-panel { text-align: left; }
+
+        .letter-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .letter-title {
+            font-family: var(--mono);
+            font-size: 1rem;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            margin: 0;
+            border-bottom: none;
+            text-align: left;
+        }
+
+        .btn-copy {
+            background-color: transparent;
+            border: 1px solid var(--kk-border);
+            border-radius: 3px;
+            color: #e0e0e0;
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .btn-copy:hover, .btn-copy:focus {
+            border-color: var(--green);
+            color: #000000;
+            background: var(--green);
+            outline: none;
+        }
+
+        .demand-letter-textarea {
+            width: 100%;
+            height: 380px;
+            background-color: var(--kk-input-bg);
+            border: 1px solid var(--kk-border);
+            border-radius: 4px;
+            color: var(--green);
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            padding: 20px;
+            resize: vertical;
+            outline: none;
+            line-height: 1.6;
+        }
+
+        .demand-letter-textarea:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 5px rgba(0, 255, 0, 0.15);
+        }
+
+
+        .deadline-status {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .deadline-status.is-past { color: var(--red, #ff3b3b); }
+        .deadline-status.is-future { color: var(--amber); }
+
+        .draft-note {
+            margin: 0 0 14px 0;
+            padding: 12px 14px;
+            border-left: 3px solid var(--amber);
+            background: rgba(255, 191, 0, 0.05);
+            color: var(--kk-text-dim);
+            font-family: var(--mono);
+            font-size: 0.82rem;
+            line-height: 1.55;
+        }
+
+        .letter-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .calculation-note {
+            margin-top: 12px;
+            color: var(--kk-text-dim);
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            line-height: 1.55;
+        }
+
+        /* FAQ */
+        .faq-section { margin-top: 40px; }
+        .faq-item {
+            margin-bottom: 15px;
+            background: rgba(0, 255, 0, 0.02);
+            border: 1px solid var(--border);
+            padding: 15px;
+            border-radius: 4px;
+        }
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--green);
+            font-size: 15px;
+            font-weight: bold;
+            outline: none;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item .faq-icon {
+            color: var(--green);
+            transition: transform 0.2s ease;
+        }
+        .faq-item[open] .faq-icon { transform: rotate(90deg); }
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-top: 12px;
+            padding-left: 20px;
+            border-left: 2px solid var(--green);
+            text-align: left;
+        }
+
+        .editorial-section h3 { color: var(--amber); }
+        .editorial-section p { text-align: left; }
+    </style>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="vault-container">
+    <main role="main" id="main-content">
+        <div class="back-btn-container">
+            <a href="/tools/" class="back-btn" aria-label="Return to the Tool Room">&larr; Return to Tool Room</a>
+        </div>
+
+        <div class="manifesto-container">
+            <div class="page-label" aria-hidden="true">// SERVICE NODE: KNOX_KEENE_TIMELINE_AUDITOR</div>
+            <h1>California DMHC &amp; Knox-Keene Timeline Calculator</h1>
+            <p class="page-subtitle">Estimate grievance deadlines and timely-access dates for California health plans</p>
+            <p>
+                Estimate selected appointment-access timeframes published by the California Department of Managed Health Care and grievance timeframes described in <strong>HSC § 1368.01</strong>. The calculator performs date arithmetic; it does not determine plan jurisdiction, urgency, exceptions, receipt, compliance, or legal rights.
+            </p>
+            <p>
+                Before relying on a result, review the <a class="text-blue underline" href="https://www.dmhc.ca.gov/HealthCareinCalifornia/YourHealthCareRights/TimelyAccesstoCare.aspx" rel="noopener noreferrer">DMHC timely-access guidance</a>, the <a class="text-blue underline" href="https://www.dmhc.ca.gov/File-a-Complaint/Contact-Your-Health-Plan.aspx" rel="noopener noreferrer">DMHC grievance guidance</a>, and any notices or plan documents that apply to your situation.
+            </p>
+        </div>
+
+        <section class="editorial-section" aria-labelledby="quick-answer-heading">
+            <div class="section-tag" aria-hidden="true">QUICK ANSWER</div>
+            <h2 id="quick-answer-heading" class="section-title">California DMHC Grievance &amp; Timely-Access Timeframes</h2>
+            <p><strong>Standard DMHC grievances:</strong> 30 calendar days under the selected HSC § 1368.01 track in this calculator. <strong>Expedited or urgent grievances:</strong> 72 hours. Appointment-access standards vary by service and may be measured in hours or business days. Use the calculator below to estimate a date under the stated assumptions, then verify the result against current DMHC guidance and the governing plan record.</p>
+        </section>
+
+        <div class="requisition">
+            <p class="mb-0"><strong>IMPORTANT:</strong> The calculator logic runs client-side, and this page's first-party script does not transmit the entered plan name, treatment description, or dates. Timestamps are interpreted in Pacific Time. Business-day estimates count Monday through Friday and do not model holidays or exceptional closures; definitions, clinical exceptions, extensions, and plan-specific facts may produce a different result. This is general information, not legal advice.</p>
+        </div>
+
+        <section aria-labelledby="section-form-heading">
+            <div class="section-tag" aria-hidden="true">TIMELINE ESTIMATOR</div>
+            <h2 id="section-form-heading" class="section-title">Calculate a DMHC Grievance or Timely-Access Estimate</h2>
+            <p class="section-quote">Enter a plan category and Pacific Time timestamp to calculate the selected timeframe under the stated assumptions.</p>
+
+            <div class="grid-2">
+                <div class="input-group">
+                    <label for="plan-type">1. Plan Regulation Category</label>
+                    <select id="plan-type" onchange="togglePlanType()" aria-required="true">
+                        <option value="dmhc" selected>DMHC HMO / Managed Care (HSC § 1368.01 Enforced)</option>
+                        <option value="cdi">CDI PPO (California Department of Insurance)</option>
+                        <option value="erisa">ERISA Self-Insured Plan (Federal Employer Exemption)</option>
+                        <option value="ffs">Fee-for-Service Regular Medi-Cal (DHCS Fair Hearing)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="plan-name">Health Plan Organization Name</label>
+                    <input type="text" id="plan-name" placeholder="e.g., L.A. Care Health Plan" value="L.A. Care Health Plan" aria-required="true">
+                </div>
+
+                <div class="u-style-886e55e7" id="dmhc-fields">
+                    <div class="input-group">
+                        <label for="audit-type">2. Timeline Track</label>
+                        <select id="audit-type" onchange="populateSubcategories()" aria-required="true">
+                            <option value="appointment" selected>Appointment Timely Access Standards (28 CCR § 1300.67.2.2)</option>
+                            <option value="grievance">Plan Grievance Resolution Track (HSC § 1368.01)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="sub-category">3. Specific Timelines Threshold</label>
+                        <select id="sub-category" aria-required="true">
+                            <!-- Populated dynamically via JS -->
+                        </select>
+                    </div>
+
+                    <div class="input-group grid-span-2">
+                        <label for="treatment-name">Affected Treatment / Medication / Service</label>
+                        <input type="text" id="treatment-name" placeholder="e.g., Buprenorphine Refill" value="Buprenorphine Refill" aria-required="true">
+                    </div>
+
+                    <div class="input-group grid-span-2">
+                        <label for="submission-time">4. Submission / Request Date &amp; Time (Pacific Time)</label>
+                        <input type="datetime-local" id="submission-time" aria-required="true">
+                    </div>
+                </div>
+
+                <button type="button" class="btn-calc" onclick="runComplianceAudit()" aria-controls="output-viewport warning-banner">Calculate Timeline Estimate</button>
+            </div>
+
+            <!-- Dynamic Warning Banner with ARIA Live Region -->
+            <div class="forensic-context display-none" id="warning-banner" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+            <!-- Output Viewport with ARIA Live Region -->
+            <section class="output-viewport" id="output-viewport" aria-live="polite" aria-atomic="true" tabindex="-1">
+
+                <!-- Section A: System Audit Metrics Log -->
+                <div class="audit-metrics-panel">
+                    <h2 class="metrics-title">Timeline Estimate Summary</h2>
+                    <dl class="metrics-grid">
+                        <dt class="metric-label">Target Health Plan:</dt>
+                        <dd class="metric-value" id="metric-plan-name">--</dd>
+
+                        <dt class="metric-label">Selected Track:</dt>
+                        <dd class="metric-value highlight-amber" id="metric-category">--</dd>
+
+                        <dt class="metric-label">Enforcing Regulation:</dt>
+                        <dd class="metric-value" id="metric-statute">--</dd>
+
+                        <dt class="metric-label">Base Timestamp:</dt>
+                        <dd class="metric-value" id="metric-submission">--</dd>
+
+                        <dt class="metric-label">Estimated Timeline Date:</dt>
+                        <dd class="metric-value highlight-green" id="metric-deadline">--</dd>
+
+                        <dt class="metric-label">Status at Calculation:</dt>
+                        <dd class="deadline-status" id="metric-status">--</dd>
+                    </dl>
+                </div>
+
+                <!-- Section B: Copyable Formal Demand Notice -->
+                <div class="letter-generator-panel">
+                    <div class="letter-header-row">
+                        <h2 class="letter-title">📋 Generated Timeline Notice Draft</h2>
+                        <div class="letter-actions">
+                            <button type="button" class="btn-copy" onclick="copyDemandLetter()" aria-label="Copy Generated Notice Draft">📋 Copy Draft</button>
+                            <button type="button" class="btn-copy" onclick="downloadDemandLetter()" aria-label="Download Generated Notice Draft as Text">⬇ Download TXT</button>
+                        </div>
+                    </div>
+                    <p class="draft-note"><strong>REVIEW BEFORE SENDING:</strong> This editable draft uses only the facts entered above and the selected timeline. It does not independently determine jurisdiction, exceptions, medical urgency, entitlement to a particular remedy, or whether the plan received or resolved the matter on time.</p>
+                    <label for="demand-letter-output" class="visually-hidden">Generated Timeline Notice Draft</label>
+                    <textarea class="demand-letter-textarea" id="demand-letter-output" aria-label="Generated timeline notice draft ready to review and edit"></textarea>
+                    <p class="calculation-note">Business-day estimates count Monday through Friday and do not model holidays or exceptional closures. Verify current agency guidance, the plan's regulator, definitions, exceptions, extensions, receipt date, and case-specific facts before relying on a result.</p>
+                </div>
+
+            </section>
+        </section>
+
+        <!-- EDITORIAL / DEEP-DIVE SECTION -->
+        <section class="editorial-section" aria-labelledby="section-editorial">
+            <div class="section-tag" aria-hidden="true">EDITORIAL STUDY</div>
+            <h2 id="section-editorial" class="section-title">Understanding the Selected Timeframes</h2>
+
+            <h3>Published timeframes still require case-specific review</h3>
+            <p>
+                DMHC materials describe 30 days for standard grievances, three days for qualifying urgent grievances, and appointment-access standards that vary by request type. Those timeframes do not answer whether a particular plan, request, grievance, exception, or extension fits the selected category. Treat the calculation as a record-review aid, not a legal conclusion.
+            </p>
+
+            <h3>Business days, calendar days, and disclosed assumptions</h3>
+            <p>
+                Appointment-access standards use hours or business days, while the grievance selections use calendar days. This tool performs arithmetic in Pacific Time and treats Monday through Friday as business days without modeling holidays. Because official measurement instructions, definitions, receipt times, plan records, clinical exceptions, amendments, or closures may affect the result, check current sources before treating the estimate as operative.
+            </p>
+
+            <h3>What happens after the selected timeline date passes</h3>
+            <p>
+                Preserve the original request, proof of receipt, plan correspondence, and any clinical records. Depending on the facts, DMHC guidance may allow a consumer complaint or an Independent Medical Review. Urgent matters may qualify for immediate DMHC assistance. The editable draft identifies the selected timeframe without deciding eligibility for a remedy; verify the process directly with the regulator.
+            </p>
+        </section>
+
+        <!-- FREE ALTERNATIVE COMPARISON BLOCK -->
+        <section class="u-style-82ea0bd5" aria-labelledby="comparison-heading">
+            <div class="section-tag u-style-9259a0b9" aria-hidden="true">SCOPE &amp; LIMITATIONS</div>
+            <h2 class="u-style-85eaa9d9" id="comparison-heading">What This Calculator Can and Cannot Establish</h2>
+            <p class="mb-0">
+                The calculator can reproduce arithmetic for one selected timeframe and create an editable draft. It cannot determine which regulator governs a plan, whether a request is urgent, whether an exception or extension applies, when a plan legally received a submission, or whether a response satisfies the governing standard.
+            </p>
+            <p>
+                DMHC states that standard grievances generally must be resolved within 30 days and that urgent issues may be eligible for immediate assistance. Current official instructions and the plan record control over this calculator's output.
+            </p>
+            <p class="mb-0">
+                CalAudit's California Health Plan Timeline Calculator is a public, client-side, and free tool designed to make the selected timeline visible. It generates a reproducible calculation and an editable draft that users can compare with their own records, the governing rule, and current agency guidance.
+            </p>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="faq-section" aria-labelledby="faq-title">
+            <div class="section-tag" aria-hidden="true">FORENSIC FAQ</div>
+            <h2 id="faq-title" class="section-title">DMHC &amp; Knox-Keene Timeline Questions</h2>
+
+            <details class="faq-item">
+                <summary><span class="faq-icon" aria-hidden="true">▶</span> How long does a California health plan have to respond to a grievance?</summary>
+                <div class="faq-answer">For the DMHC grievance track implemented by this calculator, the standard selection uses 30 calendar days and the expedited or urgent selection uses 72 hours. Whether that track applies to a particular matter depends on the plan, urgency, receipt, exceptions, extensions, and case-specific facts, so verify the result against current DMHC guidance and the plan record.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary><span class="faq-icon" aria-hidden="true">▶</span> What is the DMHC 30-day grievance timeline?</summary>
+                <div class="faq-answer">The calculator's standard grievance option applies a 30-calendar-day timeframe from the Pacific Time timestamp you enter. The output is a date estimate under the disclosed assumptions, not a determination that the plan legally received the grievance at that exact time or that no exception or extension applies.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary><span class="faq-icon" aria-hidden="true">▶</span> How long does an urgent grievance take under Knox-Keene?</summary>
+                <div class="faq-answer">The expedited grievance option in this tool uses a 72-hour timeframe under the selected HSC § 1368.01 track. The calculator does not decide whether a grievance qualifies as urgent; verify urgency criteria and current agency guidance before relying on the estimate.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary><span class="faq-icon" aria-hidden="true">▶</span> What are California timely-access standards for health-plan appointments?</summary>
+                <div class="faq-answer">This calculator includes selected DMHC appointment-access categories measured in either hours or business days, including urgent care and non-urgent primary-care, specialist, mental-health or substance-use-disorder, and ancillary-service selections. The result depends on the category chosen and the calculator does not determine whether an exception, extension, or different standard applies.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary><span class="faq-icon" aria-hidden="true">▶</span> How long can I wait for a specialist appointment in California?</summary>
+                <div class="faq-answer">The non-urgent specialist option in this calculator uses a 15-business-day timeframe under the selected DMHC timely-access track. Business-day calculations count Monday through Friday and do not model holidays or exceptional closures, so compare the estimate with current DMHC instructions and your plan's records.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary><span class="faq-icon" aria-hidden="true">▶</span> Does this calculator apply to PPO, ERISA, or fee-for-service Medi-Cal plans?</summary>
+                <div class="faq-answer">Not automatically. The tool is built around selected DMHC-managed-care timelines. If you choose CDI PPO, ERISA self-funded, or fee-for-service Medi-Cal, the calculator warns that a different regulatory track may apply and does not produce the DMHC timeline output without further verification.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary><span class="faq-icon" aria-hidden="true">▶</span> Does this tool require personal medical or identifying information?</summary>
+                <div class="faq-answer">No. The calculation and draft-generation code run in the browser, and this tool's JavaScript does not send the entered plan name, treatment description, or dates to a CalAudit endpoint. Avoid entering identifiers or clinical details you do not need for the calculation.</div>
+            </details>
+        </section>
+
+        <section class="related-tools" aria-label="Related Tools">
+            <h3>// RELATED COMPLIANCE UTILITIES</h3>
+            <ul>
+                <li><a href="/tools/privacy-scrubber/">PDF Redaction Tool</a></li>
+                <li><a href="/knox-keene/">Knox-Keene Editorial Resource</a></li>
+            </ul>
+        </section>
+    </main>
+
+</div>
+
+<script src="/nav.js"></script>
+
+    <script>
+        const PACIFIC_TIME_ZONE = 'America/Los_Angeles';
+
+        const subcategories = {
+            appointment: [
+                { value: "urgent_no_auth", label: "Urgent Care - No Prior Auth Required (48 Hours)", text: "48 hours", ref: "28 CCR § 1300.67.2.2(c)(5)(A)", hours: 48 },
+                { value: "urgent_auth", label: "Urgent Care - Requires Prior Auth (96 Hours)", text: "96 hours", ref: "28 CCR § 1300.67.2.2(c)(5)(B)", hours: 96 },
+                { value: "pcp", label: "Non-Urgent Primary Care PCP (10 Business Days)", text: "10 business days", ref: "28 CCR § 1300.67.2.2(c)(5)(C)", bizDays: 10 },
+                { value: "scp", label: "Non-Urgent Specialist SCP (15 Business Days)", text: "15 business days", ref: "28 CCR § 1300.67.2.2(c)(5)(D)", bizDays: 15 },
+                { value: "mental", label: "Non-Physician Mental Health / SUD (10 Business Days)", text: "10 business days", ref: "28 CCR § 1300.67.2.2(c)(5)(E)", bizDays: 10 },
+                { value: "ancillary", label: "Ancillary Services for Diagnosis/Treatment (15 Business Days)", text: "15 business days", ref: "28 CCR § 1300.67.2.2(c)(5)(F)", bizDays: 15 }
+            ],
+            grievance: [
+                { value: "expedited", label: "Expedited / Urgent Grievance (72 Hours - HSC § 1368.01(b))", text: "72 hours", ref: "Health & Safety Code § 1368.01(b)", hours: 72 },
+                { value: "standard", label: "Standard Non-Urgent Grievance (30 Calendar Days - HSC § 1368.01(a))", text: "30 calendar days", ref: "Health & Safety Code § 1368.01(a)", calDays: 30 }
+            ]
+        };
+
+        const pacificPartsFormatter = new Intl.DateTimeFormat('en-US', {
+            timeZone: PACIFIC_TIME_ZONE,
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hourCycle: 'h23'
+        });
+
+        function partsObject(formatter, date) {
+            return formatter.formatToParts(date).reduce((acc, part) => {
+                if (part.type !== 'literal') acc[part.type] = part.value;
+                return acc;
+            }, {});
+        }
+
+        function getPacificParts(date) {
+            const parts = partsObject(pacificPartsFormatter, date);
+            return {
+                year: Number(parts.year),
+                month: Number(parts.month),
+                day: Number(parts.day),
+                hour: Number(parts.hour),
+                minute: Number(parts.minute),
+                second: Number(parts.second)
+            };
+        }
+
+        function getPacificOffsetMinutes(date) {
+            const formatter = new Intl.DateTimeFormat('en-US', {
+                timeZone: PACIFIC_TIME_ZONE,
+                timeZoneName: 'longOffset',
+                year: 'numeric'
+            });
+            const zoneName = formatter.formatToParts(date).find(part => part.type === 'timeZoneName')?.value || 'GMT-08:00';
+            const match = zoneName.match(/GMT([+-])(\d{2}):(\d{2})/);
+            if (!match) throw new Error('Unable to determine Pacific Time offset.');
+            const sign = match[1] === '+' ? 1 : -1;
+            return sign * (Number(match[2]) * 60 + Number(match[3]));
+        }
+
+        function pacificPartsToDate(parts) {
+            const wallClockAsUTC = Date.UTC(parts.year, parts.month - 1, parts.day, parts.hour || 0, parts.minute || 0, parts.second || 0);
+            let candidate = new Date(wallClockAsUTC);
+
+            for (let i = 0; i < 4; i++) {
+                const offsetMinutes = getPacificOffsetMinutes(candidate);
+                candidate = new Date(wallClockAsUTC - offsetMinutes * 60_000);
+            }
+
+            const check = getPacificParts(candidate);
+            const valid = ['year', 'month', 'day', 'hour', 'minute'].every(key => check[key] === Number(parts[key] || 0));
+            if (!valid) {
+                throw new Error('That Pacific Time does not exist because of a daylight-saving clock change. Choose another time.');
+            }
+            return candidate;
+        }
+
+        function parsePacificDateTimeLocal(value) {
+            const match = String(value).match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})$/);
+            if (!match) throw new Error('Enter a complete date and time.');
+            return pacificPartsToDate({
+                year: Number(match[1]),
+                month: Number(match[2]),
+                day: Number(match[3]),
+                hour: Number(match[4]),
+                minute: Number(match[5]),
+                second: 0
+            });
+        }
+
+        function formatPacificInputValue(date) {
+            const p = getPacificParts(date);
+            const pad = number => String(number).padStart(2, '0');
+            return `${p.year}-${pad(p.month)}-${pad(p.day)}T${pad(p.hour)}:${pad(p.minute)}`;
+        }
+
+        function formatPT(date) {
+            return new Intl.DateTimeFormat('en-US', {
+                timeZone: PACIFIC_TIME_ZONE,
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: true,
+                timeZoneName: 'short'
+            }).format(date).replace(' at ', ', at ');
+        }
+
+        function addCivilDays(civil, days) {
+            const date = new Date(Date.UTC(civil.year, civil.month - 1, civil.day));
+            date.setUTCDate(date.getUTCDate() + days);
+            return {
+                year: date.getUTCFullYear(),
+                month: date.getUTCMonth() + 1,
+                day: date.getUTCDate()
+            };
+        }
+
+        function civilDayOfWeek(civil) {
+            return new Date(Date.UTC(civil.year, civil.month - 1, civil.day)).getUTCDay();
+        }
+
+        function addPacificCalendarDays(startDate, days) {
+            const p = getPacificParts(startDate);
+            const civil = addCivilDays(p, days);
+            return pacificPartsToDate({ ...civil, hour: p.hour, minute: p.minute, second: p.second });
+        }
+
+        function addBusinessDays(startDate, days) {
+            const p = getPacificParts(startDate);
+            let civil = { year: p.year, month: p.month, day: p.day };
+            let added = 0;
+
+            while (added < days) {
+                civil = addCivilDays(civil, 1);
+                const weekday = civilDayOfWeek(civil);
+                const weekend = weekday === 0 || weekday === 6;
+                if (!weekend) added++;
+            }
+
+            return pacificPartsToDate({ ...civil, hour: p.hour, minute: p.minute, second: p.second });
+        }
+
+        function formatDuration(milliseconds) {
+            const totalMinutes = Math.max(0, Math.floor(milliseconds / 60_000));
+            const days = Math.floor(totalMinutes / 1440);
+            const hours = Math.floor((totalMinutes % 1440) / 60);
+            const minutes = totalMinutes % 60;
+            const parts = [];
+            if (days) parts.push(`${days} day${days === 1 ? '' : 's'}`);
+            if (hours) parts.push(`${hours} hour${hours === 1 ? '' : 's'}`);
+            if (!days && minutes) parts.push(`${minutes} minute${minutes === 1 ? '' : 's'}`);
+            return parts.join(', ') || 'less than one minute';
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('submission-time').value = formatPacificInputValue(new Date());
+            populateSubcategories();
+        });
+
+        function populateSubcategories() {
+            const auditType = document.getElementById('audit-type').value;
+            const subCategorySelect = document.getElementById('sub-category');
+            subCategorySelect.innerHTML = '';
+
+            subcategories[auditType].forEach(sub => {
+                const opt = document.createElement('option');
+                opt.value = sub.value;
+                opt.textContent = sub.label;
+                subCategorySelect.appendChild(opt);
+            });
+        }
+
+        function togglePlanType() {
+            const planType = document.getElementById('plan-type').value;
+            const dmhcFields = document.getElementById('dmhc-fields');
+            const warningBanner = document.getElementById('warning-banner');
+            const outputViewport = document.getElementById('output-viewport');
+
+            warningBanner.style.display = 'none';
+            outputViewport.style.display = 'none';
+
+            const dmhcInputs = [
+                document.getElementById('audit-type'),
+                document.getElementById('sub-category'),
+                document.getElementById('treatment-name'),
+                document.getElementById('submission-time')
+            ];
+
+            if (planType === 'dmhc') {
+                dmhcFields.style.opacity = '1';
+                dmhcFields.style.pointerEvents = 'all';
+                dmhcInputs.forEach(input => {
+                    input.disabled = false;
+                    input.setAttribute('aria-disabled', 'false');
+                });
+            } else {
+                dmhcFields.style.opacity = '0.4';
+                dmhcFields.style.pointerEvents = 'none';
+                dmhcInputs.forEach(input => {
+                    input.disabled = true;
+                    input.setAttribute('aria-disabled', 'true');
+                });
+                runComplianceAudit();
+            }
+        }
+
+        function runComplianceAudit() {
+            const planType = document.getElementById('plan-type').value;
+            const planName = document.getElementById('plan-name').value.trim() || 'Health Plan';
+            const auditType = document.getElementById('audit-type').value;
+            const subCategoryValue = document.getElementById('sub-category').value;
+            const treatmentName = document.getElementById('treatment-name').value.trim() || 'the requested service';
+            const submissionVal = document.getElementById('submission-time').value;
+
+            const warningBanner = document.getElementById('warning-banner');
+            const outputViewport = document.getElementById('output-viewport');
+
+            warningBanner.style.display = 'none';
+            outputViewport.style.display = 'none';
+
+            if (planType !== 'dmhc') {
+                let warningHtml = '';
+                if (planType === 'cdi') {
+                    warningHtml = `<strong>⚠️ DIFFERENT REGULATORY TRACK SELECTED:</strong><br>
+                    The selected category is generally handled under the <strong>California Department of Insurance (CDI)</strong> rather than this DMHC calculator.<br>
+                    Do not use the HSC § 1368.01 output without first verifying the plan's regulator and the rule that governs the dispute. CDI consumer resources are available at <a href="https://www.insurance.ca.gov" target="_blank" rel="noopener noreferrer">insurance.ca.gov<span class="sr-only"> (opens in a new window)</span></a>.`;
+                } else if (planType === 'erisa') {
+                    warningHtml = `<strong>⚠️ FEDERAL PLAN STATUS REQUIRES VERIFICATION:</strong><br>
+                    A self-funded employer or union plan is generally governed primarily by federal <strong>ERISA</strong> rules, and state insurance mandates may be preempted.<br>
+                    This calculator does not determine whether a plan is self-funded or which state protections may still apply. Verify the plan document and contact the plan administrator or the U.S. Department of Labor before selecting a timeline.`;
+                } else if (planType === 'ffs') {
+                    warningHtml = `<strong>⚠️ FEE-FOR-SERVICE MEDI-CAL TRACK:</strong><br>
+                    Fee-for-Service Medi-Cal is administered outside this DMHC managed-care timeline calculator.<br>
+                    The correct path depends on the type of decision and notice. Review DHCS/CDSS instructions and any hearing-rights language on the notice before filing. CDSS resources are available at <a href="https://www.cdss.ca.gov" target="_blank" rel="noopener noreferrer">cdss.ca.gov<span class="sr-only"> (opens in a new window)</span></a>.`;
+                }
+                warningBanner.innerHTML = warningHtml;
+                warningBanner.style.display = 'block';
+                return;
+            }
+
+            if (!submissionVal) {
+                alert('Error: Please enter a Pacific Time request timestamp.');
+                document.getElementById('submission-time').focus();
+                return;
+            }
+
+            let submissionDate;
+            try {
+                submissionDate = parsePacificDateTimeLocal(submissionVal);
+            } catch (error) {
+                alert(`Error: ${error.message}`);
+                document.getElementById('submission-time').focus();
+                return;
+            }
+
+            const config = subcategories[auditType].find(sub => sub.value === subCategoryValue);
+            if (!config) {
+                alert('System Error: Invalid subcategory configuration selected.');
+                return;
+            }
+
+            let deadlineDate;
+            if (config.hours) {
+                deadlineDate = new Date(submissionDate.getTime() + config.hours * 60 * 60 * 1000);
+            } else if (config.calDays) {
+                deadlineDate = addPacificCalendarDays(submissionDate, config.calDays);
+            } else if (config.bizDays) {
+                deadlineDate = addBusinessDays(submissionDate, config.bizDays);
+            } else {
+                alert('System Error: No calculation method is configured for this selection.');
+                return;
+            }
+
+            const submissionStr = formatPT(submissionDate);
+            const deadlineStr = formatPT(deadlineDate);
+            const calculatedAt = new Date();
+            const calculatedAtStr = formatPT(calculatedAt);
+            const difference = calculatedAt.getTime() - deadlineDate.getTime();
+            const isPast = difference >= 0;
+            const statusText = isPast
+                ? `Past the estimated timeline date by ${formatDuration(difference)}`
+                : `Estimated timeline date is in ${formatDuration(-difference)}`;
+
+            document.getElementById('metric-plan-name').innerText = planName;
+            document.getElementById('metric-category').innerText = config.label;
+            document.getElementById('metric-statute').innerText = config.ref;
+            document.getElementById('metric-submission').innerText = submissionStr;
+            document.getElementById('metric-deadline').innerText = deadlineStr;
+
+            const metricStatus = document.getElementById('metric-status');
+            metricStatus.innerText = statusText;
+            metricStatus.className = `deadline-status ${isPast ? 'is-past' : 'is-future'}`;
+
+            const statusParagraph = isPast
+                ? `As of ${calculatedAtStr}, the calculator's estimated timeline date has passed. Based on my records, please state in writing whether the plan considers the matter resolved, the date and method of any response, and the basis for any different timeline calculation.`
+                : `As of ${calculatedAtStr}, the calculator's estimated timeline date has not yet arrived. This notice is intended to preserve the request timestamp and ask which timeframe the plan is using.`;
+
+            const issueDescription = auditType === 'appointment'
+                ? `a request for timely access to ${treatmentName}`
+                : `a grievance concerning ${treatmentName}`;
+
+            const requestedRecords = auditType === 'appointment'
+                ? `Please provide:\n1. The date and time the request was received;\n2. The appointment or access option offered, including provider name and earliest available date;\n3. Any documented clinical determination supporting a longer waiting time; and\n4. The plan's written position on whether the selected timely-access standard applies.`
+                : `Please provide:\n1. The date and time the grievance was received;\n2. Any acknowledgment, disposition, or pending-status notice issued;\n3. The date and method of each notice; and\n4. The plan's written position on whether the selected grievance timeframe applies.`;
+
+            const letterText = `TO: ${planName}\nSUBJECT: REQUEST TO CONFIRM APPLICABLE ${auditType === 'appointment' ? 'TIMELY-ACCESS' : 'GRIEVANCE'} TIMEFRAME\n\nI am documenting ${issueDescription}. The request or grievance timestamp entered for this calculation is ${submissionStr}.\n\nSELECTED STANDARD\n${config.label}\nCitation: ${config.ref}\nPublished timeframe selected: ${config.text}\n\nCALCULATOR ESTIMATE\n${deadlineStr}\n\n${statusParagraph}\n\n${requestedRecords}\n\nPlease preserve records associated with this matter, including intake logs, portal submissions, routing records, delegated-entity communications, clinical-review records, and notices sent to me.\n\nThis draft reflects the facts entered into a general-purpose calculator. It does not determine jurisdiction, receipt, urgency, exceptions, compliance, or legal rights.\n\nSincerely,\n[NAME]\n[MEMBER OR CASE NUMBER, IF YOU CHOOSE TO INCLUDE IT]\n[DATE]`;
+
+            document.getElementById('demand-letter-output').value = letterText;
+            outputViewport.style.display = 'block';
+
+            setTimeout(() => {
+                outputViewport.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                outputViewport.focus();
+            }, 100);
+        }
+
+        async function copyDemandLetter() {
+            const letterTextarea = document.getElementById('demand-letter-output');
+            try {
+                await navigator.clipboard.writeText(letterTextarea.value);
+                alert('✓ Notice draft copied to clipboard.');
+            } catch {
+                letterTextarea.focus();
+                letterTextarea.select();
+                alert('Clipboard access was blocked. The draft has been selected for manual copying.');
+            }
+        }
+
+        function downloadDemandLetter() {
+            const text = document.getElementById('demand-letter-output').value;
+            if (!text.trim()) {
+                alert('Calculate a timeline estimate before downloading a draft.');
+                return;
+            }
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'calaudit-timeline-notice-draft.txt';
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+
+       <footer class="page-footer" role="contentinfo">
+    <div class="footer-inner">
+        <p>© 2026 CALAUDIT | Nicolas Hernandez — Public Interest Initiative | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+        <p><strong>OPEN SOURCE LICENSE NOTICE:</strong> All original utility code, tools, and web application logic on this platform are distributed under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">GNU AGPLv3</a>. All public health form archives, translated materials, and investigative guides are licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>. Commercial exploitation, proprietary re-licensing, or paywalling without strict attribution is strictly prohibited.</p>
+        <p class="onion-mirror" aria-label="Tor Onion Mirror Address">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+    </div>
+</footer>
+
+<script>/* Onion Link Patch */ (function(){if(window.location.hostname.endsWith('.onion')){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(h&&!h.startsWith('http')&&!h.startsWith('mailto:')&&!h.startsWith('tel:')&&!h.startsWith('#')){var p=h.split('/');var l=p[p.length-1];if(l!==''&&!l.includes('.')){a.setAttribute('href',h+'.html')}else if(h.endsWith('/')){a.setAttribute('href',h+'index.html')}}})}})();</script>
+
+</body>
+</html>

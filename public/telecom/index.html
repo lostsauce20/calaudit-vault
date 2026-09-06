@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>T-Mobile EIP Audit &amp; Executive Resolution | CalAudit</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="canonical" href="https://calaudit.org/telecom/">
+    <meta name="description" content="Forensic success dossier documenting the T-Mobile executive resolution cycle, EIP reversals, and retail-billing contradiction closure.">
+    <meta name="keywords" content="Motorola forensics, FCC compliance, P25 radio audit, telecom firmware, radio frequency spectrum, federal telecom mandate">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="geo.region" content="US-DC">
+    <meta name="geo.placename" content="Washington, District of Columbia">
+    <meta name="geo.position" content="38.9056;-77.0054">
+    <meta name="ICBM" content="38.9056, -77.0054">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="CalAudit">
+    <meta property="og:url" content="https://calaudit.org/telecom/">
+    <meta property="og:title" content="T-Mobile Audit Success | EIP Reversal &amp; Executive Resolution">
+    <meta property="og:description" content="Forensic success dossier documenting the T-Mobile executive resolution cycle, EIP reversals, and retail-billing contradiction closure.">
+    <meta property="og:image" content="https://calaudit.org/calauditlogo.webp">
+    <meta property="og:image:alt" content="CalAudit Official Logo">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://calaudit.org/telecom/">
+    <meta name="twitter:title" content="T-Mobile Success | Executive Resolution">
+    <meta name="twitter:description" content="Technical audit success story: Documenting the reversal of carrier-level billing friction.">
+    <meta name="twitter:image" content="https://calaudit.org/calauditlogo.webp">
+    <meta name="twitter:image:alt" content="CalAudit Official Logo">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://calaudit.org/#organization",
+          "name": "CalAudit",
+          "url": "https://calaudit.org/",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://calaudit.org/#logo",
+            "url": "https://calaudit.org/calauditlogo.webp",
+            "contentUrl": "https://calaudit.org/calauditlogo.webp",
+            "caption": "CalAudit Official Logo"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://calaudit.org/#nicolas-hernandez",
+          "name": "Nicolas Hernandez",
+          "url": "https://calaudit.org/"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://calaudit.org/#website",
+          "url": "https://calaudit.org/",
+          "name": "CalAudit",
+          "publisher": { "@id": "https://calaudit.org/#organization" }
+        },
+        {
+          "@type": "WebPage",
+          "dateModified": "2026-07-02",
+          "@id": "https://calaudit.org/telecom/#webpage",
+          "url": "https://calaudit.org/telecom/",
+          "name": "T-Mobile Audit Success | EIP & Executive Resolution | CalAudit",
+          "description": "Forensic success dossier documenting the T-Mobile executive resolution cycle, EIP reversals, and retail-billing contradiction closure.",
+          "isPartOf": { "@id": "https://calaudit.org/#website" },
+          "breadcrumb": { "@id": "https://calaudit.org/telecom/#breadcrumb" },
+          "primaryImageOfPage": { "@id": "https://calaudit.org/#logo" }
+        },
+        {
+          "@type": "TechArticle",
+          "@id": "https://calaudit.org/telecom/#article",
+          "isPartOf": { "@id": "https://calaudit.org/telecom/#webpage" },
+          "mainEntityOfPage": { "@id": "https://calaudit.org/telecom/#webpage" },
+          "headline": "T-Mobile Audit: Executive Resolution & EIP Reversal",
+          "description": "Technical case file detailing the manual correction of point-of-sale promotional accounting discrepancies through regulatory escalation channels.",
+          "author": { "@id": "https://calaudit.org/#nicolas-hernandez" },
+          "publisher": { "@id": "https://calaudit.org/#organization" },
+          "image": { "@id": "https://calaudit.org/#logo" },
+          "about": [
+            {
+              "@type": "Organization",
+              "name": "T-Mobile USA, Inc.",
+              "sameAs": "https://en.wikipedia.org/wiki/T-Mobile_US"
+            },
+            {
+              "@type": "GovernmentOrganization",
+              "name": "Federal Communications Commission",
+              "alternateName": "FCC",
+              "sameAs": "https://en.wikipedia.org/wiki/Federal_Communications_Commission"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://calaudit.org/telecom/#faq",
+          "isPartOf": { "@id": "https://calaudit.org/telecom/#webpage" },
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is an EIP billing contradiction?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "An EIP (Equipment Installment Plan) contradiction occurs when the original retail purchase terms conflict with the carrier's internal billing system. This technical disconnect often results in the carrier failing to apply promotional credits or charging incorrect monthly installment amounts."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why do EIP errors happen with third-party retailers like Walmart?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Third-party retailers utilize point-of-sale systems that operate independently from T-Mobile’s core billing infrastructure. If the retail EIP documentation fails to sync correctly with T-Mobile’s backend, the carrier may not recognize the original promotional terms, leading to systemic billing friction that frontline support often cannot fix."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I force T-Mobile to reverse an incorrect EIP charge?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "When standard customer service cannot resolve the contradiction, you must compile forensic proof. This involves cross-referencing your original retail purchase documentation (e.g., Walmart receipts) against snapshots of the erroneous T-Mobile billing environment. Presenting this strict technical documentation to T-Mobile Executive Customer Relations or through a regulatory complaint forces a manual review and reversal of the technical billing errors."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://calaudit.org/telecom/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "CalAudit",
+              "item": "https://calaudit.org/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Forensic Vault",
+              "item": "https://calaudit.org/forensic-vault/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "T-Mobile Audit Success",
+              "item": "https://calaudit.org/telecom/"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        /* WCAG 2.2 AAA Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -50px;
+            left: 0;
+            background: #00ff00;
+            color: #000;
+            padding: 10px 15px;
+            font-family: var(--mono, monospace);
+            font-weight: bold;
+            z-index: 9999;
+            transition: top 0.2s ease;
+            text-decoration: none;
+        }
+        .skip-link:focus, .skip-link:active {
+            top: 0;
+            outline: 3px solid #fff;
+            outline-offset: 2px;
+        }
+
+        /* Core Styles */
+        .audit-box.success { border-left: 4px solid #00ff00; background: rgba(0,255,0,0.02); }
+        .success-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 25px; }
+        @media (max-width: 768px) {
+            .success-grid { grid-template-columns: 1fr; }
+        }
+        .success-item { background: rgba(255,255,255,0.02); border: 1px solid #333; padding: 15px; }
+        .success-label { font-family: var(--mono, monospace); color: #00ff00; font-size: 0.75rem; margin-bottom: 10px; display: block; letter-spacing: 0.05em; }
+        .success-img { width: 100%; border: 1px solid #222; margin-top: 10px; transition: transform 0.2s, border-color 0.2s; display: block; }
+        .success-img:hover, .success-img:focus { transform: scale(1.02); border-color: #00ff00; }
+        .success-badge { display: inline-block; background: #00ff00; color: #000; padding: 4px 8px; font-family: var(--mono, monospace); font-size: 0.75rem; font-weight: bold; margin-bottom: 15px; letter-spacing: 0.05em; text-transform: uppercase; }
+        .faq-question { font-family: var(--mono, monospace); color: #00ff00; font-weight: bold; margin-bottom: 8px; font-size: 0.95rem; letter-spacing: 0.05em; }
+        .faq-answer { font-family: var(--sans, sans-serif); color: #e0e0e0; font-size: 0.875rem; line-height: 1.6; }
+
+        /* WCAG 2.2 AAA Focus Visibility Fixes */
+        a:focus-visible, summary:focus-visible {
+            outline: 3px solid #00ff00 !important;
+            outline-offset: 4px;
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="vault-container">
+    <!-- Navigation Landmark -->
+    <nav class="back-btn-container" aria-label="Breadcrumb Navigation">
+      <a href="/forensic-vault/" class="back-btn" aria-label="Return to the main Forensic Vault page">← Return to Forensic Vault</a>
+    </nav>
+
+    <!-- Structural Main Layout -->
+    <main id="main-content" role="main">
+        <!-- Structural Header Section -->
+        <header role="banner" class="header">
+            <div class="page-label" aria-hidden="true">SUCCESS DOSSIER // CASE CLOSED</div>
+            <h1 class="page-title">T-MOBILE AUDIT: EXECUTIVE RESOLUTION & EIP REVERSAL</h1>
+            <p class="page-subtitle">"Documenting the Capitulation of Corporate Friction via Forensic Pressure"</p>
+        </header>
+
+        <!-- RESOLUTION ALERT SUMMARY -->
+        <article class="audit-box success" aria-labelledby="resolution-summary-title">
+            <h2 id="resolution-summary-title" class="visually-hidden u-style-8e2860de">Resolution Status Summary</h2>
+            <div class="success-badge" aria-hidden="true">RESOLVED</div>
+            <p>The T-Mobile Technical Audit has concluded with a 100% resolution. Following the application of technical forensic pressure and an informal FCC filing, T-Mobile Executive Customer Relations initiated a reversal of all disputed EIP (Equipment Installment Plan) charges and provided a formal resolution letter. This dossier serves as the <strong>Success Template</strong> for carrier disputes.</p>
+        </article>
+
+        <!-- STAGE 01: HARDWARE-PORTAL CONTRADICTION -->
+        <section id="contradiction" aria-labelledby="stage-01-title">
+            <div class="section-tag" aria-hidden="true">// Stage 01: Hardware-Portal Contradiction</div>
+            <div class="audit-box success warfare">
+                <h2 class="u-style-aa4ba2d7" id="stage-01-title">Technical Proof of Friction</h2>
+                <p>The audit began by documenting the discrepancy between third-party retail EIP status (Walmart) and T-Mobile's internal billing environment, alongside the formal FCC complaint submission and its technical details.</p>
+
+                <div class="success-grid">
+                    <article class="success-item">
+                        <h3 class="success-label">EXHIBIT TM-01 // RETAIL PURCHASE ORIGIN</h3>
+                        <p>Walmart retail EIP documentation establishing the purchase date and terms contradicting subsequent billing errors.</p>
+                        <figure class="m-0">
+                            <a href="/calevidence/tmobile-walmart-eip-redacted.webp" target="_blank" rel="noopener noreferrer" aria-label="View redacted Walmart EIP receipt (opens in a new tab)">
+                                <img src="/calevidence/tmobile-walmart-eip-redacted.webp" class="success-img" alt="Redacted Walmart retail Equipment Installment Plan receipt showing purchase origin and initial terms">
+                            </a>
+                        </figure>
+                    </article>
+                    <article class="success-item">
+                        <h3 class="success-label">EXHIBIT TM-02 // BILLING SNAPSHOT</h3>
+                        <p>Forensic capture of the T-Mobile billing environment documenting the uncorrected friction prior to executive resolution.</p>
+                        <figure class="m-0">
+                            <a href="/calevidence/tmobile-bill-redacted.webp" target="_blank" rel="noopener noreferrer" aria-label="View redacted T-Mobile billing snapshot (opens in a new tab)">
+                                <img src="/calevidence/tmobile-bill-redacted.webp" class="success-img" alt="Redacted snapshot of the T-Mobile billing environment displaying systemic EIP friction">
+                            </a>
+                        </figure>
+                    </article>
+                    <article class="success-item">
+                        <h3 class="success-label">EXHIBIT TM-03 // FORMAL SUBMISSION</h3>
+                        <p>Official FCC complaint submission record documenting the formal filing against the carrier.</p>
+                        <figure class="m-0">
+                            <a href="/calevidence/fcc-complaint-1.webp" target="_blank" rel="noopener noreferrer" aria-label="View official FCC complaint submission (opens in a new tab)">
+                                <img src="/calevidence/fcc-complaint-1.webp" class="success-img" alt="Official FCC complaint submission confirmation page for the T-Mobile dispute">
+                            </a>
+                        </figure>
+                    </article>
+                    <article class="success-item">
+                        <h3 class="success-label">EXHIBIT TM-04 // COMPLAINT DETAILS</h3>
+                        <p>Detailed breakdown of the FCC complaint submission form with carrier-specific friction notes.</p>
+                        <figure class="m-0">
+                            <a href="/calevidence/fcc-complaint-2-redacted.webp" target="_blank" rel="noopener noreferrer" aria-label="View redacted FCC complaint details (opens in a new tab)">
+                                <img src="/calevidence/fcc-complaint-2-redacted.webp" class="success-img" alt="Redacted text details of the formal FCC complaint explaining the point-of-sale discrepancies">
+                            </a>
+                        </figure>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- STAGE 02: EIP TECHNICAL PROTOCOLS -->
+        <section id="eip-protocols" aria-labelledby="stage-02-title">
+            <div class="section-tag" aria-hidden="true">// Stage 02: EIP Technical Protocols</div>
+            <div class="audit-box success">
+                <h2 class="u-style-aa4ba2d7" id="stage-02-title">Standard T-Mobile EIP Structural Rules</h2>
+                <p>To audit carrier-level billing anomalies, you must understand the standard contractual constraints governing T-Mobile's Equipment Installment Plans (EIP) as documented in their official policy support:</p>
+                <ul class="u-style-238bd1f0">
+                    <li class="mb-10"><strong>Interest-Free Financing:</strong> EIP allows qualifying buyers to purchase hardware via interest-free installment agreements, preventing compound financial interest accumulation.</li>
+                    <li class="mb-10"><strong>Standard Installment Terms:</strong> Primary device EIP agreements are structured strictly around a <strong>24-month payment cycle</strong>. Qualifying accessory purchases exceeding $49 are placed on a shorter <strong>12-month payment cycle</strong>.</li>
+                    <li class="mb-10"><strong>Down Payment Requirements:</strong> Device down payments are calculated dynamically based on credit qualification tiers and the device's retail price. Any required down payments must be settled immediately at the point of purchase.</li>
+                    <li class="mb-10"><strong>Service Cancellation Clause:</strong> If wireless service is terminated or suspended, the <strong>entire remaining EIP hardware balance becomes due immediately</strong> on the subsequent billing cycle, neutralizing standard monthly terms.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- STAGE 03: THE CAPITULATION -->
+        <section id="capitulation" aria-labelledby="stage-03-title">
+            <div class="section-tag" aria-hidden="true">// Stage 03: Corporate Capitulation</div>
+            <div class="audit-box success green">
+                <h2 class="u-style-aa4ba2d7" id="stage-03-title">Final Resolution & Resolution Letter</h2>
+                <p>The successful outcome: Full reversal of technical friction and a written executive apology. These exhibits document the formal closing of the T-Mobile audit cycle.</p>
+
+                <div class="success-grid">
+                    <article class="success-item">
+                        <h3 class="success-label">EXHIBIT TM-05 // EXECUTIVE CONTACT</h3>
+                        <p>Initial executive contact from the T-Mobile CEO's Office (Jan 26, 2026), acknowledging the forensic pressure.</p>
+                        <figure class="m-0">
+                            <a href="/calevidence/jan-26-2026-tmobile-ceo-office-email-redacted.webp" target="_blank" rel="noopener noreferrer" aria-label="View executive contact email (opens in a new tab)">
+                                <img src="/calevidence/jan-26-2026-tmobile-ceo-office-email-redacted.webp" class="success-img" alt="Redacted email correspondence from the T-Mobile CEO's Office initiating executive resolution">
+                            </a>
+                        </figure>
+                    </article>
+                    <article class="success-item">
+                        <h3 class="success-label">EXHIBIT TM-06 // FINAL TICKET RESPONSE</h3>
+                        <p>Final FCC ticket closure documentation (Jan 26, 2026) marking the successful completion of the audit.</p>
+                        <figure class="m-0">
+                            <a href="/calevidence/jan-26-2026-tmobile-fcc-ticket-response-redacted.webp" target="_blank" rel="noopener noreferrer" aria-label="View final FCC ticket closure response (opens in a new tab)">
+                                <img src="/calevidence/jan-26-2026-tmobile-fcc-ticket-response-redacted.webp" class="success-img" alt="Redacted T-Mobile response confirming the successful closure of the FCC complaint ticket">
+                            </a>
+                        </figure>
+                    </article>
+                    <article class="success-item">
+                        <h3 class="success-label">EXHIBIT TM-07 // EMAIL REVERSAL PROOF</h3>
+                        <p>Executive follow-up email (Jan 27, 2026) confirming the application of all credits and the reversal of the EIP contradiction.</p>
+                        <figure class="m-0">
+                            <a href="/calevidence/jan-27-2026-tmobile-ceo-office-email-response-redacted.webp" target="_blank" rel="noopener noreferrer" aria-label="View email proving EIP reversal (opens in a new tab)">
+                                <img src="/calevidence/jan-27-2026-tmobile-ceo-office-email-response-redacted.webp" class="success-img" alt="Redacted executive email verifying the full reversal of incorrect EIP charges">
+                            </a>
+                        </figure>
+                    </article>
+                    <article class="success-item">
+                        <h3 class="success-label">EXHIBIT TM-08 // RECENT STATUS UPDATE</h3>
+                        <p>Confirmation of continued account health following the resolution, dated Feb 25, 2026.</p>
+                        <figure class="m-0">
+                            <a href="/calevidence/feb-25-2026-fcc-resolution-response-redacted.webp" target="_blank" rel="noopener noreferrer" aria-label="View recent billing status update (opens in a new tab)">
+                                <img src="/calevidence/feb-25-2026-fcc-resolution-response-redacted.webp" class="success-img" alt="Redacted billing status update showing a resolved and healthy T-Mobile account post-audit">
+                            </a>
+                        </figure>
+                    </article>
+                </div>
+
+                <article class="success-item mt-20">
+                    <h3 class="success-label">EXHIBIT TM-09 // RESOLUTION LETTER</h3>
+                    <p>Official resolution letter from T-Mobile Regulatory Affairs confirming the correction of all technical billing errors.</p>
+                    <figure class="m-0">
+                        <a href="/calevidence/tmobile-resolution-letter-fcc-redacted.webp" target="_blank" rel="noopener noreferrer" aria-label="View official T-Mobile resolution letter (opens in a new tab)">
+                            <img src="/calevidence/tmobile-resolution-letter-fcc-redacted.webp" class="success-img" alt="Redacted official formal resolution letter from T-Mobile Regulatory Affairs confirming billing corrections">
+                        </a>
+                    </figure>
+                </article>
+            </div>
+        </section>
+
+        <!-- STAGE 04: HARDWARE & BOOTLOADER LIBERATION VERIFICATION -->
+        <section id="hardware-verification" aria-labelledby="stage-04-title">
+            <div class="section-tag" aria-hidden="true">// Stage 04: Hardware Liberation Verification</div>
+            <article class="audit-box success">
+                <h2 class="u-style-aa4ba2d7" id="stage-04-title">Stage 04: Hardware &amp; Bootloader Liberation Verification</h2>
+                <p>Following the administrative EIP reversal and regulatory pressure on Day 11, the carrier SIM network lock was successfully lifted, enabling full Motorola OEM bootloader unlocking and complete physical hardware liberation of the Moto G Power 2025.</p>
+
+                <div class="success-grid">
+                    <article class="success-item">
+                        <h3 class="success-label">EXHIBIT TM-10 // CARRIER NETWORK UNLOCK</h3>
+                        <p>Carrier SIM and Network unlock confirmation dialog verifying that the device has been successfully unlocked on the T-Mobile network infrastructure.</p>
+                        <figure class="m-0">
+                            <a href="/calevidence/moto-g-power-2025-network-unlocked-notification-redacted.webp" target="_blank" rel="noopener noreferrer" aria-label="View carrier network unlock confirmation dialog (opens in a new tab)">
+                                <img src="/calevidence/moto-g-power-2025-network-unlocked-notification-redacted.webp" class="success-img" alt="Redacted Android system notification dialog confirming 'Your device is already unlocked!' on the T-Mobile network.">
+                            </a>
+                        </figure>
+                    </article>
+                    <article class="success-item">
+                        <h3 class="success-label">EXHIBIT TM-11 // BOOTLOADER WARNING SCREEN</h3>
+                        <p>Motorola bootloader warning boot screen displaying the hardware-level OS Fingerprint (0xBCAFCED3) indicating successful cryptographic verification bypass.</p>
+                        <figure class="m-0">
+                            <a href="/calevidence/moto-g-power-2025-unlocked-bootloder-screen-warning.webp" target="_blank" rel="noopener noreferrer" aria-label="View Motorola unlocked bootloader warning boot screen (opens in a new tab)">
+                                <img src="/calevidence/moto-g-power-2025-unlocked-bootloder-screen-warning.webp" class="success-img" alt="Motorola bootwarning warning screen displaying the orange warnings and the active OS fingerprint hash 0xBCAFCED3 on a Moto G Power 2025 device.">
+                            </a>
+                        </figure>
+                    </article>
+                </div>
+
+                <div class="success-grid mt-20">
+                    <article class="success-item">
+                        <h3 class="success-label">EXHIBIT TM-12 // FASTBOOT HARDWARE VERIFICATION</h3>
+                        <p>Fastboot hardware console verification on the Moto G Power 2025 (XT2515-1) proving active flashing_unlocked and carrier id 0x0032 (cid:0x0032).</p>
+                        <figure class="m-0">
+                            <a href="/calevidence/moto-g-power-2025-fastboot-unlocked-redacted.webp" target="_blank" rel="noopener noreferrer" aria-label="View fastboot hardware unlocked verification screen (opens in a new tab)">
+                                <img src="/calevidence/moto-g-power-2025-fastboot-unlocked-redacted.webp" class="success-img" alt="Redacted Fastboot mode terminal screen on Moto G Power 2025 verifying flashing_unlocked status, XT2515-1 model, and CID 0x0032.">
+                            </a>
+                        </figure>
+                    </article>
+                    <article class="success-item">
+                        <h3 class="success-label">EXHIBIT TM-13 // SYSTEM-LEVEL ROOT PRIVILEGE VERIFICATION</h3>
+                        <p>Root Checker Basic application verification on the Moto G Power 2025 proving active, properly configured root access with superuser privileges successfully installed on Android 16.</p>
+                        <figure class="m-0">
+                            <a href="/calevidence/root-checker-moto-g-power-2025.webp" target="_blank" rel="noopener noreferrer" aria-label="View root checker basic verification screen (opens in a new tab)">
+                                <img src="/calevidence/root-checker-moto-g-power-2025.webp" class="success-img" alt="Root Checker Basic app screen on Moto G Power 2025 confirming 'Congratulations! Root access is properly installed on this device!' on Android 16.">
+                            </a>
+                        </figure>
+                    </article>
+                </div>
+            </article>
+        </section>
+
+        <!-- FREQUENTLY ASKED QUESTIONS -->
+        <section id="telecom-faq" aria-labelledby="faq-title">
+            <div class="section-tag" aria-hidden="true">// Frequently Asked Questions</div>
+            <div id="faq" class="audit-box success telecom">
+                <h2 id="faq-title" class="title-warfare u-style-51aa25d5">T-Mobile EIP & Billing Resolution FAQ</h2>
+
+                <details class="faq-item u-style-4ac9dc78">
+                    <summary class="u-style-d4997ce3">
+                        <span class="faq-icon u-style-6f374f9b" aria-hidden="true">▶</span> <span class="faq-question">What is an EIP billing contradiction?</span>
+                    </summary>
+                    <div class="faq-answer u-style-67b4ff9f">
+                        An EIP (Equipment Installment Plan) contradiction occurs when the original retail purchase terms conflict with the carrier's internal billing system. This technical disconnect often results in the carrier failing to apply promotional credits or charging incorrect monthly installment amounts.
+                    </div>
+                </details>
+
+                <details class="faq-item u-style-4ac9dc78">
+                    <summary class="u-style-d4997ce3">
+                        <span class="faq-icon u-style-6f374f9b" aria-hidden="true">▶</span> <span class="faq-question">Why do EIP errors happen with third-party retailers like Walmart?</span>
+                    </summary>
+                    <div class="faq-answer u-style-67b4ff9f">
+                        Third-party retailers utilize point-of-sale systems that operate independently from T-Mobile’s core billing infrastructure. If the retail EIP documentation fails to sync correctly with T-Mobile’s backend, the carrier may not recognize the original promotional terms, leading to systemic billing friction that frontline support often cannot fix.
+                    </div>
+                </details>
+
+                <details class="faq-item u-style-2630c733">
+                    <summary class="u-style-d4997ce3">
+                        <span class="faq-icon u-style-6f374f9b" aria-hidden="true">▶</span> <span class="faq-question">How do I force T-Mobile to reverse an incorrect EIP charge?</span>
+                    </summary>
+                    <div class="faq-answer u-style-67b4ff9f">
+                        When standard customer service cannot resolve the contradiction, you must compile forensic proof. This involves cross-referencing your original retail purchase documentation (e.g., Walmart receipts) against snapshots of the erroneous T-Mobile billing environment. Presenting this strict technical documentation to T-Mobile Executive Customer Relations or through a regulatory complaint forces a manual review and reversal of the technical billing errors.
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- INLINE OPERATOR ASIDES -->
+        <aside class="audit-note u-style-0ee3aa93" aria-labelledby="operator-note-title">
+            <h2 id="operator-note-title" class="visually-hidden u-style-8e2860de">Operator's Note</h2>
+            <strong class="u-style-0f916517">OPERATOR'S NOTE:</strong> <span class="u-style-32943e55">The T-Mobile dispute is <strong>CLOSED</strong>. For ongoing investigations into active hardware obfuscation (Motorola <strong>CID 0x0033</strong>) and disputes with <strong>Tracfone</strong> (Ticket #8711384), view the <a class="u-style-505a5662" href="/fcc-complaint-guide/">Active FCC Tactical Field Manual</a>.</span>
+        </aside>
+    </main>
+
+    <!-- Structural Footer Landmark -->
+    <footer class="page-footer" role="contentinfo">
+        <div class="footer-inner u-style-13a885f1">
+            <p>© 2026 CALAUDIT | Nicolas Hernandez | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+            <p><strong>LEGAL DISCLAIMER:</strong> This site is provided for informational purposes based on publicly available California statutes and regulations. It does not constitute legal advice. For legal counsel, consult a licensed California attorney.</p>
+            <p><strong>MEDICAL DISCLAIMER:</strong> The forensic data and commentary provided here are for investigative and advocacy purposes only. This content is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any medical concerns.</p>
+            <p><strong>PROPRIETARY WORK PRODUCT NOTICE:</strong> All original content, analysis, and commentary on this site represents my proprietary work product. Unauthorized reproduction for legal, administrative, or commercial purposes is strictly prohibited without the express written permission of Nicolas Hernandez.</p>
+            <p class="onion-mirror u-style-74ab5275">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+        </div>
+    </footer>
+</div>
+
+<script src="/nav.js"></script>
+<script>
+    /* Accessible custom details toggle script */
+    document.querySelectorAll('#faq details').forEach(detail => {
+        detail.addEventListener('toggle', () => {
+            const icon = detail.querySelector('.faq-icon');
+            if (icon) {
+                if (detail.open) {
+                    icon.textContent = '▼';
+                    icon.style.color = '#ffffff';
+                } else {
+                    icon.textContent = '▶';
+                    icon.style.color = '#00bcff';
+                }
+            }
+        });
+    });
+
+    /* Auto-wrap unlinked images ensuring strict a11y & security targets */
+    document.querySelectorAll('.success-img').forEach(img => {
+        if (img.parentNode.tagName !== 'A') {
+            const a = document.createElement('a');
+            a.href = img.src;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.setAttribute('aria-label', `View ${img.alt || 'image'} (opens in a new tab)`);
+            a.style.cursor = 'pointer';
+            a.style.display = 'block';
+            img.parentNode.insertBefore(a, img);
+            a.appendChild(img);
+        }
+    });
+</script>
+
+<!-- Onion Link Patch -->
+<script>
+    (function(){
+        if(window.location.hostname.endsWith('.onion')){
+            document.querySelectorAll('a[href]').forEach(function(a){
+                var h=a.getAttribute('href');
+                if(h && !h.startsWith('http') && !h.startsWith('mailto:') && !h.startsWith('tel:') && !h.startsWith('#')){
+                    var p=h.split('/');
+                    var l=p[p.length-1];
+                    if(l!=='' && !l.includes('.')){
+                        a.setAttribute('href', h+'.html');
+                    } else if(h.endsWith('/')){
+                        a.setAttribute('href', h+'index.html');
+                    }
+                }
+            });
+        }
+    })();
+</script>
+
+</body>
+</html>

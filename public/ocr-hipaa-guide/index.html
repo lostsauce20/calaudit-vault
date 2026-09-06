@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#050505"/>
+    <title>How to File an OCR HIPAA Complaint (Step-by-Step) | CalAudit</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="canonical" href="https://calaudit.org/ocr-hipaa-guide/"/>
+    <meta name="description" content="How to file a HIPAA privacy complaint with the Office for Civil Rights (OCR) — with a real case study of a data breach and PHI leak at a psychiatric provider."/>
+    <meta name="keywords" content="HIPAA violation, OCR complaint, Office for Civil Rights, patient privacy, PHI breach, HIPAA filing guide, Inland Psychiatric Medical Group, health information privacy, Inland Psychiatric Medical Group reviews, psychiatric PHI leak"/>
+    <meta name="author" content="Nicolas Hernandez"/>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:site_name" content="CalAudit"/>
+    <meta property="og:url" content="https://calaudit.org/ocr-hipaa-guide/"/>
+    <meta property="og:title" content="How to File an OCR HIPAA Complaint (Step-by-Step) | CalAudit"/>
+    <meta property="og:description" content="How to file a HIPAA privacy complaint with the Office for Civil Rights (OCR) — with a real case study of a data breach and PHI leak at a psychiatric provider."/>
+    <meta property="og:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="CalAudit logo representing Forensic Public Audits &amp; Regulatory Compliance Tracking"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="article:published_time" content="2026-05-26T00:00:00+00:00"/>
+    <meta property="article:modified_time" content="2026-06-13T00:00:00+00:00"/>
+    <meta property="article:author" content="https://calaudit.org/"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@CalAudit"/>
+    <meta name="twitter:creator" content="@CalAudit"/>
+    <meta name="twitter:url" content="https://calaudit.org/ocr-hipaa-guide/"/>
+    <meta name="twitter:title" content="OCR / HIPAA Complaint Manual | CalAudit Forensic Repository"/>
+    <meta name="twitter:description" content="Forensic manual for filing HIPAA privacy violations with the Office for Civil Rights (OCR). Step-by-step reporting guide featuring the Inland Psychiatric Medical Group case study."/>
+    <meta name="twitter:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta name="twitter:image:alt" content="CalAudit logo representing Forensic Public Audits &amp; Regulatory Compliance Tracking"/>
+    <meta name="geo.region" content="US-CA"/>
+    <meta name="geo.placename" content="California"/>
+    <meta name="geo.position" content="38.5816;-121.4944"/>
+    <meta name="ICBM" content="38.5816, -121.4944"/>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://calaudit.org/#organization",
+          "name": "CalAudit",
+          "url": "https://calaudit.org/",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://calaudit.org/#logo",
+            "inLanguage": "en-US",
+            "url": "https://calaudit.org/calauditlogo.webp",
+            "contentUrl": "https://calaudit.org/calauditlogo.webp",
+            "caption": "CalAudit - Forensic Public Audits & Regulatory Compliance Tracking"
+          },
+          "image": {
+            "@id": "https://calaudit.org/#logo"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://calaudit.org/#website",
+          "url": "https://calaudit.org/",
+          "name": "CalAudit",
+          "description": "Forensic Public Audits & Regulatory Compliance Tracking",
+          "publisher": {
+            "@id": "https://calaudit.org/#organization"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://calaudit.org/ocr-hipaa-guide/#webpage",
+          "url": "https://calaudit.org/ocr-hipaa-guide/",
+          "name": "OCR / HIPAA Complaint Manual | CalAudit Forensic Repository",
+          "isPartOf": {
+            "@id": "https://calaudit.org/#website"
+          },
+          "about": {
+            "@id": "https://calaudit.org/#organization"
+          },
+          "description": "A forensic manual for documenting and filing health information privacy complaints with the Office for Civil Rights (OCR).",
+          "inLanguage": "en-US",
+          "datePublished": "2026-05-26T00:00:00+00:00",
+          "dateModified": "2026-07-02"
+        },
+        {
+          "@type": "TechArticle",
+          "@id": "https://calaudit.org/ocr-hipaa-guide/#article",
+          "isPartOf": {
+            "@id": "https://calaudit.org/ocr-hipaa-guide/#webpage"
+          },
+          "mainEntityOfPage": {
+            "@id": "https://calaudit.org/ocr-hipaa-guide/#webpage"
+          },
+          "url": "https://calaudit.org/ocr-hipaa-guide/",
+          "headline": "OCR / HIPAA Complaint Manual | CalAudit Forensic Repository",
+          "description": "A forensic manual for documenting and filing health information privacy complaints with the Office for Civil Rights (OCR), using an unauthorized SMS disclosure incident as a data case study.",
+          "inLanguage": "en-US",
+          "datePublished": "2026-05-26T00:00:00+00:00",
+          "dateModified": "2026-07-02",
+          "author": {
+            "@type": "Person",
+            "@id": "https://calaudit.org/#nicolashernandez",
+            "name": "Nicolas Hernandez",
+            "url": "https://calaudit.org/"
+          },
+          "publisher": {
+            "@id": "https://calaudit.org/#organization"
+          },
+          "keywords": [
+            "HIPAA violation",
+            "OCR complaint",
+            "Office for Civil Rights",
+            "PHI breach",
+            "Inland Psychiatric Medical Group",
+            "SB 1448",
+            "Dr. Hozair Mohammed Syed"
+          ],
+          "citation": [
+            "45 CFR Part 160",
+            "45 CFR Part 164 Subparts A and E",
+            "California Senate Bill 1448"
+          ],
+          "contentLocation": {
+            "@type": "Place",
+            "name": "U.S. Department of Health and Human Services Office for Civil Rights Headquarters",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "200 Independence Ave SW, Room 509F",
+              "addressLocality": "Washington",
+              "addressRegion": "DC",
+              "postalCode": "20201",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "38.8870",
+              "longitude": "-77.0147"
+            }
+          },
+          "about": [
+            {
+              "@type": "GovernmentOrganization",
+              "name": "Office for Civil Rights",
+              "alternateName": "OCR",
+              "parentOrganization": {
+                "@type": "GovernmentOrganization",
+                "name": "U.S. Department of Health and Human Services",
+                "alternateName": "DHHS"
+              },
+              "sameAs": "https://en.wikipedia.org/wiki/Office_for_Civil_Rights"
+            }
+          ],
+          "mentions": [
+            {
+              "@type": "MedicalOrganization",
+              "name": "Inland Psychiatric Medical Group",
+              "description": "Target healthcare entity named in privacy complaint regarding unauthorized disclosure of medical intake information via SMS."
+            },
+            {
+              "@type": "Physician",
+              "name": "Dr. Hozair Mohammed Syed",
+              "medicalSpecialty": "Psychiatry",
+              "description": "Treating clinician identified as being on active medical board probation.",
+              "sameAs": "https://search.dca.ca.gov/details/8002/A/111058/e3d340144d6714e90b765339c91415ed"
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://calaudit.org/ocr-hipaa-guide/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Hub",
+              "item": "https://calaudit.org/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Forensic Vault",
+              "item": "https://calaudit.org/forensic-vault/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "OCR / HIPAA Guide"
+            }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "@id": "https://calaudit.org/ocr-hipaa-guide/#howto",
+          "name": "How to File a HIPAA Privacy Complaint with the OCR",
+          "description": "Step-by-step forensic guide to structuring and submitting a formal health information privacy violation using the DHHS/OCR portal.",
+          "mainEntityOfPage": {
+            "@id": "https://calaudit.org/ocr-hipaa-guide/#webpage"
+          },
+          "totalTime": "PT45M",
+          "estimatedCost": {
+            "@type": "MonetaryAmount",
+            "currency": "USD",
+            "value": "0"
+          },
+          "step": [
+            {
+              "@type": "HowToStep",
+              "position": 1,
+              "name": "Identify and Document the Breach",
+              "text": "Isolate the unauthorized disclosure of Protected Health Information (PHI), indexing specific timestamps, communication types (such as SMS or email), and unauthorized third-party recipients."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 2,
+              "name": "Navigate the OCR Portal",
+              "text": "Access the official Department of Health and Human Services OCR Complaint Portal and select 'Violation of Privacy or Security of Health Information'."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 3,
+              "name": "Submit Forensic Evidence Logs",
+              "text": "Upload verified SMS logs, outbound and inbound call records, and comprehensive diagnostic narratives to support the statutory breach claim."
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://calaudit.org/ocr-hipaa-guide/#faq-schema",
+          "mainEntityOfPage": {
+            "@id": "https://calaudit.org/ocr-hipaa-guide/#webpage"
+          },
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a HIPAA violation?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A HIPAA violation occurs when a covered entity (healthcare provider, health plan, or clearinghouse) fails to comply with any aspect of the HIPAA Privacy, Security, or Breach Notification Rules, such as unauthorized disclosure of Protected Health Information (PHI)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there a time limit to file an OCR complaint?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. A HIPAA complaint must be filed within 180 days of when you knew (or should have known) that the act or omission occurred. OCR may extend this limit if you can show 'good cause'."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does it cost money to file a HIPAA complaint?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Filing a complaint with the Office for Civil Rights (OCR) is completely free."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        /* A11y utility classes */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .ocr-wizard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .ocr-step {
+            background: #111;
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+        }
+        .ocr-step h3 {
+            color: var(--blue);
+            margin-top: 0;
+            font-family: var(--mono);
+            font-size: 0.85rem;
+            border-bottom: 1px solid #222;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .ocr-step p {
+            font-size: 0.8rem;
+            color: #aaa; /* Contrast ratio ~9:1 against #111, passes AAA */
+            line-height: 1.5;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        .summary-grid-2x2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+        @media (max-width: 768px) {
+            .summary-grid-2x2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .evidence-item-box {
+            background: #000;
+            border: 1px solid #222;
+            padding: 10px;
+            position: relative;
+        }
+        .evidence-viewer {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #333;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .evidence-viewer:hover,
+        .evidence-viewer:focus-within {
+            transform: scale(1.02);
+            border-color: var(--blue);
+        }
+        .evidence-item-box a {
+            display: block;
+            text-decoration: none;
+            text-shadow: none;
+            outline-offset: 2px;
+        }
+        .evidence-item-box a:focus {
+            outline: 2px solid var(--blue);
+        }
+        .evidence-item-box a:hover {
+            opacity: 1;
+        }
+        .exhibit-links {
+            margin-top: 10px;
+            text-align: right;
+        }
+        .exhibit-link {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            color: var(--blue);
+            text-decoration: none;
+            border: 1px solid var(--blue);
+            padding: 4px 8px;
+            transition: all 0.2s;
+        }
+        .exhibit-link:hover,
+        .exhibit-link:focus {
+            background: var(--blue);
+            color: #000;
+            outline: none;
+        }
+        .narrative-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 3px solid var(--blue);
+            padding: 20px;
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        .statute-box {
+            border-color: var(--blue);
+            background: rgba(0, 102, 255, 0.02);
+        }
+        .countdown-clock {
+            font-size: 3rem;
+            color: var(--blue);
+            text-align: center;
+            padding: 20px;
+            border: 1px solid var(--blue);
+            background: rgba(0, 122, 255, 0.05);
+            margin: 20px 0;
+            font-family: var(--mono);
+        }
+        .deadline-status {
+            text-align: center;
+            font-family: var(--mono);
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+        .faq-question:focus {
+            outline: 2px solid var(--blue);
+            outline-offset: 4px;
+        }
+    </style>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="vault-container">
+    <nav aria-label="Breadcrumb">
+        <div class="back-btn-container">
+            <a href="/forensic-vault/" class="back-btn" aria-label="Return to Forensic Vault">← Return to Forensic Vault</a>
+        </div>
+    </nav>
+
+    <main id="main-content" role="main">
+
+        <header role="banner" class="header" aria-label="Page Header Block">
+            <h1 class="header-title u-style-ff95a10d">OCR / HIPAA MANUAL</h1>
+            <p class="subtitle">Auditing Privacy Defaults &amp; Data Breaches</p>
+        </header>
+
+        <section class="audit-box warfare" aria-labelledby="intel-summary-heading">
+            <header role="banner">
+                <h2 id="intel-summary-heading" class="sr-only">Intel Summary</h2>
+                <div class="status-badge" aria-hidden="true">INTEL_SUMMARY</div>
+            </header>
+            <p>The OCR / HIPAA Manual provides a forensic roadmap for documenting and filing privacy violations with the Office for Civil Rights (OCR). This manual uses a documented data breach at Inland Psychiatric Medical Group to illustrate the step-by-step process of enforcing the HIPAA Privacy Rule.</p>
+        </section>
+
+        <section class="audit-box warfare statute-box" aria-labelledby="tactical-manual-heading">
+            <header role="banner">
+                <div class="status-badge u-style-34609385" aria-hidden="true">TACTICAL MANUAL</div>
+                <h2 id="tactical-manual-heading">Filing an OCR Privacy Complaint</h2>
+            </header>
+            <p>The HIPAA Privacy Rule (45 CFR Part 160 and Subparts A and E of Part 164) protects all "individually identifiable health information." When a covered entity transmits your Protected Health Information (PHI) to unauthorized third parties — even family members — they have committed a <strong>reportable breach</strong>.</p>
+            <p>This manual provides the forensic roadmap for filing a complaint with the <strong>Office for Civil Rights (OCR)</strong> using a real-world violation at Inland Psychiatric Medical Group as the primary dataset.</p>
+        </section>
+
+        <div class="section-tag text-center" aria-hidden="true">// CASE STUDY: INLAND PSYCHIATRIC MEDICAL GROUP BREACH</div>
+
+        <section class="narrative-box" aria-labelledby="case-study-logistics">
+            <header role="banner">
+                <h2 id="case-study-logistics" class="sr-only">Case Study Metrics: Inland Psychiatric Medical Group Breach</h2>
+            </header>
+            <p><strong>SUBJECT:</strong> Inland Psychiatric Medical Group (IPMG)<br>
+            <strong>INCIDENT DATE:</strong> May 25–26, 2026<br>
+            <strong>VIOLATION TYPE:</strong> Unauthorized Disclosure of PHI via SMS</p>
+
+            <p>On Monday, May 25, 2026, I contacted Inland Psychiatric Medical Group to schedule a telehealth intake for complex medication management. I explicitly provided the intake coordinator with my current, active cell phone number. The coordinator looked up my profile using my health plan Member ID, which evidently pulled up an outdated, historical profile containing an old contact number belonging to my father.</p>
+
+            <p>The coordinator never verified that an incorrect phone number was on file. The clinic transmitted my protected health information (PHI) - specifically my confidential psychiatric intake forms and telehealth appointment access links - via SMS text message to my father's phone number without my authorization or consent, starting on Monday, May 25 at 12:52 PM and again on Tuesday, May 26 at 9:08 AM.</p>
+
+            <p>My privacy was compromised, but to ensure I could receive care, I completed the intake paperwork after it was forwarded to me. On Tuesday, May 26, 2026, at 11:49 AM - exactly 41 minutes prior to my 12:30 PM appointment - I verbally contacted the clinic's front desk to explicitly confirm they had everything and to request the video link, which I had not received on my device. Despite this live confirmation call, the clinic failed to send the video link to my correct number, resulting in a severe delay and immediate disruption to the start of my medical care.</p>
+        </section>
+
+        <div class="section-tag text-center" aria-hidden="true">// EXHIBIT A: SMS &amp; CALL LOG EVIDENCE</div>
+
+        <section class="summary-grid-2x2" aria-labelledby="exhibit-a-heading">
+            <h2 id="exhibit-a-heading" class="sr-only">Exhibit A: SMS &amp; Call Log Evidence</h2>
+
+            <article class="summary-card">
+                <div class="summary-card-num" aria-hidden="true">EXHIBIT A.1</div>
+                <h3 class="summary-card-name u-style-656d634b">Call Log: Scheduling</h3>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/05-25-2026-appointment-scheduling-call_result.webp" target="_blank" rel="noopener noreferrer" aria-label="View Exhibit A.1: May 25th 12:30 PM Scheduling Call Log full image">
+                        <img src="/calevidence/05-25-2026-appointment-scheduling-call_result.webp" class="evidence-viewer" alt="Phone interface showing a 15-minute outgoing scheduling call on May 25, 2026, at 12:30 PM." loading="lazy" width="800" height="600">
+                    </a>
+                </div>
+                <p class="u-style-fa97a549">May 25, 12:30 PM: 15-minute call where the correct number was provided.</p>
+            </article>
+
+            <article class="summary-card">
+                <div class="summary-card-num" aria-hidden="true">EXHIBIT A.2</div>
+                <h3 class="summary-card-name u-style-656d634b">Unauthorized SMS (Day 1)</h3>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/inland-psych-violation-redacted-05-26-2026.webp" target="_blank" rel="noopener noreferrer" aria-label="View Exhibit A.2: Day 1 Afternoon unauthorized SMS transmission full image">
+                        <img src="/calevidence/inland-psych-violation-redacted-05-26-2026.webp" class="evidence-viewer" alt="Screenshot of unauthorized SMS showing the transmission of psychiatric PHI links to an incorrect phone number on the afternoon of Day 1." loading="lazy" width="800" height="600">
+                    </a>
+                </div>
+                <p class="u-style-fa97a549">Day 1 Afternoon: Initial transmission of PHI links to father's number.</p>
+            </article>
+
+            <article class="summary-card">
+                <div class="summary-card-num" aria-hidden="true">EXHIBIT A.3</div>
+                <h3 class="summary-card-name u-style-656d634b">Unauthorized SMS (Day 2)</h3>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/inland-psych-violation-2-redacted-05-26-2026.webp" target="_blank" rel="noopener noreferrer" aria-label="View Exhibit A.3: Day 2 Morning unauthorized SMS appointment reminder full image">
+                        <img src="/calevidence/inland-psych-violation-2-redacted-05-26-2026.webp" class="evidence-viewer" alt="Screenshot of unauthorized SMS appointment reminder and PHI links sent to the wrong number on the morning of Day 2." loading="lazy" width="800" height="600">
+                    </a>
+                </div>
+                <p class="u-style-fa97a549">Day 2 Morning: Appointment reminder and PHI links sent to unauthorized number.</p>
+            </article>
+
+            <article class="summary-card">
+                <div class="summary-card-num" aria-hidden="true">EXHIBIT A.4</div>
+                <h3 class="summary-card-name u-style-656d634b">Call Log: Correction</h3>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/05-26-2026-call-correcting-phone-number.webp" target="_blank" rel="noopener noreferrer" aria-label="View Exhibit A.4: May 26th 11:49 AM Correction Call Log full image">
+                        <img src="/calevidence/05-26-2026-call-correcting-phone-number.webp" class="evidence-viewer" alt="Phone interface showing a brief outgoing correction call on May 26, 2026, at 11:49 AM." loading="lazy" width="800" height="600">
+                    </a>
+                </div>
+                <p class="u-style-fa97a549">May 26, 11:49 AM: Verbal request to correct the number 41 mins before appt.</p>
+            </article>
+        </section>
+
+        <div class="section-tag text-center" aria-hidden="true">// EXHIBIT A.5: SB 1448 CLINICIAN PROBATION DISCLOSURE</div>
+
+        <section class="narrative-box statute-box" aria-labelledby="sb1448-heading">
+            <header role="banner">
+                <h2 id="sb1448-heading" class="sr-only">SB 1448 Regulatory Framework</h2>
+            </header>
+            <p><strong>ADDITIONAL DISCLOSURE:</strong> Alongside the immediate privacy breach, the intake paperwork at Inland Psychiatric Medical Group revealed that the treating clinician, <strong>Dr. Hozair Mohammed Syed</strong> (Physician's Certificate No. <a class="u-style-3a9daf23" href="https://search.dca.ca.gov/details/8002/A/111058/e3d340144d6714e90b765339c91415ed" target="_blank" rel="noopener noreferrer" aria-label="California DCA License Search for Dr. Hozair Mohammed Syed (Opens in new tab)">A 111058</a>), is actively on probation with the Medical Board of California for serious misconduct.</p>
+            <p>Under <strong>California Senate Bill 1448</strong> (Patients' Right to Know Act), physicians placed on probation for serious offenses (such as sexual misconduct, gross negligence, or substance abuse) are legally mandated to provide patients with a signed, written disclosure regarding their probation status prior to their first visit.</p>
+            <p>The forensic documentation below captures the formal SB 1448 disclosure provided during the intake process, followed by public Medical Board of California filings outlining the underlying disciplinary actions and causes for probation.</p>
+        </section>
+
+        <section class="summary-grid-2x2" aria-labelledby="exhibit-a5-heading">
+            <h3 id="exhibit-a5-heading" class="sr-only">Exhibit A.5.1: SB 1448 Probation Disclosure Form</h3>
+            <article class="summary-card u-style-8d78e2db">
+                <div class="summary-card-num" aria-hidden="true">EXHIBIT A.5.1</div>
+                <div class="summary-card-name text-center">Official SB 1448 Probation Disclosure Form</div>
+                <div class="evidence-item-box">
+                    <a href="/calevidence/sb1448-probation-disclosure-to-patients_result.webp" target="_blank" rel="noopener noreferrer" aria-label="View Exhibit A.5.1: SB 1448 Probation Disclosure to Patients document full image">
+                        <img src="/calevidence/sb1448-probation-disclosure-to-patients_result.webp" class="evidence-viewer" alt="Document scan of the official signed SB 1448 probation disclosure acknowledging Dr. Hozair Mohammed Syed's 5-year probation term." loading="lazy" width="800" height="600">
+                    </a>
+                </div>
+                <p class="u-style-fa97a549">Official signed SB 1448 disclosure confirming Dr. Hozair Mohammed Syed is on 5 years probation with practice restrictions.</p>
+            </article>
+        </section>
+
+        <section class="manifesto-container u-style-08117d47" aria-labelledby="disciplinary-filings-heading">
+            <h3 class="u-style-23343ca8" id="disciplinary-filings-heading">Clinician Disciplinary Filings (SYED, HOZAIR MOHAMMED)</h3>
+            <div class="u-style-bcc3b4d5">
+                <a href="https://search.dca.ca.gov/details/8002/A/111058/e3d340144d6714e90b765339c91415ed" target="_blank" rel="noopener noreferrer" class="exhibit-link u-style-27527ed9" aria-label="California DCA License Search Profile for Syed, Hozair Mohammed (Opens in new window)">DCA License Search: SYED, HOZAIR MOHAMMED (A 111058)</a>
+                <a href="/calevidence/case-no-09-2010-211439-syed.pdf" target="_blank" rel="noopener noreferrer" class="exhibit-link u-style-27527ed9" aria-label="Download PDF Disciplinary Order Case Number 09-2010-211439 for Gross Negligence and Misconduct">[ DOWNLOAD PDF ] Disciplinary Order: Case No. 09-2010-211439 (Gross Negligence &amp; Misconduct)</a>
+                <a href="/calevidence/case-no-800-2019-062318-syed.pdf" target="_blank" rel="noopener noreferrer" class="exhibit-link u-style-27527ed9" aria-label="Download PDF Disciplinary Order Case Number 800-2019-062318 for Extension of Probation">[ DOWNLOAD PDF ] Disciplinary Order: Case No. 800-2019-062318 (Extension of Probation)</a>
+            </div>
+        </section>
+
+        <div class="section-tag text-center" aria-hidden="true">// EXHIBIT B: THE OCR COMPLAINT WIZARD</div>
+
+        <section aria-labelledby="ocr-wizard-heading">
+            <h2 id="ocr-wizard-heading" class="sr-only">Exhibit B: The OCR Complaint Wizard Steps</h2>
+            <p class="u-style-68792603">Step-by-step documentation of the OCR Portal filing process (May 2026).</p>
+
+            <div class="ocr-wizard-grid">
+                <article class="ocr-step">
+                    <h3>STEP 1: PRE-FILING NOTICE</h3>
+                    <p>Review the preliminary information and jurisdiction details before initiating the complaint.</p>
+                    <div class="evidence-item-box">
+                        <a href="/calevidence/office-civil-rights-what-you-should-know.webp" target="_blank" rel="noopener noreferrer" aria-label="View Step 1 Image: OCR pre-filing requirements screen">
+                            <img src="/calevidence/office-civil-rights-what-you-should-know.webp" class="evidence-viewer" alt="Screenshot of the 'What you should know' OCR pre-filing requirements screen." loading="lazy" width="400" height="300">
+                        </a>
+                    </div>
+                </article>
+                <article class="ocr-step">
+                    <h3>STEP 2: NATURE OF COMPLAINT</h3>
+                    <p>Select the primary violation type (e.g., Violation of Privacy or Security of Health Information).</p>
+                    <div class="evidence-item-box">
+                        <a href="/calevidence/office-civil-rights-question-1.webp" target="_blank" rel="noopener noreferrer" aria-label="View Step 2 Image: OCR complaint category selection screen">
+                            <img src="/calevidence/office-civil-rights-question-1.webp" class="evidence-viewer" alt="Screenshot of the OCR complaint category selection screen." loading="lazy" width="400" height="300">
+                        </a>
+                    </div>
+                </article>
+                <article class="ocr-step">
+                    <h3>STEP 3: TIMELINE (ONGOING)</h3>
+                    <p>Define the incident timeframe and whether the violation is a one-time event or a persistent, ongoing issue.</p>
+                    <div class="evidence-item-box">
+                        <a href="/calevidence/office-civil-rights-question-2.webp" target="_blank" rel="noopener noreferrer" aria-label="View Step 3 Image: OCR incident calendar selection screen">
+                            <img src="/calevidence/office-civil-rights-question-2.webp" class="evidence-viewer" alt="Screenshot of the OCR incident timeframe and calendar selection screen." loading="lazy" width="400" height="300">
+                        </a>
+                    </div>
+                </article>
+                <article class="ocr-step">
+                    <h3>STEP 4: TARGET ENTITY</h3>
+                    <p>Identify the specific medical organization or provider responsible for the breach (Inland Psychiatric Medical Group).</p>
+                    <div class="evidence-item-box">
+                        <a href="/calevidence/office-civil-rights-question-3.webp" target="_blank" rel="noopener noreferrer" aria-label="View Step 4 Image: OCR organization profile search screen">
+                            <img src="/calevidence/office-civil-rights-question-3.webp" class="evidence-viewer" alt="Screenshot of the OCR target entity and organization profile search screen." loading="lazy" width="400" height="300">
+                        </a>
+                    </div>
+                </article>
+                <article class="ocr-step">
+                    <h3>STEP 5: PROVIDER CLASS</h3>
+                    <p>Classify the entity (e.g., Health Care Provider) to ensure correct regulatory routing within the DHHS system.</p>
+                    <div class="evidence-item-box">
+                        <a href="/calevidence/office-civil-rights-question-4.webp" target="_blank" rel="noopener noreferrer" aria-label="View Step 5 Image: OCR target taxonomy selection screen">
+                            <img src="/calevidence/office-civil-rights-question-4.webp" class="evidence-viewer" alt="Screenshot of the OCR taxonomy and provider class selection screen." loading="lazy" width="400" height="300">
+                        </a>
+                    </div>
+                </article>
+                <article class="ocr-step">
+                    <h3>STEP 6: SUBJECT OF COMPLAINT</h3>
+                    <p>Specify if the complaint is about a direct privacy breach, security incident, or administrative failure.</p>
+                    <div class="evidence-item-box">
+                        <a href="/calevidence/office-civil-rights-question-5.webp" target="_blank" rel="noopener noreferrer" aria-label="View Step 6 Image: OCR violation selection breakdown">
+                            <img src="/calevidence/office-civil-rights-question-5.webp" class="evidence-viewer" alt="Screenshot of the OCR specific violation category selection breakdown." loading="lazy" width="400" height="300">
+                        </a>
+                    </div>
+                </article>
+                <article class="ocr-step">
+                    <h3>STEP 7: COMPLAINANT INFO</h3>
+                    <p>Provide your legal contact information for official OCR correspondence and investigator follow-up.</p>
+                    <div class="evidence-item-box">
+                        <a href="/calevidence/office-civil-rights-complainant-redacted.webp" target="_blank" rel="noopener noreferrer" aria-label="View Step 7 Image: OCR identity contact input screen">
+                            <img src="/calevidence/office-civil-rights-complainant-redacted.webp" class="evidence-viewer" alt="Screenshot of the redacted OCR identity and contact information input screen." loading="lazy" width="400" height="300">
+                        </a>
+                    </div>
+                </article>
+                <article class="ocr-step">
+                    <h3>STEP 8: VIOLATION DETAILS</h3>
+                    <p>Enter the forensic narrative documenting exactly how and when the HIPAA violation occurred.</p>
+                    <div class="evidence-item-box">
+                        <a href="/calevidence/office-civil-rights-details-redacted.webp" target="_blank" rel="noopener noreferrer" aria-label="View Step 8 Image: OCR incident narration text frame">
+                            <img src="/calevidence/office-civil-rights-details-redacted.webp" class="evidence-viewer" alt="Screenshot of the OCR incident narrative details text box containing the forensic report." loading="lazy" width="400" height="300">
+                        </a>
+                    </div>
+                </article>
+                <article class="ocr-step">
+                    <h3>STEP 9: ADDITIONAL INFO</h3>
+                    <p>Disclose other agency filings and upload supporting evidence (SMS logs, call records, OCR/PDF files).</p>
+                    <div class="evidence-item-box">
+                        <a href="/calevidence/office-civil-rights-additional-information.webp" target="_blank" rel="noopener noreferrer" aria-label="View Step 9 Image: OCR file uploading portal node">
+                            <img src="/calevidence/office-civil-rights-additional-information.webp" class="evidence-viewer" alt="Screenshot of the OCR portal node for uploading additional files and evidence." loading="lazy" width="400" height="300">
+                        </a>
+                    </div>
+                </article>
+                <article class="ocr-step">
+                    <h3>STEP 10: CONSENT FORM</h3>
+                    <p>Sign the authorization allowing the OCR to reveal your identity to the target entity during the investigation.</p>
+                    <div class="evidence-item-box">
+                        <a href="/calevidence/office-civil-rights-question-consent.webp" target="_blank" rel="noopener noreferrer" aria-label="View Step 10 Image: OCR identity waiver block">
+                            <img src="/calevidence/office-civil-rights-question-consent.webp" class="evidence-viewer" alt="Screenshot of the OCR identity waiver and consent authorization block." loading="lazy" width="400" height="300">
+                        </a>
+                    </div>
+                </article>
+                <article class="ocr-step">
+                    <h3>STEP 11: SIGNATURE</h3>
+                    <p>Finalize the legal submission with an electronic signature and formal agreement to the terms.</p>
+                    <div class="evidence-item-box">
+                        <a href="/calevidence/office-civil-rights-signature.webp" target="_blank" rel="noopener noreferrer" aria-label="View Step 11 Image: OCR legal attestation signing screen">
+                            <img src="/calevidence/office-civil-rights-signature.webp" class="evidence-viewer" alt="Screenshot of the OCR legal electronic signature and attestation screen." loading="lazy" width="400" height="300">
+                        </a>
+                    </div>
+                </article>
+                <article class="ocr-step">
+                    <h3>STEP 12: FINAL REVIEW</h3>
+                    <p>Perform a full data integrity check before the final submission to the Department of Health and Human Services.</p>
+                    <div class="evidence-item-box">
+                        <a href="/calevidence/office-civil-rights-question-review-and-submit-redacted.webp" target="_blank" rel="noopener noreferrer" aria-label="View Step 12 Image: OCR master data confirmation frame">
+                            <img src="/calevidence/office-civil-rights-question-review-and-submit-redacted.webp" class="evidence-viewer" alt="Screenshot of the final OCR master data review and submission confirmation screen." loading="lazy" width="400" height="300">
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="audit-box warfare u-style-7a39881c" aria-labelledby="confirmation-heading">
+            <header role="banner">
+                <div class="status-badge u-style-071f882b" aria-hidden="true">CONFIRMATION</div>
+                <h2 id="confirmation-heading">Filing Successful</h2>
+            </header>
+            <p>The final confirmation screen provides your official receipt number and notice that the OCR is processing the correspondence.</p>
+            <div class="evidence-item-box u-style-90bd2859">
+                <a href="/calevidence/office-civil-rights-complaint-form-confirmation-redacted-.webp" target="_blank" rel="noopener noreferrer" aria-label="View Confirmation Image: OCR Filing Confirmation Receipt Screen">
+                    <img src="/calevidence/office-civil-rights-complaint-form-confirmation-redacted-.webp" class="evidence-viewer" alt="Screenshot showing the final OCR filing confirmation and receipt tracking number." loading="lazy" width="800" height="600">
+                </a>
+            </div>
+        </section>
+
+        <section id="faq" class="page-section" aria-labelledby="faq-heading">
+            <div class="section-tag" aria-hidden="true">// OCR/HIPAA FAQ</div>
+            <div class="audit-box blue">
+                <header role="banner">
+                    <div class="status-badge" aria-hidden="true">INTEL_RESPONSE</div>
+                    <h2 class="mb-25" id="faq-heading">Frequently Asked Questions</h2>
+                </header>
+
+                <details class="u-style-823a22e0">
+                    <summary class="faq-question u-style-a14b9077">[01] What is a HIPAA violation?</summary>
+                    <div class="faq-answer mt-10">
+                        <strong>[A]:</strong> A HIPAA violation occurs when a covered entity (healthcare provider, health plan, or clearinghouse) fails to comply with any aspect of the HIPAA Privacy, Security, or Breach Notification Rules, such as unauthorized disclosure of Protected Health Information (PHI).
+                    </div>
+                </details>
+
+                <details class="u-style-823a22e0">
+                    <summary class="faq-question u-style-a14b9077">[02] Is there a time limit to file an OCR complaint?</summary>
+                    <div class="faq-answer mt-10">
+                        <strong>[A]:</strong> Yes. A HIPAA complaint must be filed within 180 days of when you knew (or should have known) that the act or omission occurred. OCR may extend this limit if you can show 'good cause'.
+                    </div>
+                </details>
+
+                <details class="mb-10">
+                    <summary class="faq-question u-style-a14b9077">[03] Does it cost money to file a HIPAA complaint?</summary>
+                    <div class="faq-answer mt-10">
+                        <strong>[A]:</strong> No. Filing a complaint with the Office for Civil Rights (OCR) is completely free.
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section class="manifesto-container u-style-f0bc337e" aria-labelledby="regulatory-sources-heading">
+            <h2 class="u-style-23343ca8" id="regulatory-sources-heading">Primary Regulatory Sources</h2>
+            <div class="u-style-bcc3b4d5">
+                <a href="https://www.hhs.gov/hipaa/for-professionals/privacy/index.html" target="_blank" rel="noopener noreferrer" class="exhibit-link u-style-0843fcec" aria-label="External Link: DHHS HIPAA Privacy Rule Summary (Opens in new window)">DHHS: HIPAA Privacy Rule Summary</a>
+                <a href="https://ocrportal.hhs.gov/ocr/smartscreen/main.jsf" target="_blank" rel="noopener noreferrer" class="exhibit-link u-style-0843fcec" aria-label="External Link: Official OCR Complaint Portal (Opens in new window)">Official OCR Complaint Portal</a>
+                <a href="https://www.hhs.gov/hipaa/filing-a-complaint/index.html" target="_blank" rel="noopener noreferrer" class="exhibit-link u-style-0843fcec" aria-label="External Link: Filing a Complaint Process Overview (Opens in new window)">Filing a Complaint: Process Overview</a>
+                <a href="https://www.hhs.gov/hipaa/for-professionals/breach-notification/index.html" target="_blank" rel="noopener noreferrer" class="exhibit-link u-style-0843fcec" aria-label="External Link: Breach Notification Rule Requirements (Opens in new window)">Breach Notification Rule Requirements</a>
+            </div>
+        </section>
+
+        <section class="deadline-status" aria-labelledby="countdown-heading">
+            <h2 id="countdown-heading" class="sr-only">Regulatory Milestone Countdown</h2>
+            <div class="status-badge u-style-34609385" aria-hidden="true">REGULATORY MILESTONE COUNTDOWN</div>
+            <div id="ocr-countdown" class="countdown-clock" aria-live="polite" aria-atomic="true">--D --H --M</div>
+            <p id="countdown-status">TARGET DATE: NOVEMBER 24, 2026</p>
+        </section>
+
+    </main>
+
+    <script src="/nav.js"></script>
+    <script>
+        (function() {
+            var el = document.getElementById("ocr-countdown");
+            if (!el) return;
+            var deadline = new Date("2026-11-24T00:00:00-08:00");
+
+            function updateClock() {
+                var t = deadline - new Date();
+                if (t <= 0) {
+                    el.innerText = "MILESTONE REACHED";
+                    el.style.color = "var(--red)";
+                    el.setAttribute("aria-label", "Target milestone reached.");
+                    return;
+                }
+                var days = Math.floor(t / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+                var minutes = Math.floor((t / 1000 / 60) % 60);
+
+                var displayString = days + " DAYS " + hours + " HOURS " + minutes + " MINS";
+                el.innerText = displayString;
+                el.setAttribute("aria-label", days + " Days, " + hours + " Hours, and " + minutes + " Minutes remaining until target date.");
+            }
+
+            setInterval(updateClock, 60000);
+            updateClock();
+        })();
+    </script>
+
+    <script>
+        (function() {
+            var onion = 'calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion';
+            var el = document.querySelector('.onion-mirror');
+            if (el && window.location.hostname !== onion) {
+                var link = document.createElement('a');
+                link.href = 'http://' + onion + window.location.pathname;
+                link.textContent = onion;
+                link.style.color = 'inherit';
+                el.innerHTML = 'ONION_MIRROR: ';
+                el.appendChild(link);
+                el.innerHTML += ' | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"';
+            }
+        })();
+    </script>
+
+    <footer role="contentinfo" class="page-footer" aria-label="Site Footer">
+        <div class="footer-inner">
+            <p>© 2026 CALAUDIT | Nicolas Hernandez | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+            <p><strong>LEGAL DISCLAIMER:</strong> This site is provided for informational purposes based on publicly available California statutes and regulations. It does not constitute legal advice. For legal counsel, consult a licensed California attorney.</p>
+            <p><strong>MEDICAL DISCLAIMER:</strong> The forensic data and commentary provided here are for investigative and advocacy purposes only. This content is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any medical concerns.</p>
+            <p><strong>PROPRIETARY WORK PRODUCT NOTICE:</strong> All original content, analysis, and commentary on this site represents my proprietary work product. Unauthorized reproduction for legal, administrative, or commercial purposes is strictly prohibited without the express written permission of Nicolas Hernandez.</p>
+            <p class="onion-mirror">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+        </div>
+    </footer>
+</div>
+
+<script>/* Onion Link Patch */ (function(){if(window.location.hostname.endsWith('.onion')){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(h&&!h.startsWith('http')&&!h.startsWith('mailto:')&&!h.startsWith('tel:')&&!h.startsWith('#')){var p=h.split('/');var l=p[p.length-1];if(l!==''&&!l.includes('.')){a.setAttribute('href',h+'.html')}else if(h.endsWith('/')){a.setAttribute('href',h+'index.html')}}})}})()</script>
+</body>
+</html>

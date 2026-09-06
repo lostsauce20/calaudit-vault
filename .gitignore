@@ -1,0 +1,8 @@
+/*
+!/public/
+!/public/**
+!.gitignore
+!/LICENSE
+!/LICENSE-DOCS
+node_modules/
+*.apk

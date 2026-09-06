@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#050505"/>
+    <title>Free AES-256 Text Encryptor &amp; Decryptor | CalAudit</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="canonical" href="https://calaudit.org/tools/text-encryptor/"/>
+    <meta name="description" content="Free AES-256 text encryptor and decryptor using AES-GCM and a password-derived key. Encrypt or decrypt locally in your browser with no text upload to CalAudit."/>
+    <meta name="author" content="Nicolas Hernandez"/>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="CalAudit"/>
+    <meta property="og:url" content="https://calaudit.org/tools/text-encryptor/"/>
+    <meta property="og:title" content="Free AES-256 Text Encryptor &amp; Decryptor | CalAudit"/>
+    <meta property="og:description" content="Encrypt and decrypt text locally with AES-256-GCM, PBKDF2-HMAC-SHA-256, random salts, and random IVs."/>
+    <meta property="og:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="CalAudit official logo"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@CalAudit"/>
+    <meta name="twitter:creator" content="@CalAudit"/>
+    <meta name="twitter:url" content="https://calaudit.org/tools/text-encryptor/"/>
+    <meta name="twitter:title" content="Free AES-256 Text Encryptor &amp; Decryptor | CalAudit"/>
+    <meta name="twitter:description" content="Encrypt and decrypt text locally with AES-256-GCM, PBKDF2-HMAC-SHA-256, random salts, and random IVs."/>
+    <meta name="twitter:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta name="twitter:image:alt" content="CalAudit official logo"/>
+    <meta name="geo.region" content="US-CA"/>
+    <meta name="geo.placename" content="California"/>
+    <meta name="geo.position" content="38.5816;-121.4944"/>
+    <meta name="ICBM" content="38.5816, -121.4944"/>
+
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://calaudit.org/#nicolas",
+      "name": "Nicolas Hernandez",
+      "url": "https://calaudit.org"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://calaudit.org/tools/text-encryptor/#webpage",
+      "url": "https://calaudit.org/tools/text-encryptor/",
+      "name": "Free AES-256 Text Encryptor & Decryptor | CalAudit",
+      "description": "Encrypt and decrypt text locally with AES-256-GCM using a password-derived key and the browser Web Crypto API.",
+      "inLanguage": "en-US",
+      "datePublished": "2026-01-01T00:00:00Z",
+      "dateModified": "2026-08-26",
+      "author": {
+        "@id": "https://calaudit.org/#nicolas"
+      },
+      "breadcrumb": {
+        "@id": "https://calaudit.org/tools/text-encryptor/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://calaudit.org/tools/text-encryptor/#app"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://calaudit.org/tools/text-encryptor/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Hub",
+          "item": "https://calaudit.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Forensic Vault",
+          "item": "https://calaudit.org/forensic-vault/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Tool Room",
+          "item": "https://calaudit.org/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "AES-256 Text Encryptor",
+          "item": "https://calaudit.org/tools/text-encryptor/"
+        }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://calaudit.org/tools/text-encryptor/#app",
+      "name": "CalAudit AES-256 Text Encryptor & Decryptor",
+      "url": "https://calaudit.org/tools/text-encryptor/",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires W3C WebCrypto API support",
+      "isAccessibleForFree": true,
+      "featureList": [
+        "AES-GCM authenticated encryption with a 256-bit key",
+        "PBKDF2-HMAC-SHA-256 with 100,000 iterations for new packets",
+        "Versioned packet containing iteration count, salt, IV, and ciphertext",
+        "Legacy three-part packet decryption support",
+        "Local browser processing through the Web Crypto API"
+      ],
+      "description": "A free browser text encryptor and decryptor that derives a 256-bit AES-GCM key from a password and performs authenticated encryption locally.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@id": "https://calaudit.org/#nicolas"
+      },
+      "subjectOf": {
+        "@id": "https://calaudit.org/tools/text-encryptor/#howto"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://calaudit.org/tools/text-encryptor/#howto",
+      "name": "How to Encrypt and Decrypt Text with AES-256-GCM",
+      "description": "Encrypt plaintext with a password or decrypt a compatible AES-GCM ciphertext packet locally in the browser.",
+      "totalTime": "PT1M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "CalAudit AES-256-GCM Text Encryptor"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Enter a secure passphrase",
+          "text": "Type a strong, secret passphrase in Step 1. This passphrase is used to derive your 256-bit AES encryption key via 100,000 PBKDF2 iterations. Share this passphrase only with your intended recipient through a separate secure channel."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Enter your plaintext message",
+          "text": "Type or paste the sensitive text you want to encrypt into the Step 2A plaintext field."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Encrypt the message",
+          "text": "Click the Encrypt button. The tool derives your key locally and produces a versioned AES-GCM packet containing the iteration count, salt, IV, and ciphertext."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Decrypt a received message",
+          "text": "To decrypt, enter the shared passphrase in Step 1, paste the ciphertext packet into Step 2B, and click Decrypt. The original plaintext is recovered in Step 2A after authentication tag verification."
+        }
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "@id": "https://calaudit.org/tools/text-encryptor/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I encrypt text with a password?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter a strong password and plaintext, then choose Encrypt. The browser derives a 256-bit AES key with PBKDF2-HMAC-SHA-256 and creates an authenticated AES-GCM ciphertext packet locally."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I decrypt AES-256 text with this tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, if the ciphertext is a compatible CalAudit AES-GCM packet and you have the correct password. Paste the packet, enter the password, and choose Decrypt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this AES text encryptor free and private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tool is free and performs the cryptographic operation in the browser. It does not submit the entered plaintext or password to a CalAudit processing endpoint, but device, browser-extension, clipboard, and password-handling risks still apply."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does AES-GCM provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AES-GCM encrypts the message and authenticates the ciphertext. Decryption fails if the ciphertext, IV, or authentication tag is altered. It does not prevent interception or protect a compromised device."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does CalAudit upload my text or password?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This page performs key derivation, encryption, and decryption with the browser Web Crypto API and does not submit the entered plaintext or password to a CalAudit processing endpoint."
+          }
+        }
+      ]
+    }
+  ]
+}
+    </script>
+
+    <style>
+        /* A11y & Contrast Enhancements */
+        :focus-visible {
+            outline: 3px solid var(--amber, #f59e0b) !important;
+            outline-offset: 2px !important;
+        }
+
+        /* Padlock CSS Illustration */
+        .crypt-visual {
+            width: 100%;
+            height: 140px;
+            border: 1px solid #1a1a1a;
+            border-radius: 6px;
+            background: #050505;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .crypt-lock-body {
+            width: 36px;
+            height: 28px;
+            background: transparent;
+            border: 2px solid var(--amber, #f59e0b);
+            border-radius: 4px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.1);
+        }
+        .crypt-lock-shackle {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--amber, #f59e0b);
+            border-bottom: none;
+            border-radius: 11px 11px 0 0;
+            position: absolute;
+            top: -20px;
+            left: 5px;
+            animation: lock-shackle 3s infinite;
+        }
+        .crypt-keyhole {
+            width: 6px;
+            height: 6px;
+            background: var(--amber, #f59e0b);
+            border-radius: 50%;
+            position: relative;
+        }
+        .crypt-keyhole::after {
+            content: "";
+            width: 2px;
+            height: 6px;
+            background: var(--amber, #f59e0b);
+            position: absolute;
+            bottom: -5px;
+            left: 2px;
+        }
+        @keyframes lock-shackle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+    </style>
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="vault-container">
+    <header class="page-header">
+        <nav aria-label="Breadcrumb" class="back-btn-container">
+            <a href="/tools/" class="back-btn" aria-label="Return to Utility Hub">← Return to Utility Hub</a>
+        </nav>
+    </header>
+
+    <main role="main" id="main-content">
+        <div class="manifesto-container">
+            <div class="page-label" aria-hidden="true">// SERVICE NODE: FORENSIC_CRYPT_ENCRYPT</div>
+            <h1 class="page-title">Free AES-256 Text Encryptor &amp; Decryptor</h1>
+            <p class="page-subtitle" aria-hidden="true">"Encrypt and decrypt text with a password in your browser"</p>
+            <div class="requisition">
+                <p><strong>SPECIFICATION:</strong> This tool encrypts and decrypts text locally using the Web Crypto API. It derives a 256-bit AES-GCM key from the password using PBKDF2 with 100,000 iterations and a random salt, then encrypts with a random IV. The tool does not upload the entered plaintext. Security depends on password strength and on safely exchanging the ciphertext and password.</p>
+            </div>
+        </div>
+
+        <!-- Stylized CSS Illustration -->
+        <div class="crypt-visual" role="img" aria-label="Visual representation of a secure cryptographic lock built entirely with pure CSS vectors.">
+            <div class="crypt-lock-body">
+                <div class="crypt-lock-shackle"></div>
+                <div class="crypt-keyhole"></div>
+            </div>
+        </div>
+
+        <section aria-labelledby="security-module-title">
+            <div class="section-label u-style-4aa7a0c5" aria-hidden="true">SECURITY MODULE</div>
+            <h2 id="security-module-title" class="section-title">Free AES-256 Text Encryptor &amp; Decryptor</h2>
+            <p class="section-quote">"Derives a 256-bit key from your password and performs authenticated encryption in this browser tab."</p>
+            <p><strong>Quick answer:</strong> Enter a password and plaintext to create an AES-256-GCM ciphertext packet, or paste a compatible packet and use the same password to decrypt it. The encryption and decryption operations run locally with the browser Web Crypto API.</p>
+            <p>
+                Plain text can be read by anyone who gains access to the message in transit or at rest. Encryption makes the content unreadable without the password, while operational security still depends on how the password and ciphertext are exchanged.
+            </p>
+            <p>
+                This utility implements <strong>AES-GCM authenticated encryption with a 256-bit key</strong> using the Web Crypto API. New packets derive the key with <strong>100,000 PBKDF2-HMAC-SHA-256 iterations</strong> and a random salt. The page processes entered text locally; extensions, device compromise, or unsafe password sharing remain outside the tool's protection.
+            </p>
+
+            <!-- Interactive Encryptor Form -->
+            <form class="audit-box warfare u-style-44a9b609" onsubmit="event.preventDefault();">
+                <!-- Key Input Row -->
+                <div class="mb-20">
+                    <label class="u-style-1bc35cfe" for="encrypt-passphrase">[ STEP 1 ]: ENTER SECURE PASSPHRASE</label>
+                    <div class="u-style-d85c4e64">
+                        <input class="u-style-26c76ad1" type="password" id="encrypt-passphrase" placeholder="Input encryption/decryption password..." aria-required="true">
+                    </div>
+                </div>
+
+                <!-- Dual TextArea Column Layout -->
+                <div class="u-style-259f5675">
+                    <div>
+                        <label class="u-style-1bc35cfe" for="encrypt-plaintext">[ STEP 2A ]: INPUT PLAIN TEXT (TO ENCRYPT)</label>
+                        <textarea class="u-style-71b7fb92" id="encrypt-plaintext" placeholder="Type or paste your confidential text here..."></textarea>
+                    </div>
+                    <div>
+                        <label class="u-style-1bc35cfe" for="encrypt-ciphertext">[ STEP 2B ]: INPUT CIPHERTEXT (TO DECRYPT)</label>
+                        <textarea class="u-style-8b5bef4c" id="encrypt-ciphertext" placeholder="Paste formatted AES-GCM period-delimited ciphertext packet here..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Status Display Block (Aria Live Region) -->
+                <div id="encrypt-status" class="audit-box blue display-none" aria-live="polite" aria-atomic="true">
+                    <div class="status-badge" id="encrypt-badge-text">PROCESSING</div>
+                    <p class="u-style-0d3a7f5a" id="encrypt-status-text">Deriving keys...</p>
+                </div>
+
+                <!-- Action Grid Controls -->
+                <div class="u-style-cdd39656">
+                    <button type="button" onclick="runAESEncryption()" class="legal-btn u-style-659d3452" aria-controls="encrypt-status encrypt-ciphertext">🔒 SECURELY ENCRYPT TEXT</button>
+                    <button type="button" onclick="runAESDecryption()" class="legal-btn u-style-3f0359fd" aria-controls="encrypt-status encrypt-plaintext">🔓 DECRYPT CIPHERTEXT</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Content-Heavy Editorial Explainer Sections -->
+        <section class="u-style-a00caa39" aria-labelledby="editorial-title">
+            <div class="section-label" aria-hidden="true">EDITORIAL STUDY</div>
+            <h2 id="editorial-title" class="section-title">AES-256 Text Encryption Explained</h2>
+
+            <h3 class="u-style-43eee30c">How does AES-GCM encrypt text with a password?</h3>
+            <p>
+                AES-CBC provides confidentiality but does not authenticate ciphertext on its own; secure CBC-based designs pair it with a message authentication code. AES-GCM combines encryption and authentication in one operation.
+            </p>
+            <p>
+                <strong>AES-GCM (Galois/Counter Mode)</strong> produces an authentication tag alongside the ciphertext. With the correct password, decryption rejects altered packets instead of returning silently modified plaintext. It does not prevent interception, protect an exposed password, or secure a compromised endpoint.
+            </p>
+
+            <h3 class="u-style-43eee30c">How does PBKDF2 turn a password into an AES key?</h3>
+            <p>
+                The tool uses <strong>PBKDF2 (Password-Based Key Derivation Function 2)</strong> with <strong>HMAC-SHA-256</strong> to derive an encryption key from the password.
+            </p>
+            <p>
+                New packets apply <strong>100,000 iterations</strong> with a random salt. This adds work to every password guess, but it does not make guessing ineffective; use a long, unique password and exchange it separately from the ciphertext.
+            </p>
+
+            <h3 class="u-style-43eee30c">What do the salt, IV, and AES-GCM ciphertext packet contain?</h3>
+            <p>
+                To execute AES-GCM securely, two unique random sequences are required: a 16-byte <strong>Salt</strong> (for key derivation) and a 12-byte <strong>Initialization Vector (IV)</strong> (to ensure two identical plaintexts generate completely different ciphertexts).
+            </p>
+            <p>
+                New packets bundle those values with the iteration count in this versioned format: <code>v1.&lt;ITERATIONS&gt;.&lt;SALT_BASE64&gt;.&lt;IV_BASE64&gt;.&lt;CIPHERTEXT_BASE64&gt;</code>. For backward compatibility, the decryptor also accepts the earlier three-part salt, IV, and ciphertext format.
+            </p>
+        </section>
+
+        <!-- Local-processing limitations -->
+        <section aria-labelledby="crypt-telemetry-expose" class="manifesto-container u-style-a20d955f">
+            <h2 class="u-style-39a1c27a" id="crypt-telemetry-expose">
+                [ LOCAL PROCESSING AND OPERATIONAL LIMITS ]
+            </h2>
+            <p class="u-style-2fa9754c">
+                This page does not submit the plaintext or password to a CalAudit server. The browser performs the cryptographic operations with the Web Crypto API, and you decide where to store or send the resulting packet.
+            </p>
+            <p class="u-style-8bca7277">
+                Local processing is not the same as complete endpoint security. Browser extensions, clipboard history, malware, screenshots, backups, and a weak or reused password can still expose data. Use a strong unique password and share it through a channel separate from the ciphertext.
+            </p>
+        </section>
+
+        <section id="encrypt-faq" class="page-section u-style-43eb1c6a" aria-labelledby="faq-title">
+            <div class="section-tag u-style-ee72c33d" aria-hidden="true">// CIPHER-PROTOCOL // FAQ</div>
+            <div class="audit-box warfare u-style-a8ebd15a">
+                <div class="status-badge" aria-hidden="true">INTEL_RESPONSE</div>
+                <h2 class="u-style-580f23b9" id="faq-title">Frequently Asked Questions</h2>
+
+                                <details class="faq-item u-style-54892a46">
+                    <summary class="u-style-82d27e07"><span class="faq-icon u-style-3091125c" aria-hidden="true">▶</span> <strong>How do I encrypt text with a password?</strong></summary>
+                    <div class="u-style-9eca998d">Enter a strong password and plaintext, then choose Encrypt. The browser derives a 256-bit AES key with PBKDF2-HMAC-SHA-256 and creates an authenticated AES-GCM ciphertext packet locally.</div>
+                </details>
+                <details class="faq-item u-style-54892a46">
+                    <summary class="u-style-82d27e07"><span class="faq-icon u-style-3091125c" aria-hidden="true">▶</span> <strong>Can I decrypt AES-256 text with this tool?</strong></summary>
+                    <div class="u-style-9eca998d">Yes, if the ciphertext is a compatible CalAudit AES-GCM packet and you have the correct password. Paste the packet, enter the password, and choose Decrypt.</div>
+                </details>
+                <details class="faq-item u-style-54892a46">
+                    <summary class="u-style-82d27e07"><span class="faq-icon u-style-3091125c" aria-hidden="true">▶</span> <strong>Is this AES text encryptor free and private?</strong></summary>
+                    <div class="u-style-9eca998d">The tool is free and performs the cryptographic operation in the browser. It does not submit the entered plaintext or password to a CalAudit processing endpoint, but device, browser-extension, clipboard, and password-handling risks still apply.</div>
+                </details>
+                <details class="faq-item u-style-54892a46">
+                    <summary class="u-style-82d27e07"><span class="faq-icon u-style-3091125c" aria-hidden="true">▶</span> <strong>What does AES-GCM provide?</strong></summary>
+                    <div class="u-style-9eca998d"><strong>AES-GCM</strong> encrypts the message and authenticates the ciphertext. Decryption fails if the ciphertext, IV, or authentication tag is altered. It does not prevent interception or protect a compromised device.</div>
+                </details>
+                <details class="faq-item u-style-ff0f8dec">
+                    <summary class="u-style-82d27e07"><span class="faq-icon u-style-3091125c" aria-hidden="true">▶</span> <strong>Does CalAudit upload my text or password?</strong></summary>
+                    <div class="u-style-9eca998d">This page performs key derivation, encryption, and decryption with the browser Web Crypto API and does not submit the entered plaintext or password to a CalAudit processing endpoint.</div>
+                </details>
+            </div>
+        </section>
+
+        <section class="related-tools" aria-label="Related Tools">
+            <h3>// RELATED CRYPTO & SECURITY UTILITIES</h3>
+            <ul>
+                <li><a href="/tools/token-forge/">Secure Token &amp; Random String Generator</a></li>
+                <li><a href="/tools/text-cloaker/">Zero-Width Text Generator &amp; Extractor</a></li>
+                <li><a href="/tools/link-sanitizer/">URL Cleaner &amp; Tracking Parameter Remover</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="/nav.js"></script>
+
+    <!-- Interactive JS Functionality -->
+    <script>
+      const DEFAULT_PBKDF2_ITERATIONS = 100000;
+      const MIN_PBKDF2_ITERATIONS = 10000;
+      const MAX_PBKDF2_ITERATIONS = 1000000;
+      const MAX_PACKET_LENGTH = 10000000;
+
+      function encoder(str) {
+        return new TextEncoder().encode(str);
+      }
+
+      function decoder(buffer) {
+        return new TextDecoder().decode(buffer);
+      }
+
+      function bufferToBase64(buffer) {
+        const bytes = new Uint8Array(buffer);
+        let binString = "";
+        const len = bytes.byteLength;
+        for (let i = 0; i < len; i++) {
+          binString += String.fromCharCode(bytes[i]);
+        }
+        return btoa(binString);
+      }
+
+      function base64ToBuffer(base64) {
+        const binString = atob(base64);
+        return Uint8Array.from(binString, c => c.charCodeAt(0));
+      }
+
+      async function deriveKey(passphrase, salt, iterations = DEFAULT_PBKDF2_ITERATIONS) {
+        const baseKey = await crypto.subtle.importKey(
+          "raw",
+          encoder(passphrase),
+          "PBKDF2",
+          false,
+          ["deriveKey"]
+        );
+
+        return await crypto.subtle.deriveKey(
+          {
+            name: "PBKDF2",
+            salt: salt,
+            iterations: iterations,
+            hash: "SHA-256"
+          },
+          baseKey,
+          { name: "AES-GCM", length: 256 },
+          false,
+          ["encrypt", "decrypt"]
+        );
+      }
+
+      async function encryptPayload(plaintext, passphrase) {
+        const iterations = DEFAULT_PBKDF2_ITERATIONS;
+        const salt = crypto.getRandomValues(new Uint8Array(16));
+        const iv = crypto.getRandomValues(new Uint8Array(12));
+        const key = await deriveKey(passphrase, salt, iterations);
+
+        const ciphertextBuffer = await crypto.subtle.encrypt(
+          { name: "AES-GCM", iv: iv },
+          key,
+          encoder(plaintext)
+        );
+
+        const saltB64 = bufferToBase64(salt);
+        const ivB64 = bufferToBase64(iv);
+        const cipherB64 = bufferToBase64(ciphertextBuffer);
+
+        return `v1.${iterations}.${saltB64}.${ivB64}.${cipherB64}`;
+      }
+
+      async function decryptPayload(ciphertextInput, passphrase) {
+        if (ciphertextInput.length > MAX_PACKET_LENGTH) {
+          throw new Error("Encrypted packet is too large.");
+        }
+        const parts = ciphertextInput.trim().split('.');
+        let iterations = DEFAULT_PBKDF2_ITERATIONS;
+        let saltB64, ivB64, cipherB64;
+
+        if (parts[0] === 'v1') {
+          if (parts.length !== 5) {
+            throw new Error("Invalid v1 packet structure.");
+          }
+          iterations = Number(parts[1]);
+          if (!Number.isSafeInteger(iterations) ||
+              iterations < MIN_PBKDF2_ITERATIONS ||
+              iterations > MAX_PBKDF2_ITERATIONS) {
+            throw new Error("Invalid iterations count.");
+          }
+          saltB64 = parts[2];
+          ivB64 = parts[3];
+          cipherB64 = parts[4];
+        } else {
+          if (parts.length !== 3) {
+            throw new Error("Invalid packet structure.");
+          }
+          saltB64 = parts[0];
+          ivB64 = parts[1];
+          cipherB64 = parts[2];
+        }
+
+        const salt = base64ToBuffer(saltB64);
+        const iv = base64ToBuffer(ivB64);
+        const ciphertext = base64ToBuffer(cipherB64);
+        if (salt.byteLength !== 16 || iv.byteLength !== 12 || ciphertext.byteLength < 16) {
+          throw new Error("Invalid encrypted packet parameters.");
+        }
+
+        const key = await deriveKey(passphrase, salt, iterations);
+
+        const plaintextBuffer = await crypto.subtle.decrypt(
+          { name: "AES-GCM", iv: iv },
+          key,
+          ciphertext
+        );
+
+        return decoder(plaintextBuffer);
+      }
+
+      async function runAESEncryption() {
+        const passphraseInput = document.getElementById('encrypt-passphrase').value;
+        const plaintextInput = document.getElementById('encrypt-plaintext').value;
+
+        const statusBox = document.getElementById('encrypt-status');
+        const statusBadge = document.getElementById('encrypt-badge-text');
+        const statusText = document.getElementById('encrypt-status-text');
+        const ciphertextArea = document.getElementById('encrypt-ciphertext');
+
+        if (!passphraseInput) {
+          statusBox.className = "audit-box red";
+          statusBadge.textContent = "REQUIRED_FIELD_MISSING";
+          statusText.textContent = "Error: Please enter a secure passphrase in STEP 1.";
+          statusBox.style.display = "block";
+          document.getElementById('encrypt-passphrase').focus();
+          return;
+        }
+
+        if (!plaintextInput) {
+          statusBox.className = "audit-box red";
+          statusBadge.textContent = "REQUIRED_FIELD_MISSING";
+          statusText.textContent = "Error: Please enter the plaintext you wish to encrypt in STEP 2A.";
+          statusBox.style.display = "block";
+          document.getElementById('encrypt-plaintext').focus();
+          return;
+        }
+
+        statusBox.className = "audit-box blue";
+        statusBadge.textContent = "ENCRYPTING";
+        statusText.textContent = "Deriving 256-bit AES master key via PBKDF2 iterations...";
+        statusBox.style.display = "block";
+
+        try {
+          const startTime = performance.now();
+          const packedPacket = await encryptPayload(plaintextInput, passphraseInput);
+          ciphertextArea.value = packedPacket;
+
+          const endTime = performance.now();
+          const durationMs = (endTime - startTime).toFixed(2);
+
+          statusBox.className = "audit-box green";
+          statusBadge.textContent = "CIPHER_SUCCESS";
+          statusText.innerHTML = `<strong>Text successfully encrypted locally in ${durationMs}ms!</strong><br>Formatted AES-256-GCM v1 packet generated and loaded in STEP 2B.`;
+        } catch (err) {
+          statusBox.className = "audit-box red";
+          statusBadge.textContent = "CIPHER_FAILURE";
+          statusText.textContent = "Encryption failed: " + err.message;
+        }
+      }
+
+      async function runAESDecryption() {
+        const passphraseInput = document.getElementById('encrypt-passphrase').value;
+        const ciphertextInput = document.getElementById('encrypt-ciphertext').value.trim();
+
+        const statusBox = document.getElementById('encrypt-status');
+        const statusBadge = document.getElementById('encrypt-badge-text');
+        const statusText = document.getElementById('encrypt-status-text');
+        const plaintextArea = document.getElementById('encrypt-plaintext');
+
+        if (!passphraseInput) {
+          statusBox.className = "audit-box red";
+          statusBadge.textContent = "REQUIRED_FIELD_MISSING";
+          statusText.textContent = "Error: Please enter the secure passphrase in STEP 1.";
+          statusBox.style.display = "block";
+          document.getElementById('encrypt-passphrase').focus();
+          return;
+        }
+
+        if (!ciphertextInput) {
+          statusBox.className = "audit-box red";
+          statusBadge.textContent = "REQUIRED_FIELD_MISSING";
+          statusText.textContent = "Error: Please paste the period-delimited ciphertext packet in STEP 2B.";
+          statusBox.style.display = "block";
+          document.getElementById('encrypt-ciphertext').focus();
+          return;
+        }
+
+        statusBox.className = "audit-box blue";
+        statusBadge.textContent = "DECRYPTING";
+        statusText.textContent = "Re-deriving 256-bit AES key and verifying authentication tag...";
+        statusBox.style.display = "block";
+
+        try {
+          const startTime = performance.now();
+          const recoveredPlaintext = await decryptPayload(ciphertextInput, passphraseInput);
+          plaintextArea.value = recoveredPlaintext;
+
+          const endTime = performance.now();
+          const durationMs = (endTime - startTime).toFixed(2);
+
+          statusBox.className = "audit-box green";
+          statusBadge.textContent = "DECIPHER_SUCCESS";
+          statusText.innerHTML = `<strong>Authentication tag verified. Message decrypted successfully in ${durationMs}ms!</strong><br>Original plaintext loaded in STEP 2A.`;
+        } catch (err) {
+          statusBox.className = "audit-box red";
+          statusBadge.textContent = "AUTHENTICATION_FAILED";
+          statusText.textContent = "Decryption failed. The password may be incorrect, or the encrypted payload may be invalid or corrupted.";
+        }
+      }
+    </script>
+
+   <footer class="page-footer" role="contentinfo">
+    <div class="footer-inner">
+        <p>© 2026 CALAUDIT | Nicolas Hernandez — Public Interest Initiative | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+        <p><strong>OPEN SOURCE LICENSE NOTICE:</strong> All original utility code, tools, and web application logic on this platform are distributed under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">GNU AGPLv3</a>. All public health form archives, translated materials, and investigative guides are licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>. Commercial exploitation, proprietary re-licensing, or paywalling without strict attribution is strictly prohibited.</p>
+        <p class="onion-mirror" aria-label="Tor Onion Mirror Address">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+    </div>
+</footer>
+
+<script>/* Onion Link Patch */ (function(){if(window.location.hostname.endsWith('.onion')){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(h&&!h.startsWith('http')&&!h.startsWith('mailto:')&&!h.startsWith('tel:')&&!h.startsWith('#')){var p=h.split('/');var l=p[p.length-1];if(l!==''&&!l.includes('.')){a.setAttribute('href',h+'.html')}else if(h.endsWith('/')){a.setAttribute('href',h+'index.html')}}})}})();</script>
+</body>
+</html>

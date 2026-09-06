@@ -1,0 +1,22 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://calaudit.org/evidence-room/",
+      "rel": "service-doc",
+      "type": "text/html",
+      "title": "Calaudit Evidence Vault - Forensic PDF Ledger"
+    },
+    {
+      "anchor": "https://calaudit.org/llms.txt",
+      "rel": "service-desc",
+      "type": "text/plain",
+      "title": "LLM Discovery (Summary) - Ground Truth for Agents"
+    },
+    {
+      "anchor": "https://calaudit.org/llms-full.txt",
+      "rel": "service-desc",
+      "type": "text/plain",
+      "title": "LLM Discovery (Full) - Deep Litigation & Ghost Office Context"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "alt": "Exhibit TM-11: Moto G Power 2025 Motorola Unlocked Bootloader Warning Screen",
+  "summary": "Official Motorola hardware-level orange bootwarning warning screen on the Moto G Power 2025, displaying the custom cryptographic OS Fingerprint (0xBCAFCED3) proving successful bootloader unlocking and firmware signature verification bypass.",
+  "keywords": [
+    "BOOTLOADER_UNLOCK",
+    "MOTOROLA_BOOTWARNING",
+    "OS_FINGERPRINT",
+    "0xBCAFCED3",
+    "forensic-evidence",
+    "webp"
+  ],
+  "full_text": "Your device has been unlocked and can't be trusted. ID: 0xBCAFCED3. Motorola bootloader warning screen showing active unlocked status and cryptographic OS fingerprint 0xBCAFCED3 on a Moto G Power 2025."
+}

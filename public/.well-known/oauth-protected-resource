@@ -1,0 +1,6 @@
+{
+  "resource": "https://calaudit.org/api",
+  "authorization_servers": ["https://calaudit.org"],
+  "scopes_supported": ["read:evidence", "read:metadata"],
+  "bearer_methods_supported": ["header"]
+}

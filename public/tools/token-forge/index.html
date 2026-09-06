@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#050505"/>
+    <title>Free Secure Token &amp; Random String Generator | CalAudit</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="canonical" href="https://calaudit.org/tools/token-forge/"/>
+    <meta name="description" content="Free secure token and random string generator using crypto.getRandomValues(). Create 8–128 character strings with letters, numbers and symbols and view estimated entropy."/>
+    <meta name="author" content="Nicolas Hernandez"/>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="CalAudit"/>
+    <meta property="og:url" content="https://calaudit.org/tools/token-forge/"/>
+    <meta property="og:title" content="Free Secure Token &amp; Random String Generator | CalAudit"/>
+    <meta property="og:description" content="Generate secure random token and password-style strings in your browser with crypto.getRandomValues(), custom character sets, and an entropy estimate."/>
+    <meta property="og:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="CalAudit Official Logo"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@CalAudit"/>
+    <meta name="twitter:creator" content="@CalAudit"/>
+    <meta name="twitter:url" content="https://calaudit.org/tools/token-forge/"/>
+    <meta name="twitter:title" content="Free Secure Token &amp; Random String Generator | CalAudit"/>
+    <meta name="twitter:description" content="Generate secure random token and password-style strings in your browser with crypto.getRandomValues(), custom character sets, and an entropy estimate."/>
+    <meta name="twitter:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta name="twitter:image:alt" content="CalAudit Official Logo"/>
+    <meta name="geo.region" content="US-CA"/>
+    <meta name="geo.placename" content="California"/>
+    <meta name="geo.position" content="38.5816;-121.4944"/>
+    <meta name="ICBM" content="38.5816, -121.4944"/>
+
+    <style>
+        .forge-container {
+            background: #080808;
+            border: 1px solid #1a1a1a;
+            border-radius: 6px;
+            padding: 30px;
+            margin-top: 30px;
+            font-family: var(--sans, sans-serif);
+        }
+        .output-box {
+            background: #030303;
+            border: 1px solid #222;
+            border-radius: 4px;
+            padding: 20px;
+            font-family: var(--mono, monospace);
+            font-size: 18px;
+            color: var(--green, #00ff00);
+            word-break: break-all;
+            margin-bottom: 25px;
+            min-height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .copy-trigger {
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid var(--green, #00ff00);
+            color: var(--green, #00ff00);
+            font-family: var(--mono, monospace);
+            font-size: 11px;
+            padding: 6px 12px;
+            cursor: pointer;
+            border-radius: 3px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+        .copy-trigger:hover {
+            background: var(--green, #00ff00);
+            color: #000;
+        }
+        .control-group {
+            margin-bottom: 20px;
+        }
+        .control-label {
+            display: block;
+            font-family: var(--mono, monospace);
+            font-size: 12px;
+            color: #aaa;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .slider-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .range-slider {
+            flex-grow: 1;
+            accent-color: var(--green, #00ff00);
+        }
+        .slider-val {
+            font-family: var(--mono, monospace);
+            color: #fff;
+            font-size: 16px;
+            width: 30px;
+        }
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ddd;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .check-item input {
+            accent-color: var(--green, #00ff00);
+            cursor: pointer;
+        }
+        .forge-btn {
+            width: 100%;
+            background: rgba(0, 255, 0, 0.05);
+            border: 1px solid var(--green, #00ff00);
+            color: var(--green, #00ff00);
+            font-family: var(--mono, monospace);
+            padding: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: all 0.2s;
+        }
+        .forge-btn:hover {
+            background: var(--green, #00ff00);
+            color: #000;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+        }
+        .strength-indicator {
+            font-family: var(--mono, monospace);
+            font-size: 11px;
+            color: #888;
+            margin-top: -15px;
+            margin-bottom: 25px;
+            display: block;
+        }
+        /* Eradicate native browser details summary arrows */
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary {
+        list-style: none; /* Modern browser standard fallback */
+        }
+    </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://calaudit.org/#organization",
+      "name": "CalAudit",
+      "url": "https://calaudit.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://calaudit.org/calauditlogo.webp",
+        "caption": "CalAudit Official Logo"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://calaudit.org/#website",
+      "url": "https://calaudit.org/",
+      "name": "CalAudit",
+      "publisher": {
+        "@id": "https://calaudit.org/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://calaudit.org/#nicolas-hernandez",
+      "name": "Nicolas Hernandez",
+      "jobTitle": "Lead Forensic Auditor",
+      "url": "https://calaudit.org/",
+      "worksFor": {
+        "@id": "https://calaudit.org/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://calaudit.org/tools/token-forge/#webpage",
+      "url": "https://calaudit.org/tools/token-forge/",
+      "name": "Free Secure Token & Random String Generator | CalAudit",
+      "description": "Generate 8–128 character random token and password-style strings from selected character sets with crypto.getRandomValues() and rejection sampling.",
+      "dateModified": "2026-08-26",
+      "isPartOf": {
+        "@id": "https://calaudit.org/#website"
+      },
+      "about": {
+        "@id": "https://calaudit.org/tools/token-forge/#app"
+      },
+      "breadcrumb": {
+        "@id": "https://calaudit.org/tools/token-forge/#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "author": {
+        "@id": "https://calaudit.org/#nicolas-hernandez"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://calaudit.org/tools/token-forge/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "https://calaudit.org/",
+            "name": "Hub"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "https://calaudit.org/tools/",
+            "name": "Tool Room"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@id": "https://calaudit.org/tools/token-forge/",
+            "name": "Secure Token Generator"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://calaudit.org/tools/token-forge/#app",
+      "name": "CalAudit Secure Token & Random String Generator",
+      "url": "https://calaudit.org/tools/token-forge/",
+      "dateModified": "2026-08-26",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "All",
+      "isAccessibleForFree": true,
+      "description": "A free browser utility for generating cryptographically random strings from selected character sets with crypto.getRandomValues(), rejection sampling, and an estimated entropy display.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@id": "https://calaudit.org/#nicolas-hernandez"
+      },
+      "provider": {
+        "@id": "https://calaudit.org/#organization"
+      },
+      "featureList": [
+        "Cryptographically secure random strings from crypto.getRandomValues()",
+        "8–128 character output length",
+        "Selectable uppercase, lowercase, number, and symbol pools",
+        "Rejection sampling to avoid modulo bias",
+        "Estimated entropy display",
+        "No generated-value upload to a CalAudit endpoint"
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "@id": "https://calaudit.org/tools/token-forge/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I generate a secure random token?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Choose a length from 8 to 128 characters, select one or more character sets, and click the generate button. The tool uses crypto.getRandomValues() with rejection sampling to select characters locally."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this as a random password generator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, it can generate password-style random strings from uppercase letters, lowercase letters, numbers, and symbols. Check the password rules of the service where you plan to use the result."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can this generate an API token or secret key?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can generate a random secret value for systems that allow user-created tokens, but it does not create or register an API credential with any provider. Follow the target system's required format and length."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How secure is crypto.getRandomValues()?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "crypto.getRandomValues() is the browser's cryptographically secure random-number API. This tool also uses rejection sampling to avoid modulo bias when mapping random values into the selected character pool."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are generated tokens saved or uploaded?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The page does not submit generated values to a CalAudit endpoint or store them in localStorage or cookies. Clipboard history, browser extensions, screenshots, or a compromised device can still expose a copied secret."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://calaudit.org/tools/token-forge/#howto",
+      "name": "How to Generate a Secure Random Token",
+      "description": "Choose a token length and character sets, then generate a cryptographically random string locally in the browser.",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "CalAudit Secure Token Generator"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Choose a length",
+          "text": "Select an output length from 8 to 128 characters."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Choose character sets",
+          "text": "Select uppercase letters, lowercase letters, numbers, symbols, or a combination."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Generate the token",
+          "text": "Click the generate button to create a random string with crypto.getRandomValues() and rejection sampling."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Review and copy",
+          "text": "Review the estimated entropy and copy the generated string only if it fits the requirements of the system where you will use it."
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="vault-container">
+    <main id="main-content">
+        <nav aria-label="Breadcrumb" class="back-btn-container">
+            <a href="/tools/" class="back-btn">← Return to Utility Hub</a>
+        </nav>
+
+        <section class="manifesto-container">
+            <div class="page-label">// SECURITY NODE: TOKEN_FORGE</div>
+            <h1 class="page-title">Free Secure Token &amp; Random String Generator</h1>
+            <p class="page-subtitle">"Generate cryptographically random strings locally in your browser"</p>
+            <div class="requisition"><p><strong>QUICK ANSWER:</strong> Generate an 8–128 character random token or password-style string using the browser's cryptographic random-number API. Choose uppercase letters, lowercase letters, numbers, and symbols, then review the estimated entropy before copying the result.</p></div>
+        </section>
+
+        <!-- THE GENERATOR INTERFACE -->
+        <section class="forge-container" aria-label="Token Generation Interface">
+            <div class="control-group">
+                <span class="control-label">Secure Random Token Output</span>
+                <div class="output-box">
+                    <span id="token-display">Click Forge to Initialize...</span>
+                    <button class="copy-trigger" id="copy-btn" type="button">Copy</button>
+                </div>
+                <span class="strength-indicator" id="entropy-estimate">Entropy calculation: 0 bits</span>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="token-length">Random String Length</label>
+                <div class="slider-wrapper">
+                    <input type="range" id="token-length" class="range-slider" min="8" max="128" value="32">
+                    <span class="slider-val" id="length-val">32</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <span class="control-label">Character Pool Parameters</span>
+                <div class="checkbox-grid">
+                    <label class="check-item"><input type="checkbox" id="pool-upper" checked> ABC (Uppercase)</label>
+                    <label class="check-item"><input type="checkbox" id="pool-lower" checked> abc (Lowercase)</label>
+                    <label class="check-item"><input type="checkbox" id="pool-nums" checked> 123 (Numbers)</label>
+                    <label class="check-item"><input type="checkbox" id="pool-syms" checked> !@# (Special Characters)</label>
+                </div>
+            </div>
+
+            <button type="button" class="forge-btn" id="forge-trigger">[ FORGE LOCAL SECURITY PARAMETERS ]</button>
+        </section>
+
+        <!-- Security and handling notes -->
+        <section class="u-style-cd60389d" aria-labelledby="generator-expose">
+            <h2 class="u-style-4b22895e" id="generator-expose">
+                [ SECURE RANDOM TOKEN GENERATION &amp; SECRET-HANDLING NOTES ]
+            </h2>
+            <p class="u-style-3e85973a">
+                The generator uses <code class="text-green">crypto.getRandomValues()</code> and rejection sampling rather than <code>Math.random()</code>. The displayed entropy estimate assumes each character is independently selected from the active character pool.
+            </p>
+            <p class="u-style-27facda1">
+                The page does not submit generated values to a CalAudit endpoint or store them in localStorage or cookies. Browser extensions, a compromised device, screenshots, and clipboard history can still expose a secret. Treat copied tokens as sensitive and rotate any value that may have been disclosed.
+            </p>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="faq-section u-style-25da4e20" aria-labelledby="faq-title">
+            <h2 class="u-style-c2d637e7" id="faq-title">
+                [ SYSTEM_FAQ: ANTI_HARVESTING_CRYPTO_PRINCIPLES ]
+            </h2>
+
+                        <details class="faq-item"><summary><span class="faq-icon" aria-hidden="true">▶</span> How do I generate a secure random token?</summary><div class="faq-answer">Choose a length from 8 to 128 characters, select one or more character sets, and click the generate button. The tool uses <code>crypto.getRandomValues()</code> with rejection sampling to select characters locally.</div></details>
+            <details class="faq-item"><summary><span class="faq-icon" aria-hidden="true">▶</span> Can I use this as a random password generator?</summary><div class="faq-answer">Yes, it can generate password-style random strings from uppercase letters, lowercase letters, numbers, and symbols. Check the password rules of the service where you plan to use the result.</div></details>
+            <details class="faq-item"><summary><span class="faq-icon" aria-hidden="true">▶</span> Can this generate an API token or secret key?</summary><div class="faq-answer">It can generate a random secret value for systems that allow user-created tokens, but it does not create or register an API credential with any provider. Follow the target system's required format and length.</div></details>
+            <details class="faq-item"><summary><span class="faq-icon" aria-hidden="true">▶</span> How secure is <code>crypto.getRandomValues()</code>?</summary><div class="faq-answer"><code>crypto.getRandomValues()</code> is the browser's cryptographically secure random-number API. This tool also uses rejection sampling to avoid modulo bias when mapping random values into the selected character pool.</div></details>
+            <details class="faq-item"><summary><span class="faq-icon" aria-hidden="true">▶</span> Are generated tokens saved or uploaded?</summary><div class="faq-answer">The page does not submit generated values to a CalAudit endpoint or store them in localStorage or cookies. Clipboard history, browser extensions, screenshots, or a compromised device can still expose a copied secret.</div></details>
+        </section>
+
+        <section class="related-tools" aria-label="Related Tools">
+            <h3>// RELATED CRYPTO & SECURITY UTILITIES</h3>
+            <ul>
+                <li><a href="/tools/text-encryptor/">AES-256 Text Encryptor &amp; Decryptor</a></li>
+                <li><a href="/tools/text-cloaker/">Zero-Width Text Generator &amp; Extractor</a></li>
+                <li><a href="/tools/link-sanitizer/">URL Cleaner &amp; Tracking Parameter Remover</a></li>
+            </ul>
+        </section>
+    </main>
+</div>
+
+    <footer class="page-footer" role="contentinfo">
+    <div class="footer-inner">
+        <p>© 2026 CALAUDIT | Nicolas Hernandez — Public Interest Initiative | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+        <p><strong>OPEN SOURCE LICENSE NOTICE:</strong> All original utility code, tools, and web application logic on this platform are distributed under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">GNU AGPLv3</a>. All public health form archives, translated materials, and investigative guides are licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>. Commercial exploitation, proprietary re-licensing, or paywalling without strict attribution is strictly prohibited.</p>
+        <p class="onion-mirror" aria-label="Tor Onion Mirror Address">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+    </div>
+</footer>
+
+    <script src="/nav.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const lengthSlider = document.getElementById('token-length');
+        const lengthVal = document.getElementById('length-val');
+        const tokenDisplay = document.getElementById('token-display');
+        const copyBtn = document.getElementById('copy-btn');
+        const forgeBtn = document.getElementById('forge-trigger');
+        const entropyEstimate = document.getElementById('entropy-estimate');
+
+        const pools = {
+            upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            lower: 'abcdefghijklmnopqrstuvwxyz',
+            nums: '0123456789',
+            syms: '!@#$%^&*()_+-=[]{}|;:,.<>?'
+        };
+
+        lengthSlider.addEventListener('input', (e) => {
+            lengthVal.textContent = e.target.value;
+        });
+
+        function generateToken() {
+            let characterPool = '';
+
+            if (document.getElementById('pool-upper').checked) { characterPool += pools.upper; }
+            if (document.getElementById('pool-lower').checked) { characterPool += pools.lower; }
+            if (document.getElementById('pool-nums').checked) { characterPool += pools.nums; }
+            if (document.getElementById('pool-syms').checked) { characterPool += pools.syms; }
+
+            if (characterPool.length === 0) {
+                tokenDisplay.textContent = '[ ERROR: SELECT AT LEAST ONE CHARACTER POOL ]';
+                tokenDisplay.style.color = '#ef4444';
+                entropyEstimate.textContent = 'Entropy calculation: 0 bits';
+                return;
+            }
+
+            tokenDisplay.style.color = 'var(--green, #00ff00)';
+            const length = parseInt(lengthSlider.value);
+
+            let result = '';
+            const poolLength = characterPool.length;
+            const limit = Math.floor(4294967296 / poolLength) * poolLength;
+            const buffer = new Uint32Array(1);
+
+            for (let i = 0; i < length; i++) {
+                let index = -1;
+                while (true) {
+                    window.crypto.getRandomValues(buffer);
+                    const val = buffer[0];
+                    if (val < limit) {
+                        index = val % poolLength;
+                        break;
+                    }
+                }
+                result += characterPool.charAt(index);
+            }
+
+            tokenDisplay.textContent = result;
+
+            // Calculate exact entropy parameters: Shannon Entropy metrics -> L * log2(R)
+            const bitsOfEntropy = Math.floor(length * Math.log2(characterPool.length));
+            entropyEstimate.textContent = `Entropy calculation: ~${bitsOfEntropy} bits (Cryptographically Secure Pseudo-Random Output)`;
+        }
+
+        copyBtn.addEventListener('click', () => {
+            const textToCopy = tokenDisplay.textContent;
+            if (textToCopy && !textToCopy.startsWith('Click Forge') && !textToCopy.startsWith('[ ERROR')) {
+                const originalText = copyBtn.textContent;
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    copyBtn.textContent = 'COPIED';
+                    setTimeout(() => { copyBtn.textContent = originalText; }, 1500);
+                }).catch(() => {
+                    copyBtn.textContent = 'COPY BLOCKED';
+                    tokenDisplay.setAttribute('tabindex', '-1');
+                    tokenDisplay.focus();
+                    setTimeout(() => { copyBtn.textContent = originalText; }, 2000);
+                });
+            }
+        });
+
+        forgeBtn.addEventListener('click', generateToken);
+    });
+</script>
+
+    <script>/* Onion Link Patch */ (function(){if(window.location.hostname.endsWith('.onion')){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(h&&!h.startsWith('http')&&!h.startsWith('mailto:')&&!h.startsWith('tel:')&&!h.startsWith('#')){var p=h.split('/');var l=p[p.length-1];if(l!==''&&!l.includes('.')){a.setAttribute('href',h+'.html')}else if(h.endsWith('/')){a.setAttribute('href',h+'index.html')}}})}})();</script>
+</body>
+</html>

@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#050505"/>
+    <title>Free Browser-Based Privacy &amp; Utility Tools | CalAudit</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="canonical" href="https://calaudit.org/tools/"/>
+    <meta name="description" content="Explore 12 free browser-based tools for PDF redaction, image conversion and metadata removal, audio-to-text transcription, URL cleanup, encryption, secure tokens and file inspection."/>
+    <meta name="author" content="Nicolas Hernandez"/>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="CalAudit"/>
+    <meta property="og:url" content="https://calaudit.org/tools/"/>
+    <meta property="og:title" content="Free Browser-Based Privacy &amp; Utility Tools | CalAudit"/>
+    <meta property="og:description" content="Free browser tools for PDFs, images, text, links, audio, encryption, secure random tokens, Android cache workflows and file inspection."/>
+    <meta property="og:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="CalAudit Official Logo"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@CalAudit"/>
+    <meta name="twitter:creator" content="@CalAudit"/>
+    <meta name="twitter:url" content="https://calaudit.org/tools/"/>
+    <meta name="twitter:title" content="Free Browser-Based Privacy &amp; Utility Tools | CalAudit"/>
+    <meta name="twitter:description" content="Free browser tools for PDFs, images, text, links, audio, encryption, secure random tokens, Android cache workflows and file inspection."/>
+    <meta name="twitter:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta name="twitter:image:alt" content="CalAudit Official Logo"/>
+    <meta name="geo.region" content="US-CA"/>
+    <meta name="geo.placename" content="California"/>
+    <meta name="geo.position" content="38.5816;-121.4944"/>
+    <meta name="ICBM" content="38.5816, -121.4944"/>
+
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://calaudit.org/#organization",
+      "name": "CalAudit",
+      "url": "https://calaudit.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://calaudit.org/#logo",
+        "inLanguage": "en-US",
+        "url": "https://calaudit.org/calauditlogo.webp",
+        "contentUrl": "https://calaudit.org/calauditlogo.webp",
+        "caption": "CalAudit Logo"
+      },
+      "image": {
+        "@id": "https://calaudit.org/#logo"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://calaudit.org/#website",
+      "url": "https://calaudit.org/",
+      "name": "CalAudit",
+      "description": "Free browser-based utilities for privacy, documents, media, text, and systems tasks.",
+      "publisher": {
+        "@id": "https://calaudit.org/#organization"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://calaudit.org/tools/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://calaudit.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Forensic Vault",
+          "item": "https://calaudit.org/forensic-vault/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Tools"
+        }
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "dateModified": "2026-08-26",
+      "@id": "https://calaudit.org/tools/#webpage",
+      "url": "https://calaudit.org/tools/",
+      "name": "Free Browser-Based Privacy & Utility Tools | CalAudit",
+      "isPartOf": {
+        "@id": "https://calaudit.org/#website"
+      },
+      "about": {
+        "@id": "https://calaudit.org/#organization"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://calaudit.org/#logo"
+      },
+      "description": "Access 12 free browser-based tools for PDF redaction, image conversion and metadata removal, audio-to-text transcription, URL cleanup, encryption, secure tokens, file inspection, and Android workflows.",
+      "breadcrumb": {
+        "@id": "https://calaudit.org/tools/#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "WebApplication",
+              "@id": "https://calaudit.org/tools/exif-scrubber/#app",
+              "name": "Free Photo Metadata & EXIF Remover",
+              "url": "https://calaudit.org/tools/exif-scrubber/",
+              "applicationCategory": "SecurityApplication",
+              "operatingSystem": "All",
+              "description": "Remove common EXIF, GPS, camera, and timestamp metadata exposure by locally re-encoding JPEG and PNG images, with before-and-after SHA-256 file hashes.",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "WebApplication",
+              "@id": "https://calaudit.org/tools/adb-cache-builder/#app",
+              "name": "Free Android Cache Cleaner — ADB Script Builder",
+              "url": "https://calaudit.org/tools/adb-cache-builder/",
+              "applicationCategory": "UtilityApplication",
+              "operatingSystem": "All",
+              "description": "Generate an ADB helper that opens Android App Info screens so users can clear app cache manually without root or installing a cleaner app.",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "WebApplication",
+              "@id": "https://calaudit.org/tools/webp-converter/#app",
+              "name": "Free JPG & PNG to WebP Converter",
+              "url": "https://calaudit.org/tools/webp-converter/",
+              "applicationCategory": "MultimediaApplication",
+              "operatingSystem": "All",
+              "description": "Convert JPG, JPEG, or PNG images to WebP locally with adjustable quality and before-and-after file-size comparison.",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "WebApplication",
+              "@id": "https://calaudit.org/tools/text-encryptor/#app",
+              "name": "Free AES-256 Text Encryptor & Decryptor",
+              "url": "https://calaudit.org/tools/text-encryptor/",
+              "applicationCategory": "SecurityApplication",
+              "operatingSystem": "All",
+              "description": "Encrypt and decrypt text locally with AES-256-GCM and a password-derived key using PBKDF2-HMAC-SHA-256.",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "WebApplication",
+              "@id": "https://calaudit.org/tools/magic-byte-auditor/#app",
+              "name": "File Signature & Magic Bytes Checker",
+              "url": "https://calaudit.org/tools/magic-byte-auditor/",
+              "applicationCategory": "UtilityApplication",
+              "operatingSystem": "All",
+              "description": "Compare a filename extension with a limited database of common file-header signatures and report consistent, mismatched, or inconclusive results.",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "WebApplication",
+              "@id": "https://calaudit.org/tools/link-sanitizer/#app",
+              "name": "URL Cleaner & Tracking Parameter Remover",
+              "url": "https://calaudit.org/tools/link-sanitizer/",
+              "applicationCategory": "SecurityApplication",
+              "operatingSystem": "All",
+              "description": "Remove listed UTM, fbclid, gclid, and other common tracking query parameters from HTTP and HTTPS URLs in the browser.",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "item": {
+              "@type": "WebApplication",
+              "@id": "https://calaudit.org/tools/knox-keene-audit/#app",
+              "name": "DMHC & Knox-Keene Timeline Calculator",
+              "url": "https://calaudit.org/tools/knox-keene-audit/",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "All",
+              "description": "Estimate selected DMHC grievance and Knox-Keene timely-access dates using disclosed counting assumptions and generate an editable notice draft.",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "item": {
+              "@type": "WebApplication",
+              "@id": "https://calaudit.org/tools/audio-transcriber/#app",
+              "name": "Free Audio-to-Text Transcriber",
+              "url": "https://calaudit.org/tools/audio-transcriber/",
+              "applicationCategory": "MultimediaApplication",
+              "operatingSystem": "All",
+              "description": "Convert supported prerecorded audio files to text locally with browser-based Whisper after user-initiated model initialization.",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 9,
+            "item": {
+              "@type": "WebApplication",
+              "@id": "https://calaudit.org/tools/biometric-masker/#app",
+              "name": "Image Noise & Pixel Effect Generator",
+              "url": "https://calaudit.org/tools/biometric-masker/",
+              "applicationCategory": "MultimediaApplication",
+              "operatingSystem": "All",
+              "description": "Apply adjustable pixel-noise and distortion effects to images locally for creative experimentation; the effect is not a biometric-protection control.",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 10,
+            "item": {
+              "@type": "WebApplication",
+              "@id": "https://calaudit.org/tools/text-cloaker/#app",
+              "name": "Zero-Width Text Generator & Extractor",
+              "url": "https://calaudit.org/tools/text-cloaker/",
+              "applicationCategory": "SecurityApplication",
+              "operatingSystem": "All",
+              "description": "Encode hidden UTF-8 payloads with zero-width Unicode characters inside visible text and extract compatible payloads locally; this is not encryption.",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 11,
+            "item": {
+              "@type": "WebApplication",
+              "@id": "https://calaudit.org/tools/privacy-scrubber/#app",
+              "name": "Free PDF Redaction Tool",
+              "url": "https://calaudit.org/tools/privacy-scrubber/",
+              "applicationCategory": "SecurityApplication",
+              "operatingSystem": "All",
+              "description": "Draw redaction boxes over PDF pages locally and export a flattened image-based PDF for review before sharing.",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 12,
+            "item": {
+              "@type": "WebApplication",
+              "@id": "https://calaudit.org/tools/token-forge/#app",
+              "name": "Secure Token & Random String Generator",
+              "url": "https://calaudit.org/tools/token-forge/",
+              "applicationCategory": "SecurityApplication",
+              "operatingSystem": "All",
+              "description": "Generate 8–128 character cryptographically random strings with selected character pools and an estimated entropy display.",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebPageElement",
+      "@id": "https://calaudit.org/tools/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are these tools actually free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every tool in this hub is free, with no account, subscription, or usage caps. The code is open-source under the GNU AGPLv3, so you're also free to inspect, modify, or self-host it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do any of these tools upload my files to a server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tools are designed to process selected content in the browser rather than upload it to a CalAudit processing API. Page assets still come from the website, and the audio transcriber downloads model files and helper libraries after you initialize it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does \"100% offline\" or \"client-side\" actually mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Client-side means the tool's main processing logic executes in your browser. Most tools can continue after their assets load; the audio transcriber requires a first-use model and library download before local transcription is available."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to create an account or provide personal information?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No account, email address, or sign-up is required to use the tools in this hub."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data stored anywhere after I close the tab?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tools do not intentionally upload your selected content to a CalAudit processing API. Browser caches, downloads, clipboard history, extensions, or device-level logging may still retain data, so use an appropriate device profile for sensitive work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are the tools open source? Can I audit the code myself?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All original utility code and web application logic on this platform are distributed under the GNU AGPLv3, so you're free to read, modify, redistribute, or fold it into your own projects under those terms, while public health forms and guides are licensed under CC BY-NC 4.0."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which tool should I use to remove GPS and camera data from a photo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use the Free Photo Metadata & EXIF Remover. It re-encodes JPEG and PNG images to reduce common EXIF, GPS, camera, and timestamp metadata exposure and reports before-and-after SHA-256 file hashes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use these tools on my phone, or only on desktop?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tools use modern browser APIs and responsive layouts, but support and memory limits vary by browser, device, file size, and feature. Test the specific tool and output on your device before relying on it."
+          }
+        }
+      ]
+    }
+  ]
+}
+    </script>
+
+    <style>
+        /* A11y Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -50px;
+            left: 10px;
+            background: #00ff00;
+            color: #000;
+            padding: 10px 15px;
+            z-index: 9999;
+            transition: top 0.2s ease-in-out;
+            font-family: monospace;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            top: 10px;
+            outline: 3px solid #fff;
+        }
+
+        /* Screen Reader Only Utility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Card Grid Layout */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+            gap: 25px;
+            margin-top: 35px;
+            list-style: none;
+            padding: 0;
+        }
+        .tool-card {
+            background: #080808;
+            border: 1px solid #1a1a1a;
+            border-radius: 6px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.2s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+        .tool-card:hover, .tool-card:focus-within {
+            border-color: var(--green, #00ff00);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 255, 0, 0.05);
+        }
+
+        /* Interactive Highlight variants */
+        .tool-card.amber-hover:hover, .tool-card.amber-hover:focus-within {
+            border-color: var(--amber, #f59e0b);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.05);
+        }
+        .tool-card.red-hover:hover, .tool-card.red-hover:focus-within {
+            border-color: var(--red, #ef4444);
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.05);
+        }
+
+        .card-label {
+            font-family: var(--mono, monospace);
+            font-size: 10px;
+            color: #ccc; /* Improved contrast from #555 */
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        .card-title {
+            font-size: 18px;
+            font-family: var(--sans, sans-serif);
+            color: #fff;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+        .card-desc {
+            font-size: 13px;
+            color: #ddd; /* Improved contrast from #aaa */
+            line-height: 1.5;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        /* Tiny CSS visual graphics for cards */
+        .card-visual {
+            height: 60px;
+            background: #050505;
+            border: 1px solid #222; /* Improved contrast from #111 */
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            font-family: monospace;
+            font-size: 10px;
+            color: #ddd; /* Improved contrast from #333 */
+        }
+        .card-visual::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(0, 255, 0, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
+            background-size: 10px 10px;
+        }
+
+        .legal-btn:focus {
+            outline: 2px solid #fff;
+            outline-offset: 4px;
+        }
+
+        .tool-badge {
+            display: inline-block;
+            margin-left: 0.45rem;
+            padding: 0.15rem 0.4rem;
+            border: 1px solid #f59e0b;
+            border-radius: 999px;
+            color: #fbbf24;
+            font-family: var(--mono, monospace);
+            font-size: 0.58em;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            line-height: 1.2;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        /* Visible section heading (was previously sr-only) */
+        .section-heading {
+            font-family: var(--mono, monospace);
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--green, #00ff00);
+            border-left: 2px solid var(--green, #00ff00);
+            padding-left: 10px;
+            margin: 30px 0 20px;
+        }
+    </style>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="vault-container">
+    <main id="main-content" role="main">
+        <nav aria-label="Breadcrumb" class="back-btn-container">
+            <a href="/forensic-vault/" class="back-btn" aria-label="Return to Forensic Vault">← Return to Forensic Vault</a>
+        </nav>
+
+        <section aria-labelledby="hub-title" class="manifesto-container">
+            <div class="page-label" aria-hidden="true">// SERVICE NODE: FORENSIC_TOOL_ROOM</div>
+            <h1 id="hub-title" class="page-title">Free Browser-Based Privacy &amp; Utility Tools</h1>
+            <p class="page-subtitle">Free tools for PDFs, images, text, links, audio, security, and Android</p>
+        <div class="requisition u-style-3af340b0">
+                <p class="u-style-90ba7dd5">
+                    // OPERATIONAL MANIFESTO: DECENTRALIZED DATA sovereignty
+                </p>
+                <p class="u-style-850c9560">
+                    Many routine tasks can be completed directly in a modern browser without uploading the selected content to an application server. This collection provides focused utilities for images, text, links, PDFs, audio files, and Android workflows.
+                </p>
+                <p class="u-style-0bf15a07">
+                    <strong>Processing varies by tool.</strong> Most operations run in the page after its assets load. The audio transcriber downloads model weights and helper libraries only after you initialize it. Review each tool's notice and inspect sensitive outputs before relying on them.
+                </p>
+            </div>
+        </section>
+
+        <section aria-labelledby="tools-title">
+            <h2 id="tools-title" class="section-heading">12 Free Browser-Based Tools</h2>
+            <ul class="tools-grid" role="list">
+
+                <!-- Tool 1: Free Photo Metadata & EXIF Remover -->
+                <li class="tool-card">
+                    <article>
+                        <header>
+                            <div class="card-label" aria-hidden="true">// PRIVACY NODE: EXIF_SCRUBBER</div>
+                            <h3 class="card-title">Free Photo Metadata & EXIF Remover</h3>
+                        </header>
+                        <div class="card-visual text-green" aria-hidden="true">
+                            <div class="u-style-e7b8366f">📷</div>
+                        </div>
+                        <p class="card-desc">Remove common EXIF, GPS, camera, and timestamp metadata from JPEG and PNG images by re-encoding them locally, with before-and-after SHA-256 file hashes.</p>
+                    </article>
+                   <a href="/tools/exif-scrubber/" class="legal-btn u-style-80a055f3">Launch Free Photo Metadata & EXIF Remover</a>
+                </li>
+
+                <!-- Tool 2: Free Android Cache Cleaner — ADB Script Builder -->
+                <li class="tool-card">
+                    <article>
+                        <header>
+                            <div class="card-label" aria-hidden="true">// SYSTEMS NODE: ADB_SCRIPT_BUILDER</div>
+                            <h3 class="card-title">Free Android Cache Cleaner — ADB Script Builder</h3>
+                        </header>
+                        <div class="card-visual text-green" aria-hidden="true">
+                            <span class="u-style-6ec70819">shell@android:/ $ pm clear_</span>
+                        </div>
+                        <p class="card-desc">Generate a free ADB helper that opens Android App Info screens so you can clear app cache manually without root or installing a cleaner app.</p>
+                    </article>
+                   <a href="/tools/adb-cache-builder/" class="legal-btn u-style-80a055f3">Launch Free Android Cache Cleaner — ADB Script Builder</a>
+                </li>
+
+                <!-- Tool 3: Free JPG & PNG to WebP Converter -->
+                <li class="tool-card">
+                    <article>
+                        <header>
+                            <div class="card-label" aria-hidden="true">// SPEED NODE: WEBP_CONVERTER</div>
+                            <h3 class="card-title">Free JPG & PNG to WebP Converter</h3>
+                        </header>
+                        <div class="card-visual text-green" aria-hidden="true">
+                            <span>PNG/JPG ➔ WEBP (-80%)</span>
+                        </div>
+                        <p class="card-desc">Convert JPG, JPEG, or PNG images to WebP in your browser, adjust output quality, and compare the source and converted file sizes.</p>
+                    </article>
+                   <a href="/tools/webp-converter/" class="legal-btn u-style-80a055f3">Launch Free JPG & PNG to WebP Converter</a>
+                </li>
+
+                <!-- Tool 4: AES-256 Text Encryptor -->
+                <li class="tool-card amber-hover">
+                    <article>
+                        <header>
+                            <div class="card-label u-style-641399bb" aria-hidden="true">// SECURITY NODE: AES_ENCRYPTOR</div>
+                            <h3 class="card-title">Free AES-256 Text Encryptor & Decryptor</h3>
+                        </header>
+                        <div class="card-visual u-style-4aa7a0c5" aria-hidden="true">
+                            <span>🔒 AES-256-GCM // PBKDF2</span>
+                        </div>
+                        <p class="card-desc">Encrypt and decrypt text locally with AES-256-GCM and a password-derived key using PBKDF2-HMAC-SHA-256.</p>
+                    </article>
+                   <a href="/tools/text-encryptor/" class="legal-btn u-style-28af63a4">Launch AES-256 Text Encryptor</a>
+                </li>
+
+                <!-- Tool 5: File Signature & Magic Bytes Checker -->
+                <li class="tool-card red-hover">
+                    <article>
+                        <header>
+                            <div class="card-label u-style-9d35bcde" aria-hidden="true">// FORENSIC NODE: HEADER_AUDITOR</div>
+                            <h3 class="card-title">File Signature & Magic Bytes Checker</h3>
+                        </header>
+                        <div class="card-visual u-style-21026f4f" aria-hidden="true">
+                            <span>Offset 0x00: 89 50 4E 47</span>
+                        </div>
+                        <p class="card-desc">Check common file signatures and magic bytes to compare a filename extension with recognized PNG, JPG, PDF, ZIP, EXE, GIF, WebP, WAV, and AVI headers.</p>
+                    </article>
+                    <a href="/tools/magic-byte-auditor/" class="legal-btn u-style-4ab4d7a1">Launch File Signature Checker</a>
+                </li>
+
+                <!-- Tool 6: URL Telemetry De-tracker -->
+                <li class="tool-card">
+                    <article>
+                        <header>
+                            <div class="card-label" aria-hidden="true">// PRIVACY NODE: LINK_SANITIZER</div>
+                            <h3 class="card-title">URL Cleaner & Tracking Parameter Remover</h3>
+                        </header>
+                        <div class="card-visual text-green" aria-hidden="true">
+                            <span class="u-style-d742fa78">?fbclid=IwAR&utm_source=...</span>
+                        </div>
+                        <p class="card-desc">Clean URLs by removing listed UTM, fbclid, gclid, and other common tracking query parameters directly in your browser.</p>
+                    </article>
+                    <a href="/tools/link-sanitizer/" class="legal-btn u-style-80a055f3">Launch URL Tracking Remover</a>
+                </li>
+
+                <!-- Tool 7: DMHC & Knox-Keene Timeline Calculator -->
+                <li class="tool-card">
+                    <article>
+                        <header>
+                            <div class="card-label" aria-hidden="true">// COMPLIANCE NODE: KNOX_KEENE_AUDIT</div>
+                            <h3 class="card-title">DMHC & Knox-Keene Timeline Calculator</h3>
+                        </header>
+                        <div class="card-visual text-green" aria-hidden="true">
+                            <span>⏱️ HSC § 1368.01 ➔ 72h / 30d</span>
+                        </div>
+                        <p class="card-desc">Estimate selected DMHC grievance and Knox-Keene timely-access dates, then generate an editable timeline notice draft under disclosed counting assumptions.</p>
+                    </article>
+                    <a href="/tools/knox-keene-audit/" class="legal-btn u-style-80a055f3">Launch DMHC Timeline Calculator</a>
+                </li>
+
+                <!-- Tool 8: Free Audio-to-Text Transcriber -->
+                <li class="tool-card">
+                    <article>
+                        <header>
+                            <div class="card-label" aria-hidden="true">// PRIVACY NODE: AUDIO_TRANSCRIBER</div>
+                            <h3 class="card-title">Free Audio-to-Text Transcriber</h3>
+                        </header>
+                        <div class="card-visual text-green" aria-hidden="true">
+                            <span>🎙️ Whisper-Tiny // Client-Side</span>
+                        </div>
+                        <p class="card-desc">Convert MP3, WAV, M4A, AAC, FLAC, OGG, and WebM audio to text locally with browser-based Whisper after model initialization.</p>
+                    </article>
+                    <a href="/tools/audio-transcriber/" class="legal-btn u-style-80a055f3">Launch Free Audio-to-Text Transcriber</a>
+                </li>
+
+                <!-- Tool 9: Biometric Photo Masker (Experimental) -->
+                <li class="tool-card">
+                    <article>
+                        <header>
+                            <div class="card-label" aria-hidden="true">// EXPERIMENTAL NODE: BIOMETRIC_MASKER</div>
+                            <h3 class="card-title">Image Noise & Pixel Effect Generator</h3>
+                        </header>
+                        <div class="card-visual text-green" aria-hidden="true">
+                            <span>👤 Experimental Pixel-Noise Effect</span>
+                        </div>
+                        <p class="card-desc">Add adjustable pixel-noise and distortion effects to JPEG, PNG, or WebP images locally. This creative effect is not a biometric-protection or facial-recognition defense.</p>
+                    </article>
+                    <a href="/tools/biometric-masker/" class="legal-btn u-style-80a055f3">Launch Image Noise Generator</a>
+                </li>
+
+                <!-- Tool 10: Zero-Width Text Generator & Extractor -->
+                <li class="tool-card amber-hover">
+                    <article>
+                        <header>
+                            <div class="card-label u-style-641399bb" aria-hidden="true">// SECURITY NODE: TEXT_CLOAKER</div>
+                            <h3 class="card-title">Zero-Width Text Generator & Extractor</h3>
+                        </header>
+                        <div class="card-visual u-style-4aa7a0c5" aria-hidden="true">
+                            <span>​‌‍ Zero-Width Watermark Injector</span>
+                        </div>
+                        <p class="card-desc">Encode hidden UTF-8 payloads with zero-width Unicode characters inside visible text and extract compatible payloads locally. This is not encryption.</p>
+                    </article>
+                    <a href="/tools/text-cloaker/" class="legal-btn u-style-28af63a4">Launch Zero-Width Text Generator & Extractor</a>
+                </li>
+
+                <!-- Tool 11: Free PDF Redaction Tool -->
+              <li class="tool-card red-hover">
+                <article>
+                  <header>
+                    <div class="card-label u-style-9d35bcde" aria-hidden="true">// FORENSIC NODE: PRIVACY_SCRUBBER</div>
+                    <h3 class="card-title">Free PDF Redaction Tool</h3>
+                </header>
+                <div class="card-visual u-style-21026f4f" aria-hidden="true">
+                  <span>📄 Draw ➔ Redact ➔ Export</span>
+              </div>
+              <p class="card-desc">Redact PDF documents locally by drawing black boxes over pages and exporting a flattened image-based PDF for review before sharing.</p>
+            </article>
+        <a href="/tools/privacy-scrubber/" class="legal-btn u-style-4ab4d7a1">Launch Free PDF Redaction Tool</a>
+      </li>
+
+      <!-- Tool 12: Secure Token & Random String Generator -->
+                <li class="tool-card">
+                    <article>
+                        <header>
+                            <div class="card-label" aria-hidden="true">// SECURITY NODE: TOKEN_FORGE</div>
+                            <h3 class="card-title">Secure Token & Random String Generator</h3>
+                        </header>
+                        <div class="card-visual text-green" aria-hidden="true">
+                            <span>[••••••••••••••••] ➔ 256-bit Entropy</span>
+                        </div>
+                        <p class="card-desc">Generate 8–128 character secure random token or password-style strings with letters, numbers, and symbols using browser cryptographic randomness and an entropy estimate.</p>
+                    </article>
+                    <a href="/tools/token-forge/" class="legal-btn u-style-80a055f3">Launch Secure Token Generator</a>
+                </li>
+
+            </ul>
+        </section>
+
+        <section aria-labelledby="faq-title" class="side-accent-mt">
+            <h2 id="faq-title" class="section-heading">Frequently Asked Questions</h2>
+            <div class="columns">
+
+                <details class="audit-box">
+                    <summary><h3 class="u-style-03d8f795">Are these tools actually free to use?</h3></summary>
+                    <div class="details-content">
+                        <p>Yes. Every tool in this hub is free, with no account, subscription, or usage caps. The code is open-source under the GNU AGPLv3, so you're also free to inspect, modify, or self-host it.</p>
+                    </div>
+                </details>
+
+                <details class="audit-box">
+                    <summary><h3 class="u-style-03d8f795">Do any of these tools upload my files to a server?</h3></summary>
+                    <div class="details-content">
+                        <p>The tools are designed to process selected content in the browser rather than upload it to a CalAudit processing API. Page assets still come from the website, and the audio transcriber downloads model files and helper libraries after you initialize it.</p>
+                    </div>
+                </details>
+
+                <details class="audit-box">
+                    <summary><h3 class="u-style-03d8f795">What does "100% offline" or "client-side" actually mean?</h3></summary>
+                    <div class="details-content">
+                        <p>Client-side means the tool's main processing logic executes in your browser. Most tools can continue after their assets load; the audio transcriber requires a first-use model and library download before local transcription is available.</p>
+                    </div>
+                </details>
+
+                <details class="audit-box">
+                    <summary><h3 class="u-style-03d8f795">Do I need to create an account or provide personal information?</h3></summary>
+                    <div class="details-content">
+                        <p>No account, email address, or sign-up is required to use the tools in this hub.</p>
+                    </div>
+                </details>
+
+                <details class="audit-box">
+                    <summary><h3 class="u-style-03d8f795">Is my data stored anywhere after I close the tab?</h3></summary>
+                    <div class="details-content">
+                        <p>The tools do not intentionally upload your selected content to a CalAudit processing API. Browser caches, downloads, clipboard history, extensions, or device-level logging may still retain data, so use an appropriate device profile for sensitive work.</p>
+                    </div>
+                </details>
+
+                <details class="audit-box">
+                    <summary><h3 class="u-style-03d8f795">Are the tools open source? Can I audit the code myself?</h3></summary>
+                    <div class="details-content">
+                        <p>Yes. All original utility code and web application logic on this platform are distributed under the GNU AGPLv3, so you're free to read, modify, redistribute, or fold it into your own projects under those terms, while public health forms and guides are licensed under CC BY-NC 4.0.</p>
+                    </div>
+                </details>
+
+                <details class="audit-box">
+                    <summary><h3 class="u-style-03d8f795">Which tool should I use to remove GPS and camera data from a photo?</h3></summary>
+                    <div class="details-content">
+                        <p>Use the <a href="/tools/exif-scrubber/">Free Photo Metadata & EXIF Remover</a>. It re-encodes JPEG and PNG images to reduce standard embedded metadata exposure and reports before-and-after SHA-256 file hashes.</p>
+                    </div>
+                </details>
+
+                <details class="audit-box">
+                    <summary><h3 class="u-style-03d8f795">Can I use these tools on my phone, or only on desktop?</h3></summary>
+                    <div class="details-content">
+                        <p>The tools use modern browser APIs and responsive layouts, but support and memory limits vary by browser, device, file size, and feature. Test the specific tool and output on your device before relying on it.</p>
+                    </div>
+                </details>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="/nav.js"></script>
+
+   <footer class="page-footer" role="contentinfo">
+    <div class="footer-inner">
+        <p>© 2026 CALAUDIT | Nicolas Hernandez — Public Interest Initiative | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+        <p><strong>OPEN SOURCE LICENSE NOTICE:</strong> All original utility code, tools, and web application logic on this platform are distributed under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">GNU AGPLv3</a>. All public health form archives, translated materials, and investigative guides are licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>. Commercial exploitation, proprietary re-licensing, or paywalling without strict attribution is strictly prohibited.</p>
+        <p class="onion-mirror" aria-label="Tor Onion Mirror Address">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+    </div>
+</footer>
+
+<script>/* Onion Link Patch */ (function(){if(window.location.hostname.endsWith('.onion')){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(h&&!h.startsWith('http')&&!h.startsWith('mailto:')&&!h.startsWith('tel:')&&!h.startsWith('#')){var p=h.split('/');var l=p[p.length-1];if(l!==''&&!l.includes('.')){a.setAttribute('href',h+'.html')}else if(h.endsWith('/')){a.setAttribute('href',h+'index.html')}}})}})();</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "alt": "The page asks 'Which program does this relate to?', presenting options for Medicare, Medicaid (selected), and Other, with 'Continue' and 'Back' buttons.",
+  "summary": "The page asks 'Which program does this relate to?', presenting options for Medicare, Medicaid (selected), and Other, with 'Continue' and 'Back' buttons.",
+  "keywords": [
+    "Program selection",
+    "Medicaid",
+    "Medicare",
+    "User interface"
+  ],
+  "full_text": "The page asks: 'Which program does this relate to?' Options: Medicare, Medicaid (selected), Other. Buttons: Continue, Back."
+}

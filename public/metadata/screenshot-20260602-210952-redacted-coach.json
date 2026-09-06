@@ -1,0 +1,16 @@
+{
+  "alt": "Evidence Asset: screenshot-20260602-210952-redacted-coach.webp",
+  "summary": "This annotated messaging screenshot from May 28, 2026, documents the active out-of-pocket diazepam taper timeline for Nicolas Hernandez, followed by an abrupt termination of medical care. The prescriber writes: 'Next rx send, 06/08/2026 - sending month supply - last rx' and 'subscription will be cancelled', proving clinical patient abandonment in the middle of a high-risk benzodiazepine taper. When uploaded to the state's ACMS portal, this proof of care termination forced a panicked, next-day callback from the DHCS Conlan contractor, Gainwell Technologies, asking for March superbills to expedite the claim.",
+  "keywords": [
+    "Out-of-Pocket Provider",
+    "Diazepam Taper",
+    "Patient Abandonment",
+    "Prescription Cutoff",
+    "Clinical Negligence",
+    "Seizure Risk",
+    "Gainwell Technologies",
+    "Conlan Reimbursement",
+    "Annotation"
+  ],
+  "full_text": "Messages\n\nintake paperwork was sent to father despite no authorization or emergency contact designation\n- Difficulty obtaining transportation assistance for pharmacy visits continues\n\nMedical\n- Stable on current medication regimen\n- No current interdose withdrawal symptoms\n- Transition from previous dose was somewhat difficult initially but continuing to stabilize\n\nTaper\n- Previous dose, diazepam 17.5 mg/day, 03/03/2026\n- Previous dose, diazepam 15mg/day, 04/06/2026\n- Current dose, diazepam 12.5mg/day, started 05/11/2026\n\nRefill\n- Next rx send, 06/08/2026 - sending month supply - last rx\n\n- Follow-Up Video Visit: No appt at this time; subscription will be cancelled\n\n--------------------------------------------------\nUSER ANNOTATIONS ON EVIDENCE ASSET:\n--------------------------------------------------\n1. [RED BOX around difficulty obtaining transport]\n   Annotation: \"Difficulty obtaining transportation assistance for pharmacy visits continues\"\n\n2. [RED BOX around 06/08/2026 and last rx]\n   Annotation: \"last rx\" cutoff date is highlighted in red to document unilateral medical termination.\n\n3. [RED BOX around subscription cancellation block]\n   Annotation: \"Follow-Up Video Visit: No appt at this time; subscription will be cancelled\" - Sworn proof of complete clinical patient abandonment during an active taper due to withheld state reimbursements. Uploading this file to the ACMS portal triggered the pansy-response from Gainwell Technologies."
+}

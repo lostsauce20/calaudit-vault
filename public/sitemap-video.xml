@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://calaudit.org/deadquarters/carelon-expedited-number/</loc>
+    <lastmod>2026-09-05</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://calaudit.org/calevidence/carelon-expedited-number.webp</video:thumbnail_loc>
+      <video:title>Ex 9: Carelon Number Traced to Massachusetts Partnership Evidence</video:title>
+      <video:description>Exhibit 9 documents a Carelon Behavioral Health number associated with a California member appearing on a Massachusetts Behavioral Health Partnership provider page.</video:description>
+      <video:content_loc>https://calaudit.org/calevidence/carelon-expedited-number.mp4</video:content_loc>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://calaudit.org/deadquarters/lacare-conflicting-addresses-google/</loc>
+    <lastmod>2026-09-05</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://calaudit.org/calevidence/lacare-conflicting-addresses-google.webp</video:thumbnail_loc>
+      <video:title>Ex 8: L.A. Care Address Conflict in Google Results Evidence</video:title>
+      <video:description>Exhibit 8 preserves a Google search sequence displaying L.A. Care address information at both 1055 W. 7th Street and 1200 W. 7th Street.</video:description>
+      <video:content_loc>https://calaudit.org/calevidence/lacare-conflicting-addresses-google.mp4</video:content_loc>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://calaudit.org/evidence-room/jwch-phone-system-collapse-proof/</loc>
+    <lastmod>2026-09-05</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://calaudit.org/calevidence/jwch-phone-system-collapse-proof.png</video:thumbnail_loc>
+      <video:title>Ex 18: JWCH System-Wide Carrier Intercept &amp; Phone Collapse Evidence</video:title>
+      <video:description>Exhibit 18 documents three JWCH clinic phone lines returning Verizon Announcement 3 and 4 intercept errors while an out-of-network control call connects successfully.</video:description>
+      <video:content_loc>https://calaudit.org/calevidence/jwch-phone-system-collapse-proof.mp4</video:content_loc>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://calaudit.org/evidence-room/the-hardcap-trap-la-care-illegally-capping-pharmacy-rides-call-the-car/</loc>
+    <lastmod>2026-09-05</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://calaudit.org/calevidence/the-hardcap-trap-la-care-illegally-capping-pharmacy-rides-call-the-car.png</video:thumbnail_loc>
+      <video:title>Medi-Cal Transportation Mileage Cap: APL 22-008 Violation</video:title>
+      <video:description>Video evidence shows a fixed 5-mile pharmacy transportation cap in Call the Car, conflicting with DHCS APL 22-008 rules for Medi-Cal NEMT and NMT services.</video:description>
+      <video:content_loc>https://calaudit.org/calevidence/the-hardcap-trap-la-care-illegally-capping-pharmacy-rides-call-the-car.mp4</video:content_loc>
+    </video:video>
+  </url>
+</urlset>

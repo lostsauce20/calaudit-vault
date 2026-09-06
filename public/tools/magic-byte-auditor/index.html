@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#050505"/>
+    <title>Free File Signature &amp; Magic Bytes Checker | CalAudit</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="canonical" href="https://calaudit.org/tools/magic-byte-auditor/"/>
+    <meta name="description" content="Free file signature and magic bytes checker. Compare a file extension with common PNG, JPG, PDF, ZIP, EXE, GIF, WebP, WAV and AVI headers locally in your browser."/>
+    <meta name="author" content="Nicolas Hernandez"/>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="CalAudit"/>
+    <meta property="og:url" content="https://calaudit.org/tools/magic-byte-auditor/"/>
+    <meta property="og:title" content="Free File Signature &amp; Magic Bytes Checker | CalAudit"/>
+    <meta property="og:description" content="Check common file signatures and magic bytes locally to spot obvious filename-extension mismatches. This limited header check is not antivirus analysis."/>
+    <meta property="og:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta property="og:image:secure_url" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="CalAudit official logo"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@CalAudit"/>
+    <meta name="twitter:creator" content="@CalAudit"/>
+    <meta name="twitter:url" content="https://calaudit.org/tools/magic-byte-auditor/"/>
+    <meta name="twitter:title" content="Free File Signature &amp; Magic Bytes Checker | CalAudit"/>
+    <meta name="twitter:description" content="Check common file signatures and magic bytes locally to spot obvious filename-extension mismatches. This limited header check is not antivirus analysis."/>
+    <meta name="twitter:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta name="twitter:image:alt" content="CalAudit official logo"/>
+    <meta name="geo.region" content="US-CA"/>
+    <meta name="geo.placename" content="California"/>
+    <meta name="geo.position" content="38.5816;-121.4944"/>
+    <meta name="ICBM" content="38.5816, -121.4944"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://calaudit.org/#organization",
+      "name": "CalAudit",
+      "url": "https://calaudit.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://calaudit.org/#logo",
+        "inLanguage": "en-US",
+        "url": "https://calaudit.org/calauditlogo.webp",
+        "contentUrl": "https://calaudit.org/calauditlogo.webp",
+        "width": 1200,
+        "height": 630,
+        "caption": "CalAudit Logo"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://calaudit.org/#nicolas-hernandez",
+      "name": "Nicolas Hernandez",
+      "url": "https://calaudit.org/"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://calaudit.org/#website",
+      "url": "https://calaudit.org/",
+      "name": "CalAudit",
+      "publisher": {
+        "@id": "https://calaudit.org/#organization"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://calaudit.org/tools/magic-byte-auditor/#webpage",
+      "url": "https://calaudit.org/tools/magic-byte-auditor/",
+      "name": "Free File Signature & Magic Bytes Checker | CalAudit",
+      "isPartOf": {
+        "@id": "https://calaudit.org/#website"
+      },
+      "about": {
+        "@id": "https://calaudit.org/tools/magic-byte-auditor/#app"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://calaudit.org/#logo"
+      },
+      "datePublished": "2026-01-01T00:00:00+00:00",
+      "dateModified": "2026-08-26",
+      "description": "Check a file extension against a limited local database of common magic-byte and file-header signatures in the browser.",
+      "breadcrumb": {
+        "@id": "https://calaudit.org/tools/magic-byte-auditor/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://calaudit.org/tools/magic-byte-auditor/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Hub",
+          "item": "https://calaudit.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Forensic Vault",
+          "item": "https://calaudit.org/forensic-vault/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Tool Room",
+          "item": "https://calaudit.org/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "File Signature Checker",
+          "item": "https://calaudit.org/tools/magic-byte-auditor/"
+        }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://calaudit.org/tools/magic-byte-auditor/#app",
+      "name": "CalAudit File Signature & Magic Bytes Checker",
+      "url": "https://calaudit.org/tools/magic-byte-auditor/",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires HTML5 FileReader API support",
+      "description": "A free browser utility that compares a filename extension with a limited database of common file-header signatures and reports matches, mismatches, or inconclusive results.",
+      "featureList": [
+        "Reads the first 12 bytes with the FileReader API",
+        "Recognizes a limited list of common file signatures",
+        "Checks RIFF subtypes for WebP, WAV, and AVI",
+        "Compares detected type with the filename extension",
+        "Reports unknown signatures as inconclusive"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@id": "https://calaudit.org/#nicolas-hernandez"
+      },
+      "publisher": {
+        "@id": "https://calaudit.org/#organization"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://calaudit.org/tools/magic-byte-auditor/#howto",
+      "name": "How to Check a File's Magic Bytes and Signature",
+      "description": "Inspect a short file-header prefix and compare it with a limited database of common file signatures in the browser.",
+      "totalTime": "PT1M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "CalAudit File Signature & Magic Bytes Checker"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Drop or select a file",
+          "text": "Drag and drop any file onto the inspection dropzone or click to browse your local files. The tool accepts any file type including executables, documents, and images.",
+          "url": "https://calaudit.org/tools/magic-byte-auditor/#magic-dropzone"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Automatic header analysis",
+          "text": "The tool reads the first 12 bytes of the selected file and compares the header with its local signature list."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Review the comparison result",
+          "text": "A consistent result means the extension matches a recognized signature; a mismatch can indicate renaming or spoofing. Neither result proves authenticity, integrity, or safety."
+        }
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "@id": "https://calaudit.org/tools/magic-byte-auditor/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are magic bytes and file signatures?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Magic bytes are recognizable byte patterns that many file formats place near the beginning of a file. Comparing a known signature with the filename extension can reveal an obvious mismatch, but it does not prove the file is authentic or safe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I check a file's real type or header?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Select a file and the browser reads a short prefix from it. The tool compares that prefix with its limited local signature list and reports a consistent, mismatched, or inconclusive result."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can this detect a renamed or spoofed file extension?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can flag some obvious mismatches. For example, a recognized PDF signature paired with a .png filename can be reported for further investigation. Headers can also be forged, so the result is only a structural clue."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which file formats can this magic byte checker recognize?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The current local list recognizes common PNG, JPEG, PDF, ZIP and ZIP-based Office containers, EXE, GIF, WebP, WAV, and AVI header patterns. Other formats are reported as inconclusive."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this a malware scanner?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The checker only compares a small file-header prefix with a limited signature database. A matching header does not establish that a file is trustworthy, authentic, or free of malware."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    <style>
+        /* CSS Reset for screen readers */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Scrubber Dropzone Styling */
+        .scrub-dropzone {
+            border: 2px dashed #222;
+            background: #080808;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 20px;
+            position: relative;
+            display: block;
+            outline-offset: 4px;
+        }
+        .scrub-dropzone:hover,
+        .scrub-dropzone:focus-visible,
+        .scrub-dropzone.dragover {
+            border-color: var(--green, #22c55e);
+            background: rgba(0, 255, 0, 0.05);
+            outline: 2px solid var(--green, #22c55e);
+        }
+        .scrub-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #444;
+            transition: color 0.2s ease;
+        }
+        .scrub-dropzone:hover .scrub-icon,
+        .scrub-dropzone:focus-visible .scrub-icon {
+            color: var(--green, #22c55e);
+        }
+
+        /* Hex Grid CSS Illustration */
+        .hex-visual {
+            width: 100%;
+            height: 140px;
+            border: 1px solid #1a1a1a;
+            border-radius: 6px;
+            background: #050505;
+            margin-bottom: 25px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-family: monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #444;
+            font-size: 11px;
+            line-height: 1.6;
+            position: relative;
+            overflow: hidden;
+        }
+        .hex-row {
+            display: flex;
+            gap: 10px;
+        }
+        .hex-byte {
+            transition: color 0.2s ease;
+        }
+        .hex-byte.highlight {
+            color: var(--red, #ef4444);
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(239, 68, 68, 0.2);
+        }
+        .hex-byte.highlight-green {
+            color: var(--green, #22c55e);
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(34, 197, 94, 0.2);
+        }
+
+        /* FAQ Styles matching webp-converter and adb-cache-builder */
+        .faq-section {
+            margin-top: 40px;
+            border-top: 1px solid #222;
+            padding-top: 30px;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+            background: rgba(255, 0, 0, 0.01); /* Red tint matching page theme */
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--red, #ef4444);
+            font-size: 15px;
+            font-weight: bold;
+            outline: none;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item .faq-icon {
+            color: var(--red, #ef4444);
+            transition: transform 0.2s ease;
+        }
+        .faq-item[open] .faq-icon {
+            transform: rotate(90deg);
+        }
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-gray, #e0e0e0);
+            line-height: 1.6;
+            margin-top: 12px;
+            padding-left: 20px;
+            border-left: 2px solid var(--red, #ef4444);
+        }
+        </style>
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="vault-container">
+    <main id="main-content" role="main">
+        <nav aria-label="Breadcrumb" class="back-btn-container">
+            <a href="/tools/" class="back-btn" aria-label="Return to Utility Hub">&larr; Return to Utility Hub</a>
+        </nav>
+
+        <header class="manifesto-container">
+            <div class="page-label" aria-hidden="true">// SERVICE NODE: FORENSIC_MAGIC_AUDIT</div>
+            <h1 class="page-title">Free File Signature &amp; Magic Bytes Checker</h1>
+            <p class="page-subtitle">"Check file headers and detect obvious extension mismatches locally"</p>
+            <div class="requisition">
+                <p><strong>SPECIFICATION:</strong> Read the first 12 bytes of a selected file and compare its extension with a limited database of common header signatures. A result is a structural clue, not an authenticity, integrity, or malware verdict.</p>
+            </div>
+        </header>
+
+        <!-- Stylized CSS Illustration -->
+        <figure class="hex-visual" role="img" aria-label="Stylized hex block visualization mapping PNG file binary header structures showing offset 00000000 matching magic bytes 89 50 4E 47.">
+            <div class="hex-row" aria-hidden="true">
+                <span>00000000:</span>
+                <span class="hex-byte highlight">89</span>
+                <span class="hex-byte highlight">50</span>
+                <span class="hex-byte highlight">4e</span>
+                <span class="hex-byte highlight">47</span>
+                <span class="hex-byte">0d</span>
+                <span class="hex-byte">0a</span>
+                <span class="hex-byte">1a</span>
+                <span class="hex-byte">0a</span>
+                <span class="u-style-384915a8">.PNG</span>
+            </div>
+            <div class="hex-row u-style-0dbc0f09" aria-hidden="true">
+                <span>00000008:</span>
+                <span class="hex-byte">00</span>
+                <span class="hex-byte">00</span>
+                <span class="hex-byte">00</span>
+                <span class="hex-byte">0d</span>
+                <span class="hex-byte">49</span>
+                <span class="hex-byte">48</span>
+                <span class="hex-byte">44</span>
+                <span class="hex-byte">52</span>
+                <span class="u-style-04f98738">IHDR</span>
+            </div>
+        </figure>
+
+        <section aria-labelledby="inspection-engine-title">
+            <div class="section-label u-style-21026f4f" aria-hidden="true">FORENSIC INTEGRITY MODULE</div>
+            <h2 id="inspection-engine-title" class="section-title">Check File Signatures and Magic Bytes</h2>
+            <blockquote class="section-quote">
+                <p>"Compares filename extensions with recognized binary header signatures."</p>
+            </blockquote>
+            <p><strong>Quick answer:</strong> Select a file to compare its filename extension with a small local database of common magic-byte signatures. The tool reads only a short header prefix and can flag obvious mismatches; it does not prove authenticity, integrity, or malware safety.</p>
+            <p>
+                Malicious entities often mask executable files or scripts by manually altering their extension to safe formats (such as converting <code>payload.exe</code> to <code>invoice.pdf</code>).
+            </p>
+            <p>
+                This tool inspects the first 12 bytes of the selected file and checks a small list of common signatures. A mismatch can indicate manual renaming or spoofing, while an unknown or matching result does not establish that the file is safe.
+            </p>
+
+            <div class="audit-box warfare u-style-110985c5">
+                <div class="scrub-dropzone u-style-336bf772"
+                     id="magic-dropzone"
+                     role="button"
+                     tabindex="0"
+                     aria-labelledby="dropzone-text dropzone-subtext"
+                     onclick="document.getElementById('magic-file-input').click()"
+                     onkeydown="if(event.key === 'Enter' || event.key === ' '){ event.preventDefault(); document.getElementById('magic-file-input').click(); }"
+                    >
+
+                    <label for="magic-file-input" class="sr-only">Upload file to inspect magic bytes</label>
+                    <input type="file" id="magic-file-input" class="sr-only" tabindex="-1" aria-hidden="true" onchange="handleMagicSelect(event)">
+
+                    <div class="scrub-icon u-style-21026f4f" id="magic-dropzone-icon" aria-hidden="true">🕵️</div>
+                    <p class="u-style-41dbd68b" id="dropzone-text">Drag &amp; Drop Any File to Inspect Magic Bytes</p>
+                    <p class="u-style-d75222db" id="dropzone-subtext">Inspects raw signature offsets entirely offline.</p>
+                </div>
+
+                <div id="magic-status" class="audit-box blue display-none" aria-live="assertive" aria-atomic="true">
+                    <div class="status-badge" id="magic-badge-text">ANALYSIS_PENDING</div>
+                    <p class="u-style-ff59805c" id="magic-status-text">Ready for file ingestion...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content-Heavy Editorial Explainer Sections -->
+        <section class="u-style-25da4e20" aria-labelledby="custody-title">
+            <div class="section-label" aria-hidden="true">EDITORIAL STUDY</div>
+            <h2 id="custody-title" class="section-title">File Signatures, Magic Bytes &amp; Fake Extensions Explained</h2>
+
+            <h3 class="u-style-cc000751">What are magic bytes and file signatures?</h3>
+            <p>
+                Filename extensions such as <code>.png</code> or <code>.pdf</code> are labels. Many formats also begin with recognizable byte patterns commonly called magic bytes or file signatures.
+            </p>
+            <p>
+                Comparing the label with a recognized header can reveal an obvious mismatch. Headers can be forged, signatures can overlap, and this tool reads only a small prefix, so the result does not establish chain of custody, authenticity, integrity, or safety.
+            </p>
+
+            <h3 class="u-style-cc000751">Which file signatures can this checker recognize?</h3>
+            <p>
+                Some common signature prefixes include:
+            </p>
+            <ul class="u-style-e86c485e">
+                <li class="mb-5">&bull; PNG Image: <code class="u-style-032961c5">89 50 4E 47</code></li>
+                <li class="mb-5">&bull; JPEG/JPG Image: <code class="u-style-032961c5">FF D8 FF</code></li>
+                <li class="mb-5">&bull; PDF Document: <code class="u-style-032961c5">25 50 44 46</code></li>
+                <li class="mb-5">&bull; Windows Executable (EXE): <code class="u-style-21026f4f">4D 5A</code></li>
+                <li>&bull; WebP Image: <code class="u-style-032961c5">52 49 46 46</code> (with WebP offsets)</li>
+            </ul>
+
+            <h3 class="u-style-cc000751">How can a file signature reveal a renamed or spoofed extension?</h3>
+            <p>
+                Adversaries exploit operating system defaults (like "Hide file extensions for known file types") to mask dangerous scripts and malware payloads. An attacker can name a malicious executable <code>tax-form.pdf.exe</code>.
+            </p>
+            <p>
+                When known extensions are hidden, a name ending in <code>.pdf.exe</code> may be misleading. If this tool recognizes an executable header while the visible extension claims <code>.pdf</code>, it reports a mismatch for further investigation.
+            </p>
+        </section>
+
+        <!-- Scope and limitations -->
+        <section class="u-style-cd60389d" aria-labelledby="enterprise-sandbox-expose">
+            <h2 class="u-style-4b22895e" id="enterprise-sandbox-expose">
+                [ SCOPE AND LIMITATIONS ]
+            </h2>
+            <p class="u-style-3e85973a">
+                The application code reads a small file prefix locally and does not submit the selected file to a CalAudit upload endpoint. It recognizes only the signatures listed on this page and reports all other headers as inconclusive.
+            </p>
+            <p class="u-style-bdc5601d">
+                A header comparison is not antivirus analysis. Do not open a suspicious file based on a green result, and use appropriate malware scanning, provenance checks, and organizational controls for untrusted files.
+            </p>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="faq-section" aria-labelledby="faq-title">
+            <h2 class="u-style-c2d637e7" id="faq-title">[ SYSTEM_FAQ: MAGIC_BYTE_AUDITING_PRINCIPLES ]</h2>
+
+                        <details class="faq-item"><summary><span class="faq-icon" aria-hidden="true">▶</span> What are magic bytes and file signatures?</summary><div class="faq-answer">Magic bytes are recognizable byte patterns that many file formats place near the beginning of a file. Comparing a known signature with the filename extension can reveal an obvious mismatch, but it does not prove the file is authentic or safe.</div></details>
+            <details class="faq-item"><summary><span class="faq-icon" aria-hidden="true">▶</span> How do I check a file's real type or header?</summary><div class="faq-answer">Select a file and the browser reads a short prefix from it. The tool compares that prefix with its limited local signature list and reports a consistent, mismatched, or inconclusive result.</div></details>
+            <details class="faq-item"><summary><span class="faq-icon" aria-hidden="true">▶</span> Can this detect a renamed or spoofed file extension?</summary><div class="faq-answer">It can flag some obvious mismatches. For example, a recognized PDF signature paired with a <code>.png</code> filename can be reported for further investigation. Headers can also be forged, so the result is only a structural clue.</div></details>
+            <details class="faq-item"><summary><span class="faq-icon" aria-hidden="true">▶</span> Which file formats can this magic byte checker recognize?</summary><div class="faq-answer">The current local list recognizes common PNG, JPEG, PDF, ZIP and ZIP-based Office containers, EXE, GIF, WebP, WAV, and AVI header patterns. Other formats are reported as inconclusive.</div></details>
+            <details class="faq-item"><summary><span class="faq-icon" aria-hidden="true">▶</span> Is this a malware scanner?</summary><div class="faq-answer">No. The checker only compares a small file-header prefix with a limited signature database. A matching header does not establish that a file is trustworthy, authentic, or free of malware.</div></details>
+        </section>
+
+        <section class="related-tools" aria-label="Related Tools">
+            <h3>// RELATED BINARY & PRIVACY UTILITIES</h3>
+            <ul>
+                <li><a href="/tools/privacy-scrubber/">PDF Redaction Tool</a></li>
+                <li><a href="/tools/exif-scrubber/">Photo Metadata &amp; EXIF Remover</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="/nav.js"></script>
+
+    <!-- Interactive JS Functionality -->
+    <script>
+      const magicDropzone = document.getElementById('magic-dropzone');
+
+      // Drag & Drop
+      ['dragenter', 'dragover'].forEach(eventName => {
+        magicDropzone.addEventListener(eventName, (e) => { e.preventDefault(); magicDropzone.classList.add('dragover'); }, false);
+      });
+      ['dragleave', 'drop'].forEach(eventName => {
+        magicDropzone.addEventListener(eventName, (e) => { e.preventDefault(); magicDropzone.classList.remove('dragover'); }, false);
+      });
+      magicDropzone.addEventListener('drop', (e) => {
+        const dt = e.dataTransfer;
+        if (dt.files.length > 0) processMagicFile(dt.files[0]);
+      });
+
+      function handleMagicSelect(event) {
+        if (event.target.files.length > 0) processMagicFile(event.target.files[0]);
+      }
+
+      function processMagicFile(file) {
+        const statusBox = document.getElementById('magic-status');
+        const statusBadge = document.getElementById('magic-badge-text');
+        const statusText = document.getElementById('magic-status-text');
+
+        statusBox.className = "audit-box blue";
+        statusBadge.textContent = "INSPECTING";
+        statusText.textContent = "Reading raw binary file signature buffers...";
+        statusBox.style.display = "block";
+
+        const reader = new FileReader();
+        reader.onerror = function() {
+          statusBox.className = "audit-box red";
+          statusBadge.textContent = "READ_ERROR";
+          statusText.textContent = "The browser could not read this file. Select a different file and try again.";
+        };
+        reader.onload = function(e) {
+          const arr = new Uint8Array(e.target.result);
+          if (arr.length < 4) {
+              statusBox.className = "audit-box red";
+              statusBadge.textContent = "MISMATCHED";
+              statusText.textContent = "Error: File size is too small to contain standard magic bytes.";
+              return;
+          }
+
+          let header = "";
+          for (let i = 0; i < Math.min(arr.length, 4); i++) {
+            header += arr[i].toString(16).padStart(2, '0');
+          }
+
+          let verifiedFormat = "Unknown or Unlisted Format Binary Structure";
+          let isRIFF = header.startsWith("52494646");
+          let riffType = "";
+          if (isRIFF && arr.length >= 12) {
+              const subTypeArr = arr.subarray(8, 12);
+              for (let i = 0; i < subTypeArr.length; i++) {
+                  riffType += subTypeArr[i].toString(16).padStart(2, '0');
+              }
+          }
+
+          const fileExt = file.name.split('.').pop().toLowerCase();
+
+          // Standard Signatures Database
+          if (header.startsWith("89504e47")) verifiedFormat = "png";
+          else if (header.startsWith("ffd8")) verifiedFormat = "jpg";
+          else if (header.startsWith("25504446")) verifiedFormat = "pdf";
+          else if (header.startsWith("504b0304")) verifiedFormat = "zip"; // Also docx/xlsx
+          else if (header.startsWith("4d5a")) verifiedFormat = "exe";
+          else if (header.startsWith("47494638")) verifiedFormat = "gif";
+          else if (isRIFF) {
+              if (riffType === "57454250") verifiedFormat = "webp";
+              else if (riffType === "57415645") verifiedFormat = "wav";
+              else if (riffType === "41564920") verifiedFormat = "avi";
+              else verifiedFormat = "riff-container";
+          }
+
+          // Clear previous output safely
+          statusText.textContent = "";
+
+          // Classification logic
+          if (verifiedFormat === "Unknown or Unlisted Format Binary Structure" || verifiedFormat === "riff-container") {
+              statusBox.className = "audit-box amber";
+              statusBox.setAttribute('role', 'status');
+              statusBadge.textContent = "INCONCLUSIVE";
+
+              const strongLabel = document.createElement("strong");
+              strongLabel.textContent = "INCONCLUSIVE / UNKNOWN BINARY SIGNATURE:";
+              statusText.appendChild(strongLabel);
+              statusText.appendChild(document.createElement("br"));
+              const explanation = document.createTextNode("The file header does not match any standard signatures in our local database. The result is inconclusive.");
+              statusText.appendChild(explanation);
+              statusText.appendChild(document.createElement("br"));
+              statusText.appendChild(document.createElement("br"));
+
+              const bullet1 = document.createTextNode("• File Name: ");
+              statusText.appendChild(bullet1);
+              const nameSpan = document.createElement("span");
+              nameSpan.textContent = file.name;
+              statusText.appendChild(nameSpan);
+              statusText.appendChild(document.createElement("br"));
+
+              const bullet2 = document.createTextNode("• Declared Extension: ");
+              statusText.appendChild(bullet2);
+              const extSpan = document.createElement("span");
+              extSpan.textContent = `.${fileExt}`;
+              statusText.appendChild(extSpan);
+              statusText.appendChild(document.createElement("br"));
+
+              const bullet3 = document.createTextNode("• Header First 4 Bytes (Hex): ");
+              statusText.appendChild(bullet3);
+              const codeSig = document.createElement("code");
+              codeSig.className = "u-style-f24e8c22";
+              codeSig.textContent = header;
+              statusText.appendChild(codeSig);
+          } else if (verifiedFormat === fileExt ||
+                     (verifiedFormat === "jpg" && fileExt === "jpeg") ||
+                     (verifiedFormat === "zip" && (fileExt === "docx" || fileExt === "xlsx" || fileExt === "pptx"))) {
+              statusBox.className = "audit-box green";
+              statusBox.setAttribute('role', 'status');
+              statusBadge.textContent = "CONSISTENT";
+
+              const strongLabel = document.createElement("strong");
+              strongLabel.textContent = "Binary Signature Consistent.";
+              statusText.appendChild(strongLabel);
+              statusText.appendChild(document.createElement("br"));
+              const explanation = document.createTextNode("The file extension matches the detected magic byte header. Note that a consistent signature does not guarantee file authenticity or integrity; it merely confirms structural matching.");
+              statusText.appendChild(explanation);
+              statusText.appendChild(document.createElement("br"));
+              statusText.appendChild(document.createElement("br"));
+
+              const bullet1 = document.createTextNode("• File Name: ");
+              statusText.appendChild(bullet1);
+              const nameSpan = document.createElement("span");
+              nameSpan.textContent = file.name;
+              statusText.appendChild(nameSpan);
+              statusText.appendChild(document.createElement("br"));
+
+              const bullet2 = document.createTextNode("• Declared Extension: ");
+              statusText.appendChild(bullet2);
+              const extSpan = document.createElement("span");
+              extSpan.textContent = `.${fileExt}`;
+              statusText.appendChild(extSpan);
+              statusText.appendChild(document.createElement("br"));
+
+              const bullet3 = document.createTextNode("• Internal Header: ");
+              statusText.appendChild(bullet3);
+              const verSpan = document.createElement("span");
+              verSpan.textContent = `.${verifiedFormat} (Confirmed)`;
+              statusText.appendChild(verSpan);
+              statusText.appendChild(document.createElement("br"));
+
+              const bullet4 = document.createTextNode("• Magic Byte Hex Stream: ");
+              statusText.appendChild(bullet4);
+              const codeSig = document.createElement("code");
+              codeSig.className = "u-style-f24e8c22";
+              codeSig.textContent = header;
+              statusText.appendChild(codeSig);
+
+              if (isRIFF) {
+                  statusText.appendChild(document.createElement("br"));
+                  const bullet5 = document.createTextNode("• RIFF Container Type: ");
+                  statusText.appendChild(bullet5);
+                  const codeRiff = document.createElement("code");
+                  codeRiff.textContent = riffType === "57454250" ? "WebP" : riffType;
+                  statusText.appendChild(codeRiff);
+              }
+          } else {
+              statusBox.className = "audit-box red";
+              statusBox.setAttribute('role', 'alert');
+              statusBadge.textContent = "MISMATCHED";
+
+              const strongLabel = document.createElement("strong");
+              strongLabel.className = "u-style-21026f4f";
+              strongLabel.textContent = "BINARY SIGNATURE MISMATCH DETECTED:";
+              statusText.appendChild(strongLabel);
+              statusText.appendChild(document.createElement("br"));
+
+              const introText = document.createTextNode("The file extension claims to be ");
+              statusText.appendChild(introText);
+              const extStrong = document.createElement("strong");
+              extStrong.textContent = `.${fileExt}`;
+              statusText.appendChild(extStrong);
+              const introText2 = document.createTextNode(", but raw byte structures match ");
+              statusText.appendChild(introText2);
+              const verStrong = document.createElement("strong");
+              verStrong.textContent = `.${verifiedFormat}`;
+              statusText.appendChild(verStrong);
+              const introText3 = document.createTextNode(", indicating possible spoofing or manual renaming.");
+              statusText.appendChild(introText3);
+              statusText.appendChild(document.createElement("br"));
+              statusText.appendChild(document.createElement("br"));
+
+              const bullet1 = document.createTextNode("• File Name: ");
+              statusText.appendChild(bullet1);
+              const nameSpan = document.createElement("span");
+              nameSpan.textContent = file.name;
+              statusText.appendChild(nameSpan);
+              statusText.appendChild(document.createElement("br"));
+
+              const bullet2 = document.createTextNode("• Magic Byte Header Signature (Hex): ");
+              statusText.appendChild(bullet2);
+              const codeSig = document.createElement("code");
+              codeSig.className = "u-style-b99e399d";
+              codeSig.textContent = header;
+              statusText.appendChild(codeSig);
+
+              if (isRIFF) {
+                  statusText.appendChild(document.createElement("br"));
+                  const bullet3 = document.createTextNode("• RIFF Container Type: ");
+                  statusText.appendChild(bullet3);
+                  const codeRiff = document.createElement("code");
+                  codeRiff.textContent = riffType;
+                  statusText.appendChild(codeRiff);
+              }
+          }
+        };
+        reader.readAsArrayBuffer(file.slice(0, 12));
+      }
+    </script>
+
+    <footer class="page-footer" role="contentinfo">
+    <div class="footer-inner">
+        <p>© 2026 CALAUDIT | Nicolas Hernandez — Public Interest Initiative | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+        <p><strong>OPEN SOURCE LICENSE NOTICE:</strong> All original utility code, tools, and web application logic on this platform are distributed under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">GNU AGPLv3</a>. All public health form archives, translated materials, and investigative guides are licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>. Commercial exploitation, proprietary re-licensing, or paywalling without strict attribution is strictly prohibited.</p>
+        <p class="onion-mirror" aria-label="Tor Onion Mirror Address">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+    </div>
+</footer>
+
+</div>
+
+<script>/* Onion Link Patch */ (function(){if(window.location.hostname.endsWith('.onion')){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(h&&!h.startsWith('http')&&!h.startsWith('mailto:')&&!h.startsWith('tel:')&&!h.startsWith('#')){var p=h.split('/');var l=p[p.length-1];if(l!==''&&!l.includes('.')){a.setAttribute('href',h+'.html')}else if(h.endsWith('/')){a.setAttribute('href',h+'index.html')}}})}})();</script>
+</body>
+</html>

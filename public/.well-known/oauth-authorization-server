@@ -1,0 +1,14 @@
+{
+  "issuer": "https://calaudit.org",
+  "authorization_endpoint": "https://calaudit.org/auth/authorize",
+  "token_endpoint": "https://calaudit.org/auth/token",
+  "jwks_uri": "https://calaudit.org/.well-known/jwks.json",
+  "scopes_supported": ["read:evidence", "read:metadata"],
+  "response_types_supported": ["code"],
+  "grant_types_supported": ["authorization_code", "client_credentials"],
+  "agent_auth": {
+    "register_uri": "https://calaudit.org/auth.md",
+    "supported_identity_types": ["x509", "jwt"],
+    "supported_credential_types": ["token"]
+  }
+}

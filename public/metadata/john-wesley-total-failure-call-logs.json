@@ -1,0 +1,12 @@
+{
+  "alt": "An E2PDF Call Log Report from Nicolas Hernandez's mobile phone, detailing outbound calls made on June 18, 2026, to John Wesley Health Centers (JWCH) numbers and out-of-network control lines, proving a system-wide clinic PBX/SIP trunking failure and carrier intercepts.",
+  "summary": "A forensic E2PDF Call Log Report demonstrating outbound call attempts on June 18, 2026. Outbound calls to John Wesley Health Centers (JWCH) regional numbers (Bellflower, Lancaster, and toll-free main lines) returned zero-second durations and carrier-level intercepts, while out-of-network control group calls connected successfully, proving system-wide network inaccessibility.",
+  "keywords": [
+    "John Wesley Health",
+    "Knox-Keene Violation",
+    "Call Log Report",
+    "PBX Collapse",
+    "Carrier Intercept"
+  ],
+  "full_text": "E2PDF Call Log Report\n*It is system generated file using device data at the time of generation\n18-Jun-2026 TO 18-Jun-2026\nFri Jun 19 02:00:35 PDT 2026\n\nName | Phone Number | Time | Duration | Type\n12484345508 | 12484345508 | 18:04 18-06-2026 | 00:00:11 | Dialed\n6619422391 | 6619422391 | 18:04 18-06-2026 | 00:00:00 | Dialed\n15628677999 | 15628677999 | 18:03 18-06-2026 | 00:00:00 | Dialed\n18667335924 | 18667335924 | 18:03 18-06-2026 | 00:00:00 | Dialed\n12484345508 | 12484345508 | 18:02 18-06-2026 | 00:00:02 | Dialed\n6619422391 | 6619422391 | 18:02 18-06-2026 | 00:00:00 | Dialed\n15628677999 | 15628677999 | 17:21 18-06-2026 | 00:00:00 | Dialed\n15628677999 | 15628677999 | 17:18 18-06-2026 | 00:00:00 | Dialed\n15628677999 | 15628677999 | 17:17 18-06-2026 | 00:00:00 | Dialed\n15628677999 | 15628677999 | 17:12 18-06-2026 | 00:00:00 | Dialed\n15628677999 | 15628677999 | 16:40 18-06-2026 | 00:00:00 | Dialed\n18667335924 | 18667335924 | 16:39 18-06-2026 | 00:00:00 | Dialed"
+}

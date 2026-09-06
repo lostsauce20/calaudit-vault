@@ -1,0 +1,13 @@
+{
+  "alt": "Exhibit TM-12: Moto G Power 2025 Fastboot Mode Hardware Verification Screen",
+  "summary": "Fastboot hardware console screen on the Moto G Power 2025 (XT2515-1) showing 'flashing_unlocked' status and carrier ID 0x0032 (cid:0x0032). Confirms hardware-level liberation from carrier control.",
+  "keywords": [
+    "FASTBOOT_UNLOCKED",
+    "FLASHING_UNLOCKED",
+    "CID_0x0032",
+    "XT2515_1",
+    "forensic-evidence",
+    "webp"
+  ],
+  "full_text": "FASTBOOT MODE. Device status: flashing_unlocked. CID: 0x0032. Model: XT2515-1. Moto G Power 2025 fastboot hardware interface confirming complete hardware and bootloader unlock."
+}

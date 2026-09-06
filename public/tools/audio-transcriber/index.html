@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#050505"/>
+    <title>Free Audio-to-Text Transcriber — Local Whisper | CalAudit</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob: https://*.pages.dev; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://calaudit.org https://i.ytimg.com; media-src 'self'; frame-src 'self' https://www.youtube.com https://youtube.com; connect-src 'self' https://agent.calaudit.org https://cdn.jsdelivr.net https://huggingface.co https://*.huggingface.co https://*.aws.cdn.hf.co https://onnx-community.github.io blob: data:; worker-src 'self' blob: https://cdn.jsdelivr.net; upgrade-insecure-requests;"/>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin/>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
+    <link rel="preconnect" href="https://huggingface.co" crossorigin/>
+    <link rel="dns-prefetch" href="https://huggingface.co"/>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="canonical" href="https://calaudit.org/tools/audio-transcriber/"/>
+    <meta name="description" content="Free audio-to-text transcriber for MP3, WAV, M4A, AAC, FLAC, OGG and WebM. Uses Whisper to transcribe files locally in your browser after model initialization, with no audio upload to CalAudit."/>
+    <meta name="author" content="Nicolas Hernandez"/>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="CalAudit"/>
+    <meta property="og:url" content="https://calaudit.org/tools/audio-transcriber/"/>
+    <meta property="og:title" content="Free Audio-to-Text Transcriber — Local Whisper | CalAudit"/>
+    <meta property="og:description" content="Transcribe MP3, WAV, M4A and other audio files to text with local Whisper inference in your browser after model initialization."/>
+    <meta property="og:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="CalAudit Logo"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@CalAudit"/>
+    <meta name="twitter:creator" content="@CalAudit"/>
+    <meta name="twitter:url" content="https://calaudit.org/tools/audio-transcriber/"/>
+    <meta name="twitter:title" content="Free Audio-to-Text Transcriber — Local Whisper | CalAudit"/>
+    <meta name="twitter:description" content="Transcribe MP3, WAV, M4A and other audio files to text with local Whisper inference in your browser after model initialization."/>
+    <meta name="twitter:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta name="twitter:image:alt" content="CalAudit Logo"/>
+    <meta name="geo.region" content="US-CA"/>
+    <meta name="geo.placename" content="California"/>
+    <meta name="geo.position" content="38.5816;-121.4944"/>
+    <meta name="ICBM" content="38.5816, -121.4944"/>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://calaudit.org/#nicolas-hernandez",
+          "name": "Nicolas Hernandez",
+          "url": "https://calaudit.org",
+          "jobTitle": "Operator",
+          "image": "https://calaudit.org/calauditlogo.webp"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://calaudit.org/#organization",
+          "name": "CalAudit",
+          "url": "https://calaudit.org/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://calaudit.org/calauditlogo.webp",
+            "caption": "CalAudit Official Logo"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://calaudit.org/#website",
+          "url": "https://calaudit.org/",
+          "name": "CalAudit",
+          "publisher": { "@id": "https://calaudit.org/#organization" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://calaudit.org/tools/audio-transcriber/#webpage",
+          "url": "https://calaudit.org/tools/audio-transcriber/",
+          "name": "Free Audio-to-Text Transcriber — Local Whisper | CalAudit",
+          "description": "Free browser-based audio-to-text transcription for MP3, WAV, M4A, AAC, FLAC, OGG and WebM using local Whisper inference after model initialization.",
+          "isPartOf": { "@id": "https://calaudit.org/#website" },
+          "about": { "@id": "https://calaudit.org/tools/audio-transcriber/#app" },
+          "breadcrumb": { "@id": "https://calaudit.org/tools/audio-transcriber/#breadcrumb" },
+          "datePublished": "2026-07-04T08:00:00+00:00",
+          "dateModified": "2026-08-23",
+          "inLanguage": "en-US",
+          "author": { "@id": "https://calaudit.org/#nicolas-hernandez" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://calaudit.org/tools/audio-transcriber/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "item": { "@id": "https://calaudit.org/", "name": "Hub" } },
+            { "@type": "ListItem", "position": 2, "item": { "@id": "https://calaudit.org/forensic-vault/", "name": "Forensic Vault" } },
+            { "@type": "ListItem", "position": 3, "item": { "@id": "https://calaudit.org/tools/", "name": "Tool Room" } },
+            { "@type": "ListItem", "position": 4, "item": { "@id": "https://calaudit.org/tools/audio-transcriber/", "name": "Audio-to-Text Transcriber" } }
+          ]
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://calaudit.org/tools/audio-transcriber/#app",
+          "name": "CalAudit Free Audio-to-Text Transcriber",
+          "url": "https://calaudit.org/tools/audio-transcriber/",
+          "applicationCategory": "MultimediaApplication",
+          "operatingSystem": "All",
+          "browserRequirements": "Requires module workers, Web Audio API, WebAssembly, and sufficient device memory",
+          "isAccessibleForFree": true,
+          "featureList": [
+            "Client-side Whisper speech-to-text recognition",
+            "Selectable Xenova/whisper-tiny.en and Xenova/whisper-base.en models",
+            "Auto-resampling to 16kHz via browser Web Audio API",
+            "Local inference through Transformers.js v2.6.2",
+            "Explicit user-initiated model and library download",
+            "File-based transcription rather than live dictation"
+          ],
+          "description": "A free browser audio-to-text utility for MP3, WAV, M4A, AAC, FLAC, OGG and WebM that downloads a selected Whisper model on user request and then performs transcription locally.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD"
+          },
+          "author": { "@id": "https://calaudit.org/#nicolas-hernandez" },
+          "provider": { "@id": "https://calaudit.org/#organization" }
+        },
+        {
+          "@type": "HowTo",
+          "@id": "https://calaudit.org/tools/audio-transcriber/#howto",
+          "mainEntityOfPage": { "@id": "https://calaudit.org/tools/audio-transcriber/#webpage" },
+          "name": "How to Transcribe Audio to Text with Whisper",
+          "description": "Download a browser-compatible Whisper model on request, then convert a prerecorded audio file to text locally in your browser.",
+          "totalTime": "PT2M",
+          "tool": [
+            {
+              "@type": "HowToTool",
+              "name": "CalAudit Free Audio-to-Text Transcriber"
+            }
+          ],
+          "step": [
+            {
+              "@type": "HowToStep",
+              "position": 1,
+              "name": "Select or Drop Audio File",
+              "text": "Drag and drop a .mp3, .wav, or .m4a file onto the local dropzone, or click to browse files."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 2,
+              "name": "Initialize Whisper Engine",
+              "text": "After you click Initialize Speech Engine, the browser retrieves the selected model and helper libraries. Browser caching may reduce later downloads."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 3,
+              "name": "Local Audio Resampling",
+              "text": "Your local browser Web Audio API resamples and decodes the audio track entirely in local RAM."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 4,
+              "name": "Local Neural Inference",
+              "text": "After the user initializes the engine, the selected Whisper model processes decoded audio in the browser using the runtime backend available on the device."
+            }
+          ]
+        },
+        {
+      "@type": "WebPageElement",
+          "@id": "https://calaudit.org/tools/audio-transcriber/#faq",
+          "mainEntityOfPage": { "@id": "https://calaudit.org/tools/audio-transcriber/#webpage" },
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "@id": "https://calaudit.org/tools/audio-transcriber/#faq-1",
+              "name": "Where is my recording processed?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The application decodes and transcribes the selected file in the browser. Initializing the engine downloads the model and helper libraries, and local processing does not protect against a compromised device, browser extension, or unsafe file handling."
+              }
+            },
+            {
+              "@type": "Question",
+              "@id": "https://calaudit.org/tools/audio-transcriber/#faq-2",
+              "name": "Which model does this tool use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It uses the English-only Xenova Whisper Tiny and Whisper Base ONNX models for browser-side execution. Tiny uses fewer resources, while Base may provide better accuracy."
+              }
+            },
+            {
+              "@type": "Question",
+              "@id": "https://calaudit.org/tools/audio-transcriber/#faq-3",
+              "name": "How does this compare to Dragon Legal Anywhere?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "This is a free, file-based browser transcriber rather than a live enterprise dictation service. It requires a model download and does not include Dragon's workflow, support, or compliance features."
+              }
+            },
+            {
+              "@type": "Question",
+              "@id": "https://calaudit.org/tools/audio-transcriber/#faq-4",
+              "name": "Can I use this for real-time dictation as an alternative to Dragon?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. This tool processes prerecorded audio files; it does not provide live microphone dictation."
+              }
+            },
+            {
+              "@type": "Question",
+              "@id": "https://calaudit.org/tools/audio-transcriber/#faq-5",
+              "name": "Why use a browser-based local model instead of a cloud subscription?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A local model avoids sending the recording to a transcription API. The tradeoffs are a sizable model download, device resource use, browser compatibility, and fewer workflow features."
+              }
+            },
+            {
+              "@type": "Question",
+              "@id": "https://calaudit.org/tools/audio-transcriber/#faq-6",
+              "name": "What affects transcription performance?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Performance depends on the selected model, recording length, browser, device resources, and the backend selected by the Transformers.js runtime. Supported acceleration may improve inference speed."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        /* WCAG 2.2 AAA Enhanced Focus Indicators */
+        :focus-visible {
+            outline: 3px solid var(--green, #0f0) !important;
+            outline-offset: 3px !important;
+        }
+
+        #drop-zone:focus {
+            outline: 3px solid var(--green, #0f0);
+            outline-offset: 2px;
+            background: rgba(0, 255, 0, 0.05);
+            border-color: var(--green, #0f0);
+        }
+
+        #output:focus {
+            outline: 2px solid var(--green, #0f0);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Dropzone Styling */
+        .scrub-dropzone {
+            display: block;
+            border: 2px dashed #222;
+            background: #080808;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .scrub-dropzone:hover, .scrub-dropzone.dragover {
+            border-color: var(--green, #0f0);
+            background: rgba(0, 255, 0, 0.05);
+        }
+
+        #file-input:focus-visible + #drop-zone {
+            outline: 3px solid var(--green, #0f0);
+            outline-offset: 2px;
+            background: rgba(0, 255, 0, 0.05);
+            border-color: var(--green, #0f0);
+        }
+
+        .scrub-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #b3b3b3;
+            transition: color 0.2s ease;
+        }
+        .scrub-dropzone:hover .scrub-icon {
+            color: var(--green, #0f0);
+        }
+
+        #output {
+            background: #050505;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px;
+            min-height: 120px;
+            white-space: pre-wrap;
+            font-family: var(--mono);
+            font-size: 13px;
+            line-height: 1.6;
+            color: #ccc;
+            margin-top: 15px;
+        }
+
+        .status-container {
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--text-dim);
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #progress-bar {
+            color: var(--green);
+        }
+
+        /* FAQ Styling */
+        .faq-item {
+            margin-bottom: 15px;
+            background: rgba(0, 255, 0, 0.02);
+            border: 1px solid #222;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--green, #0f0);
+            font-size: 14px;
+            font-weight: bold;
+            outline: none;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item .faq-icon {
+            color: var(--green, #0f0);
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+        .faq-item[open] .faq-icon {
+            transform: rotate(90deg);
+        }
+        .faq-answer {
+            font-size: 13px;
+            color: #ccc;
+            line-height: 1.6;
+            margin-top: 12px;
+            padding-left: 20px;
+            border-left: 2px solid var(--green, #0f0);
+        }
+    </style>
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="vault-container">
+    <nav aria-label="Breadcrumb" class="back-btn-container">
+        <a href="/tools/" class="back-btn" aria-label="Return to Utility Hub">← Return to Utility Hub</a>
+    </nav>
+
+    <main id="main-content" role="main">
+        <header class="manifesto-container">
+            <div class="page-label" aria-hidden="true">// SERVICE NODE: FORENSIC_SPEECH_WHISPER</div>
+            <h1 class="page-title">Free Audio-to-Text Transcriber</h1>
+            <p class="page-subtitle u-style-9451d382">"Private browser-based Whisper transcription for audio files"</p>
+            <div class="requisition">
+                <p><strong>SPECIFICATION:</strong> Transcribe a selected audio file with the browser-compatible <strong>Xenova/whisper-tiny.en</strong> or <strong>Xenova/whisper-base.en</strong> model. Model weights and helper libraries are downloaded after you initialize the engine; transcription then runs locally in the browser.</p>
+            </div>
+        </header>
+
+        <div class="model-selector-container mb-15">
+            <label class="u-style-f1d99c1a" for="whisper-model-select">Select AI Engine Model:</label>
+            <select class="u-style-47b59de1" id="whisper-model-select">
+                <option value="Xenova/whisper-tiny.en" selected>Whisper Tiny (English only) — lower download and memory use</option>
+                <option value="Xenova/whisper-base.en">Whisper Base (English only) — potentially better accuracy</option>
+            </select>
+            <div style="margin-top: 10px; font-size: 13px; color: var(--text-dim, #777777); line-height: 1.4;">
+                <strong>Network notice:</strong> The selected Whisper model and helper libraries download from Hugging Face and jsDelivr only after you initialize the engine. The application code processes the selected audio locally and does not upload it.
+            </div>
+            <button id="init-engine-btn" style="margin-top: 10px; min-height: 44px; background: var(--green, #22c55e); color: #000; font-family: monospace; font-weight: bold; border: 1px solid var(--green, #22c55e); padding: 8px 15px; cursor: pointer; border-radius: 4px;">Initialize Speech Engine</button>
+        </div>
+
+        <div class="u-style-ea32e608" id="download-progress-container">
+            <div class="u-style-f5cbf6a2">
+                <span class="u-style-f1d99c1a" id="download-status-text">Downloading model weights...</span>
+                <span class="u-style-711b55c7" id="download-percentage">0%</span>
+            </div>
+            <div class="u-style-0e337635">
+                <div class="u-style-dd13bb7f" id="download-progress-bar"></div>
+            </div>
+        </div>
+
+        <section aria-labelledby="transcriber-form">
+            <h2 id="transcriber-form" class="sr-only">Free Audio-to-Text Transcription Tool</h2>
+
+            <!-- FIX: ID corrected from implicit mismatch; now consistently "file-input" -->
+            <input class="display-none" type="file" id="file-input" accept="audio/*,.mp3,.wav,.m4a,.aac,.flac,.ogg,.webm" aria-label="Choose an audio file to transcribe">
+
+            <div class="scrub-dropzone" id="drop-zone" role="button" tabindex="0"
+                 aria-label="Drop audio file here, or click to select a file from your device"
+                 aria-describedby="drop-zone-desc" aria-disabled="false">
+                <div class="scrub-icon" aria-hidden="true">🎙️</div>
+                <p class="u-style-4e9f206a">DROP AUDIO FILE HERE (.mp3, .wav, .m4a) OR CLICK TO BROWSE</p>
+                <p class="u-style-a6b2cf0b" id="drop-zone-desc">Select an audio file at any time. Initialize the speech engine before transcription; decoded audio is resampled to 16kHz locally.</p>
+            </div>
+
+            <div class="status-container">
+                <div>ENGINE STATUS: <span class="text-green" id="status-text">Ready</span></div>
+                <div id="progress-bar" aria-live="polite"></div>
+            </div>
+
+            <h3 class="u-style-7d7133ae">// TRANSCRIPT OUTPUT</h3>
+            <div id="output" aria-live="polite" tabindex="0">Your local transcription will appear here...</div>
+        </section>
+
+        <section aria-labelledby="technical-specifications" class="manifesto-container u-style-9e285cd7">
+            <h2 class="u-style-97a898ab" id="technical-specifications">[ SECURITY PROTOCOLS & SPECIFICATIONS ]</h2>
+            <div class="u-style-20ac4a58">
+                <div class="audit-box green-border u-style-5760f6de">
+                    <h3 class="u-style-583d11af">LOCAL AUDIO PROCESSING</h3>
+                    <p class="u-style-7c1139c0">After the user-initiated model download, this utility decodes, resamples, and transcribes the selected audio in the browser. The application code does not send the selected audio or transcript to a transcription API.</p>
+                </div>
+                <div class="audit-box amber-border u-style-8d6cd320">
+                    <h3 class="u-style-99849702">PRIVACY-CONSCIOUS BY DESIGN</h3>
+                    <p class="u-style-7c1139c0">Local processing reduces reliance on a remote transcription API, but it does not secure the device, browser extensions, clipboard, files, or surrounding workflow. This tool is not a HIPAA certification or legal-compliance guarantee; review organizational requirements before using regulated recordings.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="u-style-bad75b13" aria-labelledby="how-to-transcribe-guide">
+            <h2 class="u-style-97a898ab" id="how-to-transcribe-guide">[ STEP-BY-STEP PRIVACY MANUAL ]</h2>
+            <ol class="u-style-017f6237">
+                <li><strong class="text-white">Stage 1 // Drag & Drop Audio:</strong> Drag an audio file (.mp3, .wav, or .m4a) and drop it inside the dashed zone, or click to browse.</li>
+                <li><strong class="text-white">Stage 2 // Model Download:</strong> After you click Initialize, the browser downloads the selected model and helper libraries. Browser caching may reduce future downloads, but availability varies by browser and cache state.</li>
+                <li><strong class="text-white">Stage 3 // Web Audio Resampling:</strong> The browser's local Web Audio API decodes the audio and resamples the buffer to mono 16kHz to prepare it for neural network processing.</li>
+                <li><strong class="text-white">Stage 4 // Neural Inference:</strong> Transformers.js runs the Whisper model locally with the browser-supported execution backend.</li>
+                <li><strong class="text-white">Stage 5 // Extract Text:</strong> The completed transcript appears on the page for you to review and copy.</li>
+            </ol>
+        </section>
+
+        <section aria-labelledby="speech-telemetry-expose" class="manifesto-container u-style-0b4c5a14">
+            <h2 class="u-style-88742319" id="speech-telemetry-expose">
+                [ THE COST OF CLOUD DICTATION SOFTWARE ]
+            </h2>
+            <p class="u-style-2fa9754c">
+                Cloud transcription services generally send audio to provider infrastructure for processing, while this tool performs inference in the browser after downloading its model. Enterprise services may also provide live dictation, support, integrations, and compliance controls that this utility does not.
+            </p>
+            <p class="u-style-fa008e83">
+                The <strong>CalAudit Free Audio-to-Text Transcriber</strong> is a free, file-based utility with no account requirement. Once the selected model and helper libraries are available, transcription runs locally. It is not a replacement for the workflow, support, or compliance capabilities of an enterprise dictation product.
+            </p>
+        </section>
+
+        <section class="u-style-0a085774" aria-labelledby="frequently-asked-questions">
+            <h2 class="u-style-97a898ab" id="frequently-asked-questions">[ FREQUENTLY ASKED QUESTIONS ]</h2>
+            <div class="u-style-785cda41" id="faq">
+                <details class="faq-item">
+                    <summary><span class="faq-icon" aria-hidden="true">▶</span> <strong>Where is my recording processed?</strong></summary>
+                    <div class="faq-answer">The application decodes and transcribes the selected file in the browser. Initializing the engine downloads the model and helper libraries, and local processing does not protect against a compromised device, browser extension, or unsafe file handling.</div>
+                </details>
+                <details class="faq-item">
+                    <summary><span class="faq-icon" aria-hidden="true">▶</span> <strong>Which model does this tool use?</strong></summary>
+                    <div class="faq-answer">It uses the English-only Xenova Whisper Tiny and Whisper Base ONNX models for browser-side execution. Tiny uses fewer resources, while Base may provide better accuracy.</div>
+                </details>
+                <details class="faq-item">
+                    <summary><span class="faq-icon" aria-hidden="true">▶</span> <strong>How does this compare to Dragon Legal Anywhere?</strong></summary>
+                    <div class="faq-answer">This is a free, file-based browser transcriber rather than a live enterprise dictation service. It requires a model download and does not include Dragon's workflow, support, or compliance features.</div>
+                </details>
+                <details class="faq-item">
+                    <summary><span class="faq-icon" aria-hidden="true">▶</span> <strong>Can I use this for real-time dictation as an alternative to Dragon?</strong></summary>
+                    <div class="faq-answer">No. This tool processes prerecorded audio files; it does not provide live microphone dictation.</div>
+                </details>
+                <details class="faq-item">
+                    <summary><span class="faq-icon" aria-hidden="true">▶</span> <strong>Why use a browser-based local model instead of a cloud subscription?</strong></summary>
+                    <div class="faq-answer">A local model avoids sending the recording to a transcription API. The tradeoffs are a sizable model download, device resource use, browser compatibility, and fewer workflow features.</div>
+                </details>
+                <details class="faq-item mb-5">
+                    <summary><span class="faq-icon" aria-hidden="true">▶</span> <strong>What affects transcription performance?</strong></summary>
+                    <div class="faq-answer">Performance depends on the selected model, recording length, browser, device resources, and the backend selected by the Transformers.js runtime. Supported acceleration may improve inference speed.</div>
+                </details>
+            </div>
+        </section>
+
+        <section class="related-tools" aria-label="Related Tools">
+            <h3>// RELATED MULTIMEDIA PRIVACY UTILITIES</h3>
+            <ul>
+                <li><a href="/tools/privacy-scrubber/">PDF Redaction Tool</a></li>
+            </ul>
+        </section>
+        </main>
+
+<script src="/nav.js"></script>
+
+    <footer class="page-footer" role="contentinfo">
+    <div class="footer-inner">
+        <p>© 2026 CALAUDIT | Nicolas Hernandez — Public Interest Initiative | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+        <p><strong>OPEN SOURCE LICENSE NOTICE:</strong> All original utility code, tools, and web application logic on this platform are distributed under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">GNU AGPLv3</a>. All public health form archives, translated materials, and investigative guides are licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>. Commercial exploitation, proprietary re-licensing, or paywalling without strict attribution is strictly prohibited.</p>
+        <p class="onion-mirror" aria-label="Tor Onion Mirror Address">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+    </div>
+</footer>
+</div>
+
+<script type="module">
+const dropZone   = document.getElementById('drop-zone');
+const fileInput  = document.getElementById('file-input');
+const statusText = document.getElementById('status-text');
+const outputEl   = document.getElementById('output');
+const modelSelect = document.getElementById('whisper-model-select');
+const initEngineBtn = document.getElementById('init-engine-btn');
+
+let worker = null;
+let engineReady = false;
+let engineLoading = false;
+let pendingFile = null;
+
+const supportedAudioExtension = /\.(?:mp3|wav|m4a|aac|flac|ogg|oga|webm)$/i;
+
+function setUploadEnabled(enabled) {
+    fileInput.disabled = !enabled;
+    dropZone.setAttribute('aria-disabled', enabled ? 'false' : 'true');
+    dropZone.classList.toggle('disabled', !enabled);
+}
+
+// File selection is independent from the optional model download.
+statusText.textContent = 'Select a file, then initialize the speech engine';
+setUploadEnabled(true);
+
+function initEngine() {
+    if (engineReady || engineLoading) return;
+    if (worker) worker.terminate();
+    worker = null;
+    engineLoading = true;
+    modelSelect.disabled = true;
+    initEngineBtn.disabled = true;
+    initEngineBtn.textContent = 'Initializing...';
+    
+    statusText.textContent = 'Initializing engine...';
+    
+    try {
+        // A versioned filename prevents wrangler/edge/browser caches from ever
+        // resolving this page to an older, incompatible Transformers.js worker.
+        worker = new Worker('/tools/audio-transcriber/transcriber-worker-hf-3.8.1.js', { type: 'module' });
+        
+        worker.addEventListener('message', (event) => {
+            const { type, payload } = event.data;
+
+            if (type === 'DOWNLOAD_PROGRESS') {
+                const container   = document.getElementById('download-progress-container');
+                const progressBar = document.getElementById('download-progress-bar');
+                const percentText = document.getElementById('download-percentage');
+                const statusLabel = document.getElementById('download-status-text');
+
+                if (payload.status === 'initiate') {
+                    container.style.display = 'block';
+                    statusLabel.textContent = `Initializing: ${payload.file}...`;
+                }
+                if (payload.status === 'progress') {
+                    const numericProgress = Number(payload.progress);
+                    const percent = Number.isFinite(numericProgress)
+                        ? Math.max(0, Math.min(100, numericProgress)).toFixed(1)
+                        : '0.0';
+                    progressBar.style.width = `${percent}%`;
+                    percentText.textContent = `${percent}%`;
+                    statusLabel.textContent = `Downloading: ${payload.file}`;
+                }
+                if (payload.status === 'done') {
+                    statusLabel.textContent = 'Loaded component successfully.';
+                }
+                if (payload.status === 'ready') {
+                    progressBar.style.width = '100%';
+                    percentText.textContent = '100%';
+                    statusLabel.textContent = 'Engine fully optimized!';
+                    setTimeout(() => {
+                        container.style.display = 'none';
+                        progressBar.style.width = '0%';
+                        percentText.textContent = '0%';
+                    }, 1500);
+                }
+            }
+
+            if (type === 'MODEL_READY') {
+                engineReady = true;
+                engineLoading = false;
+                modelSelect.disabled = false;
+                setUploadEnabled(true);
+                statusText.textContent = 'Ready';
+                initEngineBtn.style.display = 'none';
+
+                if (pendingFile) {
+                    const selectedFile = pendingFile;
+                    pendingFile = null;
+                    void handleFileUploadPipeline(selectedFile);
+                }
+            }
+
+            if (type === 'TRANSCRIPT_DONE') {
+                outputEl.textContent   = payload || '(No speech detected)';
+                statusText.textContent = 'Done';
+            }
+
+            if (type === 'ERROR') {
+                const errorStage = typeof payload === 'object' && payload ? payload.stage : 'model';
+                const errorMessage = typeof payload === 'object' && payload
+                    ? payload.message
+                    : String(payload || 'Unknown speech engine error');
+
+                if (errorStage === 'transcription') {
+                    outputEl.textContent = `Transcription failed: ${errorMessage}`;
+                    statusText.textContent = 'Transcription Error';
+                    setUploadEnabled(true);
+                    return;
+                }
+
+                outputEl.textContent   = `Initialization or model load failed. Please check your internet connection and try again. Error detail: ${errorMessage}`;
+                statusText.textContent = 'Error';
+                engineLoading = false;
+                engineReady = false;
+                modelSelect.disabled = false;
+                setUploadEnabled(true);
+                initEngineBtn.disabled = false;
+                initEngineBtn.style.display = 'inline-block';
+                initEngineBtn.textContent = 'Retry Initialization';
+            }
+        });
+
+        worker.addEventListener('error', (event) => {
+            outputEl.textContent = `Speech worker failed: ${event.message || 'unknown worker error'}`;
+            statusText.textContent = 'Error';
+            engineReady = false;
+            engineLoading = false;
+            modelSelect.disabled = false;
+            setUploadEnabled(true);
+            initEngineBtn.disabled = false;
+            initEngineBtn.style.display = 'inline-block';
+            initEngineBtn.textContent = 'Retry Initialization';
+        });
+
+        loadModel();
+    } catch (err) {
+        outputEl.textContent = `Failed to create Worker: ${err.message}. Your browser may not support ES Modules in Workers.`;
+        statusText.textContent = 'Unsupported Browser';
+        engineLoading = false;
+        modelSelect.disabled = false;
+        initEngineBtn.disabled = false;
+        initEngineBtn.textContent = 'Retry Initialization';
+    }
+}
+
+initEngineBtn.addEventListener('click', initEngine);
+
+function loadModel() {
+    if (!worker) return;
+    statusText.textContent = `Loading ${modelSelect.value}...`;
+    worker.postMessage({ type: 'LOAD_MODEL', payload: { modelName: modelSelect.value } });
+}
+
+function validateAudioFile(file) {
+    if (!file || !file.name) return 'No audio file was selected.';
+    const hasAudioMime = file.type && file.type.startsWith('audio/');
+    if (!hasAudioMime && !supportedAudioExtension.test(file.name)) {
+        return 'Select a supported audio file (MP3, WAV, M4A, AAC, FLAC, OGG, or WebM).';
+    }
+    if (file.size > 100 * 1024 * 1024) {
+        return 'Audio files are limited to 100 MB for local processing.';
+    }
+    return '';
+}
+
+function queueFileForTranscription(file) {
+    const validationError = validateAudioFile(file);
+    if (validationError) {
+        pendingFile = null;
+        outputEl.textContent = `Error: ${validationError}`;
+        statusText.textContent = 'Invalid file';
+        return;
+    }
+
+    pendingFile = file;
+    fileInput.value = '';
+
+    if (!engineReady) {
+        outputEl.textContent = `Selected: ${file.name}. Initialize the speech engine to begin transcription.`;
+        statusText.textContent = engineLoading
+            ? 'File selected — waiting for speech engine'
+            : 'File selected — initialize speech engine';
+        return;
+    }
+
+    pendingFile = null;
+    void handleFileUploadPipeline(file);
+}
+
+async function handleFileUploadPipeline(file) {
+    if (!engineReady) {
+        pendingFile = file;
+        outputEl.textContent = `Selected: ${file.name}. Initialize the speech engine to begin transcription.`;
+        statusText.textContent = 'File selected — initialize speech engine';
+        return;
+    }
+
+    const validationError = validateAudioFile(file);
+    if (validationError) {
+        outputEl.textContent = `Error: ${validationError}`;
+        statusText.textContent = 'Invalid file';
+        return;
+    }
+    statusText.textContent = 'Resampling audio...';
+    outputEl.textContent   = 'Processing...';
+
+    let audioContext = null;
+    try {
+        const arrayBuffer  = await file.arrayBuffer();
+        audioContext = new AudioContext({ sampleRate: 16000 });
+        const audioBuffer  = await audioContext.decodeAudioData(arrayBuffer);
+        const float32Audio = audioBuffer.getChannelData(0);
+
+        statusText.textContent = 'Running neural inference...';
+
+        worker.postMessage(
+            { type: 'TRANSCRIBE', payload: { audio: float32Audio, sampleRate: 16000 } },
+            [float32Audio.buffer]
+        );
+    } catch (err) {
+        outputEl.textContent = `Audio processing error: ${err.message}`;
+        statusText.textContent = 'Error';
+    } finally {
+        if (audioContext) await audioContext.close();
+    }
+}
+
+dropZone.addEventListener('click', (e) => {
+    if (e.target === fileInput) return;
+    fileInput.click();
+});
+
+dropZone.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        fileInput.click();
+    }
+});
+
+dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropZone.classList.add('dragover');
+});
+
+dropZone.addEventListener('dragleave', () => {
+    dropZone.classList.remove('dragover');
+});
+
+dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropZone.classList.remove('dragover');
+    const file = e.dataTransfer.files[0];
+    if (file) queueFileForTranscription(file);
+});
+
+fileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (file) queueFileForTranscription(file);
+});
+
+modelSelect.addEventListener('change', () => {
+    if (engineReady) {
+        engineReady = false;
+        engineLoading = true;
+        modelSelect.disabled = true;
+        setUploadEnabled(true);
+        loadModel();
+    } else {
+        statusText.textContent = 'Not Initialized (Click Initialize to load)';
+    }
+});
+</script>
+</body>
+</html>

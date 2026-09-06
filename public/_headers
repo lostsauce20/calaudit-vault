@@ -1,0 +1,69 @@
+# Global security and configuration rules
+/*
+  X-Robots-Tag: index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self' data: blob: https://*.pages.dev; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://calaudit.org https://i.ytimg.com; media-src 'self'; frame-src 'self' https://www.youtube.com https://youtube.com; connect-src 'self' https://cloudflareinsights.com https://agent.calaudit.org https://cdn.jsdelivr.net https://huggingface.co https://*.huggingface.co https://*.aws.cdn.hf.co https://onnx-community.github.io blob: data:; worker-src 'self' blob: https://cdn.jsdelivr.net; object-src 'none'; base-uri 'none'; form-action 'self';
+  Content-Signal: ai-train=no, search=yes, ai-input=yes
+  Link: </.well-known/api-catalog.json>; rel="api-catalog", </.well-known/agent-card.json>; rel="agent-card", </auth.md>; rel="agent-auth"
+
+# Specialized permissions for browser-based AI/forensic tools (Allows unsafe-eval for WASM)
+/tools/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self' data: blob: https://*.pages.dev; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' https://static.cloudflareinsights.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://calaudit.org https://i.ytimg.com; media-src 'self'; frame-src 'self' https://www.youtube.com https://youtube.com; connect-src 'self' https://cloudflareinsights.com https://agent.calaudit.org https://cdn.jsdelivr.net https://huggingface.co https://*.huggingface.co https://*.aws.cdn.hf.co https://onnx-community.github.io blob: data:; worker-src 'self' blob: https://cdn.jsdelivr.net; object-src 'none'; base-uri 'none'; form-action 'self';
+
+# Browser and edge TTLs are managed by Cloudflare Cache Rules.
+
+# JSON discovery documents without filename extensions
+/.well-known/agent-card
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/api-catalog
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/oauth-authorization-server
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/oauth-protected-resource
+  Content-Type: application/json; charset=utf-8
+
+# Custom error handling rules
+/404.html
+  X-Robots-Tag: noindex, nofollow
+
+# Content routing for the public evidence folder
+/calevidence/*
+  X-Robots-Tag: index, follow
+  Access-Control-Allow-Origin: *
+  Content-Disposition: inline
+
+# Configuration rules for metadata registries
+/metadata/*
+  X-Robots-Tag: index, follow, max-snippet:-1
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+
+# Block WordPress scans
+/xmlrpc.php
+  X-Robots-Tag: noindex, nofollow
+  Link: </404.html>; rel="canonical"
+/wp-login.php
+  X-Robots-Tag: noindex, nofollow
+  Link: </404.html>; rel="canonical"
+/wp-admin/*
+  X-Robots-Tag: noindex, nofollow
+  Link: </404.html>; rel="canonical"
+/wp-includes/*
+  X-Robots-Tag: noindex, nofollow
+  Link: </404.html>; rel="canonical"
+/wp-content/*
+  X-Robots-Tag: noindex, nofollow
+  Link: </404.html>; rel="canonical"
+
+# Keep the production Pages host usable while preventing duplicate indexing
+https://calaudit-vault.pages.dev/*
+  ! X-Robots-Tag
+  X-Robots-Tag: noindex, follow

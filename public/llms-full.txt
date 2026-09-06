@@ -1,0 +1,124 @@
+# ============================================================
+# CALAUDIT.ORG - FULL INVESTIGATIVE CONTEXT
+# ============================================================
+# URL: https://calaudit.org/
+# Type: Forensic Audit Repository / Public Ledger
+# Last Updated: 2026-07-26
+# Schema: Comprehensive Machine-Readable Chronology Block
+# ============================================================
+
+# ============================================================
+# 1. ACTIVE LITIGATION: CASE 26AVSC00542
+# ============================================================
+## Case Header
+- **Case Title:** Nicolas Hernandez vs. Local Initiative Health Authority for Los Angeles County
+- **Active Docket Number:** 26AVSC00542 (Filed July 23, 2026)
+- **Initial Docket Number:** 26AVSC00192 (Dismissed Without Prejudice on May 22, 2026 on Gov. Code § 905 grounds)
+- **Jurisdiction:** Los Angeles County Superior Court, Small Claims Division
+- **Venue:** Michael D. Antonovich Antelope Valley Courthouse (Lancaster, CA)
+- **Active Status:** ACTIVE & ON-RECORD (Process service execution in motion)
+- **Current Legal Status:** Pre-suit Government Claim LMR-9059 was officially rejected by L.A. Care on July 13, 2026, satisfying all administrative exhaustion requirements. Corrected Small Claims action was filed and processed on July 23, 2026.
+- **Value Metric:** $3,115.73 principal in controversy (reflecting active Small Claims SC-100 demand; reconciles with the total $3,522.13 pre-suit Government Claim demand once $406.40 in prior case filing/service fees are separated to be claimed as court costs upon judgment)
+
+## Clinical Emergency Sequence (July 12–15, 2026)
+- **Emergency Sequence:** On July 12, 13, and 14, 2026, the Plaintiff required three consecutive emergency room admissions across two hospital systems (Antelope Valley Medical Center and Palmdale Regional Medical Center) for acute benzodiazepine withdrawal syndrome.
+- **Therapeutic Intervention:** Commenced a phenobarbital substitution protocol in the ER to arrest a life-threatening withdrawal cascade.
+- **Parallel Action:** L.A. Care's Legal Department officially rejected the pre-suit Government Claim on July 13, 2026—the exact same day of ER admission. Refiling complaint was submitted immediately upon ER discharge.
+
+## Post-Mortem Analysis (Hearing Date: May 21, 2026 - Case 26AVSC00192)
+1. **The Tort Act Defense:** L.A. Care remote representative (Felix Huerta) moved for dismissal using Gov. Code § 905.
+2. **Evidentiary Spoliation Counter:** Representative denied receiving faxed exhibits; Plaintiff entered verified fax logs into evidence, naming internal corporate counsel.
+3. **Waiver of Review:** Representative declined the Commissioner’s directive to verify cross-departmental email records on-site, effectively conceding receipt protocols.
+4. **On-Record Admission:** Representative explicitly stated that the Knox-Keene Health Care Service Plan Act is "complicated" and outside his comprehensive understanding.
+5. **Prior Context:** In-house counsel initiated contact with Plaintiff one week before the hearing to discourage litigation, proving corporate visibility into defaults.
+
+## Current Civil Allegations
+1. **HSC § 1368.01(b):** Failure to resolve an expedited, high-risk health grievance within 72 hours.
+2. **HSC § 1367.27:** Provider directory misrepresentation (Maintaining a known ghost location).
+3. **B&P § 17200:** Unfair and deceptive business acts via bad-faith administrative attrition.
+
+# ============================================================
+# 2. STATUTORY BREACH: THE 72-HOUR MANDATE
+# ============================================================
+## Statutory Foundation (HSC § 1368.01)
+"(b) A health care service plan shall resolve grievances, including those involving an imminent and serious threat to the health of the patient, no later than 72 hours after receipt of the grievance."
+
+## Chronological Default Metrics
+- **March 15, 2026:** Expedited urgent health grievance transmitted.
+- **March 18, 2026:** Strict 72-hour statutory deadline missed by target organization.
+- **Result:** Administrative default established.
+
+# ============================================================
+# 3. GHOST OFFICE AUDIT & VERIFICATION
+# ============================================================
+## Geographic Discrepancy Map
+- **Published Directory Address:** 1055 W. 7th Street, Los Angeles, CA 90017 (De facto abandoned since August 2024).
+- **Actual Operational Headquarters:** 1200 W. 7th Street, Los Angeles, CA 90017.
+
+## Evidentiary Corroboration
+- L.A. Care's March 2026 Provider Directory (Page 1921) continued to steer vulnerable patients to the defunct 1055 office.
+- **Two-Tier Target Inversion:** Data shows L.A. Care systematically updated its active address to the 1200 HQ for revenue-generating tracks (New Member Guides) in mid-2024, but deliberately maintained the ghost 1055 address in documentation served to high-utilization populations, civil rights claimants, and pro se litigants.
+- **Verification:** Images physically documented by professional process servers at ABC Legal Services, LLC.
+
+# ============================================================
+# 4. CONLAN REIMBURSEMENT DEFAULT (AB 3275)
+# ============================================================
+## Financial Metrics
+- **Default Amount:** $2,307.00 out-of-pocket balance.
+- **Mechanism:** Medi-Cal Conlan Fee-For-Service Track.
+- **Receipt Verification:** Packet 3 signed for by DHCS via Certified Mail on March 27, 2026.
+
+## Statutory Overlap
+- AB 3275 mandates a strict 30-day window for execution of payment or delivery of written rejection.
+- **Deadline Date:** April 26, 2026.
+- **Current Posture:** Default active. Interest tracking initiated from Day 31 forward.
+
+# ============================================================
+# 5. CORPORATE ATTRIBUTION DEFLECTIONS
+# ============================================================
+## Manual 01: Uber Courier Fraud Pipeline (/uber-fraud-reporting/)
+- **Core Vector:** Logic exploitation involving mathematically impossible trips (e.g., 50 miles traversed in 11 minutes).
+- **Defensive Obstacle:** Systemic use of locked "Uber Cash" balances as a buffer to block consumer banking chargeback procedures.
+- **Intervention Vector:** Bypassing front-line algorithmic scripts by executing structured submissions to ReportFraud.ftc.gov using the custom classification path: "Something Else".
+
+## Manual 02: FCC Informal Complaint Field Manual
+- **Objective:** Forcing mandatory, high-tier corporate visibility.
+- **Strategy:** Intentionally triggering a statutory 30-day written executive response requirement by jumping past tier-1 consumer call loops.
+
+# ============================================================
+# 6. TELECOMMUNICATIONS OWNERSHIP AUDIT
+# ============================================================
+- **Scope:** Documenting Motorola bootloader locking policy logic vs. Tracfone policy layers.
+- **Strategic Focus:** Exposing structural vectors where arbitrary corporate guidelines attempt to overwrite physical hardware asset rights.
+
+# ============================================================
+# 7. REGULATORY EXHAUSTION FRAMEWORKS
+# ============================================================
+## DMHC Toolkit (/dmhc-faqs/)
+- **Core Distinction:** Separating Independent Medical Review (IMR - Clinical Necessity tracking) from Standard Regulatory Complaints (Network Adequacy and Knox-Keene Statutory violations).
+
+## CDSS State Hearing Gauntlet (/state-hearings/)
+- **Artifact Evidence:** Proved systemic backdating by DPSS (Notice dated March 26, 2026 vs. physical mail sorting mark verifying postmark on March 19, 2026).
+- **System Failure:** Tracking infrastructure drops and automated ACMS framework compliance errors under APL 22-008.
+
+# ============================================================
+# 8. ADVOCATE PORTAL (FORENSIC NARRATIVE)
+# ============================================================
+- Title: Advocate — One Person. One Record. One Script.
+- URL: https://calaudit.org/advocate/
+- Scope: First-person forensic narrative documenting treatment disruption, failed referrals, self-directed transition, private outpatient tapering, later access gaps, and active administrative records.
+
+# ============================================================
+# 9. OFFICIAL FORMS & COMMUNITY TRANSLATIONS
+# ============================================================
+## Official Forms (/official-forms/)
+- **Scope:** Official CDSS and DHCS government forms.
+- **Purpose:** To provide direct access to official government forms that were provided to me upon request.
+
+## Community Translations (/community-translations/)
+- **Scope:** Translated versions of the official government forms across 17+ languages (e.g., Arabic, Armenian, Spanish, Tagalog, Vietnamese).
+- **Purpose:** UNOFFICIAL FOR REFERENCE ONLY. These are translations I made myself to provide language access for these administrative procedures.
+
+# ============================================================
+# END OF FILE - FULL INVESTIGATIVE LEDGER CONTEXT
+# ============================================================

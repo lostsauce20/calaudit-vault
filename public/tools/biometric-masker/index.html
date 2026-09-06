@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#050505"/>
+    <title>Free Image Noise Generator &amp; Pixel Effect Tool | CalAudit</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="canonical" href="https://calaudit.org/tools/biometric-masker/"/>
+    <meta name="description" content="Free image noise generator for adding adjustable pixel-noise and distortion effects to JPEG, PNG, and WebP photos. Runs locally in your browser with no image upload to CalAudit."/>
+    <meta name="author" content="Nicolas Hernandez"/>
+    <meta name="robots" content="index, follow"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="CalAudit"/>
+    <meta property="og:url" content="https://calaudit.org/tools/biometric-masker/"/>
+    <meta property="og:title" content="Free Image Noise Generator &amp; Pixel Effect Tool | CalAudit"/>
+    <meta property="og:description" content="Add adjustable pixel noise and distortion effects to JPEG, PNG, and WebP images locally in your browser."/>
+    <meta property="og:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="CalAudit Official Logo"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@CalAudit"/>
+    <meta name="twitter:creator" content="@CalAudit"/>
+    <meta name="twitter:url" content="https://calaudit.org/tools/biometric-masker/"/>
+    <meta name="twitter:title" content="Free Image Noise Generator &amp; Pixel Effect Tool | CalAudit"/>
+    <meta name="twitter:description" content="Add adjustable pixel noise and distortion effects to JPEG, PNG, and WebP images locally in your browser."/>
+    <meta name="twitter:image" content="https://calaudit.org/calauditlogo.webp"/>
+    <meta name="twitter:image:alt" content="CalAudit Official Logo"/>
+    <meta name="geo.region" content="US-CA"/>
+    <meta name="geo.placename" content="California"/>
+    <meta name="geo.position" content="38.5816;-121.4944"/>
+    <meta name="ICBM" content="38.5816, -121.4944"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://calaudit.org/#nicolas-hernandez",
+      "name": "Nicolas Hernandez",
+      "url": "https://calaudit.org",
+      "jobTitle": "Operator",
+      "image": "https://calaudit.org/calauditlogo.webp"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://calaudit.org/#website",
+      "url": "https://calaudit.org/",
+      "name": "CalAudit",
+      "description": "Client-side privacy and utility tools",
+      "publisher": { "@id": "https://calaudit.org/#nicolas-hernandez" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://calaudit.org/tools/biometric-masker/#webpage",
+      "url": "https://calaudit.org/tools/biometric-masker/",
+      "name": "Free Image Noise Generator & Pixel Effect Tool | CalAudit",
+      "description": "A browser-based image noise generator that applies adjustable pixel-noise and distortion effects locally. It does not provide biometric protection.",
+      "isPartOf": { "@id": "https://calaudit.org/#website" },
+      "about": { "@id": "https://calaudit.org/tools/biometric-masker/#app" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://calaudit.org/calauditlogo.webp"
+      },
+      "datePublished": "2026-01-01T00:00:00Z",
+      "dateModified": "2026-08-23",
+      "author": { "@id": "https://calaudit.org/#nicolas-hernandez" },
+      "breadcrumb": { "@id": "https://calaudit.org/tools/biometric-masker/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://calaudit.org/tools/biometric-masker/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Hub", "item": "https://calaudit.org" },
+        { "@type": "ListItem", "position": 2, "name": "Forensic Vault", "item": "https://calaudit.org/forensic-vault/" },
+        { "@type": "ListItem", "position": 3, "name": "Tool Room", "item": "https://calaudit.org/tools/" },
+        { "@type": "ListItem", "position": 4, "name": "Image Noise Generator", "item": "https://calaudit.org/tools/biometric-masker/" }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://calaudit.org/tools/biometric-masker/#app",
+      "mainEntityOfPage": { "@id": "https://calaudit.org/tools/biometric-masker/#webpage" },
+      "name": "CalAudit Image Noise Generator",
+      "url": "https://calaudit.org/tools/biometric-masker/",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires HTML5 Canvas API",
+      "isAccessibleForFree": true,
+      "featureList": [
+        "Client-side processing via Canvas API",
+        "Adjustable decorative pixel-noise intensity",
+        "PNG, JPEG, and WebP output"
+      ],
+      "description": "A browser-based image noise generator that applies adjustable pixel-noise and distortion effects locally. It does not provide biometric protection.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      },
+      "author": { "@id": "https://calaudit.org/#nicolas-hernandez" }
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://calaudit.org/tools/biometric-masker/#howto",
+      "mainEntityOfPage": { "@id": "https://calaudit.org/tools/biometric-masker/#webpage" },
+      "name": "How to Add Pixel Noise to an Image",
+      "description": "Add adjustable pixel noise and distortion to a JPEG, PNG, or WebP image with an in-browser canvas tool.",
+      "totalTime": "PT1M",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "CalAudit Image Noise Generator"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Upload your photo",
+          "text": "Drag and drop a JPEG or PNG portrait onto the dropzone, or click to browse your local files."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Set effect intensity",
+          "text": "Adjust the intensity slider to control how strongly the pixel matrix is altered."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Apply the effect",
+          "text": "The tool applies a trigonometric pixel-noise effect to the image canvas entirely inside your browser."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Download the edited image",
+          "text": "Download the edited image with the visible pixel-noise effect."
+        }
+      ]
+    },
+    {
+      "@type": "WebPageElement",
+      "@id": "https://calaudit.org/tools/biometric-masker/#faq",
+      "mainEntityOfPage": { "@id": "https://calaudit.org/tools/biometric-masker/#webpage" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "@id": "https://calaudit.org/tools/biometric-masker/#faq-1",
+          "name": "Are my images safe here?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The selected image is processed by this page with the Canvas API. Review your browser, extensions, and device environment before using sensitive files."
+          }
+        },
+        {
+          "@type": "Question",
+          "@id": "https://calaudit.org/tools/biometric-masker/#faq-2",
+          "name": "Why use PNG over JPEG for the output?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PNG avoids the additional lossy compression introduced by JPEG, so it is the preferred output for retaining the generated effect."
+          }
+        },
+        {
+          "@type": "Question",
+          "@id": "https://calaudit.org/tools/biometric-masker/#faq-3",
+          "name": "Will humans notice the change?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The effect appears as grain or texture. Visibility varies with the image and intensity setting, and the effect is not a biometric-protection guarantee."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    <style>
+        /* CYBER/MATRIX REDESIGN */
+        :root {
+            --cyber-green: #00ff41;
+            --cyber-green-dim: #004d13;
+            --cyber-bg: #050a05;
+            --cyber-border: #00ff41;
+            --cyber-font: 'Courier New', Courier, monospace;
+        }
+
+        body.cyber-theme {
+            background-color: var(--cyber-bg) !important;
+            color: var(--cyber-green) !important;
+            font-family: var(--cyber-font) !important;
+            margin: 0;
+            padding-top: 77px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1300px) {
+            body.cyber-theme {
+                padding-top: 35px;
+            }
+        }
+
+        .matrix-bg {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.05;
+            background-image: repeating-linear-gradient(0deg, transparent, transparent 20px, var(--cyber-green) 21px);
+            background-size: 100% 40px;
+        }
+
+        .cyber-theme .vault-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .cyber-header-wrapper {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .cyber-top-bar {
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .cyber-main-title {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            margin: 0 0 20px 0;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+        }
+
+        .cyber-spec-box {
+            border: 2px solid var(--cyber-border);
+            padding: 15px 20px;
+            border-radius: 4px;
+            background: rgba(0, 255, 65, 0.05);
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2) inset;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .spec-title { font-weight: bold; font-size: 18px; margin-bottom: 10px; }
+        .spec-quote { font-style: italic; margin-bottom: 10px; opacity: 0.9; }
+        .spec-text { font-size: 14px; line-height: 1.4; text-align: left; }
+        .highlight { font-weight: bold; color: #fff; }
+
+        .cyber-workspace {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .cyber-workspace { grid-template-columns: 1fr; }
+        }
+
+        .cyber-col-title {
+            text-align: center;
+            font-size: 16px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .cyber-frame {
+            border: 2px solid var(--cyber-border);
+            border-radius: 4px;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: rgba(0, 50, 10, 0.3);
+            box-shadow: 0 0 10px rgba(0,255,65,0.2) inset;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .cyber-frame::before, .cyber-frame::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--cyber-border);
+            pointer-events: none;
+            z-index: 10;
+        }
+        .cyber-frame::before { top: 5px; left: 5px; border-right: none; border-bottom: none; }
+        .cyber-frame::after { bottom: 5px; right: 5px; border-left: none; border-top: none; }
+
+        .cyber-frame img, .cyber-frame canvas {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            z-index: 2;
+        }
+
+        .cyber-placeholder {
+            opacity: 0.5;
+            letter-spacing: 2px;
+        }
+
+        .cyber-hud {
+            border: 1px solid var(--cyber-border);
+            padding: 10px;
+            font-size: 13px;
+            background: rgba(0, 255, 65, 0.05);
+            line-height: 1.6;
+            min-height: 70px;
+        }
+
+        .hud-failure {
+            color: #ff3333;
+            border-color: #ff3333;
+            background: rgba(255, 51, 51, 0.05);
+        }
+
+        .cyber-dropzone {
+            border: 2px dashed var(--cyber-border);
+            padding: 30px 20px;
+            text-align: center;
+            cursor: pointer;
+            background: rgba(0, 255, 65, 0.05);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            outline: none;
+        }
+
+        .cyber-dropzone:hover, .cyber-dropzone.dragover, .cyber-dropzone:focus {
+            background: rgba(0, 255, 65, 0.15);
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+        }
+
+        .upload-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            display: inline-block;
+            border: 2px solid var(--cyber-border);
+            padding: 10px 20px;
+            border-radius: 20px;
+            background: var(--cyber-green);
+            color: var(--cyber-bg);
+            font-weight: bold;
+        }
+
+        .client-side-badge {
+            margin-top: 15px;
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        .cyber-controls-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .control-group label {
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .control-group input[type="range"] {
+            accent-color: var(--cyber-green);
+            background: var(--cyber-green-dim);
+            cursor: pointer;
+        }
+
+        .control-group select {
+            background: var(--cyber-bg);
+            color: var(--cyber-green);
+            border: 1px solid var(--cyber-border);
+            padding: 8px;
+            font-family: var(--cyber-font);
+            cursor: pointer;
+        }
+
+        .control-group select option {
+            background: var(--cyber-bg);
+            color: var(--cyber-green);
+        }
+
+        .control-hint {
+            font-size: 10px;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        .cyber-progress {
+            margin-bottom: 20px;
+        }
+
+        .progress-label {
+            font-size: 12px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .progress-bar-container {
+            border: 1px solid var(--cyber-border);
+            height: 20px;
+            position: relative;
+            background: rgba(0, 255, 65, 0.1);
+        }
+
+        .progress-bar-fill {
+            background: var(--cyber-green);
+            height: 100%;
+            width: 100%;
+            transition: width 0.3s;
+        }
+
+        .progress-bar-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            line-height: 20px;
+            color: var(--cyber-bg);
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .cyber-privacy-box {
+            border: 1px solid var(--cyber-border);
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        .privacy-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .cyber-btn {
+            display: block;
+            width: 100%;
+            background: var(--cyber-bg);
+            color: var(--cyber-green);
+            border: 1px solid var(--cyber-border);
+            padding: 15px;
+            font-family: var(--cyber-font);
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .cyber-btn:disabled {
+            border-color: var(--cyber-green-dim);
+            color: var(--cyber-green-dim);
+            cursor: not-allowed;
+        }
+
+        .cyber-btn:not(:disabled):hover {
+            box-shadow: 0 0 15px var(--cyber-border);
+            background: rgba(0, 255, 65, 0.1);
+        }
+
+        .cyber-btn-dl {
+            background: var(--cyber-green);
+            color: var(--cyber-bg);
+        }
+        .cyber-btn-dl:hover {
+            background: #fff;
+        }
+
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+        }
+    
+        .cyber-faq-section {
+            margin-top: 50px;
+            border-top: 2px dashed var(--cyber-border);
+            padding-top: 30px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cyber-faq-title {
+            font-size: 20px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .cyber-faq-item {
+            margin-bottom: 15px;
+            border: 1px solid var(--cyber-border);
+            background: rgba(0, 255, 65, 0.05);
+            border-radius: 4px;
+        }
+        .cyber-faq-item summary {
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            list-style: none;
+            outline: none;
+        }
+        .cyber-faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .cyber-faq-item summary::before {
+            content: "[+]";
+            margin-right: 15px;
+            color: var(--cyber-green);
+        }
+        .cyber-faq-item[open] summary::before {
+            content: "[-]";
+        }
+        .cyber-faq-item[open] {
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.1) inset;
+        }
+        .cyber-faq-answer {
+            padding: 0 15px 15px 45px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+    </style>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body class="cyber-theme">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="matrix-bg"></div>
+
+    <div class="vault-container">
+        <div class="back-btn-container">
+            <a href="/tools/" class="back-btn" aria-label="Return to previous page, the Utility Hub">← Return to Utility Hub</a>
+        </div>
+
+        <main role="main" id="main-content">
+            <div class="cyber-header-wrapper">
+                <div class="cyber-top-bar">CALAUDIT LAB | Local Image Noise &amp; Pixel Effects</div>
+                <h1 class="cyber-main-title">[ FREE IMAGE NOISE &amp; PIXEL EFFECT GENERATOR ]</h1>
+                <div class="cyber-spec-box">
+                    <div class="spec-title">IMAGE NOISE &amp; PIXEL EFFECT GENERATOR</div>
+                    <div class="spec-quote">Add adjustable pixel noise and distortion effects to photos locally in your browser.</div>
+                    <div class="spec-text"><span class="highlight">SPECIFICATION:</span> Upload a JPEG, PNG, or WebP image and apply an adjustable trigonometric pixel-noise effect with the Canvas API. The tool runs locally in your browser and exports the edited image in PNG, JPEG, or WebP format. This experimental effect has not been tested against facial-recognition systems and does not claim to prevent identification, matching, scraping, or profiling.</div>
+                </div>
+            </div>
+
+            <div class="cyber-workspace">
+                <!-- Left: Original Image -->
+                <div class="cyber-col">
+                    <h2 class="cyber-col-title">ORIGINAL IMAGE</h2>
+                    <div class="cyber-frame">
+                        <img class="display-none" id="source-preview" alt="Source preview">
+                        <span id="source-placeholder" class="cyber-placeholder">AWAITING INPUT</span>
+                    </div>
+                    <div class="cyber-hud" id="hud-original">
+                        <div id="orig-score">PIXEL MATRIX: --</div>
+                        <div id="orig-model">STATE: AWAITING INPUT</div>
+                        <div id="orig-status">EFFECT: --</div>
+                    </div>
+                </div>
+
+                <!-- Center: Controls -->
+                <div class="cyber-col cyber-col-center">
+                    <div class="cyber-dropzone" id="dropzone" role="button" aria-label="Photo upload drop zone. Drag and drop a photo here, or press enter or space to browse and upload." tabindex="0" onclick="document.getElementById('file-input').click()" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); document.getElementById('file-input').click(); }">
+                        <input type="file" id="file-input" accept="image/*" class="sr-only" aria-label="Choose an image for the pixel-noise demo" tabindex="-1" onchange="handleFileSelect(event)">
+                        <div class="upload-icon">↑ Upload</div>
+                        <div class="u-style-c49edf41">Drag &amp; Drop an Image Here<br>to Edit It</div>
+                        <div class="client-side-badge">Canvas Effect<br>Ready</div>
+                    </div>
+
+                    <div class="cyber-controls-grid">
+                        <div class="control-group grid-span-2">
+                            <label for="noise-range">EFFECT INTENSITY <span id="noise-val">70%</span></label>
+                            <input type="range" id="noise-range" min="5" max="100" value="70">
+                            <div class="control-hint">Higher values create a more visible texture</div>
+                        </div>
+                        <div class="control-group">
+                            <label for="output-format">OUTPUT FORMAT</label>
+                            <select id="output-format">
+                                <option value="image/png">PNG</option>
+                                <option value="image/jpeg">JPEG</option>
+                                <option value="image/webp">WebP</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="cyber-progress">
+                        <div class="progress-label" id="progress-label">Image noise generator ready</div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill u-style-199b6f0e" id="progress-bar-fill"></div>
+                            <div class="progress-bar-text" id="progress-bar-text">100%</div>
+                        </div>
+                    </div>
+
+                    <div class="cyber-privacy-box">
+                        <div class="privacy-title">PROCESSING NOTE</div>
+                        <div class="privacy-text">The selected image is read and edited by this page with the Canvas API.<br>Review your browser, extensions, and device environment before opening sensitive files.</div>
+                    </div>
+
+                    <button id="process-btn" class="cyber-btn" disabled>APPLY EFFECT &gt;&gt;</button>
+                    
+                    <div class="u-style-fd99850c" id="download-container">
+                        <a id="download-link" class="cyber-btn cyber-btn-dl" download>💾 DOWNLOAD EDITED IMAGE</a>
+                    </div>
+                </div>
+
+                <!-- Right: Masked Image -->
+                <div class="cyber-col">
+                    <h2 class="cyber-col-title">EDITED IMAGE</h2>
+                    <div class="cyber-frame">
+                        <canvas class="display-none" id="output-canvas"></canvas>
+                        <span id="result-placeholder" class="cyber-placeholder">NO DATA</span>
+                    </div>
+                    <div class="cyber-hud" id="hud-masked">
+                        <div id="mask-score">PIXEL MATRIX: --</div>
+                        <div id="mask-model">STATE: AWAITING INPUT</div>
+                        <div id="mask-status">EFFECT: --</div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="cyber-comparison-box u-style-5b79abe4">
+                <div class="u-style-9112349e">[ EXPERIMENTAL DEMO NOTICE ]</div>
+                <div class="u-style-0a2d2cf1">
+                    <span class="u-style-75fbb7ae">This page adds visible pixel noise for demonstration and creative experimentation.</span><br><br>
+                    It is not a security control, anonymity tool, biometric countermeasure, or substitute for limiting where you publish identifying images.
+                </div>
+            </div>
+
+            <div class="cyber-faq-section">
+                <h2 class="cyber-faq-title">[ FORENSIC FAQ ]</h2>
+                <details class="cyber-faq-item">
+                    <summary>Are my images safe here?</summary>
+                    <div class="cyber-faq-answer">The selected image is processed by this page with the Canvas API. Review your browser, extensions, and device environment before using sensitive files.</div>
+                </details>
+                <details class="cyber-faq-item">
+                    <summary>Why use PNG over JPEG for the output?</summary>
+                    <div class="cyber-faq-answer">PNG avoids the additional lossy compression introduced by JPEG, so it is the preferred output for retaining the generated effect.</div>
+                </details>
+                <details class="cyber-faq-item">
+                    <summary>Will humans notice the change?</summary>
+                    <div class="cyber-faq-answer">The effect appears as grain or texture. Visibility varies with the image and intensity setting, and the effect is not a biometric-protection guarantee.</div>
+                </details>
+            </div>
+
+        </main>
+
+
+    </div>
+
+    <footer class="page-footer" role="contentinfo">
+    <div class="footer-inner">
+        <p>© 2026 CALAUDIT | Nicolas Hernandez — Public Interest Initiative | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+        <p><strong>OPEN SOURCE LICENSE NOTICE:</strong> All original utility code, tools, and web application logic on this platform are distributed under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">GNU AGPLv3</a>. All public health form archives, translated materials, and investigative guides are licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>. Commercial exploitation, proprietary re-licensing, or paywalling without strict attribution is strictly prohibited.</p>
+        <p class="onion-mirror" aria-label="Tor Onion Mirror Address">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+    </div>
+</footer>
+
+    <script src="/nav.js"></script>
+
+    <script>
+      const dropzone = document.getElementById('dropzone');
+      const fileInput = document.getElementById('file-input');
+      const sourcePreview = document.getElementById('source-preview');
+      const sourcePlaceholder = document.getElementById('source-placeholder');
+      const noiseRange = document.getElementById('noise-range');
+      const noiseVal = document.getElementById('noise-val');
+      const outputFormat = document.getElementById('output-format');
+      const processBtn = document.getElementById('process-btn');
+      const outputCanvas = document.getElementById('output-canvas');
+      const resultPlaceholder = document.getElementById('result-placeholder');
+      const dlContainer = document.getElementById('download-container');
+      const dlLink = document.getElementById('download-link');
+
+      // HUD Elements
+      const origScore = document.getElementById('orig-score');
+      const origModel = document.getElementById('orig-model');
+      const origStatus = document.getElementById('orig-status');
+      
+      const maskScore = document.getElementById('mask-score');
+      const maskModel = document.getElementById('mask-model');
+      const maskStatus = document.getElementById('mask-status');
+      const hudMasked = document.getElementById('hud-masked');
+
+      let originalImage = null;
+      let currentFileName = 'photo';
+      let currentDownloadUrl = null;
+
+      ['dragenter', 'dragover'].forEach(eventName => {
+        dropzone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          dropzone.classList.add('dragover');
+        }, false);
+      });
+
+      ['dragleave', 'drop'].forEach(eventName => {
+        dropzone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          dropzone.classList.remove('dragover');
+        }, false);
+      });
+
+      dropzone.addEventListener('drop', (e) => {
+        const dt = e.dataTransfer;
+        if (dt.files.length > 0) handleFile(dt.files[0]);
+      });
+
+      function handleFileSelect(event) {
+        if (event.target.files.length > 0) handleFile(event.target.files[0]);
+        event.target.value = '';
+      }
+
+      noiseRange.addEventListener('input', (e) => {
+        noiseVal.innerText = e.target.value + "%";
+      });
+
+      function handleFile(file) {
+        const supportedTypes = ['image/jpeg', 'image/png', 'image/webp'];
+        if (!supportedTypes.includes(file.type) || file.size > 25 * 1024 * 1024) {
+          resultPlaceholder.textContent = 'Choose a JPEG, PNG, or WebP image up to 25 MB.';
+          return;
+        }
+        currentFileName = file.name.replace(/\s+/g, '-');
+
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          originalImage = new Image();
+          originalImage.onload = () => {
+            sourcePreview.src = e.target.result;
+            sourcePreview.style.display = "block";
+            sourcePlaceholder.style.display = "none";
+            processBtn.disabled = false;
+            dlContainer.style.display = "none";
+            outputCanvas.style.display = "none";
+            resultPlaceholder.style.display = "block";
+            resultPlaceholder.textContent = "AWAITING EFFECT";
+
+            // Update Left HUD
+            origScore.textContent = "PIXEL MATRIX: ";
+            const spanScore = document.createElement("span");
+            spanScore.className = "text-white";
+            spanScore.textContent = "Standard (Unmodified)";
+            origScore.appendChild(spanScore);
+
+            origModel.textContent = "STATE: ";
+            const spanModel = document.createElement("span");
+            spanModel.className = "text-white";
+            spanModel.textContent = "Ready for Editing";
+            origModel.appendChild(spanModel);
+
+            origStatus.textContent = "EFFECT: ";
+            const spanStatus = document.createElement("span");
+            spanStatus.className = "text-white";
+            spanStatus.textContent = "Not Applied";
+            origStatus.appendChild(spanStatus);
+
+            // Reset Right HUD
+            maskScore.textContent = "PIXEL MATRIX: --";
+            maskModel.textContent = "STATE: AWAITING INPUT";
+            maskStatus.textContent = "EFFECT: --";
+            hudMasked.className = "cyber-hud";
+          };
+          originalImage.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+
+      processBtn.addEventListener('click', () => {
+        if (!originalImage) return;
+
+        const ctx = outputCanvas.getContext('2d');
+        const maxDimension = 4096;
+        const scale = Math.min(1, maxDimension / Math.max(originalImage.width, originalImage.height));
+        outputCanvas.width = Math.max(1, Math.round(originalImage.width * scale));
+        outputCanvas.height = Math.max(1, Math.round(originalImage.height * scale));
+        ctx.drawImage(originalImage, 0, 0, outputCanvas.width, outputCanvas.height);
+
+        const imgData = ctx.getImageData(0, 0, outputCanvas.width, outputCanvas.height);
+        const data = imgData.data;
+        const intensity = parseInt(noiseRange.value) * 0.4;
+
+        for (let i = 0; i < data.length; i += 4) {
+          const noiseX = Math.sin(i * 0.005) * intensity;
+          const noiseY = Math.cos(i * 0.01) * intensity;
+          const combinedNoise = (noiseX + noiseY) * (Math.random() - 0.5);
+
+          data[i]     = Math.min(255, Math.max(0, data[i] + combinedNoise));
+          data[i + 1] = Math.min(255, Math.max(0, data[i + 1] + combinedNoise * 0.7));
+          data[i + 2] = Math.min(255, Math.max(0, data[i + 2] - combinedNoise * 0.5));
+        }
+
+        ctx.putImageData(imgData, 0, 0);
+        resultPlaceholder.style.display = "none";
+        outputCanvas.style.display = "block";
+
+        const format = outputFormat.value;
+        outputCanvas.toBlob((blob) => {
+          if (!blob) {
+            maskModel.textContent = "STATE: EXPORT FAILED";
+            maskStatus.textContent = "EFFECT: NOT EXPORTED";
+            return;
+          }
+          if (currentDownloadUrl) URL.revokeObjectURL(currentDownloadUrl);
+          const url = URL.createObjectURL(blob);
+          currentDownloadUrl = url;
+          dlLink.href = url;
+          dlLink.download = `masked-${currentFileName.replace(/\.[^/.]+$/, '')}.${format === 'image/png' ? 'png' : (format === 'image/webp' ? 'webp' : 'jpg')}`;
+          dlContainer.style.display = "block";
+
+          // Update Right HUD to success state
+          maskScore.textContent = "PIXEL MATRIX: Modified";
+          maskModel.textContent = "STATE: Effect Applied";
+          maskStatus.textContent = "EFFECT: Visible Pixel Noise";
+          hudMasked.className = "cyber-hud";
+
+          dlLink.focus();
+        }, format);
+      });
+    </script>
+
+    <script>/* Onion Link Patch */ (function(){if(window.location.hostname.endsWith('.onion')){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(h&&!h.startsWith('http')&&!h.startsWith('mailto:')&&!h.startsWith('tel:')&&!h.startsWith('#')){var p=h.split('/');var l=p[p.length-1];if(l!==''&&!l.includes('.')){a.setAttribute('href',h+'.html')}else if(h.endsWith('/')){a.setAttribute('href',h+'index.html')}}})}})();</script>
+</body>
+</html>

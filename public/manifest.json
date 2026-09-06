@@ -1,0 +1,89 @@
+{
+  "audit_name": "CALAUDIT",
+  "operator": "Nicolas Hernandez",
+  "case_reference": "Case 26AVSC00192 (Hernandez vs. Local Initiative Health Authority of Los Angeles County)",
+  "audit_status": "Phase III: Post-Dismissal Pivot (Neutralizing Exhaustion Defense)",
+  "last_updated": "2026-06-24",
+  "evidence_vault_url": "https://calaudit.org/evidence-room/",
+  "audit_categories": {
+    "ghost_office_fraud": {
+      "description": "Evidence proving a Selective Update Policy (Bait & Switch): L.A. Care routes revenue-generating premium tiers to the active 1200 W 7th St HQ, while systematically directing public subsidy/low-income plan directories to a defunct ghost office at 1055 W 7th St to insulate themselves from low-income grievances and small claims service of process.",
+      "artifacts": [
+        "03012026-lacaremedical-provider-directory-21mb.pdf",
+        "2026-provider-handbook-page1933-1055w7thst.webp",
+        "2026-provider-handbook-page85-1055w7thst.webp",
+        "211la-1055.webp",
+        "ezilon-local-1055.webp",
+        "la-care-provider-portal-1055.webp",
+        "lacare-agents-resources-1055.webp",
+        "lacare-conflicting-addresses-google.mp4",
+        "lacare-health-insurance-dental-coverage.webp",
+        "lacountytobaccocessation-1055.webp",
+        "mapquest-1055.webp",
+        "muckrock-1055.webp",
+        "paramount-coc-1055.webp",
+        "sgvcorg-places-1055.webp",
+        "usearch-1055.webp",
+        "wayback-machine-lacare.webp",
+        "yelp-1055.webp",
+        "20250116-lacare-ghost-lobby-inspection.pdf",
+        "20250318-lacare-ghost-retreat-agenda.pdf",
+        "20250821-lacare-ghost-meeting-minutes.pdf"
+      ]
+    },
+    "administrative_default": {
+      "description": "Documentation of failure to meet 72-hour expedited statutory deadlines (HSC 1368.01), DHCS Conlan reimbursement defaults ($2,307), and small claims hearing context detailing corporate admissions of Knox-Keene non-compliance.",
+      "artifacts": [
+        "26avsc00192-minute-order-05222026-annotated.pdf",
+        "26avsc00192-minute-order-05222026.pdf",
+        "sc109_f_huerta_1_.pdf",
+        "sc109-f-huerta-annotated.webp",
+        "expedited-state-hearing-default-attempted-backdate.pdf",
+        "expedited-state-hearing-default-attempted-backdate-annotated.webp",
+        "exhibit-b-1.webp",
+        "exhibit-b-2.webp",
+        "conlan1.webp",
+        "conlan2.webp",
+        "conlan3.webp",
+        "04102026-acknowledgement-letter-redacted.webp",
+        "04142026-acknowledgement-letter-redacted.pdf",
+        "xxxxx55-hernandez-ack-ltr-redacted.webp"
+      ]
+    },
+    "clinical_negligence": {
+      "description": "Evidence of medical abandonment, tapering failures, and network inadequacy.",
+      "artifacts": [
+        "nicolas-hernandez-medical-records-mar2026-redacted.pdf",
+        "garcia-notes-primary-visit-redacted.pdf",
+        "garcia-breeze-complaint-redacted.pdf",
+        "acknowledgement-letter-garcia-redacted.pdf",
+        "mahmoud-er-visit-redacted.pdf",
+        "mahmoud-breeze-complaint-redacted.pdf",
+        "mahmoud-buprenorphine-prescription-lapse-obfuscated.webp",
+        "acknowledgement-letter-mahmoud-redacted.pdf",
+        "jikamo-billing-fraud-obfuscated.webp",
+        "jikamo-billing-processing-obfuscated.webp",
+        "jikamo-breeze-complaint-redacted.pdf",
+        "dang-pharmacy-complaint-v2.pdf",
+        "inspector-obfuscated.webp"
+      ]
+    },
+    "corporate_governance": {
+      "description": "Official minutes and onboarding guides proving institutional knowledge of inconsistencies.",
+      "artifacts": [
+        "20241120-approved-prac-mtg-minutes.pdf",
+        "20250501-approved-bog-minutes.pdf",
+        "board-of-governors-meeting-march-10-2026.pdf",
+        "06-2024rev-2025-lacare-newmemberorientation-1200.pdf",
+        "11-2025-01-2026review-newmemberguide.pdf",
+        "lacare-covered-direct-1200.pdf"
+      ]
+    }
+  },
+  "legal_directives": [
+    "No Non-Disclosure Agreements (NDA) will be accepted.",
+    "All communications must be in writing as per the March 31, 2026 Cease and Desist.",
+    "Proprietary encrypted portals (Microsoft Purview) are rejected for transparency reasons.",
+    "Government Code § 905 administrative exhaustion exhaustion defenses are actively being neutralized via parallel DMHC and Government Claim tracking."
+  ]
+}

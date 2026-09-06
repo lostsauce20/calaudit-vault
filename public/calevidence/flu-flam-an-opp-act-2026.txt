@@ -1,0 +1,47 @@
+CALAUDIT LEGISLATIVE INITIATIVE — PROPOSED MODEL BILL
+BILL REF: AB-2026-FFO (THE "FLU FLAM AN OPP" ACT OF 2026)
+SPONSOR: NICOLAS HERNANDEZ, CALAUDIT.ORG
+
+--------------------------------------------------------------------------------
+An act to amend Section 905 of the Government Code, and to add Sections 1371.39 and 1374.96 to the Health and Safety Code, relating to managed-care accountability, statutory immunities, and patient protection.
+
+                                 LEGISLATIVE DIGEST
+AB-2026-FFO, as drafted: The "FLU FLAM AN OPP" Act (Fulfilling Legal Understandings & Forcing Legislative Accountability for Managed-care Agencies Neglecting Outpatient Providers and Patients).
+
+(1) Existing law (The Government Tort Claims Act, Gov. Code § 905) shields local public entities from civil actions for money or damages until a formal written claim is presented and rejected. This shield is routinely weaponized by public-entity managed-care plans (such as L.A. Care Health Plan) to evade immediate liability in small claims court for administrative defaults, creating an infinite procedural loop (referred to forensically as "The Torturous Turnstile").
+This bill would strip managed-care organizations of sovereign immunity and Government Tort Claims Act shields for claims under $10,000 arising from administrative default or breach of Knox-Keene operational standards.
+
+(2) Existing law (The Knox-Keene Health Care Service Plan Act of 1975) mandates that health plans maintain accurate provider directories and resolve member grievances within 30 days. Plan directories are documented to contain widespread "ghost listings," including disconnected and non-functional phone numbers.
+This bill would establish strict liability for "ghost directories," imposing daily penalties of $1,000 per disconnected number, and would mandate automatic administrative default judgments in favor of members when plans fail to resolve critical grievances within 30 statutory days.
+
+--------------------------------------------------------------------------------
+THE PEOPLE OF THE STATE OF CALIFORNIA DO ENACT AS FOLLOWS:
+
+SECTION 1. Short Title.
+This act shall be known, and may be cited, as the Fulfilling Legal Understandings & Forcing Legislative Accountability for Managed-care Agencies Neglecting Outpatient Providers and Patients Act of 2026, or the "FLU FLAM AN OPP" Act.
+
+SEC. 2. Findings and Declarations.
+The Legislature finds and declares all of the following:
+(a) Managed-care organizations operating under public-entity charters (specifically county-organized health systems and local initiatives) act as commercial insurance enterprises, collecting billions of dollars in taxpayer-funded capitation premiums.
+(b) Despite operating in a commercial capacity, these entities exploit statutory immunities designed for core municipal services, utilizing Government Code Section 905 to deflect, delay, and defeat small claims actions brought by low-income Medi-Cal beneficiaries. This administrative flimflam ("Flu Flam") deprives patients of immediate judicial remedy.
+(c) Furthermore, managed-care plans treat their own outpatient providers and patients as adversarial opponents ("Opps") rather than beneficiaries, using "ghost directories," disconnected phone lines, and suppressed grievances to restrict care access and preserve cash reserves.
+
+SEC. 3. Section 905.5 is added to the Government Code, to read:
+905.5. (a) Notwithstanding Section 905, the requirement to present a written government tort claim shall not apply to any civil action for money or damages under ten thousand dollars ($10,000) brought against a local public entity that operates as a licensed health care service plan under the Knox-Keene Health Care Service Plan Act of 1975, where the claim arises from:
+  (1) A failure to provide or reimburse covered medical services.
+  (2) A violation of timely access, network adequacy, or grievance resolution standards.
+(b) Such entities shall be subject to immediate jurisdiction in the Small Claims Division of the Superior Court, and any defense asserted under this chapter is hereby waived by operation of law.
+
+SEC. 4. Section 1371.39 is added to the Health and Safety Code, to read:
+1371.39. (a) Any health care service plan that maintains a public provider directory shall verify the active, functional status of all listed provider telephone numbers every 30 days.
+(b) If a listed provider telephone number is found to be disconnected, non-functional, or leads to a different commercial entity (a "ghost directory" listing):
+  (1) The plan shall be liable for an administrative penalty of one thousand dollars ($1,000) per day for each day the inaccurate listing remains public.
+  (2) In any action brought by a member who attempted to contact the plan via said listed number, the plan's failure to provide an active, functional connection shall constitute prima facie evidence of a violation of Knox-Keene network adequacy.
+
+SEC. 5. Section 1374.96 is added to the Health and Safety Code, to read:
+1374.96. (a) If a health care service plan fails to issue a written grievance resolution within the statutory 30-day window mandated by Section 1370.2, and the grievance involves a life-critical outpatient service:
+  (1) The plan's inaction shall constitute an automatic administrative default.
+  (2) The regulatory agency or a court of competent jurisdiction shall enter a default judgment in favor of the member, ordering full reimbursement of all out-of-pocket costs incurred, plus a statutory fine of five thousand dollars ($5,000) payable to the member.
+
+--------------------------------------------------------------------------------
+// END OF FILE // CALAUDIT MODEL BILL ARTIFACT AB-2026-FFO

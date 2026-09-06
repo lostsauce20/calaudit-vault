@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medi-Cal FAME Record Audit &amp; Eligibility Errors | CalAudit</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="canonical" href="https://calaudit.org/fame-records/">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="description" content="Forensic documentation of data errors in official Medi-Cal FAME eligibility records, citizenship coding, and the critical two-card Conlan rejections.">
+  <meta name="keywords" content="FAME records, Medi-Cal eligibility, BIC card, Medi-Cal ID, Conlan reimbursement, citizenship coding error, Medi-Cal managed care, AB 3275">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CalAudit">
+  <meta property="og:url" content="https://calaudit.org/fame-records/">
+  <meta property="og:title" content="FAME Record Errors | Medi-Cal Eligibility Audit | CalAudit">
+  <meta property="og:description" content="Decoding coded Medi-Cal FAME eligibility records and documenting confirmed administrative errors — Case SHN-[REDACTED].">
+  <meta property="og:image" content="https://calaudit.org/calauditlogo.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="CalAudit Official Logo">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FAME Record Errors | Medi-Cal Eligibility Audit | CalAudit">
+  <meta name="twitter:description" content="Decoding coded Medi-Cal FAME eligibility records and documenting confirmed administrative errors.">
+  <meta name="twitter:image" content="https://calaudit.org/calauditlogo.webp">
+  <meta name="twitter:image:alt" content="CalAudit Official Logo">
+  <meta name="geo.region" content="US-CA">
+  <meta name="geo.placename" content="California">
+  <meta name="geo.position" content="38.5816;-121.4944">
+  <meta name="ICBM" content="38.5816, -121.4944">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://calaudit.org/#organization",
+        "name": "CalAudit",
+        "url": "https://calaudit.org/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://calaudit.org/calauditlogo.webp",
+          "width": 1200,
+          "height": 630
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://calaudit.org/#website",
+        "url": "https://calaudit.org/",
+        "name": "CalAudit",
+        "publisher": { "@id": "https://calaudit.org/#organization" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://calaudit.org/fame-records/#webpage",
+        "url": "https://calaudit.org/fame-records/",
+        "name": "FAME Record & BIC Card Audit | Medi-Cal Eligibility | CalAudit",
+        "description": "Forensic documentation of data errors in official Medi-Cal FAME eligibility records, citizenship coding, and the critical two-card Conlan rejections.",
+        "isPartOf": { "@id": "https://calaudit.org/#website" },
+        "breadcrumb": { "@id": "https://calaudit.org/fame-records/#breadcrumb" },
+        "mainEntity": { "@id": "https://calaudit.org/fame-records/#report" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://calaudit.org/fame-records/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "CalAudit",
+            "item": "https://calaudit.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "FAME Record & BIC Card Audit | Medi-Cal Eligibility",
+            "item": "https://calaudit.org/fame-records/"
+          }
+        ]
+      },
+      {
+        "@type": ["Article", "TechArticle"],
+        "@id": "https://calaudit.org/fame-records/#report",
+        "isPartOf": { "@id": "https://calaudit.org/fame-records/#webpage" },
+        "mainEntityOfPage": { "@id": "https://calaudit.org/fame-records/#webpage" },
+        "headline": "FAME Record & BIC Card Audit | Medi-Cal Eligibility Errors",
+        "description": "Forensic documentation of data errors in official Medi-Cal FAME eligibility records, including incorrect citizenship coding and the critical two-card trap behind Conlan Packet 2 rejections.",
+        "datePublished": "2026-01-15T00:00:00-08:00",
+        "dateModified": "2026-07-03",
+        "inLanguage": "en-US",
+        "keywords": "FAME records, Medi-Cal eligibility, BIC card, Conlan reimbursement, AB 3275",
+        "author": {
+          "@type": "Person",
+          "@id": "https://calaudit.org/#nicolas-hernandez",
+          "name": "Nicolas Hernandez",
+          "url": "https://calaudit.org/"
+        },
+        "publisher": { "@id": "https://calaudit.org/#organization" },
+        "about": [
+          {
+            "@type": "Legislation",
+            "name": "California Assembly Bill 3275",
+            "alternateName": "AB 3275",
+            "description": "Statutory mandate dictating a 30-day processing deadline for reimbursement claims."
+          },
+          {
+            "@type": "GovernmentService",
+            "name": "Medi-Cal Eligibility Systems",
+            "provider": {
+              "@type": "GovernmentOrganization",
+              "name": "California Department of Health Care Services",
+              "alternateName": "DHCS",
+              "sameAs": "https://en.wikipedia.org/wiki/California_Department_of_Health_Care_Services"
+            }
+          }
+        ],
+        "mentions": [
+          {
+            "@type": "DigitalDocument",
+            "name": "Compiled FAME Eligibility Record (Redacted)",
+            "description": "Official eligibility screens retrieved via State Hearing Case SHN-[REDACTED] documenting citizenship coding errors and plan assignments.",
+            "url": "https://calaudit.org/calevidence/c-xxxxxxxx-xxt2-bene-elig-mcp-compiled-redacted.pdf",
+            "fileFormat": "application/pdf"
+          }
+        ],
+        "hasPart": [
+          { "@id": "https://calaudit.org/fame-records/#faq" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://calaudit.org/fame-records/#faq",
+        "isPartOf": { "@id": "https://calaudit.org/fame-records/#report" },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is 'FAME'?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "FAME stands for Fiscal Intermediary Access to Medi-Cal, a legacy terminal system used by the state of California to track medical eligibility and plan assignments."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why do I need a BIC card?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The state requires the official, state-issued Benefits Identification Card (BIC) for all out-of-pocket Conlan reimbursement claims; Managed Care Plan cards are automatically rejected."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+<a href="#main-content" class="skip-link u-style-1685fe58">Skip to main content</a>
+
+<div class="vault-container">
+    <nav class="back-btn-container" aria-label="Global Directory Back Navigation">
+      <a href="/forensic-vault/" class="back-btn" aria-label="Return to Forensic Vault">← Return to Forensic Vault</a>
+    </nav>
+
+    <main id="main-content" role="main">
+        <header role="banner" class="header">
+            <h1 class="header-title green">FAME RECORD AUDIT</h1>
+            <p class="subtitle">Decoding Coded Medi-Cal Eligibility Records — Case SHN-[REDACTED]</p>
+        </header>
+
+        <aside class="audit-box warfare" aria-label="Forensic Audit Executive Summary">
+            <div class="status-badge" aria-hidden="true">INTEL_SUMMARY</div>
+            <p>The FAME Records archive decodes technical codes found in Fiscal Intermediary Access to Medi-Cal (FAME) screens and documents the systemic "BIC vs. Plan Card" confusion utilized by the state to induce automatic Conlan rejections.</p>
+        </aside>
+
+        <!-- POST-HEARING ARCHIVE NOTICE -->
+        <div class="urgent u-style-4abe41b6">
+            <div class="urgent-label u-style-346c234d">RECORD ARCHIVED // POST-HEARING</div>
+            <p><strong>HISTORICAL BENCHMARK:</strong> May 14, 2026: Personal funds exhausted due to withheld $2,307.00. May 21, 2026: Small Claims Hearing Executed. This repository stands as an unedited log of the state's statutory default.</p>
+        </div>
+
+        <!-- STATUS BAR -->
+        <section aria-labelledby="metrics-heading">
+          <h2 id="metrics-heading" class="section-tag">// CASE METRICS</h2>
+          <dl class="status-bar">
+            <div class="status-cell">
+              <dt class="status-lbl">Amount withheld</dt>
+              <dd class="status-val red">$2,307</dd>
+            </div>
+            <div class="status-cell">
+              <dt class="status-lbl">AB 3275 deadline</dt>
+              <dd class="status-val amber">Apr 26</dd>
+            </div>
+            <div class="status-cell">
+              <dt class="status-lbl">Days overdue</dt>
+              <dd class="status-val red" id="days-overdue" aria-live="polite">Calculating...</dd>
+            </div>
+            <div class="status-cell">
+              <dt class="status-lbl">Funds exhausted</dt>
+              <dd class="status-val red">May 14</dd>
+            </div>
+          </dl>
+        </section>
+
+        <!-- FULL TIMELINE -->
+        <section aria-labelledby="timeline-heading">
+          <h2 id="timeline-heading" class="section-tag">// FORENSIC TIMELINE</h2>
+          <div class="timeline-wrap-v2">
+            <div class="tl-header-v2" aria-hidden="true">// Event Log: Case SHN-[REDACTED]</div>
+            <ol class="u-style-f075d4d3">
+              <li class="tl-item-v2">
+                <div class="tl-date-v2"><time datetime="2026-03-06">Mar 6, 2026</time></div>
+                <h3 class="tl-title-v2">Conlan Packet 2 Rejected</h3>
+                <div class="tl-desc-v2">DHCS rejected the claim because a Managed Care Plan card was submitted instead of the state-issued BIC card.</div>
+              </li>
+              <li class="tl-item-v2 amber">
+                <div class="tl-date-v2"><time datetime="2026-03-17">Mar 17, 2026</time></div>
+                <h3 class="tl-title-v2">New BIC Card Issued</h3>
+                <div class="tl-desc-v2">FAME record reflects PLASTIC ISSUE DATE 171103 superseded by 2026 reissue solely for reimbursement compliance.</div>
+              </li>
+              <li class="tl-item-v2">
+                <div class="tl-date-v2"><time datetime="2026-03-27">Mar 27, 2026</time></div>
+                <h3 class="tl-title-v2">Packet 3 Received</h3>
+                <div class="tl-desc-v2">$2,307.00 claim received by DHCS. AB 3275 mandatory 30-day decision clock initiated.</div>
+              </li>
+              <li class="tl-item-v2 red">
+                <div class="tl-date-v2"><time datetime="2026-04-26">Apr 26, 2026</time></div>
+                <h3 class="tl-title-v2">STATUTORY DEFAULT</h3>
+                <div class="tl-desc-v2">30-day window expires. No payment or denial issued. The state enters a documented state of default.</div>
+              </li>
+              <li class="tl-item-v2 red">
+                <div class="tl-date-v2"><time datetime="2026-05-14">May 14, 2026</time></div>
+                <h3 class="tl-title-v2">Financial Exhaustion</h3>
+                <div class="tl-desc-v2">Personal funds for taper-supervised care exhausted. State inaction induces medical abandonment.</div>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- THE TWO-CARD TRAP -->
+        <section aria-labelledby="trap-heading">
+          <h2 id="trap-heading" class="section-tag">// THE TWO-CARD TRAP: BIC VS. MANAGED CARE</h2>
+          <div class="summary-grid-2x2 u-style-2579959f">
+              <article class="summary-card">
+                  <div class="summary-card-num" aria-hidden="true">CARD TYPE A</div>
+                  <h3 class="summary-card-name">BIC (Benefits Identification Card)</h3>
+                  <div class="forensic-context u-style-b028273b">
+                      <ul class="u-style-d5529e51">
+                          <li>→ Issued directly by DHCS (State)</li>
+                          <li>→ White plastic with poppy design</li>
+                          <li>→ <strong>REQUIRED</strong> for Conlan Reimbursement</li>
+                          <li class="u-style-2f19fee6">→ Reissued Mar 17, 2026 to satisfy DHCS.</li>
+                      </ul>
+                  </div>
+              </article>
+              <article class="summary-card">
+                  <div class="summary-card-num" aria-hidden="true">CARD TYPE B</div>
+                  <h3 class="summary-card-name">Managed Care Plan Card</h3>
+                  <div class="forensic-context u-style-6fcaaec0">
+                      <ul class="u-style-d5529e51">
+                          <li>→ Issued by Plan (L.A. Care / Health Net)</li>
+                          <li>→ Used for standard doctor/pharmacy visits</li>
+                          <li>→ <strong>NOT ACCEPTED</strong> for Conlan claims</li>
+                          <li class="u-style-0d599e77">→ Submitted in Packet 2; triggered rejection.</li>
+                      </ul>
+                  </div>
+              </article>
+          </div>
+
+          <div class="evidence-block u-style-6ed62c69">
+              <p class="u-style-b352c25c">
+                  <strong class="u-style-3db1b0f4">// STRATEGIC ANALYSIS</strong>
+                  The state leverages the ambiguity between these two cards to manually induce claim rejections and reset the AB 3275 statutory clock. This "bureaucratic trap" is a primary barrier to financial recovery.
+              </p>
+          </div>
+        </section>
+
+        <!-- FAME ELIGIBILITY RECORD PDF -->
+        <section aria-labelledby="evidence-heading">
+          <h2 id="evidence-heading" class="section-tag">// PRIMARY EVIDENCE: FAME RECORD</h2>
+          <div class="audit-box warfare">
+              <div class="status-badge" aria-hidden="true">RECORDS_UNLOCKED</div>
+              <h3>Compiled FAME Eligibility Record (Redacted)</h3>
+              <p class="evidence-caption">Official eligibility screens retrieved via State Hearing Case SHN-[REDACTED]. Documents citizenship coding errors and plan assignments.</p>
+
+              <div class="evidence-item-box mt-20">
+                  <iframe class="u-style-379a38cc"
+                      src="/calevidence/c-xxxxxxxx-xxt2-bene-elig-mcp-compiled-redacted.pdf"
+                      width="100%"
+                      height="600"
+                     
+                      title="Compiled FAME Eligibility Record PDF Document"
+                      loading="lazy">
+                  </iframe>
+              </div>
+          </div>
+        </section>
+
+        <!-- OFFICIAL PLAN TRANSITION RECORDS -->
+        <section aria-labelledby="transition-heading">
+          <h2 id="transition-heading" class="section-tag">// OFFICIAL PLAN TRANSITION RECORDS</h2>
+          <div class="audit-box warfare">
+              <div class="status-badge" aria-hidden="true">PLAN_TRANSITION_VERIFIED</div>
+              <h3>Managed Care Plan Transition: Health Net to L.A. Care (April 1, 2025)</h3>
+              <p class="evidence-caption">Official correspondence from the California Department of Health Care Services (DHCS) validating the formal disenrollment from Health Net and immediate enrollment into L.A. Care Health Plan, effective April 1, 2025.</p>
+
+              <div class="u-style-924c9720">
+                  <figure class="u-style-cb5e1565">
+                      <figcaption class="section-label u-style-e482afc3">EXHIBIT: HEALTH NET DISENROLLMENT</figcaption>
+                      <a href="/calevidence/healthnet-disenrollment-04-01-2025.webp" target="_blank" rel="noopener noreferrer" aria-label="View high resolution scan of Health Net disenrollment letter (opens in a new window)">
+                          <img src="/calevidence/healthnet-disenrollment-04-01-2025.webp" class="claim-img u-style-39e07c0a" alt="DHCS notification letter confirming disenrollment from Health Net Community Solutions, effective April 1, 2025." loading="lazy">
+                      </a>
+                      <p class="u-style-12e13d48">Official DHCS notification confirming requested disenrollment from Health Net Community Solutions effective April 1, 2025.</p>
+                  </figure>
+                  <figure class="u-style-cb5e1565">
+                      <figcaption class="section-label u-style-e482afc3">EXHIBIT: L.A. CARE ENROLLMENT</figcaption>
+                      <a href="/calevidence/lacare-enrollment-04-01-2025.webp" target="_blank" rel="noopener noreferrer" aria-label="View high resolution scan of L.A. Care enrollment letter (opens in a new window)">
+                          <img src="/calevidence/lacare-enrollment-04-01-2025.webp" class="claim-img u-style-39e07c0a" alt="DHCS notification letter confirming welcome and enrollment into L.A. Care Health Plan, effective April 1, 2025." loading="lazy">
+                      </a>
+                      <p class="u-style-12e13d48">Official DHCS notification welcoming the member and confirming active enrollment into L.A. Care Health Plan effective April 1, 2025.</p>
+                  </figure>
+              </div>
+          </div>
+        </section>
+
+        <!-- CONFIRMED ADMINISTRATIVE ERRORS -->
+        <section aria-labelledby="errors-heading">
+          <h2 id="errors-heading" class="section-tag">// CONFIRMED ADMINISTRATIVE ERRORS</h2>
+
+          <article class="error-block">
+              <h3 class="error-header">
+                  <span class="error-badge">Error 01</span>
+                  <span class="error-title">Citizenship status incorrectly coded as non-citizen</span>
+              </h3>
+              <div class="error-body">
+                  <p>The FAME record incorrectly codes the individual under a legacy "ALIEN" designation, misrepresenting a U.S.-born citizen status.</p>
+                  <dl class="diff-grid">
+                      <div class="diff-cell wrong">
+                          <dt class="diff-lbl">✗ Record entry</dt>
+                          <dd class="diff-val">ALIEN: A (non-citizen)</dd>
+                      </div>
+                      <div class="diff-cell right">
+                          <dt class="diff-lbl">✓ Verified Status</dt>
+                          <dd class="diff-val">U.S. Citizen</dd>
+                      </div>
+                  </dl>
+              </div>
+          </article>
+
+          <article class="error-block">
+              <h3 class="error-header">
+                  <span class="error-badge blue">Legal</span>
+                  <span class="error-title">State's "in review" status violates AB 3275</span>
+              </h3>
+              <div class="error-body">
+                  <p>Under AB 3275, claims must be processed within 30 calendar days. The state's continued "in review" posture beyond April 26, 2026, constitutes a formal statutory violation.</p>
+              </div>
+          </article>
+        </section>
+
+        <!-- FULL CODE DECODER TABLE -->
+        <section aria-labelledby="decoder-heading">
+          <h2 id="decoder-heading" class="section-tag">// FAME SCREEN CODE DECODER</h2>
+          <div class="code-table-wrap">
+              <table class="code-table">
+                  <caption class="u-style-c4eb3e2c">FAME Screen Code Decoder Matrix</caption>
+                  <thead>
+                      <tr>
+                          <th scope="col">Code / Field</th>
+                          <th scope="col">Identifier</th>
+                          <th scope="col">Forensic Definition</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr><th scope="row">MEDS-ID</th><td>Medi-Cal ID</td><td>Unique Medi-Cal identification assigned by DHCS.</td></tr>
+                      <tr><th scope="row">CIN / BICID</th><td>Client Index Number</td><td>State-level ID used to link records across systems.</td></tr>
+                      <tr><th scope="row">AID CODE: 9G</th><td>ACA adult expansion</td><td>Low-income adult qualification under the ACA.</td></tr>
+                      <tr><th scope="row">ELIG STAT: 401</th><td>Fully Eligible</td><td>Enrolled in full-scope Medi-Cal managed care.</td></tr>
+                      <tr><th scope="row">MCARE: N</th><td>Medicare: No</td><td>Beneficiary is not dual-eligible.</td></tr>
+                      <tr><th scope="row">SFI: N</th><td>No Share of Cost</td><td>$0 out-of-pocket obligation for covered services.</td></tr>
+                      <tr><th scope="row">ALIEN: A</th><td>Immigration Code</td><td>Legacy code incorrectly flagging citizens as aliens.</td></tr>
+                      <tr><th scope="row">PLASTIC ISSUE</th><td>BIC Issue Date</td><td>Timestamp of the current state-issued Benefits Card.</td></tr>
+                  </tbody>
+              </table>
+          </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section aria-labelledby="faq-heading">
+          <h2 id="faq-heading" class="section-tag">// FAME RECORDS FAQ</h2>
+          <div class="audit-box blue">
+              <div class="status-badge" aria-hidden="true">INTEL_RESPONSE</div>
+              <h3 id="faq-content-title">Frequently Asked Questions</h3>
+              <dl class="u-style-ea9d83fe">
+                  <div class="checklist-item u-style-06e65572">
+                      <dt class="u-style-41dbd68b"><span class="u-style-971bdef6" aria-hidden="true">01</span>What is "FAME"?</dt>
+                      <dd class="m-0">Legacy terminal system (Fiscal Intermediary Access to Medi-Cal) used to track eligibility and plan assignments.</dd>
+                  </div>
+                  <div class="checklist-item u-style-45d59b91">
+                      <dt class="u-style-41dbd68b"><span class="u-style-971bdef6" aria-hidden="true">02</span>Why do I need a BIC card?</dt>
+                      <dd class="m-0">The state requires the official Benefits Identification Card (BIC) for all out-of-pocket reimbursement claims; Managed Care Plan cards are rejected.</dd>
+                  </div>
+              </dl>
+          </div>
+        </section>
+
+    </main>
+
+    <script src="/nav.js" defer></script>
+
+    <footer class="page-footer" role="contentinfo">
+        <div class="footer-inner">
+            <p>© 2026 CALAUDIT | Nicolas Hernandez | <a href="/bots/" aria-label="View crawler indexing bridge">Crawler Index</a></p>
+            <p><strong>LEGAL DISCLAIMER:</strong> This site is provided for informational purposes based on publicly available California statutes and regulations. It does not constitute legal advice. For legal counsel, consult a licensed California attorney.</p>
+            <p><strong>MEDICAL DISCLAIMER:</strong> The forensic data and commentary provided here are for investigative and advocacy purposes only. This content is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any medical concerns.</p>
+            <p><strong>PROPRIETARY WORK PRODUCT NOTICE:</strong> All original content, analysis, and commentary on this site represents my proprietary work product. Unauthorized reproduction for legal, administrative, or commercial purposes is strictly prohibited without the express written permission of Nicolas Hernandez.</p>
+            <p class="onion-mirror">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+        </div>
+    </footer>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const deadline = new Date('2026-04-26T00:00:00Z');
+    const now = new Date();
+
+    const utcNow = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+    const utcDeadline = Date.UTC(deadline.getFullYear(), deadline.getMonth(), deadline.getDate());
+    const differenceInDays = Math.floor((utcNow - utcDeadline) / (1000 * 60 * 60 * 24));
+
+    const el = document.getElementById('days-overdue');
+    if (el) {
+        if (differenceInDays > 0) {
+            el.textContent = `${differenceInDays} DAYS`;
+        } else {
+            el.textContent = "0 DAYS";
+        }
+    }
+});
+</script>
+<script>/* Onion Link Patch */ (function(){if(window.location.hostname.endsWith('.onion')){document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(h&&!h.startsWith('http')&&!h.startsWith('mailto:')&&!h.startsWith('tel:')&&!h.startsWith('#')){var p=h.split('/');var l=p[p.length-1];if(l!==''&&!l.includes('.')){a.setAttribute('href',h+'.html')}else if(h.endsWith('/')){a.setAttribute('href',h+'index.html')}}})}})();</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://calaudit.org/calevidence/04292026-lacare-letter-redacted-annotated.webp",
+      "name": "L.A. Care Timeline Extension Letter (April 29, 2026)",
+      "description": "L.A. Care timeline extension letter dated April 29, 2026, annotated by Nicolas Hernandez. The annotations expose that L.A. Care placed their breach of operational standards in writing by admitting they failed to meet the 30-day statutory timeline set by the Knox-Keene Act. They then attempted to use state regulatory filing overhead as an administrative shield to deter the member and force exhaustion. The annotations also expose the 'Public Entity Paradox' in L.A. Care's footer, where they claim public entity status to shield themselves legally while publishing their defunct 1055 'Ghost Office' location to the public they serve.",
+      "text": "April 29, 2026\n\nNICOLAS HERNANDEZ Member Name: NICOLAS J HERNANDEZ\nMember ID: [REDACTED]\nReference Number: [REDACTED]47\nLine of Business: MCLA\nDate of Service: March 27, 2026\nRegarding: Quality of Service\n\nDear NICOLAS HERNANDEZ:\n\nThank you for bringing your concerns to our attention at L.A. Care Health Plan (L.A. Care).\n\nOn March 27, 2026 L.A. Care received your grievance request. In a letter sent to you on April 01, 2026, we said we were going to complete our review by April 26, 2026.\n\nAt this time, we are not able to complete the review by April 26, 2026. This letter is to let you know that L.A. Care will respond to you by May 10, 2026. Because L.A. Care did not respond to your grievance in a timely manner, you may file an appeal directly with the Department of Managed Health Care (DMHC) without waiting for L.A. Care\u2019s final resolution, discussed below.\n\nWe did not timely review and resolve your grievance; therefore, L.A. Care is required to notify you of your rights. You have a right to contact the Department of Managed Health Care (DMHC) to file your grievance or request an Independent Medical Review (IMR), if applicable. Please see the pages following this letter for information on how to file a grievance with the DMHC or request an IMR. An IMR Application Form and Instructions are also enclosed.\n\nIf you have any additional questions and/or concerns, you may contact our Member Services Department at 1-888-839-9909 for further assistance. For deaf or hearing impaired access, please call TTY 711. The call is free. We are available 24 hours a day, 7 days a week, (including holidays).\n\n1055 W. 7th Street, Los Angeles, CA 90017 | lacare.org\nA public entity serving Los Angeles County\n\n1425\n\n--------------------------------------------------\nUSER ANNOTATIONS ON EVIDENCE ASSET:\n--------------------------------------------------\n1. [RED BOX around \"At this time, we are not able to complete the review by April 26, 2026... appeal directly with the DMHC\"]\n   Annotation: \"Failing to meet the 30-day timeline is a breach of the operational standards set by the Knox-Keene Act.\"\n\n2. [RED BOX around \"We did not timely review and resolve your grievance; therefore, L.A. Care is required to notify you of your rights...\"]\n   Annotation: \"They are trying to help; they are creating a paper trail that says, 'We messed up, but told the member where to go, so don't penalize us too hard!'\"\n   Annotation: \"Pay to play\"\n\n3. [RIGHT MARGIN TEXT ANNOTATION]\n   Annotation: \"Covering their ass: By explicitly referencing the DMHC and enclosing the IMR form, they are attempting to move the goalposts from their internal system to the state's, hoping that the administrative overhead of you filing with the DMHC will deter or lead to total exhaustion.\"\n\n4. [RED CORRECTION marking out \"10th floor\" in the footer address \"1055 W. 7th Street, 10th floor\"]\n   Annotation: The user crossed out \"10th floor\" to highlight L.A. Care's persistent use of a non-existent physical location in their directory files.\n\n5. [FOOTER CONTRADICTION: \"A public entity serving Los Angeles County\"]\n   Annotation: \"The Public Entity Paradox: In the exact same footer where they claim 'public entity' status to shield themselves under the Government Claims Act, they list their address as 1055 W. 7th Street \u2014 which is an abandoned, empty building under construction! They demand public agency immunities while actively publishing defunct contact information to the public they serve.\"",
+      "author": {
+        "@type": "Organization",
+        "name": "L.A. Care Health Plan"
+      }
+    },
+    {
+      "@type": "ClaimReview",
+      "datePublished": "2026-07-04",
+      "url": "https://calaudit.org/calevidence/04292026-lacare-letter-redacted-annotated.webp",
+      "claimReviewed": "L.A. Care health plan processes and resolves member grievances in a timely manner within the statutory 30-day timeline mandated by the Knox-Keene Act.",
+      "itemReviewed": {
+        "@type": "Claim",
+        "author": {
+          "@type": "Organization",
+          "name": "L.A. Care Health Plan",
+          "sameAs": "https://www.lacare.org"
+        },
+        "datePublished": "2026-04-29",
+        "appearance": {
+          "@type": "CreativeWork",
+          "url": "https://calaudit.org/calevidence/04292026-lacare-letter-redacted-annotated.webp"
+        }
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "1",
+        "bestRating": "5",
+        "worstRating": "1",
+        "alternateName": "False: L.A. Care admitted in writing to failing to resolve the grievance within the required timeline."
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "CalAudit Forensic Audit Vault",
+        "url": "https://calaudit.org"
+      }
+    }
+  ],
+  "alt": "Evidence Asset: 04292026-lacare-letter-redacted-annotated.webp",
+  "summary": "L.A. Care timeline extension letter dated April 29, 2026, annotated by Nicolas Hernandez. The annotations expose that L.A. Care placed their breach of operational standards in writing by admitting they failed to meet the 30-day statutory timeline set by the Knox-Keene Act. They then attempted to use state regulatory filing overhead as an administrative shield to deter the member and force exhaustion. The annotations also expose the 'Public Entity Paradox' in L.A. Care's footer, where they claim public entity status to shield themselves legally while publishing their defunct 1055 'Ghost Office' location to the public they serve.",
+  "keywords": [
+    "L.A. Care",
+    "Timeline Extension",
+    "Knox-Keene Violation",
+    "DMHC",
+    "Grievance Delay",
+    "Paper Trail",
+    "Administrative Shield",
+    "Annotation",
+    "Public Entity Paradox"
+  ],
+  "full_text": "April 29, 2026\n\nNICOLAS HERNANDEZ Member Name: NICOLAS J HERNANDEZ\nMember ID: [REDACTED]\nReference Number: [REDACTED]47\nLine of Business: MCLA\nDate of Service: March 27, 2026\nRegarding: Quality of Service\n\nDear NICOLAS HERNANDEZ:\n\nThank you for bringing your concerns to our attention at L.A. Care Health Plan (L.A. Care).\n\nOn March 27, 2026 L.A. Care received your grievance request. In a letter sent to you on April 01, 2026, we said we were going to complete our review by April 26, 2026.\n\nAt this time, we are not able to complete the review by April 26, 2026. This letter is to let you know that L.A. Care will respond to you by May 10, 2026. Because L.A. Care did not respond to your grievance in a timely manner, you may file an appeal directly with the Department of Managed Health Care (DMHC) without waiting for L.A. Care\u2019s final resolution, discussed below.\n\nWe did not timely review and resolve your grievance; therefore, L.A. Care is required to notify you of your rights. You have a right to contact the Department of Managed Health Care (DMHC) to file your grievance or request an Independent Medical Review (IMR), if applicable. Please see the pages following this letter for information on how to file a grievance with the DMHC or request an IMR. An IMR Application Form and Instructions are also enclosed.\n\nIf you have any additional questions and/or concerns, you may contact our Member Services Department at 1-888-839-9909 for further assistance. For deaf or hearing impaired access, please call TTY 711. The call is free. We are available 24 hours a day, 7 days a week, (including holidays).\n\n1055 W. 7th Street, Los Angeles, CA 90017 | lacare.org\nA public entity serving Los Angeles County\n\n1425\n\n--------------------------------------------------\nUSER ANNOTATIONS ON EVIDENCE ASSET:\n--------------------------------------------------\n1. [RED BOX around \"At this time, we are not able to complete the review by April 26, 2026... appeal directly with the DMHC\"]\n   Annotation: \"Failing to meet the 30-day timeline is a breach of the operational standards set by the Knox-Keene Act.\"\n\n2. [RED BOX around \"We did not timely review and resolve your grievance; therefore, L.A. Care is required to notify you of your rights...\"]\n   Annotation: \"They are trying to help; they are creating a paper trail that says, 'We messed up, but told the member where to go, so don't penalize us too hard!'\"\n   Annotation: \"Pay to play\"\n\n3. [RIGHT MARGIN TEXT ANNOTATION]\n   Annotation: \"Covering their ass: By explicitly referencing the DMHC and enclosing the IMR form, they are attempting to move the goalposts from their internal system to the state's, hoping that the administrative overhead of you filing with the DMHC will deter or lead to total exhaustion.\"\n\n4. [RED CORRECTION marking out \"10th floor\" in the footer address \"1055 W. 7th Street, 10th floor\"]\n   Annotation: The user crossed out \"10th floor\" to highlight L.A. Care's persistent use of a non-existent physical location in their directory files.\n\n5. [FOOTER CONTRADICTION: \"A public entity serving Los Angeles County\"]\n   Annotation: \"The Public Entity Paradox: In the exact same footer where they claim 'public entity' status to shield themselves under the Government Claims Act, they list their address as 1055 W. 7th Street \u2014 which is an abandoned, empty building under construction! They demand public agency immunities while actively publishing defunct contact information to the public they serve.\""
+}

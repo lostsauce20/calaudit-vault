@@ -1,0 +1,11 @@
+{
+  "alt": "This record details a Moto G Play 2024 (fogona XT2413V RET 64GB PVT) device with BL MBM-3.0-fogona-8a6797a117f-251224-U1TFS34.100-35-14-1-12-ad64fa, Baseband HA12_26.35.01.60R, CPU SM_DIVAR 1.0, 64GB UFS, 4GB DRAM, OEM locked with CID 0x0033, and a timestamp of 03/13/2026 15:12:33.",
+  "keywords": [
+    "Moto G Play 2024",
+    "Fastboot Mode",
+    "Device Hardware",
+    "OEM Lock"
+  ],
+  "full_text": "START\n\nAP Fastboot Flash Mode (Secure)\nBL: MBM-3.0-fogona-8a6797a117f-251224-U1TFS34.100-35-14-1-12-ad64fa\nBaseband: HA12_26.35.01.60R FOGONA_RET_CUST\nProduct/Variant: fogona XT2413V RET 64GB PVT\nSerial Number: \nCPU: SM_DIVAR 1.0\nUFS: 64GB KINGSTON TY7B-64G FV=0004 WB=2048\nDRAM: 4GB SAMSUNG LP4x DIE=4Gb M5-MB=01 03 00 00\nConsole [NULL]: null\nTools Mode Config: DISABLED\nPower OK\noem_locked:cid:0x0033\nConnect USB Data Cable\n\ncalaudit.org\n03/13/2026 15:12:33",
+  "summary": "This record details a Moto G Play 2024 (fogona XT2413V RET 64GB PVT) device with BL MBM-3.0-fogona-8a6797a117f-251224-U1TFS34.100-35-14-1-12-ad64fa, Baseband HA12_26.35.01.60R, CPU SM_DIVAR 1.0, 64GB UFS, 4GB DRAM, OEM locked with CID 0x0033, and a timestamp of 03/13/2026 15:12:33."
+}

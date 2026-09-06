@@ -1,0 +1,11 @@
+{
+  "alt": "A page presents the question 'Is there anyone else that can help corroborate your report?', with 'No' selected, and 'Continue' and 'Back' buttons available.",
+  "summary": "A page presents the question 'Is there anyone else that can help corroborate your report?', with 'No' selected, and 'Continue' and 'Back' buttons available.",
+  "keywords": [
+    "corroboration",
+    "report",
+    "user interface",
+    "selection"
+  ],
+  "full_text": "The page asks: 'Is there anyone else that can help corroborate your report?' Options: Yes, No (selected). Buttons: Continue, Back."
+}
