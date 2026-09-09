@@ -39,8 +39,8 @@ CUSTOM_OFFICIAL_TITLES = {
     "senator-valladares": "Senator Suzette Martinez Valladares Release Authorization",
     "calfresh-ebt-faq": "CalFresh EBT Online Frequently Asked Questions",
     "ebt-2216": "EBT Online Frequently Asked Questions (EBT 2216)",
-    "dca-1-84": "Department of Consumer Affairs Professional License Complaint Form (DCA 1-84)",
-    "state-bar-directory": "State Bar of California Certified Lawyer Referral Services Directory",
+    "dca-184": "Department of Consumer Affairs Professional License Complaint Form (DCA 1-84)",
+    "statebar-directory": "State Bar of California Certified Lawyer Referral Services Directory",
     "dph-8565": "California Department of Public Health Complaint Form (CDPH 8565)",
     "dmhc-20-160": "DMHC Independent Medical Review (IMR) Application (DMHC 20-160)",
     "dmhc-20-224": "DMHC Consumer Complaint Form (DMHC 20-224)",
@@ -182,8 +182,8 @@ def write_metadata_json(slug: str, title: str, agency: str, keywords: list, full
             pass
 
     if is_community_translation:
-        official_status = "UNOFFICIAL REFERENCE ONLY - NOT AN OFFICIAL GOVERNMENT ISSUED FORM"
-        summary = f"{title} Translation Aid. Unofficial community reference copy based on the official {agency} English form. NOT an official government-issued form."
+        official_status = existing.get("official_status", "UNOFFICIAL REFERENCE ONLY - NOT AN OFFICIAL GOVERNMENT ISSUED FORM")
+        summary = existing.get("summary", f"{title} Translation Aid. Unofficial community reference copy based on the official {agency} English form. NOT an official government-issued form.")
     else:
         official_status = existing.get("official_status", "OFFICIAL GOVERNMENT ISSUED FORM")
         summary = existing.get("summary", f"{title} published by {agency}.")
@@ -191,7 +191,7 @@ def write_metadata_json(slug: str, title: str, agency: str, keywords: list, full
     data = {
         "alt": existing.get("alt", title),
         "keywords": existing.get("keywords", [agency] + keywords),
-        "full_text": full_text[:5000],
+        "full_text": existing.get("full_text", full_text[:5000]),
         "summary": summary,
         "official_status": official_status
     }

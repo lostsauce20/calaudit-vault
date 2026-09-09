@@ -11,9 +11,7 @@ SOURCE_DIR = "public/calevidence"
 METADATA_DIR = "public/metadata"
 OUTPUT_FILE = "public/bots/index.html"
 CSS_FILE = "../style.css"
-PAGE_METADATA_TARGETS = {
-    "ghost-flow": "../dmhc-faqs/ghost-flow/",
-}
+PAGE_METADATA_TARGETS = {}
 CANONICAL_EVIDENCE_TARGETS = {
     "benzo-withdrawal-management.pdf": "benzo-withdrawal-management-at-home.pdf",
     "ca-bridge-sun-faq.pdf": "ca-bridge-substance-use-navigator-faq.pdf",
