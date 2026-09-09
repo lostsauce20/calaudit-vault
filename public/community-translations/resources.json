@@ -8,7 +8,7 @@
     "language": "Ukrainian",
     "language_code": "uk",
     "agency": "DHCS",
-    "file_size": 5962748,
+    "file_size": 6053962,
     "page_count": 75,
     "download_url": "/community-translations/mc-219-uk.pdf"
   },
@@ -21,7 +21,7 @@
     "language": "Punjabi",
     "language_code": "pa",
     "agency": "DHCS",
-    "file_size": 1773123,
+    "file_size": 1789251,
     "page_count": 13,
     "download_url": "/community-translations/mc-219-pa.pdf"
   },
@@ -34,7 +34,7 @@
     "language": "Hindi",
     "language_code": "hi",
     "agency": "DHCS",
-    "file_size": 1796599,
+    "file_size": 1811512,
     "page_count": 12,
     "download_url": "/community-translations/mc-219-hi.pdf"
   },
@@ -47,7 +47,7 @@
     "language": "Thai",
     "language_code": "th",
     "agency": "DHCS",
-    "file_size": 1395086,
+    "file_size": 1408786,
     "page_count": 11,
     "download_url": "/community-translations/mc-219-th.pdf"
   },
@@ -60,9 +60,22 @@
     "language": "Japanese",
     "language_code": "ja",
     "agency": "DHCS",
-    "file_size": 2797081,
+    "file_size": 2813290,
     "page_count": 13,
     "download_url": "/community-translations/mc-219-ja.pdf"
+  },
+  {
+    "@type": "DigitalDocument",
+    "inLanguage": "ium",
+    "encodingFormat": "application/pdf",
+    "form_id": "mc-219",
+    "title": "MC 219",
+    "language": "Mien",
+    "language_code": "ium",
+    "agency": "DHCS",
+    "file_size": 1534262,
+    "page_count": 17,
+    "download_url": "/community-translations/mc-219-ium.pdf"
   },
   {
     "@type": "DigitalDocument",
@@ -73,8 +86,8 @@
     "language": "Chinese",
     "language_code": "zh",
     "agency": "DHCS",
-    "file_size": 945055,
-    "page_count": 1,
+    "file_size": 566796,
+    "page_count": 4,
     "download_url": "/community-translations/mc-306-zh.pdf"
   },
   {
@@ -86,8 +99,8 @@
     "language": "Laotian",
     "language_code": "lo",
     "agency": "DHCS",
-    "file_size": 304623,
-    "page_count": 1,
+    "file_size": 421687,
+    "page_count": 4,
     "download_url": "/community-translations/mc-306-lo.pdf"
   },
   {
@@ -99,8 +112,8 @@
     "language": "Hmong",
     "language_code": "hmn",
     "agency": "DHCS",
-    "file_size": 227354,
-    "page_count": 2,
+    "file_size": 429049,
+    "page_count": 5,
     "download_url": "/community-translations/mc-306-hmn.pdf"
   },
   {
@@ -112,8 +125,8 @@
     "language": "Vietnamese",
     "language_code": "vi",
     "agency": "DHCS",
-    "file_size": 174900,
-    "page_count": 1,
+    "file_size": 402713,
+    "page_count": 5,
     "download_url": "/community-translations/mc-306-vi.pdf"
   },
   {
@@ -125,8 +138,8 @@
     "language": "Tagalog",
     "language_code": "tl",
     "agency": "DHCS",
-    "file_size": 204091,
-    "page_count": 2,
+    "file_size": 413041,
+    "page_count": 5,
     "download_url": "/community-translations/mc-306-tl.pdf"
   },
   {
@@ -138,8 +151,8 @@
     "language": "Russian",
     "language_code": "ru",
     "agency": "DHCS",
-    "file_size": 199662,
-    "page_count": 2,
+    "file_size": 409368,
+    "page_count": 5,
     "download_url": "/community-translations/mc-306-ru.pdf"
   },
   {
@@ -151,8 +164,8 @@
     "language": "Ukrainian",
     "language_code": "uk",
     "agency": "DHCS",
-    "file_size": 715664,
-    "page_count": 4,
+    "file_size": 396426,
+    "page_count": 5,
     "download_url": "/community-translations/mc-306-uk.pdf"
   },
   {
@@ -164,8 +177,8 @@
     "language": "Armenian",
     "language_code": "hy",
     "agency": "DHCS",
-    "file_size": 367593,
-    "page_count": 2,
+    "file_size": 461713,
+    "page_count": 5,
     "download_url": "/community-translations/mc-306-hy.pdf"
   },
   {
@@ -177,8 +190,8 @@
     "language": "Punjabi",
     "language_code": "pa",
     "agency": "DHCS",
-    "file_size": 373367,
-    "page_count": 1,
+    "file_size": 524344,
+    "page_count": 4,
     "download_url": "/community-translations/mc-306-pa.pdf"
   },
   {
@@ -190,8 +203,8 @@
     "language": "Hindi",
     "language_code": "hi",
     "agency": "DHCS",
-    "file_size": 382940,
-    "page_count": 1,
+    "file_size": 453692,
+    "page_count": 4,
     "download_url": "/community-translations/mc-306-hi.pdf"
   },
   {
@@ -203,8 +216,8 @@
     "language": "Thai",
     "language_code": "th",
     "agency": "DHCS",
-    "file_size": 327732,
-    "page_count": 1,
+    "file_size": 405123,
+    "page_count": 4,
     "download_url": "/community-translations/mc-306-th.pdf"
   },
   {
@@ -216,8 +229,8 @@
     "language": "Arabic",
     "language_code": "ar",
     "agency": "DHCS",
-    "file_size": 449228,
-    "page_count": 1,
+    "file_size": 484836,
+    "page_count": 4,
     "download_url": "/community-translations/mc-306-ar.pdf"
   },
   {
@@ -229,8 +242,8 @@
     "language": "Korean",
     "language_code": "ko",
     "agency": "DHCS",
-    "file_size": 529367,
-    "page_count": 1,
+    "file_size": 489059,
+    "page_count": 4,
     "download_url": "/community-translations/mc-306-ko.pdf"
   },
   {
@@ -242,8 +255,8 @@
     "language": "Japanese",
     "language_code": "ja",
     "agency": "DHCS",
-    "file_size": 970237,
-    "page_count": 1,
+    "file_size": 582012,
+    "page_count": 4,
     "download_url": "/community-translations/mc-306-ja.pdf"
   },
   {
@@ -255,8 +268,8 @@
     "language": "Farsi",
     "language_code": "fa",
     "agency": "DHCS",
-    "file_size": 385125,
-    "page_count": 1,
+    "file_size": 477731,
+    "page_count": 4,
     "download_url": "/community-translations/mc-306-fa.pdf"
   },
   {
@@ -268,217 +281,22 @@
     "language": "Cambodian",
     "language_code": "km",
     "agency": "DHCS",
-    "file_size": 414220,
-    "page_count": 1,
+    "file_size": 421340,
+    "page_count": 4,
     "download_url": "/community-translations/mc-306-km.pdf"
   },
   {
     "@type": "DigitalDocument",
-    "inLanguage": "zh",
+    "inLanguage": "ium",
     "encodingFormat": "application/pdf",
-    "form_id": "dhcs-8250",
-    "title": "DHCS 8250",
-    "language": "Chinese",
-    "language_code": "zh",
+    "form_id": "mc-306",
+    "title": "MC 306",
+    "language": "Mien",
+    "language_code": "ium",
     "agency": "DHCS",
-    "file_size": 14623717,
-    "page_count": 7,
-    "download_url": "/community-translations/dhcs-8250-zh.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "lo",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-8250",
-    "title": "DHCS 8250",
-    "language": "Laotian",
-    "language_code": "lo",
-    "agency": "DHCS",
-    "file_size": 917772,
-    "page_count": 7,
-    "download_url": "/community-translations/dhcs-8250-lo.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "hmn",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-8250",
-    "title": "DHCS 8250",
-    "language": "Hmong",
-    "language_code": "hmn",
-    "agency": "DHCS",
-    "file_size": 1185402,
-    "page_count": 7,
-    "download_url": "/community-translations/dhcs-8250-hmn.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "vi",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-8250",
-    "title": "DHCS 8250",
-    "language": "Vietnamese",
-    "language_code": "vi",
-    "agency": "DHCS",
-    "file_size": 1178672,
-    "page_count": 7,
-    "download_url": "/community-translations/dhcs-8250-vi.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "tl",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-8250",
-    "title": "DHCS 8250",
-    "language": "Tagalog",
-    "language_code": "tl",
-    "agency": "DHCS",
-    "file_size": 1180190,
-    "page_count": 7,
-    "download_url": "/community-translations/dhcs-8250-tl.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "ru",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-8250",
-    "title": "DHCS 8250",
-    "language": "Russian",
-    "language_code": "ru",
-    "agency": "DHCS",
-    "file_size": 1183775,
-    "page_count": 7,
-    "download_url": "/community-translations/dhcs-8250-ru.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "uk",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-8250",
-    "title": "DHCS 8250",
-    "language": "Ukrainian",
-    "language_code": "uk",
-    "agency": "DHCS",
-    "file_size": 1180098,
-    "page_count": 7,
-    "download_url": "/community-translations/dhcs-8250-uk.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "hy",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-8250",
-    "title": "DHCS 8250",
-    "language": "Armenian",
-    "language_code": "hy",
-    "agency": "DHCS",
-    "file_size": 923512,
-    "page_count": 7,
-    "download_url": "/community-translations/dhcs-8250-hy.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "pa",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-8250",
-    "title": "DHCS 8250",
-    "language": "Punjabi",
-    "language_code": "pa",
-    "agency": "DHCS",
-    "file_size": 938146,
-    "page_count": 7,
-    "download_url": "/community-translations/dhcs-8250-pa.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "hi",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-8250",
-    "title": "DHCS 8250",
-    "language": "Hindi",
-    "language_code": "hi",
-    "agency": "DHCS",
-    "file_size": 1006449,
-    "page_count": 7,
-    "download_url": "/community-translations/dhcs-8250-hi.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "th",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-8250",
-    "title": "DHCS 8250",
-    "language": "Thai",
-    "language_code": "th",
-    "agency": "DHCS",
-    "file_size": 930079,
-    "page_count": 7,
-    "download_url": "/community-translations/dhcs-8250-th.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "ar",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-8250",
-    "title": "DHCS 8250",
-    "language": "Arabic",
-    "language_code": "ar",
-    "agency": "DHCS",
-    "file_size": 1015009,
-    "page_count": 7,
-    "download_url": "/community-translations/dhcs-8250-ar.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "ko",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-8250",
-    "title": "DHCS 8250",
-    "language": "Korean",
-    "language_code": "ko",
-    "agency": "DHCS",
-    "file_size": 14625357,
-    "page_count": 7,
-    "download_url": "/community-translations/dhcs-8250-ko.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "ja",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-8250",
-    "title": "DHCS 8250",
-    "language": "Japanese",
-    "language_code": "ja",
-    "agency": "DHCS",
-    "file_size": 14625723,
-    "page_count": 7,
-    "download_url": "/community-translations/dhcs-8250-ja.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "fa",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-8250",
-    "title": "DHCS 8250",
-    "language": "Farsi",
-    "language_code": "fa",
-    "agency": "DHCS",
-    "file_size": 1015848,
-    "page_count": 7,
-    "download_url": "/community-translations/dhcs-8250-fa.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "km",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-8250",
-    "title": "DHCS 8250",
-    "language": "Cambodian",
-    "language_code": "km",
-    "agency": "DHCS",
-    "file_size": 950590,
-    "page_count": 7,
-    "download_url": "/community-translations/dhcs-8250-km.pdf"
+    "file_size": 375512,
+    "page_count": 4,
+    "download_url": "/community-translations/mc-306-ium.pdf"
   },
   {
     "@type": "DigitalDocument",
@@ -489,7 +307,7 @@
     "language": "Laotian",
     "language_code": "lo",
     "agency": "CDSS",
-    "file_size": 252435,
+    "file_size": 252822,
     "page_count": 3,
     "download_url": "/community-translations/soc-321-lo.pdf"
   },
@@ -502,7 +320,7 @@
     "language": "Hmong",
     "language_code": "hmn",
     "agency": "CDSS",
-    "file_size": 516356,
+    "file_size": 516739,
     "page_count": 3,
     "download_url": "/community-translations/soc-321-hmn.pdf"
   },
@@ -515,22 +333,9 @@
     "language": "Ukrainian",
     "language_code": "uk",
     "agency": "CDSS",
-    "file_size": 513244,
+    "file_size": 513635,
     "page_count": 3,
     "download_url": "/community-translations/soc-321-uk.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "pa",
-    "encodingFormat": "application/pdf",
-    "form_id": "soc-321",
-    "title": "SOC 321",
-    "language": "Punjabi",
-    "language_code": "pa",
-    "agency": "CDSS",
-    "file_size": 266323,
-    "page_count": 3,
-    "download_url": "/community-translations/soc-321-pa.pdf"
   },
   {
     "@type": "DigitalDocument",
@@ -541,7 +346,7 @@
     "language": "Hindi",
     "language_code": "hi",
     "agency": "CDSS",
-    "file_size": 336558,
+    "file_size": 336941,
     "page_count": 3,
     "download_url": "/community-translations/soc-321-hi.pdf"
   },
@@ -554,7 +359,7 @@
     "language": "Thai",
     "language_code": "th",
     "agency": "CDSS",
-    "file_size": 256276,
+    "file_size": 256657,
     "page_count": 3,
     "download_url": "/community-translations/soc-321-th.pdf"
   },
@@ -567,7 +372,7 @@
     "language": "Arabic",
     "language_code": "ar",
     "agency": "CDSS",
-    "file_size": 353984,
+    "file_size": 354369,
     "page_count": 3,
     "download_url": "/community-translations/soc-321-ar.pdf"
   },
@@ -580,9 +385,22 @@
     "language": "Japanese",
     "language_code": "ja",
     "agency": "CDSS",
-    "file_size": 13955410,
+    "file_size": 13955799,
     "page_count": 3,
     "download_url": "/community-translations/soc-321-ja.pdf"
+  },
+  {
+    "@type": "DigitalDocument",
+    "inLanguage": "ium",
+    "encodingFormat": "application/pdf",
+    "form_id": "soc-321",
+    "title": "SOC 321",
+    "language": "Mien",
+    "language_code": "ium",
+    "agency": "CDSS",
+    "file_size": 514068,
+    "page_count": 3,
+    "download_url": "/community-translations/soc-321-ium.pdf"
   },
   {
     "@type": "DigitalDocument",
@@ -593,7 +411,7 @@
     "language": "Chinese",
     "language_code": "zh",
     "agency": "DHCS",
-    "file_size": 13876576,
+    "file_size": 13876967,
     "page_count": 1,
     "download_url": "/community-translations/dhcs-6224-zh.pdf"
   },
@@ -606,7 +424,7 @@
     "language": "Laotian",
     "language_code": "lo",
     "agency": "DHCS",
-    "file_size": 168474,
+    "file_size": 168865,
     "page_count": 1,
     "download_url": "/community-translations/dhcs-6224-lo.pdf"
   },
@@ -619,7 +437,7 @@
     "language": "Hmong",
     "language_code": "hmn",
     "agency": "DHCS",
-    "file_size": 428719,
+    "file_size": 429106,
     "page_count": 1,
     "download_url": "/community-translations/dhcs-6224-hmn.pdf"
   },
@@ -632,7 +450,7 @@
     "language": "Vietnamese",
     "language_code": "vi",
     "agency": "DHCS",
-    "file_size": 428477,
+    "file_size": 428874,
     "page_count": 1,
     "download_url": "/community-translations/dhcs-6224-vi.pdf"
   },
@@ -645,7 +463,7 @@
     "language": "Tagalog",
     "language_code": "tl",
     "agency": "DHCS",
-    "file_size": 428712,
+    "file_size": 429103,
     "page_count": 1,
     "download_url": "/community-translations/dhcs-6224-tl.pdf"
   },
@@ -658,7 +476,7 @@
     "language": "Russian",
     "language_code": "ru",
     "agency": "DHCS",
-    "file_size": 428263,
+    "file_size": 428654,
     "page_count": 1,
     "download_url": "/community-translations/dhcs-6224-ru.pdf"
   },
@@ -671,7 +489,7 @@
     "language": "Ukrainian",
     "language_code": "uk",
     "agency": "DHCS",
-    "file_size": 428328,
+    "file_size": 428723,
     "page_count": 1,
     "download_url": "/community-translations/dhcs-6224-uk.pdf"
   },
@@ -684,22 +502,9 @@
     "language": "Armenian",
     "language_code": "hy",
     "agency": "DHCS",
-    "file_size": 169496,
+    "file_size": 169889,
     "page_count": 1,
     "download_url": "/community-translations/dhcs-6224-hy.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "pa",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-6224",
-    "title": "DHCS 6224",
-    "language": "Punjabi",
-    "language_code": "pa",
-    "agency": "DHCS",
-    "file_size": 180813,
-    "page_count": 1,
-    "download_url": "/community-translations/dhcs-6224-pa.pdf"
   },
   {
     "@type": "DigitalDocument",
@@ -710,7 +515,7 @@
     "language": "Hindi",
     "language_code": "hi",
     "agency": "DHCS",
-    "file_size": 251222,
+    "file_size": 251609,
     "page_count": 1,
     "download_url": "/community-translations/dhcs-6224-hi.pdf"
   },
@@ -723,7 +528,7 @@
     "language": "Thai",
     "language_code": "th",
     "agency": "DHCS",
-    "file_size": 172434,
+    "file_size": 172819,
     "page_count": 1,
     "download_url": "/community-translations/dhcs-6224-th.pdf"
   },
@@ -736,7 +541,7 @@
     "language": "Arabic",
     "language_code": "ar",
     "agency": "DHCS",
-    "file_size": 272504,
+    "file_size": 272893,
     "page_count": 1,
     "download_url": "/community-translations/dhcs-6224-ar.pdf"
   },
@@ -749,7 +554,7 @@
     "language": "Korean",
     "language_code": "ko",
     "agency": "DHCS",
-    "file_size": 13876717,
+    "file_size": 13877106,
     "page_count": 1,
     "download_url": "/community-translations/dhcs-6224-ko.pdf"
   },
@@ -762,7 +567,7 @@
     "language": "Japanese",
     "language_code": "ja",
     "agency": "DHCS",
-    "file_size": 13876695,
+    "file_size": 13877088,
     "page_count": 1,
     "download_url": "/community-translations/dhcs-6224-ja.pdf"
   },
@@ -775,7 +580,7 @@
     "language": "Farsi",
     "language_code": "fa",
     "agency": "DHCS",
-    "file_size": 272525,
+    "file_size": 272912,
     "page_count": 1,
     "download_url": "/community-translations/dhcs-6224-fa.pdf"
   },
@@ -788,9 +593,22 @@
     "language": "Cambodian",
     "language_code": "km",
     "agency": "DHCS",
-    "file_size": 201046,
+    "file_size": 201441,
     "page_count": 1,
     "download_url": "/community-translations/dhcs-6224-km.pdf"
+  },
+  {
+    "@type": "DigitalDocument",
+    "inLanguage": "ium",
+    "encodingFormat": "application/pdf",
+    "form_id": "dhcs-6224",
+    "title": "DHCS 6224",
+    "language": "Mien",
+    "language_code": "ium",
+    "agency": "DHCS",
+    "file_size": 428806,
+    "page_count": 1,
+    "download_url": "/community-translations/dhcs-6224-ium.pdf"
   },
   {
     "@type": "DigitalDocument",
@@ -801,7 +619,7 @@
     "language": "Chinese",
     "language_code": "zh",
     "agency": "DHCS",
-    "file_size": 14205574,
+    "file_size": 14205965,
     "page_count": 7,
     "download_url": "/community-translations/dhcs-6236-zh.pdf"
   },
@@ -814,7 +632,7 @@
     "language": "Laotian",
     "language_code": "lo",
     "agency": "DHCS",
-    "file_size": 515375,
+    "file_size": 515766,
     "page_count": 7,
     "download_url": "/community-translations/dhcs-6236-lo.pdf"
   },
@@ -827,7 +645,7 @@
     "language": "Hmong",
     "language_code": "hmn",
     "agency": "DHCS",
-    "file_size": 785633,
+    "file_size": 786020,
     "page_count": 7,
     "download_url": "/community-translations/dhcs-6236-hmn.pdf"
   },
@@ -840,7 +658,7 @@
     "language": "Vietnamese",
     "language_code": "vi",
     "agency": "DHCS",
-    "file_size": 783451,
+    "file_size": 783848,
     "page_count": 7,
     "download_url": "/community-translations/dhcs-6236-vi.pdf"
   },
@@ -853,7 +671,7 @@
     "language": "Tagalog",
     "language_code": "tl",
     "agency": "DHCS",
-    "file_size": 788805,
+    "file_size": 789196,
     "page_count": 7,
     "download_url": "/community-translations/dhcs-6236-tl.pdf"
   },
@@ -866,7 +684,7 @@
     "language": "Russian",
     "language_code": "ru",
     "agency": "DHCS",
-    "file_size": 787804,
+    "file_size": 788195,
     "page_count": 7,
     "download_url": "/community-translations/dhcs-6236-ru.pdf"
   },
@@ -879,7 +697,7 @@
     "language": "Ukrainian",
     "language_code": "uk",
     "agency": "DHCS",
-    "file_size": 783723,
+    "file_size": 784118,
     "page_count": 7,
     "download_url": "/community-translations/dhcs-6236-uk.pdf"
   },
@@ -892,22 +710,9 @@
     "language": "Armenian",
     "language_code": "hy",
     "agency": "DHCS",
-    "file_size": 526079,
+    "file_size": 526472,
     "page_count": 7,
     "download_url": "/community-translations/dhcs-6236-hy.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "pa",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-6236",
-    "title": "DHCS 6236",
-    "language": "Punjabi",
-    "language_code": "pa",
-    "agency": "DHCS",
-    "file_size": 534064,
-    "page_count": 7,
-    "download_url": "/community-translations/dhcs-6236-pa.pdf"
   },
   {
     "@type": "DigitalDocument",
@@ -918,7 +723,7 @@
     "language": "Hindi",
     "language_code": "hi",
     "agency": "DHCS",
-    "file_size": 604991,
+    "file_size": 605378,
     "page_count": 7,
     "download_url": "/community-translations/dhcs-6236-hi.pdf"
   },
@@ -931,7 +736,7 @@
     "language": "Thai",
     "language_code": "th",
     "agency": "DHCS",
-    "file_size": 518645,
+    "file_size": 519030,
     "page_count": 7,
     "download_url": "/community-translations/dhcs-6236-th.pdf"
   },
@@ -944,7 +749,7 @@
     "language": "Arabic",
     "language_code": "ar",
     "agency": "DHCS",
-    "file_size": 613543,
+    "file_size": 613932,
     "page_count": 7,
     "download_url": "/community-translations/dhcs-6236-ar.pdf"
   },
@@ -957,7 +762,7 @@
     "language": "Korean",
     "language_code": "ko",
     "agency": "DHCS",
-    "file_size": 14211975,
+    "file_size": 14212364,
     "page_count": 7,
     "download_url": "/community-translations/dhcs-6236-ko.pdf"
   },
@@ -970,7 +775,7 @@
     "language": "Japanese",
     "language_code": "ja",
     "agency": "DHCS",
-    "file_size": 14210244,
+    "file_size": 14210637,
     "page_count": 7,
     "download_url": "/community-translations/dhcs-6236-ja.pdf"
   },
@@ -983,7 +788,7 @@
     "language": "Farsi",
     "language_code": "fa",
     "agency": "DHCS",
-    "file_size": 617518,
+    "file_size": 617905,
     "page_count": 7,
     "download_url": "/community-translations/dhcs-6236-fa.pdf"
   },
@@ -996,9 +801,22 @@
     "language": "Cambodian",
     "language_code": "km",
     "agency": "DHCS",
-    "file_size": 553611,
+    "file_size": 554006,
     "page_count": 7,
     "download_url": "/community-translations/dhcs-6236-km.pdf"
+  },
+  {
+    "@type": "DigitalDocument",
+    "inLanguage": "ium",
+    "encodingFormat": "application/pdf",
+    "form_id": "dhcs-6236",
+    "title": "DHCS 6236",
+    "language": "Mien",
+    "language_code": "ium",
+    "agency": "DHCS",
+    "file_size": 781866,
+    "page_count": 7,
+    "download_url": "/community-translations/dhcs-6236-ium.pdf"
   },
   {
     "@type": "DigitalDocument",
@@ -1009,7 +827,7 @@
     "language": "Laotian",
     "language_code": "lo",
     "agency": "CDSS",
-    "file_size": 205499,
+    "file_size": 205886,
     "page_count": 2,
     "download_url": "/community-translations/soc-825-lo.pdf"
   },
@@ -1022,7 +840,7 @@
     "language": "Hmong",
     "language_code": "hmn",
     "agency": "CDSS",
-    "file_size": 471885,
+    "file_size": 472268,
     "page_count": 2,
     "download_url": "/community-translations/soc-825-hmn.pdf"
   },
@@ -1035,22 +853,9 @@
     "language": "Ukrainian",
     "language_code": "uk",
     "agency": "CDSS",
-    "file_size": 468217,
+    "file_size": 468608,
     "page_count": 2,
     "download_url": "/community-translations/soc-825-uk.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "pa",
-    "encodingFormat": "application/pdf",
-    "form_id": "soc-825",
-    "title": "SOC 825",
-    "language": "Punjabi",
-    "language_code": "pa",
-    "agency": "CDSS",
-    "file_size": 220325,
-    "page_count": 2,
-    "download_url": "/community-translations/soc-825-pa.pdf"
   },
   {
     "@type": "DigitalDocument",
@@ -1061,7 +866,7 @@
     "language": "Hindi",
     "language_code": "hi",
     "agency": "CDSS",
-    "file_size": 289760,
+    "file_size": 290143,
     "page_count": 2,
     "download_url": "/community-translations/soc-825-hi.pdf"
   },
@@ -1074,7 +879,7 @@
     "language": "Thai",
     "language_code": "th",
     "agency": "CDSS",
-    "file_size": 209799,
+    "file_size": 210180,
     "page_count": 2,
     "download_url": "/community-translations/soc-825-th.pdf"
   },
@@ -1087,7 +892,7 @@
     "language": "Arabic",
     "language_code": "ar",
     "agency": "CDSS",
-    "file_size": 307377,
+    "file_size": 307762,
     "page_count": 2,
     "download_url": "/community-translations/soc-825-ar.pdf"
   },
@@ -1100,9 +905,22 @@
     "language": "Japanese",
     "language_code": "ja",
     "agency": "CDSS",
-    "file_size": 13906847,
+    "file_size": 13907236,
     "page_count": 2,
     "download_url": "/community-translations/soc-825-ja.pdf"
+  },
+  {
+    "@type": "DigitalDocument",
+    "inLanguage": "ium",
+    "encodingFormat": "application/pdf",
+    "form_id": "soc-825",
+    "title": "SOC 825",
+    "language": "Mien",
+    "language_code": "ium",
+    "agency": "CDSS",
+    "file_size": 468029,
+    "page_count": 2,
+    "download_url": "/community-translations/soc-825-ium.pdf"
   },
   {
     "@type": "DigitalDocument",
@@ -1113,7 +931,7 @@
     "language": "Chinese",
     "language_code": "zh",
     "agency": "DHCS",
-    "file_size": 14615842,
+    "file_size": 14616233,
     "page_count": 9,
     "download_url": "/community-translations/dhcs-6195-zh.pdf"
   },
@@ -1126,7 +944,7 @@
     "language": "Laotian",
     "language_code": "lo",
     "agency": "DHCS",
-    "file_size": 927223,
+    "file_size": 927614,
     "page_count": 9,
     "download_url": "/community-translations/dhcs-6195-lo.pdf"
   },
@@ -1139,7 +957,7 @@
     "language": "Hmong",
     "language_code": "hmn",
     "agency": "DHCS",
-    "file_size": 1214082,
+    "file_size": 1214469,
     "page_count": 9,
     "download_url": "/community-translations/dhcs-6195-hmn.pdf"
   },
@@ -1152,7 +970,7 @@
     "language": "Vietnamese",
     "language_code": "vi",
     "agency": "DHCS",
-    "file_size": 1212553,
+    "file_size": 1212950,
     "page_count": 9,
     "download_url": "/community-translations/dhcs-6195-vi.pdf"
   },
@@ -1165,7 +983,7 @@
     "language": "Tagalog",
     "language_code": "tl",
     "agency": "DHCS",
-    "file_size": 1217568,
+    "file_size": 1217959,
     "page_count": 9,
     "download_url": "/community-translations/dhcs-6195-tl.pdf"
   },
@@ -1178,7 +996,7 @@
     "language": "Russian",
     "language_code": "ru",
     "agency": "DHCS",
-    "file_size": 1218258,
+    "file_size": 1218649,
     "page_count": 9,
     "download_url": "/community-translations/dhcs-6195-ru.pdf"
   },
@@ -1191,7 +1009,7 @@
     "language": "Ukrainian",
     "language_code": "uk",
     "agency": "DHCS",
-    "file_size": 1212697,
+    "file_size": 1213092,
     "page_count": 9,
     "download_url": "/community-translations/dhcs-6195-uk.pdf"
   },
@@ -1204,22 +1022,9 @@
     "language": "Armenian",
     "language_code": "hy",
     "agency": "DHCS",
-    "file_size": 945788,
+    "file_size": 946181,
     "page_count": 9,
     "download_url": "/community-translations/dhcs-6195-hy.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "pa",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-6195",
-    "title": "DHCS 6195",
-    "language": "Punjabi",
-    "language_code": "pa",
-    "agency": "DHCS",
-    "file_size": 955649,
-    "page_count": 9,
-    "download_url": "/community-translations/dhcs-6195-pa.pdf"
   },
   {
     "@type": "DigitalDocument",
@@ -1230,7 +1035,7 @@
     "language": "Hindi",
     "language_code": "hi",
     "agency": "DHCS",
-    "file_size": 1024942,
+    "file_size": 1025329,
     "page_count": 9,
     "download_url": "/community-translations/dhcs-6195-hi.pdf"
   },
@@ -1243,7 +1048,7 @@
     "language": "Thai",
     "language_code": "th",
     "agency": "DHCS",
-    "file_size": 938986,
+    "file_size": 939371,
     "page_count": 9,
     "download_url": "/community-translations/dhcs-6195-th.pdf"
   },
@@ -1256,7 +1061,7 @@
     "language": "Arabic",
     "language_code": "ar",
     "agency": "DHCS",
-    "file_size": 1029150,
+    "file_size": 1029539,
     "page_count": 9,
     "download_url": "/community-translations/dhcs-6195-ar.pdf"
   },
@@ -1269,7 +1074,7 @@
     "language": "Korean",
     "language_code": "ko",
     "agency": "DHCS",
-    "file_size": 14624360,
+    "file_size": 14624749,
     "page_count": 9,
     "download_url": "/community-translations/dhcs-6195-ko.pdf"
   },
@@ -1282,7 +1087,7 @@
     "language": "Japanese",
     "language_code": "ja",
     "agency": "DHCS",
-    "file_size": 14622344,
+    "file_size": 14622737,
     "page_count": 9,
     "download_url": "/community-translations/dhcs-6195-ja.pdf"
   },
@@ -1295,7 +1100,7 @@
     "language": "Farsi",
     "language_code": "fa",
     "agency": "DHCS",
-    "file_size": 1030799,
+    "file_size": 1031186,
     "page_count": 9,
     "download_url": "/community-translations/dhcs-6195-fa.pdf"
   },
@@ -1308,9 +1113,22 @@
     "language": "Cambodian",
     "language_code": "km",
     "agency": "DHCS",
-    "file_size": 967346,
+    "file_size": 967741,
     "page_count": 9,
     "download_url": "/community-translations/dhcs-6195-km.pdf"
+  },
+  {
+    "@type": "DigitalDocument",
+    "inLanguage": "ium",
+    "encodingFormat": "application/pdf",
+    "form_id": "dhcs-6195",
+    "title": "DHCS 6195",
+    "language": "Mien",
+    "language_code": "ium",
+    "agency": "DHCS",
+    "file_size": 1210330,
+    "page_count": 9,
+    "download_url": "/community-translations/dhcs-6195-ium.pdf"
   },
   {
     "@type": "DigitalDocument",
@@ -1321,7 +1139,7 @@
     "language": "Chinese",
     "language_code": "zh",
     "agency": "DHCS",
-    "file_size": 13968343,
+    "file_size": 13968734,
     "page_count": 4,
     "download_url": "/community-translations/dhcs-4521-zh.pdf"
   },
@@ -1334,22 +1152,9 @@
     "language": "Laotian",
     "language_code": "lo",
     "agency": "DHCS",
-    "file_size": 276020,
+    "file_size": 276411,
     "page_count": 4,
     "download_url": "/community-translations/dhcs-4521-lo.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "hmn",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-4521",
-    "title": "DHCS 4521",
-    "language": "Hmong",
-    "language_code": "hmn",
-    "agency": "DHCS",
-    "file_size": 541873,
-    "page_count": 4,
-    "download_url": "/community-translations/dhcs-4521-hmn.pdf"
   },
   {
     "@type": "DigitalDocument",
@@ -1360,9 +1165,22 @@
     "language": "Vietnamese",
     "language_code": "vi",
     "agency": "DHCS",
-    "file_size": 542769,
+    "file_size": 543166,
     "page_count": 4,
     "download_url": "/community-translations/dhcs-4521-vi.pdf"
+  },
+  {
+    "@type": "DigitalDocument",
+    "inLanguage": "es",
+    "encodingFormat": "application/pdf",
+    "form_id": "dhcs-4521",
+    "title": "DHCS 4521",
+    "language": "Spanish",
+    "language_code": "es",
+    "agency": "DHCS",
+    "file_size": 301287,
+    "page_count": 5,
+    "download_url": "/community-translations/dhcs-4521-es.pdf"
   },
   {
     "@type": "DigitalDocument",
@@ -1373,7 +1191,7 @@
     "language": "Tagalog",
     "language_code": "tl",
     "agency": "DHCS",
-    "file_size": 545912,
+    "file_size": 546303,
     "page_count": 4,
     "download_url": "/community-translations/dhcs-4521-tl.pdf"
   },
@@ -1386,7 +1204,7 @@
     "language": "Russian",
     "language_code": "ru",
     "agency": "DHCS",
-    "file_size": 544225,
+    "file_size": 544616,
     "page_count": 4,
     "download_url": "/community-translations/dhcs-4521-ru.pdf"
   },
@@ -1399,7 +1217,7 @@
     "language": "Ukrainian",
     "language_code": "uk",
     "agency": "DHCS",
-    "file_size": 542733,
+    "file_size": 543128,
     "page_count": 4,
     "download_url": "/community-translations/dhcs-4521-uk.pdf"
   },
@@ -1412,22 +1230,9 @@
     "language": "Armenian",
     "language_code": "hy",
     "agency": "DHCS",
-    "file_size": 283547,
+    "file_size": 283940,
     "page_count": 4,
     "download_url": "/community-translations/dhcs-4521-hy.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "pa",
-    "encodingFormat": "application/pdf",
-    "form_id": "dhcs-4521",
-    "title": "DHCS 4521",
-    "language": "Punjabi",
-    "language_code": "pa",
-    "agency": "DHCS",
-    "file_size": 290851,
-    "page_count": 4,
-    "download_url": "/community-translations/dhcs-4521-pa.pdf"
   },
   {
     "@type": "DigitalDocument",
@@ -1438,7 +1243,7 @@
     "language": "Hindi",
     "language_code": "hi",
     "agency": "DHCS",
-    "file_size": 361246,
+    "file_size": 361633,
     "page_count": 4,
     "download_url": "/community-translations/dhcs-4521-hi.pdf"
   },
@@ -1451,7 +1256,7 @@
     "language": "Thai",
     "language_code": "th",
     "agency": "DHCS",
-    "file_size": 280095,
+    "file_size": 280480,
     "page_count": 4,
     "download_url": "/community-translations/dhcs-4521-th.pdf"
   },
@@ -1464,7 +1269,7 @@
     "language": "Arabic",
     "language_code": "ar",
     "agency": "DHCS",
-    "file_size": 376221,
+    "file_size": 376610,
     "page_count": 4,
     "download_url": "/community-translations/dhcs-4521-ar.pdf"
   },
@@ -1477,7 +1282,7 @@
     "language": "Korean",
     "language_code": "ko",
     "agency": "DHCS",
-    "file_size": 13971304,
+    "file_size": 13971693,
     "page_count": 4,
     "download_url": "/community-translations/dhcs-4521-ko.pdf"
   },
@@ -1490,7 +1295,7 @@
     "language": "Japanese",
     "language_code": "ja",
     "agency": "DHCS",
-    "file_size": 13970063,
+    "file_size": 13970456,
     "page_count": 4,
     "download_url": "/community-translations/dhcs-4521-ja.pdf"
   },
@@ -1503,7 +1308,7 @@
     "language": "Farsi",
     "language_code": "fa",
     "agency": "DHCS",
-    "file_size": 377057,
+    "file_size": 377444,
     "page_count": 4,
     "download_url": "/community-translations/dhcs-4521-fa.pdf"
   },
@@ -1516,9 +1321,22 @@
     "language": "Cambodian",
     "language_code": "km",
     "agency": "DHCS",
-    "file_size": 312357,
+    "file_size": 312752,
     "page_count": 4,
     "download_url": "/community-translations/dhcs-4521-km.pdf"
+  },
+  {
+    "@type": "DigitalDocument",
+    "inLanguage": "ium",
+    "encodingFormat": "application/pdf",
+    "form_id": "dhcs-4521",
+    "title": "DHCS 4521",
+    "language": "Mien",
+    "language_code": "ium",
+    "agency": "DHCS",
+    "file_size": 364370,
+    "page_count": 7,
+    "download_url": "/community-translations/dhcs-4521-ium.pdf"
   },
   {
     "@type": "DigitalDocument",
@@ -1529,7 +1347,7 @@
     "language": "Chinese",
     "language_code": "zh",
     "agency": "DHCS",
-    "file_size": 14669374,
+    "file_size": 14669761,
     "page_count": 2,
     "download_url": "/community-translations/std-204-zh.pdf"
   },
@@ -1542,7 +1360,7 @@
     "language": "Laotian",
     "language_code": "lo",
     "agency": "DHCS",
-    "file_size": 979275,
+    "file_size": 979662,
     "page_count": 2,
     "download_url": "/community-translations/std-204-lo.pdf"
   },
@@ -1555,7 +1373,7 @@
     "language": "Hmong",
     "language_code": "hmn",
     "agency": "DHCS",
-    "file_size": 1251269,
+    "file_size": 1251652,
     "page_count": 2,
     "download_url": "/community-translations/std-204-hmn.pdf"
   },
@@ -1568,7 +1386,7 @@
     "language": "Vietnamese",
     "language_code": "vi",
     "agency": "DHCS",
-    "file_size": 1252798,
+    "file_size": 1253191,
     "page_count": 2,
     "download_url": "/community-translations/std-204-vi.pdf"
   },
@@ -1581,7 +1399,7 @@
     "language": "Tagalog",
     "language_code": "tl",
     "agency": "DHCS",
-    "file_size": 1250026,
+    "file_size": 1250413,
     "page_count": 2,
     "download_url": "/community-translations/std-204-tl.pdf"
   },
@@ -1594,7 +1412,7 @@
     "language": "Russian",
     "language_code": "ru",
     "agency": "DHCS",
-    "file_size": 1257292,
+    "file_size": 1257679,
     "page_count": 2,
     "download_url": "/community-translations/std-204-ru.pdf"
   },
@@ -1607,7 +1425,7 @@
     "language": "Ukrainian",
     "language_code": "uk",
     "agency": "DHCS",
-    "file_size": 1251451,
+    "file_size": 1251842,
     "page_count": 2,
     "download_url": "/community-translations/std-204-uk.pdf"
   },
@@ -1620,22 +1438,9 @@
     "language": "Armenian",
     "language_code": "hy",
     "agency": "DHCS",
-    "file_size": 987651,
+    "file_size": 988040,
     "page_count": 2,
     "download_url": "/community-translations/std-204-hy.pdf"
-  },
-  {
-    "@type": "DigitalDocument",
-    "inLanguage": "pa",
-    "encodingFormat": "application/pdf",
-    "form_id": "std-204",
-    "title": "STD 204",
-    "language": "Punjabi",
-    "language_code": "pa",
-    "agency": "DHCS",
-    "file_size": 998142,
-    "page_count": 2,
-    "download_url": "/community-translations/std-204-pa.pdf"
   },
   {
     "@type": "DigitalDocument",
@@ -1646,7 +1451,7 @@
     "language": "Hindi",
     "language_code": "hi",
     "agency": "DHCS",
-    "file_size": 1069028,
+    "file_size": 1069411,
     "page_count": 2,
     "download_url": "/community-translations/std-204-hi.pdf"
   },
@@ -1659,7 +1464,7 @@
     "language": "Thai",
     "language_code": "th",
     "agency": "DHCS",
-    "file_size": 987376,
+    "file_size": 987757,
     "page_count": 2,
     "download_url": "/community-translations/std-204-th.pdf"
   },
@@ -1672,7 +1477,7 @@
     "language": "Arabic",
     "language_code": "ar",
     "agency": "DHCS",
-    "file_size": 1056962,
+    "file_size": 1057347,
     "page_count": 2,
     "download_url": "/community-translations/std-204-ar.pdf"
   },
@@ -1685,7 +1490,7 @@
     "language": "Korean",
     "language_code": "ko",
     "agency": "DHCS",
-    "file_size": 14676166,
+    "file_size": 14676551,
     "page_count": 2,
     "download_url": "/community-translations/std-204-ko.pdf"
   },
@@ -1698,7 +1503,7 @@
     "language": "Japanese",
     "language_code": "ja",
     "agency": "DHCS",
-    "file_size": 14674978,
+    "file_size": 14675367,
     "page_count": 2,
     "download_url": "/community-translations/std-204-ja.pdf"
   },
@@ -1711,7 +1516,7 @@
     "language": "Farsi",
     "language_code": "fa",
     "agency": "DHCS",
-    "file_size": 1063804,
+    "file_size": 1064187,
     "page_count": 2,
     "download_url": "/community-translations/std-204-fa.pdf"
   },
@@ -1724,9 +1529,22 @@
     "language": "Cambodian",
     "language_code": "km",
     "agency": "DHCS",
-    "file_size": 1021186,
+    "file_size": 1021577,
     "page_count": 2,
     "download_url": "/community-translations/std-204-km.pdf"
+  },
+  {
+    "@type": "DigitalDocument",
+    "inLanguage": "ium",
+    "encodingFormat": "application/pdf",
+    "form_id": "std-204",
+    "title": "STD 204",
+    "language": "Mien",
+    "language_code": "ium",
+    "agency": "DHCS",
+    "file_size": 1246418,
+    "page_count": 2,
+    "download_url": "/community-translations/std-204-ium.pdf"
   },
   {
     "@type": "DigitalDocument",
@@ -1737,7 +1555,7 @@
     "language": "Chinese",
     "language_code": "zh",
     "agency": "DHCS",
-    "file_size": 1989216,
+    "file_size": 1995656,
     "page_count": 5,
     "download_url": "/community-translations/mc-220-zh.pdf"
   },
@@ -1750,7 +1568,7 @@
     "language": "Laotian",
     "language_code": "lo",
     "agency": "DHCS",
-    "file_size": 891907,
+    "file_size": 901980,
     "page_count": 8,
     "download_url": "/community-translations/mc-220-lo.pdf"
   },
@@ -1763,7 +1581,7 @@
     "language": "Hmong",
     "language_code": "hmn",
     "agency": "DHCS",
-    "file_size": 867341,
+    "file_size": 881043,
     "page_count": 11,
     "download_url": "/community-translations/mc-220-hmn.pdf"
   },
@@ -1776,7 +1594,7 @@
     "language": "Vietnamese",
     "language_code": "vi",
     "agency": "DHCS",
-    "file_size": 726697,
+    "file_size": 737987,
     "page_count": 9,
     "download_url": "/community-translations/mc-220-vi.pdf"
   },
@@ -1789,7 +1607,7 @@
     "language": "Tagalog",
     "language_code": "tl",
     "agency": "DHCS",
-    "file_size": 863914,
+    "file_size": 877620,
     "page_count": 11,
     "download_url": "/community-translations/mc-220-tl.pdf"
   },
@@ -1802,7 +1620,7 @@
     "language": "Russian",
     "language_code": "ru",
     "agency": "DHCS",
-    "file_size": 856937,
+    "file_size": 870643,
     "page_count": 11,
     "download_url": "/community-translations/mc-220-ru.pdf"
   },
@@ -1815,7 +1633,7 @@
     "language": "Ukrainian",
     "language_code": "uk",
     "agency": "DHCS",
-    "file_size": 2886326,
+    "file_size": 2931522,
     "page_count": 37,
     "download_url": "/community-translations/mc-220-uk.pdf"
   },
@@ -1828,7 +1646,7 @@
     "language": "Armenian",
     "language_code": "hy",
     "agency": "DHCS",
-    "file_size": 1186006,
+    "file_size": 1202136,
     "page_count": 13,
     "download_url": "/community-translations/mc-220-hy.pdf"
   },
@@ -1841,7 +1659,7 @@
     "language": "Punjabi",
     "language_code": "pa",
     "agency": "DHCS",
-    "file_size": 1005807,
+    "file_size": 1014669,
     "page_count": 7,
     "download_url": "/community-translations/mc-220-pa.pdf"
   },
@@ -1854,7 +1672,7 @@
     "language": "Hindi",
     "language_code": "hi",
     "agency": "DHCS",
-    "file_size": 1055073,
+    "file_size": 1063931,
     "page_count": 7,
     "download_url": "/community-translations/mc-220-hi.pdf"
   },
@@ -1867,7 +1685,7 @@
     "language": "Thai",
     "language_code": "th",
     "agency": "DHCS",
-    "file_size": 851383,
+    "file_size": 860239,
     "page_count": 7,
     "download_url": "/community-translations/mc-220-th.pdf"
   },
@@ -1880,7 +1698,7 @@
     "language": "Arabic",
     "language_code": "ar",
     "agency": "DHCS",
-    "file_size": 1248705,
+    "file_size": 1257565,
     "page_count": 7,
     "download_url": "/community-translations/mc-220-ar.pdf"
   },
@@ -1893,7 +1711,7 @@
     "language": "Korean",
     "language_code": "ko",
     "agency": "DHCS",
-    "file_size": 1070313,
+    "file_size": 1077962,
     "page_count": 6,
     "download_url": "/community-translations/mc-220-ko.pdf"
   },
@@ -1906,7 +1724,7 @@
     "language": "Japanese",
     "language_code": "ja",
     "agency": "DHCS",
-    "file_size": 2056960,
+    "file_size": 2065824,
     "page_count": 7,
     "download_url": "/community-translations/mc-220-ja.pdf"
   },
@@ -1919,7 +1737,7 @@
     "language": "Farsi",
     "language_code": "fa",
     "agency": "DHCS",
-    "file_size": 1201760,
+    "file_size": 1210618,
     "page_count": 7,
     "download_url": "/community-translations/mc-220-fa.pdf"
   },
@@ -1932,8 +1750,21 @@
     "language": "Cambodian",
     "language_code": "km",
     "agency": "DHCS",
-    "file_size": 1010297,
+    "file_size": 1019163,
     "page_count": 7,
     "download_url": "/community-translations/mc-220-km.pdf"
+  },
+  {
+    "@type": "DigitalDocument",
+    "inLanguage": "ium",
+    "encodingFormat": "application/pdf",
+    "form_id": "mc-220",
+    "title": "MC 220",
+    "language": "Mien",
+    "language_code": "ium",
+    "agency": "DHCS",
+    "file_size": 827841,
+    "page_count": 9,
+    "download_url": "/community-translations/mc-220-ium.pdf"
   }
 ]

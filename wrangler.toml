@@ -1,0 +1,6 @@
+name = "calaudit-vault"
+compatibility_date = "2026-03-28"
+pages_build_output_dir = "public"
+
+[limits]
+usage_model = "standard"

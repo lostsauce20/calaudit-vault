@@ -3,36 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>California CDSS &amp; IHSS Form Translations | SOC 321 &amp; SOC 825 | CalAudit</title>
+    <title>Community Translations Hub | CalAudit</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="canonical" href="https://calaudit.org/community-translations/">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Find CalAudit community reference translations of California CDSS and IHSS forms, including SOC 321 and SOC 825, with language and agency information.">
+    <meta name="description" content="Reference directory for translated California social services and healthcare forms compiled by CalAudit to ensure compliance with Government Code sections 7295.2 and 7295.4.">
+    <meta name="keywords" content="CalAudit, Community Translations, Bilingual Services Act, Language Access, SOC 321, SOC 825, CDSS, DHCS, California welfare forms, IHSS translations">
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://calaudit.org/community-translations/">
-    <meta property="og:title" content="California CDSS &amp; IHSS Form Translations | SOC 321 &amp; SOC 825 | CalAudit">
-    <meta property="og:description" content="Find CalAudit community reference translations of California CDSS and IHSS forms, including SOC 321 and SOC 825, with language and agency information.">
+    <meta property="og:title" content="Community Translations Hub | CalAudit">
+    <meta property="og:description" content="Unofficial reference translations of vital California health and social services forms, compiled to guarantee language access and statutory compliance.">
     <meta property="og:site_name" content="CalAudit">
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="California CDSS &amp; IHSS Form Translations | SOC 321 &amp; SOC 825 | CalAudit">
-    <meta name="twitter:description" content="Community reference translations of California IHSS forms, including SOC 321 and SOC 825, with language and agency information.">
-
-   <script type="application/ld+json">
+    <meta name="twitter:title" content="Community Translations Hub | CalAudit">
+    <meta name="twitter:description" content="Reference translations of vital California IHSS paramedical and protective supervision forms, bridging the state's compliance failures.">
+    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         "@id": "https://calaudit.org/community-translations/#webpage",
         "url": "https://calaudit.org/community-translations/",
-        "name": "California CDSS & IHSS Form Translations | SOC 321 & SOC 825 | CalAudit",
-        "description": "A reference directory for CalAudit community reference translations of California CDSS and IHSS forms, including SOC 321 and SOC 825.",
+        "name": "Community Translations Hub | CalAudit",
+        "description": "A reference directory for translated public forms compiled by CalAudit to ensure language access under Government Code sections 7295.2 and 7295.4.",
         "isPartOf": { "@id": "https://calaudit.org/#website" }
     }
     </script>
-
     <style>
         #grid-container {
             display: grid;
@@ -344,17 +341,20 @@
             const selectedAgency = document.getElementById('agency-filter').value.toUpperCase();
 
             const normalize = (str) => (str || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-            const cleanTerm = normalize(rawTerm);
+            const terms = rawTerm.split(/\s+/).map(t => normalize(t)).filter(t => t);
 
             const filtered = resources.filter(item => {
                 const cleanTitle = normalize(item.title);
                 const cleanFormId = normalize(item.form_id);
                 const cleanLang = normalize(item.language);
+                const cleanAgency = normalize(item.agency);
 
-                const matchesTerm = !cleanTerm ||
-                    cleanTitle.includes(cleanTerm) ||
-                    cleanFormId.includes(cleanTerm) ||
-                    cleanLang.includes(cleanTerm);
+                const matchesTerm = terms.every(term =>
+                    cleanTitle.includes(term) ||
+                    cleanFormId.includes(term) ||
+                    cleanLang.includes(term) ||
+                    cleanAgency.includes(term)
+                );
 
                 const matchesAgency = selectedAgency === 'ALL' ||
                     (item.agency && item.agency.trim().toUpperCase() === selectedAgency);

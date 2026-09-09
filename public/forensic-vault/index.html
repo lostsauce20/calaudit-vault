@@ -18,7 +18,7 @@
 <meta content="website" property="og:type"/>
 <meta content="CalAudit" property="og:site_name"/>
 <meta content="https://calaudit.org/forensic-vault/" property="og:url"/>
-<meta content="CalAudit Forensic Repository | Vault Command" property="og:title"/>
+<meta content="Forensic Vault: Statutory Dossiers &amp; Evidence | CalAudit" property="og:title"/>
 <meta content="A compact hub directory for CalAudit case records, medical audits, enforcement resources, technical investigations, and specialist records." property="og:description"/>
 <meta content="https://calaudit.org/calauditlogo.webp" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
@@ -29,7 +29,7 @@
 <meta content="@CalAudit" name="twitter:site"/>
 <meta content="@CalAudit" name="twitter:creator"/>
 <meta content="https://calaudit.org/forensic-vault/" name="twitter:url"/>
-<meta content="CalAudit Forensic Repository | Vault Command" name="twitter:title"/>
+<meta content="Forensic Vault: Statutory Dossiers &amp; Evidence | CalAudit" name="twitter:title"/>
 <meta content="A compact hub directory for CalAudit case records, medical audits, enforcement resources, technical investigations, and specialist records." name="twitter:description"/>
 <meta content="https://calaudit.org/calauditlogo.webp" name="twitter:image"/>
 <meta content="CalAudit Official Insignia" name="twitter:image:alt"/>
@@ -37,6 +37,7 @@
 <meta content="California" name="geo.placename"/>
 <meta content="38.5816;-121.4944" name="geo.position"/>
 <meta content="38.5816, -121.4944" name="ICBM"/>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -123,44 +124,63 @@
         {
           "@type": "ListItem",
           "position": 5,
+          "name": "HIPAA Record Amendment Protocol",
+          "url": "https://calaudit.org/right-to-request/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
           "name": "CDSS State Hearings",
           "url": "https://calaudit.org/state-hearings/"
         },
         {
           "@type": "ListItem",
-          "position": 6,
+          "position": 7,
           "name": "Medi-Cal Reimbursement & The Conlan Route",
           "url": "https://calaudit.org/dhcs4521/"
         },
         {
           "@type": "ListItem",
-          "position": 7,
+          "position": 8,
           "name": "Managed Care Enforcement & Filing",
           "url": "https://calaudit.org/dmhc-faqs/"
         },
         {
           "@type": "ListItem",
-          "position": 8,
+          "position": 9,
           "name": "FCC, Device & Telecom Audits",
           "url": "https://calaudit.org/fcc-complaint-guide/"
         },
         {
           "@type": "ListItem",
-          "position": 9,
+          "position": 10,
           "name": "AI Disorder: Guardrail Guillotine",
           "url": "https://calaudit.org/ai-disorder/"
         },
         {
           "@type": "ListItem",
-          "position": 10,
+          "position": 11,
           "name": "Offline Privacy & Forensic Tools",
           "url": "https://calaudit.org/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Official Government Forms Vault & Accessibility Audit",
+          "url": "https://calaudit.org/official-forms/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "name": "Community Translations Hub",
+          "url": "https://calaudit.org/community-translations/"
         }
       ]
     }
   ]
 }
 </script>
+
 <style>
         /* Base Colors & Background Softer Charcoal */
         :root {
@@ -590,6 +610,17 @@
             border-color: var(--pastel-blue, #61afef);
             background: rgba(97, 175, 239, 0.1);
         }
+        .dossier-card h3, .card h3 {
+            margin: 0;
+            padding: 0;
+            font-size: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+            display: block;
+        }
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
 </style>
 <link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
 </head>
@@ -601,6 +632,14 @@
 <p class="subtitle subtitle-ticker"><span>"When Expense Reduction Costs Harm Reduction. All Smoke Welcome."</span></p>
 </header>
 <main id="main-content" role="main">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="breadcrumbs">
+    <ol style="list-style: none; display: flex; gap: 8px; padding: 0; margin: 0 0 20px 0; font-family: monospace; font-size: 0.8rem;">
+        <li><a href="/" style="color: var(--pastel-blue); text-decoration: none;">CalAudit</a></li>
+        <li style="color: var(--pastel-text-muted);" aria-hidden="true">&blacktriangleright;</li>
+        <li style="color: var(--pastel-text);" aria-current="page">Forensic Vault</li>
+    </ol>
+</nav>
 <!-- Client-Side Directory Filter Command Bar -->
 <nav aria-label="Vault directory filters" class="command-bar">
 <button class="filter-btn active" data-filter="all">All Targets</button>
@@ -620,7 +659,7 @@
 <span class="card-id">LIT-26AV</span>
 <span class="v-badge v-red">LITIGATION DOCKET</span>
 </header>
-<a aria-label="ACTIVE LITIGATION (CASE 26AVSC00542)" class="card-title text-red" href="/litigation/">ACTIVE LITIGATION (CASE 26AVSC00542)</a>
+<h3><a aria-label="ACTIVE LITIGATION (CASE 26AVSC00542)" class="card-title text-red" href="/litigation/">ACTIVE LITIGATION (CASE 26AVSC00542)</a></h3>
 <p class="card-description">Live docket and forensic summary of the L.A. Care dispute, with filings, timelines, service records, and preserved procedural history.</p>
 <details class="card-details">
 <summary class="read-more-summary">Read More</summary>
@@ -634,7 +673,7 @@
 <span class="card-id">LIT-EVRM</span>
 <span class="v-badge v-red">EXHIBIT ROOM</span>
 </header>
-<a aria-label="INTERACTIVE EVIDENCE ROOM" class="card-title text-red" href="/evidence-room/">INTERACTIVE EVIDENCE ROOM</a>
+<h3><a aria-label="INTERACTIVE EVIDENCE ROOM" class="card-title text-red" href="/evidence-room/">INTERACTIVE EVIDENCE ROOM</a></h3>
 <p class="card-description">Chronological exhibit directory for agency correspondence, clinical records, screenshots, video captures, and administrative outcomes.</p>
 <details class="card-details">
 <summary class="read-more-summary">Read More</summary>
@@ -648,7 +687,7 @@
 <span class="card-id">AUD-GHOO</span>
 <span class="v-badge v-green">INSTITUTIONAL AUDIT</span>
 </header>
-<a aria-label="AUDIT DEADQUARTERS" class="card-title text-green" href="/deadquarters/">AUDIT DEADQUARTERS</a>
+<h3><a aria-label="AUDIT DEADQUARTERS" class="card-title text-green" href="/deadquarters/">AUDIT DEADQUARTERS</a></h3>
 <p class="card-description">Central record of L.A. Care address conflicts, abandoned public-facing locations, call-routing anomalies, and related infrastructure evidence.</p>
 <details class="card-details">
 <summary class="read-more-summary">Read More</summary>
@@ -667,7 +706,7 @@
 <span class="card-id">AUD-LACH</span>
 <span class="v-badge v-green">CLINICAL LEDGER</span>
 </header>
-<a aria-label="MEDICAL EVIDENCE VAULT" class="card-title text-green" href="/medical-vault/">MEDICAL EVIDENCE VAULT</a>
+<h3><a aria-label="MEDICAL EVIDENCE VAULT" class="card-title text-green" href="/medical-vault/">MEDICAL EVIDENCE VAULT</a></h3>
 <p class="card-description">Primary clinical-record hub connecting the treatment timeline, emergency visits, provider failures, and annotated medical evidence.</p>
 <details class="card-details">
 <summary class="read-more-summary">Read More</summary>
@@ -681,7 +720,7 @@
 <span class="card-id">REF-HIPA</span>
 <span class="v-badge v-green">AMENDMENT HUB</span>
 </header>
-<a aria-label="HIPAA RECORD AMENDMENT PROTOCOL" class="card-title text-green" href="/right-to-request/">HIPAA RECORD AMENDMENT PROTOCOL</a>
+<h3><a aria-label="HIPAA RECORD AMENDMENT PROTOCOL" class="card-title text-green" href="/right-to-request/">HIPAA RECORD AMENDMENT PROTOCOL</a></h3>
 <p class="card-description">Central guide to medical-record correction rights under 45 CFR § 164.526, with the hospital-specific amendment records grouped beneath it.</p>
 <details class="card-details">
 <summary class="read-more-summary">Read More</summary>
@@ -700,7 +739,7 @@
 <span class="card-id">AUD-CDSS</span>
 <span class="v-badge v-blue">HEARING HUB</span>
 </header>
-<a aria-label="CDSS STATE HEARINGS" class="card-title u-style-4677d6ba" href="/state-hearings/">CDSS STATE HEARINGS</a>
+<h3><a aria-label="CDSS STATE HEARINGS" class="card-title u-style-4677d6ba" href="/state-hearings/">CDSS STATE HEARINGS</a></h3>
 <p class="card-description">Primary hub for hearing requests, expedited-denial records, notice timing, and CDSS administrative procedure.</p>
 <details class="card-details">
 <summary class="read-more-summary">Read More</summary>
@@ -714,13 +753,13 @@
 <span class="card-id">REF-DHCS</span>
 <span class="v-badge v-blue">REIMBURSEMENT HUB</span>
 </header>
-<a aria-label="MEDI-CAL REIMBURSEMENT &amp; THE CONLAN ROUTE" class="card-title u-style-4677d6ba" href="/dhcs4521/">MEDI-CAL REIMBURSEMENT &amp; THE CONLAN ROUTE</a>
+<h3><a aria-label="MEDI-CAL REIMBURSEMENT &amp; THE CONLAN ROUTE" class="card-title u-style-4677d6ba" href="/dhcs4521/">MEDI-CAL REIMBURSEMENT &amp; THE CONLAN ROUTE</a></h3>
 <p class="card-description">Central reimbursement workflow for out-of-pocket covered care, with the DHCS 4521 filing guide and eligibility-system records grouped beneath it.</p>
 <details class="card-details">
 <summary class="read-more-summary">Read More</summary>
 <div class="card-details-content">The consolidated reimbursement page carries the full process; the FAME page remains a focused technical reference linked below.</div>
 </details>
-<div class="related-records"><span class="related-records-label">Related specialist records</span><ul class="related-records-list"><li><a href="/fame-records/">FAME eligibility records</a></li></ul></div>
+<div class="related-records"><span class="related-records-label">Related specialist records</span><ul class="related-records-list"><li><a href="/fame-records/">FAME eligibility records</a></li><li><a href="/official-forms/">DHCS 4521 Binary Defect Docket</a></li></ul></div>
 <footer class="card-footer"><span class="target-entity">TARGET: DHCS REIMBURSEMENT PIPELINE</span></footer>
 </article>
 <article class="dossier-card" data-cat="regulatory">
@@ -728,27 +767,42 @@
 <span class="card-id">REF-DMHC</span>
 <span class="v-badge v-blue">ENFORCEMENT HUB</span>
 </header>
-<a aria-label="MANAGED CARE ENFORCEMENT &amp; FILING" class="card-title u-style-4677d6ba" href="/dmhc-faqs/">MANAGED CARE ENFORCEMENT &amp; FILING</a>
+<h3><a aria-label="MANAGED CARE ENFORCEMENT &amp; FILING" class="card-title u-style-4677d6ba" href="/dmhc-faqs/">MANAGED CARE ENFORCEMENT &amp; FILING</a></h3>
 <p class="card-description">Primary directory for health-plan complaints, Knox-Keene timelines, pharmacy-board escalation, official forms, and agency contact routes.</p>
 <details class="card-details">
 <summary class="read-more-summary">Read More</summary>
 <div class="card-details-content">Each linked guide keeps its own search-focused URL. They are simply grouped under one visible enforcement doorway instead of presented as equal master-vault cards.</div>
 </details>
-<div class="related-records"><span class="related-records-label">Related specialist records</span><ul class="related-records-list"><li><a href="/dmhc-faqs/ghost-flow/">Ghost Flow: $55M Settlement Audit</a></li><li><a href="/knox-keene/">Knox-Keene Act guide</a></li><li><a href="/board-complaints/">Board of Pharmacy complaints</a></li><li><a href="/oig-filing-guide/">OIG pharmacy-fraud filing</a></li><li><a href="/escalation/">Medi-Cal escalation directory</a></li><li><a href="/dope-forms/">Clinical screening forms</a></li></ul></div>
+<div class="related-records"><span class="related-records-label">Related specialist records</span><ul class="related-records-list"><li><a href="/dmhc-faqs/ghost-flow/">Ghost Flow: $55M Settlement Audit</a></li><li><a href="/knox-keene/">Knox-Keene Act guide</a></li><li><a href="/board-complaints/">Board of Pharmacy complaints</a></li><li><a href="/oig-filing-guide/">OIG pharmacy-fraud filing</a></li><li><a href="/escalation/">Medi-Cal escalation directory</a></li><li><a href="/dope-forms/">Clinical screening forms</a></li><li><a href="/official-forms/">State Agency Form Defect Archive</a></li></ul></div>
 <footer class="card-footer"><span class="target-entity">TARGET: DMHC / DHCS / DCA / OIG</span></footer>
 </article>
-<div class="card-column-group" style="display: flex; flex-direction: column; gap: 20px;">
+<div class="card-column-group">
 <!-- OFFICIAL GOV FORMS VAULT CARD -->
-<article class="card" data-category="REGULATORY">
-    <div class="card-meta">
-        <span class="card-code">GOV-VAULT</span>
-        <span class="card-tag">STATE AGENCY DOCKET</span>
-    </div>
-    <a href="/official-forms/" class="card-title">OFFICIAL GOVERNMENT FORMS VAULT</a>
-    <p class="card-summary">
-        Canonical state agency forms (DHCS, CDSS) archived for public access, audit compliance, and legal verification across all standard state languages.
+<article class="dossier-card" data-cat="regulatory">
+    <header class="card-header">
+        <span class="card-id">AUD-FORMS</span>
+        <span class="v-badge v-red">BINARY AUDIT DOCKET</span>
+    </header>
+    <h3><a href="/official-forms/" class="card-title text-red">OFFICIAL GOVERNMENT FORMS VAULT</a></h3>
+    <p class="card-description">
+        Forensic byte-level inspection of 92 California state agency distributions (DHCS, CDSS, Legislature). Documents an 80.4% structural failure rate, unmapped Unicode fonts, and CMap corruption violating ADA Title II and Section 508 specifications.
     </p>
-    <a href="/official-forms/" class="card-btn">READ MORE &blacktriangleright;</a>
+    <details class="card-details">
+        <summary class="read-more-summary">Read More</summary>
+        <div class="card-details-content">
+            Includes cryptographic SHA-256 binary verifications, direct JSON audit export, and side-by-side visual print layer vs. extracted machine text comparators.
+        </div>
+    </details>
+    <div class="related-records">
+        <span class="related-records-label">Related specialist records</span>
+        <ul class="related-records-list">
+            <li><a href="/official-forms/#case-studies">Visual vs. Machine Comparator</a></li>
+            <li><a href="/official-forms/official_pdf_accessibility_defects.json">Raw Defects JSON</a></li>
+        </ul>
+    </div>
+    <footer class="card-footer">
+        <span class="target-entity">TARGET: STATE-WIDE PDF DISTRIBUTION INFRASTRUCTURE</span>
+    </footer>
 </article>
 
 <!-- COMMUNITY TRANSLATIONS HUB CARD -->
@@ -757,7 +811,7 @@
         <span class="card-code">LANG-ACCESS</span>
         <span class="card-tag">LANGUAGE ACCESS</span>
     </div>
-    <a href="/community-translations/" class="card-title">COMMUNITY TRANSLATIONS HUB</a>
+    <h3><a href="/community-translations/" class="card-title">COMMUNITY TRANSLATIONS HUB</a></h3>
     <p class="card-summary">
         Reference directory for translated state healthcare and social services forms compiled to ensure compliance under Gov. Code §§ 7295.2 & 7295.4.
     </p>
@@ -774,7 +828,7 @@
 <span class="card-id">REF-FCC</span>
 <span class="v-badge v-purple">DEVICE &amp; TELECOM</span>
 </header>
-<a aria-label="FCC, DEVICE &amp; TELECOM AUDITS" class="card-title u-style-ff1268c1" href="/fcc-complaint-guide/">FCC, DEVICE &amp; TELECOM AUDITS</a>
+<h3><a aria-label="FCC, DEVICE &amp; TELECOM AUDITS" class="card-title u-style-ff1268c1" href="/fcc-complaint-guide/">FCC, DEVICE &amp; TELECOM AUDITS</a></h3>
 <p class="card-description">Primary consumer-technology route for bootloader restrictions, FCC complaints, carrier-account disputes, and related corporate escalation records.</p>
 <details class="card-details">
 <summary class="read-more-summary">Read More</summary>
@@ -788,7 +842,7 @@
 <span class="card-id">AUD-LLM1</span>
 <span class="v-badge v-gold">AI AUDIT</span>
 </header>
-<a aria-label="AI DISORDER: GUARDRAIL GUILLOTINE" class="card-title u-style-c0442c53" href="/ai-disorder/">AI DISORDER: GUARDRAIL GUILLOTINE</a>
+<h3><a aria-label="AI DISORDER: GUARDRAIL GUILLOTINE" class="card-title u-style-c0442c53" href="/ai-disorder/">AI DISORDER: GUARDRAIL GUILLOTINE</a></h3>
 <p class="card-description">Independent audit of corporate AI guardrails, automated refusals, and the consequences of rigid safety systems in real disputes.</p>
 <details class="card-details">
 <summary class="read-more-summary">Read More</summary>
@@ -802,7 +856,7 @@
 <span class="card-id">SYS-UTLH</span>
 <span class="v-badge v-purple">UTILITY HUB</span>
 </header>
-<a aria-label="OFFLINE PRIVACY &amp; FORENSIC TOOLS" class="card-title u-style-ff1268c1" href="/tools/">OFFLINE PRIVACY &amp; FORENSIC TOOLS</a>
+<h3><a aria-label="OFFLINE PRIVACY &amp; FORENSIC TOOLS" class="card-title u-style-ff1268c1" href="/tools/">OFFLINE PRIVACY &amp; FORENSIC TOOLS</a></h3>
 <p class="card-description">The complete client-side tool room for file inspection, metadata removal, privacy workflows, Android maintenance, and evidence preparation.</p>
 <details class="card-details">
 <summary class="read-more-summary">Read More</summary>
@@ -838,8 +892,8 @@
 <span aria-hidden="true" class="faq-icon u-style-9b16dc78">▶</span> <strong>Why focus on L.A. Care?</strong>
 </summary>
 <div class="u-style-b629657a">
-                    They absorb billions in public funding while deploying systematically broken networks and ghost infrastructure to deny or defer the delivery of medical access to their membership.
-                </div>
+    As California's largest public health plan, operating with substantial public funding to administer Medi-Cal to millions of residents, L.A. Care's operational compliance is a matter of direct public interest. Bound by statutory mandates under the Knox-Keene Act, the plan has a legal obligation to maintain accessible provider networks, resolve member grievances, and adjudicate claims on time. This audit documents verified operational barriers—specifically provider directory inaccuracies (ghost networks), administrative processing delays, and statutory defaults—to establish empirical accountability and protect beneficiary access to covered care.
+</div>
 </details>
 </section>
 <script>

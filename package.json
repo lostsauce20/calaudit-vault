@@ -1,0 +1,25 @@
+{
+  "name": "calaudit-vault",
+  "devDependencies": {
+    "@google/gemini-cli": "^0.44.1",
+    "wrangler": "^4.128.0"
+  },
+  "scripts": {
+    "inventory": "python3 evidence_inventory.py",
+    "predeploy": "python3 predeploy.py",
+    "sync": ".venv/bin/python3 generate_index.py && python3 rebuild_sitemaps.py && python3 botbot.py && python3 site_audit.py",
+    "publish": "node /home/rbeade/calaudit-vault/ping-google.js"
+  },
+  "allowScripts": {
+    "@github/keytar@7.10.6": true,
+    "better-sqlite3@12.10.1": true,
+    "esbuild@0.27.3": true,
+    "node-pty@1.1.0": true,
+    "sharp@0.34.5": true,
+    "workerd@1.20260611.1": true
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.9.3",
+    "googleapis": "^173.0.0"
+  }
+}

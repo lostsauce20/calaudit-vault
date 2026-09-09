@@ -72,6 +72,15 @@ html, body {
     padding: 0;
 }
 
+html {
+    scroll-padding-top: 77px;
+}
+@media (max-width: 1300px) {
+    html {
+        scroll-padding-top: 35px;
+    }
+}
+
 body, body.forms-theme {
     padding-top: 77px;
 }
@@ -3536,4 +3545,14 @@ select,
 }
 .related-tools a:hover {
     color: #f0d59e !important;
+}
+
+/* --- WCAG 2.2 Level AA Compliance Overrides --- */
+input, textarea, select, 
+.u-style-47b59de1, .u-style-1097441e, .u-style-1d652e59, 
+.u-style-26c76ad1, .u-style-71b7fb92, .u-style-8b5bef4c {
+    border: 1px solid #595959 !important; /* L=0.10: Ensures > 3:1 contrast against #000000 */
+}
+details summary, .faq-item summary, .cyber-faq-item summary {
+    min-height: 24px !important;
 }

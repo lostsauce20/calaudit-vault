@@ -2,15 +2,15 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://calaudit.org/sitemap.xml</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-09</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://calaudit.org/sitemap-evidence.xml</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-09</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://calaudit.org/sitemap-metadata.xml</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-09</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://calaudit.org/sitemap-video.xml</loc>
@@ -18,10 +18,10 @@
   </sitemap>
   <sitemap>
     <loc>https://calaudit.org/sitemap-official.xml</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-09</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://calaudit.org/sitemap-translations.xml</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-09</lastmod>
   </sitemap>
 </sitemapindex>

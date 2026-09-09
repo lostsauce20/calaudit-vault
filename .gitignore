@@ -4,5 +4,20 @@
 !.gitignore
 !/LICENSE
 !/LICENSE-DOCS
+
+# Allow root scripts, manifests, and documentation
+!/*.py
+!/*.js
+!/*.json
+!/*.toml
+!/*.md
+!/*.txt
+
+# Block dependencies, binaries, and local archives
 node_modules/
 *.apk
+*.bak
+*.zip
+__pycache__/
+backups/
+metadata_pre_audit_backup/

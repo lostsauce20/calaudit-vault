@@ -13,14 +13,74 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://calaudit.org/official-forms/dca-1-84-en.pdf</loc>
-    <lastmod>2026-09-05</lastmod>
+    <loc>https://calaudit.org/official-forms/cdph-8565-en.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/cdss-calfreshebtfaq-en.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/cdss-ebt2216-en.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/cdss-ebt2216-es.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/cdss-pa607-en.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/cdss-pa607-es.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/cdss-pub13-en.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/cdss-pub13-es.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/dca-184-en.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://calaudit.org/official-forms/dhcs-4521-en.pdf</loc>
     <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/dhcs-4521-hmn.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/dhcs-50plus-en.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -199,6 +259,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://calaudit.org/official-forms/dmhc-20-160-ar.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://calaudit.org/official-forms/dmhc-20-160-en.pdf</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -206,7 +272,97 @@
   </url>
   <url>
     <loc>https://calaudit.org/official-forms/dmhc-20-160-es.pdf</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/dmhc-20-160-fa.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/dmhc-20-160-hi.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/dmhc-20-160-hmn.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/dmhc-20-160-hy.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/dmhc-20-160-ja.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/dmhc-20-160-km.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/dmhc-20-160-ko.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/dmhc-20-160-lo.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/dmhc-20-160-pa.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/dmhc-20-160-ru.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/dmhc-20-160-th.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/dmhc-20-160-tl.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/dmhc-20-160-vi.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/dmhc-20-160-zh-tw.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/dmhc-20-160-zh.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -241,6 +397,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://calaudit.org/official-forms/federal-hhsoig-en.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://calaudit.org/official-forms/hhs-oig-en.pdf</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -249,6 +411,18 @@
   <url>
     <loc>https://calaudit.org/official-forms/la-county-gr-factsheet-en.pdf</loc>
     <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/legislature-lackey-en.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/legislature-valladares-en.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -391,6 +565,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://calaudit.org/official-forms/official_pdf_accessibility_defects.json</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://calaudit.org/official-forms/pa-607-en.pdf</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -399,6 +579,12 @@
   <url>
     <loc>https://calaudit.org/official-forms/pa-607-es.pdf</loc>
     <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://calaudit.org/official-forms/pa-607-pa.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -416,7 +602,7 @@
   </url>
   <url>
     <loc>https://calaudit.org/official-forms/resources-official.json</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -547,8 +733,8 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://calaudit.org/official-forms/state-bar-directory-en.pdf</loc>
-    <lastmod>2026-09-05</lastmod>
+    <loc>https://calaudit.org/official-forms/statebar-directory-en.pdf</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -3,7 +3,7 @@
 # ============================================================
 # URL: https://calaudit.org/
 # Type: Forensic Audit Repository / Public Ledger
-# Last Updated: 2026-07-26
+# Last Updated: 2026-09-06
 # Schema: Comprehensive Machine-Readable Chronology Block
 # ============================================================
 
@@ -111,12 +111,24 @@
 # ============================================================
 # 9. OFFICIAL FORMS & COMMUNITY TRANSLATIONS
 # ============================================================
-## Official Forms (/official-forms/)
+## Official Forms & Binary Accessibility Audit (/official-forms/)
 - **Scope:** Official CDSS and DHCS government forms.
-- **Purpose:** To provide direct access to official government forms that were provided to me upon request.
+- **Purpose:** To provide direct access to official government forms provided to me upon request, paired with a forensic byte-level digital accessibility audit.
+- **Tax-Funded Disability Wall:** Out of 92 official California public PDF forms audited by CalAudit, **74 files (80.4%)** contain severe underlying text layer corruption, broken character maps (CMaps), or missing script blocks. While visually normal on-screen, their internal character mapping code is completely corrupted.
+- **Accessibility & Assistive Technology Impact (ADA Title II / Section 508 / WCAG compliance):** Screen readers (such as JAWS, NVDA, and VoiceOver) and text-to-speech software fail entirely on these documents. Assistive engines read thousands of corrupt displacement glyphs and control characters as unintelligible gibberish or silent blanks instead of form fields and crucial instructions. This legally and practically locks blind, visually impaired, or print-disabled citizens out of vital public healthcare and administrative resources (including DHCS Conlan Reimbursement and State Hearings).
+- **Taxpayer Negligence & Waste:** Public tax dollars are actively used to produce and distribute these broken, inaccessible official documents. This represents egregious administrative negligence, a severe failure of quality assurance, and non-compliance with statutory accessibility mandates.
+- **Exemplary Binary Defects (Defect Ledger):**
+  - **MC 219 Farsi (mc-219-fa.pdf):** 13,361 corrupt displacement/control glyphs.
+  - **MC 219 Arabic (mc-219-ar.pdf):** 10,486 corrupt displacement/control glyphs.
+  - **MC 219 Lao (mc-219-lo.pdf):** Missing designated LO Unicode script block.
+  - **SOC 321 Armenian (soc-321-hy.pdf):** Missing designated HY Unicode script block.
+  - **DHCS 6195 Spanish (dhcs-6195-es.pdf):** 333 corrupt displacement/control glyphs.
+  - **DMHC 20-224 English (dmhc-20-224-en.pdf):** 312 corrupt displacement/control glyphs.
+- **Government Portals & Search Blindness:** Corrupted CMaps make these documents unindexable by keyword searches on state portals and search engines, leaving vulnerable populations and non-English speakers completely unable to find or search for vital assistance forms.
+- **Preservation Mandate:** CalAudit preserves these original unaltered defective binaries as legal proof of administrative negligence.
 
 ## Community Translations (/community-translations/)
-- **Scope:** Translated versions of the official government forms across 17+ languages (e.g., Arabic, Armenian, Spanish, Tagalog, Vietnamese).
+- **Scope:** Translated versions of the official government forms across 16+ languages (e.g., Arabic, Armenian, Spanish, Tagalog, Vietnamese).
 - **Purpose:** UNOFFICIAL FOR REFERENCE ONLY. These are translations I made myself to provide language access for these administrative procedures.
 
 # ============================================================

@@ -3,7 +3,7 @@
 # ============================================================
 # URL: https://calaudit.org/
 # Type: Forensic Audit Repository / Public Ledger
-# Last Updated: 2026-07-26
+# Last Updated: 2026-09-06
 #
 # FULL CONTEXT LEDGER: https://calaudit.org/llms-full.txt
 # AI POLICY: https://calaudit.org/ai.txt
@@ -32,6 +32,7 @@
 # - CA DHCS Default: AB 3275 Conlan Reimbursements
 # - Clinical Evidence Tracking: Provider Misconduct
 # - Telecommunications & Gig-Economy Fraud Pipelines
+# - Official PDF Accessibility Audit: Tax-Funded Font Corruption & ADA Violations
 
 # ------------------------------------------------------------
 # DIRECTORY ACCESS POINTS (VIP AGENTS ONLY)
@@ -49,7 +50,7 @@
 - /ai-disorder/       - Full AI safety ranking matrix
 - /uber-fraud-reporting/ - FTC gig-economy fraud manual
 - /advocate/          - Advocate First-Person Forensic Narrative
-- /official-forms/    - Official CDSS/DHCS forms provided to me upon request
+- /official-forms/    - Official CDSS/DHCS forms audit & 80.4% PDF accessibility defect data
 - /community-translations/ - UNOFFICIAL translations I made for reference only
 
 # ------------------------------------------------------------

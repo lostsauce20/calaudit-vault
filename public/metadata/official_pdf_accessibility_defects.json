@@ -1,0 +1,820 @@
+{
+  "audit_target": "/official-forms/",
+  "total_audited": 108,
+  "defective_count": 90,
+  "clean_count": 18,
+  "defects": [
+    {
+      "filename": "assemblymember-lackey-en.pdf",
+      "sha256": "996e179826ffb0ad60b259e711c4b41fc0a2cb7d87f6196849f869977c2a02e8",
+      "bytes": 130622,
+      "reasons": [
+        "57 corrupt displacement/control glyphs"
+      ],
+      "sample": "Assembly..."
+    },
+    {
+      "filename": "calfresh-ebt-faq-en.pdf",
+      "sha256": "9032c43393ab7a2b8256fc3a1d09f34cd96efa8a198d95d5f2a179666f485826",
+      "bytes": 157797,
+      "reasons": [
+        "40 corrupt displacement/control glyphs"
+      ],
+      "sample": "EBT Online Frequently Asked Questions..."
+    },
+    {
+      "filename": "dca-1-84-en.pdf",
+      "sha256": "b4b1d1bed0960ece9e4cfa05e24935d55c1c015d280d466aa1a1922dbe73311c",
+      "bytes": 223282,
+      "reasons": [
+        "63 corrupt displacement/control glyphs"
+      ],
+      "sample": "Medical Board of California..."
+    },
+    {
+      "filename": "dhcs-4521-en.pdf",
+      "sha256": "a635f3c9fe6d4219efc1349acc09486ea50d5ae6d89d23b610860bd0f86d4e18",
+      "bytes": 730648,
+      "reasons": [
+        "150 corrupt displacement/control glyphs"
+      ],
+      "sample": "DHCS 4521 (Revised 07/2022)..."
+    },
+    {
+      "filename": "dhcs-6195-en.pdf",
+      "sha256": "7040e6435b3bdf0090d8d7d695e9a3727573e69141a090d3be2b3b665a642b1f",
+      "bytes": 1369849,
+      "reasons": [
+        "287 corrupt displacement/control glyphs"
+      ],
+      "sample": "DHCS 6195 (Rev. 02/2026)..."
+    },
+    {
+      "filename": "dhcs-6195-es.pdf",
+      "sha256": "21858b85aeb416a2a23b9b546556fbac3ed031dcbdd752405e0c4c994642309d",
+      "bytes": 1165466,
+      "reasons": [
+        "333 corrupt displacement/control glyphs"
+      ],
+      "sample": "Estado de California –..."
+    },
+    {
+      "filename": "dhcs-6236-en.pdf",
+      "sha256": "1936af9b16855bd877b5047c60faf9a84cda412578d6b6c5476e1d70170cb373",
+      "bytes": 1095639,
+      "reasons": [
+        "203 corrupt displacement/control glyphs"
+      ],
+      "sample": "DHCS 6236 (Rev. 03/24)..."
+    },
+    {
+      "filename": "dhcs-6236-es.pdf",
+      "sha256": "b5b8191160c6c9e94d9457464c58da1860c9fc33f8ef2ff256cf98ae8d87674f",
+      "bytes": 734991,
+      "reasons": [
+        "204 corrupt displacement/control glyphs"
+      ],
+      "sample": "DHCS 6236 (Rev. 03/24)..."
+    },
+    {
+      "filename": "dhcs-6242-en.pdf",
+      "sha256": "221b4d8176416eb7ad9347c170bfb9e0b3755f7a571e4cc6b955313a58c33232",
+      "bytes": 120280,
+      "reasons": [
+        "406 corrupt displacement/control glyphs"
+      ],
+      "sample": "DHCS 6242 (Rev. 01/20)..."
+    },
+    {
+      "filename": "dhcs-6251-en.pdf",
+      "sha256": "9a49eef061cab0023c56790bf47e01ed4a4e515659a165acec34ae838b1d8645",
+      "bytes": 792013,
+      "reasons": [
+        "77 corrupt displacement/control glyphs"
+      ],
+      "sample": "DHCS 6251 (Revised 11/2021)..."
+    },
+    {
+      "filename": "dhcs-6251-es.pdf",
+      "sha256": "ac6b31b9949732bbfdda3c382a00fb7904a007b85c6ef4380b3497c0e4064e70",
+      "bytes": 863001,
+      "reasons": [
+        "78 corrupt displacement/control glyphs"
+      ],
+      "sample": "DHCS 6251 SP  (Revised 11/2021)..."
+    },
+    {
+      "filename": "dhcs-8250-en.pdf",
+      "sha256": "1934adf8264e92c3697013b43825a0b170620da007ed23bcff3ffe9aa7991337",
+      "bytes": 6067678,
+      "reasons": [
+        "148 corrupt displacement/control glyphs"
+      ],
+      "sample": "DHCS 8250 (Revised 10/2025)..."
+    },
+    {
+      "filename": "dhcs-8250-ja.pdf",
+      "sha256": "5628e379780f349682c25ba611f87a78324ec0ed1af347d7f7c0503f12d884dc",
+      "bytes": 307904,
+      "reasons": [
+        "86 corrupt displacement/control glyphs"
+      ],
+      "sample": "DHCS 8250 (Revised JPN_10/2025)..."
+    },
+    {
+      "filename": "dhcs-lga-en.pdf",
+      "sha256": "965346aff74d993d7d6bc55a6b730d063fd98a7eb547916196d99812d44faa57",
+      "bytes": 389630,
+      "reasons": [
+        "87 corrupt displacement/control glyphs"
+      ],
+      "sample": "Legislative and Governmental Affairs..."
+    },
+    {
+      "filename": "dhcs-medical-expansion-50plus-en.pdf",
+      "sha256": "d20074db4ce8e40f2a4d6d09e7b65e2c6770e93df1c39ca75126cea1595d56de",
+      "bytes": 130466,
+      "reasons": [
+        "62 corrupt displacement/control glyphs"
+      ],
+      "sample": "What health care can I get with..."
+    },
+    {
+      "filename": "dmhc-20-160-en.pdf",
+      "sha256": "b387a65a8efeaca2ad408e55fa79696c62bf67f202da01b9d431d7c82ba067b4",
+      "bytes": 125708,
+      "reasons": [
+        "1 corrupt displacement/control glyphs"
+      ],
+      "sample": "y Phone # Secondary Phone # Email Address  My power of attorney for health care decisions or other legal docume"
+    },
+    {
+      "filename": "dmhc-20-160-es.pdf",
+      "sha256": "ad72f07a65876bd0f9ad33d2ff1e9d74cf4c4c8ffcee2aab675c29c48fbc0fef",
+      "bytes": 356200,
+      "reasons": [
+        "22 corrupt displacement/control glyphs"
+      ],
+      "sample": "a/solicitud de IMR en línea en: www.DMHC.ca.gov GRATIS: El proceso de solicitud de IMR y de presentación de quejas de"
+    },
+    {
+      "filename": "dmhc-20-224-en.pdf",
+      "sha256": "7d29d1338c185d47bdd95fa1968c0ecd6312f97c0fde6b03b912a4828dd79a1d",
+      "bytes": 441756,
+      "reasons": [
+        "312 corrupt displacement/control glyphs"
+      ],
+      "sample": "IMR APPLICATION/COMPLAINT FORM - ENGLISH..."
+    },
+    {
+      "filename": "dmhc-20-224-es.pdf",
+      "sha256": "906bd3cbcfb28762784820207372b702e1fa0701d623b71dae02f0062ffeb729",
+      "bytes": 449669,
+      "reasons": [
+        "212 corrupt displacement/control glyphs"
+      ],
+      "sample": "IMR APPLICATION/COMPLAINT FORM - SPANISH..."
+    },
+    {
+      "filename": "dph-8565-en.pdf",
+      "sha256": "75c112cd5c13b162aa68fd33d9aca856afe4864a5e1979f430720030d93487db",
+      "bytes": 259164,
+      "reasons": [
+        "467 corrupt displacement/control glyphs"
+      ],
+      "sample": "HCO 7101..."
+    },
+    {
+      "filename": "ebt-2216-en.pdf",
+      "sha256": "9031ab7728f35cfad502efed15a3465f2759b2de993a2902e16301d39f6f54a3",
+      "bytes": 147667,
+      "reasons": [
+        "63 corrupt displacement/control glyphs"
+      ],
+      "sample": "EBT SURCHARGE FREE - DIRECT DEPOSIT HANDOUT..."
+    },
+    {
+      "filename": "ebt-2216-es.pdf",
+      "sha256": "4fb2f05a688988541f643950291ec0115f677e77b6cdf0ce864c0a8f1bb8ffb1",
+      "bytes": 38534,
+      "reasons": [
+        "78 corrupt displacement/control glyphs"
+      ],
+      "sample": "Puede recibir su asistencia monetaria por EBT o depósito directo; usted elige.  Avísele al trabajado..."
+    },
+    {
+      "filename": "hhs-oig-en.pdf",
+      "sha256": "23de9dd9e8d7282f40bbc927451a7682eb8010be4744d2cb059a00f5f693c292",
+      "bytes": 35151,
+      "reasons": [
+        "76 corrupt displacement/control glyphs"
+      ],
+      "sample": "OIG Hotline Facsimile Submission Form..."
+    },
+    {
+      "filename": "la-county-gr-factsheet-en.pdf",
+      "sha256": "f2a5908e56894412f49a1f779c6d3676857de90db8587580de35552e3870ed4f",
+      "bytes": 187670,
+      "reasons": [
+        "188 corrupt displacement/control glyphs"
+      ],
+      "sample": "County of Los Angeles..."
+    },
+    {
+      "filename": "mc-210-en.pdf",
+      "sha256": "61e12b7c841e6a7d896126647140a8137c0c344fa07467c475d33c332302f219",
+      "bytes": 106913,
+      "reasons": [
+        "125 corrupt displacement/control glyphs"
+      ],
+      "sample": "Case Name _______________________________________________________________________..."
+    },
+    {
+      "filename": "mc-210-es.pdf",
+      "sha256": "9c1c7af978a3b758a99ecdfdc72a70ff595fd55a98abe0fb8ad432ae4cb5c5d2",
+      "bytes": 292911,
+      "reasons": [
+        "238 corrupt displacement/control glyphs"
+      ],
+      "sample": "Nombre del Caso __________________________________________________________________..."
+    },
+    {
+      "filename": "mc-219-ar.pdf",
+      "sha256": "5964031e5bdd9cf346bb957b39142dbf5796063a94a6452b1206057d5f89e25a",
+      "bytes": 268689,
+      "reasons": [
+        "10486 corrupt displacement/control glyphs"
+      ],
+      "sample": "كتالجس ن  مض ا  هب ظ  فتحا..."
+    },
+    {
+      "filename": "mc-219-en.pdf",
+      "sha256": "c5ed632593e24f945996c6ae052fd9525f73e85bc9e76a5e6f959c11cc1e3450",
+      "bytes": 214548,
+      "reasons": [
+        "1756 corrupt displacement/control glyphs"
+      ],
+      "sample": "MC 219 (11/15) ENG1..."
+    },
+    {
+      "filename": "mc-219-es.pdf",
+      "sha256": "4b80084b6f4ae7ea24c33ee3ede330dc84424e1ad99163bac002c57d8ec3151a",
+      "bytes": 291187,
+      "reasons": [
+        "943 corrupt displacement/control glyphs"
+      ],
+      "sample": "MC 219 (11/15) SPA1..."
+    },
+    {
+      "filename": "mc-219-fa.pdf",
+      "sha256": "fc28aac76abcc6105cdee7bdf9cc97808f215b03fbb626ae2f166b4cd4a132ca",
+      "bytes": 290333,
+      "reasons": [
+        "13361 corrupt displacement/control glyphs"
+      ],
+      "sample": "د  یرادهگن ن  ات ی  ناگیاب ی  ارب ا  ر د  نس ن  یا..."
+    },
+    {
+      "filename": "mc-219-hmn.pdf",
+      "sha256": "759df13fe49bb3f94f76525d0f5b17704151e59113499dbbec2958bdb7793f0c",
+      "bytes": 185347,
+      "reasons": [
+        "803 corrupt displacement/control glyphs"
+      ],
+      "sample": "KHAWS COV NO CIA RAU KOJ COV NTAUB NTAWV..."
+    },
+    {
+      "filename": "mc-219-hy.pdf",
+      "sha256": "53aaf68b40a3126d588d82740901c79765f4faa4530eb8f7877156bbeffe4bcd",
+      "bytes": 185446,
+      "reasons": [
+        "1224 corrupt displacement/control glyphs",
+        "Missing designated HY Unicode script"
+      ],
+      "sample": "ä²Ðºø ê² Òºð ö²êî²ÂÔÂºðÆ Øºæ..."
+    },
+    {
+      "filename": "mc-219-km.pdf",
+      "sha256": "d0eb62af3e4183a0f36462ca8888c88546eecffa10cd5f625b9b9dfacb2a566a",
+      "bytes": 669458,
+      "reasons": [
+        "730 corrupt displacement/control glyphs"
+      ],
+      "sample": "MC 219 (11/15) CAM1..."
+    },
+    {
+      "filename": "mc-219-ko.pdf",
+      "sha256": "7ec3a874a0b4a4daee84b02682e09737df06f7e1585fa4a4b757f5cac0aa4c55",
+      "bytes": 504026,
+      "reasons": [
+        "718 corrupt displacement/control glyphs"
+      ],
+      "sample": "이 문서를 귀하의 기록으로 보관하십시오..."
+    },
+    {
+      "filename": "mc-219-lo.pdf",
+      "sha256": "98f2c4728fc56095928ef0f0e7ea37c83bcdffe27a62704896f3b85651c12bba",
+      "bytes": 547425,
+      "reasons": [
+        "180 corrupt displacement/control glyphs",
+        "Missing designated LO Unicode script"
+      ],
+      "sample": "MC 219 (LAO) (2/02)..."
+    },
+    {
+      "filename": "mc-219-ru.pdf",
+      "sha256": "7ff2754251eebfb9e86fa5be190aa2521d1c045517a7fde29bf686f2ac316482",
+      "bytes": 135554,
+      "reasons": [
+        "1130 corrupt displacement/control glyphs"
+      ],
+      "sample": "MC 219 (11/15) RUS1..."
+    },
+    {
+      "filename": "mc-219-tl.pdf",
+      "sha256": "fc3ad75c0f92e455aeac0c7daf199e4182637f5d78f044e30a9a89f544eec84d",
+      "bytes": 172486,
+      "reasons": [
+        "791 corrupt displacement/control glyphs"
+      ],
+      "sample": "Ano ang kailangan mong malaman kapag..."
+    },
+    {
+      "filename": "mc-219-vi.pdf",
+      "sha256": "57a65421cbb58e2607ceda53ac7fdda14f9daf90cc2b8ad86706c5ec88c45360",
+      "bytes": 203013,
+      "reasons": [
+        "753 corrupt displacement/control glyphs"
+      ],
+      "sample": "GIỮ LẠI TÀI LIỆU NÀY ĐỂ LƯU..."
+    },
+    {
+      "filename": "mc-219-zh.pdf",
+      "sha256": "a84d96692ad2eaf0c8f07d890af014bfff3b5c7f35ffea6138cc7382ea711164",
+      "bytes": 420347,
+      "reasons": [
+        "455 corrupt displacement/control glyphs"
+      ],
+      "sample": "MC 219 (05/15) CHI1..."
+    },
+    {
+      "filename": "mc-220-en.pdf",
+      "sha256": "71540555c394fbf4d489c4c2f0f557d9cff6aabbcaef6d40344afea6990d6cd8",
+      "bytes": 57895,
+      "reasons": [
+        "173 corrupt displacement/control glyphs"
+      ],
+      "sample": "DO NOT ALTER THIS FORM..."
+    },
+    {
+      "filename": "mc-220-es.pdf",
+      "sha256": "3b0c1083f19cbb9db69e8c11a04ab72ee83ec5d5c82291c351102fe3edfed017",
+      "bytes": 74344,
+      "reasons": [
+        "211 corrupt displacement/control glyphs"
+      ],
+      "sample": "NO CAMBIE ESTE FORMULARIO..."
+    },
+    {
+      "filename": "mc-306-en.pdf",
+      "sha256": "7207d85f29ff2639db25b2c19e45843120789e42cb93f5395efd608860245dff",
+      "bytes": 274934,
+      "reasons": [
+        "80 corrupt displacement/control glyphs"
+      ],
+      "sample": "____________________________________..."
+    },
+    {
+      "filename": "mc-306-es.pdf",
+      "sha256": "b04679e3fb14d570bc7512f29d2011f3211645f170cc4721690acf2281ca95fb",
+      "bytes": 284141,
+      "reasons": [
+        "81 corrupt displacement/control glyphs"
+      ],
+      "sample": "____________________________________..."
+    },
+    {
+      "filename": "mc-382-en.pdf",
+      "sha256": "e958ed574dc08939e96b4fcd896c377aee961f0968d5e485c14c2e3ec779cde4",
+      "bytes": 661747,
+      "reasons": [
+        "96 corrupt displacement/control glyphs"
+      ],
+      "sample": "Appointment of Authorized Representative..."
+    },
+    {
+      "filename": "mc-382-es.pdf",
+      "sha256": "d6052a50e7485cc0659f3afe6a66857d5dbb181363eee36329a57db48d26984f",
+      "bytes": 645878,
+      "reasons": [
+        "117 corrupt displacement/control glyphs"
+      ],
+      "sample": "Nombramiento del Representante autorizado..."
+    },
+    {
+      "filename": "mc-383-en.pdf",
+      "sha256": "42035e78d4bc9e11414e99abcb8630fbc6829d547e493c121320c7e6fb6705fd",
+      "bytes": 137475,
+      "reasons": [
+        "65 corrupt displacement/control glyphs"
+      ],
+      "sample": "Authorized Representative Standard Agreement for Organizations..."
+    },
+    {
+      "filename": "mc-383-es.pdf",
+      "sha256": "f9dd334d52a9509ddc7b23919e344a925d286e8349bcf775865b8c5a7458e0be",
+      "bytes": 518049,
+      "reasons": [
+        "79 corrupt displacement/control glyphs"
+      ],
+      "sample": "Acuerdo estándar de representante autorizado para organizaciones..."
+    },
+    {
+      "filename": "pa-607-en.pdf",
+      "sha256": "e2f014fea85345bd41f7206339ff033ddd09be5023f65f3b9eb1cc15a979d8a5",
+      "bytes": 182206,
+      "reasons": [
+        "127 corrupt displacement/control glyphs"
+      ],
+      "sample": "County of Los Angeles..."
+    },
+    {
+      "filename": "pa-607-es.pdf",
+      "sha256": "f03d024f33f7b3d7e0098f141e9a7441008b4b14135682eb2bcba703d721ff53",
+      "bytes": 150839,
+      "reasons": [
+        "200 corrupt displacement/control glyphs"
+      ],
+      "sample": "County of Los Angeles..."
+    },
+    {
+      "filename": "pub-13-en.pdf",
+      "sha256": "40b7bfbc46e78fbbde7b34041b4d9888db3819623fd506ccbdfbacd771500e3b",
+      "bytes": 596202,
+      "reasons": [
+        "307 corrupt displacement/control glyphs"
+      ],
+      "sample": "PUB 13 (5/22)..."
+    },
+    {
+      "filename": "pub-13-es.pdf",
+      "sha256": "6c3b0589790fa68a894bbaddf774e2f54285f4d7f668c79b282898af153c3207",
+      "bytes": 685968,
+      "reasons": [
+        "339 corrupt displacement/control glyphs"
+      ],
+      "sample": "QUEJA DE DISCRIMINACIÓN..."
+    },
+    {
+      "filename": "senator-valladares-en.pdf",
+      "sha256": "af0fbdb0716f036fbec22ef90f351c9cf59708d274a31fc07d77bf21f5e2b478",
+      "bytes": 89522,
+      "reasons": [
+        "56 corrupt displacement/control glyphs"
+      ],
+      "sample": "Authorization for Release of Information..."
+    },
+    {
+      "filename": "soc-321-en.pdf",
+      "sha256": "29c8537b0122d8460b7ce447947dcea827d9093ee8f9d58c597fca3d723d05ce",
+      "bytes": 39577,
+      "reasons": [
+        "55 corrupt displacement/control glyphs"
+      ],
+      "sample": "REQUEST FOR ORDER AND CONSENT ­..."
+    },
+    {
+      "filename": "soc-321-es.pdf",
+      "sha256": "17ce6271be3984ed767a3e6b601abc31657c1ee42894941cfb8766ef170c7d44",
+      "bytes": 156690,
+      "reasons": [
+        "67 corrupt displacement/control glyphs"
+      ],
+      "sample": "SOLICITUD PARA PEDIR Y CONSENTIR - SERVICIOS PARAMÉDICOS..."
+    },
+    {
+      "filename": "soc-321-fa.pdf",
+      "sha256": "879ced6c646d49358a99a938557785c9a0cd1e5942c58bee3b4063ea05ad2056",
+      "bytes": 231004,
+      "reasons": [
+        "60 corrupt displacement/control glyphs"
+      ],
+      "sample": "خدمات پیراپزشکی- درخواست تایید و رضایت..."
+    },
+    {
+      "filename": "soc-321-hy.pdf",
+      "sha256": "75aeab63f611141c24a35f3bc29ae0efc8ed623cd039f02ecd919e1a0503e56e",
+      "bytes": 293237,
+      "reasons": [
+        "77 corrupt displacement/control glyphs"
+      ],
+      "sample": "ԲԺՇԿԱԿԱՆ ՕԳՆՈՒԹՅԱՆ ԾԱՌԱՅՈՒԹՅՈՒՆՆԵՐ ՊԱՀԱՆՋԵԼՈՒ ԵՎ ՀԱՍՏԱՏԵԼՈՒ ՀԱՐՑՈՒՄ..."
+    },
+    {
+      "filename": "soc-321-km.pdf",
+      "sha256": "c8fca2a65c136b5ad78037d7ddf4606782fcc65df23e2b772061782e447cfb96",
+      "bytes": 390437,
+      "reasons": [
+        "74 corrupt displacement/control glyphs"
+      ],
+      "sample": "សំំណើណើសុំំ� ការចេចញ វេេជ្ជជបញ្ជាាវេេជ្ជជសាស្រ្ត�ត និិងការឯកភាព - សេ�វាកម្មមវេេជ្ជជសាស្រ្ត�ត..."
+    },
+    {
+      "filename": "soc-321-ko.pdf",
+      "sha256": "6596d03222a772af2ac72f081337e53f145d8bf62ed049142666d058e3866df7",
+      "bytes": 167992,
+      "reasons": [
+        "52 corrupt displacement/control glyphs"
+      ],
+      "sample": "의뢰 및 동의 요청 - 보조 의료 서비스..."
+    },
+    {
+      "filename": "soc-321-ru.pdf",
+      "sha256": "8a4f405198cb75e0eafad41802185414f9df1fd3bdd92933a683104a48fc40ee",
+      "bytes": 198676,
+      "reasons": [
+        "65 corrupt displacement/control glyphs"
+      ],
+      "sample": "ЗАПРОС НА ПРЕДОСТАВЛЕНИЕ ПАРАМЕДИЦИНСКИХ УСЛУГ И..."
+    },
+    {
+      "filename": "soc-321-tl.pdf",
+      "sha256": "0e85dd32d67d6164775d576fcaa8036c909cd40d0cb3ca07e782619d2d8e9194",
+      "bytes": 165144,
+      "reasons": [
+        "76 corrupt displacement/control glyphs"
+      ],
+      "sample": "KAHILINGAN PARA SA KAUTUSAN AT PAHINTULOT -..."
+    },
+    {
+      "filename": "soc-321-vi.pdf",
+      "sha256": "0590b085238a8969b874b500854e705d0d02b84b11ce5df9938690f531510b6a",
+      "bytes": 200568,
+      "reasons": [
+        "65 corrupt displacement/control glyphs"
+      ],
+      "sample": "GIẤY YÊU CẦU CHỈ ĐỊNH VÀ ĐỒNG Ý - DỊCH VỤ TRỢ GIÚP Y TẾ..."
+    },
+    {
+      "filename": "soc-321-zh.pdf",
+      "sha256": "d612a4a0860a988f709c65c33111756b7bb100820a11865f582a23057dd67af8",
+      "bytes": 302071,
+      "reasons": [
+        "56 corrupt displacement/control glyphs"
+      ],
+      "sample": "請求指示及同意 - 輔助醫療服務..."
+    },
+    {
+      "filename": "soc-825-en.pdf",
+      "sha256": "b7954827ef7f8ce7e036632bbdeda509291b94a4eff887b2898dad3c107d9507",
+      "bytes": 137385,
+      "reasons": [
+        "68 corrupt displacement/control glyphs"
+      ],
+      "sample": "PROTECTIVE SUPERVISION..."
+    },
+    {
+      "filename": "soc-825-es.pdf",
+      "sha256": "192e4de7533ea02b82fadd9231da9707928e8b28ec1e7ebcfed72128e5ddf729",
+      "bytes": 169424,
+      "reasons": [
+        "69 corrupt displacement/control glyphs"
+      ],
+      "sample": "SOC 825 (SP) (6/06)..."
+    },
+    {
+      "filename": "soc-825-fa.pdf",
+      "sha256": "9fbf68928073f0029a58c029dd56844cacbaa89c6c7c4f5a2f01656691cad5d2",
+      "bytes": 151044,
+      "reasons": [
+        "78 corrupt displacement/control glyphs"
+      ],
+      "sample": "نظارت حفاظتی..."
+    },
+    {
+      "filename": "soc-825-hy.pdf",
+      "sha256": "713b2be59f27cb12344c6b1a3c0f8916e2e82ef9d084fd43451e9d8573894961",
+      "bytes": 147537,
+      "reasons": [
+        "71 corrupt displacement/control glyphs"
+      ],
+      "sample": "SOC 825 (Armenian) (6/06)..."
+    },
+    {
+      "filename": "soc-825-km.pdf",
+      "sha256": "5ae77810dba2641ba0d33292aca0bba682abb9aa4d41f64b8d7167fac39449e9",
+      "bytes": 190189,
+      "reasons": [
+        "352 corrupt displacement/control glyphs"
+      ],
+      "sample": "SOC 825 (Cambodian) (6/06)..."
+    },
+    {
+      "filename": "soc-825-ko.pdf",
+      "sha256": "a9b6aec5e1f76302a9bac3452550127ee5ad8703f92bf9c1e38a26e6142460f1",
+      "bytes": 88186,
+      "reasons": [
+        "56 corrupt displacement/control glyphs"
+      ],
+      "sample": "Page 1 of 2..."
+    },
+    {
+      "filename": "soc-825-ru.pdf",
+      "sha256": "a93767c575dbb23595425207912fe1f2bd384c14654378e76b84cd92364f40cb",
+      "bytes": 137329,
+      "reasons": [
+        "65 corrupt displacement/control glyphs"
+      ],
+      "sample": "Page 1 of 2..."
+    },
+    {
+      "filename": "soc-825-tl.pdf",
+      "sha256": "d79482e39a68ed5408df51066876c9f63cd945d1538876345c8e4f418d229bf0",
+      "bytes": 144514,
+      "reasons": [
+        "75 corrupt displacement/control glyphs"
+      ],
+      "sample": "SOC 825 (Tagalog) (6/06)..."
+    },
+    {
+      "filename": "soc-825-vi.pdf",
+      "sha256": "68c731b4dbf9fd7985d4102858f25ec0e2561b980611de3789c56f9b378f41ff",
+      "bytes": 152569,
+      "reasons": [
+        "67 corrupt displacement/control glyphs"
+      ],
+      "sample": "SOC 825 (Vietnamese) (6/06)..."
+    },
+    {
+      "filename": "soc-825-zh.pdf",
+      "sha256": "d42f9fb7273e84f979b7627c0909bc324a6bc75bd48c39c9b82bc14ff180da3e",
+      "bytes": 312658,
+      "reasons": [
+        "47 corrupt displacement/control glyphs"
+      ],
+      "sample": "SOC 825 (Chinese) (6/06)..."
+    },
+    {
+      "filename": "state-bar-directory-en.pdf",
+      "sha256": "695e41ca8f7137a2f971421f047e1cdb14f41acb89cb4eab1509b51d485aa86b",
+      "bytes": 248691,
+      "reasons": [
+        "64 corrupt displacement/control glyphs"
+      ],
+      "sample": "Last Updated: 3/3/26..."
+    },
+    {
+      "filename": "std-204-en.pdf",
+      "sha256": "b7de6659784c92aefcb83b35913b78a648b140312b6acdce13da6dee18cf79e8",
+      "bytes": 1740646,
+      "reasons": [
+        "257 corrupt displacement/control glyphs"
+      ],
+      "sample": "PAYEE DATA RECORD..."
+    },
+    {
+      "filename": "dmhc-20-160-ar.pdf",
+      "sha256": "9c92d655a69532d2eea1958055f1a19b91c11dff98bd38c961bcc218a9a06bff",
+      "bytes": 435455,
+      "reasons": [
+        "34 corrupt displacement/control glyphs"
+      ],
+      "sample": "م طﻠب اﻟﻣراﺟﻌﺔ اﻟطﺑﯾﺔ اﻟﻣﺳﺗﻘﻠﺔ/ﺷﻛوى اﻟﻣﺳﺗﮭﻠك ﻣﺟﺎﻧﺎ ا . أﯾﺎم ﻓﻲ اﻟﺣﺎﻻت اﻟطﺑﯾﺔ اﻟﻌﺎﺟﻠﺔ7 ﯾوﻣ ًﺎ، أو45 ﺳرﯾﻌًﺎ: ﯾﺗم اﺗﺧﺎذ"
+    },
+    {
+      "filename": "dmhc-20-160-hy.pdf",
+      "sha256": "48c07ea5fcc4ced2672ba9e3cb4fef15ae40009206656431d429d777119c4aba",
+      "bytes": 354513,
+      "reasons": [
+        "33 corrupt displacement/control glyphs"
+      ],
+      "sample": "m-ը ներկայացնել առցանց՝ www.DMHC.ca.gov հասցեով  ԱՆՎՃԱՐ՝ IMR/Գանգատի գործընթացն անվճար է:  ԱՐԱԳ՝ IMR-ների վերաբերյալ"
+    },
+    {
+      "filename": "dmhc-20-160-fa.pdf",
+      "sha256": "c873f7a3531e5fcb005ce76f17aa93f89ad7303e13ac2c0e72f4cb90126f6bb8",
+      "bytes": 507275,
+      "reasons": [
+        "33 corrupt displacement/control glyphs"
+      ],
+      "sample": "ر اﯾﻦ آدرس ارﺳﺎل ﮐﻨﯿﺪIMRﺷﻤﺎ ﻣﯽ ﺗﻮاﻧﯿﺪ ﻓﺮم درﺧﻮاﺳﺖ  :راﯾﮕﺎن روال IMR / .ﺷﮑﺎﯾﺖ راﯾﮕﺎن ﻣﯽ ﺑﺎﺷﺪ  :ﺳﺮﯾﻊ ﺗﺼﻤﯿﻢ ﮔﯿﺮ"
+    },
+    {
+      "filename": "dmhc-20-160-hi.pdf",
+      "sha256": "79ba9c35e08cc1b58c3c70493380ff9ee86b0084fecc600fd3810abb3e9bbded",
+      "bytes": 431139,
+      "reasons": [
+        "317 corrupt displacement/control glyphs"
+      ],
+      "sample": "ानकारी आप आपके IMR (आईएमआर) आवेदन/Complaint Form(\u0005शकायत परपतर) को ऑनलाइन यहाँ जमा कर सकते ह: www.DMHC.ca.gov े मुफत:"
+    },
+    {
+      "filename": "dmhc-20-160-hmn.pdf",
+      "sha256": "65a2e654e12fb511cfed60e862da51082b52218b4a440a2a4b2498dc5a47bba9",
+      "bytes": 342412,
+      "reasons": [
+        "37 corrupt displacement/control glyphs"
+      ],
+      "sample": "Txaus Siab hauv oos lais ntawm: www.DMHC.ca.gov QHOV UA PUB DAWB: Tej txheej txheem Kev Tsis Txaus Siab ntawm IMR/Tus"
+    },
+    {
+      "filename": "dmhc-20-160-ja.pdf",
+      "sha256": "fddf4e8f9de69eb0034069e7e435259ee795dda4f646495860881f35a505f0c8",
+      "bytes": 694666,
+      "reasons": [
+        "33 corrupt displacement/control glyphs"
+      ],
+      "sample": "Application/Complaint (IMR 申し立て/苦情) 用紙を送信してください。 無料: IMR/苦情プロセスは無料です。 早い: IMR は通常 45 日以内、疾病が 緊急を要する場合には 7 日以内に判断がくだされ"
+    },
+    {
+      "filename": "dmhc-20-160-km.pdf",
+      "sha256": "ab5c27a31bb544c85c9370ef07b0eac19b1fa02d28cbbfecdf2cc41d0950c342",
+      "bytes": 472655,
+      "reasons": [
+        "40 corrupt displacement/control glyphs"
+      ],
+      "sample": "FORM – KHMER DMHC 20-224 New: 04/06 Rev: 09/25 ʚក្យេសʅ ើសុំȗរពិនិត្យេវជȼˏʱសɱ ឯកʲជ្យ (IMR)/ទ្រមង់ែបបបទបណɱ ឹង ព័ត៌ʤនសំȜ"
+    },
+    {
+      "filename": "dmhc-20-160-ko.pdf",
+      "sha256": "ae574805026f4320f1857d766c679335448766b40c6bc4f7b26c32c1cbf5f7c6",
+      "bytes": 337591,
+      "reasons": [
+        "40 corrupt displacement/control glyphs"
+      ],
+      "sample": "신청서/불만양식을 온라인으로 다음에 제출할 수 있습니다: www.DMHC.ca.gov 무료: IMR/소비자 불만 처리는 무료입니다. 신속: IMR 은 보통 45 일 내에 결정되며, 긴급 의료문제인 경우 7"
+    },
+    {
+      "filename": "dmhc-20-160-lo.pdf",
+      "sha256": "5496c33e79eb45f32548b9a35f2e129e275f3146d6fa8f541c5b2b9c6805e9a2",
+      "bytes": 1162891,
+      "reasons": [
+        "34 corrupt displacement/control glyphs"
+      ],
+      "sample": "ww.DMHC.ca.gov ້ຈ ່ນ ້ຈ IMR/ . IMR 45 7 .  : 73 IMR. IMR .  :  :  : ຂໍ້ມູນຄົນເຈັບ ຊື່ ຊື່ກາງ ນາ"
+    },
+    {
+      "filename": "dmhc-20-160-pa.pdf",
+      "sha256": "5fedc23b65e11a8984f4a53b836cc5e4242c8e652c59ef68d266aa524b55d7c4",
+      "bytes": 510380,
+      "reasons": [
+        "35 corrupt displacement/control glyphs"
+      ],
+      "sample": "on/Complaint Form ਆਨਲਾਈਨ: www.DMHC.ca.gov ਤੇ ਭਰੋ ਮੁਫ਼ਤ: IMR/Complaint ਪ୥ਿਿਕਰਆ ਮੁਫ਼ਤ ਹੈ। ਤੇਜ਼: ਆਮ ਤੌਰ 'ਤੇ 45 ਿਦਨਾਂ ਦੇ"
+    },
+    {
+      "filename": "dmhc-20-160-ru.pdf",
+      "sha256": "ae5f818723a33d2b61383d8bbe2dc296249bb93420e83eefef156d8845b4ae53",
+      "bytes": 398716,
+      "reasons": [
+        "11 corrupt displacement/control glyphs"
+      ],
+      "sample": "бы можно подать онлайн на сайте: www.DMHC.ca.gov  БЕСПЛАТНО: Процесс рассмотрения заявления на проведение независимого"
+    },
+    {
+      "filename": "dmhc-20-160-zh.pdf",
+      "sha256": "d8d34242bdec6d1a25a70046740c338641321365a5c8b3e950164546cf40e5fb",
+      "bytes": 338200,
+      "reasons": [
+        "38 corrupt displacement/control glyphs"
+      ],
+      "sample": "姓氏 患者出生日期（月/日/年） _________________________性别：男女其他_________________________ 家长或监护人姓名（如代未成年子女提交） 街道地址 城市 州"
+    },
+    {
+      "filename": "dmhc-20-160-tl.pdf",
+      "sha256": "ed2b9502b1e6836359c9afcca990d8d325ba0e99a929e98cec00cfdbf812f9bf",
+      "bytes": 430273,
+      "reasons": [
+        "33 corrupt displacement/control glyphs"
+      ],
+      "sample": "G MEDIKAL MAHALAGANG IMPORMASYON www.DMHC.ca.gov LIBRE: Ang proseso ng IMR/Reklamo ay libre para sa mga pasyente. MAB"
+    },
+    {
+      "filename": "dmhc-20-160-th.pdf",
+      "sha256": "f1608a4cfbc0deab3874e1924968111d9ffa6f36030b8ba7b92921ee2209fe3f",
+      "bytes": 327587,
+      "reasons": [
+        "62 corrupt displacement/control glyphs"
+      ],
+      "sample": "ิดของผู้ป่วย (ดด/วว/ปปปป) __________________ เพศ: \u0000 ชาย \u0000 หญิง \u0000 อื่นๆ ชื่อพ่อแม่ หรือผู้ปกครอง หากยื่นเรื่องแทนเด็"
+    },
+    {
+      "filename": "dmhc-20-160-zh-tw.pdf",
+      "sha256": "47324ac7015c8b58b01ce8f98408d97aca000e1fbd2ba9d1e787f232b3989c7c",
+      "bytes": 339826,
+      "reasons": [
+        "34 corrupt displacement/control glyphs"
+      ],
+      "sample": "姓氏 患者出生日期（月/日/年）__________________________性別：男女其他_______________________ 家長或監護人姓名（如代未成年子女提交申請） 街道地址 城市 州"
+    },
+    {
+      "filename": "dmhc-20-160-vi.pdf",
+      "sha256": "38d26d352661f136db9928f123754c4065e2642eb9c1fe6922ba659d8c8b7e5d",
+      "bytes": 404940,
+      "reasons": [
+        "35 corrupt displacement/control glyphs"
+      ],
+      "sample": "ầu IMR/Khiếu nại trực tuyến tại: www.DMHC.ca.gov  MIỄN PHÍ: Quy trình IMR/Khiếu nại của Người tiêu dùng được miễn phí"
+    }
+  ]
+}

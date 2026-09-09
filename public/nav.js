@@ -85,6 +85,8 @@
     border-left: 1px solid #1e1e1e;
     transition: color 0.15s, background 0.15s;
     white-space: nowrap;
+    min-height: 24px;
+    box-sizing: border-box;
     }
     #calaudit-nav .nav-links li:first-child a {
     border-left: none;
@@ -189,20 +191,20 @@
     const LINKS_ROW1 = [
         { label: "Records", href: "/forensic-vault/" },
         { label: "Privacy Tools", href: "/tools/" },
-        { label: "Dope Forms", href: "/dope-forms/" },
+        { label: "Official?", href: "/official-forms/" },
+        { label: "Translations", href: "/community-translations/" },
         { label: "Dead 1/4s", href: "/deadquarters/" },
         { label: "DHC-$$$", href: "/dhcs4521/" },
         { label: "Knox-Keene", href: "/knox-keene/" },
         { label: "DMHC", href: "/dmhc-faqs/" },
         { label: "No Meds", href: "/medical-vault/" },
         { label: "Law/Order?", href: "/litigation/" },
-        { label: "Hello!", href: "/telecom/" },
     ];
 
     const LINKS_ROW2 = [
         { label: "SSDD", href: "/advocate/" },
         { label: "Receipts", href: "/evidence-room/" },
-        { label: "Living Proof", href: "/medical-abandonment/" },
+        { label: "Hello!", href: "/telecom/" },
         { label: "Hearings?", href: "/state-hearings/" },
         { label: "Fed Drop", href: "/oig-filing-guide/" },
         { label: "HIPAA Fire", href: "/ocr-hipaa-guide/" },

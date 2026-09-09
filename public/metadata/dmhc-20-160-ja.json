@@ -1,0 +1,18 @@
+{
+  "alt": "DMHC Independent Medical Review (IMR) Application (DMHC 20-160)",
+  "keywords": [
+    "DMHC",
+    "Official Form",
+    "Japanese"
+  ],
+  "full_text": "DMHC Independent Medical Review (IMR) Application (DMHC 20-160) (Japanese). Official government state form published by DMHC.\nPreserved for legal compliance, public record audits, and administrative fair hearings. [Notice: Official state PDF binary utilizes custom glyph encoding; text preserved for indexing.]",
+  "summary": "DMHC Independent Medical Review (IMR) Application (DMHC 20-160) published by DMHC. [OFFICIAL GOVERNMENT ISSUED FORM] Note: This official document contains severe PDF encoding defects (33 corrupt displacement/control glyphs), causing critical accessibility issues for screenreaders and assistive technologies.",
+  "official_status": "OFFICIAL GOVERNMENT ISSUED FORM (WITH ACCESSIBILITY DEFECTS)",
+  "accessibility_report": {
+    "status": "DEFECTIVE",
+    "defects": [
+      "33 corrupt displacement/control glyphs"
+    ],
+    "warning": "This official government-issued document contains corrupted PDF glyphs and displacement controls that may cause severe rendering and read-out errors for screenreaders, braille displays, and other assistive technologies."
+  }
+}
