@@ -105,15 +105,10 @@
 
     <!-- REAL-TIME CLINICAL EMERGENCY ALERT (Synced with style.css utility palette) -->
     <aside class="audit-box warfare u-style-bc0966fe" aria-labelledby="status-alert-heading">
-        <span id="status-alert-heading" class="status-badge u-style-6b9e1d21">REAL-TIME UPDATE — September 9, 2026</span>
-        <p class="u-style-5be3edfa">
-            The immediate treatment-access crisis has been resolved. On August 13, a Bartz-Altadonna provider agreed to assume management of my established benzodiazepine taper and continued treatment. I located and secured that care myself. DMHC’s investigation into the preceding access-to-care failures remains ongoing.
-            Between July 12–15, 2026, I required three consecutive emergency room visits across
-            two hospital systems for acute benzodiazepine withdrawal — requiring a phenobarbital
-            substitution protocol to stop a life-threatening withdrawal cascade.
-            L.A. Care formally rejected my Government Tort Claim on the same day I was admitted.
-            I got out of the ER, immediately got back to work, and officially refiled the lawsuit as Case 26AVSC00542. It is now active and on-record. The audit never stopped.
-        </p>
+    <span id="status-alert-heading" class="status-badge u-style-6b9e1d21" style="background: var(--red); color: #fff;">ACTIVE LITIGATION // L.A. CARE HEALTH PLAN</span>
+    <p class="u-style-5be3edfa">
+        <strong>Case 26AVSC00542:</strong> The immediate clinical crisis was resolved on August 13, 2026, when an in-network provider (Bartz-Altadonna) was finally secured to assume the taper. The audit is now a formal judicial action to recover the costs of surviving the network's gap. On July 13, 2026, L.A. Care Health Plan formally rejected Government Tort Claim LMR-9059. The lawsuit for private, out-of-network continuity-of-care reimbursement is active and proceeding to hearing on September 29, 2026.
+    </p>
     </aside>
 
     <article class="narrative-container">
@@ -184,17 +179,36 @@
             </p>
         </div>
 
-        <section class="cta-section" aria-label="Actionable Resources">
-            <p class="u-style-a02947fb">The blueprints and utilities are here. What you do with them is your call.</p>
-            <a href="/forensic-vault/" class="blueprint-btn u-style-6479f668">[ ACCESS FORENSIC BLUEPRINTS ]</a>
-            <a href="/tools/" class="blueprint-btn u-style-6b1b4283">[ OPEN-SOURCE TOOL ROOM ]</a>
+        <section class="cta-section" aria-label="Actionable Resources" style="max-width: 800px; margin: 0 auto; text-align: left; padding-top: 40px; border-top: 1px solid var(--border);">
+
+    <p style="text-align: center; margin-bottom: 30px; font-family: var(--mono); color: var(--text-dim);">
+        The blueprints and utilities are here. What you do with them is your call.
+    </p>
+
+    <div style="font-family: var(--mono); line-height: 1.6; margin-bottom: 40px;">
+        <div style="margin-bottom: 1.5rem;">
+            <a href="/advocate/" style="color: var(--blue); text-decoration: none; font-size: 1.05rem; font-weight: bold; letter-spacing: 1px;">&gt; DIR /ADVOCATE/ : The Origin Chronology</a>
+            <p style="margin: 5px 0 0 1.2rem; color: var(--text-dim); font-size: 0.85rem;">The raw dispensing record. The timeline of treatment disruption, private tapering, and the administrative artifacts left behind.</p>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+            <a href="/community-translations/" style="color: var(--amber); text-decoration: none; font-size: 1.05rem; font-weight: bold; letter-spacing: 1px;">&gt; DIR /COMMUNITY-TRANSLATIONS/ : Language Access Hub</a>
+            <p style="margin: 5px 0 0 1.2rem; color: var(--text-dim); font-size: 0.85rem;">Unofficial reference translations of vital CDSS and DHCS forms, bridging state compliance failures under Gov. Code §§ 7295.2 &amp; 7295.4.</p>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+            <a href="/official-forms/" style="color: var(--green); text-decoration: none; font-size: 1.05rem; font-weight: bold; letter-spacing: 1px;">&gt; DIR /OFFICIAL-FORMS/ : State Defect Audits</a>
+            <p style="margin: 5px 0 0 1.2rem; color: var(--text-dim); font-size: 0.85rem;">Verifiable statutory teardowns of official DHCS and CDSS documents exposing WCAG 2.2 accessibility failures.</p>
+        </div>
+    </div>
+
         </section>
 
-        <address class="signature">
-            - Nicolas Hernandez<br>
-            Lead Forensic Auditor, CalAudit
-        </address>
-    </article>
+<address class="signature" style="text-align: center; max-width: 800px; margin: 40px auto 0;">
+    - Nicolas Hernandez<br>
+    Lead Forensic Auditor, CalAudit
+</address>
+
 </main>
 
 <script defer src="/nav.js"></script>
@@ -223,17 +237,28 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": ["Organization", "ArchiveOrganization"],
       "@id": "https://calaudit.org/#organization",
       "name": "CalAudit",
       "url": "https://calaudit.org/",
       "logo": {
         "@type": "ImageObject",
+        "dateModified": "2026-09-09",
         "@id": "https://calaudit.org/#logo",
         "url": "https://calaudit.org/calauditlogo.webp",
         "contentUrl": "https://calaudit.org/calauditlogo.webp"
       },
-      "description": "Independent forensic audit and evidence repository documenting California healthcare administration, regulatory processes, court and administrative records, consumer technology disputes, and forensic tools."
+      "description": "Independent forensic audit and public evidence repository documenting California healthcare administration, regulatory compliance, court and administrative records, and civic auditing tools.",
+      "founder": {
+        "@id": "https://calaudit.org/#nicolas-hernandez"
+      },
+      "knowsAbout": [
+        "Knox-Keene Health Care Service Plan Act of 1975",
+        "California Department of Managed Health Care",
+        "Medi-Cal Reimbursement",
+        "Web Content Accessibility Guidelines (WCAG 2.2)",
+        "Administrative Law"
+      ]
     },
     {
       "@type": "Person",
@@ -254,9 +279,6 @@
       "inLanguage": "en-US",
       "publisher": {
         "@id": "https://calaudit.org/#organization"
-      },
-      "author": {
-        "@id": "https://calaudit.org/#nicolas-hernandez"
       }
     },
     {
@@ -268,9 +290,6 @@
       "inLanguage": "en-US",
       "isPartOf": {
         "@id": "https://calaudit.org/#website"
-      },
-      "author": {
-        "@id": "https://calaudit.org/#nicolas-hernandez"
       },
       "publisher": {
         "@id": "https://calaudit.org/#organization"

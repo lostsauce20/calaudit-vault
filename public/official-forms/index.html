@@ -6,6 +6,11 @@
     <title>Official Government Forms Vault | CalAudit</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="canonical" href="https://calaudit.org/official-forms/">
+
+    <!-- Concurrent JSON Preloading -->
+    <link rel="preload" href="resources-official.json" as="fetch" crossorigin>
+    <link rel="preload" href="official_pdf_accessibility_defects.json" as="fetch" crossorigin>
+
     <meta name="robots" content="index, follow">
     <meta name="description" content="Forensic preservation archive of official California state agency forms (DHCS, CDSS, Medi-Cal) documenting digital accessibility and CMap binary encoding failures.">
     <meta name="keywords" content="CalAudit, Official Government Forms, DHCS, CDSS, Medi-Cal, SOC, MC, accessibility defect, CMap corruption, Section 508, ADA Title II, Conlan Reimbursement">
@@ -23,6 +28,7 @@
     {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
+        "dateModified": "2026-09-09",
         "@id": "https://calaudit.org/official-forms/#webpage",
         "url": "https://calaudit.org/official-forms/",
         "name": "Official Government Forms Vault | CalAudit",
@@ -31,389 +37,79 @@
     }
     </script>
     <style>
-        .forensic-audit-banner {
-            border: 1px solid #d9534f;
-            background: rgba(217, 83, 79, 0.08);
-            border-radius: 6px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            backdrop-filter: blur(8px);
-            font-family: var(--font-main, sans-serif);
-        }
+        .forensic-audit-banner { border: 1px solid #d9534f; background: rgba(217, 83, 79, 0.08); border-radius: 6px; padding: 1.5rem; margin: 2rem 0; backdrop-filter: blur(8px); font-family: var(--font-main, sans-serif); }
+        .audit-tag { display: inline-block; background: #d9534f; color: #000; font-family: var(--mono); font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; }
+        .audit-heading { color: #ff6b6b; font-family: var(--mono); font-size: 1.35rem; margin: 0.75rem 0 0.5rem 0; letter-spacing: -0.5px; }
+        .audit-lead { font-size: 1rem; line-height: 1.6; color: #eee; margin-bottom: 1.25rem; }
 
-        .audit-tag {
-            display: inline-block;
-            background: #d9534f;
-            color: #000;
-            font-family: var(--mono);
-            font-size: 0.75rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            padding: 3px 8px;
-            border-radius: 3px;
-            text-transform: uppercase;
-        }
+        .audit-stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; margin: 1.25rem 0; }
+        .stat-card { background: #0d0d0d; border: 1px solid #332222; border-radius: 4px; padding: 0.85rem; text-align: center; }
+        .stat-val { display: block; font-family: var(--mono); font-size: 1.6rem; font-weight: 700; color: #ff4d4d; }
+        .stat-val.clean { color: var(--green, #2ecc71); }
+        .stat-label { font-family: var(--mono); font-size: 0.75rem; color: var(--text-dim, #888); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; display: block; }
 
-        .audit-heading {
-            color: #ff6b6b;
-            font-family: var(--mono);
-            font-size: 1.35rem;
-            margin: 0.75rem 0 0.5rem 0;
-            letter-spacing: -0.5px;
-        }
+        .audit-details-list { margin: 1rem 0 0 1.25rem; padding: 0; color: #bbb; font-size: 0.92rem; line-height: 1.6; }
+        .audit-details-list li { margin-bottom: 0.4rem; }
 
-        .audit-lead {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #eee;
-            margin-bottom: 1.25rem;
-        }
+        .audit-actions-row { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid #332222; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+        .btn-audit-raw { display: inline-flex; align-items: center; background: #1a1a1a; border: 1px solid #d9534f; color: #ff6b6b; padding: 8px 14px; font-family: var(--mono); font-size: 0.8rem; font-weight: bold; border-radius: 4px; text-decoration: none; transition: all 0.2s ease; }
+        .btn-audit-raw:hover, .btn-audit-raw:focus-visible { background: #d9534f; color: #000; outline: 2px solid #fff; }
 
-        .audit-stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-            gap: 1rem;
-            margin: 1.25rem 0;
-        }
+        #grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
 
-        .stat-card {
-            background: #0d0d0d;
-            border: 1px solid #332222;
-            border-radius: 4px;
-            padding: 0.85rem;
-            text-align: center;
-        }
+        .evidence-item { background: rgba(18, 18, 18, 0.94); border: 1px solid #333; backdrop-filter: blur(6px); border-radius: 6px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; height: 100%; transition: border-color 0.2s ease; }
+        .evidence-item.has-defect { border-color: #552222; }
+        .evidence-item.has-defect:hover { border-color: #882222; }
 
-        .stat-val {
-            display: block;
-            font-family: var(--mono);
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #ff4d4d;
-        }
+        .card-header-group { border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 1rem; }
+        .evidence-item h3 { color: var(--blue) !important; margin: 0; font-size: 1.15rem; text-align: left; line-height: 1.4; }
 
-        .stat-val.clean {
-            color: var(--green, #2ecc71);
-        }
+        .status-badge { display: inline-block; font-family: var(--mono); font-size: 0.7rem; font-weight: bold; padding: 3px 6px; border-radius: 3px; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .badge-defect { background: rgba(217, 83, 79, 0.15); border: 1px solid #d9534f; color: #ff6b6b; }
+        .badge-pass { background: rgba(46, 204, 113, 0.1); border: 1px solid var(--green, #2ecc71); color: var(--green, #2ecc71); }
 
-        .stat-label {
-            font-family: var(--mono);
-            font-size: 0.75rem;
-            color: var(--text-dim, #888);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 4px;
-            display: block;
-        }
+        .card-body { flex-grow: 1; display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 1.25rem; }
+        .metadata-row { display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 0.85rem; border-bottom: 1px dashed #222; padding-bottom: 3px; }
+        .metadata-label { color: var(--text-dim); }
+        .metadata-value { font-weight: bold; color: #fff; }
 
-        .audit-details-list {
-            margin: 1rem 0 0 1.25rem;
-            padding: 0;
-            color: #bbb;
-            font-size: 0.92rem;
-            line-height: 1.6;
-        }
+        .defect-details-box { background: #0a0505; border: 1px solid #441818; border-radius: 4px; padding: 0.65rem; margin-top: 0.5rem; font-family: var(--mono); font-size: 0.75rem; }
+        .defect-reason-tag { color: #ff6b6b; font-weight: bold; display: block; margin-bottom: 3px; }
+        .defect-sha { color: #777; word-break: break-all; margin-top: 4px; display: block; font-size: 0.7rem; }
+        .defect-sha span { color: #aaa; }
+        .defect-sample { background: #000; border-left: 2px solid #ff4d4d; padding: 4px 8px; margin-top: 6px; color: #ff6b6b; font-size: 0.72rem; line-height: 1.4; font-family: var(--mono); white-space: pre-wrap; word-break: break-all; }
 
-        .audit-details-list li {
-            margin-bottom: 0.4rem;
-        }
+        .card-actions { margin-top: auto; width: 100%; }
+        .download-btn { display: block; width: 100%; padding: 9px; background: #111; border: 1px solid var(--border); color: var(--blue) !important; text-align: center; font-weight: bold; border-radius: 4px; text-decoration: none !important; box-sizing: border-box; transition: all 0.2s ease; font-family: var(--mono); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .download-btn:hover, .download-btn:focus-visible { background: var(--blue); color: #000 !important; border-color: var(--blue); outline: 2px solid #fff; }
 
-        .audit-actions-row {
-            margin-top: 1.25rem;
-            padding-top: 1rem;
-            border-top: 1px solid #332222;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            align-items: center;
-        }
+        fieldset { border: 1px solid #333; border-radius: 6px; padding: 1.25rem; margin-bottom: 1rem; background: rgba(10, 10, 10, 0.8); }
+        legend { font-family: var(--mono); font-weight: bold; color: var(--blue); padding: 0 10px; font-size: 0.9rem; text-transform: uppercase; }
 
-        .btn-audit-raw {
-            display: inline-flex;
-            align-items: center;
-            background: #1a1a1a;
-            border: 1px solid #d9534f;
-            color: #ff6b6b;
-            padding: 8px 14px;
-            font-family: var(--mono);
-            font-size: 0.8rem;
-            font-weight: bold;
-            border-radius: 4px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
+        .filters-flex { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+        .filter-group { display: flex; flex-direction: column; gap: 0.5rem; flex: 1 1 180px; }
+        .filter-group label { font-family: var(--mono); font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; }
+        .filter-group input, .filter-group select { background: #111; border: 1px solid #333; color: #fff; padding: 10px 12px; border-radius: 4px; font-family: var(--mono); font-size: 0.9rem; outline: none; width: 100%; box-sizing: border-box; transition: border-color 0.2s ease; }
+        .filter-group input:focus, .filter-group select:focus { border-color: var(--blue); box-shadow: 0 0 0 1px var(--blue); }
 
-        .btn-audit-raw:hover {
-            background: #d9534f;
-            color: #000;
-        }
-
-        #grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.25rem;
-            margin-top: 2rem;
-        }
-
-        .evidence-item {
-            background: rgba(18, 18, 18, 0.94);
-            border: 1px solid #333;
-            backdrop-filter: blur(6px);
-            border-radius: 6px;
-            padding: 1.25rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-sizing: border-box;
-            height: 100%;
-            transition: border-color 0.2s ease;
-        }
-
-        .evidence-item.has-defect {
-            border-color: #552222;
-        }
-
-        .evidence-item.has-defect:hover {
-            border-color: #882222;
-        }
-
-        .card-header-group {
-            border-bottom: 1px solid #333;
-            padding-bottom: 8px;
-            margin-bottom: 1rem;
-        }
-
-        .evidence-item h3 {
-            color: var(--blue) !important;
-            margin: 0;
-            font-size: 1.15rem;
-            text-align: left;
-            line-height: 1.4;
-        }
-
-        .status-badge {
-            display: inline-block;
-            font-family: var(--mono);
-            font-size: 0.7rem;
-            font-weight: bold;
-            padding: 3px 6px;
-            border-radius: 3px;
-            margin-top: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .badge-defect {
-            background: rgba(217, 83, 79, 0.15);
-            border: 1px solid #d9534f;
-            color: #ff6b6b;
-        }
-
-        .badge-pass {
-            background: rgba(46, 204, 113, 0.1);
-            border: 1px solid var(--green, #2ecc71);
-            color: var(--green, #2ecc71);
-        }
-
-        .card-body {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 0.45rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .metadata-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: var(--mono);
-            font-size: 0.85rem;
-            border-bottom: 1px dashed #222;
-            padding-bottom: 3px;
-        }
-
-        .metadata-label {
-            color: var(--text-dim);
-        }
-
-        .metadata-value {
-            font-weight: bold;
-            color: #fff;
-        }
-
-        .defect-details-box {
-            background: #0a0505;
-            border: 1px solid #441818;
-            border-radius: 4px;
-            padding: 0.65rem;
-            margin-top: 0.5rem;
-            font-family: var(--mono);
-            font-size: 0.75rem;
-        }
-
-        .defect-reason-tag {
-            color: #ff6b6b;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 3px;
-        }
-
-        .defect-sha {
-            color: #777;
-            word-break: break-all;
-            margin-top: 4px;
-            display: block;
-            font-size: 0.7rem;
-        }
-
-        .defect-sha span {
-            color: #aaa;
-        }
-
-        .defect-sample {
-            background: #000;
-            border-left: 2px solid #ff4d4d;
-            padding: 4px 8px;
-            margin-top: 6px;
-            color: #ff6b6b;
-            font-size: 0.72rem;
-            line-height: 1.4;
-            font-family: var(--mono);
-            white-space: pre-wrap;
-            word-break: break-all;
-        }
-
-        .card-actions {
-            margin-top: auto;
-            width: 100%;
-        }
-
-        .download-btn {
-            display: block;
-            width: 100%;
-            padding: 9px;
-            background: #111;
-            border: 1px solid var(--border);
-            color: var(--blue) !important;
-            text-align: center;
-            font-weight: bold;
-            border-radius: 4px;
-            text-decoration: none !important;
-            box-sizing: border-box;
-            transition: all 0.2s ease;
-            font-family: var(--mono);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .download-btn:hover {
-            background: var(--blue);
-            color: #000 !important;
-            border-color: var(--blue);
-        }
-
-        fieldset {
-            border: 1px solid #333;
-            border-radius: 6px;
-            padding: 1.25rem;
-            margin-bottom: 1.5rem;
-            background: rgba(10, 10, 10, 0.8);
-        }
-
-        legend {
-            font-family: var(--mono);
-            font-weight: bold;
-            color: var(--blue);
-            padding: 0 10px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-
-        .filters-flex {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.25rem;
-        }
-
-        .filter-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            flex: 1 1 200px;
-        }
-
-        .filter-group label {
-            font-family: var(--mono);
-            font-size: 0.8rem;
-            color: var(--text-dim);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .filter-group input, .filter-group select {
-            background: #111;
-            border: 1px solid #333;
-            color: #fff;
-            padding: 10px 12px;
-            border-radius: 4px;
-            font-family: var(--mono);
-            font-size: 0.9rem;
-            outline: none;
-            width: 100%;
-            box-sizing: border-box;
-            transition: border-color 0.2s ease;
-        }
-
-        .filter-group input:focus, .filter-group select:focus {
-            border-color: var(--blue);
-        }
-
-        footer {
-            margin-top: 4rem;
-            padding: 2rem 0;
-            border-top: 1px solid #222;
-            text-align: center;
-            font-family: var(--mono);
-            font-size: 0.85rem;
-            color: var(--text-dim);
-        }
-
-        footer a {
-            color: var(--blue);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
+        .results-count-bar { font-family: var(--mono); font-size: 0.85rem; color: var(--text-dim); padding: 0 0.5rem; margin-bottom: 0.5rem; }
 
         .forensic-case-studies { border: 1px solid rgb(68, 24, 24); background: rgba(18, 10, 10, 0.4); border-radius: 6px; padding: 1.5rem; margin: 2rem 0px; font-family: var(--font-main, sans-serif); }
         .case-studies-comparator { display: grid; grid-template-columns: 280px 1fr; gap: 1.5rem; margin-top: 1.5rem; }
-        @media (max-width: 768px) {
-          .case-studies-comparator { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 768px) { .case-studies-comparator { grid-template-columns: 1fr; } }
         .case-study-selectors { display: flex; flex-direction: column; gap: 0.5rem; }
         .case-selector { background: rgb(17, 17, 17); border: 1px solid rgb(34, 34, 34); border-radius: 4px; padding: 0.75rem 1rem; text-align: left; cursor: pointer; transition: 0.2s; display: flex; flex-direction: column; gap: 3px; }
-        .case-selector:hover { background: rgb(34, 34, 34); border-color: rgb(85, 85, 85); }
+        .case-selector:hover, .case-selector:focus-visible { background: rgb(34, 34, 34); border-color: rgb(85, 85, 85); outline: 2px solid var(--blue); }
         .case-selector.active { background: rgba(217, 83, 79, 0.1); border-color: rgb(217, 83, 79); }
         .case-selector .case-num { font-family: var(--mono); font-size: 0.75rem; color: rgb(217, 83, 79); font-weight: bold; }
         .case-selector .case-name { font-size: 0.85rem; color: rgb(238, 238, 238); font-weight: bold; }
         .comparator-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; background: rgb(9, 9, 9); border: 1px solid rgb(34, 34, 34); border-radius: 6px; padding: 1rem; }
-        @media (max-width: 992px) {
-          .comparator-panel { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 992px) { .comparator-panel { grid-template-columns: 1fr; } }
         .panel-column { display: flex; flex-direction: column; gap: 0.5rem; }
         .panel-header { font-family: var(--mono); font-size: 0.75rem; font-weight: bold; background: rgb(34, 34, 34); color: var(--blue); padding: 6px 12px; border-radius: 3px; letter-spacing: 0.5px; text-align: center; }
         .panel-content { flex-grow: 1; min-height: 220px; background: rgb(255, 255, 255); border-radius: 4px; color: rgb(0, 0, 0); overflow: auto; box-sizing: border-box; display: flex; flex-direction: column; padding: 1rem; }
 
-        header, main, footer {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            box-sizing: border-box;
-        }
+        header, main, footer { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; box-sizing: border-box; }
     </style>
 </head>
 <body>
@@ -424,8 +120,8 @@
         <h1>Official Government Forms Vault</h1>
         <p>Forensic digital preservation docket of canonical California state agency PDF distributions.</p>
     </header>
-    <main id="main-content" role="main">
 
+    <main id="main-content" role="main">
         <section class="forensic-audit-banner" id="case-studies" aria-label="Digital Accessibility and Data Integrity Audit Findings">
             <span class="audit-tag">CIVIC FORENSIC AUDIT NOTICE</span>
             <h2 class="audit-heading">State Document Binary Accessibility Defects Detected</h2>
@@ -446,7 +142,7 @@
                 </div>
                 <div class="stat-card">
                     <span class="stat-val">2 Scripts</span>
-                    <span class="stat-label">Completely Unindexed (Armenian & Lao)</span>
+                    <span class="stat-label">Completely Unindexed (Armenian &amp; Lao)</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-val clean">SHA-256</span>
@@ -456,44 +152,43 @@
 
             <ul class="audit-details-list">
                 <li><strong>Assistive Technology Failure (ADA Title II / Sec 508):</strong> Text-to-speech software and screen readers encounter thousands of displaced control characters and invalid glyphs instead of readable form instructions.</li>
-                <li><strong>Search Engine & Portal Blindness:</strong> Corrupted CMaps render forms unindexable by keyword searches on state portals, leaving non-English speakers unable to find vital assistance.</li>
+                <li><strong>Search Engine &amp; Portal Blindness:</strong> Corrupted CMaps render forms unindexable by keyword searches on state portals, leaving non-English speakers unable to find vital assistance.</li>
                 <li><strong>Preservation Mandate:</strong> CalAudit maintains these original, unaltered state binaries below as legal and evidentiary proof of administrative negligence. Fully zed, machine-readable bilingual reference matrices are provided in our Community Translations directory.</li>
             </ul>
 
             <div class="audit-actions-row">
-                <a href="./official_pdf_accessibility_defects.json" class="btn-audit-raw" target="_blank" rel="noopener">
+                <a href="./official_pdf_accessibility_defects.json" class="btn-audit-raw" target="_blank" rel="noopener" aria-label="Download Raw Defect Audit JSON in a new tab">
                     📄 Download Raw Defect Audit (JSON)
                 </a>
             </div>
         </section>
 
+        <!-- Keep your existing Interactive Comparator Section here unmodified -->
         <section class="forensic-case-studies" aria-label="Forensic Case Studies of Text-Layer Corruption">
             <span class="audit-tag" style="background: var(--red, #d9534f); color: #000;">EMPIRICAL EVIDENCE CASE STUDIES</span>
             <h2 class="audit-heading">Exposing the Digital Blindspots (Visual vs. Machine Representation)</h2>
             <p class="audit-lead">
                 To understand why these defects are so severe, use the interactive panel below to compare what your human eye sees in a PDF reader versus the actual broken text stream that standard computers, screen-readers, and search-engines extract.
             </p>
-
             <div class="case-studies-comparator">
-                <div class="case-study-selectors">
-                    <button class="case-selector active" onclick="selectCaseStudy(1, this)">
+                <div class="case-study-selectors" role="tablist">
+                    <button class="case-selector active" onclick="selectCaseStudy(1, this)" role="tab" aria-selected="true">
                         <span class="case-num">CASE 01</span>
-                        <span class="case-name">Assemblymember Lackey (Missing Name/Contact)</span>
+                        <span class="case-name">Assemblymember Lackey (Missing Contact)</span>
                     </button>
-                    <button class="case-selector" onclick="selectCaseStudy(2, this)">
+                    <button class="case-selector" onclick="selectCaseStudy(2, this)" role="tab" aria-selected="false">
                         <span class="case-num">CASE 02</span>
                         <span class="case-name">PUB 13 Spanish (Text Scrambling)</span>
                     </button>
-                    <button class="case-selector" onclick="selectCaseStudy(3, this)">
+                    <button class="case-selector" onclick="selectCaseStudy(3, this)" role="tab" aria-selected="false">
                         <span class="case-num">CASE 03</span>
                         <span class="case-name">MC 219 Farsi (13k+ Glyphs Collapse)</span>
                     </button>
                 </div>
-
                 <div class="comparator-panel">
                     <div class="panel-column">
                         <div class="panel-header">VISUAL PRINT LAYER (What You See)</div>
-                        <div id="visual-preview-box" class="panel-content visual-font">
+                        <div id="visual-preview-box" class="panel-content visual-font" aria-live="polite">
                             <div style="font-family: serif; color: #000; padding: 1.5rem; background: #fff; border-radius: 4px; box-shadow: inset 0 0 10px rgba(0,0,0,0.1); height: 100%; box-sizing: border-box;">
                                 <div style="color: #990000; font-size: 1.5rem; text-align: center; margin-bottom: 0.25rem; font-weight: bold;">Assembly California Legislature</div>
                                 <div style="color: #333; font-size: 1.1rem; text-align: center; margin-bottom: 1rem; font-weight: bold;">Tom Lackey<br><span style="font-size: 0.75rem; font-family: sans-serif; color: #666; font-weight: normal;">ASSEMBLYMEMBER, DISTRICT 34</span></div>
@@ -505,7 +200,7 @@
                     </div>
                     <div class="panel-column">
                         <div class="panel-header" style="background: #d9534f; color: #000;">EXTRACTED MACHINE LAYER (What a Computer Reads)</div>
-                        <div id="machine-preview-box" class="panel-content machine-font" style="background: #0d0d0d; color: var(--text);">
+                        <div id="machine-preview-box" class="panel-content machine-font" style="background: #0d0d0d; color: var(--text);" aria-live="polite">
                             <div style="color: #d9534f; font-weight: bold; margin-bottom: 0.5rem; font-family: var(--mono); font-size: 0.8rem;">❌ CRITICAL LOSS OF ESSENTIAL IDENTITY &amp; CONTACT LAYER:</div>
                             <pre style="white-space: pre-wrap; font-family: var(--mono); font-size: 0.85rem; margin: 0; line-height: 1.5; background: #000; padding: 0.75rem; border-radius: 4px; border: 1px solid #222; color: #0f0; direction: ltr; text-align: left;">Assembly
 California Legislature
@@ -529,11 +224,17 @@ FAX (916) 319-21</pre>
         </section>
 
         <fieldset>
-            <legend>Filter & Audit Verification</legend>
+            <legend>Filter &amp; Audit Verification</legend>
             <div class="filters-flex">
                 <div class="filter-group">
                     <label for="search-input">Search Form, ID, or Language:</label>
                     <input type="text" id="search-input" aria-label="Search forms by ID, Title, or Language" placeholder="e.g. MC 219, DHCS 4521, or Armenian">
+                </div>
+                <div class="filter-group">
+                    <label for="language-filter">Language:</label>
+                    <select id="language-filter" aria-label="Filter by Language">
+                        <option value="ALL">All Languages</option>
+                    </select>
                 </div>
                 <div class="filter-group">
                     <label for="agency-filter">Agency:</label>
@@ -551,104 +252,67 @@ FAX (916) 319-21</pre>
                     </select>
                 </div>
                 <div class="filter-group">
-                    <label for="audit-filter">Accessibility Audit Status:</label>
-                    <select id="audit-filter" aria-label="Filter by Audit Status">
-                        <option value="ALL">All Documents (108)</option>
-                        <option value="DEFECTIVE">⚠️ Defective Binaries Only (90)</option>
-                        <option value="CLEAN">✓ Accessible / Valid Binaries Only (18)</option>
+                    <label for="audit-filter">Accessibility Status:</label>
+                    <select id="audit-filter" aria-label="Filter by Accessibility Audit Status">
+                        <option value="ALL">All Documents</option>
+                        <option value="DEFECTIVE">⚠️ Defective Binaries Only</option>
+                        <option value="CLEAN">✓ Accessible / Valid Binaries Only</option>
                     </select>
                 </div>
             </div>
         </fieldset>
 
-        <div id="grid-container"></div>
+        <div id="results-count" class="results-count-bar" aria-live="polite">Loading official forms vault...</div>
+        <div id="grid-container" role="region" aria-label="Forms directory"></div>
     </main>
 
     <footer class="page-footer" role="contentinfo" style="margin-top: 4rem; border-top: 1px solid #222; padding-top: 2rem;">
         <div class="footer-inner" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; font-family: var(--mono); font-size: 0.85rem; color: var(--text-dim); text-align: center;">
-            <p>© 2026 CALAUDIT | Nicolas Hernandez — Official Preservations Docket | <a href="/bots/" aria-label="View crawler indexing bridge" style="color: var(--blue); text-decoration: none;">Crawler Index</a></p>
-            <p style="margin-top: 0.5rem; color: var(--green); font-weight: bold; font-family: var(--mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.5;">
-                VERIFICATION NOTICE: These documents are preserved official state binaries maintained for evidentiary access and compliance audits.
+            <p>
+                © 2026 CALAUDIT | Nicolas Hernandez |
+                <a href="/bots/" aria-label="View crawler indexing bridge" style="color: var(--blue); text-decoration: none;">Crawler Index</a>
             </p>
-            <p class="onion-mirror" aria-label="Tor Onion Mirror Address" style="margin-top: 0.5rem;">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/" style="color: var(--blue); text-decoration: none;">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+            <p style="margin-top: 0.5rem; color: var(--green); font-weight: bold; font-family: var(--mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.5;">
+                VERIFICATION NOTICE: These documents are preserved official state binaries maintained for evidentiary access and compliance audits.<br>
+                <span style="font-weight: normal; text-transform: none; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 0;">
+                    CalAudit is an independent archive unaffiliated with and not authorized by the State of California, DHCS, CDSS, or the California State Auditor.
+                </span>
+            </p>
+            <p class="onion-mirror" aria-label="Tor Onion Mirror Address" style="margin-top: 0.5rem; line-height: 1.5;">
+                ONION_MIRROR: <a href="http://calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion" style="color: inherit; text-decoration: underline;">calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion</a> |
+                Hosted on the <a href="/fcc-complaint-guide/" style="color: var(--blue); text-decoration: none;">disputed Motorola Moto G Play 2024</a> via Termux |
+                Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"
+            </p>
+            <p style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-dim); line-height: 1.4;">
+                Audit defect taxonomy &amp; metadata licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener" style="color: var(--blue); text-decoration: underline;">CC BY 4.0</a> (Attribution required: calaudit.org). State binaries remain public records.
+            </p>
         </div>
     </footer>
 
+    <!-- Keep existing case study JS -->
     <script>
         const caseStudies = [
             {
-                visual: `
-                    <div style="font-family: serif; color: #000; padding: 1.5rem; background: #fff; border-radius: 4px; box-shadow: inset 0 0 10px rgba(0,0,0,0.1); height: 100%; box-sizing: border-box;">
-                        <div style="color: #990000; font-size: 1.5rem; text-align: center; margin-bottom: 0.25rem; font-weight: bold;">Assembly California Legislature</div>
-                        <div style="color: #333; font-size: 1.1rem; text-align: center; margin-bottom: 1rem; font-weight: bold;">Tom Lackey<br><span style="font-size: 0.75rem; font-family: sans-serif; color: #666; font-weight: normal;">ASSEMBLYMEMBER, DISTRICT 34</span></div>
-                        <div style="font-family: sans-serif; font-size: 0.8rem; color: #333; line-height: 1.4; text-align: center; border-top: 1px solid #ddd; padding-top: 0.75rem;">
-                            <strong>STATE CAPITOL:</strong> SACRAMENTO, CA 95814 &nbsp;|&nbsp; <strong>(916) 319-2034</strong> &nbsp;|&nbsp; <strong>FAX:</strong> (916) 319-2134
-                        </div>
-                    </div>
-                `,
-                machine: `
-                    <div style="color: #ff4d4d; font-weight: bold; margin-bottom: 0.5rem; font-family: var(--mono); font-size: 0.8rem;">❌ CRITICAL LOSS OF ESSENTIAL IDENTITY &amp; CONTACT LAYER:</div>
-                    <pre style="white-space: pre-wrap; font-family: var(--mono); font-size: 0.85rem; margin: 0; line-height: 1.5; background: #000; padding: 0.75rem; border-radius: 4px; border: 1px solid #222; color: #0f0; direction: ltr; text-align: left;">Assembly
-California Legislature
-ASSEMBLYMEMBER, DISTRICT
-STATE CAPITOL
-SACRAMENTO, CA 95814
-(916) 319-20
-FAX (916) 319-21</pre>
-                    <div class="defect-discrepancy-callout" style="margin-top: 0.75rem; padding: 0.75rem; background: rgba(217, 83, 79, 0.08); border-left: 3px solid #d9534f; border-radius: 4px; font-family: sans-serif; font-size: 0.85rem; line-height: 1.4; color: #ff6b6b;">
-                        <strong>⚠️ EXTRACTION FAILURE MODES:</strong>
-                        <ul style="margin: 0.4rem 0 0 1.1rem; padding: 0; text-align: left;">
-                            <li>The prominent legislator name <strong style="color: #fff;">"Tom Lackey"</strong> is completely missing from the sequential text stream.</li>
-                            <li>The district number <strong style="color: #fff;">"34"</strong> is dropped entirely.</li>
-                            <li>The voice-reading phone number and fax numbers are both cut short, truncating the final <strong style="color: #fff;">"34"</strong> digits.</li>
-                        </ul>
-                    </div>
-                `
+                visual: '<div style="font-family: serif; color: #000; padding: 1.5rem; background: #fff; border-radius: 4px; box-shadow: inset 0 0 10px rgba(0,0,0,0.1); height: 100%; box-sizing: border-box;"><div style="color: #990000; font-size: 1.5rem; text-align: center; margin-bottom: 0.25rem; font-weight: bold;">Assembly California Legislature</div><div style="color: #333; font-size: 1.1rem; text-align: center; margin-bottom: 1rem; font-weight: bold;">Tom Lackey<br><span style="font-size: 0.75rem; font-family: sans-serif; color: #666; font-weight: normal;">ASSEMBLYMEMBER, DISTRICT 34</span></div><div style="font-family: sans-serif; font-size: 0.8rem; color: #333; line-height: 1.4; text-align: center; border-top: 1px solid #ddd; padding-top: 0.75rem;"><strong>STATE CAPITOL:</strong> SACRAMENTO, CA 95814 &nbsp;|&nbsp; <strong>(916) 319-2034</strong> &nbsp;|&nbsp; <strong>FAX:</strong> (916) 319-2134</div></div>',
+                machine: '<div style="color: #ff4d4d; font-weight: bold; margin-bottom: 0.5rem; font-family: var(--mono); font-size: 0.8rem;">❌ CRITICAL LOSS OF ESSENTIAL IDENTITY &amp; CONTACT LAYER:</div><pre style="white-space: pre-wrap; font-family: var(--mono); font-size: 0.85rem; margin: 0; line-height: 1.5; background: #000; padding: 0.75rem; border-radius: 4px; border: 1px solid #222; color: #0f0; direction: ltr; text-align: left;">Assembly\nCalifornia Legislature\nASSEMBLYMEMBER, DISTRICT\nSTATE CAPITOL\nSACRAMENTO, CA 95814\n(916) 319-20\nFAX (916) 319-21</pre><div class="defect-discrepancy-callout" style="margin-top: 0.75rem; padding: 0.75rem; background: rgba(217, 83, 79, 0.08); border-left: 3px solid #d9534f; border-radius: 4px; font-family: sans-serif; font-size: 0.85rem; line-height: 1.4; color: #ff6b6b;"><strong>⚠️ EXTRACTION FAILURE MODES:</strong><ul style="margin: 0.4rem 0 0 1.1rem; padding: 0; text-align: left;"><li>The prominent legislator name <strong style="color: #fff;">"Tom Lackey"</strong> is completely missing from the sequential text stream.</li><li>The district number <strong style="color: #fff;">"34"</strong> is dropped entirely.</li><li>The voice-reading phone number and fax numbers are both cut short, truncating the final <strong style="color: #fff;">"34"</strong> digits.</li></ul></div>'
             },
             {
-                visual: `
-                    <div style="font-family: sans-serif; color: #000; padding: 1.5rem; background: #fff; border-radius: 4px; box-shadow: inset 0 0 10px rgba(0,0,0,0.1); height: 100%; box-sizing: border-box; line-height: 1.5; font-size: 0.9rem;">
-                        <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: #111; font-weight: bold; border-bottom: 1px solid #eee; padding-bottom: 4px;">QUEJA DE DISCRIMINACIÓN (PUB 13 SP)</h4>
-                        Si usted cree que ha sido víctima de discriminación, puede presentar una queja. La oficina específica donde tiene que presentar su queja depende del tipo de queja que tenga.
-                    </div>
-                `,
-                machine: `
-                    <div style="color: #ff9900; font-weight: bold; margin-bottom: 0.5rem; font-family: var(--mono); font-size: 0.8rem;">⚠️ CHARACTER SHIFT &amp; GLYPH DROP (TEXT SCRAMBLING):</div>
-                    <pre style="white-space: pre-wrap; font-family: var(--mono); font-size: 0.85rem; margin: 0; line-height: 1.5; background: #000; padding: 0.75rem; border-radius: 4px; border: 1px solid #222; color: #ff9900; direction: ltr; text-align: left;">QUEJA DE DISCRIMINACIÓN Si usted cree que ha sido v c ma de d r nac n, puede presentar una queja. La o c na espec ca donde tiene que presentar su queja depende del po de queja que tenga.</pre>
-                    <div class="defect-discrepancy-callout" style="margin-top: 0.75rem; padding: 0.75rem; background: rgba(217, 83, 79, 0.08); border-left: 3px solid #d9534f; border-radius: 4px; font-family: sans-serif; font-size: 0.85rem; line-height: 1.4; color: #ff6b6b;">
-                        <strong>⚠️ POTENTIAL FAILURE MODES:</strong>
-                        <ul style="margin: 0.4rem 0 0 1.1rem; padding: 0; text-align: left;">
-                            <li>Randomly drops crucial characters (such as <strong style="color: #fff;">"ícti"</strong> from <strong style="color: #fff;">"víctima"</strong>, rendering it as <strong style="color: #fff;">"v c ma"</strong>).</li>
-                            <li>Critical keywords like <strong style="color: #fff;">"discriminación"</strong> degrade into scrambled noise (<strong style="color: #fff;">"d r nac n"</strong>) due to missing Spanish Unicode map font definitions.</li>
-                            <li>Screen-readers may spell out individual broken letters rather than coherent words.</li>
-                        </ul>
-                    </div>
-                `
+                visual: '<div style="font-family: sans-serif; color: #000; padding: 1.5rem; background: #fff; border-radius: 4px; box-shadow: inset 0 0 10px rgba(0,0,0,0.1); height: 100%; box-sizing: border-box; line-height: 1.5; font-size: 0.9rem;"><h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: #111; font-weight: bold; border-bottom: 1px solid #eee; padding-bottom: 4px;">QUEJA DE DISCRIMINACIÓN (PUB 13 SP)</h4>Si usted cree que ha sido víctima de discriminación, puede presentar una queja. La oficina específica donde tiene que presentar su queja depende del tipo de queja que tenga.</div>',
+                machine: '<div style="color: #ff9900; font-weight: bold; margin-bottom: 0.5rem; font-family: var(--mono); font-size: 0.8rem;">⚠️ CHARACTER SHIFT &amp; GLYPH DROP (TEXT SCRAMBLING):</div><pre style="white-space: pre-wrap; font-family: var(--mono); font-size: 0.85rem; margin: 0; line-height: 1.5; background: #000; padding: 0.75rem; border-radius: 4px; border: 1px solid #222; color: #ff9900; direction: ltr; text-align: left;">QUEJA DE DISCRIMINACIÓN Si usted cree que ha sido v c ma de d r nac n, puede presentar una queja. La o c na espec ca donde tiene que presentar su queja depende del po de queja que tenga.</pre><div class="defect-discrepancy-callout" style="margin-top: 0.75rem; padding: 0.75rem; background: rgba(217, 83, 79, 0.08); border-left: 3px solid #d9534f; border-radius: 4px; font-family: sans-serif; font-size: 0.85rem; line-height: 1.4; color: #ff6b6b;"><strong>⚠️ POTENTIAL FAILURE MODES:</strong><ul style="margin: 0.4rem 0 0 1.1rem; padding: 0; text-align: left;"><li>Randomly drops crucial characters (such as <strong style="color: #fff;">"ícti"</strong> from <strong style="color: #fff;">"víctima"</strong>, rendering it as <strong style="color: #fff;">"v c ma"</strong>).</li><li>Critical keywords like <strong style="color: #fff;">"discriminación"</strong> degrade into scrambled noise (<strong style="color: #fff;">"d r nac n"</strong>) due to missing Spanish Unicode map font definitions.</li><li>Screen-readers may spell out individual broken letters rather than coherent words.</li></ul></div>'
             },
             {
-                visual: `
-                    <div style="font-family: sans-serif; color: #000; padding: 1.5rem; background: #fff; border-radius: 4px; box-shadow: inset 0 0 10px rgba(0,0,0,0.1); height: 100%; box-sizing: border-box; text-align: right; direction: rtl; line-height: 1.6; font-size: 1.1rem;">
-                        <h4 style="margin: 0 0 0.5rem 0; font-size: 1.2rem; color: #111; font-weight: bold; border-bottom: 1px solid #eee; padding-bottom: 4px; text-align: right;">معرفی برنامه Medi-Cal (MC 219)</h4>
-                        د یرادهگنن اتی ناگیابی اربا رد نسن یا Medi-Cal هنگامی که درخواست می‌دهید...
-                    </div>
-                `,
-                machine: `
-                    <div style="color: #ff3333; font-weight: bold; margin-bottom: 0.5rem; font-family: var(--mono); font-size: 0.8rem;">🚨 MASSIVE UNICODE COLLAPSE (13,361 CORRUPT GLYPHS):</div>
-                    <pre style="white-space: pre-wrap; font-family: var(--mono); font-size: 0.85rem; margin: 0; line-height: 1.5; background: #000; padding: 0.75rem; border-radius: 4px; border: 1px solid #222; color: #ff3333; direction: ltr; text-align: left;">State of California Health and Human Services Agency Department of Health Care Services <bdi>د یرادهگنن اتی ناگیابی اربا رد نسن یا</bdi> Medi-Cal <bdi>هنگ</bdi> [SILENT BLANKS &amp; UNMAPPED CONTROL GLYPHS: 13,361 ERRORS]</pre>
-                    <div class="defect-discrepancy-callout" style="margin-top: 0.75rem; padding: 0.75rem; background: rgba(217, 83, 79, 0.08); border-left: 3px solid #d9534f; border-radius: 4px; font-family: sans-serif; font-size: 0.85rem; line-height: 1.4; color: #ff6b6b;">
-                        <strong>⚠️ POTENTIAL FAILURE MODES:</strong>
-                        <ul style="margin: 0.4rem 0 0 1.1rem; padding: 0; text-align: left;">
-                            <li>Over 13,000 Farsi script letters collapse due to completely absent Unicode mappings, returning control blocks or silent blanks to assistive devices.</li>
-                            <li>The document may read as completely blank or skip large paragraphs, leaving visually-impaired Farsi speakers with heavily compromised access to information about their healthcare rights.</li>
-                        </ul>
-                    </div>
-                `
+                visual: '<div style="font-family: sans-serif; color: #000; padding: 1.5rem; background: #fff; border-radius: 4px; box-shadow: inset 0 0 10px rgba(0,0,0,0.1); height: 100%; box-sizing: border-box; text-align: right; direction: rtl; line-height: 1.6; font-size: 1.1rem;"><h4 style="margin: 0 0 0.5rem 0; font-size: 1.2rem; color: #111; font-weight: bold; border-bottom: 1px solid #eee; padding-bottom: 4px; text-align: right;">معرفی برنامه Medi-Cal (MC 219)</h4>د یرادهگنن اتی ناگیابی اربا رد نسن یا Medi-Cal هنگامی که درخواست می‌دهید...</div>',
+                machine: '<div style="color: #ff3333; font-weight: bold; margin-bottom: 0.5rem; font-family: var(--mono); font-size: 0.8rem;">🚨 MASSIVE UNICODE COLLAPSE (13,361 CORRUPT GLYPHS):</div><pre style="white-space: pre-wrap; font-family: var(--mono); font-size: 0.85rem; margin: 0; line-height: 1.5; background: #000; padding: 0.75rem; border-radius: 4px; border: 1px solid #222; color: #ff3333; direction: ltr; text-align: left;">State of California Health and Human Services Agency Department of Health Care Services <bdi>د یرادهگنن اتی ناگیابی اربا رد نسن یا</bdi> Medi-Cal <bdi>هنگ</bdi> [SILENT BLANKS &amp; UNMAPPED CONTROL GLYPHS: 13,361 ERRORS]</pre><div class="defect-discrepancy-callout" style="margin-top: 0.75rem; padding: 0.75rem; background: rgba(217, 83, 79, 0.08); border-left: 3px solid #d9534f; border-radius: 4px; font-family: sans-serif; font-size: 0.85rem; line-height: 1.4; color: #ff6b6b;"><strong>⚠️ POTENTIAL FAILURE MODES:</strong><ul style="margin: 0.4rem 0 0 1.1rem; padding: 0; text-align: left;"><li>Over 13,000 Farsi script letters collapse due to completely absent Unicode mappings, returning control blocks or silent blanks to assistive devices.</li><li>The document may read as completely blank or skip large paragraphs, leaving visually-impaired Farsi speakers with heavily compromised access to information about their healthcare rights.</li></ul></div>'
             }
         ];
 
         function selectCaseStudy(index, btn) {
-            document.querySelectorAll('.case-selector').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.case-selector').forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-selected', 'false');
+            });
             btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
             const data = caseStudies[index - 1];
             document.getElementById('visual-preview-box').innerHTML = data.visual;
             document.getElementById('machine-preview-box').innerHTML = data.machine;
@@ -656,6 +320,13 @@ FAX (916) 319-21</pre>
 
         let resources = [];
         let defectsMap = new Map();
+
+        const container = document.getElementById('grid-container');
+        const countDisplay = document.getElementById('results-count');
+        const searchInput = document.getElementById('search-input');
+        const agencyFilter = document.getElementById('agency-filter');
+        const langFilter = document.getElementById('language-filter');
+        const auditFilter = document.getElementById('audit-filter');
 
         function formatBytes(bytes) {
             return bytes >= 1048576
@@ -669,21 +340,32 @@ FAX (916) 319-21</pre>
             return parts[parts.length - 1];
         }
 
+        function populateLanguages(data) {
+            const languages = [...new Set(data.map(d => d.language))].sort();
+            const fragment = document.createDocumentFragment();
+            languages.forEach(lang => {
+                const opt = document.createElement('option');
+                opt.value = lang;
+                opt.textContent = lang;
+                fragment.appendChild(opt);
+            });
+            langFilter.appendChild(fragment);
+        }
+
         function render(data) {
-            const container = document.getElementById('grid-container');
-            container.innerHTML = '';
             if (data.length === 0) {
                 container.innerHTML = '<p style="color: var(--text-dim); grid-column: 1/-1; text-align: center; padding: 2rem; font-family: var(--mono);">No forms matched your audit filter criteria.</p>';
+                countDisplay.textContent = 'Showing 0 forms';
                 return;
             }
 
-            data.forEach(item => {
+            countDisplay.textContent = `Showing ${data.length} official form${data.length === 1 ? '' : 's'}`;
+
+            // Single pass batch DOM injection
+            const cardsHtml = data.map(item => {
                 const fname = extractFilename(item.download_url);
                 const defect = defectsMap.get(fname);
                 const isDefective = Boolean(defect);
-
-                const el = document.createElement('article');
-                el.className = `evidence-item ${isDefective ? 'has-defect' : ''}`;
 
                 let defectHtml = '';
                 if (isDefective) {
@@ -705,7 +387,8 @@ FAX (916) 319-21</pre>
                     `;
                 }
 
-                el.innerHTML = `
+                return `
+                <article class="evidence-item ${isDefective ? 'has-defect' : ''}">
                     <div class="card-header-group">
                         <h3>${item.title}</h3>
                         ${isDefective
@@ -732,11 +415,19 @@ FAX (916) 319-21</pre>
                         ${defectHtml}
                     </div>
                     <div class="card-actions">
-                        <a href="${item.download_url}" class="download-btn" target="_blank" rel="noopener noreferrer">Download Official PDF</a>
+                        <a href="${item.download_url}"
+                           class="download-btn"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Download ${item.title} in ${item.language}, ${formatBytes(item.file_size)} PDF, opens in new tab">
+                           Download Official PDF
+                        </a>
                     </div>
+                </article>
                 `;
-                container.appendChild(el);
-            });
+            }).join('');
+
+            container.innerHTML = cardsHtml;
         }
 
         Promise.all([
@@ -749,22 +440,22 @@ FAX (916) 319-21</pre>
                     if (d.filename) defectsMap.set(d.filename, d);
                 });
             }
+            populateLanguages(resources);
             render(resources);
         }).catch(err => {
             console.error('Failed to load audit resources:', err);
+            countDisplay.textContent = 'Error loading vault.';
         });
 
-        document.getElementById('search-input').addEventListener('input', () => filterData());
-        document.getElementById('agency-filter').addEventListener('change', () => filterData());
-        document.getElementById('audit-filter').addEventListener('change', () => filterData());
+        const normalize = (str) => (str || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
         function filterData() {
-            const rawTerm = document.getElementById('search-input').value.toLowerCase().trim();
-            const selectedAgency = document.getElementById('agency-filter').value.toUpperCase();
-            const auditFilter = document.getElementById('audit-filter').value;
+            const rawTerm = searchInput.value.toLowerCase().trim();
+            const selectedAgency = agencyFilter.value.toUpperCase();
+            const selectedLang = langFilter.value;
+            const auditStatus = auditFilter.value;
 
-            const normalize = (str) => (str || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-            const terms = rawTerm.split(/\s+/).map(t => normalize(t)).filter(t => t);
+            const terms = rawTerm.split(/\s+/).map(t => normalize(t)).filter(Boolean);
 
             const filtered = resources.filter(item => {
                 const cleanTitle = normalize(item.title);
@@ -781,20 +472,22 @@ FAX (916) 319-21</pre>
                     cleanAgency.includes(term)
                 );
 
-                const matchesAgency = selectedAgency === 'ALL' ||
-                    (item.agency && item.agency.trim().toUpperCase() === selectedAgency);
+                const matchesAgency = selectedAgency === 'ALL' || cleanAgency === normalize(selectedAgency);
+                const matchesLang = selectedLang === 'ALL' || item.language === selectedLang;
 
                 let matchesAudit = true;
-                if (auditFilter === 'DEFECTIVE') {
-                    matchesAudit = isDefective;
-                } else if (auditFilter === 'CLEAN') {
-                    matchesAudit = !isDefective;
-                }
+                if (auditStatus === 'DEFECTIVE') matchesAudit = isDefective;
+                else if (auditStatus === 'CLEAN') matchesAudit = !isDefective;
 
-                return matchesTerm && matchesAgency && matchesAudit;
+                return matchesTerm && matchesAgency && matchesLang && matchesAudit;
             });
             render(filtered);
         }
+
+        searchInput.addEventListener('input', filterData);
+        agencyFilter.addEventListener('change', filterData);
+        langFilter.addEventListener('change', filterData);
+        auditFilter.addEventListener('change', filterData);
     </script>
     <script src="/nav.js"></script>
 </body>

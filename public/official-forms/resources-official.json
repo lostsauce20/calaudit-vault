@@ -1,7 +1,7 @@
 [
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Korean",
     "language_code": "ko",
     "agency": "DHCS",
@@ -11,7 +11,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Thai",
     "language_code": "th",
     "agency": "DHCS",
@@ -31,7 +31,7 @@
   },
   {
     "form_id": "dhcs-6236",
-    "title": "DHCS 6236 Official Form",
+    "title": "DHCS 6236 (Release of Protected Health Information)",
     "language": "English",
     "language_code": "en",
     "agency": "DHCS",
@@ -41,7 +41,7 @@
   },
   {
     "form_id": "pa-607",
-    "title": "CDSS Public Assistance Complaint Form (PA 607)",
+    "title": "PA 607 (CDSS Public Assistance Complaint Form)",
     "language": "Spanish",
     "language_code": "es",
     "agency": "CDSS",
@@ -51,7 +51,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Hindi",
     "language_code": "hi",
     "agency": "DHCS",
@@ -61,7 +61,7 @@
   },
   {
     "form_id": "mc-219",
-    "title": "MC 219 Official Form",
+    "title": "MC 219 (Medi-Cal Rights & Responsibilities)",
     "language": "Spanish",
     "language_code": "es",
     "agency": "DHCS",
@@ -71,7 +71,7 @@
   },
   {
     "form_id": "soc-825",
-    "title": "SOC 825 Official Form",
+    "title": "SOC 825 (IHSS 24-Hour Protective Supervision Plan)",
     "language": "English",
     "language_code": "en",
     "agency": "CDSS",
@@ -81,7 +81,7 @@
   },
   {
     "form_id": "dhcs-6242",
-    "title": "DHCS 6242 Official Form",
+    "title": "DHCS 6242 (Privacy Complaint Form)",
     "language": "English",
     "language_code": "en",
     "agency": "DHCS",
@@ -91,7 +91,7 @@
   },
   {
     "form_id": "soc-825",
-    "title": "SOC 825 Official Form",
+    "title": "SOC 825 (IHSS 24-Hour Protective Supervision Plan)",
     "language": "Korean",
     "language_code": "ko",
     "agency": "CDSS",
@@ -101,7 +101,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Japanese",
     "language_code": "ja",
     "agency": "DHCS",
@@ -131,7 +131,7 @@
   },
   {
     "form_id": "soc-321",
-    "title": "SOC 321 Official Form",
+    "title": "SOC 321 (IHSS Paramedical Services Consent)",
     "language": "Spanish",
     "language_code": "es",
     "agency": "CDSS",
@@ -141,7 +141,7 @@
   },
   {
     "form_id": "dhcs-6251",
-    "title": "DHCS 6251 Official Form",
+    "title": "DHCS 6251 (Medi-Cal Estate Recovery Questionnaire)",
     "language": "English",
     "language_code": "en",
     "agency": "DHCS",
@@ -151,7 +151,7 @@
   },
   {
     "form_id": "soc-825",
-    "title": "SOC 825 Official Form",
+    "title": "SOC 825 (IHSS 24-Hour Protective Supervision Plan)",
     "language": "Cambodian",
     "language_code": "km",
     "agency": "CDSS",
@@ -161,7 +161,7 @@
   },
   {
     "form_id": "dhcs-6224",
-    "title": "DHCS 6224 Official Form",
+    "title": "DHCS 6224 (Managed Care Member Complaint Form)",
     "language": "English",
     "language_code": "en",
     "agency": "DHCS",
@@ -171,7 +171,7 @@
   },
   {
     "form_id": "mc-382",
-    "title": "MC 382 Official Form",
+    "title": "MC 382 (Appointment of Authorized Representative)",
     "language": "English",
     "language_code": "en",
     "agency": "DHCS",
@@ -181,7 +181,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Armenian",
     "language_code": "hy",
     "agency": "DHCS",
@@ -211,7 +211,7 @@
   },
   {
     "form_id": "dhcs-6236",
-    "title": "DHCS 6236 Official Form",
+    "title": "DHCS 6236 (Release of Protected Health Information)",
     "language": "Spanish",
     "language_code": "es",
     "agency": "DHCS",
@@ -221,7 +221,7 @@
   },
   {
     "form_id": "dhcs-6195",
-    "title": "DHCS 6195 Official Form",
+    "title": "DHCS 6195 (Estate Recovery Hardship Waiver)",
     "language": "Spanish",
     "language_code": "es",
     "agency": "DHCS",
@@ -241,7 +241,7 @@
   },
   {
     "form_id": "soc-321",
-    "title": "SOC 321 Official Form",
+    "title": "SOC 321 (IHSS Paramedical Services Consent)",
     "language": "Armenian",
     "language_code": "hy",
     "agency": "CDSS",
@@ -251,7 +251,7 @@
   },
   {
     "form_id": "mc-219",
-    "title": "MC 219 Official Form",
+    "title": "MC 219 (Medi-Cal Rights & Responsibilities)",
     "language": "Korean",
     "language_code": "ko",
     "agency": "DHCS",
@@ -261,7 +261,7 @@
   },
   {
     "form_id": "soc-321",
-    "title": "SOC 321 Official Form",
+    "title": "SOC 321 (IHSS Paramedical Services Consent)",
     "language": "English",
     "language_code": "en",
     "agency": "CDSS",
@@ -271,7 +271,7 @@
   },
   {
     "form_id": "soc-321",
-    "title": "SOC 321 Official Form",
+    "title": "SOC 321 (IHSS Paramedical Services Consent)",
     "language": "Chinese",
     "language_code": "zh",
     "agency": "CDSS",
@@ -291,7 +291,7 @@
   },
   {
     "form_id": "soc-321",
-    "title": "SOC 321 Official Form",
+    "title": "SOC 321 (IHSS Paramedical Services Consent)",
     "language": "Tagalog",
     "language_code": "tl",
     "agency": "CDSS",
@@ -301,7 +301,7 @@
   },
   {
     "form_id": "soc-825",
-    "title": "SOC 825 Official Form",
+    "title": "SOC 825 (IHSS 24-Hour Protective Supervision Plan)",
     "language": "Armenian",
     "language_code": "hy",
     "agency": "CDSS",
@@ -311,7 +311,7 @@
   },
   {
     "form_id": "std-204",
-    "title": "STD 204 Official Form",
+    "title": "STD 204 (Payee Data Record)",
     "language": "English",
     "language_code": "en",
     "agency": "DHCS",
@@ -321,7 +321,7 @@
   },
   {
     "form_id": "mc-219",
-    "title": "MC 219 Official Form",
+    "title": "MC 219 (Medi-Cal Rights & Responsibilities)",
     "language": "Armenian",
     "language_code": "hy",
     "agency": "DHCS",
@@ -331,7 +331,7 @@
   },
   {
     "form_id": "soc-321",
-    "title": "SOC 321 Official Form",
+    "title": "SOC 321 (IHSS Paramedical Services Consent)",
     "language": "Russian",
     "language_code": "ru",
     "agency": "CDSS",
@@ -341,7 +341,7 @@
   },
   {
     "form_id": "soc-825",
-    "title": "SOC 825 Official Form",
+    "title": "SOC 825 (IHSS 24-Hour Protective Supervision Plan)",
     "language": "Russian",
     "language_code": "ru",
     "agency": "CDSS",
@@ -351,7 +351,7 @@
   },
   {
     "form_id": "dhcs-6195",
-    "title": "DHCS 6195 Official Form",
+    "title": "DHCS 6195 (Estate Recovery Hardship Waiver)",
     "language": "English",
     "language_code": "en",
     "agency": "DHCS",
@@ -381,7 +381,7 @@
   },
   {
     "form_id": "mc-219",
-    "title": "MC 219 Official Form",
+    "title": "MC 219 (Medi-Cal Rights & Responsibilities)",
     "language": "Russian",
     "language_code": "ru",
     "agency": "DHCS",
@@ -401,7 +401,7 @@
   },
   {
     "form_id": "soc-825",
-    "title": "SOC 825 Official Form",
+    "title": "SOC 825 (IHSS 24-Hour Protective Supervision Plan)",
     "language": "Vietnamese",
     "language_code": "vi",
     "agency": "CDSS",
@@ -411,7 +411,7 @@
   },
   {
     "form_id": "mc-219",
-    "title": "MC 219 Official Form",
+    "title": "MC 219 (Medi-Cal Rights & Responsibilities)",
     "language": "Laotian",
     "language_code": "lo",
     "agency": "DHCS",
@@ -421,7 +421,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Farsi",
     "language_code": "fa",
     "agency": "DHCS",
@@ -441,7 +441,7 @@
   },
   {
     "form_id": "dhcs-4521",
-    "title": "DHCS 4521 Official Form",
+    "title": "DHCS 4521 (Medi-Cal Beneficiary Reimbursement Claim)",
     "language": "Hmong",
     "language_code": "hmn",
     "agency": "DHCS",
@@ -451,7 +451,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Mien",
     "language_code": "ium",
     "agency": "DHCS",
@@ -461,7 +461,7 @@
   },
   {
     "form_id": "mc-219",
-    "title": "MC 219 Official Form",
+    "title": "MC 219 (Medi-Cal Rights & Responsibilities)",
     "language": "Farsi",
     "language_code": "fa",
     "agency": "DHCS",
@@ -481,7 +481,7 @@
   },
   {
     "form_id": "soc-321",
-    "title": "SOC 321 Official Form",
+    "title": "SOC 321 (IHSS Paramedical Services Consent)",
     "language": "Cambodian",
     "language_code": "km",
     "agency": "CDSS",
@@ -491,7 +491,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Hmong",
     "language_code": "hmn",
     "agency": "DHCS",
@@ -501,7 +501,7 @@
   },
   {
     "form_id": "mc-306",
-    "title": "MC 306 Official Form",
+    "title": "MC 306 (Appointment of Authorized Representative)",
     "language": "English",
     "language_code": "en",
     "agency": "DHCS",
@@ -511,7 +511,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Arabic",
     "language_code": "ar",
     "agency": "DHCS",
@@ -521,7 +521,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Chinese",
     "language_code": "zh",
     "agency": "DHCS",
@@ -541,7 +541,7 @@
   },
   {
     "form_id": "mc-219",
-    "title": "MC 219 Official Form",
+    "title": "MC 219 (Medi-Cal Rights & Responsibilities)",
     "language": "English",
     "language_code": "en",
     "agency": "DHCS",
@@ -551,7 +551,7 @@
   },
   {
     "form_id": "mc-219",
-    "title": "MC 219 Official Form",
+    "title": "MC 219 (Medi-Cal Rights & Responsibilities)",
     "language": "Vietnamese",
     "language_code": "vi",
     "agency": "DHCS",
@@ -571,7 +571,7 @@
   },
   {
     "form_id": "mc-219",
-    "title": "MC 219 Official Form",
+    "title": "MC 219 (Medi-Cal Rights & Responsibilities)",
     "language": "Chinese",
     "language_code": "zh",
     "agency": "DHCS",
@@ -581,7 +581,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Cambodian",
     "language_code": "km",
     "agency": "DHCS",
@@ -591,7 +591,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Ukrainian",
     "language_code": "uk",
     "agency": "DHCS",
@@ -601,7 +601,7 @@
   },
   {
     "form_id": "mc-219",
-    "title": "MC 219 Official Form",
+    "title": "MC 219 (Medi-Cal Rights & Responsibilities)",
     "language": "Tagalog",
     "language_code": "tl",
     "agency": "DHCS",
@@ -611,7 +611,7 @@
   },
   {
     "form_id": "dhcs-4521",
-    "title": "DHCS 4521 Official Form",
+    "title": "DHCS 4521 (Medi-Cal Beneficiary Reimbursement Claim)",
     "language": "English",
     "language_code": "en",
     "agency": "DHCS",
@@ -621,7 +621,7 @@
   },
   {
     "form_id": "mc-382",
-    "title": "MC 382 Official Form",
+    "title": "MC 382 (Appointment of Authorized Representative)",
     "language": "Spanish",
     "language_code": "es",
     "agency": "DHCS",
@@ -651,7 +651,7 @@
   },
   {
     "form_id": "mc-210",
-    "title": "MC 210 Official Form",
+    "title": "MC 210 (Retroactive Eligibility Statement of Facts)",
     "language": "English",
     "language_code": "en",
     "agency": "DHCS",
@@ -661,7 +661,7 @@
   },
   {
     "form_id": "soc-321",
-    "title": "SOC 321 Official Form",
+    "title": "SOC 321 (IHSS Paramedical Services Consent)",
     "language": "Korean",
     "language_code": "ko",
     "agency": "CDSS",
@@ -671,7 +671,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Laotian",
     "language_code": "lo",
     "agency": "DHCS",
@@ -681,7 +681,7 @@
   },
   {
     "form_id": "mc-383",
-    "title": "MC 383 Official Form",
+    "title": "MC 383 (Authorized Representative Agreement)",
     "language": "Spanish",
     "language_code": "es",
     "agency": "DHCS",
@@ -731,7 +731,7 @@
   },
   {
     "form_id": "soc-321",
-    "title": "SOC 321 Official Form",
+    "title": "SOC 321 (IHSS Paramedical Services Consent)",
     "language": "Vietnamese",
     "language_code": "vi",
     "agency": "CDSS",
@@ -751,7 +751,7 @@
   },
   {
     "form_id": "mc-210",
-    "title": "MC 210 Official Form",
+    "title": "MC 210 (Retroactive Eligibility Statement of Facts)",
     "language": "Spanish",
     "language_code": "es",
     "agency": "DHCS",
@@ -761,7 +761,7 @@
   },
   {
     "form_id": "mc-306",
-    "title": "MC 306 Official Form",
+    "title": "MC 306 (Appointment of Authorized Representative)",
     "language": "Spanish",
     "language_code": "es",
     "agency": "DHCS",
@@ -771,7 +771,7 @@
   },
   {
     "form_id": "mc-220",
-    "title": "MC 220 Official Form",
+    "title": "MC 220 (Authorization for Release of Information)",
     "language": "English",
     "language_code": "en",
     "agency": "DHCS",
@@ -781,7 +781,7 @@
   },
   {
     "form_id": "mc-220",
-    "title": "MC 220 Official Form",
+    "title": "MC 220 (Authorization for Release of Information)",
     "language": "Spanish",
     "language_code": "es",
     "agency": "DHCS",
@@ -791,7 +791,7 @@
   },
   {
     "form_id": "dhcs-6251",
-    "title": "DHCS 6251 Official Form",
+    "title": "DHCS 6251 (Medi-Cal Estate Recovery Questionnaire)",
     "language": "Spanish",
     "language_code": "es",
     "agency": "DHCS",
@@ -801,7 +801,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Vietnamese",
     "language_code": "vi",
     "agency": "DHCS",
@@ -811,7 +811,7 @@
   },
   {
     "form_id": "soc-321",
-    "title": "SOC 321 Official Form",
+    "title": "SOC 321 (IHSS Paramedical Services Consent)",
     "language": "Farsi",
     "language_code": "fa",
     "agency": "CDSS",
@@ -821,7 +821,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Spanish",
     "language_code": "es",
     "agency": "DHCS",
@@ -851,7 +851,7 @@
   },
   {
     "form_id": "mc-219",
-    "title": "MC 219 Official Form",
+    "title": "MC 219 (Medi-Cal Rights & Responsibilities)",
     "language": "Hmong",
     "language_code": "hmn",
     "agency": "DHCS",
@@ -871,7 +871,7 @@
   },
   {
     "form_id": "mc-219",
-    "title": "MC 219 Official Form",
+    "title": "MC 219 (Medi-Cal Rights & Responsibilities)",
     "language": "Cambodian",
     "language_code": "km",
     "agency": "DHCS",
@@ -881,7 +881,7 @@
   },
   {
     "form_id": "pa-607",
-    "title": "CDSS Public Assistance Complaint Form (PA 607)",
+    "title": "PA 607 (CDSS Public Assistance Complaint Form)",
     "language": "English",
     "language_code": "en",
     "agency": "CDSS",
@@ -901,7 +901,7 @@
   },
   {
     "form_id": "soc-825",
-    "title": "SOC 825 Official Form",
+    "title": "SOC 825 (IHSS 24-Hour Protective Supervision Plan)",
     "language": "Chinese",
     "language_code": "zh",
     "agency": "CDSS",
@@ -911,7 +911,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Russian",
     "language_code": "ru",
     "agency": "DHCS",
@@ -921,7 +921,7 @@
   },
   {
     "form_id": "mc-383",
-    "title": "MC 383 Official Form",
+    "title": "MC 383 (Authorized Representative Agreement)",
     "language": "English",
     "language_code": "en",
     "agency": "DHCS",
@@ -951,7 +951,7 @@
   },
   {
     "form_id": "mc-219",
-    "title": "MC 219 Official Form",
+    "title": "MC 219 (Medi-Cal Rights & Responsibilities)",
     "language": "Arabic",
     "language_code": "ar",
     "agency": "DHCS",
@@ -961,7 +961,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "English",
     "language_code": "en",
     "agency": "DHCS",
@@ -991,7 +991,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Chinese",
     "language_code": "zh",
     "agency": "DHCS",
@@ -1001,7 +1001,7 @@
   },
   {
     "form_id": "soc-825",
-    "title": "SOC 825 Official Form",
+    "title": "SOC 825 (IHSS 24-Hour Protective Supervision Plan)",
     "language": "Farsi",
     "language_code": "fa",
     "agency": "CDSS",
@@ -1031,7 +1031,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Punjabi",
     "language_code": "pa",
     "agency": "DHCS",
@@ -1061,7 +1061,7 @@
   },
   {
     "form_id": "dhcs-8250",
-    "title": "DHCS 8250 Official Form",
+    "title": "DHCS 8250 (Request for State Hearing)",
     "language": "Tagalog",
     "language_code": "tl",
     "agency": "DHCS",
@@ -1071,7 +1071,7 @@
   },
   {
     "form_id": "soc-825",
-    "title": "SOC 825 Official Form",
+    "title": "SOC 825 (IHSS 24-Hour Protective Supervision Plan)",
     "language": "Spanish",
     "language_code": "es",
     "agency": "CDSS",
@@ -1091,7 +1091,7 @@
   },
   {
     "form_id": "soc-825",
-    "title": "SOC 825 Official Form",
+    "title": "SOC 825 (IHSS 24-Hour Protective Supervision Plan)",
     "language": "Tagalog",
     "language_code": "tl",
     "agency": "CDSS",

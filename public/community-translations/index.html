@@ -6,6 +6,7 @@
     <title>Community Translations Hub | CalAudit</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="canonical" href="https://calaudit.org/community-translations/">
+    <link rel="preload" href="resources.json" as="fetch" crossorigin>
     <meta name="robots" content="index, follow">
     <meta name="description" content="Reference directory for translated California social services and healthcare forms compiled by CalAudit to ensure compliance with Government Code sections 7295.2 and 7295.4.">
     <meta name="keywords" content="CalAudit, Community Translations, Bilingual Services Act, Language Access, SOC 321, SOC 825, CDSS, DHCS, California welfare forms, IHSS translations">
@@ -19,10 +20,12 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Community Translations Hub | CalAudit">
     <meta name="twitter:description" content="Reference translations of vital California IHSS paramedical and protective supervision forms, bridging the state's compliance failures.">
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
+        "dateModified": "2026-09-09",
         "@id": "https://calaudit.org/community-translations/#webpage",
         "url": "https://calaudit.org/community-translations/",
         "name": "Community Translations Hub | CalAudit",
@@ -35,7 +38,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 1.25rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
 
         .evidence-item {
@@ -48,7 +51,6 @@
             flex-direction: column;
             justify-content: space-between;
             box-sizing: border-box;
-            margin-bottom: 0 !important;
             height: 100%;
         }
 
@@ -66,7 +68,6 @@
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
             gap: 0.5rem;
             margin-bottom: 1.25rem;
         }
@@ -83,7 +84,6 @@
 
         .metadata-label {
             color: var(--text-dim);
-            font-weight: normal;
         }
 
         .metadata-value {
@@ -115,18 +115,18 @@
             letter-spacing: 0.5px;
         }
 
-        .download-btn:hover {
+        .download-btn:hover, .download-btn:focus-visible {
             background: var(--blue);
             color: #000 !important;
             border-color: var(--blue);
-            text-shadow: none;
+            outline: 2px solid #fff;
         }
 
         fieldset {
             border: 1px solid #333;
             border-radius: 6px;
             padding: 1.25rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             background: rgba(10, 10, 10, 0.8);
         }
 
@@ -176,25 +176,15 @@
 
         .filter-group input:focus, .filter-group select:focus {
             border-color: var(--blue);
+            box-shadow: 0 0 0 1px var(--blue);
         }
 
-        footer {
-            margin-top: 4rem;
-            padding: 2rem 0;
-            border-top: 1px solid #222;
-            text-align: center;
+        .results-count-bar {
             font-family: var(--mono);
             font-size: 0.85rem;
             color: var(--text-dim);
-        }
-
-        footer a {
-            color: var(--blue);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
+            padding: 0 0.5rem;
+            margin-bottom: 0.5rem;
         }
 
         header, main, footer {
@@ -215,13 +205,13 @@
     </header>
     <main id="main-content" role="main">
         <div class="disclaimer-banner" role="alert" style="border:2px solid #ff0000; padding:15px; margin:20px 0; font-weight:bold; line-height: 1.5;">
-            NOTICE: These materials are unofficial community reference translations created by CalAudit to provide language access aid where official state translations were unavailable (Gov. Code §§ 7295.2 & 7295.4). Official submissions to California state agencies must typically be submitted in English or on official state forms. FOR REFERENCE COPY ONLY.
+            NOTICE: These materials are unofficial community reference translations created by CalAudit to provide language access aid where official state translations were unavailable (Gov. Code §§ 7295.2 &amp; 7295.4). Official submissions to California state agencies must typically be submitted in English or on official state forms. FOR REFERENCE COPY ONLY.
         </div>
 
         <section class="backstory-section" aria-labelledby="backstory-heading" style="border: 1px solid var(--border); padding: 20px; background: rgba(0, 0, 0, 0.5); margin: 20px 0; border-radius: 6px;">
             <h2 id="backstory-heading" style="font-family: var(--mono); color: var(--blue); margin-top: 0; font-size: 1.25rem;">// THE FORENSIC BACKSTORY: SYSTEMIC STATE BILINGUAL FAILURES</h2>
             <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 12px; text-align: left;">
-                Under the <strong>Dymally-Alatorre Bilingual Services Act (Gov. Code § 7290 et seq.)</strong>, California state agencies are statutorily mandated to translate vital, life-safety eligibility forms and written materials into all threshold non-English languages to ensure equal language access (Gov. Code §§ 7295.2 & 7295.4).
+                Under the <strong>Dymally-Alatorre Bilingual Services Act (Gov. Code § 7290 et seq.)</strong>, California state agencies are statutorily mandated to translate vital, life-safety eligibility forms and written materials into all threshold non-English languages to ensure equal language access (Gov. Code §§ 7295.2 &amp; 7295.4).
             </p>
             <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 12px; text-align: left;">
                 During a forensic audit of language access compliance, Nicolas Hernandez submitted Public Records Act (PRA) requests demanding digital, fillable translated copies of vital health and social services forms from both the California Department of Social Services (CDSS) and the California Department of Health Care Services (DHCS).
@@ -241,9 +231,9 @@
             <div class="evidence-logs" style="border-top: 1px dashed #333; padding-top: 12px; font-family: var(--mono); font-size: 0.85rem; text-align: left;">
                 <span style="color: var(--blue); font-weight: bold; display: block; margin-bottom: 8px;">[ OFFICIAL PUBLIC EVIDENCE LOGS ]</span>
                 <ul style="list-style: none; padding-left: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
-                    <li>📄 CDSS PRA Request Objection & Final Response Correspondence: <a href="/calevidence/cdss-redacted.pdf" target="_blank" style="color: var(--blue); font-weight: bold; text-decoration: underline;">cdss-redacted.pdf (R013006-070526)</a></li>
+                    <li>📄 CDSS PRA Request Objection &amp; Final Response Correspondence: <a href="/calevidence/cdss-redacted.pdf" target="_blank" style="color: var(--blue); font-weight: bold; text-decoration: underline;">cdss-redacted.pdf (R013006-070526)</a></li>
                     <li>📊 CDSS Official Unavailability Links Ledger: <a href="/calevidence/cdss-soc-form-links-final-response.pdf" target="_blank" style="color: var(--blue); font-weight: bold; text-decoration: underline;">cdss-soc-form-links-final-response.pdf</a></li>
-                    <li>📄 DHCS PRA Request Acknowledgement & Final Response Letter: <a href="/calevidence/dhcs-response.pdf" target="_blank" style="color: var(--blue); font-weight: bold; text-decoration: underline;">dhcs-response.pdf (R007794-070626)</a></li>
+                    <li>📄 DHCS PRA Request Acknowledgement &amp; Final Response Letter: <a href="/calevidence/dhcs-response.pdf" target="_blank" style="color: var(--blue); font-weight: bold; text-decoration: underline;">dhcs-response.pdf (R007794-070626)</a></li>
                 </ul>
             </div>
         </section>
@@ -253,7 +243,13 @@
             <div class="filters-flex">
                 <div class="filter-group">
                     <label for="search-input">Search Form or Language:</label>
-                    <input type="text" id="search-input" aria-label="Search forms by ID or Language" placeholder="e.g. MC 219, SOC 321, or Russian">
+                    <input type="text" id="search-input" aria-label="Search forms by ID, Name, or Language" placeholder="e.g. MC 219, SOC 825, Ukrainian">
+                </div>
+                <div class="filter-group">
+                    <label for="language-filter">Language:</label>
+                    <select id="language-filter" aria-label="Filter by Language">
+                        <option value="ALL">All Languages</option>
+                    </select>
                 </div>
                 <div class="filter-group">
                     <label for="agency-filter">Agency:</label>
@@ -266,22 +262,37 @@
             </div>
         </fieldset>
 
-        <div id="grid-container"></div>
+        <div id="results-count" class="results-count-bar" aria-live="polite">Loading translations...</div>
+        <div id="grid-container" role="region" aria-label="Forms directory"></div>
     </main>
 
     <footer class="page-footer" role="contentinfo" style="margin-top: 4rem; border-top: 1px solid #222; padding-top: 2rem;">
         <div class="footer-inner" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; font-family: var(--mono); font-size: 0.85rem; color: var(--text-dim); text-align: center;">
-            <p>© 2026 CALAUDIT | Nicolas Hernandez — Open Source Initiative | <a href="/bots/" aria-label="View crawler indexing bridge" style="color: var(--blue); text-decoration: none;">Crawler Index</a></p>
-            <p style="margin-top: 0.5rem; color: var(--red); font-weight: bold; font-family: var(--mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.5;">
-                DISCLAIMER: These materials are unofficial community reference translations created by CalAudit to provide language access aid where official state translations were unavailable (Gov. Code §§ 7295.2 & 7295.4). Official submissions to California state agencies must typically be submitted in English or on official state forms. FOR REFERENCE COPY ONLY.
+            <p>
+                © 2026 CALAUDIT | Nicolas Hernandez |
+                <a href="/bots/" aria-label="View crawler indexing bridge" style="color: var(--blue); text-decoration: none;">Crawler Index</a>
             </p>
-            <p style="margin-top: 0.5rem;"><strong>OPEN SOURCE LICENSE NOTICE:</strong> All original utility code, tools, and scripts on this platform are free, open-source software distributed under the MIT License. You are permitted to modify, distribute, copy, and incorporate these utilities into your own projects without restriction, provided this notice is retained.</p>
-            <p class="onion-mirror" aria-label="Tor Onion Mirror Address" style="margin-top: 0.5rem;">ONION_MIRROR: calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion | Hosted on the <a href="/fcc-complaint-guide/" style="color: var(--blue); text-decoration: none;">disputed Motorola Moto G Play 2024</a> via Termux | Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"</p>
+            <p style="margin-top: 0.5rem; color: var(--red); font-weight: bold; font-family: var(--mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.5;">
+                DISCLAIMER: These materials are unofficial community reference translations created by CalAudit to provide language access aid where official state translations were unavailable (Gov. Code §§ 7295.2 &amp; 7295.4). Official submissions to California state agencies must typically be submitted in English or on official state forms. FOR REFERENCE COPY ONLY.<br>
+                <span style="font-weight: normal; text-transform: none; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 0;">
+                    CalAudit is an independent archive unaffiliated with and not authorized by the State of California, DHCS, CDSS, or the California State Auditor.
+                </span>
+            </p>
+            <p class="onion-mirror" aria-label="Tor Onion Mirror Address" style="margin-top: 0.5rem; line-height: 1.5;">
+                ONION_MIRROR: <a href="http://calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion" style="color: inherit; text-decoration: underline;">calauditzrmgz3noebouc4vywwaontwqczd4fl2acisz5e4nia2n2xyd.onion</a> |
+                Hosted on the <a href="/fcc-complaint-guide/" style="color: var(--blue); text-decoration: none;">disputed Motorola Moto G Play 2024</a> via Termux |
+                Authenticated via Debian 13 Forensic Rig | "Long Live the Audit"
+            </p>
         </div>
     </footer>
 
     <script>
         let resources = [];
+        const container = document.getElementById('grid-container');
+        const countDisplay = document.getElementById('results-count');
+        const searchInput = document.getElementById('search-input');
+        const agencyFilter = document.getElementById('agency-filter');
+        const langFilter = document.getElementById('language-filter');
 
         function formatBytes(bytes) {
             return bytes >= 1048576
@@ -289,59 +300,84 @@
                 : (bytes / 1024).toFixed(0) + ' KB';
         }
 
+        function populateLanguages(data) {
+            const languages = [...new Set(data.map(d => d.language))].sort();
+            const fragment = document.createDocumentFragment();
+            languages.forEach(lang => {
+                const opt = document.createElement('option');
+                opt.value = lang;
+                opt.textContent = lang;
+                fragment.appendChild(opt);
+            });
+            langFilter.appendChild(fragment);
+        }
+
         function render(data) {
-            const container = document.getElementById('grid-container');
-            container.innerHTML = '';
             if (data.length === 0) {
-                container.innerHTML = '<p style="color: var(--text-dim); grid-column: 1/-1; text-align: center; padding: 2rem;">No forms matched your search criteria.</p>';
+                container.innerHTML = '<p style="color: var(--text-dim); grid-column: 1/-1; text-align: center; padding: 2rem; font-family: var(--mono);">No forms matched your search criteria.</p>';
+                countDisplay.textContent = 'Showing 0 forms';
                 return;
             }
-            data.forEach(item => {
-                const el = document.createElement('article');
-                el.className = 'evidence-item';
 
-                el.innerHTML = `<h3>${item.title}</h3>
-                                <div class="card-body">
-                                    <div class="metadata-row">
-                                        <span class="metadata-label">Language:</span>
-                                        <span class="metadata-value">${item.language}</span>
-                                    </div>
-                                    <div class="metadata-row">
-                                        <span class="metadata-label">Agency:</span>
-                                        <span class="metadata-value">${item.agency}</span>
-                                    </div>
-                                    <div class="metadata-row">
-                                        <span class="metadata-label">Size:</span>
-                                        <span class="metadata-value">${formatBytes(item.file_size)}</span>
-                                    </div>
-                                    <div class="metadata-row">
-                                        <span class="metadata-label">Pages:</span>
-                                        <span class="metadata-value">${item.page_count}</span>
-                                    </div>
-                                </div>
-                                <div class="card-actions">
-                                    <a href="${item.download_url}" class="download-btn" target="_blank" rel="noopener noreferrer">Download PDF</a>
-                                </div>`;
-                container.appendChild(el);
-            });
+            countDisplay.textContent = `Showing ${data.length} form${data.length === 1 ? '' : 's'}`;
+
+            // Single-pass string concatenation prevents 87 DOM reflows
+            const cardsHtml = data.map(item => `
+                <article class="evidence-item">
+                    <h3>${item.title}</h3>
+                    <div class="card-body">
+                        <div class="metadata-row">
+                            <span class="metadata-label">Language:</span>
+                            <span class="metadata-value">${item.language}</span>
+                        </div>
+                        <div class="metadata-row">
+                            <span class="metadata-label">Agency:</span>
+                            <span class="metadata-value">${item.agency}</span>
+                        </div>
+                        <div class="metadata-row">
+                            <span class="metadata-label">Size:</span>
+                            <span class="metadata-value">${formatBytes(item.file_size)}</span>
+                        </div>
+                        <div class="metadata-row">
+                            <span class="metadata-label">Pages:</span>
+                            <span class="metadata-value">${item.page_count}</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="${item.download_url}"
+                           class="download-btn"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Download ${item.title} in ${item.language}, ${formatBytes(item.file_size)} PDF, opens in new tab">
+                           Download PDF
+                        </a>
+                    </div>
+                </article>
+            `).join('');
+
+            container.innerHTML = cardsHtml;
         }
 
         fetch('resources.json')
             .then(res => res.json())
             .then(data => {
                 resources = data;
+                populateLanguages(resources);
                 render(resources);
+            })
+            .catch(err => {
+                countDisplay.textContent = 'Error loading resources.';
+                container.innerHTML = '<p style="color: var(--red); grid-column: 1/-1; text-align: center;">Failed to load resources.json.</p>';
             });
 
-        document.getElementById('search-input').addEventListener('input', () => filterData());
-        document.getElementById('agency-filter').addEventListener('change', () => filterData());
+        const normalize = (str) => (str || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
         function filterData() {
-            const rawTerm = document.getElementById('search-input').value.toLowerCase().trim();
-            const selectedAgency = document.getElementById('agency-filter').value.toUpperCase();
+            const rawTerm = searchInput.value.toLowerCase().trim();
+            const selectedAgency = agencyFilter.value.toUpperCase();
+            const selectedLang = langFilter.value;
 
-            const normalize = (str) => (str || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-            const terms = rawTerm.split(/\s+/).map(t => normalize(t)).filter(t => t);
+            const terms = rawTerm.split(/\s+/).map(t => normalize(t)).filter(Boolean);
 
             const filtered = resources.filter(item => {
                 const cleanTitle = normalize(item.title);
@@ -356,13 +392,18 @@
                     cleanAgency.includes(term)
                 );
 
-                const matchesAgency = selectedAgency === 'ALL' ||
-                    (item.agency && item.agency.trim().toUpperCase() === selectedAgency);
+                const matchesAgency = selectedAgency === 'ALL' || cleanAgency === normalize(selectedAgency);
+                const matchesLang = selectedLang === 'ALL' || item.language === selectedLang;
 
-                return matchesTerm && matchesAgency;
+                return matchesTerm && matchesAgency && matchesLang;
             });
+
             render(filtered);
         }
+
+        searchInput.addEventListener('input', filterData);
+        agencyFilter.addEventListener('change', filterData);
+        langFilter.addEventListener('change', filterData);
     </script>
     <script src="/nav.js"></script>
 </body>
